@@ -1,0 +1,26 @@
+{
+  "name": "@unpic/core",
+  "version": "0.0.1",
+  "packageManager": "yarn@3.4.1",
+  "scripts": {
+    "build": "microbundle"
+  },
+  "type": "module",
+  "devDependencies": {
+    "microbundle": "^0.15.1",
+    "tsup": "^6.5.0"
+  },
+  "dependencies": {
+    "@builder.io/mitosis": "^0.0.89",
+    "unpic": "^2.0.0"
+  },
+  "source": "src/core.ts",
+  "exports": {
+    "types": "./dist/core.d.ts",
+    "require": "./dist/core.cjs",
+    "default": "./dist/core.modern.js"
+  },
+  "main": "./dist/core.cjs",
+  "module": "./dist/core.module.js",
+  "umd:main": "./dist/core.umd.js"
+}

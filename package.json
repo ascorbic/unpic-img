@@ -1,14 +1,15 @@
 {
   "name": "unpic-img",
   "version": "1.0.0",
-  "main": "index.js",
+  "private": true,
   "license": "MIT",
   "scripts": {
-    "build": "mitosis build"
+    "build": "mitosis build",
+    "tsup": "tsup"
   },
   "dependencies": {
-    "@builder.io/mitosis": "^0.0.86",
-    "@builder.io/mitosis-cli": "^0.0.44",
+    "@builder.io/mitosis": "^0.0.89",
+    "@builder.io/mitosis-cli": "^0.0.48",
     "unpic": "^2.0.0"
   },
   "devDependencies": {
@@ -16,7 +17,13 @@
     "@typescript-eslint/eslint-plugin": "^5.50.0",
     "@typescript-eslint/parser": "^5.50.0",
     "eslint": "^8.33.0",
-    "prettier": "^2.8.3"
+    "prettier": "^2.8.3",
+    "tsup": "^6.5.0"
   },
-  "packageManager": "yarn@3.4.1"
+  "packageManager": "yarn@3.4.1",
+  "workspaces": [
+    "packages/*",
+    "output/*",
+    "examples/*"
+  ]
 }

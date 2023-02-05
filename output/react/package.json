@@ -1,0 +1,25 @@
+{
+  "name": "@unpic/react",
+  "type": "module",
+  "files": [
+    "package",
+    "src"
+  ],
+  "source": "src/index.ts",
+  "exports": {
+    "types": "./dist/index.d.ts",
+    "require": "./dist/index.cjs",
+    "default": "./dist/index.modern.js"
+  },
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.module.js",
+  "scripts": {
+    "build": "microbundle"
+  },
+  "devDependencies": {
+    "microbundle": "^0.15.1"
+  },
+  "dependencies": {
+    "@unpic/core": "workspace:^"
+  }
+}
