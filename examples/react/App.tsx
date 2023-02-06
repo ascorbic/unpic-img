@@ -13,16 +13,16 @@ export function App() {
       />
       <Image
         src="https://cdn.shopify.com/static/sample-images/bath_grande_crop_center.jpeg"
-        layout="fixed"
-        width={300}
-        height={300}
+        layout="constrained"
+        width={800}
+        height={600}
         alt="Shopify"
       />
       <Image
         src="https://bunnyoptimizerdemo.b-cdn.net/bunny7.jpg?width=300"
-        width={800}
+        width={300}
         height={600}
-        layout="constrained"
+        layout="fixed"
         alt="Bunny.net"
       />
     </div>
