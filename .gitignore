@@ -134,3 +134,6 @@ dist
 output/*/src
 output/vue/*/src
 
+
+# Local Netlify folder
+.netlify

@@ -291,6 +291,7 @@ export const getSrcSet = ({
       }
       return "";
     })
+    .sort()
     .join(",\n");
 };
 
