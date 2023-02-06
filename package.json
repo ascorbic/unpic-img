@@ -1,11 +1,11 @@
 {
-  "name": "unpic-img",
+  "name": "unpic-img-workspace",
   "version": "1.0.0",
   "private": true,
   "license": "MIT",
   "scripts": {
     "build": "mitosis build",
-    "tsup": "tsup"
+    "build:demo": "yarn workspaces foreach -ptvR --from react-demo run build"
   },
   "dependencies": {
     "@builder.io/mitosis": "^0.0.89",
@@ -18,8 +18,7 @@
     "@typescript-eslint/parser": "^5.50.0",
     "eslint": "^8.33.0",
     "prettier": "^2.8.3",
-    "process": "^0.11.10",
-    "tsup": "^6.5.0"
+    "process": "^0.11.10"
   },
   "packageManager": "yarn@3.4.1",
   "workspaces": [

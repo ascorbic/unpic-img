@@ -3122,18 +3122,10 @@ __metadata:
   dependencies:
     "@unpic/core": "workspace:^"
     microbundle: ^0.15.1
+    unpic-img-workspace: "workspace:^"
   peerDependencies:
     react: "*"
     react-dom: "*"
-  languageName: unknown
-  linkType: soft
-
-"@unpic/solid@workspace:output/solid":
-  version: 0.0.0-use.local
-  resolution: "@unpic/solid@workspace:output/solid"
-  dependencies:
-    "@unpic/core": "workspace:^"
-    microbundle: ^0.15.1
   languageName: unknown
   linkType: soft
 
@@ -10990,9 +10982,9 @@ gluegun@latest:
   languageName: node
   linkType: hard
 
-"unpic-img@workspace:.":
+"unpic-img-workspace@workspace:., unpic-img-workspace@workspace:^":
   version: 0.0.0-use.local
-  resolution: "unpic-img@workspace:."
+  resolution: "unpic-img-workspace@workspace:."
   dependencies:
     "@builder.io/eslint-plugin-mitosis": ^0.0.14
     "@builder.io/mitosis": ^0.0.89
@@ -11002,7 +10994,6 @@ gluegun@latest:
     eslint: ^8.33.0
     prettier: ^2.8.3
     process: ^0.11.10
-    tsup: ^6.5.0
     unpic: ^2.0.0
   languageName: unknown
   linkType: soft

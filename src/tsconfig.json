@@ -5,6 +5,6 @@
         "jsxImportSource": "@builder.io/mitosis"
     },
     "include": [
-        "src/**/*"
+        "**/*"
     ]
 }

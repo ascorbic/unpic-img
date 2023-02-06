@@ -1,6 +1,7 @@
 {
   "name": "react-demo",
   "packageManager": "yarn@3.4.1",
+  "private": true,
   "dependencies": {
     "@unpic/react": "workspace:^",
     "react": "^18.2.0",
@@ -13,6 +14,7 @@
   },
   "scripts": {
     "start": "parcel index.html",
-    "build": "parcel build index.html"
+    "build": "parcel build index.html",
+    "build:all": "yarn workspaces foreach -ptvR run build"
   }
 }

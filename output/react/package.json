@@ -17,7 +17,8 @@
     "build": "microbundle"
   },
   "devDependencies": {
-    "microbundle": "^0.15.1"
+    "microbundle": "^0.15.1",
+    "unpic-img-workspace": "workspace:^"
   },
   "dependencies": {
     "@unpic/core": "workspace:^"
