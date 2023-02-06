@@ -5,7 +5,6 @@
   "scripts": {
     "build": "microbundle"
   },
-  "type": "module",
   "devDependencies": {
     "microbundle": "^0.15.1",
     "tsup": "^6.5.0"
@@ -14,13 +13,12 @@
     "@builder.io/mitosis": "^0.0.89",
     "unpic": "^2.0.0"
   },
-  "source": "src/core.ts",
+  "source": "./src/core.ts",
+  "types": "./dist/core.d.ts",
   "exports": {
     "types": "./dist/core.d.ts",
-    "require": "./dist/core.cjs",
-    "default": "./dist/core.modern.js"
+    "require": "./dist/core.modern.cjs"
   },
-  "main": "./dist/core.cjs",
-  "module": "./dist/core.module.js",
-  "umd:main": "./dist/core.umd.js"
+  "default": "./dist/core.modern.js",
+  "module": "./dist/core.module.js"
 }

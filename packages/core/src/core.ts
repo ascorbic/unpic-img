@@ -1,4 +1,4 @@
-import { JSX } from "@builder.io/mitosis/jsx-runtime";
+import type { JSX } from "@builder.io/mitosis/jsx-runtime";
 import {
   getTransformerForCdn,
   getTransformerForUrl,
@@ -45,41 +45,49 @@ export const getSizes = (
   }
 };
 
+const removeUndefined = (obj: Record<string, string | undefined>) =>
+  Object.entries(obj).reduce((acc, [key, value]) => {
+    if (value) {
+      acc[key] = value;
+    }
+    return acc;
+  }, {} as Record<string, string>);
+
 const pixelate = (value?: number) =>
   value || value === 0 ? `${value}px` : undefined;
-export const getStyle = ({
+export const getStyle = <TImageAttributes extends CoreImageAttributes>({
   width,
   height,
   aspectRatio,
   layout,
-  objectFit,
+  objectFit = "cover",
 }: Pick<
-  UnpicImageProps,
+  UnpicImageProps<TImageAttributes>,
   "width" | "height" | "aspectRatio" | "layout" | "objectFit"
->): JSX.CSS => {
+>): TImageAttributes["style"] => {
   if (layout === "fixed") {
-    return {
+    return removeUndefined({
       objectFit,
       width: pixelate(width),
       height: pixelate(height),
-    };
+    });
   }
   if (layout === "constrained") {
-    return {
+    return removeUndefined({
       objectFit,
       maxWidth: pixelate(width),
       maxHeight: pixelate(height),
       aspectRatio: aspectRatio ? `${aspectRatio}` : undefined,
       width: "100%",
-    };
+    });
   }
   if (layout === "fullWidth") {
-    return {
+    return removeUndefined({
       objectFit,
       width: "100%",
       aspectRatio: aspectRatio ? `${aspectRatio}` : undefined,
       height: pixelate(height),
-    };
+    });
   }
   return {};
 };
@@ -154,7 +162,8 @@ export const getSrcSet = ({
         transformedHeight = Math.round(bp * aspectRatio);
       }
       // Not sure why TS isn't narrowing the type here
-      const transformed = transformer({
+      // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+      const transformed = transformer!({
         url: src,
         width: bp,
         height: transformedHeight,
@@ -167,65 +176,92 @@ export const getSrcSet = ({
     .join(",\n");
 };
 
-export type BaseImageProps = Exclude<
-  JSX.ImgHTMLAttributes<HTMLImageElement>,
-  "srcset" | "style"
-> &
-  ImageSourceOptions & {
-    priority?: boolean;
-    fetchpriority?: "high" | "low";
-    objectFit?:
-      | "contain"
-      | "cover"
-      | "fill"
-      | "none"
-      | "scale-down"
-      | "inherit"
-      | "initial";
-  };
+/**
+ * HTML image attributes, common to the different JSX image components
+ */
+export interface CoreImageAttributes<TCSS = Record<string, string>> {
+  src?: string;
+  width?: number;
+  height?: number;
+  alt?: string;
+  loading?: "eager" | "lazy";
+  decoding?: "sync" | "async" | "auto";
+  style?: TCSS;
+  srcset?: string;
+  role?: string;
+  sizes?: string;
+  fetchpriority?: "high" | "low" | "auto";
+  objectFit?: "contain" | "cover" | "fill" | "none" | "scale-down";
+}
 
-interface BaseImageWithAspectRatioProps extends BaseImageProps {
+export type BaseImageProps<TImageAttributes extends CoreImageAttributes> =
+  Exclude<TImageAttributes, "srcset" | "style"> &
+    ImageSourceOptions & {
+      priority?: boolean;
+      fetchpriority?: "high" | "low";
+      objectFit?:
+        | "contain"
+        | "cover"
+        | "fill"
+        | "none"
+        | "scale-down"
+        | "inherit"
+        | "initial";
+    };
+
+type BaseImageWithAspectRatioProps<
+  TImageAttributes extends CoreImageAttributes
+> = BaseImageProps<TImageAttributes> & {
   aspectRatio: number;
-}
-
-interface ImageWithAspectRatioAndWidthProps
-  extends BaseImageWithAspectRatioProps {
-  width: number;
-}
-
-interface ImageWithAspectRatioAndHeightProps
-  extends BaseImageWithAspectRatioProps {
-  height: number;
-}
-
-interface ImageWithWidthAndHeightProps extends BaseImageProps {
-  width: number;
-  height: number;
-}
-
-type ImageWithSizeProps =
-  | ImageWithAspectRatioAndWidthProps
-  | ImageWithAspectRatioAndHeightProps
-  | ImageWithWidthAndHeightProps;
-
-export type FixedImageProps = ImageWithSizeProps & {
-  layout: "fixed";
 };
 
-export type ConstrainedImageProps = ImageWithSizeProps & {
+type ImageWithAspectRatioAndWidthProps<
+  TImageAttributes extends CoreImageAttributes
+> = BaseImageWithAspectRatioProps<TImageAttributes> & {
+  width: number;
+};
+
+type ImageWithAspectRatioAndHeightProps<
+  TImageAttributes extends CoreImageAttributes
+> = BaseImageWithAspectRatioProps<TImageAttributes> & {
+  height: number;
+};
+
+type ImageWithWidthAndHeightProps<
+  TImageAttributes extends CoreImageAttributes
+> = BaseImageProps<TImageAttributes> & {
+  width: number;
+  height: number;
+};
+
+type ImageWithSizeProps<TImageAttributes extends CoreImageAttributes> =
+  | ImageWithAspectRatioAndWidthProps<TImageAttributes>
+  | ImageWithAspectRatioAndHeightProps<TImageAttributes>
+  | ImageWithWidthAndHeightProps<TImageAttributes>;
+
+export type FixedImageProps<TImageAttributes extends CoreImageAttributes> =
+  ImageWithSizeProps<TImageAttributes> & {
+    layout: "fixed";
+  };
+
+export type ConstrainedImageProps<
+  TImageAttributes extends CoreImageAttributes
+> = ImageWithSizeProps<TImageAttributes> & {
   layout: "constrained";
 };
 
-export type FullWidthImageProps = BaseImageProps & {
-  layout: "fullWidth";
-  width?: never;
-};
+export type FullWidthImageProps<TImageAttributes extends CoreImageAttributes> =
+  BaseImageProps<TImageAttributes> & {
+    layout: "fullWidth";
+    width?: never;
+  };
 
-export type UnpicImageProps =
-  | FixedImageProps
-  | ConstrainedImageProps
-  | FullWidthImageProps;
-export function transformProps({
+export type UnpicImageProps<TImageAttributes extends CoreImageAttributes> =
+  | FixedImageProps<TImageAttributes>
+  | ConstrainedImageProps<TImageAttributes>
+  | FullWidthImageProps<TImageAttributes>;
+
+export function transformProps<TImageAttributes extends CoreImageAttributes>({
   src,
   width,
   height,
@@ -236,7 +272,7 @@ export function transformProps({
   transformer,
   objectFit = "cover",
   ...props
-}: UnpicImageProps): JSX.ImgHTMLAttributes<HTMLImageElement> {
+}: UnpicImageProps<TImageAttributes>): TImageAttributes {
   transformer ||= cdn ? getTransformerForCdn(cdn) : getTransformerForUrl(src);
 
   if (priority) {
@@ -273,10 +309,21 @@ export function transformProps({
     console.error("Either aspectRatio or both width and height must be set");
   }
 
+  const styleProps = {
+    width,
+    height,
+    aspectRatio,
+    layout,
+    objectFit,
+  } as Pick<
+    UnpicImageProps<TImageAttributes>,
+    "width" | "height" | "aspectRatio" | "layout" | "objectFit"
+  >;
+
   if (transformer) {
     props.sizes ||= getSizes(width, layout);
     props.style = {
-      ...getStyle({ width, height, aspectRatio, layout, objectFit }),
+      ...getStyle(styleProps),
       ...props.style,
     };
 
@@ -304,5 +351,5 @@ export function transformProps({
     src,
     width,
     height,
-  };
+  } as TImageAttributes;
 }

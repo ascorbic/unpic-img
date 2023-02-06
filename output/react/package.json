@@ -1,11 +1,11 @@
 {
   "name": "@unpic/react",
-  "type": "module",
   "files": [
     "package",
     "src"
   ],
   "source": "src/index.ts",
+  "types": "./dist/index.d.ts",
   "exports": {
     "types": "./dist/index.d.ts",
     "require": "./dist/index.cjs",
@@ -21,5 +21,9 @@
   },
   "dependencies": {
     "@unpic/core": "workspace:^"
+  },
+  "peerDependencies": {
+    "react": "*",
+    "react-dom": "*"
   }
 }
