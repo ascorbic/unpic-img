@@ -1,7 +1,7 @@
 {
   "name": "@unpic/react",
   "files": [
-    "package",
+    "dist",
     "src"
   ],
   "source": "src/index.ts",
@@ -14,7 +14,7 @@
   "main": "./dist/index.cjs",
   "module": "./dist/index.module.js",
   "scripts": {
-    "build": "microbundle"
+    "build": "microbundle --tsconfig tsconfig.json --jsx React.createElement --jsxFragment React.Fragment -f modern,esm,cjs"
   },
   "devDependencies": {
     "microbundle": "^0.15.1",
