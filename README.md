@@ -70,7 +70,7 @@ The component accepts all the props of an `<img>` tag, plus the following:
 
 ### `layout`
 
-The layout of the image. Can be one of:
+The layout of the image. See below for a video showing the different options. Can be one of:
 
 - `fixed`: the image will be rendered at the exact size specified by `width` and `height`
 - `constrained`: the image will be rendered at a maximum of `width` and `height`, but will scale down automatically if the container is smaller.
@@ -95,6 +95,12 @@ By default the CDN is auto-detected from the `src` URL. If you want to override 
 ### `breakpoints`
 
 By default the image breakpoints used in the `srcset` are generated based on the layout and image size. You can override this by specifying an array of breakpoints. The breakpoints are specified as an array of numbers, representing the width of the image in pixels.
+
+## Layouts
+
+This recording shows the different layout types. From the top, `fullWidth`, `constrained` and `fixed`:
+
+<video src="https://user-images.githubusercontent.com/213306/217091502-6eb0cd85-5e44-48f5-98df-a6aded506f83.mov" loop autoplay controls silent></video>
 
 ## Supported CDNs
 
