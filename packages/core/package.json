@@ -1,6 +1,6 @@
 {
   "name": "@unpic/core",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "packageManager": "yarn@3.4.1",
   "scripts": {
     "build": "microbundle"
@@ -10,7 +10,6 @@
     "tsup": "^6.5.0"
   },
   "dependencies": {
-    "@builder.io/mitosis": "^0.0.89",
     "unpic": "^2.0.0"
   },
   "source": "./src/core.ts",

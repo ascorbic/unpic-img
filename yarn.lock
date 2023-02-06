@@ -3109,7 +3109,6 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@unpic/core@workspace:packages/core"
   dependencies:
-    "@builder.io/mitosis": ^0.0.89
     microbundle: ^0.15.1
     tsup: ^6.5.0
     unpic: ^2.0.0
@@ -3124,8 +3123,8 @@ __metadata:
     microbundle: ^0.15.1
     unpic-img-workspace: "workspace:^"
   peerDependencies:
-    react: "*"
-    react-dom: "*"
+    react: ">=17"
+    react-dom: ">=17"
   languageName: unknown
   linkType: soft
 
