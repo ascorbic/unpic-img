@@ -162,7 +162,11 @@ export const getStyle = <TImageAttributes extends CoreImageAttributes>({
   const imageBackground: TImageAttributes["style"] = {};
 
   // If background is a URL, set it to cover the image and not repeat
-  if (background?.startsWith("https://") || background?.startsWith("http://")) {
+  if (
+    background?.startsWith("https://") ||
+    background?.startsWith("http://") ||
+    background?.startsWith("data:")
+  ) {
     imageBackground.background = `url(${background})`;
     imageBackground.backgroundSize = "cover";
     imageBackground.backgroundRepeat = "no-repeat";
