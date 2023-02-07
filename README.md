@@ -15,14 +15,14 @@ A cross-framework component for responsive, high-performance images using image 
 - Uses [unpic](https://github.com/ascorbic/unpic) to support most image CDNs, including Cloudinary, Imgix, and Shopify.
 - Can generate a low-res background image for a blurred placeholder effect.
 
-This library is a work in progress. It currently supports just React, but it is built with [Mitosis](https://github.com/BuilderIO/mitosis) for cross-framework support.
+This library is a work in progress. It currently supports React and SolidJS, but it is built with [Mitosis](https://github.com/BuilderIO/mitosis) for cross-framework support.
 
 ## Usage
 
 For details of usage, see the individual framework packages:
 
 - [`@unpic/react`](https://github.com/ascorbic/unpic-img/tree/main/output/react)
-
+- [`@unpic/solid`](https://github.com/ascorbic/unpic-img/tree/main/output/solid)
 
 ## FAQ
 
@@ -39,6 +39,7 @@ This library works with any frontend framework or none, and uses your existing i
 This library uses unpic to detect the image CDN, and then uses the CDN's URL API to resize and format images. It then generates the correct `srcset` and `sizes` attributes for the image. It uses new features built in to modern browsers to handle lazy loading, fetch priority and decoding. It also uses pure CSS to handle responsive resizing of images, preserving aspect ratio and avoiding layout shift. Unlike most other image components, it does not use any client-side JavaScript by default, and generates just a single `<img>` tag without any wrapper divs or padding elements.
 
 ## What HTML does this generate?
+
 <details>
 <summary>Generated HTML for a constrained image</summary>
 It turns this:
@@ -81,6 +82,7 @@ It turns this:
       "
 />
 ```
+
 </details>
 
 ## Props

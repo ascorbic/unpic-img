@@ -1,6 +1,7 @@
-import { Image } from "@unpic/react";
+import type { Component } from "solid-js";
+import { Image } from "@unpic/solid";
 
-export function App() {
+const App: Component = () => {
   return (
     <div>
       <Image
@@ -27,4 +28,6 @@ export function App() {
       />
     </div>
   );
-}
+};
+
+export default App;

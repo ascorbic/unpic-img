@@ -15,8 +15,11 @@
   "source": "./src/core.ts",
   "types": "./dist/core.d.ts",
   "exports": {
-    "types": "./dist/core.d.ts",
-    "require": "./dist/core.modern.cjs"
+    ".": {
+      "types": "./dist/core.d.ts",
+      "require": "./dist/core.modern.cjs",
+      "import": "./dist/core.module.js"
+    }
   },
   "default": "./dist/core.modern.js",
   "module": "./dist/core.module.js"

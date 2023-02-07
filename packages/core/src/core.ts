@@ -7,6 +7,11 @@ import {
 
 export type Layout = "fixed" | "constrained" | "fullWidth";
 
+type Prettify<T> = {
+  [K in keyof T]: T[K];
+  // eslint-disable-next-line @typescript-eslint/ban-types
+} & {};
+
 export interface ImageSourceOptions {
   src: string;
   width?: number;
@@ -31,7 +36,7 @@ export interface CoreImageAttributes<TCSS = Record<string, string>> {
   style?: TCSS;
   srcSet?: string;
   srcset?: string;
-  role?: string;
+  role?: "presentation" | "img" | "none" | "figure";
   sizes?: string;
   fetchpriority?: "high" | "low" | "auto";
 }
@@ -151,7 +156,7 @@ export const getStyle = <TImageAttributes extends CoreImageAttributes>({
   "width" | "height" | "aspectRatio" | "layout" | "objectFit" | "background"
 >): TImageAttributes["style"] => {
   const styleEntries: Array<[prop: string, value: string | undefined]> = [
-    ["objectFit", objectFit],
+    ["object-fit", objectFit],
   ];
 
   // If background is a URL, set it to cover the image and not repeat
@@ -160,9 +165,9 @@ export const getStyle = <TImageAttributes extends CoreImageAttributes>({
     background?.startsWith("http:") ||
     background?.startsWith("data:")
   ) {
-    styleEntries.push(["backgroundImage", `url(${background})`]);
-    styleEntries.push(["backgroundSize", "cover"]);
-    styleEntries.push(["backgroundRepeat", "no-repeat"]);
+    styleEntries.push(["background-image", `url(${background})`]);
+    styleEntries.push(["background-size", "cover"]);
+    styleEntries.push(["background-repeat", "no-repeat"]);
   } else {
     styleEntries.push(["background", background]);
   }
@@ -171,10 +176,10 @@ export const getStyle = <TImageAttributes extends CoreImageAttributes>({
     styleEntries.push(["height", pixelate(height)]);
   }
   if (layout === "constrained") {
-    styleEntries.push(["maxWidth", pixelate(width)]);
-    styleEntries.push(["maxHeight", pixelate(height)]);
+    styleEntries.push(["max-width", pixelate(width)]);
+    styleEntries.push(["max-height", pixelate(height)]);
     styleEntries.push([
-      "aspectRatio",
+      "aspect-ratio",
       aspectRatio ? `${aspectRatio}` : undefined,
     ]);
     styleEntries.push(["width", "100%"]);
@@ -182,11 +187,13 @@ export const getStyle = <TImageAttributes extends CoreImageAttributes>({
   if (layout === "fullWidth") {
     styleEntries.push(["width", "100%"]);
     styleEntries.push([
-      "aspectRatio",
+      "aspect-ratio",
       aspectRatio ? `${aspectRatio}` : undefined,
     ]);
     styleEntries.push(["height", pixelate(height)]);
   }
+
+  console.log({ styleEntries });
 
   return Object.fromEntries(
     styleEntries.filter(([, value]) => value)
@@ -400,6 +407,8 @@ export function transformProps<TImageAttributes extends CoreImageAttributes>({
       height = undefined;
     }
   }
+
+  console.log({ props });
 
   return {
     ...props,

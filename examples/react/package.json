@@ -14,7 +14,6 @@
   },
   "scripts": {
     "start": "parcel index.html",
-    "build": "parcel build index.html",
-    "build:all": "yarn workspaces foreach -ptvR run build"
+    "build": "parcel build index.html"
   }
 }

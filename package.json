@@ -4,7 +4,8 @@
   "license": "MIT",
   "scripts": {
     "build": "mitosis build",
-    "build:demo": "yarn workspaces foreach -ptvR --from react-demo run build"
+    "build:demo": "yarn workspaces foreach -ptvR --from react-demo run build",
+    "build:packages": "yarn workspaces foreach -ptvR --from '{@unpic/solid,@unpic/react}' run build"
   },
   "dependencies": {
     "@builder.io/mitosis": "^0.0.89",
