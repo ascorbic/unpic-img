@@ -1,9 +1,11 @@
 {
   "name": "@unpic/core",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "packageManager": "yarn@3.4.1",
   "scripts": {
-    "build": "microbundle"
+    "build": "microbundle",
+    "clean": "rm -rf dist",
+    "prepublishOnly": "yarn clean && yarn build"
   },
   "devDependencies": {
     "microbundle": "^0.15.1",

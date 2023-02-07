@@ -1,6 +1,5 @@
 {
   "name": "solid-demo",
-  "version": "0.0.0",
   "description": "",
   "scripts": {
     "start": "vite",
