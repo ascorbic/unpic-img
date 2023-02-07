@@ -224,7 +224,7 @@ const DEFAULT_RESOLUTIONS = [
 ];
 
 // Width of the blurred, low-res image
-const LOW_RES_WIDTH = 20;
+const LOW_RES_WIDTH = 24;
 
 /**
  * Gets the breakpoints for an image, based on the layout and width
