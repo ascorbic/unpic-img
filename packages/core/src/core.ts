@@ -278,6 +278,7 @@ export const getSrcSet = ({
   }
   breakpoints ||= getBreakpoints({ width, layout });
   return breakpoints
+    .sort()
     .map((bp) => {
       let transformedHeight;
       if (height && aspectRatio) {
@@ -295,7 +296,6 @@ export const getSrcSet = ({
       }
       return "";
     })
-    .sort()
     .join(",\n");
 };
 
