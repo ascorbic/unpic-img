@@ -34,7 +34,6 @@ export interface CoreImageAttributes<TCSS = Record<string, string>> {
   role?: string;
   sizes?: string;
   fetchpriority?: "high" | "low" | "auto";
-  objectFit?: "contain" | "cover" | "fill" | "none" | "scale-down";
 }
 
 export type BaseImageProps<TImageAttributes extends CoreImageAttributes> =
@@ -134,14 +133,6 @@ export const getSizes = (
   }
 };
 
-const removeUndefined = (obj: Record<string, string | undefined>) =>
-  Object.entries(obj).reduce((acc, [key, value]) => {
-    if (value) {
-      acc[key] = value;
-    }
-    return acc;
-  }, {} as Record<string, string>);
-
 const pixelate = (value?: number) =>
   value || value === 0 ? `${value}px` : undefined;
 
@@ -159,52 +150,51 @@ export const getStyle = <TImageAttributes extends CoreImageAttributes>({
   UnpicImageProps<TImageAttributes>,
   "width" | "height" | "aspectRatio" | "layout" | "objectFit" | "background"
 >): TImageAttributes["style"] => {
-  const imageBackground: TImageAttributes["style"] = {};
+  const styleEntries: Array<[prop: string, value: string | undefined]> = [
+    ["objectFit", objectFit],
+  ];
 
   // If background is a URL, set it to cover the image and not repeat
   if (
-    background?.startsWith("https://") ||
-    background?.startsWith("http://") ||
+    background?.startsWith("https:") ||
+    background?.startsWith("http:") ||
     background?.startsWith("data:")
   ) {
-    imageBackground.background = `url(${background})`;
-    imageBackground.backgroundSize = "cover";
-    imageBackground.backgroundRepeat = "no-repeat";
+    styleEntries.push(["backgroundImage", `url(${background})`]);
+    styleEntries.push(["backgroundSize", "cover"]);
+    styleEntries.push(["backgroundRepeat", "no-repeat"]);
+  } else {
+    styleEntries.push(["background", background]);
   }
-
   if (layout === "fixed") {
-    return removeUndefined({
-      background,
-      ...imageBackground,
-      objectFit,
-      width: pixelate(width),
-      height: pixelate(height),
-    });
+    styleEntries.push(["width", pixelate(width)]);
+    styleEntries.push(["height", pixelate(height)]);
   }
   if (layout === "constrained") {
-    return removeUndefined({
-      background,
-      ...imageBackground,
-      objectFit,
-      maxWidth: pixelate(width),
-      maxHeight: pixelate(height),
-      aspectRatio: aspectRatio ? `${aspectRatio}` : undefined,
-      width: "100%",
-    });
+    styleEntries.push(["maxWidth", pixelate(width)]);
+    styleEntries.push(["maxHeight", pixelate(height)]);
+    styleEntries.push([
+      "aspectRatio",
+      aspectRatio ? `${aspectRatio}` : undefined,
+    ]);
+    styleEntries.push(["width", "100%"]);
   }
   if (layout === "fullWidth") {
-    return removeUndefined({
-      background,
-      ...imageBackground,
-      objectFit,
-      width: "100%",
-      aspectRatio: aspectRatio ? `${aspectRatio}` : undefined,
-      height: pixelate(height),
-    });
+    styleEntries.push(["width", "100%"]);
+    styleEntries.push([
+      "aspectRatio",
+      aspectRatio ? `${aspectRatio}` : undefined,
+    ]);
+    styleEntries.push(["height", pixelate(height)]);
   }
-  return {};
+
+  return Object.fromEntries(
+    styleEntries.filter(([, value]) => value)
+  ) as TImageAttributes["style"];
 };
 
+// Common screen widths. These will be filtered
+// according to the image size and layout
 const DEFAULT_RESOLUTIONS = [
   6016, // 6K
   5120, // 5K
@@ -248,6 +238,7 @@ export const getBreakpoints = ({
   }
   if (layout === "constrained") {
     return [
+      // Always include the image at 1x and 2x the specified width
       width,
       doubleWidth,
       // Filter out any resolutions that are larger than the double-res image
@@ -327,8 +318,8 @@ export function transformProps<TImageAttributes extends CoreImageAttributes>({
     props.decoding ||= "async";
   }
 
-  // If the user has set the alt attribute to an empty string, we assume the
-  // image is decorative and set the role to presentation
+  // If the user has set the alt attribute to an empty string and not set
+  // the role, we assume the image is decorative and set it to presentation
   if (props.alt === "") {
     props.role ||= "presentation";
   }
