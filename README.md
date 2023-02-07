@@ -17,6 +17,13 @@ A cross-framework component for responsive, high-performance images using image 
 
 This library is a work in progress. It currently supports just React, but it is built with [Mitosis](https://github.com/BuilderIO/mitosis) for cross-framework support.
 
+## Usage
+
+For details of usage, see the individual framework packages:
+
+- [`@unpic/react`](https://github.com/ascorbic/unpic-img/tree/main/output/react)
+
+
 ## FAQ
 
 ### Why do I need this?
@@ -32,7 +39,8 @@ This library works with any frontend framework or none, and uses your existing i
 This library uses unpic to detect the image CDN, and then uses the CDN's URL API to resize and format images. It then generates the correct `srcset` and `sizes` attributes for the image. It uses new features built in to modern browsers to handle lazy loading, fetch priority and decoding. It also uses pure CSS to handle responsive resizing of images, preserving aspect ratio and avoiding layout shift. Unlike most other image components, it does not use any client-side JavaScript by default, and generates just a single `<img>` tag without any wrapper divs or padding elements.
 
 ## What HTML does this generate?
-
+<details>
+<summary>Generated HTML for a constrained image</summary>
 It turns this:
 
 ```tsx
@@ -73,12 +81,7 @@ It turns this:
       "
 />
 ```
-
-## Usage
-
-For details of usage, see the individual framework packages:
-
-- [`@unpic/react`](https://github.com/ascorbic/unpic-img/tree/main/output/react)
+</details>
 
 ## Props
 
@@ -86,11 +89,13 @@ The component accepts all the props of an `<img>` tag, plus the following:
 
 ### `layout`
 
-The layout of the image. See below for a video showing the different options. Can be one of:
+The resizing behaviour of the image.
 
-- `fixed`: the image will be rendered at the exact size specified by `width` and `height`
-- `constrained`: the image will be rendered at a maximum of `width` and `height`, but will scale down automatically if the container is smaller.
 - `fullWidth`: the image will be rendered at full width of its container. This is optimized for full-width hero images. You can set `height` to a fixed value, which will mean the image will be rendered at that fixed height and scale horizontally to fill the container.
+- `constrained`: the image will be rendered at a maximum of `width` and `height`, but will scale down automatically if the container is smaller, maintaining the aspect ratio.
+- `fixed`: the image will be rendered at the exact size specified by `width` and `height`
+
+![image-layouts](https://user-images.githubusercontent.com/213306/217186596-f67c54fe-6613-497f-9577-7868226ed7d9.gif)
 
 ### `priority`
 
@@ -121,12 +126,6 @@ Any prop supported by `<img>` tags can be passed in, except `srcset` which is ge
 - `decoding`
 - `loading`
 - `fetchpriority`
-
-## Layouts
-
-This recording shows the different layout types. From the top, `fullWidth`, `constrained` and `fixed`:
-
-<video src="https://user-images.githubusercontent.com/213306/217091502-6eb0cd85-5e44-48f5-98df-a6aded506f83.mov" loop autoplay controls silent></video>
 
 ## Supported CDNs
 
