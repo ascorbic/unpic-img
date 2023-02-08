@@ -408,8 +408,6 @@ export function transformProps<TImageAttributes extends CoreImageAttributes>({
     }
   }
 
-  console.log({ props });
-
   return {
     ...props,
     src,

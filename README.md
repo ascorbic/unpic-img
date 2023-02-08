@@ -15,13 +15,14 @@ A cross-framework component for responsive, high-performance images using image 
 - Uses [unpic](https://github.com/ascorbic/unpic) to support most image CDNs, including Cloudinary, Imgix, and Shopify.
 - Can generate a low-res background image for a blurred placeholder effect.
 
-This library is a work in progress. It currently supports React and SolidJS, but it is built with [Mitosis](https://github.com/BuilderIO/mitosis) for cross-framework support.
+This library is a work in progress. It currently supports React, Vue and SolidJS.
 
 ## Usage
 
 For details of usage, see the individual framework packages:
 
 - [`@unpic/react`](https://github.com/ascorbic/unpic-img/tree/main/output/react)
+- [`@unpic/vue`](https://github.com/ascorbic/unpic-img/tree/main/output/vue)
 - [`@unpic/solid`](https://github.com/ascorbic/unpic-img/tree/main/output/solid)
 
 ## FAQ

@@ -20,8 +20,7 @@
     "prepublishOnly": "yarn clean && yarn build"
   },
   "devDependencies": {
-    "microbundle": "^0.15.1",
-    "unpic-img-workspace": "workspace:^"
+    "microbundle": "^0.15.1"
   },
   "dependencies": {
     "@unpic/core": "workspace:^"
