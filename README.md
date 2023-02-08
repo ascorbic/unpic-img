@@ -2,6 +2,8 @@
 
 A cross-framework component for responsive, high-performance images using image CDNs.
 
+[`@unpic/react`](https://github.com/ascorbic/unpic-img/tree/main/packages/react) • [`@unpic/vue`](https://github.com/ascorbic/unpic-img/tree/main/packages/vue) • [`@unpic/solid`](https://github.com/ascorbic/unpic-img/tree/main/packages/solid)
+
 ## Features
 
 - Just an `<img>` tag! No extra elements, no runtime JavaScript. Easy to style. No legacy hacks or workarounds.
@@ -21,9 +23,9 @@ This library is a work in progress. It currently supports React, Vue and SolidJS
 
 For details of usage, see the individual framework packages:
 
-- [`@unpic/react`](https://github.com/ascorbic/unpic-img/tree/main/output/react)
-- [`@unpic/vue`](https://github.com/ascorbic/unpic-img/tree/main/output/vue)
-- [`@unpic/solid`](https://github.com/ascorbic/unpic-img/tree/main/output/solid)
+- [`@unpic/react`](https://github.com/ascorbic/unpic-img/tree/main/packages/react)
+- [`@unpic/vue`](https://github.com/ascorbic/unpic-img/tree/main/packages/vue)
+- [`@unpic/solid`](https://github.com/ascorbic/unpic-img/tree/main/packages/solid)
 
 ## FAQ
 
