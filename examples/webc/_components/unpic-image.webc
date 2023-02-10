@@ -1,0 +1,12 @@
+<script webc:type="render" webc:is="template" webc:nokeep>
+function() {
+console.log(this)
+const height = Number(this.width) * 2;
+if(!this.alt) {
+	throw new Error("oh no you didn’t");
+}
+
+return `<img src="${this.src}" height="${height}">`;
+}
+
+</script>
