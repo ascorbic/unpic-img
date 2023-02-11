@@ -1,13 +1,12 @@
 {
 	"name": "@unpic/svelte",
-	"version": "0.0.1",
+	"version": "0.0.4",
 	"scripts": {
 		"dev": "vite dev",
-		"build": "svelte-kit sync && svelte-package",
-		"prepublishOnly": "echo 'Did you mean to publish `./package/`, instead of `./`?' && exit 1",
+		"build": "svelte-kit sync && svelte-package && rm package/package.json",
 		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
 		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
-		"publish": "yarn build && cd package && npm publish --access public"
+		"prepublishOnly": "yarn build"
 	},
 	"devDependencies": {
 		"@sveltejs/adapter-auto": "^2.0.0",
@@ -26,5 +25,13 @@
 	},
 	"peerDependencies": {
 		"svelte": "*"
+	},
+	"files": [
+		"package"
+	],
+	"types": "./package/index.d.ts",
+	"exports": {
+		"./image.svelte": "./package/image.svelte",
+		".": "./package/index.js"
 	}
 }

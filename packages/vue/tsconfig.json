@@ -16,16 +16,15 @@
     ],
     "skipLibCheck": true,
     "outDir": "dist",
-    "declaration": true
+    "declaration": true,
+    // Exclude types so we don't get the react ones
+    "types": []
   },
   "include": [
     "src/**/*.ts",
     "src/**/*.d.ts",
     "src/**/*.tsx",
     "src/**/*.vue"
-  ],
-  "exclude": [
-    "../../node_modules/@types/react/**/*"
   ],
   "references": [
     {

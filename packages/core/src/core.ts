@@ -216,8 +216,6 @@ export const getStyle = <
     styleEntries.push(["height", pixelate(height)]);
   }
 
-  console.log({ styleEntries });
-
   return Object.fromEntries(
     styleEntries.filter(([, value]) => value)
   ) as TImageAttributes["style"];

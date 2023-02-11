@@ -1,29 +1,27 @@
 {
   "name": "@unpic/core",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "packageManager": "yarn@3.4.1",
   "scripts": {
-    "build": "microbundle",
+    "build": "tsup src/core.ts --format cjs,esm --dts --clean",
     "clean": "rm -rf dist",
     "prepublishOnly": "yarn clean && yarn build",
     "publish": "yarn npm publish --tolerate-republish --access public"
   },
   "devDependencies": {
-    "microbundle": "^0.15.1",
     "tsup": "^6.5.0"
   },
   "dependencies": {
     "unpic": "^2.0.0"
   },
-  "source": "./src/core.ts",
+  "main": "./dist/core.js",
+  "module": "./dist/core.mjs",
   "types": "./dist/core.d.ts",
   "exports": {
     ".": {
       "types": "./dist/core.d.ts",
-      "require": "./dist/core.modern.cjs",
-      "import": "./dist/core.module.js"
+      "require": "./dist/core.js",
+      "import": "./dist/core.mjs"
     }
-  },
-  "default": "./dist/core.modern.js",
-  "module": "./dist/core.module.js"
+  }
 }

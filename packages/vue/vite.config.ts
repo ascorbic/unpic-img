@@ -10,6 +10,7 @@ export default defineConfig({
       entry: resolve(__dirname, "src/index.ts"),
       name: "Image",
       fileName: "image",
+      formats: ["es", "cjs"],
     },
     rollupOptions: {
       external: ["vue", "@unpic/core"],
