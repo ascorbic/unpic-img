@@ -5,7 +5,8 @@
   "scripts": {
     "build": "microbundle",
     "clean": "rm -rf dist",
-    "prepublishOnly": "yarn clean && yarn build"
+    "prepublishOnly": "yarn clean && yarn build",
+    "publish": "yarn npm publish --tolerate-republish --access public"
   },
   "devDependencies": {
     "microbundle": "^0.15.1",

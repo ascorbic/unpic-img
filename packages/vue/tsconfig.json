@@ -24,6 +24,9 @@
     "src/**/*.tsx",
     "src/**/*.vue"
   ],
+  "exclude": [
+    "../../node_modules/@types/react/**/*"
+  ],
   "references": [
     {
       "path": "./tsconfig.node.json"

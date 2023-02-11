@@ -17,9 +17,12 @@
   "scripts": {
     "build": "microbundle -f modern,esm,cjs",
     "clean": "rm -rf dist",
-    "prepublishOnly": "yarn clean && yarn build"
+    "prepublishOnly": "yarn clean && yarn build",
+    "publish": "yarn npm publish --tolerate-republish --access public"
   },
   "devDependencies": {
+    "@types/react": "^18.0.27",
+    "@types/react-dom": "^18.0.10",
     "microbundle": "^0.15.1"
   },
   "dependencies": {

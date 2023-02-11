@@ -17,7 +17,9 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build && vue-tsc --emitDeclarationOnly",
-    "typegen": "vue-tsc --emitDeclarationOnly"
+    "typegen": "vue-tsc --emitDeclarationOnly",
+    "prepublishOnly": "yarn build",
+    "publish": "yarn npm publish --tolerate-republish --access public"
   },
   "dependencies": {
     "@unpic/core": "workspace:^",

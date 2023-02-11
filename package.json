@@ -5,14 +5,12 @@
   "scripts": {
     "build:demo": "yarn workspaces foreach -ptvR --from react-demo run build",
     "build:packages": "yarn workspaces foreach -ptvR --from '{@unpic/solid,@unpic/react,@unpic/vue}' run build",
-    "publish": "yarn workspaces foreach --include '@unpic/*' npm publish --tolerate-republish --access public"
+    "publish": "yarn workspaces foreach --include '@unpic/*' publish"
   },
   "dependencies": {
-    "@builder.io/mitosis-cli": "^0.0.48",
     "unpic": "^2.0.0"
   },
   "devDependencies": {
-    "@builder.io/eslint-plugin-mitosis": "^0.0.14",
     "@typescript-eslint/eslint-plugin": "^5.50.0",
     "@typescript-eslint/parser": "^5.50.0",
     "eslint": "^8.33.0",

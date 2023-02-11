@@ -1,10 +1,9 @@
-import {
-  CoreImageAttributes,
-  transformProps,
-  UnpicImageProps,
-} from "@unpic/core";
+import { transformProps, UnpicImageProps } from "@unpic/core";
+import { JSX } from "solid-js/jsx-runtime";
 
-function Image(props: UnpicImageProps<CoreImageAttributes>) {
+function Image(
+  props: UnpicImageProps<JSX.ImgHTMLAttributes<HTMLImageElement>>
+): JSX.Element {
   return <img {...transformProps(props)} />;
 }
 

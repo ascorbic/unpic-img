@@ -7,10 +7,10 @@ import {
   CoreImageAttributes,
   transformProps,
   UnpicImageProps,
-  getStyle,
 } from "@unpic/core";
+import { defineComponent, ImgHTMLAttributes } from "vue";
 
-export default {
+export default defineComponent({
   name: "image",
   props: {
     layout: {
@@ -35,8 +35,8 @@ export default {
       return transformProps({
         ...this.$props,
         ...this.$attrs,
-      } as UnpicImageProps<CoreImageAttributes>);
+      } as UnpicImageProps<ImgHTMLAttributes>);
     },
   },
-};
+});
 </script>
