@@ -4,8 +4,8 @@
   "license": "MIT",
   "scripts": {
     "build:demo": "yarn workspaces foreach -ptvR --from react-demo run build",
-    "build:packages": "yarn workspaces foreach -ptvR --from '{@unpic/solid,@unpic/react,@unpic/vue}' run build",
-    "publish": "yarn workspaces foreach --include '@unpic/*' publish"
+    "build:packages": "yarn workspaces foreach -ptvR --from '{@unpic/solid,@unpic/react,@unpic/vue,@unpic/svelte}' run build",
+    "publish": "yarn workspaces foreach --include '@unpic/*' run publish"
   },
   "dependencies": {
     "unpic": "^2.0.0"

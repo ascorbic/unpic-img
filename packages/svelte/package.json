@@ -7,7 +7,7 @@
 		"prepublishOnly": "echo 'Did you mean to publish `./package/`, instead of `./`?' && exit 1",
 		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
 		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
-		"publish": "yarn build && cd package && yarn npm publish --tolerate-republish --access public"
+		"publish": "yarn build && cd package && npm publish --access public"
 	},
 	"devDependencies": {
 		"@sveltejs/adapter-auto": "^2.0.0",

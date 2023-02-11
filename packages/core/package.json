@@ -1,6 +1,6 @@
 {
   "name": "@unpic/core",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "packageManager": "yarn@3.4.1",
   "scripts": {
     "build": "microbundle",
