@@ -109,7 +109,7 @@ By default, images are loaded lazily. If `priority` is set to `true`, the image 
 
 ### `background`
 
-Either an image URL, CSS gradient or CSS colour value. If set to `auto`, a low-resolution version of the image will be rendered as a background image, with a blurred placeholder effect. This is still loaded from the remote server, so if you can instead provide an inline base64-encoded version of the image or background color, you should do that instead. Bear in mind that this is not removed after the image loads, so it will be visible if the image has transparency.
+Either an image URL, CSS gradient or CSS colour value. If set to `auto`, a low-resolution version of the image will be rendered as a background image, with a blurred placeholder effect. This is still loaded from the remote server, so if you can instead provide an inline base64-encoded version of the image or background colour, you should do that instead. Bear in mind that this is not removed after the image loads, so it will be visible if the image has transparency.
 
 ### `aspectRatio`
 
