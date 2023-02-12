@@ -38,6 +38,8 @@ Most images on the on modern websites are hosted on a CDN or CMS that can resize
 
 This library works with any frontend framework or none, and uses your existing image CDN or CMS, with no additional configuration.
 
+For more details, see [this post](https://dev.to/ascorbic/a-minimal-multi-framework-responsive-image-component-3iop).
+
 ## How does this work?
 
 This library uses unpic to detect the image CDN, and then uses the CDN's URL API to resize and format images. It then generates the correct `srcset` and `sizes` attributes for the image. It uses new features built in to modern browsers to handle lazy loading, fetch priority and decoding. It also uses pure CSS to handle responsive resizing of images, preserving aspect ratio and avoiding layout shift. Unlike most other image components, it does not use any client-side JavaScript by default, and generates just a single `<img>` tag without any wrapper divs or padding elements.
