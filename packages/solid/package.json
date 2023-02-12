@@ -45,8 +45,7 @@
     "prepublishOnly": "yarn clean && yarn build",
     "format": "prettier --ignore-path .gitignore -w \"src/**/*.{js,ts,json,css,tsx,jsx}\" \"dev/**/*.{js,ts,json,css,tsx,jsx}\"",
     "update-deps": "yarn up -Li",
-    "typecheck": "tsc --noEmit",
-    "publish": "yarn npm publish --tolerate-republish --access public"
+    "typecheck": "tsc --noEmit"
   },
   "peerDependencies": {
     "solid-js": "^1.6.0"

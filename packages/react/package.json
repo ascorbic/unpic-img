@@ -17,8 +17,7 @@
   },
   "scripts": {
     "build": "tsup src/index.ts --format cjs,esm --dts --clean",
-    "prepublishOnly": "yarn build",
-    "publish": "yarn npm publish --tolerate-republish --access public"
+    "prepublishOnly": "yarn build"
   },
   "devDependencies": {
     "@types/react": "^18.0.27",
