@@ -1,15 +1,8 @@
 import * as React from "react";
-import {
-  CoreImageAttributes,
-  transformProps,
-  UnpicImageProps,
-} from "@unpic/core";
+import { transformProps, UnpicImageProps } from "@unpic/core";
 
 export default function Image(
-  props: UnpicImageProps<
-    React.ImgHTMLAttributes<HTMLImageElement>,
-    React.CSSProperties
-  >
+  props: UnpicImageProps<React.ImgHTMLAttributes<HTMLImageElement>>
 ) {
   return <img {...transformProps(props)} />;
 }
