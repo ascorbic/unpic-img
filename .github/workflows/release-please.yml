@@ -1,0 +1,32 @@
+on:
+  push:
+    branches:
+      - main
+name: release-please
+jobs:
+  release-please:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
+    steps:
+      - uses: google-github-actions/release-please-action@v3
+        with:
+          command: manifest
+      - uses: actions/checkout@v3
+        if: ${{ steps.release.outputs.releases_created }}
+      - uses: actions/setup-node@v3
+        with:
+          cache: "yarn"
+          check-latest: true
+          registry-url: "https://registry.npmjs.org"
+        if: ${{ steps.release.outputs.releases_created }}
+      - name: Install dependencies
+        run: yarn
+        if: ${{ steps.release.outputs.releases_created }}
+      - run: yarn build:packages
+        if: ${{ steps.release.outputs.releases_created }}
+      - run: yarn publish
+        if: ${{ steps.release.outputs.releases_created }}
+        env:
+          NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
