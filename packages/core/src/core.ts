@@ -335,6 +335,7 @@ export function transformProps<
   transformer,
   objectFit = "cover",
   background,
+  breakpoints,
   ...props
 }: UnpicImageProps<TImageAttributes, TStyle>): TImageAttributes {
   transformer ||= cdn ? getTransformerForCdn(cdn) : getTransformerForUrl(src);
@@ -423,6 +424,7 @@ export function transformProps<
       height,
       aspectRatio,
       layout,
+      breakpoints,
     });
 
     if (layout === "fullWidth" || layout === "constrained") {
