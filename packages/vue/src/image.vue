@@ -4,7 +4,6 @@
 
 <script lang="ts">
 import {
-  CoreImageAttributes,
   transformProps,
   UnpicImageProps,
 } from "@unpic/core";
