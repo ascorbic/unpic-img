@@ -24,7 +24,8 @@ export interface ImageSourceOptions {
 }
 
 /**
- * HTML image attributes, common to the different JSX image components
+ * HTML image attributes, common to image components in multiple frameworks.
+ * For React (and potentially other frameworks added in the future), convert to camelCase.
  */
 export interface CoreImageAttributes<TStyle = Record<string, string>> {
   src?: string | number | null;
@@ -34,7 +35,6 @@ export interface CoreImageAttributes<TStyle = Record<string, string>> {
   loading?: "eager" | "lazy" | null;
   decoding?: "sync" | "async" | "auto" | null;
   style?: TStyle;
-  srcSet?: string | number | null;
   srcset?: string | number | null;
   // eslint-disable-next-line @typescript-eslint/ban-types
   role?: "presentation" | "img" | "none" | "figure" | (string & {}) | null;
@@ -45,7 +45,7 @@ export interface CoreImageAttributes<TStyle = Record<string, string>> {
 export type BaseImageProps<
   TImageAttributes extends CoreImageAttributes<TStyle>,
   TStyle
-> = Exclude<TImageAttributes, "srcset" | "style" | "srcSet"> &
+> = Exclude<TImageAttributes, "srcset" | "style"> &
   ImageSourceOptions & {
     priority?: boolean;
     fetchpriority?: "high" | "low";
@@ -417,8 +417,7 @@ export function transformProps<
     if (transformed) {
       src = transformed.toString();
     }
-    // Different JSX implementations have different casing for srcset
-    props.srcset = props.srcSet = getSrcSet({
+    props.srcset = getSrcSet({
       src,
       width,
       height,
