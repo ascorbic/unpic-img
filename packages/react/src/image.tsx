@@ -1,23 +1,14 @@
 import * as React from "react";
 import { transformProps, UnpicImageProps } from "@unpic/core";
+import { camelizeProps } from "./camelize";
 
-export default function Image(
-  props: UnpicImageProps<React.ImgHTMLAttributes<HTMLImageElement>>
-) {
-  const camelizedProps = camelizeProps(transformProps(props));
-  return <img {...camelizedProps} />;
-}
+type ImageProps = UnpicImageProps<React.ImgHTMLAttributes<HTMLImageElement>>;
 
-function camelizeProps(o: object): object {
-  const fixedMap: Record<string, string> = { srcset: "srcSet" };
-  const nestedKeys = ["style"];
-  const camelize = (s: string) =>
-    s.replace(/-./g, (substr) => substr[1].toUpperCase());
+const Image = React.forwardRef<HTMLImageElement, ImageProps>(
+  function Image(props: ImageProps, ref: React.ForwardedRef<HTMLImageElement>) {
+    const camelizedProps = camelizeProps(transformProps(props));
+    return <img {...camelizedProps} ref={ref} />;
+  }
+);
 
-  return Object.fromEntries(
-    Object.entries(o).map(([k, v]) => [
-      fixedMap[k] || camelize(k),
-      nestedKeys.includes(k) && v ? camelizeProps(v) : v,
-    ])
-  );
-}
+export default Image;

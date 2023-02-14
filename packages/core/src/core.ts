@@ -368,7 +368,8 @@ export function transformProps<
       }
     } else if (height) {
       width = height * aspectRatio;
-    } else {
+    } else if (layout !== "fullWidth") {
+      // Fullwidth images have 100% width, so aspectRatio is applicable
       console.error(
         "When aspectRatio is set, either width or height must also be set"
       );
