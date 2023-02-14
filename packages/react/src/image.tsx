@@ -5,7 +5,7 @@ import { camelizeProps } from "./camelize";
 type ImageProps = UnpicImageProps<React.ImgHTMLAttributes<HTMLImageElement>>;
 
 const Image = React.forwardRef<HTMLImageElement, ImageProps>(
-  function Image(props: ImageProps, ref: React.ForwardedRef<HTMLImageElement>) {
+  function Image(props, ref) {
     const camelizedProps = camelizeProps(transformProps(props));
     return <img {...camelizedProps} ref={ref} />;
   }
