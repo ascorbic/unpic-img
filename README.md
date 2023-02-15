@@ -27,6 +27,7 @@ For details of usage, see the individual framework packages:
 - [`@unpic/vue`](https://github.com/ascorbic/unpic-img/tree/main/packages/vue)
 - [`@unpic/solid`](https://github.com/ascorbic/unpic-img/tree/main/packages/solid)
 - [`@unpic/svelte`](https://github.com/ascorbic/unpic-img/tree/main/packages/svelte)
+- [`@unpic/astro`](https://github.com/ascorbic/unpic-img/tree/main/packages/astro)
 
 ## FAQ
 

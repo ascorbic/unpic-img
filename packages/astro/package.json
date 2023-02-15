@@ -1,0 +1,25 @@
+{
+	"name": "@unpic/astro",
+	"version": "0.0.1",
+	"type": "module",
+	"license": "MIT",
+	"exports": {
+		".": "./index.ts"
+	},
+	"files": [
+		"src",
+		"index.ts"
+	],
+	"keywords": [
+		"astro"
+	],
+	"devDependencies": {
+		"astro": "^2.0.12"
+	},
+	"dependencies": {
+		"@unpic/core": "workspace:^"
+	},
+	"peerDependencies": {
+		"astro": "^2.0.0-beta.0"
+	}
+}

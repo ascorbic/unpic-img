@@ -1,0 +1,10 @@
+---
+import { transformProps, UnpicImageProps } from "@unpic/core";
+
+interface Props extends UnpicImageProps<any> {
+}
+
+const props = Astro.props;
+---
+
+<img {...transformProps(props as any)} />;
