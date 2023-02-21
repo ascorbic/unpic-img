@@ -10,7 +10,7 @@ import {
 import { defineComponent, ImgHTMLAttributes } from "vue";
 
 export default defineComponent({
-  name: "image",
+  name: "unpic-image",
   props: {
     layout: {
       type: String,
