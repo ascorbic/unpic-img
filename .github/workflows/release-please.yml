@@ -27,7 +27,10 @@ jobs:
         if: ${{ steps.release.outputs.releases_created }}
       - run: yarn build:packages
         if: ${{ steps.release.outputs.releases_created }}
-      - run: yarn publish
+      - name: Authenticate Yarn
+        run: yarn config set npmAuthToken $NPM_AUTH_TOKEN
         if: ${{ steps.release.outputs.releases_created }}
         env:
-          NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
+          NPM_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
+      - run: yarn publish
+        if: ${{ steps.release.outputs.releases_created }}
