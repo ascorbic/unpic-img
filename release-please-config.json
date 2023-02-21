@@ -5,7 +5,9 @@
     "packages/solid": {},
     "packages/vue": {},
     "packages/svelte": {},
-    "packages/astro": {}
+    "packages/astro": {
+      "release-as": "0.0.1"
+    }
   },
   "plugins": ["node-workspace"],
   "bump-minor-pre-major": true,
