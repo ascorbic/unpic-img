@@ -2107,9 +2107,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@sveltejs/package@npm:^1.0.0":
-  version: 1.0.2
-  resolution: "@sveltejs/package@npm:1.0.2"
+"@sveltejs/package@npm:^2.0.0":
+  version: 2.0.2
+  resolution: "@sveltejs/package@npm:2.0.2"
   dependencies:
     chokidar: ^3.5.3
     kleur: ^4.1.5
@@ -2119,7 +2119,7 @@ __metadata:
     svelte: ^3.44.0
   bin:
     svelte-package: svelte-package.js
-  checksum: f647589528f313b7f4e8b3146ab301e974d0a9887d34661bc88e684fa1cc7548d2e2836658b0d22109b1c4ec8b55eafaa539d6b7ee617d44c26075e00867b4e8
+  checksum: 7be879e96412d6cb8938bc1c6de0bde1897a5f4af97bd81d2c70d0b5331ecefce40b31b0b9cdbbc22db4202c786f4896da354a68c7f68eb7579d985375d91266
   languageName: node
   linkType: hard
 
@@ -2580,7 +2580,7 @@ __metadata:
   dependencies:
     "@sveltejs/adapter-auto": ^2.0.0
     "@sveltejs/kit": ^1.5.0
-    "@sveltejs/package": ^1.0.0
+    "@sveltejs/package": ^2.0.0
     "@unpic/core": "workspace:^"
     style-object-to-css-string: ^1.0.1
     svelte: ^3.54.0
