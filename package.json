@@ -4,11 +4,11 @@
   "license": "MIT",
   "scripts": {
     "build:demo": "yarn workspaces foreach -ptvR --from react-demo run build",
-    "build:packages": "yarn workspaces foreach -ptvR --from '{@unpic/solid,@unpic/react,@unpic/vue,@unpic/svelte,@unpic/preact}' run build",
+    "build:packages": "yarn workspaces foreach -ptvR --from '{@unpic/solid,@unpic/react,@unpic/vue,@unpic/svelte,@unpic/preact,@unpic/qwik}' run build",
     "publish": "yarn workspaces foreach --include '@unpic/*' npm publish --tolerate-republish --access public"
   },
   "dependencies": {
-    "unpic": "^2.0.0"
+    "unpic": "^2.0.2"
   },
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "^5.50.0",

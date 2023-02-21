@@ -6,7 +6,10 @@
     "packages/solid": {},
     "packages/vue": {},
     "packages/svelte": {},
-    "packages/astro": {}
+    "packages/astro": {},
+    "packages/qwik": {
+      "release-as": "0.0.1"
+    }
   },
   "plugins": [
     "node-workspace"
