@@ -2,7 +2,7 @@
 
 A cross-framework component for responsive, high-performance images using image CDNs.
 
-[`@unpic/react`](https://github.com/ascorbic/unpic-img/tree/main/packages/react) • [`@unpic/vue`](https://github.com/ascorbic/unpic-img/tree/main/packages/vue) • [`@unpic/solid`](https://github.com/ascorbic/unpic-img/tree/main/packages/solid) • [`@unpic/svelte`](https://github.com/ascorbic/unpic-img/tree/main/packages/svelte)
+[`@unpic/react`](https://github.com/ascorbic/unpic-img/tree/main/packages/react) • [`@unpic/vue`](https://github.com/ascorbic/unpic-img/tree/main/packages/vue) • [`@unpic/solid`](https://github.com/ascorbic/unpic-img/tree/main/packages/solid) • [`@unpic/svelte`](https://github.com/ascorbic/unpic-img/tree/main/packages/svelte) • [`@unpic/astro`](https://github.com/ascorbic/unpic-img/tree/main/packages/astro)
 
 ## Features
 
@@ -27,6 +27,7 @@ For details of usage, see the individual framework packages:
 - [`@unpic/vue`](https://github.com/ascorbic/unpic-img/tree/main/packages/vue)
 - [`@unpic/solid`](https://github.com/ascorbic/unpic-img/tree/main/packages/solid)
 - [`@unpic/svelte`](https://github.com/ascorbic/unpic-img/tree/main/packages/svelte)
+- [`@unpic/astro`](https://github.com/ascorbic/unpic-img/tree/main/packages/astro)
 
 ## FAQ
 
