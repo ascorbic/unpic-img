@@ -2,9 +2,7 @@
   "packages": {
     "packages/core": {},
     "packages/react": {},
-    "packages/preact": {
-      "release-as": "0.0.1"
-    },
+    "packages/preact": {},
     "packages/solid": {},
     "packages/vue": {},
     "packages/svelte": {},
