@@ -1,10 +1,11 @@
 ---
 import { transformProps, UnpicImageProps } from "@unpic/core";
 
-interface Props extends UnpicImageProps<any> {
-}
+import type { HTMLAttributes } from 'astro/types'
 
-const props = Astro.props;
+type Props = UnpicImageProps<HTMLAttributes<'img'>> 
+
+const props: Props = Astro.props;
 ---
 
 <img {...transformProps(props as any)} />
