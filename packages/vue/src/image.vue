@@ -4,14 +4,13 @@
 
 <script lang="ts">
 import {
-  CoreImageAttributes,
   transformProps,
   UnpicImageProps,
-  getStyle,
 } from "@unpic/core";
+import { defineComponent, ImgHTMLAttributes } from "vue";
 
-export default {
-  name: "image",
+export default defineComponent({
+  name: "unpic-image",
   props: {
     layout: {
       type: String,
@@ -35,8 +34,8 @@ export default {
       return transformProps({
         ...this.$props,
         ...this.$attrs,
-      } as UnpicImageProps<CoreImageAttributes>);
+      } as UnpicImageProps<ImgHTMLAttributes>);
     },
   },
-};
+});
 </script>

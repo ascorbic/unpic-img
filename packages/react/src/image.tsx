@@ -1,10 +1,15 @@
 import * as React from "react";
-import {
-  CoreImageAttributes,
-  transformProps,
-  UnpicImageProps,
-} from "@unpic/core";
+import { transformProps, UnpicImageProps } from "@unpic/core";
+import { camelizeProps } from "./camelize";
 
-export default function Image(props: UnpicImageProps<CoreImageAttributes>) {
-  return <img {...transformProps(props)} />;
-}
+type ImageProps = UnpicImageProps<React.ImgHTMLAttributes<HTMLImageElement>>;
+
+const Image = React.forwardRef<HTMLImageElement, ImageProps>(function Image(
+  props,
+  ref
+) {
+  const camelizedProps = camelizeProps(transformProps(props));
+  return <img {...camelizedProps} ref={ref} />;
+});
+
+export default Image;

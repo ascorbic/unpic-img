@@ -2,7 +2,7 @@
 
 A cross-framework component for responsive, high-performance images using image CDNs.
 
-[`@unpic/react`](https://github.com/ascorbic/unpic-img/tree/main/packages/react) • [`@unpic/vue`](https://github.com/ascorbic/unpic-img/tree/main/packages/vue) • [`@unpic/solid`](https://github.com/ascorbic/unpic-img/tree/main/packages/solid)
+[`@unpic/react`](https://github.com/ascorbic/unpic-img/tree/main/packages/react) • [`@unpic/vue`](https://github.com/ascorbic/unpic-img/tree/main/packages/vue) • [`@unpic/solid`](https://github.com/ascorbic/unpic-img/tree/main/packages/solid) • [`@unpic/svelte`](https://github.com/ascorbic/unpic-img/tree/main/packages/svelte) • [`@unpic/astro`](https://github.com/ascorbic/unpic-img/tree/main/packages/astro)
 
 ## Features
 
@@ -13,7 +13,7 @@ A cross-framework component for responsive, high-performance images using image 
 - Handles different image layouts: fixed, constrained and full width.
 - Uses eager loading and high priority fetching for important images.
 - Delivers modern image formats, including WebP and AVIF if supported by the browser.
-- No built step or server-side rendering required for the images: uses your existing image CDN or CMS, with no additional configuration.
+- No build step or server-side rendering required for the images: uses your existing image CDN or CMS, with no additional configuration.
 - Uses [unpic](https://github.com/ascorbic/unpic) to support most image CDNs, including Cloudinary, Imgix, and Shopify.
 - Can generate a low-res background image for a blurred placeholder effect.
 
@@ -26,6 +26,8 @@ For details of usage, see the individual framework packages:
 - [`@unpic/react`](https://github.com/ascorbic/unpic-img/tree/main/packages/react)
 - [`@unpic/vue`](https://github.com/ascorbic/unpic-img/tree/main/packages/vue)
 - [`@unpic/solid`](https://github.com/ascorbic/unpic-img/tree/main/packages/solid)
+- [`@unpic/svelte`](https://github.com/ascorbic/unpic-img/tree/main/packages/svelte)
+- [`@unpic/astro`](https://github.com/ascorbic/unpic-img/tree/main/packages/astro)
 
 ## FAQ
 
@@ -33,13 +35,15 @@ For details of usage, see the individual framework packages:
 
 While it's easy to use an `<img>` tag for images, if you want to follow best practices and deliver the most performant image to your users then it can take a lot of work. Some frontend frameworks will automate this for you, but they often rely on slow pre-rendering of images, or on running image optimizers on your own site. They also generate complex HTML with wrappers and spacer elements that make images hard to style.
 
-Most images on the on modern websites are hosted on a CDN or CMS that can resize images on the fly and deliver them at the edge. Despite this, most web frameworks will still download and resize the image at build time or on your server, rather than using the CDN, or just uses a single source image rather than handling multiple resolutions.
+Most images on modern websites are hosted on a CDN or CMS that can resize images on the fly and deliver them at the edge. Despite this, most web frameworks will still download and resize the image at build time or on your server, rather than using the CDN, or just uses a single source image rather than handling multiple resolutions.
 
 This library works with any frontend framework or none, and uses your existing image CDN or CMS, with no additional configuration.
 
+For more details, see [this post](https://dev.to/ascorbic/a-minimal-multi-framework-responsive-image-component-3iop).
+
 ## How does this work?
 
-This library uses unpic to detect the image CDN, and then uses the CDN's URL API to resize and format images. It then generates the correct `srcset` and `sizes` attributes for the image. It uses new features built in to modern browsers to handle lazy loading, fetch priority and decoding. It also uses pure CSS to handle responsive resizing of images, preserving aspect ratio and avoiding layout shift. Unlike most other image components, it does not use any client-side JavaScript by default, and generates just a single `<img>` tag without any wrapper divs or padding elements.
+This library uses unpic to detect the image CDN, and then uses the CDN's URL API to resize and format images. It then generates the correct `srcset` and `sizes` attributes for the image. It uses new features built into modern browsers to handle lazy loading, fetch priority and decoding. It also uses pure CSS to handle responsive resizing of images, preserving aspect ratio and avoiding layout shift. Unlike most other image components, it does not use any client-side JavaScript by default, and generates just a single `<img>` tag without any wrapper divs or padding elements.
 
 ## What HTML does this generate?
 
@@ -108,7 +112,7 @@ By default, images are loaded lazily. If `priority` is set to `true`, the image 
 
 ### `background`
 
-Either an image URL, CSS gradient or CSS colour value. If set to `auto`, a low-resolution version of the image will be rendered as a background image, with a blurred placeholder effect. This is still loaded from the remote server, so if you can instead provide an inline base64-encoded version of the image or background coloir, you should do that instead. Bear in mind that this is not removed after the image loads, so it will be visible if the image has transparency.
+Either an image URL, CSS gradient or CSS colour value. If set to `auto`, a low-resolution version of the image will be rendered as a background image, with a blurred placeholder effect. This is still loaded from the remote server, so if you can instead provide an inline base64-encoded version of the image or background colour, you should do that instead. Bear in mind that this is not removed after the image loads, so it will be visible if the image has transparency.
 
 ### `aspectRatio`
 

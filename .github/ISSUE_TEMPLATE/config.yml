@@ -1,0 +1,4 @@
+contact_links:
+  - name: CDN or image URL issues
+    url: https://github.com/ascorbic/unpic/issues
+    about: Issues and feature requests about CDN support for image src generation go on the "unpic" repo

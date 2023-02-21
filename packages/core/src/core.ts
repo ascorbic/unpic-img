@@ -24,90 +24,110 @@ export interface ImageSourceOptions {
 }
 
 /**
- * HTML image attributes, common to the different JSX image components
+ * HTML image attributes, common to image components in multiple frameworks.
+ * For React (and potentially other frameworks added in the future), convert to camelCase.
  */
-export interface CoreImageAttributes<TCSS = Record<string, string>> {
-  src?: string;
-  width?: number;
-  height?: number;
-  alt?: string;
-  loading?: "eager" | "lazy";
-  decoding?: "sync" | "async" | "auto";
-  style?: TCSS;
-  srcSet?: string;
-  srcset?: string;
-  role?: "presentation" | "img" | "none" | "figure";
-  sizes?: string;
-  fetchpriority?: "high" | "low" | "auto";
+export interface CoreImageAttributes<TStyle = Record<string, string>> {
+  src?: string | number | null;
+  width?: string | number | null;
+  height?: string | number | null;
+  alt?: string | number | null;
+  loading?: "eager" | "lazy" | null;
+  decoding?: "sync" | "async" | "auto" | null;
+  style?: TStyle;
+  srcset?: string | number | null;
+  // eslint-disable-next-line @typescript-eslint/ban-types
+  role?: "presentation" | "img" | "none" | "figure" | (string & {}) | null;
+  sizes?: string | number | null;
+  fetchpriority?: "high" | "low" | "auto" | null;
 }
 
-export type BaseImageProps<TImageAttributes extends CoreImageAttributes> =
-  Exclude<TImageAttributes, "srcset" | "style" | "srcSet"> &
-    ImageSourceOptions & {
-      priority?: boolean;
-      fetchpriority?: "high" | "low";
-      background?: string;
-      objectFit?:
-        | "contain"
-        | "cover"
-        | "fill"
-        | "none"
-        | "scale-down"
-        | "inherit"
-        | "initial";
-    };
+export type BaseImageProps<
+  TImageAttributes extends CoreImageAttributes<TStyle>,
+  TStyle
+> = Exclude<TImageAttributes, "srcset" | "style"> &
+  ImageSourceOptions & {
+    priority?: boolean;
+    fetchpriority?: "high" | "low";
+    background?: string;
+    objectFit?:
+      | "contain"
+      | "cover"
+      | "fill"
+      | "none"
+      | "scale-down"
+      | "inherit"
+      | "initial";
+  };
 
 type BaseImageWithAspectRatioProps<
-  TImageAttributes extends CoreImageAttributes
-> = BaseImageProps<TImageAttributes> & {
+  TImageAttributes extends CoreImageAttributes<TStyle>,
+  TStyle
+> = BaseImageProps<TImageAttributes, TStyle> & {
   aspectRatio: number;
 };
 
 type ImageWithAspectRatioAndWidthProps<
-  TImageAttributes extends CoreImageAttributes
-> = BaseImageWithAspectRatioProps<TImageAttributes> & {
+  TImageAttributes extends CoreImageAttributes<TStyle>,
+  TStyle
+> = BaseImageWithAspectRatioProps<TImageAttributes, TStyle> & {
   width: number;
 };
 
 type ImageWithAspectRatioAndHeightProps<
-  TImageAttributes extends CoreImageAttributes
-> = BaseImageWithAspectRatioProps<TImageAttributes> & {
+  TImageAttributes extends CoreImageAttributes<TStyle>,
+  TStyle
+> = BaseImageWithAspectRatioProps<TImageAttributes, TStyle> & {
   height: number;
 };
 
 type ImageWithWidthAndHeightProps<
-  TImageAttributes extends CoreImageAttributes
-> = BaseImageProps<TImageAttributes> & {
+  TImageAttributes extends CoreImageAttributes<TStyle>,
+  TStyle
+> = BaseImageProps<TImageAttributes, TStyle> & {
   width: number;
   height: number;
 };
 
-type ImageWithSizeProps<TImageAttributes extends CoreImageAttributes> =
-  | ImageWithAspectRatioAndWidthProps<TImageAttributes>
-  | ImageWithAspectRatioAndHeightProps<TImageAttributes>
-  | ImageWithWidthAndHeightProps<TImageAttributes>;
+type ImageWithSizeProps<
+  TImageAttributes extends CoreImageAttributes<TStyle>,
+  TStyle
+> =
+  | ImageWithAspectRatioAndWidthProps<TImageAttributes, TStyle>
+  | ImageWithAspectRatioAndHeightProps<TImageAttributes, TStyle>
+  | ImageWithWidthAndHeightProps<TImageAttributes, TStyle>;
 
-export type FixedImageProps<TImageAttributes extends CoreImageAttributes> =
-  ImageWithSizeProps<TImageAttributes> & {
+export type FixedImageProps<
+  TImageAttributes extends CoreImageAttributes<TStyle>,
+  TStyle
+> = Prettify<
+  ImageWithSizeProps<TImageAttributes, TStyle> & {
     layout: "fixed";
-  };
+  }
+>;
 
 export type ConstrainedImageProps<
-  TImageAttributes extends CoreImageAttributes
-> = ImageWithSizeProps<TImageAttributes> & {
+  TImageAttributes extends CoreImageAttributes<TStyle>,
+  TStyle
+> = ImageWithSizeProps<TImageAttributes, TStyle> & {
   layout: "constrained";
 };
 
-export type FullWidthImageProps<TImageAttributes extends CoreImageAttributes> =
-  BaseImageProps<TImageAttributes> & {
-    layout: "fullWidth";
-    width?: never;
-  };
+export type FullWidthImageProps<
+  TImageAttributes extends CoreImageAttributes<TStyle>,
+  TStyle
+> = BaseImageProps<TImageAttributes, TStyle> & {
+  layout: "fullWidth";
+  width?: never;
+};
 
-export type UnpicImageProps<TImageAttributes extends CoreImageAttributes> =
-  | FixedImageProps<TImageAttributes>
-  | ConstrainedImageProps<TImageAttributes>
-  | FullWidthImageProps<TImageAttributes>;
+export type UnpicImageProps<
+  TImageAttributes extends CoreImageAttributes<TStyle>,
+  TStyle = TImageAttributes["style"]
+> =
+  | FixedImageProps<TImageAttributes, TStyle>
+  | ConstrainedImageProps<TImageAttributes, TStyle>
+  | FullWidthImageProps<TImageAttributes, TStyle>;
 
 /**
  * Gets the `sizes` attribute for an image, based on the layout and width
@@ -144,7 +164,10 @@ const pixelate = (value?: number) =>
 /**
  * Gets the styles for an image
  */
-export const getStyle = <TImageAttributes extends CoreImageAttributes>({
+export const getStyle = <
+  TImageAttributes extends CoreImageAttributes<TStyle>,
+  TStyle = Record<string, string>
+>({
   width,
   height,
   aspectRatio,
@@ -152,7 +175,7 @@ export const getStyle = <TImageAttributes extends CoreImageAttributes>({
   objectFit = "cover",
   background,
 }: Pick<
-  UnpicImageProps<TImageAttributes>,
+  UnpicImageProps<TImageAttributes, TStyle>,
   "width" | "height" | "aspectRatio" | "layout" | "objectFit" | "background"
 >): TImageAttributes["style"] => {
   const styleEntries: Array<[prop: string, value: string | undefined]> = [
@@ -192,8 +215,6 @@ export const getStyle = <TImageAttributes extends CoreImageAttributes>({
     ]);
     styleEntries.push(["height", pixelate(height)]);
   }
-
-  console.log({ styleEntries });
 
   return Object.fromEntries(
     styleEntries.filter(([, value]) => value)
@@ -300,7 +321,10 @@ export const getSrcSet = ({
 /**
  * Generates the props for an img element
  */
-export function transformProps<TImageAttributes extends CoreImageAttributes>({
+export function transformProps<
+  TImageAttributes extends CoreImageAttributes<TStyle>,
+  TStyle = Record<string, string>
+>({
   src,
   width,
   height,
@@ -311,8 +335,9 @@ export function transformProps<TImageAttributes extends CoreImageAttributes>({
   transformer,
   objectFit = "cover",
   background,
+  breakpoints,
   ...props
-}: UnpicImageProps<TImageAttributes>): TImageAttributes {
+}: UnpicImageProps<TImageAttributes, TStyle>): TImageAttributes {
   transformer ||= cdn ? getTransformerForCdn(cdn) : getTransformerForUrl(src);
 
   // High priority images should be loaded eagerly
@@ -343,7 +368,8 @@ export function transformProps<TImageAttributes extends CoreImageAttributes>({
       }
     } else if (height) {
       width = height * aspectRatio;
-    } else {
+    } else if (layout !== "fullWidth") {
+      // Fullwidth images have 100% width, so aspectRatio is applicable
       console.error(
         "When aspectRatio is set, either width or height must also be set"
       );
@@ -378,14 +404,14 @@ export function transformProps<TImageAttributes extends CoreImageAttributes>({
     objectFit,
     background,
   } as Pick<
-    UnpicImageProps<TImageAttributes>,
+    UnpicImageProps<TImageAttributes, TStyle>,
     "width" | "height" | "aspectRatio" | "layout" | "objectFit" | "background"
   >;
 
   if (transformer) {
     props.sizes ||= getSizes(width, layout);
     props.style = {
-      ...getStyle(styleProps),
+      ...getStyle<TImageAttributes, TStyle>(styleProps),
       ...props.style,
     };
 
@@ -393,13 +419,13 @@ export function transformProps<TImageAttributes extends CoreImageAttributes>({
     if (transformed) {
       src = transformed.toString();
     }
-    // Different JSX implementations have different casing for srcset
-    props.srcset = props.srcSet = getSrcSet({
+    props.srcset = getSrcSet({
       src,
       width,
       height,
       aspectRatio,
       layout,
+      breakpoints,
     });
 
     if (layout === "fullWidth" || layout === "constrained") {

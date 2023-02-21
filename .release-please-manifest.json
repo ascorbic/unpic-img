@@ -1,0 +1,8 @@
+{
+  "packages/core": "0.0.7",
+  "packages/react": "0.0.7",
+  "packages/solid": "0.0.5",
+  "packages/svelte": "0.0.5",
+  "packages/vue": "0.0.5",
+  "packages/astro": "0.0.1"
+}
