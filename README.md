@@ -2,7 +2,7 @@
 
 A cross-framework component for responsive, high-performance images using image CDNs.
 
-[`@unpic/react`](https://github.com/ascorbic/unpic-img/tree/main/packages/react) • [`@unpic/vue`](https://github.com/ascorbic/unpic-img/tree/main/packages/vue) • [`@unpic/solid`](https://github.com/ascorbic/unpic-img/tree/main/packages/solid) • [`@unpic/svelte`](https://github.com/ascorbic/unpic-img/tree/main/packages/svelte) • [`@unpic/astro`](https://github.com/ascorbic/unpic-img/tree/main/packages/astro)
+[`@unpic/react`](https://github.com/ascorbic/unpic-img/tree/main/packages/react) • [`@unpic/vue`](https://github.com/ascorbic/unpic-img/tree/main/packages/vue) • [`@unpic/solid`](https://github.com/ascorbic/unpic-img/tree/main/packages/solid) • [`@unpic/svelte`](https://github.com/ascorbic/unpic-img/tree/main/packages/svelte) • [`@unpic/astro`](https://github.com/ascorbic/unpic-img/tree/main/packages/astro) • [`@unpic/preact`](https://github.com/ascorbic/unpic-img/tree/main/packages/preact)
 
 ## Features
 
@@ -17,8 +17,6 @@ A cross-framework component for responsive, high-performance images using image 
 - Uses [unpic](https://github.com/ascorbic/unpic) to support most image CDNs, including Cloudinary, Imgix, and Shopify.
 - Can generate a low-res background image for a blurred placeholder effect.
 
-This library is a work in progress. It currently supports React, Vue and SolidJS.
-
 ## Usage
 
 For details of usage, see the individual framework packages:
@@ -28,6 +26,7 @@ For details of usage, see the individual framework packages:
 - [`@unpic/solid`](https://github.com/ascorbic/unpic-img/tree/main/packages/solid)
 - [`@unpic/svelte`](https://github.com/ascorbic/unpic-img/tree/main/packages/svelte)
 - [`@unpic/astro`](https://github.com/ascorbic/unpic-img/tree/main/packages/astro)
+- [`@unpic/preact`](https://github.com/ascorbic/unpic-img/tree/main/packages/preact)
 
 ## FAQ
 
