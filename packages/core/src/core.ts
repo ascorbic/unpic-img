@@ -426,6 +426,7 @@ export function transformProps<
       aspectRatio,
       layout,
       breakpoints,
+      transformer,
     });
 
     if (layout === "fullWidth" || layout === "constrained") {
