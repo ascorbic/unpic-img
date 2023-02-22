@@ -9,7 +9,7 @@
     "publish": "yarn workspaces foreach -pv --include '@unpic/*' npm publish --tolerate-republish --access public"
   },
   "dependencies": {
-    "unpic": "^2.0.0"
+    "unpic": "^2.0.2"
   },
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "^5.50.0",
