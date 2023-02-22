@@ -4029,7 +4029,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@unpic/solid@workspace:packages/solid":
+"@unpic/solid@workspace:^, @unpic/solid@workspace:packages/solid":
   version: 0.0.0-use.local
   resolution: "@unpic/solid@workspace:packages/solid"
   dependencies:
@@ -16867,6 +16867,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "solid-demo@workspace:examples/solid"
   dependencies:
+    "@unpic/solid": "workspace:^"
     solid-js: ^1.6.10
     typescript: ^4.9.5
     vite: ^4.1.1
