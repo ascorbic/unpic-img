@@ -1,5 +1,5 @@
 {
-  "name": "my-qwik-basic-starter",
+  "name": "qwik-demo",
   "description": "App with Routing built-in (recommended)",
   "engines": {
     "node": ">=15.0.0"
@@ -9,8 +9,9 @@
     "build": "qwik build",
     "build.client": "vite build",
     "build.preview": "vite build --ssr src/entry.preview.tsx",
+    "build.server": "vite build -c adapters/netlify-edge/vite.config.ts",
     "build.types": "tsc --incremental --noEmit",
-    "deploy": "echo 'Run \"npm run qwik add\" to install a server adapter'",
+    "deploy": "netlify deploy --build",
     "dev": "vite --mode ssr",
     "dev.debug": "node --inspect-brk ./node_modules/vite/bin/vite.js --mode ssr --force",
     "fmt": "prettier --write .",
@@ -23,6 +24,7 @@
   "devDependencies": {
     "@builder.io/qwik": "0.19.0",
     "@builder.io/qwik-city": "0.3.0",
+    "@netlify/edge-functions": "^2.0.0",
     "@types/eslint": "8.21.1",
     "@types/node": "^18.14.0",
     "@types/node-fetch": "latest",
@@ -30,6 +32,7 @@
     "@typescript-eslint/parser": "5.52.0",
     "eslint": "8.34.0",
     "eslint-plugin-qwik": "0.19.0",
+    "netlify-cli": "^12.0.11",
     "node-fetch": "3.3.0",
     "prettier": "2.8.4",
     "typescript": "4.9.5",
