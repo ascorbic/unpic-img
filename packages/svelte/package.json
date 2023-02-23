@@ -36,15 +36,5 @@
       "svelte": "./dist/index.js"
     },
     "./package.json": "./package.json"
-  },
-  "typesVersions": {
-    ">4.0": {
-      "image.svelte": [
-        "./dist/image.d.ts"
-      ],
-      "index": [
-        "./dist/index.d.ts"
-      ]
-    }
   }
 }
