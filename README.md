@@ -152,12 +152,13 @@ You can use any image CDN supported by [unpic](https://github.com/ascorbic/unpic
 
 - Imgix, including Unsplash, DatoCMS, Sanity and Prismic
 - Contentful
-- Builder.io
 - Cloudinary
 - Shopify
+- Builder.io
+- Cloudflare Image Resizing
+- Storyblok
 - WordPress.com and Jetpack Site Accelerator
 - Bunny.net
-- Storyblok
 
 ## Browser support
 
