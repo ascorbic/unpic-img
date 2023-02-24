@@ -11,6 +11,6 @@
   "license": "MIT",
   "dependencies": {
     "@11ty/eleventy": "2.0.0",
-    "@11ty/eleventy-plugin-webc": "^0.8.1"
+    "@11ty/eleventy-plugin-webc": "latest"
   }
 }

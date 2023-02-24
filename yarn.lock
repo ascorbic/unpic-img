@@ -33,13 +33,23 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@11ty/eleventy-plugin-webc@npm:^0.8.1":
-  version: 0.8.1
-  resolution: "@11ty/eleventy-plugin-webc@npm:0.8.1"
+"@11ty/eleventy-plugin-bundle@npm:^1.0.1":
+  version: 1.0.1
+  resolution: "@11ty/eleventy-plugin-bundle@npm:1.0.1"
   dependencies:
-    "@11ty/eleventy": ^2.0.0-canary.19
-    "@11ty/webc": ^0.8.0
-  checksum: f54c55edc3741835a6016b430d3bad72af20d4835209e05cc9f5bbe7af40a023ae04ea9ed5c89abb6af54952d54946526b7393cda549c130b432c898337c44a7
+    debug: ^4.3.4
+  checksum: 3a55a32775e05c89ec7f252bdbec95495b963f7c6f3827c235168ef7b4293040727ea77f51f3070e9099d32a4fb1f337eabd696dd2d3fa8b68c8e8f25d31c990
+  languageName: node
+  linkType: hard
+
+"@11ty/eleventy-plugin-webc@npm:latest":
+  version: 0.9.0
+  resolution: "@11ty/eleventy-plugin-webc@npm:0.9.0"
+  dependencies:
+    "@11ty/eleventy": ^2.0.0
+    "@11ty/eleventy-plugin-bundle": ^1.0.1
+    "@11ty/webc": ^0.9.0
+  checksum: 843e8ba0d82b094e1fdb5ba5a1c0bab6c6cc1cff009bff1ecad0aa0dd0f01fa447c56857e3e13786d0fcd900c57a6505a62155cee43e0d92eb2fb0ee619df0f7
   languageName: node
   linkType: hard
 
@@ -52,7 +62,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@11ty/eleventy@npm:2.0.0, @11ty/eleventy@npm:^2.0.0-canary.19":
+"@11ty/eleventy@npm:2.0.0, @11ty/eleventy@npm:^2.0.0":
   version: 2.0.0
   resolution: "@11ty/eleventy@npm:2.0.0"
   dependencies:
@@ -102,18 +112,19 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@11ty/webc@npm:^0.8.0":
-  version: 0.8.0
-  resolution: "@11ty/webc@npm:0.8.0"
+"@11ty/webc@npm:^0.9.0":
+  version: 0.9.0
+  resolution: "@11ty/webc@npm:0.9.0"
   dependencies:
     "@11ty/eleventy-utils": ^1.0.1
-    css-tree: ^2.3.0
+    css-tree: ^2.3.1
     dependency-graph: ^0.11.0
     entities: ^4.4.0
     fast-glob: ^3.2.12
-    nanoid: ^4.0.0
+    nanoid: ^4.0.1
+    node-retrieve-globals: ^2.0.4
     parse5: ^7.1.2
-  checksum: 4e2620641b3a2f8649a8f89256e41db5ea91b7068957ef7b659316bfca970fe56473d067635d69d9be5afd6842411e77e30e419c6aaef34adf7c8975a7f126ba
+  checksum: 625ef585618cd970997e15c752e080147fe26335d2ac8fbc85ad491330dcc02ccff5243e9925dfc70338384d81933e390a2c83f8bb6cd33f96714bccc95c4688
   languageName: node
   linkType: hard
 
@@ -9755,7 +9766,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"css-tree@npm:^2.3.0":
+"css-tree@npm:^2.3.1":
   version: 2.3.1
   resolution: "css-tree@npm:2.3.1"
   dependencies:
@@ -18745,7 +18756,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"nanoid@npm:^4.0.0":
+"nanoid@npm:^4.0.1":
   version: 4.0.1
   resolution: "nanoid@npm:4.0.1"
   bin:
@@ -19190,6 +19201,16 @@ __metadata:
   version: 2.0.9
   resolution: "node-releases@npm:2.0.9"
   checksum: 3ae6b1b300dc72c1a628861093d339a01aa017d3ad9017b0478384be29d6f9c93b9e26c91fce79728cecaadc04d0f16834b7ae1a018730e3e54962ec8c6aa86f
+  languageName: node
+  linkType: hard
+
+"node-retrieve-globals@npm:^2.0.4":
+  version: 2.0.4
+  resolution: "node-retrieve-globals@npm:2.0.4"
+  dependencies:
+    acorn: ^8.8.2
+    acorn-walk: ^8.2.0
+  checksum: 502248892efc97a1c7ca22111637d2e86f219ea6ecc1db0f5520ce37579159fb47ba035d835af1294e75e6cc8e2fcb2e45f2df99a81d907926866f0c8c092992
   languageName: node
   linkType: hard
 
@@ -27596,7 +27617,7 @@ __metadata:
   resolution: "webc-demo@workspace:examples/webc"
   dependencies:
     "@11ty/eleventy": 2.0.0
-    "@11ty/eleventy-plugin-webc": ^0.8.1
+    "@11ty/eleventy-plugin-webc": latest
   languageName: unknown
   linkType: soft
 
