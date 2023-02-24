@@ -47,7 +47,6 @@ export default defineComponent({
         ...this.$props,
         ...this.$attrs,
       } as UnpicImageProps<ImgHTMLAttributes>);
-
     },
   },
 });
