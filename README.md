@@ -154,9 +154,11 @@ You can use any image CDN supported by [unpic](https://github.com/ascorbic/unpic
 - Contentful
 - Cloudinary
 - Shopify
+- Builder.io
+- Cloudflare Image Resizing
+- Storyblok
 - WordPress.com and Jetpack Site Accelerator
 - Bunny.net
-- Storyblok
 
 ## Browser support
 
