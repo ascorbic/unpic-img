@@ -1751,6 +1751,17 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@builder.io/qwik@npm:0.19.2":
+  version: 0.19.2
+  resolution: "@builder.io/qwik@npm:0.19.2"
+  peerDependencies:
+    undici: ^5.14.0
+  bin:
+    qwik: qwik.cjs
+  checksum: 44448bb9ab68e7cf89888deaf8e1b49a4d7e5e87bb2ff6635b014b29b6382b1a6ee64876997d3c914ee1a3c26fefa1986c658c175ebcff7566eb8567510d96da
+  languageName: node
+  linkType: hard
+
 "@colors/colors@npm:1.5.0":
   version: 1.5.0
   resolution: "@colors/colors@npm:1.5.0"
@@ -5586,7 +5597,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@unpic/qwik@workspace:packages/qwik"
   dependencies:
-    "@builder.io/qwik": 0.19.0
+    "@builder.io/qwik": 0.19.2
     "@types/eslint": 8.21.1
     "@types/node": ^18.14.0
     "@types/node-fetch": latest
