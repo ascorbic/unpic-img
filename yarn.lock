@@ -5607,7 +5607,7 @@ __metadata:
     eslint: 8.34.0
     eslint-plugin-qwik: latest
     node-fetch: 3.3.0
-    np: 7.6.1
+    np: 7.6.3
     prettier: 2.8.4
     typescript: 4.9.5
     undici: 5.20.0
@@ -18727,9 +18727,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"np@npm:7.6.1":
-  version: 7.6.1
-  resolution: "np@npm:7.6.1"
+"np@npm:7.6.3":
+  version: 7.6.3
+  resolution: "np@npm:7.6.3"
   dependencies:
     "@samverschueren/stream-to-observable": ^0.3.1
     any-observable: ^0.5.1
@@ -18772,7 +18772,7 @@ __metadata:
     update-notifier: ^5.0.1
   bin:
     np: source/cli.js
-  checksum: 388e7f218a4ffb676f45333ce035ce134d1f44a69908e747d568e19b64bca2184fb42a3ba75a9d3c4825693470c56fbc07e4dfdc6ee1aae34b7f9f830a8755d4
+  checksum: e887adf79269640629400ffba2c21c19262d79431076508195f0ca7e3f0e3a9c4f50f058402d0bf05f63c9eac840015c0d20386f67a3498961a206051b3d2dcb
   languageName: node
   linkType: hard
 
