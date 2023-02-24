@@ -340,6 +340,9 @@ export function transformProps<
 }: UnpicImageProps<TImageAttributes, TStyle>): TImageAttributes {
   transformer ||= cdn ? getTransformerForCdn(cdn) : getTransformerForUrl(src);
 
+  width = (width && Number(width)) || undefined;
+  height = (height && Number(height)) || undefined;
+
   // High priority images should be loaded eagerly
   if (priority) {
     props.loading ||= "eager";
