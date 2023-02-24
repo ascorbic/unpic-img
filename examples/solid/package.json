@@ -14,6 +14,7 @@
     "vite-plugin-solid": "^2.5.0"
   },
   "dependencies": {
+    "@unpic/solid": "workspace:^",
     "solid-js": "^1.6.10"
   }
 }

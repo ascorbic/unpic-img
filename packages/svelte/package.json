@@ -1,6 +1,6 @@
 {
   "name": "@unpic/svelte",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "scripts": {
     "dev": "vite dev",
     "build": "svelte-kit sync && svelte-package",
@@ -36,15 +36,5 @@
       "svelte": "./dist/index.js"
     },
     "./package.json": "./package.json"
-  },
-  "typesVersions": {
-    ">4.0": {
-      "image.svelte": [
-        "./dist/image.d.ts"
-      ],
-      "index": [
-        "./dist/index.d.ts"
-      ]
-    }
   }
 }

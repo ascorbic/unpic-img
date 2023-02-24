@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.0.8](https://github.com/ascorbic/unpic-img/compare/core-v0.0.7...core-v0.0.8) (2023-02-21)
+
+
+### Bug Fixes
+
+* pass `transformer` to srcset generate function ([#27](https://github.com/ascorbic/unpic-img/issues/27)) ([21f506d](https://github.com/ascorbic/unpic-img/commit/21f506d7737584f14faf2f82816c503cb7811019))
+
 ## [0.0.7](https://github.com/ascorbic/unpic-img/compare/core-v0.0.6...core-v0.0.7) (2023-02-21)
 
 

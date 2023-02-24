@@ -1,0 +1,33 @@
+{
+  "name": "@unpic/preact",
+  "version": "0.0.1",
+  "files": [
+    "dist",
+    "src"
+  ],
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "require": "./dist/index.js",
+      "import": "./dist/index.mjs"
+    }
+  },
+  "scripts": {
+    "build": "tsup src/index.ts --format cjs,esm --dts --clean",
+    "prepublishOnly": "yarn build"
+  },
+  "devDependencies": {
+    "preact": "^10.12.1",
+    "tsup": "^6.6.0",
+    "typescript": "^4.9.5"
+  },
+  "dependencies": {
+    "@unpic/core": "workspace:^"
+  },
+  "peerDependencies": {
+    "preact": "*"
+  }
+}

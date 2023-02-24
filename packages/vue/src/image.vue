@@ -12,6 +12,10 @@ import { defineComponent, ImgHTMLAttributes } from "vue";
 export default defineComponent({
   name: "unpic-image",
   props: {
+    src: {
+      type: String,
+      required: true,
+    },
     layout: {
       type: String,
       required: false,
@@ -26,6 +30,14 @@ export default defineComponent({
     },
     cdn: {
       type: String,
+      required: false,
+    },
+    width: {
+      type: Number,
+      required: false,
+    },
+    height: {
+      type: Number,
       required: false,
     },
   },

@@ -1,5 +1,11 @@
 # Changelog
 
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @unpic/core bumped to 0.0.8
+
 ## [0.0.7](https://github.com/ascorbic/unpic-img/compare/react-v0.0.6...react-v0.0.7) (2023-02-21)
 
 

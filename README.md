@@ -1,8 +1,18 @@
-# unpic img 🖼 📐
+<h1 align="center">unpic-img 📐</h1>
 
-A cross-framework component for responsive, high-performance images using image CDNs.
+<p align="center">A cross-framework component for responsive, high-performance images using image CDNs</p>
 
-[`@unpic/react`](https://github.com/ascorbic/unpic-img/tree/main/packages/react) • [`@unpic/vue`](https://github.com/ascorbic/unpic-img/tree/main/packages/vue) • [`@unpic/solid`](https://github.com/ascorbic/unpic-img/tree/main/packages/solid) • [`@unpic/svelte`](https://github.com/ascorbic/unpic-img/tree/main/packages/svelte) • [`@unpic/astro`](https://github.com/ascorbic/unpic-img/tree/main/packages/astro)
+<h3 align="center">
+
+[<img src="https://raw.githubusercontent.com/gilbarbara/logos/main/logos/react.svg" height="16" alt="react" /> React](https://github.com/ascorbic/unpic-img/tree/main/packages/react) • 
+[<img src="https://raw.githubusercontent.com/gilbarbara/logos/main/logos/vue.svg" height="16" alt="vue" /> Vue](https://github.com/ascorbic/unpic-img/tree/main/packages/vue)  • 
+[<img src="https://raw.githubusercontent.com/gilbarbara/logos/main/logos/solidjs-icon.svg" height="16" alt="solidjs" /> SolidJS](https://github.com/ascorbic/unpic-img/tree/main/packages/solid)  • 
+[<img src="https://raw.githubusercontent.com/gilbarbara/logos/main/logos/svelte-icon.svg" height="16" alt="svelte" /> Svelte](https://github.com/ascorbic/unpic-img/tree/main/packages/svelte)  • 
+[<img src="https://raw.githubusercontent.com/gilbarbara/logos/main/logos/astro.svg" height="16" alt="astro" /> Astro](https://github.com/ascorbic/unpic-img/tree/main/packages/astro)  • 
+[<img src="https://raw.githubusercontent.com/gilbarbara/logos/main/logos/preact.svg" height="16" alt="preact" /> Preact](https://github.com/ascorbic/unpic-img/tree/main/packages/preact)  • 
+[<img src="https://raw.githubusercontent.com/gilbarbara/logos/main/logos/qwik.svg" height="16" alt="qwik" /> Qwik](https://github.com/ascorbic/unpic-img/tree/main/packages/qwik)
+
+</h3>
 
 ## Features
 
@@ -17,8 +27,6 @@ A cross-framework component for responsive, high-performance images using image 
 - Uses [unpic](https://github.com/ascorbic/unpic) to support most image CDNs, including Cloudinary, Imgix, and Shopify.
 - Can generate a low-res background image for a blurred placeholder effect.
 
-This library is a work in progress. It currently supports React, Vue and SolidJS.
-
 ## Usage
 
 For details of usage, see the individual framework packages:
@@ -28,6 +36,8 @@ For details of usage, see the individual framework packages:
 - [`@unpic/solid`](https://github.com/ascorbic/unpic-img/tree/main/packages/solid)
 - [`@unpic/svelte`](https://github.com/ascorbic/unpic-img/tree/main/packages/svelte)
 - [`@unpic/astro`](https://github.com/ascorbic/unpic-img/tree/main/packages/astro)
+- [`@unpic/preact`](https://github.com/ascorbic/unpic-img/tree/main/packages/preact)
+- [`@unpic/qwik`](https://github.com/ascorbic/unpic-img/tree/main/packages/qwik)
 
 ## FAQ
 
@@ -144,9 +154,11 @@ You can use any image CDN supported by [unpic](https://github.com/ascorbic/unpic
 - Contentful
 - Cloudinary
 - Shopify
+- Builder.io
+- Cloudflare Image Resizing
+- Storyblok
 - WordPress.com and Jetpack Site Accelerator
 - Bunny.net
-- Storyblok
 
 ## Browser support
 

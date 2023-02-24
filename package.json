@@ -3,19 +3,22 @@
   "private": true,
   "license": "MIT",
   "scripts": {
-    "build:demo": "yarn workspaces foreach -ptvR --from react-demo run build",
-    "build:packages": "yarn workspaces foreach -ptvR --from '{@unpic/solid,@unpic/react,@unpic/vue,@unpic/svelte}' run build",
-    "publish": "yarn workspaces foreach --include '@unpic/*' npm publish --tolerate-republish --access public"
+    "build:demo": "yarn workspaces foreach -ptvR --from $0 run build",
+    "build:packages": "yarn workspaces foreach -ptvR --from '@unpic/*' run build",
+    "lint:publint": "yarn workspaces foreach -pv --include '@unpic/*' exec publint",
+    "publish": "yarn workspaces foreach -pv --include '@unpic/*' npm publish --tolerate-republish --access public"
   },
   "dependencies": {
-    "unpic": "^2.0.0"
+    "unpic": "^2.0.2"
   },
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "^5.50.0",
     "@typescript-eslint/parser": "^5.50.0",
     "eslint": "^8.33.0",
+    "npm-run-all": "^4.1.5",
     "prettier": "^2.8.3",
     "process": "^0.11.10",
+    "publint": "^0.1.9",
     "typescript": "^4.9.5"
   },
   "packageManager": "yarn@3.4.1",
