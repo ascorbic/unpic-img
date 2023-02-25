@@ -16,4 +16,8 @@ export default defineConfig({
       external: ["vue", "@unpic/core"],
     },
   },
+  test: {
+    globals: true,
+    environment: "jsdom",
+  },
 });

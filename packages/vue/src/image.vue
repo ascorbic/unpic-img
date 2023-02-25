@@ -33,10 +33,14 @@ export default defineComponent({
       required: false,
     },
     width: {
-      type: Number,
+      type: [String, Number],
       required: false,
     },
     height: {
+      type: [String, Number],
+      required: false,
+    },
+    aspectRatio: {
       type: Number,
       required: false,
     },
