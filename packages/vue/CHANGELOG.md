@@ -6,6 +6,21 @@
   * dependencies
     * @unpic/core bumped to 0.0.8
 
+## [0.0.7](https://github.com/ascorbic/unpic-img/compare/vue-v0.0.6...vue-v0.0.7) (2023-02-25)
+
+
+### Bug Fixes
+
+* **vue:** add other required props ([#46](https://github.com/ascorbic/unpic-img/issues/46)) ([55d0584](https://github.com/ascorbic/unpic-img/commit/55d058437386fba363934d3c883d1638084d0a84))
+* **vue:** handle string props ([#48](https://github.com/ascorbic/unpic-img/issues/48)) ([b62413d](https://github.com/ascorbic/unpic-img/commit/b62413d5d3b6345b28d54568b42d7450c241318a))
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @unpic/core bumped to 0.0.9
+
 ## [0.0.5](https://github.com/ascorbic/unpic-img/compare/vue-v0.0.4...vue-v0.0.5) (2023-02-21)
 
 
