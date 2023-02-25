@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.0.9](https://github.com/ascorbic/unpic-img/compare/core-v0.0.8...core-v0.0.9) (2023-02-25)
+
+
+### Bug Fixes
+
+* **vue:** handle string props ([#48](https://github.com/ascorbic/unpic-img/issues/48)) ([b62413d](https://github.com/ascorbic/unpic-img/commit/b62413d5d3b6345b28d54568b42d7450c241318a))
+
 ## [0.0.8](https://github.com/ascorbic/unpic-img/compare/core-v0.0.7...core-v0.0.8) (2023-02-21)
 
 

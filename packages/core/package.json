@@ -1,6 +1,6 @@
 {
   "name": "@unpic/core",
-  "version": "0.0.8",
+  "version": "0.0.9",
   "packageManager": "yarn@3.4.1",
   "scripts": {
     "build": "tsup src/core.ts --format cjs,esm --dts --clean",
