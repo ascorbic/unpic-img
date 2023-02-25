@@ -11,7 +11,7 @@
 [<img src="https://raw.githubusercontent.com/gilbarbara/logos/main/logos/astro.svg" height="16" alt="astro" /> Astro](https://github.com/ascorbic/unpic-img/tree/main/packages/astro) •
 [<img src="https://raw.githubusercontent.com/gilbarbara/logos/main/logos/preact.svg" height="16" alt="preact" /> Preact](https://github.com/ascorbic/unpic-img/tree/main/packages/preact) •
 [<img src="https://raw.githubusercontent.com/gilbarbara/logos/main/logos/qwik.svg" height="16" alt="qwik" /> Qwik](https://github.com/ascorbic/unpic-img/tree/main/packages/qwik) •
-[<img src="https://raw.githubusercontent.com/gilbarbara/logos/main/logos/11ty.svg" height="16" alt="webc" /> WebC](https://github.com/ascorbic/unpic-img/tree/main/packages/webc)
+[<img src="https://raw.githubusercontent.com/gilbarbara/logos/main/logos/eleventy.svg" height="16" alt="webc" /> WebC](https://github.com/ascorbic/unpic-img/tree/main/packages/webc)
 
 </h3>
 
