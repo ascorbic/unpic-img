@@ -29,7 +29,7 @@
     "jsdom": "^21.1.0",
     "tsup": "^6.6.0",
     "typescript": "^4.9.5",
-    "vitest": "^0.28.5"
+    "vitest": "^0.29.0"
   },
   "dependencies": {
     "@unpic/core": "workspace:^"
