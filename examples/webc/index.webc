@@ -1,7 +1,7 @@
 ---
 layout: layout.webc
 ---
-	<unpic-image src="hi.jpg" width="100" alt="yes" layout="fixed"></unpic-image>
+<unpic-image src="https://cdn.shopify.com/static/sample-images/bath_grande_crop_center.jpeg" height="600" width="800" alt="yes" layout="constrained"></unpic-image>
 <h1>Eleventy WebC Number Counter Demo</h1>
 
 <form method="get">

@@ -1,0 +1,16 @@
+{
+  "name": "webc",
+  "packageManager": "yarn@3.4.1",
+  "dependencies": {
+    "@unpic/core": "workspace:^",
+    "style-object-to-css-string": "^1.0.1"
+  },
+  "devDependencies": {
+    "@11ty/webc": "^0.9.0",
+    "jsdom": "^21.1.0",
+    "vitest": "^0.28.5"
+  },
+  "scripts": {
+    "test": "vitest"
+  }
+}
