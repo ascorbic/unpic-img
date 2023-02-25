@@ -2,26 +2,41 @@ import { describe, test } from "vitest";
 import { WebC } from "@11ty/webc";
 import { join } from "path";
 import { JSDOM } from "jsdom";
+import {
+  testCases,
+  expectPropsToMatchTransformed,
+} from "../../../test/test-helpers";
 
-describe("the WebC component", () => {
-  test("should render", async () => {
-    const page = new WebC();
-    page.defineComponents([join(__dirname, "../unpic-img.webc")]);
-    page.setContent(/* html */ `
-<unpic-img
-  src="https://cdn.shopify.com/static/sample-images/bath_grande_crop_center.jpeg"
-  height="600"
-  width="800"
-  alt="yes"
-  layout="constrained"
->
-</unpic-img>
+function generateWebCTag(
+  name: string,
+  attributes: Record<string, string | number | boolean>
+) {
+  const attr = Object.entries(attributes)
+    .map(([key, value]) => `${key}="${value}"`)
+    .join(" ");
 
-`);
-    const { html } = await page.compile();
+  return `<${name} ${attr}></${name}>`;
+}
 
-    const dom = new JSDOM(html);
+describe("the WebC component", async () => {
+  const page = new WebC();
+  page.defineComponents([join(__dirname, "../unpic-img.webc")]);
 
-    console.log(dom.window.document.querySelector("img").src);
-  });
+  const tags = testCases
+    .map((props) => generateWebCTag("unpic-img", props))
+    .join("\n");
+  page.setContent(tags);
+
+  const { html } = await page.compile();
+  const dom = new JSDOM(html);
+  const imgs = dom.window.document.querySelectorAll("img");
+
+  for (const idx in testCases) {
+    test(`renders a ${testCases[idx]} image`, async () => {
+      expectPropsToMatchTransformed(
+        imgs[idx] as HTMLImageElement,
+        testCases[idx]
+      );
+    });
+  }
 });

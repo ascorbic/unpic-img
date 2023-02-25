@@ -1,15 +1,12 @@
 ---
 layout: layout.webc
 ---
-<unpic-image src="https://cdn.shopify.com/static/sample-images/bath_grande_crop_center.jpeg" height="600" width="800" alt="yes" layout="constrained"></unpic-image>
-<h1>Eleventy WebC Number Counter Demo</h1>
 
-<form method="get">
-	<button type="submit">Submit</button>
-</form>
-
-<template webc:is="footer" webc:type="11ty" 11ty:type="md">
-See this [code on GitHub](https://github.com/11ty/demo-webc-counter).
-
-_This was originally a demo for a talk given at the [Eleventy Meetup: Adding Components to WebC with Eleventy](https://www.zachleat.com/web/webc-in-eleventy/)._
-</template>
+<unpic-img
+  webc:import="npm:@unpic/webc"
+  src="https://cdn.shopify.com/static/sample-images/bath_grande_crop_center.jpeg"
+  height="600"
+  width="800"
+  alt="yes"
+  layout="constrained"
+></unpic-img>

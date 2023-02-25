@@ -1,7 +1,0 @@
-<script webc:type="js" webc:root="override">
-const renderStyle = require("style-object-to-css-string")
-const { transformProps } = require("@unpic/core");
-const {"webc:type": _, style, ...props} = transformProps(webc.attributes);
-
-`<img ${webc.renderAttributes(props)} style="${renderStyle(style)}">`;
-</script>
