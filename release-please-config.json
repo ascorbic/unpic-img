@@ -7,7 +7,8 @@
     "packages/vue": {},
     "packages/svelte": {},
     "packages/astro": {},
-    "packages/qwik": {
+    "packages/qwik": {},
+    "packages/webc": {
       "release-as": "0.0.1"
     }
   },

@@ -1,0 +1,14 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="description" content="">
+		<title></title>
+		<style @raw="getCSS(page.url)" webc:keep></style>
+	</head>
+	<body>
+		<div @raw="content" webc:nokeep></div>
+		<script type="module" @raw="getJS(page.url)" webc:keep></script>
+	</body>
+</html>

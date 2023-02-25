@@ -18,27 +18,20 @@
   ],
   "sideEffects": false,
   "type": "module",
-  "main": "./dist/index.cjs",
+  "main": "./dist/index.js",
   "module": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "exports": {
-    "development": {
-      "import": {
-        "types": "./dist/index.d.ts",
-        "default": "./dist/dev.js"
-      },
-      "require": "./dist/dev.cjs"
-    },
     "import": {
       "types": "./dist/index.d.ts",
       "default": "./dist/index.js"
-    },
-    "require": "./dist/index.cjs"
+    }
   },
   "typesVersions": {},
   "scripts": {
     "dev": "vite serve dev",
     "build": "tsup",
+    "vite": "vite build",
     "clean": "rm -rf dist",
     "test": "vitest",
     "test:ssr": "yarn run test --mode ssr",
