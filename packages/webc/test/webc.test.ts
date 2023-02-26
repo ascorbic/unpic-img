@@ -32,7 +32,7 @@ describe("the WebC component", async () => {
   const imgs = dom.window.document.querySelectorAll("img");
 
   for (const idx in testCases) {
-    test(`renders a ${testCases[idx]} image`, async () => {
+    test(`renders a ${testCases[idx].layout} image`, async () => {
       expectPropsToMatchTransformed(
         imgs[idx] as HTMLImageElement,
         testCases[idx]
