@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.0.10](https://github.com/ascorbic/unpic-img/compare/core-v0.0.9...core-v0.0.10) (2023-02-26)
+
+
+### Bug Fixes
+
+* **core:** upgrade unpic ([#54](https://github.com/ascorbic/unpic-img/issues/54)) ([ff32ca3](https://github.com/ascorbic/unpic-img/commit/ff32ca3748061311020204930d7500e9454560d4))
+
 ## [0.0.9](https://github.com/ascorbic/unpic-img/compare/core-v0.0.8...core-v0.0.9) (2023-02-25)
 
 
