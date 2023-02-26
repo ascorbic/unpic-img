@@ -11,7 +11,7 @@
     "tsup": "^6.5.0"
   },
   "dependencies": {
-    "unpic": "^2.0.0"
+    "unpic": "^2.1.0"
   },
   "main": "./dist/core.js",
   "module": "./dist/core.mjs",
