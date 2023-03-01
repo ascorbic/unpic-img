@@ -301,7 +301,7 @@ export const getSrcSet = ({
     .map((bp) => {
       let transformedHeight;
       if (height && aspectRatio) {
-        transformedHeight = Math.round(bp * aspectRatio);
+        transformedHeight = Math.round(bp / aspectRatio);
       }
       // Not sure why TS isn't narrowing the type here
       // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
