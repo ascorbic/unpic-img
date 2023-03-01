@@ -26,7 +26,7 @@
 - Delivers modern image formats, including WebP and AVIF if supported by the browser.
 - No build step or server-side rendering required for the images: uses your existing image CDN or CMS, with no additional configuration.
 - Uses [unpic](https://github.com/ascorbic/unpic) to support most image CDNs, including Cloudinary, Imgix, and Shopify.
-- Can generate a low-res background image for a blurred placeholder effect.
+- Can generate a low-res background image for a blurred placeholder effect, or use with [`@unpic/placeholder`](https://github.com/ascorbic/unpic-placeholder/) for more options.
 
 ## Usage
 
@@ -123,7 +123,9 @@ By default, images are loaded lazily. If `priority` is set to `true`, the image 
 
 ### `background`
 
-Either an image URL, CSS gradient or CSS colour value. If set to `auto`, a low-resolution version of the image will be rendered as a background image, with a blurred placeholder effect. This is still loaded from the remote server, so if you can instead provide an inline base64-encoded version of the image or background colour, you should do that instead. Bear in mind that this is not removed after the image loads, so it will be visible if the image has transparency.
+Either an image URL, CSS gradient or CSS colour value. If set to `auto`, a low-resolution version of the image will be rendered as a background image, with a blurred placeholder effect. This is still loaded from the remote server, so if you can instead provide an inline base64-encoded version of the image or background colour, you should do that instead. Look at [`@unpic/placeholder`](https://github.com/ascorbic/unpic-placeholder/) for a library that can generate these placeholders.
+
+Bear in mind that this is not removed after the image loads, so it will be visible if the image has transparency.
 
 ### `aspectRatio`
 
