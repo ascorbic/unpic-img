@@ -26,14 +26,14 @@ The requires `@11ty/webc` version 0.9.0 or later, because it uses the new `webc.
 If you are using this with Eleventy, there are a number of ways of defining WebC components. In the example we're using `webc:import`, but [check out the docs](https://www.11ty.dev/docs/languages/webc/#defining-components) for other options that handle imports automatically. You can then use the component in your templates:
 
 ```html
-<unpic-image
+<unpic-img
   webc:import="npm:@unpic/webc"
   src="https://cdn.shopify.com/static/sample-images/bath_grande_crop_center.jpeg"
   layout="constrained"
   width="{800}"
   height="{600}"
   alt="A lovely bath"
-></unpic-image>
+></unpic-img>
 ```
 
 For the supported props, see [the main README](https://github.com/ascorbic/unpic-img/#props).

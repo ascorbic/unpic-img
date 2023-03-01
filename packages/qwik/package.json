@@ -1,6 +1,6 @@
 {
   "name": "@unpic/qwik",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Qwik component for responsive, high-performance images",
   "main": "./lib/index.qwik.mjs",
   "qwik": "./lib/index.qwik.mjs",
@@ -35,7 +35,7 @@
     "qwik": "qwik"
   },
   "devDependencies": {
-    "@builder.io/qwik": "0.20.0",
+    "@builder.io/qwik": "0.20.1",
     "@types/eslint": "8.21.1",
     "@types/node": "^18.14.0",
     "@types/node-fetch": "latest",
