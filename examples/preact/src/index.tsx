@@ -4,7 +4,7 @@ export default function App() {
   return (
     <div>
       <Image
-        src="https://images.unsplash.com/photo-1674255909399-9bcb2cab6489?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=996&q=80"
+        src="https://images.unsplash.com/photo-1617718295766-0f839c2853e7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTczfHxyYWluZm9yZXN0JTIwYmVhY2h8ZW58MHx8MHx8&auto=format&fit=crop&w=900&q=60"
         layout="fullWidth"
         alt=""
         priority
@@ -12,7 +12,7 @@ export default function App() {
         background="auto"
       />
       <Image
-        src="https://cdn.shopify.com/static/sample-images/bath_grande_crop_center.jpeg"
+        src="hhttps://cdn.shopify.com/static/sample-images/garnished.jpeg"
         layout="constrained"
         width={800}
         height={600}
