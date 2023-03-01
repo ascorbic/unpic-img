@@ -11,7 +11,7 @@
   background="auto"
 />
 <Image
-  src="hhttps://cdn.shopify.com/static/sample-images/garnished.jpeg"
+  src="https://cdn.shopify.com/static/sample-images/garnished.jpeg"
   layout="constrained"
   width={800}
   height={600}
