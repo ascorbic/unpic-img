@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.0.11](https://github.com/ascorbic/unpic-img/compare/core-v0.0.10...core-v0.0.11) (2023-03-01)
+
+
+### Bug Fixes
+
+* **core:** fix aspect ratio calculation for srcset ([#60](https://github.com/ascorbic/unpic-img/issues/60)) ([126c6b8](https://github.com/ascorbic/unpic-img/commit/126c6b8398109359be283d6f7e14d956a0fd06eb))
+
 ## [0.0.10](https://github.com/ascorbic/unpic-img/compare/core-v0.0.9...core-v0.0.10) (2023-02-26)
 
 
