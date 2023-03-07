@@ -1,6 +1,6 @@
 {
   "name": "@unpic/qwik",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "Qwik component for responsive, high-performance images",
   "main": "./lib/index.qwik.mjs",
   "qwik": "./lib/index.qwik.mjs",
