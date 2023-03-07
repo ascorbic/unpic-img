@@ -10,7 +10,10 @@
         "unpic"
       ],
       "rangeStrategy": "bump",
-      "bumpVersion": "patch"
+      "bumpVersion": "patch",
+      "extends": [
+        ":automergePatch"
+      ]
     }
   ]
 }
