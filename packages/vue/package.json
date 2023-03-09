@@ -2,6 +2,13 @@
   "name": "@unpic/vue",
   "version": "0.0.11",
   "type": "module",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ascorbic/unpic-img",
+    "directory": "packages/vue"
+  },
+  "homepage": "https://github.com/ascorbic/unpic-img#readme",
   "files": [
     "dist"
   ],

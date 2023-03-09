@@ -2,6 +2,13 @@
   "name": "@unpic/qwik",
   "version": "0.0.7",
   "description": "Qwik component for responsive, high-performance images",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ascorbic/unpic-img",
+    "directory": "packages/astro"
+  },
+  "homepage": "https://github.com/ascorbic/unpic-img#readme",
   "main": "./lib/index.qwik.mjs",
   "qwik": "./lib/index.qwik.mjs",
   "types": "./lib-types/index.d.ts",

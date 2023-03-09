@@ -1,6 +1,13 @@
 {
   "name": "@unpic/webc",
   "packageManager": "yarn@3.4.1",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ascorbic/unpic-img",
+    "directory": "packages/webc"
+  },
+  "homepage": "https://github.com/ascorbic/unpic-img#readme",
   "dependencies": {
     "@unpic/core": "workspace:^",
     "style-object-to-css-string": "^1.0.1"
