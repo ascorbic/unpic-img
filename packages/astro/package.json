@@ -3,6 +3,12 @@
   "version": "0.0.7",
   "type": "module",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ascorbic/unpic-img",
+    "directory": "packages/astro"
+  },
+  "homepage": "https://github.com/ascorbic/unpic-img#readme",
   "exports": {
     ".": "./index.ts"
   },

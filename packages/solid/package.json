@@ -3,13 +3,13 @@
   "name": "@unpic/solid",
   "description": "SolidJS component for responsive, high-performance images.",
   "license": "MIT",
-  "author": "ascorbic",
-  "contributors": [],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ascorbic/unpic-img.git"
+    "url": "https://github.com/ascorbic/unpic-img",
+    "directory": "packages/solid"
   },
   "homepage": "https://github.com/ascorbic/unpic-img#readme",
+  "author": "ascorbic",
   "bugs": {
     "url": "https://github.com/ascorbic/unpic-img/issues"
   },
