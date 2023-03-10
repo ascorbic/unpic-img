@@ -2,7 +2,7 @@
   "packages/core": "0.0.14",
   "packages/react": "0.0.14",
   "packages/solid": "0.0.12",
-  "packages/svelte": "0.0.12",
+  "packages/svelte": "0.0.13",
   "packages/vue": "0.0.12",
   "packages/astro": "0.0.8",
   "packages/preact": "0.0.7",
