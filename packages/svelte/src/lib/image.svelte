@@ -5,8 +5,8 @@
 
   type $$Props = UnpicImageProps<HTMLImgAttributes, string | null>
 
-  const { style: parentStyle, ...props } = $$props as $$Props
-  const { alt, style: styleObj, ...transformedProps } = transformProps({...props, style: {} as Record<string, string>})
-  const style = [styleToCss(styleObj), parentStyle].filter(Boolean).join(';')
+  $: ({ style: parentStyle, ...props } = $$props as $$Props)
+  $: ({ alt, style: styleObj, ...transformedProps } = transformProps({...props, style: {} as Record<string, string>}))
+  $: style = [styleToCss(styleObj), parentStyle].filter(Boolean).join(';')
 </script>
 <img {alt} {style} {...transformedProps} />
