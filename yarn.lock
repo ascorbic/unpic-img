@@ -6164,6 +6164,8 @@ __metadata:
     "@sveltejs/kit": ^1.5.0
     "@sveltejs/package": ^2.0.0
     "@unpic/core": "workspace:^"
+    prettier: ^2.8.3
+    prettier-plugin-svelte: ^2.8.1
     style-object-to-css-string: ^1.0.1
     svelte: ^3.54.0
     svelte-check: ^3.0.1
@@ -22344,6 +22346,16 @@ __metadata:
     sass-formatter: ^0.7.5
     synckit: ^0.8.4
   checksum: b4b8515d1f31984d6856783eb0163020a26c106284f01b59870b09110f1310aa916328f1622a7a9cd87b229c482ff5cb283bcbdad1b6a8816fabea9e1341a808
+  languageName: node
+  linkType: hard
+
+"prettier-plugin-svelte@npm:^2.8.1":
+  version: 2.9.0
+  resolution: "prettier-plugin-svelte@npm:2.9.0"
+  peerDependencies:
+    prettier: ^1.16.4 || ^2.0.0
+    svelte: ^3.2.0
+  checksum: 2d74a960783a1974a4818ebac25145ee26095c5652a777584b7eb8f08907702160263538396c03dce7f9bcd5b313f914b234eb809ccc1550a5933fc5e919ca88
   languageName: node
   linkType: hard
 
