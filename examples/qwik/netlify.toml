@@ -1,2 +1,2 @@
 [build]
-ignore = "../../scripts/git-diff.sh qwik"
+ignore = "if [ $CACHED_COMMIT_REF == $COMMIT_REF ]; then (exit 1); else git diff --quiet $CACHED_COMMIT_REF $COMMIT_REF ../..; fi;"
