@@ -33,7 +33,6 @@ npm install @unpic/svelte
   height={600}
   alt="A lovely bath"
 />
-
 ```
 
 For the supported props, see [the main README](https://github.com/ascorbic/unpic-img/#props).
