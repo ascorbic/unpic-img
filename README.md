@@ -153,15 +153,17 @@ Any prop supported by `<img>` tags can be passed in, except `srcset` which is ge
 
 You can use any image CDN supported by [unpic](https://github.com/ascorbic/unpic), including:
 
-- Imgix, including Unsplash, DatoCMS, Sanity and Prismic
-- Contentful
-- Cloudinary
-- Shopify
 - Builder.io
+- Bunny.net
 - Cloudflare Image Resizing
+- Cloudinary
+- Contentful
+- Imgix, including Unsplash, DatoCMS, Sanity and Prismic
+- Kontent.ai
+- Next.js / Vercel
+- Shopify
 - Storyblok
 - WordPress.com and Jetpack Site Accelerator
-- Bunny.net
 
 ## Browser support
 
