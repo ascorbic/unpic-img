@@ -17,7 +17,7 @@ export interface ImageSourceOptions {
   width?: number;
   height?: number;
   aspectRatio?: number;
-  layout: Layout;
+  layout?: Layout;
   breakpoints?: number[];
   transformer?: UrlTransformer;
   cdn?: ImageCdn;
@@ -283,7 +283,7 @@ export const getBreakpoints = ({
 export const getSrcSet = ({
   src,
   width,
-  layout,
+  layout = "constrained",
   height,
   aspectRatio,
   breakpoints,
@@ -297,7 +297,7 @@ export const getSrcSet = ({
   }
   breakpoints ||= getBreakpoints({ width, layout });
   return breakpoints
-    .sort()
+    .sort((a, b) => a - b)
     .map((bp) => {
       let transformedHeight;
       if (height && aspectRatio) {
@@ -329,7 +329,7 @@ export function transformProps<
   width,
   height,
   priority,
-  layout,
+  layout = "constrained",
   aspectRatio,
   cdn,
   transformer,
