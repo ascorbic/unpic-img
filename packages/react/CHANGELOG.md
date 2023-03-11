@@ -42,6 +42,20 @@
   * dependencies
     * @unpic/core bumped to 0.0.14
 
+## [0.0.15](https://github.com/ascorbic/unpic-img/compare/react-v0.0.14...react-v0.0.15) (2023-03-11)
+
+
+### Features
+
+* **react:** add Next.js component ([#91](https://github.com/ascorbic/unpic-img/issues/91)) ([5ad1aa2](https://github.com/ascorbic/unpic-img/commit/5ad1aa2faca4836f68ce1307c5afe1f1682117e4))
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @unpic/core bumped to 0.0.15
+
 ## [0.0.7](https://github.com/ascorbic/unpic-img/compare/react-v0.0.6...react-v0.0.7) (2023-02-21)
 
 

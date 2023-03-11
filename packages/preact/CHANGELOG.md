@@ -36,6 +36,12 @@
   * dependencies
     * @unpic/core bumped to 0.0.14
 
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @unpic/core bumped to 0.0.15
+
 ## 0.0.1 (2023-02-21)
 
 
