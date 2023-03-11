@@ -6090,7 +6090,7 @@ __metadata:
   resolution: "@unpic/core@workspace:packages/core"
   dependencies:
     tsup: ^6.5.0
-    unpic: ^3.0.0
+    unpic: ^3.0.1
   languageName: unknown
   linkType: soft
 
@@ -27292,15 +27292,15 @@ __metadata:
     process: ^0.11.10
     publint: ^0.1.9
     typescript: ^4.9.5
-    unpic: ^3.0.0
+    unpic: ^3.0.1
     vitest: ^0.29.0
   languageName: unknown
   linkType: soft
 
-"unpic@npm:^3.0.0":
-  version: 3.0.0
-  resolution: "unpic@npm:3.0.0"
-  checksum: 2ce92a445a19ad117835c7c92fb322b89189ddd9772011a288113c4cc29d79fde6abfa2f9e507ce3dfc3c4f82ee89f51f00bbc6b9497dba434eb902190b0325a
+"unpic@npm:^3.0.1":
+  version: 3.0.1
+  resolution: "unpic@npm:3.0.1"
+  checksum: 535b2e8b9493ab0d347769ed5d27cda42753bd3eff72bc614ef3f6778ae73260dff98ae1f6d5f627b30ffed1d7d48719aa2dad780dae95aee32af4db58025f7d
   languageName: node
   linkType: hard
 
