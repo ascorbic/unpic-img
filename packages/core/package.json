@@ -3,6 +3,7 @@
   "version": "0.0.14",
   "packageManager": "yarn@3.4.1",
   "license": "MIT",
+  "sideEffects": false,
   "repository": {
     "type": "git",
     "url": "https://github.com/ascorbic/unpic-img",
