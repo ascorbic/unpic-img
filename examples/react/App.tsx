@@ -13,7 +13,6 @@ export function App() {
       />
       <Image
         src="https://cdn.shopify.com/static/sample-images/garnished.jpeg"
-        layout="constrained"
         width={800}
         height={600}
         alt="Shopify"

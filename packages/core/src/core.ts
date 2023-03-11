@@ -110,7 +110,8 @@ export type ConstrainedImageProps<
   TImageAttributes extends CoreImageAttributes<TStyle>,
   TStyle
 > = ImageWithSizeProps<TImageAttributes, TStyle> & {
-  layout: "constrained";
+  // Default is `constrained`, so this is optional
+  layout?: "constrained";
 };
 
 export type FullWidthImageProps<
