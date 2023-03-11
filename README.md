@@ -111,8 +111,8 @@ The component accepts all the props of an `<img>` tag, plus the following:
 
 The resizing behaviour of the image.
 
+- `constrained`: (default) the image will be rendered at a maximum of `width` and `height`, but will scale down automatically if the container is smaller, maintaining the aspect ratio.
 - `fullWidth`: the image will be rendered at full width of its container. This is optimized for full-width hero images. You can set `height` to a fixed value, which will mean the image will be rendered at that fixed height and scale horizontally to fill the container.
-- `constrained`: the image will be rendered at a maximum of `width` and `height`, but will scale down automatically if the container is smaller, maintaining the aspect ratio.
 - `fixed`: the image will be rendered at the exact size specified by `width` and `height`
 
 ![image-layouts](https://user-images.githubusercontent.com/213306/217186596-f67c54fe-6613-497f-9577-7868226ed7d9.gif)
