@@ -52,7 +52,7 @@ export const Image = forwardRef<HTMLImageElement, ImageProps>(function Image(
   const configContext = useContext(ImageConfigContext);
   const breakpoints = useMemo(() => {
     const config = configEnv || configContext || imageConfigDefault;
-    return [...config.deviceSizes, ...config.imageSizes].sort((a, b) => a - b);
+    return [...config.deviceSizes, ...config.imageSizes];
   }, [configContext]);
 
   const childProps: UnpicImageProps = { ...props };
