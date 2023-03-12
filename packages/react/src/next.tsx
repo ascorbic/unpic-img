@@ -27,7 +27,8 @@ interface StaticRequire {
 
 type StaticImport = StaticRequire | StaticImageData;
 
-export type ImageProps = UnpicImageProps & {
+// Next.js allows a string or an object with the image data
+export type ImageProps = Omit<UnpicImageProps, "src"> & {
   src: string | StaticImport;
 };
 
@@ -55,12 +56,16 @@ export const Image = forwardRef<HTMLImageElement, ImageProps>(function Image(
     return [...config.deviceSizes, ...config.imageSizes];
   }, [configContext]);
 
-  const childProps: UnpicImageProps = { ...props };
+  let { src: origSrc, ...rest } = props;
 
-  const imageData = getImageData(props.src);
+  // We need to cast this here because otherwise TS gets confused
+  // with the layout/diemnsions inference
+  const childProps = rest as UnpicImageProps;
+
+  const imageData = getImageData(origSrc);
 
   // Users can pass either a string or the result of an import
-  const src = imageData?.src || props.src;
+  const src: string = imageData?.src || (origSrc as string);
 
   if (imageData && props.layout !== "fullWidth") {
     // TODO: handle auto aspect-ratio
