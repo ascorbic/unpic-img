@@ -42,6 +42,14 @@
   * dependencies
     * @unpic/core bumped to 0.0.14
 
+## [0.0.16](https://github.com/ascorbic/unpic-img/compare/react-v0.0.15...react-v0.0.16) (2023-03-12)
+
+
+### Bug Fixes
+
+* **react:** add next type export ([#98](https://github.com/ascorbic/unpic-img/issues/98)) ([2ad007e](https://github.com/ascorbic/unpic-img/commit/2ad007ebbfb169ab3ad76c4cc36081d470f05569))
+* **react:** fix next.js src type ([#100](https://github.com/ascorbic/unpic-img/issues/100)) ([b8b02a1](https://github.com/ascorbic/unpic-img/commit/b8b02a155356b7bc826380a08ffc435ad8527017))
+
 ## [0.0.15](https://github.com/ascorbic/unpic-img/compare/react-v0.0.14...react-v0.0.15) (2023-03-11)
 
 
