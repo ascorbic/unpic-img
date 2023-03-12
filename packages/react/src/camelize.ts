@@ -4,7 +4,10 @@ const camelize = (s: string) =>
   s.replace(/-./g, (substr) => substr[1].toUpperCase());
 
 const nestedKeys = new Set(["style"]);
-const fixedMap: Record<string, string> = { srcset: "srcSet" };
+const fixedMap: Record<string, string> = {
+  srcset: "srcSet",
+  fetchpriority: "fetchPriority",
+};
 
 export function camelizeProps<TObject extends HTMLAttributes<HTMLElement>>(
   props: TObject
