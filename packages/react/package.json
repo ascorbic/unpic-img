@@ -10,7 +10,7 @@
   "homepage": "https://github.com/ascorbic/unpic-img#readme",
   "files": [
     "dist",
-    "src"
+    "next.d.ts"
   ],
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
