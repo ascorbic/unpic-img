@@ -25602,19 +25602,19 @@ __metadata:
   resolution: "solid-demo@workspace:examples/solid"
   dependencies:
     "@unpic/solid": "workspace:^"
-    solid-js: ^1.6.10
+    solid-js: ^1.6.9
     typescript: ^4.9.5
     vite: ^4.1.1
     vite-plugin-solid: ^2.5.0
   languageName: unknown
   linkType: soft
 
-"solid-js@npm:^1.6.10, solid-js@npm:^1.6.9":
-  version: 1.6.10
-  resolution: "solid-js@npm:1.6.10"
+"solid-js@npm:^1.6.9":
+  version: 1.6.15
+  resolution: "solid-js@npm:1.6.15"
   dependencies:
     csstype: ^3.1.0
-  checksum: dd4c706d4f1809ea1a5dcea178fa314b01867eecf34ed4b92a5ef73f2b1d09f4a6754c2313d7288c30e8fc9cf2c37d85d8869b7e57ddc6b2d8dea96ceb550298
+  checksum: 7fc45855c2dbe69c8c12fd5fd52a3357373f5361126305bd807f7bdd110f14863e7fb7702ac75cea20bf55c3d77aa4682ea7aecb3704f2cb058e0420427e8ef9
   languageName: node
   linkType: hard
 
