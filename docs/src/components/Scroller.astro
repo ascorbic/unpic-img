@@ -1,0 +1,90 @@
+---
+import { Icon } from "astro-icon";
+---
+
+<style>
+  .wrap {
+    height: 1.5em;
+    overflow: hidden;
+    display: inline-block;
+    transform: translateY(0.25rem);
+  }
+  ul,
+  li {
+    float: left;
+    font-size: 1.5rem;
+    line-height: 2em;
+  }
+
+  ul {
+    list-style: none;
+    padding: 0;
+    animation: roll-up 16s infinite cubic-bezier(0.75, 0, 0.25, 1);
+  }
+
+  li + li {
+    clear: left;
+  }
+
+  li:before {
+    content: "\a0";
+    float: left;
+  }
+
+  [astro-icon] {
+    height: 18px;
+    width: 18px;
+    margin-right: 0.5rem;
+  }
+
+  @keyframes roll-up {
+    0% {
+      transform: translateY(0);
+    }
+    10% {
+      transform: translateY(-2em);
+    }
+    20% {
+      transform: translateY(-4em);
+    }
+    30% {
+      transform: translateY(-6em);
+    }
+    40% {
+      transform: translateY(-8em);
+    }
+    50% {
+      transform: translateY(-10em);
+    }
+    60% {
+      transform: translateY(-12em);
+    }
+    70% {
+      transform: translateY(-14em);
+    }
+    80% {
+      transform: translateY(-16em);
+    }
+    90% {
+      transform: translateY(-18em);
+    }
+    100% {
+      transform: translateY(-20em);
+    }
+  }
+</style>
+<div class="wrap">
+  <ul>
+    <li>the web</li>
+    <li><Icon name="logos:react" />React</li>
+    <li><Icon name="simple-icons:astro" />Astro</li>
+    <li><Icon name="logos:vue" />Vue</li>
+    <li><Icon name="logos:preact" />Preact</li>
+    <li><Icon name="logos:svelte-icon" />Svelte</li>
+    <li><Icon name="qwik" />Qwik</li>
+    <li><Icon name="eleventy" />11ty</li>
+    <li><Icon name="logos:solidjs-icon" />SolidJS</li>
+    <li><Icon name="logos:nextjs-icon" />Next.js</li>
+    <li>the web</li>
+  </ul>
+</div>
