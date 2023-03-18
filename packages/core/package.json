@@ -9,7 +9,7 @@
     "url": "https://github.com/ascorbic/unpic-img",
     "directory": "packages/core"
   },
-  "homepage": "https://github.com/ascorbic/unpic-img#readme",
+  "homepage": "https://unpic.pics/img",
   "scripts": {
     "build": "tsup src/core.ts --format cjs,esm --dts --clean",
     "clean": "rm -rf dist",

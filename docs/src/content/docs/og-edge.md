@@ -37,14 +37,11 @@ export default async function handler(req: Request) {
     )
   );
 }
-```
 
-Then create a `netlify.toml` file with the following:
-
-```toml
-[[edge_functions]]
-function = "og"
-path = "/og"
+export const config = {
+  path: "/og",
+  cache: "manual",
+};
 ```
 
 Make sure you have the latest version of

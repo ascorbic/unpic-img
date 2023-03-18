@@ -7,7 +7,7 @@
     "url": "https://github.com/ascorbic/unpic-img",
     "directory": "packages/webc"
   },
-  "homepage": "https://github.com/ascorbic/unpic-img#readme",
+  "homepage": "https://unpic.pics/img/webc",
   "dependencies": {
     "@unpic/core": "workspace:^",
     "style-object-to-css-string": "^1.0.1"

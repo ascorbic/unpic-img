@@ -35,4 +35,4 @@ npm install @unpic/svelte
 />
 ```
 
-For the supported props, see [the main README](https://github.com/ascorbic/unpic-img/#props).
+For the supported props, see [the docs](https://unpic.pics/img/svelte).
