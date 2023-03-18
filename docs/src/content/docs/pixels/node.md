@@ -1,6 +1,6 @@
 ---
 title: "@unpic/pixels"
-description: "Lorem ipsum dolor sit amet - 4"
+description: "Load and decode the pixels for a PNG or JPEG image"
 ---
 
 **Load and decode the pixels for a PNG or JPEG image in Node**

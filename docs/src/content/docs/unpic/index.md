@@ -1,6 +1,6 @@
 ---
 title: "Unpic"
-description: "Lorem ipsum dolor sit amet - 2"
+description: "Universal image CDN URL translator"
 ---
 
 **Universal image CDN URL translator**
@@ -10,9 +10,8 @@ is little consistency in these APIs, and it's often unclear what the API is for
 a given URL. This library aims to provide a consistent interface for detecting
 image CDN URLs and transforming them.
 
-If you'd like to use this on the web, you might want to try
-[unpic-img](/img), a multi-framework image
-component, powered by Unpic.
+If you'd like to use this on the web, you might want to try [unpic-img](/img), a
+multi-framework image component, powered by Unpic.
 
 It designed to work with image URLs from sources such as CMSs and other
 user-generated content, where the source image may or may not be from an image
@@ -108,9 +107,9 @@ is not auto-detected.
 
 ## Usage with Vercel / Next.js
 
-Unpic has special handling for Vercel and Next.js image URLs. It detects supported
-image CDNs, and falls back to `/_vercel/image` or `/_next/image` for local and
-unsupported remote images.
+Unpic has special handling for Vercel and Next.js image URLs. It detects
+supported image CDNs, and falls back to `/_vercel/image` or `/_next/image` for
+local and unsupported remote images.
 
 For more information, see the
 [Unpic Vercel / Next.js](https://github.com/ascorbic/unpic/blob/main/vercel.md)

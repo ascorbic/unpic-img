@@ -51,7 +51,7 @@ export const SIDEBAR: Sidebar = {
     { text: "Playground", link: "placeholder/playground" },
   ],
   pixels: [
-    { text: "Deno", link: "pixels/deno" },
-    { text: "Node", link: "pixels/node" },
+    { icon: "logos:deno", text: "Deno", link: "pixels/deno" },
+    { icon: "cib:node-js", text: "Node", link: "pixels/node" },
   ],
 };

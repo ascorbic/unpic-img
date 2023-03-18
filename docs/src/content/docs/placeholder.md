@@ -1,6 +1,6 @@
 ---
 title: "@unpic/placeholder"
-description: "Lorem ipsum dolor sit amet - 3"
+description: "Generate beautiful image placeholders"
 ---
 
 This is a library for generating low quality image placeholders (LQIP) by

@@ -1,9 +1,10 @@
 ---
 title: "Contributing to Unpic"
-description: "Lorem ipsum dolor sit amet - 2"
+description: "How to contribute to the Unpic library"
 ---
 
-You can find the code in [the unpic repo](https://github.com/ascorbic/unpic). To test the library, you will need to install [Deno](https://deno.land/).
+You can find the code in [the unpic repo](https://github.com/ascorbic/unpic). To
+test the library, you will need to install [Deno](https://deno.land/).
 
 To add new domains or subdomains to an existing CDN, add them to `domains.json`
 or `subdomains.json` respectively.
