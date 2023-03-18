@@ -3,6 +3,7 @@ import HeadCommon from "../components/HeadCommon.astro";
 import HeadSEO from "../components/HeadSEO.astro";
 import Header from "../components/Header/Header.astro";
 import { GITHUB_EDIT_URL, SITE } from "../consts";
+import Footer from "../components/Footer/Footer.astro";
 
 type Props = {
   title: string;
@@ -30,7 +31,8 @@ const currentPage = Astro.url.pathname;
         --doc-padding: 2rem;
         --theme-bg: linear-gradient(to top, #24243e, #302b63, #0f0c29);
         --theme-navbar-bg: transparent;
-        --theme-text: #fff;
+        --theme-text: white;
+        --theme-text-light: hsla(var(--color-gray-80), 1);
       }
 
       .layout {
@@ -48,14 +50,6 @@ const currentPage = Astro.url.pathname;
         display: flex;
         flex-direction: column;
         height: 100%;
-      }
-
-      @media (min-width: 50em) {
-        .layout {
-          overflow: initial;
-          grid-template-columns: 10rem minmax(0, var(--max-width)) 10rem;
-          gap: 1em;
-        }
       }
 
       @media (min-width: 72em) {

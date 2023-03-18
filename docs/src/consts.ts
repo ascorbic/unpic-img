@@ -42,9 +42,9 @@ export const SIDEBAR: Sidebar = {
     { icon: "logos:vue", text: "Vue", link: "img/vue" },
     { icon: "eleventy", text: "WebC", link: "img/webc" },
   ],
-  unpic: [
-    { text: "Docs", link: "unpic" },
-    { text: "Contributing", link: "unpic/contributing" },
+  "unpic lib": [
+    { text: "Docs", link: "lib" },
+    { text: "Contributing", link: "lib/contributing" },
   ],
   placeholder: [
     { text: "Docs", link: "placeholder" },

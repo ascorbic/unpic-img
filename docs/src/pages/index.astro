@@ -16,8 +16,8 @@ import HomeLayout from "../layouts/HomeLayout.astro";
       <h2>🌲 unpic-img</h2>
       <p>The best image component for every framework</p>
     </a>
-    <a href="/unpic">
-      <h2>🍁 unpic</h2>
+    <a href="/lib">
+      <h2>🍁 unpic lib</h2>
       <p>Universal translator for image CDNs</p>
     </a>
     <a href="/placeholder">
@@ -34,8 +34,7 @@ import HomeLayout from "../layouts/HomeLayout.astro";
 <style>
   .cards {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-    grid-gap: 1rem;
+    grid-template-columns: 1fr;
     margin-top: 1rem;
   }
 
@@ -45,18 +44,12 @@ import HomeLayout from "../layouts/HomeLayout.astro";
   }
 
   .intro h2 {
-    font-size: 3rem;
+    font-size: 2.5rem;
   }
 
   .body {
     font-size: 1.5rem;
     line-height: 1.5rem;
-  }
-
-  @media (min-width: 768px) {
-    .intro {
-      margin: 1.5rem;
-    }
   }
 
   .cards h2 {
@@ -69,9 +62,6 @@ import HomeLayout from "../layouts/HomeLayout.astro";
   }
 
   .cards > a {
-    padding: 1.5rem;
-    border-radius: 0.5rem;
-    /* border: 1px solid var(--theme-divider); */
     text-decoration: none;
     color: inherit;
   }
@@ -81,9 +71,38 @@ import HomeLayout from "../layouts/HomeLayout.astro";
     font-size: 1.1rem;
   }
 
-  .cards > a:hover,
-  .card:hover {
-    box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
-    text-decoration: none;
+  .cards {
+    grid-gap: 1.5rem;
+  }
+
+  .cards > a {
+    padding: 0.75rem 0;
+    border-radius: 0.5rem;
+  }
+
+  @media (min-width: 50em) {
+    .intro h2 {
+      font-size: 3rem;
+    }
+
+    .cards {
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    }
+  }
+
+  @media (min-width: 72em) {
+    .intro {
+      margin: 1.5rem;
+    }
+
+    .cards > a:hover,
+    .card:hover {
+      box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+      text-decoration: none;
+    }
+    .cards > a {
+      padding: 1.5rem;
+      border-radius: 0.5rem;
+    }
   }
 </style>
