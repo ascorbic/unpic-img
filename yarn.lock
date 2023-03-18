@@ -113,18 +113,19 @@ __metadata:
   linkType: hard
 
 "@11ty/webc@npm:^0.9.0":
-  version: 0.9.0
-  resolution: "@11ty/webc@npm:0.9.0"
+  version: 0.9.3
+  resolution: "@11ty/webc@npm:0.9.3"
   dependencies:
     "@11ty/eleventy-utils": ^1.0.1
     css-tree: ^2.3.1
     dependency-graph: ^0.11.0
     entities: ^4.4.0
     fast-glob: ^3.2.12
+    is-glob: ^4.0.3
     nanoid: ^4.0.1
     node-retrieve-globals: ^2.0.4
     parse5: ^7.1.2
-  checksum: 625ef585618cd970997e15c752e080147fe26335d2ac8fbc85ad491330dcc02ccff5243e9925dfc70338384d81933e390a2c83f8bb6cd33f96714bccc95c4688
+  checksum: 1d5153bf97f839c58e6829e94bd3a771358ea9cb2d5fed520673407a564d72b9352ba06d14d269a506a129438774440051b6a45603847b5fedf4fe56f0c7f07f
   languageName: node
   linkType: hard
 
