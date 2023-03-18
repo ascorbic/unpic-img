@@ -69,12 +69,12 @@ h2 {
 }
 
 h1 {
-  font-size: 3.25rem;
-  font-weight: 800;
+  font-size: 2.25rem;
+  font-weight: 700;
 }
 
 h2 {
-  font-size: 2.5rem;
+  font-size: 2rem;
 }
 
 h3 {
@@ -86,7 +86,7 @@ h4 {
 }
 
 h5 {
-  font-size: 1rem;
+  font-size: 1.1rem;
 }
 
 p {
@@ -100,6 +100,8 @@ p {
 p,
 .content ul {
   color: var(--theme-text-light);
+  font-size: 1.1rem;
+  line-height: 1.65em;
 }
 
 small,
@@ -184,6 +186,10 @@ a:focus {
 strong {
   font-weight: 600;
   color: inherit;
+}
+
+video {
+  max-width: 100%;
 }
 
 /* Supporting Content */

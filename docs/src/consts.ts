@@ -14,14 +14,9 @@ export const OPEN_GRAPH = {
   twitter: "astrodotbuild",
 };
 
-export const KNOWN_LANGUAGES = {
-  English: "en",
-} as const;
-export const KNOWN_LANGUAGE_CODES = Object.values(KNOWN_LANGUAGES);
-
 export const GITHUB_EDIT_URL = `https://github.com/ascorbic/unpic-img/tree/main/docs`;
 
-export const COMMUNITY_INVITE_URL = undefined //`https://astro.build/chat`;
+export const COMMUNITY_INVITE_URL = undefined; //`https://astro.build/chat`;
 
 // See "Algolia" section of the README for more information.
 export const ALGOLIA = {
@@ -31,16 +26,24 @@ export const ALGOLIA = {
 };
 
 export type Sidebar = Record<
-  (typeof KNOWN_LANGUAGE_CODES)[number],
-  Record<string, { text: string; link: string }[]>
+  string,
+  { text: string; link: string; icon?: string }[]
 >;
+
 export const SIDEBAR: Sidebar = {
-  en: {
-    "Section Header": [
-      { text: "Introduction", link: "en/introduction" },
-      { text: "Page 2", link: "en/page-2" },
-      { text: "Page 3", link: "en/page-3" },
-    ],
-    "Another Section": [{ text: "Page 4", link: "en/page-4" }],
-  },
+  "unpic-img": [
+    { text: "Introduction", link: "img" },
+    { icon: "simple-icons:astro", text: "Astro", link: "img/astro" },
+    { icon: "logos:preact", text: "Preact", link: "img/preact" },
+    { icon: "qwik", text: "Qwik", link: "img/qwik" },
+    { icon: "logos:react", text: "React", link: "img/react" },
+    { icon: "logos:solidjs-icon", text: "SolidJS", link: "img/solid" },
+    { icon: "logos:svelte-icon", text: "Svelte", link: "img/svelte" },
+    { icon: "logos:vue", text: "Vue", link: "img/vue" },
+    { icon: "eleventy", text: "WebC", link: "img/webc" },
+  ],
+  unpic: [
+    { text: "Introduction", link: "unpic" },
+    { text: "Contributing", link: "unpic/contributing" },
+  ],
 };

@@ -9,20 +9,20 @@ import HomeLayout from "../layouts/HomeLayout.astro";
     <div class="body">The best images for <Scroller /></div>
   </div>
   <div class="cards">
-    <a href="/en/unpic-img">
-      <h2>🌳 unpic-img</h2>
+    <a href="/img">
+      <h2>🌲 unpic-img</h2>
       <p>The best image component for every framework</p>
     </a>
-    <a>
-      <h2>🌳 unpic</h2>
+    <a href="/unpic">
+      <h2>🍁 unpic</h2>
       <p>Universal translator for image CDNs</p>
     </a>
-    <a>
-      <h2>🌳 @unpic/background</h2>
+    <a href="/background">
+      <h2>🌴 @unpic/background</h2>
       <p>Beautiful image placeholders, with no client-side JS</p>
     </a>
-    <a>
-      <h2>🌳 @unpic/pixels</h2>
+    <a href="/pixels">
+      <h2>🍂 @unpic/pixels</h2>
       <p>Load and decode images to raw pixels</p>
     </a>
   </div>
@@ -37,8 +37,12 @@ import HomeLayout from "../layouts/HomeLayout.astro";
   }
 
   .intro {
-    text-align: center;
+    text-align: left;
     margin-bottom: 2rem;
+  }
+
+  .intro h2 {
+    font-size: 3rem;
   }
 
   .body {
@@ -48,13 +52,12 @@ import HomeLayout from "../layouts/HomeLayout.astro";
 
   @media (min-width: 768px) {
     .intro {
-      margin: 5rem auto;
+      margin: 1.5rem;
     }
   }
 
   .cards h2 {
     font-size: 1.5rem;
-    /* font-family: var(--font-mono); */
   }
 
   .card .body {
