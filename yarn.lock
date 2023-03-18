@@ -8012,6 +8012,17 @@ __metadata:
   languageName: unknown
   linkType: soft
 
+"astro-icon@npm:^0.8.0":
+  version: 0.8.0
+  resolution: "astro-icon@npm:0.8.0"
+  dependencies:
+    node-fetch: ^3.1.0
+    resolve-pkg: ^2.0.0
+    svgo: ^2.8.0
+  checksum: 0e5a46e88a05327c1dfff6c2419a4d60094e52aa320fd9795416be2dfb06434ee988cb699c2fdd883afe6bce3f131133a0ad88a7c921a7b0a6053ae81a1c6428
+  languageName: node
+  linkType: hard
+
 "astro@npm:^2.0.0":
   version: 2.0.14
   resolution: "astro@npm:2.0.14"
@@ -11637,6 +11648,7 @@ __metadata:
     "@types/react": ^17.0.45
     "@types/react-dom": ^18.0.0
     astro: ^2.0.18
+    astro-icon: ^0.8.0
     html-escaper: ^3.0.3
     preact: ^10.7.3
     react: ^18.1.0
@@ -20340,7 +20352,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"node-fetch@npm:3.3.1":
+"node-fetch@npm:3.3.1, node-fetch@npm:^3.1.0":
   version: 3.3.1
   resolution: "node-fetch@npm:3.3.1"
   dependencies:
@@ -24505,6 +24517,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"resolve-pkg@npm:^2.0.0":
+  version: 2.0.0
+  resolution: "resolve-pkg@npm:2.0.0"
+  dependencies:
+    resolve-from: ^5.0.0
+  checksum: 4a14cc38effed20ff362c8f377719af9a45ebe27ee07d79d4802b4568858cd96033f4edc3a2add7fd27e361d24101a042047297a9ef9476696ba16b72e0a05fc
+  languageName: node
+  linkType: hard
+
 "resolve-url@npm:^0.2.1":
   version: 0.2.1
   resolution: "resolve-url@npm:0.2.1"
@@ -26624,7 +26645,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"svgo@npm:^2.4.0, svgo@npm:^2.7.0":
+"svgo@npm:^2.4.0, svgo@npm:^2.7.0, svgo@npm:^2.8.0":
   version: 2.8.0
   resolution: "svgo@npm:2.8.0"
   dependencies:

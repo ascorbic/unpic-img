@@ -68,9 +68,27 @@ export const Image = forwardRef<HTMLImageElement, ImageProps>(function Image(
   const src: string = imageData?.src || (origSrc as string);
 
   if (imageData && props.layout !== "fullWidth") {
-    // TODO: handle auto aspect-ratio
-    childProps.width ||= imageData.width;
-    childProps.height ||= imageData.height;
+    // If the user didn't specify a width or height, we can use the
+    // width and height from the image data
+
+    if (!childProps.width) {
+      if (childProps.height) {
+        childProps.width = childProps.aspectRatio
+          ? childProps.height * childProps.aspectRatio
+          : childProps.height * (imageData.width / imageData.height);
+      } else {
+        childProps.width = imageData.width;
+      }
+    }
+    if (!childProps.height) {
+      if (childProps.width) {
+        childProps.height = childProps.aspectRatio
+          ? childProps.width / childProps.aspectRatio
+          : childProps.width * (imageData.height / imageData.width);
+      } else {
+        childProps.height = imageData.height;
+      }
+    }
   }
 
   childProps.background ||= imageData?.blurDataURL;
