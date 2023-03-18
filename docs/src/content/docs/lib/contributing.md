@@ -1,6 +1,7 @@
 ---
 title: "Contributing to Unpic"
 description: "How to contribute to the Unpic library"
+githubRepo: "ascorbic/unpic"
 ---
 
 You can find the code in [the unpic repo](https://github.com/ascorbic/unpic). To

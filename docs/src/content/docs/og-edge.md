@@ -1,6 +1,7 @@
 ---
 title: "og_edge"
 description: "Generate Open Graph images at the edge"
+githubRepo: "ascorbic/og-edge"
 ---
 
 Generate Open Graph images with Deno and Netlify Edge Functions, no framework
