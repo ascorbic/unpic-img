@@ -42,16 +42,17 @@ export const SIDEBAR: Sidebar = {
     { icon: "logos:vue", text: "Vue", link: "img/vue" },
     { icon: "eleventy", text: "WebC", link: "img/webc" },
   ],
-  "unpic lib": [
-    { text: "Docs", link: "lib" },
-    { text: "Contributing", link: "lib/contributing" },
-  ],
   placeholder: [
     { text: "Docs", link: "placeholder" },
     { text: "Playground", link: "placeholder/playground" },
+  ],
+  "unpic lib": [
+    { text: "Docs", link: "lib" },
+    { text: "Contributing", link: "lib/contributing" },
   ],
   pixels: [
     { icon: "logos:deno", text: "Deno", link: "pixels/deno" },
     { icon: "cib:node-js", text: "Node", link: "pixels/node" },
   ],
+  "og edge": [{ text: "Docs", link: "og-edge" }],
 };
