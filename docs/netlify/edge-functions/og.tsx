@@ -85,4 +85,5 @@ export default async function handler(req: Request) {
 
 export const config: Config = {
   path: "/og.png",
+  cache: "manual",
 };
