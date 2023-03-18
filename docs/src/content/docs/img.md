@@ -2,6 +2,7 @@
 title: "unpic-img"
 description:
   "A multi-framework component for responsive, high-performance images"
+githubRepo: "ascorbic/unpic-img"
 ---
 
 A multi-framework component for responsive, high-performance images using image

@@ -1,6 +1,7 @@
 ---
 title: "@unpic/pixels"
 description: "Load and decode the pixels for a PNG or JPEG image"
+githubRepo: "ascorbic/get-pixels"
 ---
 
 **Load and decode the pixels for a PNG or JPEG image**

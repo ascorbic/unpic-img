@@ -8,7 +8,8 @@ const currentYear = new Date().getFullYear();
 ---
 
 <footer>
-  <AvatarList path={path} /> © {currentYear} Matt Kane
+  <AvatarList path={path} /> © {currentYear}
+  <a href="https://twitter.com/ascorbic">Matt Kane</a>
 </footer>
 
 <style>
@@ -16,5 +17,8 @@ const currentYear = new Date().getFullYear();
     margin-top: auto;
     padding: 2rem;
     border-top: 1px solid var(--theme-divider);
+  }
+  footer a {
+    color: var(--theme-link);
   }
 </style>

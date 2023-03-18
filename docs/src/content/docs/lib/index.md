@@ -1,6 +1,7 @@
 ---
 title: "Unpic lib"
 description: "Universal image CDN URL translator"
+githubRepo: "ascorbic/unpic"
 ---
 
 **Universal image CDN URL translator**

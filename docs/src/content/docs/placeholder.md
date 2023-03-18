@@ -1,6 +1,7 @@
 ---
 title: "@unpic/placeholder"
 description: "Generate beautiful image placeholders"
+githubRepo: "ascorbic/unpic-placeholder"
 ---
 
 This is a library for generating low quality image placeholders (LQIP) by

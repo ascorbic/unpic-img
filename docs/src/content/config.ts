@@ -13,6 +13,7 @@ const docs = defineCollection({
       })
       .optional(),
     ogLocale: z.string().optional(),
+    githubRepo: z.string().optional(),
   }),
 });
 
