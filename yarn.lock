@@ -545,7 +545,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@babel/core@npm:^7.16.5, @babel/core@npm:^7.20.12, @babel/core@npm:^7.20.5":
+"@babel/core@npm:^7.20.12, @babel/core@npm:^7.20.5":
   version: 7.20.12
   resolution: "@babel/core@npm:7.20.12"
   dependencies:
@@ -2001,7 +2001,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@babel/preset-typescript@npm:^7.16.5, @babel/preset-typescript@npm:^7.18.6":
+"@babel/preset-typescript@npm:^7.18.6":
   version: 7.18.6
   resolution: "@babel/preset-typescript@npm:7.18.6"
   dependencies:
@@ -8410,7 +8410,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"babel-preset-solid@npm:^1.2.6, babel-preset-solid@npm:^1.6.3, babel-preset-solid@npm:^1.6.9":
+"babel-preset-solid@npm:^1.6.3, babel-preset-solid@npm:^1.6.9":
   version: 1.6.10
   resolution: "babel-preset-solid@npm:1.6.10"
   dependencies:
@@ -12380,20 +12380,6 @@ __metadata:
   version: 0.15.18
   resolution: "esbuild-openbsd-64@npm:0.15.18"
   conditions: os=openbsd & cpu=x64
-  languageName: node
-  linkType: hard
-
-"esbuild-plugin-solid@npm:^0.4.2":
-  version: 0.4.2
-  resolution: "esbuild-plugin-solid@npm:0.4.2"
-  dependencies:
-    "@babel/core": ^7.16.5
-    "@babel/preset-typescript": ^7.16.5
-    babel-preset-solid: ^1.2.6
-  peerDependencies:
-    esbuild: ">=0.12"
-    solid-js: ">= 1.0"
-  checksum: 1be10e0982364a5c65fdfdea9bda01768e31ffbe40b0cf9df189540da57c419fb3841e312677e64aaaf3e4bfa72ce898ec3fff674cd70404fb50f2677618ce75
   languageName: node
   linkType: hard
 
@@ -27441,14 +27427,14 @@ __metadata:
   linkType: hard
 
 "tsup-preset-solid@npm:^0.1.4":
-  version: 0.1.5
-  resolution: "tsup-preset-solid@npm:0.1.5"
+  version: 0.1.8
+  resolution: "tsup-preset-solid@npm:0.1.8"
   dependencies:
-    esbuild-plugin-solid: ^0.4.2
-    type-fest: ^3.5.2
+    esbuild-plugin-solid: ^0.5.0
+    type-fest: ^3.6.0
   peerDependencies:
     tsup: ^6.5.0
-  checksum: 79c132c35632fef26b6adcafbcd6ce09053c95ced186143e6d4a9df8885925ab3475781bf7451f71e1d05f023a26ba9ffd0e88158d98a6df5523434dd8e44c66
+  checksum: 2c6b62d3f6bd0862043c4ef11c1b25dd40c50815f044310307771d68254eb3143b0d2862e1980b1fa73a22749e27baf913aad082eabfeba96abf2fc273618a58
   languageName: node
   linkType: hard
 
@@ -27660,10 +27646,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"type-fest@npm:^3.5.2":
-  version: 3.5.6
-  resolution: "type-fest@npm:3.5.6"
-  checksum: ce80d778c35280e967796b99989b796a75f8c2b6c8f1b88eb62990107f5fa90c30fdb1826fe5e2ab192e5c1eef7de6f29d133b443e80c753cbc020b01a32487a
+"type-fest@npm:^3.6.0":
+  version: 3.6.1
+  resolution: "type-fest@npm:3.6.1"
+  checksum: f7e39bf6b74a883661ec8642707f49c33cfcdc6221e1ba36b1d329c1cf301d87351b3ca0839b894cbfe47dc62140c0ce47e69c88f76800b678e0b67b7fe826e6
   languageName: node
   linkType: hard
 
