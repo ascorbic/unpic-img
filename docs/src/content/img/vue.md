@@ -1,7 +1,9 @@
 ---
 title: "@unpic/vue"
-description: "Lorem ipsum dolor sit amet - 4"
+description: "High-performance, responsive Vue image component"
 ---
+
+A high-performance, responsive image component for [Vue](https://vuejs.org/).
 
 ## Installation and usage
 

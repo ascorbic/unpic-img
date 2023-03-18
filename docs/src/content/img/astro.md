@@ -1,7 +1,10 @@
 ---
 title: "@unpic/astro"
-description: "Lorem ipsum dolor sit amet - 4"
+description: "High-performance, responsive Astro image component"
 ---
+
+A high-performance, responsive image component for
+[Astro](https://astro.build/).
 
 ## Installation and usage
 

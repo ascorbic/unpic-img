@@ -36,7 +36,7 @@ By default the CDN is auto-detected from the `src` URL. If you want to override 
 
 By default the image breakpoints used in the `srcset` are generated based on the layout and image size. You can override this by specifying an array of breakpoints. The breakpoints are specified as an array of numbers, representing the width of the image in pixels.
 
-## Other props
+### Other props
 
 Any prop supported by `<img>` tags can be passed in, except `srcset` which is generated from `src`. The following props are set automatically, but can be overridden if you need to:
 

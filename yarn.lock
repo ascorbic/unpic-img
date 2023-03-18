@@ -5839,6 +5839,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@types/pako@npm:^2.0.0":
+  version: 2.0.0
+  resolution: "@types/pako@npm:2.0.0"
+  checksum: 50240a036b5e6acabbf36ac4dca93ec9e619241f0404da8d401cdb427bec3029833324b8a04c4b1ae2ecbc33422fdec31dbf9f43653d9d07cafb82ace78dfccd
+  languageName: node
+  linkType: hard
+
 "@types/parse-json@npm:^4.0.0":
   version: 4.0.0
   resolution: "@types/parse-json@npm:4.0.0"
@@ -6556,6 +6563,15 @@ __metadata:
     unpic: ^3.0.1
   languageName: unknown
   linkType: soft
+
+"@unpic/placeholder@npm:^0.1.2":
+  version: 0.1.2
+  resolution: "@unpic/placeholder@npm:0.1.2"
+  dependencies:
+    blurhash: ^2.0.5
+  checksum: 00cbfb379a1167b5848d172334280ed4f685f5235a1602d36749f5f60ad16da6ef216da6fc3a50bf592fe81294a790f92e55274a2c2e04221a37aa2507fe35d2
+  languageName: node
+  linkType: hard
 
 "@unpic/preact@workspace:^, @unpic/preact@workspace:packages/preact":
   version: 0.0.0-use.local
@@ -8623,6 +8639,13 @@ __metadata:
   version: 2.19.0
   resolution: "blueimp-md5@npm:2.19.0"
   checksum: 28095dcbd2c67152a2938006e8d7c74c3406ba6556071298f872505432feb2c13241b0476644160ee0a5220383ba94cb8ccdac0053b51f68d168728f9c382530
+  languageName: node
+  linkType: hard
+
+"blurhash@npm:^2.0.5":
+  version: 2.0.5
+  resolution: "blurhash@npm:2.0.5"
+  checksum: aa4d6855bbaae116065b118a7b1e889648c15047e72048c28bab3db426a042ce1dc032a30c55a52da6140c314534841b984ab11cc68303668dde446d6ca53bc6
   languageName: node
   linkType: hard
 
@@ -11645,12 +11668,16 @@ __metadata:
     "@docsearch/css": ^3.1.0
     "@docsearch/react": ^3.1.0
     "@types/node": ^18.0.0
+    "@types/pako": ^2.0.0
     "@types/react": ^17.0.45
     "@types/react-dom": ^18.0.0
+    "@unpic/placeholder": ^0.1.2
     astro: ^2.0.18
     astro-icon: ^0.8.0
+    blurhash: ^2.0.5
     html-escaper: ^3.0.3
-    preact: ^10.7.3
+    pako: ^2.1.0
+    preact: ^10.13.1
     react: ^18.1.0
     react-dom: ^18.1.0
   languageName: unknown
@@ -21560,6 +21587,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"pako@npm:^2.1.0":
+  version: 2.1.0
+  resolution: "pako@npm:2.1.0"
+  checksum: 71666548644c9a4d056bcaba849ca6fd7242c6cf1af0646d3346f3079a1c7f4a66ffec6f7369ee0dc88f61926c10d6ab05da3e1fca44b83551839e89edd75a3e
+  languageName: node
+  linkType: hard
+
 "pako@npm:~1.0.5":
   version: 1.0.11
   resolution: "pako@npm:1.0.11"
@@ -23070,7 +23104,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"preact@npm:^10.7.3":
+"preact@npm:^10.13.1":
   version: 10.13.1
   resolution: "preact@npm:10.13.1"
   checksum: a10555d18f60a42e29b4ef5bf42f7a6ce4097a2e772c047fab53226e3edef4cfceb6d709452485a41017479750aa6834ab02b6a8269ceb06d489d7c3495b3d04

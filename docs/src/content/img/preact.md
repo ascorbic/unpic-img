@@ -1,7 +1,10 @@
 ---
 title: "@unpic/preact"
-description: "Lorem ipsum dolor sit amet - 4"
+description: "High-performance, responsive Preact image component"
 ---
+
+A high-performance, responsive image component for
+[Preact](https://preactjs.com/).
 
 ## Installation and usage
 

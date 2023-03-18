@@ -43,7 +43,15 @@ export const SIDEBAR: Sidebar = {
     { icon: "eleventy", text: "WebC", link: "img/webc" },
   ],
   unpic: [
-    { text: "Introduction", link: "unpic" },
+    { text: "Docs", link: "unpic" },
     { text: "Contributing", link: "unpic/contributing" },
+  ],
+  placeholder: [
+    { text: "Docs", link: "placeholder" },
+    { text: "Playground", link: "placeholder/playground" },
+  ],
+  pixels: [
+    { text: "Deno", link: "pixels/deno" },
+    { text: "Node", link: "pixels/node" },
   ],
 };

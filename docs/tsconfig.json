@@ -3,6 +3,7 @@
   "compilerOptions": {
     "jsx": "preserve",
     "skipLibCheck": true,
-    "strictNullChecks": true
+    "jsxImportSource": "preact",
+    "strictNullChecks": true,
   }
 }

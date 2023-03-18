@@ -1,7 +1,10 @@
 ---
 title: "@unpic/svelte"
-description: "Lorem ipsum dolor sit amet - 4"
+description: "High-performance, responsive Svelte image component"
 ---
+
+A high-performance, responsive image component for
+[Svelte](https://svelte.dev/).
 
 ## Installation and usage
 

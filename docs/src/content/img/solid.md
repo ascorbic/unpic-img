@@ -1,7 +1,10 @@
 ---
 title: "@unpic/solid"
-description: "Lorem ipsum dolor sit amet - 4"
+description: "High-performance, responsive SolidJS image component"
 ---
+
+A high-performance, responsive image component for
+[SolidJS](https://solidjs.com/).
 
 ## Installation and usage
 

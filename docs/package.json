@@ -18,13 +18,17 @@
     "@types/node": "^18.0.0",
     "@types/react": "^17.0.45",
     "@types/react-dom": "^18.0.0",
+    "@unpic/placeholder": "^0.1.2",
     "astro": "^2.0.18",
     "astro-icon": "^0.8.0",
-    "preact": "^10.7.3",
+    "blurhash": "^2.0.5",
+    "pako": "^2.1.0",
+    "preact": "^10.13.1",
     "react": "^18.1.0",
     "react-dom": "^18.1.0"
   },
   "devDependencies": {
+    "@types/pako": "^2.0.0",
     "html-escaper": "^3.0.3"
   }
 }

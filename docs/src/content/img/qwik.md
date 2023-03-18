@@ -1,7 +1,10 @@
 ---
 title: "@unpic/qwik"
-description: "Lorem ipsum dolor sit amet - 4"
+description: "High-performance, responsive Qwik image component"
 ---
+
+A high-performance, responsive image component for
+[Qwik](https://qwik.builder.io/).
 
 ## Installation and usage
 
