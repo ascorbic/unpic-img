@@ -1,7 +1,7 @@
 ---
 import { CollectionEntry, getCollection } from "astro:content";
 import MainLayout from "../../layouts/MainLayout.astro";
-import { Content as Api, getHeadings } from "../../content/api.md";
+import { Content as Api, getHeadings } from "../../api.md";
 
 export async function getStaticPaths() {
   const docs = await getCollection("img");

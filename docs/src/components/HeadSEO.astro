@@ -5,10 +5,15 @@ import { SITE, OPEN_GRAPH } from "../consts";
 type Props = { canonicalUrl: URL } & CollectionEntry<"docs">["data"];
 
 const { ogLocale, image, title, description, canonicalUrl } = Astro.props;
-const formattedContentTitle = `${title} – ${SITE.title}`;
-const imageSrc = image?.src ?? OPEN_GRAPH.image.src;
+const formattedContentTitle = `${title ?? ""} – ${SITE.title}`;
+
+const og = new URL("/og.png", Astro.site);
+og.searchParams.set("title", title ?? "");
+og.searchParams.set("description", description ?? SITE.description);
+
+const imageSrc = image?.src ?? og.toString();
 const canonicalImageSrc = new URL(imageSrc, Astro.site);
-const imageAlt = image?.alt ?? OPEN_GRAPH.image.alt;
+const imageAlt = image?.alt ?? description ?? OPEN_GRAPH.image.alt;
 ---
 
 <!-- Page Metadata -->
