@@ -14,7 +14,7 @@
     "build/*"
   ],
   "devDependencies": {
-    "preact-cli": "^3.4.5",
+    "preact-cli": "next",
     "sirv-cli": "^1.0.3"
   },
   "dependencies": {
