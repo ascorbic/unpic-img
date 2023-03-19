@@ -5436,7 +5436,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/react@npm:*, @types/react@npm:18.0.28, @types/react@npm:^18.0.27":
+"@types/react@npm:*, @types/react@npm:18.0.28, @types/react@npm:^18.0.0, @types/react@npm:^18.0.27":
   version: 18.0.28
   resolution: "@types/react@npm:18.0.28"
   dependencies:
@@ -5444,17 +5444,6 @@ __metadata:
     "@types/scheduler": "*"
     csstype: ^3.0.2
   checksum: e752df961105e5127652460504785897ca6e77259e0da8f233f694f9e8f451cde7fa0709d4456ade0ff600c8ce909cfe29f9b08b9c247fa9b734e126ec53edd7
-  languageName: node
-  linkType: hard
-
-"@types/react@npm:^17.0.45":
-  version: 17.0.53
-  resolution: "@types/react@npm:17.0.53"
-  dependencies:
-    "@types/prop-types": "*"
-    "@types/scheduler": "*"
-    csstype: ^3.0.2
-  checksum: dacfde02c260fd98bed2eb775ed0c7ce1397be4c0844f907a50763b081a4008f81f57071889a16eb1350ddcf0927f3cf1a6541702c8ad03de3c70383ef931e3f
   languageName: node
   linkType: hard
 
@@ -10057,7 +10046,7 @@ __metadata:
     "@docsearch/react": ^3.1.0
     "@types/node": ^18.0.0
     "@types/pako": ^2.0.0
-    "@types/react": ^17.0.45
+    "@types/react": ^18.0.0
     "@types/react-dom": ^18.0.0
     "@unpic/placeholder": ^0.1.2
     astro: ^2.0.18
