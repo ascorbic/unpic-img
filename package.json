@@ -23,7 +23,7 @@
     "prettier": "^2.8.3",
     "process": "^0.11.10",
     "publint": "^0.1.9",
-    "typescript": "^4.9.5",
+    "typescript": "^5.0.0",
     "vitest": "^0.29.0"
   },
   "resolutions": {
