@@ -1876,33 +1876,22 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@builder.io/qwik-city@npm:0.3.0":
-  version: 0.3.0
-  resolution: "@builder.io/qwik-city@npm:0.3.0"
+"@builder.io/qwik-city@npm:^0.6.5":
+  version: 0.6.5
+  resolution: "@builder.io/qwik-city@npm:0.6.5"
   dependencies:
     "@mdx-js/mdx": 2.3.0
     "@types/mdx": 2.0.3
     source-map: 0.7.4
     vfile: 5.3.7
-    zod: ^3.20.6
+    zod: ^3.21.4
   peerDependencies:
-    "@builder.io/qwik": ">=0.19.0"
-  checksum: 92700c8272b469c389378e76ab5f03535643f350b4a487dcddd1db773315b4dfba34fe37ade2b15b56cab335e14e783717938cad0d26325a0aeb4ddf523814ae
+    "@builder.io/qwik": ">=0.22.0"
+  checksum: 9479c5009c43b3b090879097be65fdc303077f555c9e6976781f0d885bb04c4f84e815db4ae7c554b844cdc1234f16792c9aacbf12885f293eec47844295c42d
   languageName: node
   linkType: hard
 
-"@builder.io/qwik@npm:0.19.0":
-  version: 0.19.0
-  resolution: "@builder.io/qwik@npm:0.19.0"
-  peerDependencies:
-    undici: ^5.14.0
-  bin:
-    qwik: qwik.cjs
-  checksum: 5f6a766196e8209cdf9bdedc38674ab9f01dea8bbfea0ee5f5cd3dbda66dabd44a643433732ba160af246e8d97b2a856d569c7dc76d7820c8e5f8a4627914853
-  languageName: node
-  linkType: hard
-
-"@builder.io/qwik@npm:0.23.0":
+"@builder.io/qwik@npm:0.23.0, @builder.io/qwik@npm:^0.23.0":
   version: 0.23.0
   resolution: "@builder.io/qwik@npm:0.23.0"
   peerDependencies:
@@ -20597,8 +20586,8 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "qwik-demo@workspace:examples/qwik"
   dependencies:
-    "@builder.io/qwik": 0.19.0
-    "@builder.io/qwik-city": 0.3.0
+    "@builder.io/qwik": ^0.23.0
+    "@builder.io/qwik-city": ^0.6.5
     "@netlify/edge-functions": ^2.0.0
     "@types/eslint": 8.21.1
     "@types/node": ^18.14.0
@@ -26121,7 +26110,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"zod@npm:^3.17.3, zod@npm:^3.20.6":
+"zod@npm:^3.17.3, zod@npm:^3.21.4":
   version: 3.21.4
   resolution: "zod@npm:3.21.4"
   checksum: f185ba87342ff16f7a06686767c2b2a7af41110c7edf7c1974095d8db7a73792696bcb4a00853de0d2edeb34a5b2ea6a55871bc864227dace682a0a28de33e1f
