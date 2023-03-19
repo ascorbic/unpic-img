@@ -22,8 +22,8 @@
     "qwik": "qwik"
   },
   "devDependencies": {
-    "@builder.io/qwik": "0.19.0",
-    "@builder.io/qwik-city": "0.3.0",
+    "@builder.io/qwik": "^0.23.0",
+    "@builder.io/qwik-city": "^0.6.5",
     "@netlify/edge-functions": "^2.0.0",
     "@types/eslint": "8.21.1",
     "@types/node": "^18.14.0",
