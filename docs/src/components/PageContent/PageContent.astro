@@ -24,7 +24,7 @@ const { title, headings, githubEditUrl, githubRepo } = Astro.props;
       githubRepo ? (
         <a class="github-link" href={`https://github.com/${githubRepo}`}>
           <Icon name="mdi:github" />
-          {githubRepo}
+          <>{githubRepo}</>
         </a>
       ) : null
     }
