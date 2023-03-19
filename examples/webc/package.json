@@ -1,0 +1,19 @@
+{
+  "name": "webc-demo",
+  "private": true,
+  "scripts": {
+    "build": "npx @11ty/eleventy",
+    "start": "npx @11ty/eleventy --serve --incremental"
+  },
+  "engines": {
+    "node": ">=14"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "@11ty/eleventy": "2.0.0",
+    "@11ty/eleventy-plugin-webc": "latest",
+    "@unpic/core": "workspace:^",
+    "@unpic/webc": "workspace:^",
+    "style-object-to-css-string": "^1.0.1"
+  }
+}

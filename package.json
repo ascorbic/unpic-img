@@ -6,24 +6,33 @@
     "build:demo": "yarn workspaces foreach -ptvR --from $0 run build",
     "build:packages": "yarn workspaces foreach -ptvR --from '@unpic/*' run build",
     "lint:publint": "yarn workspaces foreach -pv --include '@unpic/*' exec publint",
+    "test": "yarn workspaces foreach --include '@unpic/*' run test run",
     "publish": "yarn workspaces foreach -pv --include '@unpic/*' npm publish --tolerate-republish --access public"
   },
   "dependencies": {
-    "unpic": "^2.0.2"
+    "unpic": "^3.0.1"
   },
   "devDependencies": {
+    "@testing-library/dom": "^9.0.0",
+    "@testing-library/svelte": "^3.2.2",
     "@typescript-eslint/eslint-plugin": "^5.50.0",
     "@typescript-eslint/parser": "^5.50.0",
     "eslint": "^8.33.0",
+    "jsdom": "^21.1.0",
     "npm-run-all": "^4.1.5",
     "prettier": "^2.8.3",
     "process": "^0.11.10",
     "publint": "^0.1.9",
-    "typescript": "^4.9.5"
+    "typescript": "^5.0.0",
+    "vitest": "^0.29.0"
   },
-  "packageManager": "yarn@3.4.1",
+  "resolutions": {
+    "cssstyle": "^3.0.0"
+  },
+  "packageManager": "yarn@3.5.0",
   "workspaces": [
     "packages/*",
-    "examples/*"
+    "examples/*",
+    "docs"
   ]
 }

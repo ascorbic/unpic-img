@@ -1,0 +1,77 @@
+---
+import type { MarkdownHeading } from "astro";
+import { Icon } from "astro-icon";
+import MoreMenu from "../RightSidebar/MoreMenu.astro";
+import TableOfContents from "../RightSidebar/TableOfContents";
+
+type Props = {
+  title: string;
+  headings: MarkdownHeading[];
+  githubEditUrl: string;
+  githubRepo?: string;
+};
+
+const { title, headings, githubEditUrl, githubRepo } = Astro.props;
+---
+
+<article id="article" class="content">
+  <section class="main-section">
+    <h1 class="content-title" id="overview">{title}</h1>
+    <nav class="block sm:hidden">
+      <TableOfContents client:media="(max-width: 50em)" headings={headings} />
+    </nav>
+    {
+      githubRepo ? (
+        <a class="github-link" href={`https://github.com/${githubRepo}`}>
+          <Icon name="mdi:github" />
+          <>{githubRepo}</>
+        </a>
+      ) : null
+    }
+    <slot />
+  </section>
+  <nav class="block sm:hidden">
+    <MoreMenu editHref={githubEditUrl} />
+  </nav>
+</article>
+
+<style>
+  .content {
+    padding: 0;
+    max-width: 75ch;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  a.github-link {
+    display: flex;
+    align-items: center;
+    color: #888;
+    text-decoration: none;
+    transition: color 0.2s ease-in-out;
+  }
+  a.github-link:hover {
+    color: #000;
+    text-decoration: underline;
+  }
+  .github-link [astro-icon] {
+    width: 1.1rem;
+    height: 1.1rem;
+  }
+
+  .content > section {
+    margin-bottom: 4rem;
+  }
+
+  .block {
+    display: block;
+  }
+
+  @media (min-width: 50em) {
+    .sm\:hidden {
+      display: none;
+    }
+  }
+</style>

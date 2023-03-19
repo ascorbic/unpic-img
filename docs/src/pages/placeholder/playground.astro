@@ -1,0 +1,23 @@
+---
+import { Playground } from "../../components/PlaceholderPlayground";
+import Interactive from "../../layouts/Interactive.astro";
+---
+
+<Interactive title="@unpic/placeholder playground" description="">
+  <h1>@unpic/placeholder playground</h1>
+  <p>
+    This is a library for generating low quality image placeholders by
+    extracting the dominant color from image or server-side rendering a{" "}
+    <a href="https://blurha.sh/">BlurHash</a>. These are displayed while an
+    image is loading, and give better appearance and can help reduce the LCP
+    time. It can render a Blurhash to either a set of CSS gradients, or a tiny
+    BMP image data URI. These are usually both around 150 bytes in size, and can
+    be applied as a CSS background image to the img element. For more details,
+    see <a href="/placeholder">the docs</a>.
+  </p>
+  <p>
+    Try it out by clicking one of the examples or choosing your own image. The
+    placeholder images are then displayed below.
+  </p>
+  <Playground client:load />
+</Interactive>

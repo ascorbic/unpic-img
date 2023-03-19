@@ -1,0 +1,24 @@
+---
+import AvatarList from "./AvatarList.astro";
+type Props = {
+  path: string;
+};
+const { path } = Astro.props;
+const currentYear = new Date().getFullYear();
+---
+
+<footer>
+  <AvatarList path={path} /> © {currentYear}
+  <a href="https://twitter.com/ascorbic">Matt Kane</a>
+</footer>
+
+<style>
+  footer {
+    margin-top: auto;
+    padding: 2rem;
+    border-top: 1px solid var(--theme-divider);
+  }
+  footer a {
+    color: var(--theme-link);
+  }
+</style>

@@ -1,0 +1,31 @@
+{
+  "name": "@unpic/webc",
+  "packageManager": "yarn@3.5.0",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ascorbic/unpic-img",
+    "directory": "packages/webc"
+  },
+  "homepage": "https://unpic.pics/img/webc",
+  "dependencies": {
+    "@unpic/core": "workspace:^",
+    "style-object-to-css-string": "^1.0.1"
+  },
+  "devDependencies": {
+    "@11ty/webc": "^0.9.0",
+    "@types/jsdom": "^21.1.0",
+    "jsdom": "^21.1.0",
+    "vitest": "^0.29.0"
+  },
+  "peerDependencies": {
+    "@11ty/webc": ">=0.9.0"
+  },
+  "scripts": {
+    "test": "vitest"
+  },
+  "files": [
+    "unpic-img.webc"
+  ],
+  "version": "0.0.7"
+}

@@ -17,7 +17,7 @@ export interface ImageSourceOptions {
   width?: number;
   height?: number;
   aspectRatio?: number;
-  layout: Layout;
+  layout?: Layout;
   breakpoints?: number[];
   transformer?: UrlTransformer;
   cdn?: ImageCdn;
@@ -110,7 +110,8 @@ export type ConstrainedImageProps<
   TImageAttributes extends CoreImageAttributes<TStyle>,
   TStyle
 > = ImageWithSizeProps<TImageAttributes, TStyle> & {
-  layout: "constrained";
+  // Default is `constrained`, so this is optional
+  layout?: "constrained";
 };
 
 export type FullWidthImageProps<
@@ -283,7 +284,7 @@ export const getBreakpoints = ({
 export const getSrcSet = ({
   src,
   width,
-  layout,
+  layout = "constrained",
   height,
   aspectRatio,
   breakpoints,
@@ -297,11 +298,11 @@ export const getSrcSet = ({
   }
   breakpoints ||= getBreakpoints({ width, layout });
   return breakpoints
-    .sort()
+    .sort((a, b) => a - b)
     .map((bp) => {
       let transformedHeight;
       if (height && aspectRatio) {
-        transformedHeight = Math.round(bp * aspectRatio);
+        transformedHeight = Math.round(bp / aspectRatio);
       }
       // Not sure why TS isn't narrowing the type here
       // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
@@ -329,7 +330,7 @@ export function transformProps<
   width,
   height,
   priority,
-  layout,
+  layout = "constrained",
   aspectRatio,
   cdn,
   transformer,
@@ -339,6 +340,9 @@ export function transformProps<
   ...props
 }: UnpicImageProps<TImageAttributes, TStyle>): TImageAttributes {
   transformer ||= cdn ? getTransformerForCdn(cdn) : getTransformerForUrl(src);
+
+  width = (width && Number(width)) || undefined;
+  height = (height && Number(height)) || undefined;
 
   // High priority images should be loaded eagerly
   if (priority) {

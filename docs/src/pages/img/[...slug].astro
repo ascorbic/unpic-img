@@ -1,0 +1,25 @@
+---
+import { CollectionEntry, getCollection } from "astro:content";
+import MainLayout from "../../layouts/MainLayout.astro";
+import { Content as Api, getHeadings } from "../../api.md";
+
+export async function getStaticPaths() {
+  const docs = await getCollection("img");
+  return docs.map((entry) => ({
+    params: {
+      slug: entry.slug,
+    },
+    props: entry,
+  }));
+}
+type Props = CollectionEntry<"docs">;
+
+const post = Astro.props;
+const { Content, headings } = await post.render();
+const apiHeadings = await getHeadings();
+---
+
+<MainLayout headings={[...headings, ...apiHeadings]} {...post.data}>
+  <Content />
+  <Api />
+</MainLayout>

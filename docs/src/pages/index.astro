@@ -1,0 +1,113 @@
+---
+import Scroller from "../components/Scroller.astro";
+import HomeLayout from "../layouts/HomeLayout.astro";
+---
+
+<HomeLayout
+  title="The best images for every framework"
+  description="Image tools and libraries for the web"
+>
+  <div class="intro">
+    <h2>🌳 Unpic</h2>
+    <div class="body">The best images for <Scroller /></div>
+  </div>
+  <div class="cards">
+    <a href="/img">
+      <h2>🌲 unpic-img</h2>
+      <p>The best image component for every framework</p>
+    </a>
+    <a href="/lib">
+      <h2>🍁 unpic lib</h2>
+      <p>Universal translator for image CDNs</p>
+    </a>
+    <a href="/placeholder">
+      <h2>🌴 @unpic/placeholder</h2>
+      <p>Beautiful image placeholders, with no client-side JS</p>
+    </a>
+    <a href="/pixels">
+      <h2>🍂 @unpic/pixels</h2>
+      <p>Load and decode images to raw pixels</p>
+    </a>
+    <a href="/og-edge">
+      <h2>🎋 og_edge</h2>
+      <p>Create Open Graph images at the edge</p>
+    </a>
+  </div>
+</HomeLayout>
+
+<style>
+  .cards {
+    display: grid;
+    grid-template-columns: 1fr;
+    margin-top: 1rem;
+  }
+
+  .intro {
+    text-align: left;
+    margin-bottom: 2rem;
+  }
+
+  .intro h2 {
+    font-size: 2.5rem;
+  }
+
+  .body {
+    font-size: 1.5rem;
+    line-height: 1.5rem;
+  }
+
+  .cards h2 {
+    font-size: 1.2rem;
+  }
+
+  .card .body {
+    font-size: 1.5rem;
+    line-height: 1.5rem;
+  }
+
+  .cards > a {
+    text-decoration: none;
+    color: inherit;
+  }
+
+  .cards p {
+    color: inherit;
+    font-size: 1.1rem;
+  }
+
+  .cards {
+    grid-gap: 1.5rem;
+  }
+
+  .cards > a {
+    padding: 0.75rem 0;
+    border-radius: 0.5rem;
+    transition: box-shadow 0.5s ease;
+  }
+
+  @media (min-width: 50em) {
+    .intro h2 {
+      font-size: 3rem;
+    }
+
+    .cards {
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    }
+  }
+
+  @media (min-width: 72em) {
+    .intro {
+      margin: 1.5rem;
+    }
+
+    .cards > a:hover,
+    .card:hover {
+      box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+      text-decoration: none;
+    }
+    .cards > a {
+      padding: 1.5rem;
+      border-radius: 0.5rem;
+    }
+  }
+</style>

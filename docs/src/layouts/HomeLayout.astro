@@ -1,0 +1,80 @@
+---
+import HeadCommon from "../components/HeadCommon.astro";
+import HeadSEO from "../components/HeadSEO.astro";
+import Header from "../components/Header/Header.astro";
+import { GITHUB_EDIT_URL, SITE } from "../consts";
+import Footer from "../components/Footer/Footer.astro";
+
+type Props = {
+  title: string;
+  description: string;
+};
+
+const data = Astro.props;
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+const currentPage = Astro.url.pathname;
+---
+
+<html dir={data.dir} lang={data.lang} class="initial">
+  <head>
+    <HeadCommon />
+    <HeadSEO {...data} dir="ltr" canonicalUrl={canonicalURL} />
+    <title>
+      {`${SITE.title} - ${data.title}`}
+    </title>
+    <style>
+      body {
+        width: 100%;
+        display: grid;
+        grid-template-rows: var(--theme-navbar-height) 1fr;
+        --gutter: 0.5rem;
+        --doc-padding: 2rem;
+        --theme-bg: linear-gradient(to top, #24243e, #302b63, #0f0c29);
+        --theme-navbar-bg: transparent;
+        --theme-text: white;
+        --theme-text-light: hsla(var(--color-gray-80), 1);
+      }
+
+      .layout {
+        display: grid;
+        grid-auto-flow: column;
+        grid-template-columns:
+          minmax(var(--gutter), 1fr) minmax(0, var(--max-width))
+          minmax(var(--gutter), 1fr);
+        overflow-x: hidden;
+      }
+
+      #grid-main {
+        padding: var(--doc-padding) var(--gutter);
+        grid-column: 2;
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+      }
+
+      @media (min-width: 72em) {
+        .layout {
+          grid-template-columns: 20rem minmax(0, var(--max-width)) 20rem;
+          padding-left: 0;
+          padding-right: 0;
+          margin: 0 auto;
+        }
+      }
+    </style>
+    <style is:global>
+      .layout > * {
+        width: 100%;
+        height: 100%;
+      }
+    </style>
+  </head>
+
+  <body>
+    <Header currentPage={currentPage} hideMenu={true} />
+    <main class="layout">
+      <div id="grid-main">
+        <slot />
+      </div>
+    </main>
+  </body>
+</html>

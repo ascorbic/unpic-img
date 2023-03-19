@@ -1,6 +1,13 @@
 {
   "name": "@unpic/preact",
-  "version": "0.0.1",
+  "version": "0.0.8",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ascorbic/unpic-img",
+    "directory": "packages/astro"
+  },
+  "homepage": "https://unpic.pics/img/preact",
   "files": [
     "dist",
     "src"
@@ -16,13 +23,16 @@
     }
   },
   "scripts": {
+    "test": "vitest",
     "build": "tsup src/index.ts --format cjs,esm --dts --clean",
     "prepublishOnly": "yarn build"
   },
   "devDependencies": {
+    "@testing-library/preact": "^3.2.3",
     "preact": "^10.12.1",
     "tsup": "^6.6.0",
-    "typescript": "^4.9.5"
+    "typescript": "^5.0.0",
+    "vitest": "^0.29.0"
   },
   "dependencies": {
     "@unpic/core": "workspace:^"

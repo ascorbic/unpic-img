@@ -1,0 +1,129 @@
+---
+import HeadCommon from "../components/HeadCommon.astro";
+import HeadSEO from "../components/HeadSEO.astro";
+import Header from "../components/Header/Header.astro";
+import LeftSidebar from "../components/LeftSidebar/LeftSidebar.astro";
+import Footer from "../components/Footer/Footer.astro";
+import {  SITE } from "../consts";
+
+type Props = {
+  title: string;
+  description: string;
+};
+
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+const currentPage = Astro.url.pathname;
+const currentFile = `src/content/docs${currentPage.replace(/\/$/, "")}.md`;
+---
+
+<html class="initial">
+  <head>
+    <HeadCommon />
+    <HeadSEO {...Astro.props} dir="ltr" canonicalUrl={canonicalURL} />
+    <title>
+      {`${Astro.props.title} – ${SITE.title}`}
+    </title>
+    <style>
+      body {
+        width: 100%;
+        display: grid;
+        grid-template-rows: var(--theme-navbar-height) 1fr;
+        --gutter: 0.5rem;
+        --doc-padding: 2rem;
+      }
+
+      h1 {
+        text-align: left;
+      }
+
+      .layout {
+        display: grid;
+        grid-auto-flow: column;
+        grid-template-columns:
+          minmax(var(--gutter), 1fr) minmax(0, var(--max-width))
+        overflow-x: hidden;
+      }
+
+      .grid-sidebar {
+        height: 100vh;
+        position: sticky;
+        top: 0;
+        padding: 0;
+      }
+
+      #grid-left {
+        position: fixed;
+        background-color: var(--theme-bg);
+        z-index: 10;
+        display: none;
+      }
+
+      #grid-main {
+        padding: var(--doc-padding) var(--gutter);
+        grid-column: 2;
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+      }
+
+      #grid-right {
+        display: none;
+      }
+
+      @media (min-width: 50em) {
+        .layout {
+          overflow: initial;
+          grid-template-columns: 20rem 1fr;
+          gap: 1em;
+        }
+
+        #grid-left {
+          display: flex;
+          padding-left: 2rem;
+          position: sticky;
+          grid-column: 1;
+        }
+      }
+
+      @media (min-width: 72em) {
+        .layout {
+          grid-template-columns: 20rem 1fr);
+          padding-left: 0;
+          margin: 0 auto;
+        }
+        #grid-main {
+          padding-right: 2rem;
+        }
+
+      }
+    </style>
+    <style is:global>
+      .layout > * {
+        width: 100%;
+        height: 100%;
+      }
+
+      .mobile-sidebar-toggle {
+        overflow: hidden;
+      }
+
+      .mobile-sidebar-toggle #grid-left {
+        display: block;
+        top: 2rem;
+      }
+    </style>
+  </head>
+
+  <body>
+    <Header currentPage={currentPage} />
+    <main class="layout">
+      <aside id="grid-left" class="grid-sidebar" title="Site Navigation">
+        <LeftSidebar currentPage={currentPage} />
+      </aside>
+      <div id="grid-main">
+          <slot />
+      </div>
+    </main>
+    <Footer path={currentFile} />
+  </body>
+</html>
