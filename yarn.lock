@@ -5101,7 +5101,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/eslint@npm:*, @types/eslint@npm:8.21.2":
+"@types/eslint@npm:*":
   version: 8.21.2
   resolution: "@types/eslint@npm:8.21.2"
   dependencies:
@@ -5118,6 +5118,16 @@ __metadata:
     "@types/estree": "*"
     "@types/json-schema": "*"
   checksum: 584068441e4000c7b41c8928274fdcc737bc62f564928c30eb64ec41bbdbac31612f9fedaf490bceab31ec8305e99615166428188ea345d58878394683086fae
+  languageName: node
+  linkType: hard
+
+"@types/eslint@npm:8.21.3":
+  version: 8.21.3
+  resolution: "@types/eslint@npm:8.21.3"
+  dependencies:
+    "@types/estree": "*"
+    "@types/json-schema": "*"
+  checksum: 80e0b5ca9ffb77bff19d01df08b93a99a6b44cad4c40e6450733ead6f1bc44b5514e7d28c3b0ad6304aeb01d690ee7ca89250729a9373551b7e587c6dbb41d7f
   languageName: node
   linkType: hard
 
@@ -5905,7 +5915,7 @@ __metadata:
   resolution: "@unpic/qwik@workspace:packages/qwik"
   dependencies:
     "@builder.io/qwik": 0.23.0
-    "@types/eslint": 8.21.2
+    "@types/eslint": 8.21.3
     "@types/node": ^18.14.0
     "@types/node-fetch": latest
     "@typescript-eslint/eslint-plugin": 5.55.0
