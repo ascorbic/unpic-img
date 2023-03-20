@@ -6,7 +6,6 @@ const camelize = (s: string) =>
 const nestedKeys = new Set(["style"]);
 const fixedMap: Record<string, string> = {
   srcset: "srcSet",
-  fetchpriority: "fetchPriority",
 };
 
 export function camelizeProps<TObject extends HTMLAttributes<HTMLElement>>(

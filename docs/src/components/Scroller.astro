@@ -8,68 +8,63 @@ import { Icon } from "astro-icon";
     overflow: hidden;
     display: inline-block;
     transform: translateY(0.25rem);
+    padding-left: 2px;
   }
-  ul,
   li {
-    float: left;
     font-size: 1.5rem;
     line-height: 2em;
   }
 
   ul {
+    display: flex;
+    flex-direction: column;
     list-style: none;
     padding: 0;
     animation: roll-up 16s infinite cubic-bezier(0.75, 0, 0.25, 1);
   }
 
-  li + li {
-    clear: left;
-  }
-
-  li:before {
-    content: "\a0";
-    float: left;
-  }
-
   [astro-icon] {
     height: 18px;
     width: 18px;
-    margin-right: 0.5rem;
+    margin: 0 0.5rem 0 0.2rem;
   }
 
   @keyframes roll-up {
     0% {
       transform: translateY(0);
     }
-    10% {
+    9% {
       transform: translateY(-2em);
     }
-    20% {
+    18% {
       transform: translateY(-4em);
     }
-    30% {
+    27% {
       transform: translateY(-6em);
     }
-    40% {
+    36% {
       transform: translateY(-8em);
     }
-    50% {
+    45% {
       transform: translateY(-10em);
     }
-    60% {
+    54% {
       transform: translateY(-12em);
     }
-    70% {
+    63% {
       transform: translateY(-14em);
     }
-    80% {
+    72% {
       transform: translateY(-16em);
     }
-    90% {
+    81% {
       transform: translateY(-18em);
     }
-    100% {
+    90% {
       transform: translateY(-20em);
+    }
+    100% {
+      transform: translateY(-22em);
     }
   }
 </style>
@@ -78,6 +73,7 @@ import { Icon } from "astro-icon";
     <li>the web</li>
     <li><Icon name="logos:react" />React</li>
     <li><Icon name="simple-icons:astro" />Astro</li>
+    <li><Icon name="logos:angular-icon" />Angular</li>
     <li><Icon name="logos:vue" />Vue</li>
     <li><Icon name="logos:preact" />Preact</li>
     <li><Icon name="logos:svelte-icon" />Svelte</li>

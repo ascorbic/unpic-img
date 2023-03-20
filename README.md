@@ -4,21 +4,23 @@
 
 <h3 align="center">
 
-[<img src="https://raw.githubusercontent.com/gilbarbara/logos/main/logos/react.svg" height="16" alt="react" /> React](https://github.com/ascorbic/unpic-img/tree/main/packages/react)
+[<img src="https://raw.githubusercontent.com/gilbarbara/logos/main/logos/react.svg" height="16" alt="react" /> React](https://unpic.pics/img/react)
 •
-[<img src="https://raw.githubusercontent.com/gilbarbara/logos/main/logos/vue.svg" height="16" alt="vue" /> Vue](https://github.com/ascorbic/unpic-img/tree/main/packages/vue)
+[<img src="https://raw.githubusercontent.com/gilbarbara/logos/main/logos/vue.svg" height="16" alt="vue" /> Vue](https://unpic.pics/img/vue)
 •
-[<img src="https://raw.githubusercontent.com/gilbarbara/logos/main/logos/solidjs-icon.svg" height="16" alt="solidjs" /> SolidJS](https://github.com/ascorbic/unpic-img/tree/main/packages/solid)
+[<img src="https://raw.githubusercontent.com/gilbarbara/logos/main/logos/solidjs-icon.svg" height="16" alt="solidjs" /> SolidJS](https://unpic.pics/img/solid)
 •
-[<img src="https://raw.githubusercontent.com/gilbarbara/logos/main/logos/svelte-icon.svg" height="16" alt="svelte" /> Svelte](https://github.com/ascorbic/unpic-img/tree/main/packages/svelte)
+[<img src="https://raw.githubusercontent.com/gilbarbara/logos/main/logos/svelte-icon.svg" height="16" alt="svelte" /> Svelte](https://unpic.pics/img/svelte)
 •
-[<img src="https://raw.githubusercontent.com/gilbarbara/logos/main/logos/astro.svg" height="16" alt="astro" /> Astro](https://github.com/ascorbic/unpic-img/tree/main/packages/astro)
+[<img src="https://raw.githubusercontent.com/gilbarbara/logos/main/logos/astro.svg" height="16" alt="astro" /> Astro](https://unpic.pics/img/astro)
 •
-[<img src="https://raw.githubusercontent.com/gilbarbara/logos/main/logos/preact.svg" height="16" alt="preact" /> Preact](https://github.com/ascorbic/unpic-img/tree/main/packages/preact)
+[<img src="https://raw.githubusercontent.com/gilbarbara/logos/main/logos/preact.svg" height="16" alt="preact" /> Preact](https://unpic.pics/img/preact)
 •
-[<img src="https://raw.githubusercontent.com/gilbarbara/logos/main/logos/qwik.svg" height="16" alt="qwik" /> Qwik](https://github.com/ascorbic/unpic-img/tree/main/packages/qwik)
+[<img src="https://raw.githubusercontent.com/gilbarbara/logos/main/logos/qwik.svg" height="16" alt="qwik" /> Qwik](https://unpic.pics/img/qwik)
 •
-[<img src="https://raw.githubusercontent.com/gilbarbara/logos/main/logos/eleventy.svg" height="16" alt="webc" /> WebC](https://github.com/ascorbic/unpic-img/tree/main/packages/webc)
+[<img src="https://raw.githubusercontent.com/gilbarbara/logos/main/logos/eleventy.svg" height="16" alt="webc" /> WebC](https://unpic.pics/img/webc)
+•
+[<img src="https://raw.githubusercontent.com/gilbarbara/logos/main/logos/angular-icon.svg" height="16" alt="angular" /> Angular](https://unpic.pics/img/angular)
 
 </h3>
 
@@ -37,24 +39,15 @@
   browser.
 - No build step or server-side rendering required for the images: uses your
   existing image CDN or CMS, with no additional configuration.
-- Uses [unpic](https://github.com/ascorbic/unpic) to support most image CDNs,
-  including Cloudinary, Imgix, and Shopify.
+- Uses [unpic lib](https://unpic.pics/lib) to support most image CDNs, including
+  Cloudinary, Imgix, and Shopify.
 - Can generate a low-res background image for a blurred placeholder effect, or
-  use with
-  [`@unpic/placeholder`](https://github.com/ascorbic/unpic-placeholder/) for
-  more options.
+  use with [`@unpic/placeholder`](https://unpic.pics/placeholder) for more
+  options.
 
 ## Usage
 
-For details of usage, see the individual framework packages:
-
-- [`@unpic/react`](https://github.com/ascorbic/unpic-img/tree/main/packages/react)
-- [`@unpic/vue`](https://github.com/ascorbic/unpic-img/tree/main/packages/vue)
-- [`@unpic/solid`](https://github.com/ascorbic/unpic-img/tree/main/packages/solid)
-- [`@unpic/svelte`](https://github.com/ascorbic/unpic-img/tree/main/packages/svelte)
-- [`@unpic/astro`](https://github.com/ascorbic/unpic-img/tree/main/packages/astro)
-- [`@unpic/preact`](https://github.com/ascorbic/unpic-img/tree/main/packages/preact)
-- [`@unpic/qwik`](https://github.com/ascorbic/unpic-img/tree/main/packages/qwik)
+For details of usage, see [the documentation](https://unpic.pics/img).
 
 ## FAQ
 
@@ -137,80 +130,10 @@ It turns this:
 
 </details>
 
-## Props
-
-The component accepts all the props of an `<img>` tag, plus the following:
-
-### `layout`
-
-The resizing behaviour of the image.
-
-- `constrained`: (default) the image will be rendered at a maximum of `width`
-  and `height`, but will scale down automatically if the container is smaller,
-  maintaining the aspect ratio.
-- `fullWidth`: the image will be rendered at full width of its container. This
-  is optimized for full-width hero images. You can set `height` to a fixed
-  value, which will mean the image will be rendered at that fixed height and
-  scale horizontally to fill the container.
-- `fixed`: the image will be rendered at the exact size specified by `width` and
-  `height`
-
-![image-layouts](https://user-images.githubusercontent.com/213306/217186596-f67c54fe-6613-497f-9577-7868226ed7d9.gif)
-
-### `priority`
-
-By default, images are loaded lazily. If `priority` is set to `true`, the image
-will be loaded eagerly, and will be given high priority by the browser. This is
-useful for images that are above the fold, particularly large ones such as hero
-images.
-
-### `background`
-
-Either an image URL, CSS gradient or CSS colour value. If set to `auto`, a
-low-resolution version of the image will be rendered as a background image, with
-a blurred placeholder effect. This is still loaded from the remote server, so if
-you can instead provide an inline base64-encoded version of the image or
-background colour, you should do that instead. Look at
-[`@unpic/placeholder`](https://github.com/ascorbic/unpic-placeholder/) for a
-library that can generate these placeholders.
-
-Bear in mind that this is not removed after the image loads, so it will be
-visible if the image has transparency.
-
-### `aspectRatio`
-
-Instead of specifying both `width` and `height`, you can specify can
-`aspectRatio`.
-
-### `cdn`
-
-By default the CDN is auto-detected from the `src` URL. If you want to override
-this, you can specify a CDN object. See the
-[unpic](https://github.com/ascorbic/unpic) for supported values.
-
-### `breakpoints`
-
-By default the image breakpoints used in the `srcset` are generated based on the
-layout and image size. You can override this by specifying an array of
-breakpoints. The breakpoints are specified as an array of numbers, representing
-the width of the image in pixels.
-
-## Other props
-
-Any prop supported by `<img>` tags can be passed in, except `srcset` which is
-generated from `src`. The following props are set automatically, but can be
-overridden if you need to:
-
-- `sizes`
-- `role`
-- `decoding`
-- `loading`
-- `fetchpriority`
-
 ## Supported CDNs
 
-You can use any image CDN supported by
-[unpic](https://github.com/ascorbic/unpic), including:
+You can use any image CDN supported by [unpic lib](https://unpic.pics/lib),
+including:
 
 - Builder.io
 - Bunny.net
@@ -223,17 +146,6 @@ You can use any image CDN supported by
 - Shopify
 - Storyblok
 - WordPress.com and Jetpack Site Accelerator
-
-## Browser support
-
-Many of the performance features use `<img>` attributes that are only supported
-in modern browsers. However it is still an `<img>` tag, so it will degrade
-gracefully in older browsers. It uses the `aspect-ratio` and `object-fit` CSS
-properties, which are supported in all modern browsers but will not degrade
-gracefully in older browsers. This means that in older browsers the image may
-appear stretched or squashed if not explicitly sized. See
-[the browser support table](https://caniuse.com/mdn-css_properties_aspect-ratio)
-for more details.
 
 ## License
 
