@@ -6609,6 +6609,7 @@ __metadata:
     "@angular/compiler-cli": ^15.1.0
     "@unpic/core": "workspace:^"
     ng-packagr: ^15.1.0
+    publint: ^0.1.10
     typescript: ~4.9.4
   languageName: unknown
   linkType: soft
