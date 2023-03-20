@@ -33,6 +33,7 @@ export type Sidebar = Record<
 export const SIDEBAR: Sidebar = {
   "unpic-img": [
     { text: "Introduction", link: "img" },
+    { icon: "logos:angular", text: "Astro", link: "img/angular" },
     { icon: "simple-icons:astro", text: "Astro", link: "img/astro" },
     { icon: "logos:preact", text: "Preact", link: "img/preact" },
     { icon: "qwik", text: "Qwik", link: "img/qwik" },

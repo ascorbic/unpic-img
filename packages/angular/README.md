@@ -1,27 +1,53 @@
-# Angular
+# `@unpic/angular` 🖼 📐
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.1.6.
+Angular directive for responsive, high-performance images.
 
-## Development server
+## Features
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+- Just an `<img>` tag! No extra elements. Easy to style.
+- Automatically generates correct srcset and sizes attributes for responsive
+  images
+- Handles responsive resizing of images, preserving aspect ratio
+- Uses native lazy loading and aync decoding for offscreen images
+- Handles different image layouts: fixed, constrained and full width
+- Uses eager loading and high priority fetching for important images
+- Delivers modern image formats, including WebP and AVIF if supported by your
+  browser
+- No built step or server-side rendering required: uses your existing image CDN
+  or CMS, with no additional configuration
+- Uses [unpic](https://github.com/ascorbic/unpic) to support most image CDNs,
+  including Cloudinary, Imgix, and Shopify
+- Can generate a low-res background image for a blurred placeholder effect
 
-## Code scaffolding
+## Installation and usage
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+```bash
+npm install @unpic/angular
+```
 
-## Build
+Add to app module:
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+```typescript
+// ..
+import { UnpicDirective } from "@unpic/angular";
 
-## Running unit tests
+@NgModule({
+  // ...
+  imports: [BrowserModule, UnpicDirective],
+})
+```
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+You can then use it by adding the `unpic` attribute to an `<img>` tag:
 
-## Running end-to-end tests
+```html
+<img
+  unpic
+  src="https://cdn.shopify.com/static/sample-images/bath_grande_crop_center.jpeg"
+  layout="constrained"
+  width="{800}"
+  height="{600}"
+  alt="A lovely bath"
+/>
+```
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+For the supported props, see [the docs](https://unpic.pics/img/angular).
