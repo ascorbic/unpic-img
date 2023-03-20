@@ -6,7 +6,7 @@
     "build:demo": "yarn workspaces foreach -ptvR --from $0 run build",
     "build:packages": "yarn workspaces foreach -ptvR --from '@unpic/*' run build",
     "lint:publint": "yarn workspaces foreach -pv --include '@unpic/*' exec publint",
-    "test": "yarn workspaces foreach --include '@unpic/*' run test run",
+    "test": "yarn workspaces foreach --include '@unpic/*' run test",
     "publish": "yarn workspaces foreach -pv --include '@unpic/*' npm publish --tolerate-republish --access public"
   },
   "dependencies": {
