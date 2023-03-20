@@ -24,7 +24,7 @@
   },
   "scripts": {
     "dev": "vite",
-    "test": "vitest",
+    "test": "vitest run",
     "build": "vite build && vue-tsc --emitDeclarationOnly",
     "typegen": "vue-tsc --emitDeclarationOnly",
     "prepublishOnly": "yarn build"

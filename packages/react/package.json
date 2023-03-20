@@ -32,7 +32,7 @@
     "build": "tsup src/index.ts src/next.tsx --format cjs,esm --dts --clean",
     "prepublishOnly": "yarn build",
     "publint": "publint",
-    "test": "vitest"
+    "test": "vitest run"
   },
   "devDependencies": {
     "@testing-library/react": "^14.0.0",
