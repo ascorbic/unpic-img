@@ -29,7 +29,7 @@
   "type": "module",
   "scripts": {
     "build": "qwik build",
-    "test": "vitest",
+    "test": "vitest run",
     "build.lib": "vite build --mode lib",
     "build.types": "tsc --emitDeclarationOnly",
     "dev": "vite --mode ssr",

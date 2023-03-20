@@ -23,7 +23,7 @@
     }
   },
   "scripts": {
-    "test": "vitest",
+    "test": "vitest run",
     "build": "tsup src/index.ts --format cjs,esm --dts --clean",
     "prepublishOnly": "yarn build"
   },
