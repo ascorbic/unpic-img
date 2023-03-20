@@ -6,7 +6,7 @@ module.exports = {
   extends: [
     "eslint:recommended",
     "plugin:@typescript-eslint/recommended",
-    "plugin:@builder.io/mitosis/recommended",
+    "prettier",
   ],
   parser: "@typescript-eslint/parser",
   parserOptions: {
@@ -16,10 +16,10 @@ module.exports = {
     ecmaVersion: "latest",
     sourceType: "module",
   },
-  plugins: ["@typescript-eslint", "@builder.io/mitosis"],
+  plugins: ["@typescript-eslint"],
   overrides: [
     {
-      files: ["*.cjs", "mitosis.config.js"],
+      files: ["*.cjs"],
       parserOptions: {
         sourceType: "script",
       },
