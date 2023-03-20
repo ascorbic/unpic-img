@@ -5,8 +5,7 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "node scripts/prebuild.mjs && ng build && node scripts/postbuild.mjs && publint",
-    "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "watch": "ng build --watch --configuration development"
   },
   "files": [
     "dist"
