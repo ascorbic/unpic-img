@@ -42,6 +42,13 @@
   * dependencies
     * @unpic/core bumped to 0.0.15
 
+## [0.0.14](https://github.com/ascorbic/unpic-img/compare/solid-v0.0.13...solid-v0.0.14) (2023-03-20)
+
+
+### Features
+
+* **angular:** add Angular support  ([#146](https://github.com/ascorbic/unpic-img/issues/146)) ([c1ef2e8](https://github.com/ascorbic/unpic-img/commit/c1ef2e8fcdf1cbd3efc8001da3b0e959658ee184))
+
 ## [0.0.7](https://github.com/ascorbic/unpic-img/compare/solid-v0.0.6...solid-v0.0.7) (2023-02-25)
 
 
