@@ -30,8 +30,8 @@ You can then use it by adding the `unpic` attribute to an `<img>` tag:
   unpic
   src="https://cdn.shopify.com/static/sample-images/bath_grande_crop_center.jpeg"
   layout="constrained"
-  width="{800}"
-  height="{600}"
+  width="800"
+  height="600"
   alt="A lovely bath"
 />
 ```
