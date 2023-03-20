@@ -6709,7 +6709,7 @@ __metadata:
     eslint-plugin-qwik: latest
     node-fetch: 3.3.1
     np: 7.6.3
-    prettier: 2.8.4
+    prettier: ^2.8.3
     typescript: 5.0.2
     undici: 5.21.0
     vite: 4.2.0
@@ -6751,7 +6751,7 @@ __metadata:
     esbuild: ^0.17.4
     esbuild-plugin-solid: ^0.5.0
     jsdom: ^21.1.0
-    prettier: 2.8.4
+    prettier: ^2.8.3
     solid-js: ^1.6.9
     solid-testing-library: ^0.5.1
     tsup: ^6.5.0
@@ -22141,12 +22141,21 @@ __metadata:
   languageName: node
   linkType: hard
 
-"prettier@npm:2.8.4, prettier@npm:^2.7.1, prettier@npm:^2.8.3":
+"prettier@npm:^2.7.1":
   version: 2.8.4
   resolution: "prettier@npm:2.8.4"
   bin:
     prettier: bin-prettier.js
   checksum: c173064bf3df57b6d93d19aa98753b9b9dd7657212e33b41ada8e2e9f9884066bb9ca0b4005b89b3ab137efffdf8fbe0b462785aba20364798ff4303aadda57e
+  languageName: node
+  linkType: hard
+
+"prettier@npm:^2.8.3":
+  version: 2.8.5
+  resolution: "prettier@npm:2.8.5"
+  bin:
+    prettier: bin-prettier.js
+  checksum: b7f8d30e14061e0478bc5a59d4d889688d804c173a0daa91b1b85dc08eef5eb6956d1b59f4037770776fda5b967f6c9ca3b7a8a43c50bedb4c7b182029f865aa
   languageName: node
   linkType: hard
 
@@ -22667,7 +22676,7 @@ __metadata:
     eslint-plugin-qwik: 0.19.0
     netlify-cli: ^12.0.11
     node-fetch: 3.3.0
-    prettier: 2.8.4
+    prettier: ^2.8.3
     typescript: 4.9.5
     undici: 5.20.0
     vite: 4.1.2
