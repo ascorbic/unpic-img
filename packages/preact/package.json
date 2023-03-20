@@ -29,10 +29,10 @@
   },
   "devDependencies": {
     "@testing-library/preact": "^3.2.3",
-    "preact": "^10.12.1",
-    "tsup": "^6.6.0",
-    "typescript": "^5.0.0",
-    "vitest": "^0.29.0"
+    "preact": "^10.13.1",
+    "tsup": "^6.7.0",
+    "typescript": "^5.0.2",
+    "vitest": "^0.29.5"
   },
   "dependencies": {
     "@unpic/core": "workspace:^"

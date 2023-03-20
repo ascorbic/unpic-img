@@ -36,16 +36,16 @@
   },
   "devDependencies": {
     "@testing-library/react": "^14.0.0",
-    "@types/react": "^18.0.27",
-    "@types/react-dom": "^18.0.10",
+    "@types/react": "^18.0.28",
+    "@types/react-dom": "^18.0.11",
     "@vitejs/plugin-react": "^3.1.0",
     "cssstyle": "^3.0.0",
-    "jsdom": "^21.1.0",
+    "jsdom": "^21.1.1",
     "next": "^13.2.4",
-    "publint": "^0.1.10",
-    "tsup": "^6.6.0",
-    "typescript": "^5.0.0",
-    "vitest": "^0.29.0"
+    "publint": "^0.1.11",
+    "tsup": "^6.7.0",
+    "typescript": "^5.0.2",
+    "vitest": "^0.29.5"
   },
   "dependencies": {
     "@unpic/core": "workspace:^"
