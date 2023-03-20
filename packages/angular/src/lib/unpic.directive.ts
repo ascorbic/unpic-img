@@ -15,6 +15,7 @@ export class UnpicDirective {
   @Input() breakpoints?: Props['breakpoints'];
   @Input() transformer?: Props['transformer'];
   @Input() cdn?: Props['cdn'];
+  @Input() background?: Props['background'];
 
   constructor(private el: ElementRef, private renderer: Renderer2) {}
 
@@ -28,6 +29,7 @@ export class UnpicDirective {
       breakpoints,
       transformer,
       cdn,
+      background,
     } = this;
 
     const { style, ...props } = transformProps({
@@ -39,6 +41,7 @@ export class UnpicDirective {
       breakpoints,
       transformer,
       cdn,
+      background,
     } as Props);
 
     for (const name in style) {
@@ -53,10 +56,15 @@ export class UnpicDirective {
 
     for (const prop in props) {
       if (Object.prototype.hasOwnProperty.call(props, prop)) {
+        const propValue = props[prop as keyof typeof props];
+        if (propValue === undefined) {
+          this.renderer.removeAttribute(this.el.nativeElement, prop);
+          continue;
+        }
         this.renderer.setAttribute(
           this.el.nativeElement,
           prop,
-          String(props[prop as keyof typeof props])
+          String(propValue)
         );
       }
     }
