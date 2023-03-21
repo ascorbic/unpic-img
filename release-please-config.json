@@ -9,9 +9,7 @@
     "packages/astro": {},
     "packages/qwik": {},
     "packages/webc": {},
-    "packages/angular": {
-      "release-as": "0.0.1"
-    }
+    "packages/angular": {}
   },
   "plugins": ["node-workspace"],
   "bump-minor-pre-major": true,
