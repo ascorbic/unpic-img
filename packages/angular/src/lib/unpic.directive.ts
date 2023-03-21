@@ -26,14 +26,6 @@ export class UnpicDirective implements OnChanges {
   constructor(private el: ElementRef, private renderer: Renderer2) {}
 
   ngOnChanges() {
-    this.syncProps();
-  }
-
-  ngOnInit() {
-    this.syncProps();
-  }
-
-  private syncProps() {
     const {
       layout,
       width,
