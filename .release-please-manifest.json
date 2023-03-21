@@ -8,5 +8,5 @@
   "packages/preact": "0.0.10",
   "packages/qwik": "0.0.11",
   "packages/webc": "0.0.9",
-  "packages/angular": "0.0.2"
+  "packages/angular": "0.0.3"
 }
