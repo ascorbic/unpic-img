@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.0.16](https://github.com/ascorbic/unpic-img/compare/core-v0.0.15...core-v0.0.16) (2023-03-21)
+
+
+### Bug Fixes
+
+* **core:** generate srcset before transforming src ([#155](https://github.com/ascorbic/unpic-img/issues/155)) ([5a84661](https://github.com/ascorbic/unpic-img/commit/5a8466193725b64a362705c18248b69450b5cd99))
+
 ## [0.0.15](https://github.com/ascorbic/unpic-img/compare/core-v0.0.14...core-v0.0.15) (2023-03-11)
 
 

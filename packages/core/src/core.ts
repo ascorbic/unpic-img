@@ -419,10 +419,6 @@ export function transformProps<
       ...props.style,
     };
 
-    const transformed = transformer({ url: src, width, height });
-    if (transformed) {
-      src = transformed.toString();
-    }
     props.srcset = getSrcSet({
       src,
       width,
@@ -432,6 +428,12 @@ export function transformProps<
       breakpoints,
       transformer,
     });
+
+    const transformed = transformer({ url: src, width, height });
+
+    if (transformed) {
+      src = transformed.toString();
+    }
 
     if (layout === "fullWidth" || layout === "constrained") {
       width = undefined;
