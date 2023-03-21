@@ -1,0 +1,14 @@
+version = 1
+
+[merge.automerge_dependencies]
+# auto merge all PRs opened by "dependabot" that are "minor" or "patch" version upgrades. "major" version upgrades will be ignored.
+versions = ["minor", "patch"]
+usernames = ["renovate"]
+
+[merge.message]
+title = "pull_request_title" # default: "github_default"
+body = "pull_request_body" # default: "github_default"
+
+[update]
+ignored_usernames = ["renovate"]
+priority_merge_label = "automerge:first"

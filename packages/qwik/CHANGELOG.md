@@ -42,6 +42,13 @@
   * dependencies
     * @unpic/core bumped to 0.0.15
 
+## [0.0.10](https://github.com/ascorbic/unpic-img/compare/qwik-v0.0.9...qwik-v0.0.10) (2023-03-20)
+
+
+### Features
+
+* **angular:** add Angular support  ([#146](https://github.com/ascorbic/unpic-img/issues/146)) ([c1ef2e8](https://github.com/ascorbic/unpic-img/commit/c1ef2e8fcdf1cbd3efc8001da3b0e959658ee184))
+
 ## [0.0.5](https://github.com/ascorbic/unpic-img/compare/qwik-v0.0.4...qwik-v0.0.5) (2023-03-01)
 
 

@@ -20,9 +20,9 @@ export const COMMUNITY_INVITE_URL = undefined; //`https://astro.build/chat`;
 
 // See "Algolia" section of the README for more information.
 export const ALGOLIA = {
-  indexName: "XXXXXXXXXX",
-  appId: "XXXXXXXXXX",
-  apiKey: "XXXXXXXXXX",
+  indexName: "unpic",
+  appId: "C5NYTAKSPB",
+  apiKey: "90068636570de069d05269a3061518aa",
 };
 
 export type Sidebar = Record<
@@ -33,6 +33,7 @@ export type Sidebar = Record<
 export const SIDEBAR: Sidebar = {
   "unpic-img": [
     { text: "Introduction", link: "img" },
+    { icon: "logos:angular-icon", text: "Angular", link: "img/angular" },
     { icon: "simple-icons:astro", text: "Astro", link: "img/astro" },
     { icon: "logos:preact", text: "Preact", link: "img/preact" },
     { icon: "qwik", text: "Qwik", link: "img/qwik" },

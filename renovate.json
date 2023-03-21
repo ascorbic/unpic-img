@@ -4,6 +4,9 @@
     "config:base",
     ":automergeLinters"
   ],
+  "schedule": [
+    "after 9pm on sunday"
+  ],
   "packageRules": [
     {
       "matchPackageNames": [
@@ -13,6 +16,9 @@
       "bumpVersion": "patch",
       "extends": [
         ":automergePatch"
+      ],
+      "schedule": [
+        "at any time"
       ]
     }
   ]

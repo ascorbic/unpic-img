@@ -1,6 +1,6 @@
 {
   "name": "@unpic/svelte",
-  "version": "0.0.14",
+  "version": "0.0.15",
   "license": "MIT",
   "repository": {
     "type": "git",
@@ -20,16 +20,16 @@
   },
   "devDependencies": {
     "@sveltejs/adapter-auto": "^2.0.0",
-    "@sveltejs/kit": "^1.5.0",
-    "@sveltejs/package": "^2.0.0",
-    "prettier": "^2.8.3",
-    "prettier-plugin-svelte": "^2.8.1",
-    "svelte": "^3.54.0",
-    "svelte-check": "^3.0.1",
-    "tslib": "^2.4.1",
-    "typescript": "^5.0.0",
-    "vite": "^4.0.0",
-    "vitest": "^0.29.0"
+    "@sveltejs/kit": "^1.13.0",
+    "@sveltejs/package": "^2.0.2",
+    "prettier": "^2.8.5",
+    "prettier-plugin-svelte": "^2.9.0",
+    "svelte": "^3.57.0",
+    "svelte-check": "^3.1.4",
+    "tslib": "^2.5.0",
+    "typescript": "^5.0.2",
+    "vite": "^4.2.1",
+    "vitest": "^0.29.5"
   },
   "type": "module",
   "dependencies": {

@@ -1,0 +1,43 @@
+{
+  "name": "@unpic/angular",
+  "version": "0.0.1",
+  "scripts": {
+    "ng": "ng",
+    "start": "ng serve",
+    "build": "node scripts/prebuild.mjs && ng build && node scripts/postbuild.mjs && publint",
+    "watch": "ng build --watch --configuration development"
+  },
+  "files": [
+    "dist"
+  ],
+  "devDependencies": {
+    "@angular-devkit/build-angular": "^15.2.4",
+    "@angular/cli": "~15.2.4",
+    "@angular/compiler-cli": "^15.2.3",
+    "ng-packagr": "^15.2.2",
+    "publint": "^0.1.11",
+    "typescript": "~4.9.4"
+  },
+  "dependencies": {
+    "@unpic/core": "workspace:^"
+  },
+  "module": "dist/fesm2015/unpic-angular.mjs",
+  "typings": "dist/index.d.ts",
+  "es2020": "dist/fesm2020/unpic-angular.mjs",
+  "esm2020": "dist/esm2020/unpic-angular.mjs",
+  "fesm2020": "dist/fesm2020/unpic-angular.mjs",
+  "fesm2015": "dist/fesm2015/unpic-angular.mjs",
+  "exports": {
+    "./package.json": {
+      "default": "./package.json"
+    },
+    ".": {
+      "types": "./dist/index.d.ts",
+      "esm2020": "./dist/esm2020/unpic-angular.mjs",
+      "es2020": "./dist/fesm2020/unpic-angular.mjs",
+      "es2015": "./dist/fesm2015/unpic-angular.mjs",
+      "node": "./dist/fesm2015/unpic-angular.mjs",
+      "default": "./dist/fesm2020/unpic-angular.mjs"
+    }
+  }
+}
