@@ -11,7 +11,7 @@
   "license": "MIT",
   "dependencies": {
     "@11ty/eleventy": "2.0.0",
-    "@11ty/eleventy-plugin-webc": "latest",
+    "@11ty/eleventy-plugin-webc": "^0.9.4",
     "@unpic/core": "workspace:^",
     "@unpic/webc": "workspace:^",
     "style-object-to-css-string": "^1.0.1"

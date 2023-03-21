@@ -11,3 +11,4 @@ body = "pull_request_body" # default: "github_default"
 
 [update]
 ignored_usernames = ["renovate"]
+priority_merge_label = "automerge:first"
