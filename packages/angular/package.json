@@ -12,7 +12,7 @@
   ],
   "devDependencies": {
     "@angular-devkit/build-angular": "^15.1.6",
-    "@angular/cli": "~15.1.6",
+    "@angular/cli": "~15.2.0",
     "@angular/compiler-cli": "^15.1.0",
     "ng-packagr": "^15.1.0",
     "publint": "^0.1.10",
