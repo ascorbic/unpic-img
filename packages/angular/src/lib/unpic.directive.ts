@@ -1,4 +1,10 @@
-import { Directive, ElementRef, Input, Renderer2 } from '@angular/core';
+import {
+  Directive,
+  ElementRef,
+  Input,
+  Renderer2,
+  OnChanges,
+} from '@angular/core';
 import { transformProps, UnpicImageProps } from '@unpic/core';
 type Props = UnpicImageProps<HTMLImageElement>;
 
@@ -6,7 +12,7 @@ type Props = UnpicImageProps<HTMLImageElement>;
   selector: 'img[unpic]',
   standalone: true,
 })
-export class UnpicDirective {
+export class UnpicDirective implements OnChanges {
   @Input() layout: 'constrained' | 'fullWidth' | 'fixed' = 'constrained';
   @Input() width?: number | string;
   @Input() height?: number | string;
@@ -19,7 +25,15 @@ export class UnpicDirective {
 
   constructor(private el: ElementRef, private renderer: Renderer2) {}
 
+  ngOnChanges() {
+    this.syncProps();
+  }
+
   ngOnInit() {
+    this.syncProps();
+  }
+
+  private syncProps() {
     const {
       layout,
       width,
