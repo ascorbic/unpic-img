@@ -16,7 +16,7 @@
     "prepublishOnly": "yarn clean && yarn build"
   },
   "devDependencies": {
-    "tsup": "^6.5.0"
+    "tsup": "^6.7.0"
   },
   "dependencies": {
     "unpic": "^3.0.1"
