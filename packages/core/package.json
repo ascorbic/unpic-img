@@ -1,6 +1,6 @@
 {
   "name": "@unpic/core",
-  "version": "0.0.15",
+  "version": "0.0.16",
   "packageManager": "yarn@3.5.0",
   "license": "MIT",
   "sideEffects": false,
