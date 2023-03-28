@@ -10,7 +10,7 @@
     "publish": "yarn workspaces foreach -pv --include '@unpic/*' npm publish --tolerate-republish --access public"
   },
   "dependencies": {
-    "unpic": "^3.0.1"
+    "unpic": "^3.1.0"
   },
   "devDependencies": {
     "@testing-library/dom": "^9.0.1",
