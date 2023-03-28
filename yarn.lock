@@ -6015,7 +6015,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/react@npm:*, @types/react@npm:18.0.28, @types/react@npm:^18.0.28":
+"@types/react@npm:*":
   version: 18.0.28
   resolution: "@types/react@npm:18.0.28"
   dependencies:
@@ -6023,6 +6023,17 @@ __metadata:
     "@types/scheduler": "*"
     csstype: ^3.0.2
   checksum: e752df961105e5127652460504785897ca6e77259e0da8f233f694f9e8f451cde7fa0709d4456ade0ff600c8ce909cfe29f9b08b9c247fa9b734e126ec53edd7
+  languageName: node
+  linkType: hard
+
+"@types/react@npm:^18.0.28":
+  version: 18.0.30
+  resolution: "@types/react@npm:18.0.30"
+  dependencies:
+    "@types/prop-types": "*"
+    "@types/scheduler": "*"
+    csstype: ^3.0.2
+  checksum: 3ca13fd10a1ee92826e37cd8c2fe563bff65d4bdb3ff53f632bc46c8fba2e94e24247b4b77ce957677a54e592299782e1235f7a3dfcfea327cb3213ddc98e968
   languageName: node
   linkType: hard
 
@@ -19073,7 +19084,7 @@ __metadata:
   resolution: "nextjs@workspace:examples/nextjs"
   dependencies:
     "@types/node": 18.15.3
-    "@types/react": 18.0.28
+    "@types/react": ^18.0.28
     "@types/react-dom": 18.0.11
     "@unpic/react": "workspace:^"
     next: 13.2.4
