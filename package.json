@@ -3,11 +3,10 @@
   "private": true,
   "license": "MIT",
   "scripts": {
-    "build:demo": "yarn workspaces foreach -ptvR --from $0 run build",
-    "build:packages": "yarn workspaces foreach -ptvR --from '@unpic/*' run build",
-    "lint:publint": "yarn workspaces foreach -pv --include '@unpic/*' exec publint",
-    "test": "yarn workspaces foreach --include '@unpic/*' run test",
-    "publish": "yarn workspaces foreach -pv --include '@unpic/*' npm publish --tolerate-republish --access public"
+    "build:packages": "pnpm run --filter '@unpic/*' build",
+    "lint:publint": "pnpm run --filter '@unpic/*' publint",
+    "test": "pnpm run --filter '@unpic/*' test",
+    "publish": "pnpm run --filter '@unpic/*' publish"
   },
   "dependencies": {
     "unpic": "^3.1.0"
@@ -30,10 +29,5 @@
   "resolutions": {
     "cssstyle": "^3.0.0"
   },
-  "packageManager": "yarn@3.5.0",
-  "workspaces": [
-    "packages/*",
-    "examples/*",
-    "docs"
-  ]
+  "packageManager": "pnpm@8.0.0"
 }

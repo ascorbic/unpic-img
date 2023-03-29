@@ -22,21 +22,24 @@ jobs:
           token: ${{ steps.get-token.outputs.token }}
       - uses: actions/checkout@v3
         if: ${{ steps.release.outputs.releases_created }}
+            - uses: pnpm/action-setup@v2
+        with:
+          version: 7
       - uses: actions/setup-node@v3
         with:
-          cache: "yarn"
+          cache: "pnpm"
           check-latest: true
           registry-url: "https://registry.npmjs.org"
         if: ${{ steps.release.outputs.releases_created }}
       - name: Install dependencies
-        run: yarn
+        run: pnpm install
         if: ${{ steps.release.outputs.releases_created }}
-      - run: yarn build:packages
+      - run: pnpm build:packages
         if: ${{ steps.release.outputs.releases_created }}
-      - name: Authenticate Yarn
-        run: yarn config set npmAuthToken $NPM_AUTH_TOKEN
+      - name: Authenticate pnpm
+        run: pnpm config set '//registry.npmjs.org/:_authToken' "${NPM_AUTH_TOKEN}"
         if: ${{ steps.release.outputs.releases_created }}
         env:
           NPM_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
-      - run: yarn publish
+      - run: pnpm -r publish --filter "@unpic/*"
         if: ${{ steps.release.outputs.releases_created }}

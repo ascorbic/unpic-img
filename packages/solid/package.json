@@ -34,10 +34,9 @@
     "vite": "vite build",
     "clean": "rm -rf dist",
     "test": "vitest run",
-    "test:ssr": "yarn run test --mode ssr",
-    "prepublishOnly": "yarn clean && yarn build",
+    "test:ssr": "pnpm run test --mode ssr",
+    "prepublishOnly": "pnpm clean && pnpm build",
     "format": "prettier --ignore-path .gitignore -w \"src/**/*.{js,ts,json,css,tsx,jsx}\" \"dev/**/*.{js,ts,json,css,tsx,jsx}\"",
-    "update-deps": "yarn up -Li",
     "typecheck": "tsc --noEmit"
   },
   "peerDependencies": {
