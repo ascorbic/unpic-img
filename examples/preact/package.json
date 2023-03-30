@@ -18,6 +18,8 @@
     "sirv-cli": "^1.0.14"
   },
   "dependencies": {
+    "@babel/core": "^7.21.3",
+    "@babel/preset-env": "^7.20.2",
     "@unpic/preact": "workspace:^",
     "preact": "^10.13.1",
     "preact-render-to-string": "^5.2.6"
