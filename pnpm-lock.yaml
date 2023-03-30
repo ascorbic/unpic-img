@@ -421,6 +421,9 @@ importers:
       '@unpic/core':
         specifier: workspace:^
         version: link:../core
+      tslib:
+        specifier: ^2.5.0
+        version: 2.5.0
     devDependencies:
       '@angular-devkit/build-angular':
         specifier: ^15.2.4
