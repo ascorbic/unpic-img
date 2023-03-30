@@ -434,6 +434,9 @@ importers:
       '@angular/compiler-cli':
         specifier: ^15.2.3
         version: 15.2.3(@angular/compiler@15.2.3)(typescript@4.9.4)
+      '@angular/core':
+        specifier: ^15.2.3
+        version: 15.2.3(rxjs@7.8.0)(zone.js@0.13.0)
       ng-packagr:
         specifier: ^15.2.2
         version: 15.2.2(@angular/compiler-cli@15.2.3)(tslib@2.5.0)(typescript@4.9.4)
