@@ -502,8 +502,8 @@ __metadata:
   linkType: hard
 
 "@angular/compiler-cli@npm:^15.2.3":
-  version: 15.2.4
-  resolution: "@angular/compiler-cli@npm:15.2.4"
+  version: 15.2.7
+  resolution: "@angular/compiler-cli@npm:15.2.7"
   dependencies:
     "@babel/core": 7.19.3
     "@jridgewell/sourcemap-codec": ^1.4.14
@@ -516,13 +516,13 @@ __metadata:
     tslib: ^2.3.0
     yargs: ^17.2.1
   peerDependencies:
-    "@angular/compiler": 15.2.4
+    "@angular/compiler": 15.2.7
     typescript: ">=4.8.2 <5.0"
   bin:
     ng-xi18n: bundles/src/bin/ng_xi18n.js
     ngc: bundles/src/bin/ngc.js
     ngcc: bundles/ngcc/main-ngcc.js
-  checksum: 9ef61841627f336c5c40d0c3e3ef505390b2171f26d36dd242a00bef7c30c985b0edf198ca2d965ad1a2c779caab27204452d88dc865993af0e395023e261a53
+  checksum: 610cc0bed7f108548db5ea2084585d58b4cb50cbdcb0861771a22df5805a2f497c59ec03802936b4eac5f72f5b40c3c28df80714a594bc2355556804dc1fd61d
   languageName: node
   linkType: hard
 
