@@ -514,8 +514,8 @@ importers:
         specifier: 0.23.0
         version: 0.23.0(undici@5.21.2)
       '@types/eslint':
-        specifier: 8.21.3
-        version: 8.21.3
+        specifier: 8.37.0
+        version: 8.37.0
       '@types/node':
         specifier: ^18.15.3
         version: 18.15.11
@@ -524,16 +524,16 @@ importers:
         version: 2.6.3
       '@typescript-eslint/eslint-plugin':
         specifier: 5.58.0
-        version: 5.58.0(@typescript-eslint/parser@5.58.0)(eslint@8.36.0)(typescript@5.0.2)
+        version: 5.58.0(@typescript-eslint/parser@5.58.0)(eslint@8.38.0)(typescript@5.0.2)
       '@typescript-eslint/parser':
         specifier: 5.58.0
-        version: 5.58.0(eslint@8.36.0)(typescript@5.0.2)
+        version: 5.58.0(eslint@8.38.0)(typescript@5.0.2)
       eslint:
-        specifier: 8.36.0
-        version: 8.36.0
+        specifier: 8.38.0
+        version: 8.38.0
       eslint-plugin-qwik:
         specifier: ^0.23.0
-        version: 0.23.0(eslint@8.36.0)
+        version: 0.23.0(eslint@8.38.0)
       node-fetch:
         specifier: 3.3.1
         version: 3.3.1
@@ -6984,7 +6984,7 @@ packages:
     resolution: {integrity: sha512-9K4zoImiZc3HlIp6AVUDE4CWYx22a+lhSZMYNpbjW04+YF0KWj4pJXnEMjdnFTiQibFFmElcsasJXDbdI/EPhA==}
     dependencies:
       '@types/eslint': 8.37.0
-      '@types/estree': 0.0.51
+      '@types/estree': 1.0.0
     dev: true
 
   /@types/eslint@8.21.3:
@@ -6997,7 +6997,7 @@ packages:
   /@types/eslint@8.37.0:
     resolution: {integrity: sha512-Piet7dG2JBuDIfohBngQ3rCt7MgO9xCO4xIMKxBThCq5PNRB91IjlJ10eJVwfoNtvTErmxLzwBZ7rHZtbOMmFQ==}
     dependencies:
-      '@types/estree': 0.0.51
+      '@types/estree': 1.0.0
       '@types/json-schema': 7.0.11
     dev: true
 
@@ -7338,7 +7338,7 @@ packages:
       - supports-color
     dev: true
 
-  /@typescript-eslint/eslint-plugin@5.58.0(@typescript-eslint/parser@5.58.0)(eslint@8.36.0)(typescript@5.0.2):
+  /@typescript-eslint/eslint-plugin@5.58.0(@typescript-eslint/parser@5.58.0)(eslint@8.38.0)(typescript@5.0.2):
     resolution: {integrity: sha512-vxHvLhH0qgBd3/tW6/VccptSfc8FxPQIkmNTVLWcCOVqSBvqpnKkBTYrhcGlXfSnd78azwe+PsjYFj0X34/njA==}
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
     peerDependencies:
@@ -7350,12 +7350,12 @@ packages:
         optional: true
     dependencies:
       '@eslint-community/regexpp': 4.5.0
-      '@typescript-eslint/parser': 5.58.0(eslint@8.36.0)(typescript@5.0.2)
+      '@typescript-eslint/parser': 5.58.0(eslint@8.38.0)(typescript@5.0.2)
       '@typescript-eslint/scope-manager': 5.58.0
-      '@typescript-eslint/type-utils': 5.58.0(eslint@8.36.0)(typescript@5.0.2)
-      '@typescript-eslint/utils': 5.58.0(eslint@8.36.0)(typescript@5.0.2)
+      '@typescript-eslint/type-utils': 5.58.0(eslint@8.38.0)(typescript@5.0.2)
+      '@typescript-eslint/utils': 5.58.0(eslint@8.38.0)(typescript@5.0.2)
       debug: 4.3.4(supports-color@9.3.1)
-      eslint: 8.36.0
+      eslint: 8.38.0
       grapheme-splitter: 1.0.4
       ignore: 5.2.4
       natural-compare-lite: 1.4.0
@@ -7414,7 +7414,7 @@ packages:
       - supports-color
     dev: true
 
-  /@typescript-eslint/parser@5.58.0(eslint@8.36.0)(typescript@5.0.2):
+  /@typescript-eslint/parser@5.58.0(eslint@8.38.0)(typescript@5.0.2):
     resolution: {integrity: sha512-ixaM3gRtlfrKzP8N6lRhBbjTow1t6ztfBvQNGuRM8qH1bjFFXIJ35XY+FC0RRBKn3C6cT+7VW1y8tNm7DwPHDQ==}
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
     peerDependencies:
@@ -7428,7 +7428,7 @@ packages:
       '@typescript-eslint/types': 5.58.0
       '@typescript-eslint/typescript-estree': 5.58.0(supports-color@9.3.1)(typescript@4.9.5)
       debug: 4.3.4(supports-color@9.3.1)
-      eslint: 8.36.0
+      eslint: 8.38.0
       typescript: 5.0.2
     transitivePeerDependencies:
       - supports-color
@@ -7490,7 +7490,7 @@ packages:
       - supports-color
     dev: true
 
-  /@typescript-eslint/type-utils@5.58.0(eslint@8.36.0)(typescript@5.0.2):
+  /@typescript-eslint/type-utils@5.58.0(eslint@8.38.0)(typescript@5.0.2):
     resolution: {integrity: sha512-FF5vP/SKAFJ+LmR9PENql7fQVVgGDOS+dq3j+cKl9iW/9VuZC/8CFmzIP0DLKXfWKpRHawJiG70rVH+xZZbp8w==}
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
     peerDependencies:
@@ -7501,9 +7501,9 @@ packages:
         optional: true
     dependencies:
       '@typescript-eslint/typescript-estree': 5.58.0(supports-color@9.3.1)(typescript@4.9.5)
-      '@typescript-eslint/utils': 5.58.0(eslint@8.36.0)(typescript@5.0.2)
+      '@typescript-eslint/utils': 5.58.0(eslint@8.38.0)(typescript@5.0.2)
       debug: 4.3.4(supports-color@9.3.1)
-      eslint: 8.36.0
+      eslint: 8.38.0
       tsutils: 3.21.0(typescript@5.0.2)
       typescript: 5.0.2
     transitivePeerDependencies:
@@ -7602,19 +7602,19 @@ packages:
       - typescript
     dev: true
 
-  /@typescript-eslint/utils@5.58.0(eslint@8.36.0)(typescript@5.0.2):
+  /@typescript-eslint/utils@5.58.0(eslint@8.38.0)(typescript@5.0.2):
     resolution: {integrity: sha512-gAmLOTFXMXOC+zP1fsqm3VceKSBQJNzV385Ok3+yzlavNHZoedajjS4UyS21gabJYcobuigQPs/z71A9MdJFqQ==}
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
     peerDependencies:
       eslint: ^6.0.0 || ^7.0.0 || ^8.0.0
     dependencies:
-      '@eslint-community/eslint-utils': 4.4.0(eslint@8.36.0)
+      '@eslint-community/eslint-utils': 4.4.0(eslint@8.38.0)
       '@types/json-schema': 7.0.11
       '@types/semver': 7.3.13
       '@typescript-eslint/scope-manager': 5.58.0
       '@typescript-eslint/types': 5.58.0
       '@typescript-eslint/typescript-estree': 5.58.0(supports-color@9.3.1)(typescript@4.9.5)
-      eslint: 8.36.0
+      eslint: 8.38.0
       eslint-scope: 5.1.1
       semver: 7.4.0
     transitivePeerDependencies:
@@ -11487,6 +11487,16 @@ packages:
       eslint: '>= 8'
     dependencies:
       eslint: 8.36.0
+      jsx-ast-utils: 3.3.3
+    dev: true
+
+  /eslint-plugin-qwik@0.23.0(eslint@8.38.0):
+    resolution: {integrity: sha512-UdUtDgMw5VR32PcFSC59Tr0NmVQkdmX+Neb8BxbXFqe55OZvsEX8dDljBSx46ilB2rrJn5aQy8NQZHajFgpt1w==}
+    engines: {node: '>=16'}
+    peerDependencies:
+      eslint: '>= 8'
+    dependencies:
+      eslint: 8.38.0
       jsx-ast-utils: 3.3.3
     dev: true
 
