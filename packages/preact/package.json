@@ -25,7 +25,7 @@
   "scripts": {
     "test": "vitest run",
     "build": "tsup src/index.ts --format cjs,esm --dts --clean",
-    "prepublishOnly": "yarn build"
+    "prepublishOnly": "pnpm build"
   },
   "devDependencies": {
     "@testing-library/preact": "^3.2.3",

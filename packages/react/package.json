@@ -30,12 +30,13 @@
   "types": "./dist/index.d.ts",
   "scripts": {
     "build": "tsup src/index.ts src/next.tsx --format cjs,esm --dts --clean",
-    "prepublishOnly": "yarn build",
+    "prepublishOnly": "pnpm build",
     "publint": "publint",
     "test": "vitest run"
   },
   "devDependencies": {
     "@testing-library/react": "^14.0.0",
+    "@types/node": "^18.15.11",
     "@types/react": "^18.0.28",
     "@types/react-dom": "^18.0.11",
     "@vitejs/plugin-react": "^3.1.0",
