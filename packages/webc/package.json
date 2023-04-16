@@ -2,6 +2,7 @@
   "name": "@unpic/webc",
   "packageManager": "pnpm@8.0.0",
   "license": "MIT",
+  "type": "module",
   "repository": {
     "type": "git",
     "url": "https://github.com/ascorbic/unpic-img",
@@ -22,7 +23,7 @@
     "@11ty/webc": ">=0.9.0"
   },
   "scripts": {
-    "test": "# vitest run"
+    "test": "vitest run"
   },
   "files": [
     "unpic-img.webc"
