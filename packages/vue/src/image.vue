@@ -2,56 +2,22 @@
   <img v-bind="imageProps" />
 </template>
 
-<script lang="ts">
-import {
-  transformProps,
-  UnpicImageProps,
-} from "@unpic/core";
-import { defineComponent, ImgHTMLAttributes } from "vue";
+<script setup lang="ts">
+import { transformProps, UnpicImageProps } from "@unpic/core";
+import { ImgHTMLAttributes, computed, useAttrs } from "vue";
 
-export default defineComponent({
-  name: "unpic-image",
-  props: {
-    src: {
-      type: String,
-      required: true,
-    },
-    layout: {
-      type: String,
-      required: false,
-    },
-    background: {
-      type: String,
-      required: false,
-    },
-    priority: {
-      type: Boolean,
-      required: false,
-    },
-    cdn: {
-      type: String,
-      required: false,
-    },
-    width: {
-      type: [String, Number],
-      required: false,
-    },
-    height: {
-      type: [String, Number],
-      required: false,
-    },
-    aspectRatio: {
-      type: Number,
-      required: false,
-    },
-  },
-  computed: {
-    imageProps() {
-      return transformProps({
-        ...this.$props,
-        ...this.$attrs,
-      } as UnpicImageProps<ImgHTMLAttributes>);
-    },
-  },
-});
+export interface Props extends ImgHTMLAttributes {
+  src: string;
+  cdn?: string;
+  layout: "fixed" | "constrained" | "fullWidth";
+  priority?: boolean;
+  background?: string;
+  objectFit?: "contain" | "cover" | "fill" | "none" | "scale-down" | "inherit" | "initial";
+}
+
+const props = defineProps<Props>();
+
+const attrs: ImgHTMLAttributes = useAttrs();
+
+const imageProps = computed(() => transformProps({ ...attrs, ...props } as UnpicImageProps<ImgHTMLAttributes>));
 </script>
