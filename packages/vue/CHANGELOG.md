@@ -54,6 +54,20 @@
   * dependencies
     * @unpic/core bumped to 0.0.17
 
+## [0.0.17](https://github.com/ascorbic/unpic-img/compare/vue-v0.0.16...vue-v0.0.17) (2023-04-16)
+
+
+### Bug Fixes
+
+* **vue:** use composition syntax ([#171](https://github.com/ascorbic/unpic-img/issues/171)) ([66a0b33](https://github.com/ascorbic/unpic-img/commit/66a0b33f68c856d5033dea5cdb17a4bfb8924f13))
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @unpic/core bumped to 0.0.18
+
 ## [0.0.14](https://github.com/ascorbic/unpic-img/compare/vue-v0.0.13...vue-v0.0.14) (2023-03-20)
 
 
