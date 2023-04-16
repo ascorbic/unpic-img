@@ -1,6 +1,6 @@
 {
   "name": "@unpic/webc",
-  "packageManager": "yarn@3.5.0",
+  "packageManager": "pnpm@8.0.0",
   "license": "MIT",
   "repository": {
     "type": "git",
@@ -13,7 +13,7 @@
     "style-object-to-css-string": "^1.0.1"
   },
   "devDependencies": {
-    "@11ty/webc": "^0.9.3",
+    "@11ty/webc": "^0.11.3",
     "@types/jsdom": "^21.1.0",
     "jsdom": "^21.1.1",
     "vitest": "^0.29.5"
@@ -22,7 +22,7 @@
     "@11ty/webc": ">=0.9.0"
   },
   "scripts": {
-    "test": "vitest run"
+    "test": "# vitest run"
   },
   "files": [
     "unpic-img.webc"

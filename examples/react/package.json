@@ -1,6 +1,6 @@
 {
   "name": "react-demo",
-  "packageManager": "yarn@3.4.1",
+  "packageManager": "pnpm@3.4.1",
   "private": true,
   "dependencies": {
     "@unpic/react": "workspace:^",
