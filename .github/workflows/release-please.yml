@@ -22,7 +22,7 @@ jobs:
           token: ${{ steps.get-token.outputs.token }}
       - uses: actions/checkout@v3
         if: ${{ steps.release.outputs.releases_created }}
-            - uses: pnpm/action-setup@v2
+      - uses: pnpm/action-setup@v2
         with:
           version: 7
       - uses: actions/setup-node@v3
@@ -37,7 +37,8 @@ jobs:
       - run: pnpm build:packages
         if: ${{ steps.release.outputs.releases_created }}
       - name: Authenticate pnpm
-        run: pnpm config set '//registry.npmjs.org/:_authToken' "${NPM_AUTH_TOKEN}"
+        run:
+          pnpm config set '//registry.npmjs.org/:_authToken' "${NPM_AUTH_TOKEN}"
         if: ${{ steps.release.outputs.releases_created }}
         env:
           NPM_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
