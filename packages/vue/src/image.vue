@@ -14,6 +14,7 @@ export interface Props extends ImgHTMLAttributes {
   cdn?: string;
   priority?: boolean;
   background?: string;
+  aspectRatio?: number;
   objectFit?: "contain" | "cover" | "fill" | "none" | "scale-down" | "inherit" | "initial";
 }
 
