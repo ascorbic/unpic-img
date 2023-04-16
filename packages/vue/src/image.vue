@@ -8,8 +8,10 @@ import { ImgHTMLAttributes, computed, useAttrs } from "vue";
 
 export interface Props extends ImgHTMLAttributes {
   src: string;
-  cdn?: string;
+  width?: string | number;
+  height?: string | number;
   layout: "fixed" | "constrained" | "fullWidth";
+  cdn?: string;
   priority?: boolean;
   background?: string;
   objectFit?: "contain" | "cover" | "fill" | "none" | "scale-down" | "inherit" | "initial";
