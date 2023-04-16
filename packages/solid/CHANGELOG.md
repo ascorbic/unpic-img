@@ -54,6 +54,20 @@
   * dependencies
     * @unpic/core bumped to 0.0.17
 
+## [0.0.17](https://github.com/ascorbic/unpic-img/compare/solid-v0.0.16...solid-v0.0.17) (2023-04-16)
+
+
+### Bug Fixes
+
+* **solid:** support SolidStart SSR ([#169](https://github.com/ascorbic/unpic-img/issues/169)) ([0accdaf](https://github.com/ascorbic/unpic-img/commit/0accdaf10b02fedb1db6d35326f277320132a4ee))
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @unpic/core bumped to 0.0.18
+
 ## [0.0.14](https://github.com/ascorbic/unpic-img/compare/solid-v0.0.13...solid-v0.0.14) (2023-03-20)
 
 
