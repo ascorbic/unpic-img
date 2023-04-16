@@ -47,6 +47,9 @@ importers:
       typescript:
         specifier: ^5.0.4
         version: 5.0.4
+      vite:
+        specifier: ^4.2.1
+        version: 4.2.1(@types/node@18.15.11)
       vitest:
         specifier: ^0.29.8
         version: 0.29.8(jsdom@21.1.1)
@@ -413,8 +416,8 @@ importers:
         specifier: 2.0.0
         version: 2.0.0
       '@11ty/eleventy-plugin-webc':
-        specifier: ^0.9.4
-        version: 0.9.4
+        specifier: ^0.11.0
+        version: 0.11.0
       '@unpic/core':
         specifier: workspace:^
         version: link:../../packages/core
@@ -729,8 +732,8 @@ importers:
         version: 1.0.1
     devDependencies:
       '@11ty/webc':
-        specifier: ^0.9.3
-        version: 0.9.3
+        specifier: ^0.11.3
+        version: 0.11.3
       '@types/jsdom':
         specifier: ^21.1.0
         version: 21.1.1
@@ -778,13 +781,13 @@ packages:
       - supports-color
     dev: false
 
-  /@11ty/eleventy-plugin-webc@0.9.4:
-    resolution: {integrity: sha512-dNIdrL1iTXzvjTO9ITWEL72x978nK6MKGsEFjUCE7OPdQMw/Gst5wGsXVAjpN0nzuulgz6akNJAK0w1n8TcdnA==}
+  /@11ty/eleventy-plugin-webc@0.11.0:
+    resolution: {integrity: sha512-pbGXQW6wZWuewc747d2Mn2WbAT1fZ7kttWfi08nbwic0VFYxswO93ZZ+XAeMmHP8WGTUTzVrH2U35nUWWoQgUg==}
     engines: {node: '>=14.18'}
     dependencies:
       '@11ty/eleventy': 2.0.0
       '@11ty/eleventy-plugin-bundle': 1.0.4
-      '@11ty/webc': 0.9.3
+      '@11ty/webc': 0.11.3
     transitivePeerDependencies:
       - bufferutil
       - supports-color
@@ -848,8 +851,8 @@ packages:
       - utf-8-validate
     dev: false
 
-  /@11ty/webc@0.9.3:
-    resolution: {integrity: sha512-r5y2YcIrcptmmJTajoW1A5VUoKYa9bqeuZAAcSP1q/ROFwh7PfjYm9//4YSRV6B17RfCm10CO3rHeyL0Z/ppQw==}
+  /@11ty/webc@0.11.3:
+    resolution: {integrity: sha512-094VDVzWdaXpoeH7x98xCTAqjbtl7KCek2EqP2fAdTjiYTq48vbYd+I/szVlZt2Uyt6osJvfbh0uTr8i82fyXw==}
     engines: {node: '>=14.18'}
     dependencies:
       '@11ty/eleventy-utils': 1.0.1
