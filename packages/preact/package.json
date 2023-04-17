@@ -32,7 +32,7 @@
     "preact": "^10.13.1",
     "tsup": "^6.7.0",
     "typescript": "^5.0.2",
-    "vitest": "^0.29.5"
+    "vitest": "^0.30.0"
   },
   "dependencies": {
     "@unpic/core": "workspace:^"

@@ -25,7 +25,7 @@
     "publint": "^0.1.11",
     "typescript": "^5.0.4",
     "vite": "^4.2.1",
-    "vitest": "^0.29.8"
+    "vitest": "^0.30.0"
   },
   "resolutions": {
     "cssstyle": "^3.0.0"
