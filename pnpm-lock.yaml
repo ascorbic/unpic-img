@@ -532,8 +532,8 @@ importers:
         specifier: 8.38.0
         version: 8.38.0
       eslint-plugin-qwik:
-        specifier: ^0.23.0
-        version: 0.23.0(eslint@8.38.0)
+        specifier: ^0.102.0
+        version: 0.102.0(eslint@8.38.0)
       node-fetch:
         specifier: 3.3.1
         version: 3.3.1
@@ -11477,6 +11477,16 @@ packages:
       eslint: 8.38.0
     dev: true
 
+  /eslint-plugin-qwik@0.102.0(eslint@8.38.0):
+    resolution: {integrity: sha512-XYESC95rDu9SCxEOHLENZoAkXckugTLWp9FBW4jQvq/L4k32dGnMO1wokB3uv5NnnLf1QfNlhoEc5md52mQXwQ==}
+    engines: {node: '>=16'}
+    peerDependencies:
+      eslint: '>= 8'
+    dependencies:
+      eslint: 8.38.0
+      jsx-ast-utils: 3.3.3
+    dev: true
+
   /eslint-plugin-qwik@0.23.0(eslint@8.36.0):
     resolution: {integrity: sha512-UdUtDgMw5VR32PcFSC59Tr0NmVQkdmX+Neb8BxbXFqe55OZvsEX8dDljBSx46ilB2rrJn5aQy8NQZHajFgpt1w==}
     engines: {node: '>=16'}
@@ -11484,16 +11494,6 @@ packages:
       eslint: '>= 8'
     dependencies:
       eslint: 8.36.0
-      jsx-ast-utils: 3.3.3
-    dev: true
-
-  /eslint-plugin-qwik@0.23.0(eslint@8.38.0):
-    resolution: {integrity: sha512-UdUtDgMw5VR32PcFSC59Tr0NmVQkdmX+Neb8BxbXFqe55OZvsEX8dDljBSx46ilB2rrJn5aQy8NQZHajFgpt1w==}
-    engines: {node: '>=16'}
-    peerDependencies:
-      eslint: '>= 8'
-    dependencies:
-      eslint: 8.38.0
       jsx-ast-utils: 3.3.3
     dev: true
 
