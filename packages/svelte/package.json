@@ -29,7 +29,7 @@
     "tslib": "^2.5.0",
     "typescript": "^5.0.2",
     "vite": "^4.2.1",
-    "vitest": "^0.29.5"
+    "vitest": "^0.30.0"
   },
   "type": "module",
   "dependencies": {
