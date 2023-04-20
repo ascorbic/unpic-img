@@ -12,7 +12,7 @@
 •
 [<img src="https://raw.githubusercontent.com/gilbarbara/logos/main/logos/svelte-icon.svg" height="16" alt="svelte" /> Svelte](https://unpic.pics/img/svelte)
 •
-[<img src="https://raw.githubusercontent.com/gilbarbara/logos/main/logos/astro.svg" height="16" alt="astro" /> Astro](https://unpic.pics/img/astro)
+[<img src="https://raw.githubusercontent.com/gilbarbara/logos/main/logos/astro-icon.svg" height="16" alt="astro" /> Astro](https://unpic.pics/img/astro)
 •
 [<img src="https://raw.githubusercontent.com/gilbarbara/logos/main/logos/preact.svg" height="16" alt="preact" /> Preact](https://unpic.pics/img/preact)
 •
