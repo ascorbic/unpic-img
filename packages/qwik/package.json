@@ -1,6 +1,6 @@
 {
   "name": "@unpic/qwik",
-  "version": "0.0.13",
+  "version": "0.0.14",
   "description": "Qwik component for responsive, high-performance images",
   "license": "MIT",
   "repository": {

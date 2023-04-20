@@ -54,6 +54,12 @@
   * dependencies
     * @unpic/core bumped to 0.0.17
 
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @unpic/core bumped to 0.0.19
+
 ## [0.0.17](https://github.com/ascorbic/unpic-img/compare/solid-v0.0.16...solid-v0.0.17) (2023-04-16)
 
 
