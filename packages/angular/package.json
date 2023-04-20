@@ -23,6 +23,9 @@
     "@unpic/core": "workspace:^",
     "tslib": "^2.5.0"
   },
+  "publishConfig": {
+    "provenance": true
+  },
   "module": "dist/fesm2015/unpic-angular.mjs",
   "typings": "dist/index.d.ts",
   "es2020": "dist/fesm2020/unpic-angular.mjs",
