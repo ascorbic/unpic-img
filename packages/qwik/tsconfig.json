@@ -20,5 +20,8 @@
     "types": [
       "vite/client"
     ]
-  }
+  },
+  "include": [
+    "src/**/*.ts", "src/**/*.tsx"
+  ]
 }

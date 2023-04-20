@@ -254,9 +254,6 @@ importers:
 
   examples/qwik:
     dependencies:
-      '@unpic/core':
-        specifier: workspace:^
-        version: link:../../packages/core
       '@unpic/qwik':
         specifier: workspace:^
         version: link:../../packages/qwik

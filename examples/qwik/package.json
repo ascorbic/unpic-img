@@ -41,7 +41,6 @@
     "vite-tsconfig-paths": "4.0.7"
   },
   "dependencies": {
-    "@unpic/core": "workspace:^",
     "@unpic/qwik": "workspace:^"
   }
 }
