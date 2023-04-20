@@ -45,7 +45,7 @@
     "provenance": true
   },
   "devDependencies": {
-    "@builder.io/qwik": "0.102.0",
+    "@builder.io/qwik": "0.103.0",
     "@types/eslint": "8.37.0",
     "@types/node": "^18.15.3",
     "@types/node-fetch": "^2.6.2",
