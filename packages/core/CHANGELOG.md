@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.0.19](https://github.com/ascorbic/unpic-img/compare/core-v0.0.18...core-v0.0.19) (2023-04-20)
+
+
+### Bug Fixes
+
+* **core,qwik:** correct deps ([#184](https://github.com/ascorbic/unpic-img/issues/184)) ([ccadd81](https://github.com/ascorbic/unpic-img/commit/ccadd81cfda33cf199688160135ad64a84c40255))
+
 ## [0.0.18](https://github.com/ascorbic/unpic-img/compare/core-v0.0.17...core-v0.0.18) (2023-04-16)
 
 
