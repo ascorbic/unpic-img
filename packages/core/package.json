@@ -16,6 +16,9 @@
     "prepublishOnly": "pnpm clean && pnpm build",
     "test": "vitest run"
   },
+  "publishConfig": {
+    "provenance": true
+  },
   "devDependencies": {
     "tsup": "^6.7.0"
   },

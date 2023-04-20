@@ -41,6 +41,9 @@
     "start": "vite --open --mode ssr",
     "qwik": "qwik"
   },
+  "publishConfig": {
+    "provenance": true
+  },
   "devDependencies": {
     "@builder.io/qwik": "0.23.0",
     "@types/eslint": "8.37.0",
