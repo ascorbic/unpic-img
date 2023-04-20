@@ -44,6 +44,9 @@
   "peerDependencies": {
     "solid-js": "^1.6.0"
   },
+  "publishConfig": {
+    "provenance": true
+  },
   "devDependencies": {
     "esbuild": "^0.17.12",
     "esbuild-plugin-solid": "^0.5.0",

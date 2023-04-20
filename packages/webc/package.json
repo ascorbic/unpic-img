@@ -21,6 +21,9 @@
   "peerDependencies": {
     "@11ty/webc": ">=0.9.0"
   },
+  "publishConfig": {
+    "provenance": true
+  },
   "scripts": {
     "test": "# vitest run"
   },

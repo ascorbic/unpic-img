@@ -22,6 +22,9 @@
       "import": "./dist/image.js"
     }
   },
+  "publishConfig": {
+    "provenance": true
+  },
   "scripts": {
     "dev": "vite",
     "test": "vitest run",
