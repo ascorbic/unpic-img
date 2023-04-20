@@ -16,6 +16,8 @@ jobs:
         uses: actions/setup-node@v3
         with:
           cache: "pnpm"
+          check-latest: true
+          registry-url: "https://registry.npmjs.org"
       - name: Install dependencies
         run: pnpm install
       - name: Build

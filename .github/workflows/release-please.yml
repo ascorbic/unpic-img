@@ -21,7 +21,6 @@ jobs:
           command: manifest
           token: ${{ steps.get-token.outputs.token }}
       - uses: actions/checkout@v3
-        if: ${{ steps.release.outputs.releases_created }}
       - uses: pnpm/action-setup@v2
         with:
           version: latest
@@ -30,10 +29,8 @@ jobs:
           cache: "pnpm"
           check-latest: true
           registry-url: "https://registry.npmjs.org"
-        if: ${{ steps.release.outputs.releases_created }}
       - name: Install dependencies
         run: pnpm install
-        if: ${{ steps.release.outputs.releases_created }}
       - run: pnpm build:packages
         if: ${{ steps.release.outputs.releases_created }}
       - name: Authenticate pnpm
