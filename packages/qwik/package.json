@@ -6,7 +6,7 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/ascorbic/unpic-img",
-    "directory": "packages/astro"
+    "directory": "packages/qwik"
   },
   "homepage": "https://unpic.pics/img/qwik",
   "main": "./lib/index.qwik.mjs",
