@@ -8,8 +8,8 @@ importers:
   .:
     dependencies:
       unpic:
-        specifier: ^3.2.0
-        version: 3.2.0
+        specifier: ^3.3.0
+        version: 3.3.0
     devDependencies:
       '@testing-library/dom':
         specifier: ^9.2.0
@@ -472,8 +472,8 @@ importers:
   packages/core:
     dependencies:
       unpic:
-        specifier: ^3.2.0
-        version: 3.2.0
+        specifier: ^3.3.0
+        version: 3.3.0
     devDependencies:
       tsup:
         specifier: ^6.7.0
@@ -22549,8 +22549,8 @@ packages:
       normalize-path: 2.1.1
     dev: true
 
-  /unpic@3.2.0:
-    resolution: {integrity: sha512-SpL+337Ne8wMyLKsSkzpPCUmtPzubom1dDuOnLVcKXfhXpZ3FQlbZ9dIhUjSuK5pBoqjZfcp8IgZNx7Za95/1A==}
+  /unpic@3.3.0:
+    resolution: {integrity: sha512-O8puhGJjv130xl1QuZCgGBn5KQCysxpkDlMapY45qnYp16io1u1U0UdFqxrI/ckcFMfaJat+Lq3h9g7u2A0FKQ==}
     dev: false
 
   /unpipe@1.0.0:
