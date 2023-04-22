@@ -9,6 +9,7 @@ jobs:
     permissions:
       contents: write
       pull-requests: write
+      id-token: write
     steps:
       - uses: navikt/github-app-token-generator@v1
         id: get-token
@@ -40,4 +41,6 @@ jobs:
         env:
           NPM_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
       - run: pnpm -r publish --filter "@unpic/*"
+        env:
+          NPM_CONFIG_PROVENANCE: true
         if: ${{ steps.release.outputs.releases_created }}

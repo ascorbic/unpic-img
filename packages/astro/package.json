@@ -19,9 +19,6 @@
   "keywords": [
     "astro"
   ],
-  "publishConfig": {
-    "provenance": true
-  },
   "devDependencies": {
     "astro": "^2.1.3"
   },

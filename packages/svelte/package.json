@@ -39,9 +39,6 @@
   "peerDependencies": {
     "svelte": "*"
   },
-  "publishConfig": {
-    "provenance": true
-  },
   "files": [
     "dist"
   ],
