@@ -22,9 +22,6 @@
       "import": "./dist/index.mjs"
     }
   },
-  "publishConfig": {
-    "provenance": true
-  },
   "scripts": {
     "test": "vitest run",
     "build": "tsup src/index.ts --format cjs,esm --dts --clean",

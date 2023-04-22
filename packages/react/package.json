@@ -34,9 +34,6 @@
     "publint": "publint",
     "test": "vitest run"
   },
-  "publishConfig": {
-    "provenance": true
-  },
   "devDependencies": {
     "@testing-library/react": "^14.0.0",
     "@types/node": "^18.15.11",
