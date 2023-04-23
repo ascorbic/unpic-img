@@ -26,8 +26,8 @@
         "typescript"
       ],
       "matchPaths": [
-        "packages/angular/*",
-        "examples/angular/*"
+        "packages/angular",
+        "examples/angular"
       ],
       "rangeStrategy": "pin"
     }
