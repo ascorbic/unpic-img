@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.0.21](https://github.com/ascorbic/unpic-img/compare/core-v0.0.20...core-v0.0.21) (2023-04-23)
+
+
+### Bug Fixes
+
+* **deps:** update dependency unpic to ^3.4.1 ([#200](https://github.com/ascorbic/unpic-img/issues/200)) ([969389b](https://github.com/ascorbic/unpic-img/commit/969389ba5410b0a11fbc0653b33f5e000afcb6e0))
+
 ## [0.0.20](https://github.com/ascorbic/unpic-img/compare/core-v0.0.19...core-v0.0.20) (2023-04-22)
 
 
