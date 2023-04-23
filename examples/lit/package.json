@@ -3,7 +3,6 @@
   "private": true,
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
   "scripts": {
     "build": "parcel build index.html",
     "dev": "parcel index.html"
@@ -12,11 +11,13 @@
   "author": "",
   "license": "MIT",
   "devDependencies": {
-    "@unpic/lit": "workspace:^",
-    "lit": "^2.7.2",
     "parcel": "^2.8.3"
   },
   "browserslist": [
     "Chrome > 50"
-  ]
+  ],
+  "dependencies": {
+    "@unpic/lit": "workspace:^",
+    "lit": "^2.7.2"
+  }
 }
