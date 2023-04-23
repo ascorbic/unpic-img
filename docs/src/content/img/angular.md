@@ -1,6 +1,7 @@
 ---
 title: "@unpic/angular"
 description: "High-performance, responsive Angular images"
+githubRepo: "ascorbic/unpic-img"
 ---
 
 Angular directive for responsive, high-performance images.

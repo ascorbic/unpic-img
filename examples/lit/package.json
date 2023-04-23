@@ -1,0 +1,23 @@
+{
+  "name": "lit-demo",
+  "private": true,
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "build": "parcel build index.html",
+    "dev": "parcel index.html"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "parcel": "^2.8.3"
+  },
+  "browserslist": [
+    "Chrome > 50"
+  ],
+  "dependencies": {
+    "@unpic/lit": "workspace:^",
+    "lit": "^2.7.2"
+  }
+}

@@ -1,6 +1,7 @@
 ---
 title: "@unpic/svelte"
 description: "High-performance, responsive Svelte image component"
+githubRepo: "ascorbic/unpic-img"
 ---
 
 A high-performance, responsive image component for

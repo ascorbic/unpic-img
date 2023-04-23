@@ -1,6 +1,7 @@
 ---
 title: "@unpic/solid"
 description: "High-performance, responsive SolidJS image component"
+githubRepo: "ascorbic/unpic-img"
 ---
 
 A high-performance, responsive image component for

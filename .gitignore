@@ -138,3 +138,8 @@ output/vue/*/src
 # Local Netlify folder
 .netlify
 .DS_Store
+packages/lit/unpic-img.d.ts
+packages/lit/unpic-img.d.ts.map
+packages/lit/unpic-img.js
+packages/lit/unpic-img.js.map
+packages/lit/custom-elements.json

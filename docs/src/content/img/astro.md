@@ -1,6 +1,7 @@
 ---
 title: "@unpic/astro"
 description: "High-performance, responsive Astro image component"
+githubRepo: "ascorbic/unpic-img"
 ---
 
 A high-performance, responsive image component for

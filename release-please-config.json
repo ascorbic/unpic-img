@@ -9,9 +9,14 @@
     "packages/astro": {},
     "packages/qwik": {},
     "packages/webc": {},
-    "packages/angular": {}
+    "packages/angular": {},
+    "packages/lit": {
+      "release-as": "0.0.1"
+    }
   },
-  "plugins": ["node-workspace"],
+  "plugins": [
+    "node-workspace"
+  ],
   "bump-minor-pre-major": true,
   "bump-patch-for-minor-pre-major": true,
   "$schema": "https://raw.githubusercontent.com/googleapis/release-please/main/schemas/config.json"
