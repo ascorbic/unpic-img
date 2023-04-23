@@ -94,11 +94,13 @@ is not auto-detected.
 
 ## Supported CDN APIs
 
+- Adobe Dynamic Media (Scene7)
 - Builder.io
 - Bunny.net
 - Cloudflare
 - Contentful
 - Cloudinary
+- Directus
 - Imgix, including Unsplash, DatoCMS, Sanity and Prismic
 - Kontent.ai
 - Shopify
@@ -106,15 +108,20 @@ is not auto-detected.
 - Vercel / Next.js
 - WordPress.com and Jetpack Site Accelerator
 
-## Usage with Vercel / Next.js
+## Delegated URLs
 
-Unpic has special handling for Vercel and Next.js image URLs. It detects
-supported image CDNs, and falls back to `/_vercel/image` or `/_next/image` for
-local and unsupported remote images.
+Some transformers support URL delegation. This means that the source image URL
+is also checked, and if it matches a CDN then the transform is applied directly
+to the source image. For example: consider a `next/image` URL that points to an
+image on Shopify. The URL is detected as a `nextjs` URL because it starts with
+`/_next/image`. The `nextjs` transformer supports delegation, so the source
+image URL is then checked. As it matches a Shopify domain, the transform is
+applied directly to the Shopify URL. This means that the image is transformed on
+the fly by Shopify, rather than by Next.js. However if the source image is not a
+supported CDN, or is a local image then the `nextjs` transformer will return a
+`/_next/image` URL.
 
-For more information, see the
-[Unpic Vercel / Next.js](https://github.com/ascorbic/unpic/blob/main/vercel.md)
-documentation.
+## FAQs
 
 ## FAQs
 
@@ -135,8 +142,8 @@ documentation.
   useful for images that may come from an arbitrary source, such as a CMS. It is
   also useful for parsing URLs that may already have transforms applied, because
   most CDN SDKs will not parse these URLs correctly.
-- **Can you add support for CDN X?** If it supports a URL API and has a public
-  domain by which it can be identified then yes, please open an issue or PR.
+- **Can you add support for CDN X?** If it supports a URL API and doesn't
+  require signed URLs then yes, please open an issue or PR.
 - **Can you add my domain to CDN X?** If you provide a service where end-users
   use your URLs then probably. Examples may be image providers such as Unsplash,
   or CMSs. If it is just your own site then probably not. You can manually

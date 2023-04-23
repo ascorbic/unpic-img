@@ -35,6 +35,7 @@ export const SIDEBAR: Sidebar = {
     { text: "Introduction", link: "img" },
     { icon: "logos:angular-icon", text: "Angular", link: "img/angular" },
     { icon: "simple-icons:astro", text: "Astro", link: "img/astro" },
+    { icon: "logos:lit-icon", text: "Lit", link: "img/lit" },
     { icon: "logos:preact", text: "Preact", link: "img/preact" },
     { icon: "qwik", text: "Qwik", link: "img/qwik" },
     { icon: "logos:react", text: "React", link: "img/react" },

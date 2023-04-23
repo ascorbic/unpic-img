@@ -20,7 +20,7 @@ import { Icon } from "astro-icon";
     flex-direction: column;
     list-style: none;
     padding: 0;
-    animation: roll-up 16s infinite cubic-bezier(0.75, 0, 0.25, 1);
+    animation: roll-up 17s infinite cubic-bezier(0.75, 0, 0.25, 1);
   }
 
   [astro-icon] {
@@ -33,38 +33,41 @@ import { Icon } from "astro-icon";
     0% {
       transform: translateY(0);
     }
-    9% {
+    8.33% {
       transform: translateY(-2em);
     }
-    18% {
+    16.67% {
       transform: translateY(-4em);
     }
-    27% {
+    25% {
       transform: translateY(-6em);
     }
-    36% {
+    33.33% {
       transform: translateY(-8em);
     }
-    45% {
+    41.67% {
       transform: translateY(-10em);
     }
-    54% {
+    50% {
       transform: translateY(-12em);
     }
-    63% {
+    58.33% {
       transform: translateY(-14em);
     }
-    72% {
+    66.67% {
       transform: translateY(-16em);
     }
-    81% {
+    75% {
       transform: translateY(-18em);
     }
-    90% {
+    83.33% {
       transform: translateY(-20em);
     }
-    100% {
+    91.67% {
       transform: translateY(-22em);
+    }
+    100% {
+      transform: translateY(-24em);
     }
   }
 </style>
@@ -77,6 +80,7 @@ import { Icon } from "astro-icon";
     <li><Icon name="logos:vue" />Vue</li>
     <li><Icon name="logos:preact" />Preact</li>
     <li><Icon name="logos:svelte-icon" />Svelte</li>
+    <li><Icon name="logos:lit-icon" />Lit</li>
     <li><Icon name="qwik" />Qwik</li>
     <li><Icon name="eleventy" />11ty</li>
     <li><Icon name="logos:solidjs-icon" />SolidJS</li>

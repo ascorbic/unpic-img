@@ -2,6 +2,7 @@
 title: "@unpic/react"
 description:
   "High-performance, responsive image components for React and Next.js"
+githubRepo: "ascorbic/unpic-img"
 ---
 
 A high-performance, responsive image components for

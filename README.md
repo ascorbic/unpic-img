@@ -21,6 +21,8 @@
 [<img src="https://raw.githubusercontent.com/gilbarbara/logos/main/logos/eleventy.svg" height="16" alt="webc" /> WebC](https://unpic.pics/img/webc)
 •
 [<img src="https://raw.githubusercontent.com/gilbarbara/logos/main/logos/angular-icon.svg" height="16" alt="angular" /> Angular](https://unpic.pics/img/angular)
+•
+[<img src="https://raw.githubusercontent.com/gilbarbara/logos/main/logos/lit-icon.svg" height="16" alt="lit" /> Angular](https://unpic.pics/img/lit)
 
 </h3>
 
@@ -135,16 +137,18 @@ It turns this:
 You can use any image CDN supported by [unpic lib](https://unpic.pics/lib),
 including:
 
+- Adobe Dynamic Media (Scene7)
 - Builder.io
 - Bunny.net
-- Cloudflare Image Resizing
-- Cloudinary
+- Cloudflare
 - Contentful
+- Cloudinary
+- Directus
 - Imgix, including Unsplash, DatoCMS, Sanity and Prismic
 - Kontent.ai
-- Next.js / Vercel
 - Shopify
 - Storyblok
+- Vercel / Next.js
 - WordPress.com and Jetpack Site Accelerator
 
 ## License
