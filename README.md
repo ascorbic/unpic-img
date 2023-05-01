@@ -22,7 +22,7 @@
 •
 [<img src="https://raw.githubusercontent.com/gilbarbara/logos/main/logos/angular-icon.svg" height="16" alt="angular" /> Angular](https://unpic.pics/img/angular)
 •
-[<img src="https://raw.githubusercontent.com/gilbarbara/logos/main/logos/lit-icon.svg" height="16" alt="lit" /> Angular](https://unpic.pics/img/lit)
+[<img src="https://raw.githubusercontent.com/gilbarbara/logos/main/logos/lit-icon.svg" height="16" alt="lit" /> Lit](https://unpic.pics/img/lit)
 
 </h3>
 
