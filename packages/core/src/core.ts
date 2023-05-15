@@ -1,8 +1,8 @@
 import {
-  getTransformerForCdn,
-  getTransformerForUrl,
+  getCanonicalCdnForUrl,
   ImageCdn,
   UrlTransformer,
+  getTransformer,
 } from "unpic";
 
 export type Layout = "fixed" | "constrained" | "fullWidth";
@@ -290,8 +290,16 @@ export const getSrcSet = ({
   breakpoints,
   cdn,
   transformer,
-}: ImageSourceOptions): string | undefined => {
-  transformer ||= cdn ? getTransformerForCdn(cdn) : getTransformerForUrl(src);
+}: Omit<ImageSourceOptions, "src"> & { src: URL | string }):
+  | string
+  | undefined => {
+  const canonical = getCanonicalCdnForUrl(src, cdn);
+
+  if (!canonical) {
+    return;
+  }
+
+  transformer ||= getTransformer(canonical.cdn);
 
   if (!transformer) {
     return;
@@ -307,7 +315,7 @@ export const getSrcSet = ({
       // Not sure why TS isn't narrowing the type here
       // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
       const transformed = transformer!({
-        url: src,
+        url: canonical.url,
         width: bp,
         height: transformedHeight,
       });
@@ -339,7 +347,12 @@ export function transformProps<
   breakpoints,
   ...props
 }: UnpicImageProps<TImageAttributes, TStyle>): TImageAttributes {
-  transformer ||= cdn ? getTransformerForCdn(cdn) : getTransformerForUrl(src);
+  const canonical = getCanonicalCdnForUrl(src, cdn);
+  let url: URL | string = src;
+  if (canonical) {
+    url = canonical.url;
+    transformer ||= getTransformer(canonical.cdn);
+  }
 
   width = (width && Number(width)) || undefined;
   height = (height && Number(height)) || undefined;
@@ -391,7 +404,7 @@ export function transformProps<
       ? Math.round(LOW_RES_WIDTH * aspectRatio)
       : undefined;
     const lowResImage = transformer({
-      url: src,
+      url,
       width: LOW_RES_WIDTH,
       height: lowResHeight,
     });
@@ -420,7 +433,7 @@ export function transformProps<
     };
 
     props.srcset = getSrcSet({
-      src,
+      src: url,
       width,
       height,
       aspectRatio,
@@ -429,10 +442,10 @@ export function transformProps<
       transformer,
     });
 
-    const transformed = transformer({ url: src, width, height });
+    const transformed = transformer({ url, width, height });
 
     if (transformed) {
-      src = transformed.toString();
+      url = transformed;
     }
 
     if (layout === "fullWidth" || layout === "constrained") {
@@ -443,7 +456,7 @@ export function transformProps<
 
   return {
     ...props,
-    src,
+    src: url.toString(),
     width,
     height,
   } as TImageAttributes;
