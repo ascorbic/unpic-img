@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.0.24](https://github.com/ascorbic/unpic-img/compare/core-v0.0.23...core-v0.0.24) (2023-05-16)
+
+
+### Bug Fixes
+
+* **core:** pass cdn prop to srcset ([#229](https://github.com/ascorbic/unpic-img/issues/229)) ([ea33cb9](https://github.com/ascorbic/unpic-img/commit/ea33cb9515169c65fba9b3d3f497a3d522915160)), closes [#228](https://github.com/ascorbic/unpic-img/issues/228)
+
 ## [0.0.23](https://github.com/ascorbic/unpic-img/compare/core-v0.0.22...core-v0.0.23) (2023-05-16)
 
 

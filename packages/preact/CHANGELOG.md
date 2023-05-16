@@ -90,6 +90,20 @@
   * dependencies
     * @unpic/core bumped to 0.0.23
 
+## [0.0.18](https://github.com/ascorbic/unpic-img/compare/preact-v0.0.17...preact-v0.0.18) (2023-05-16)
+
+
+### Features
+
+* **preact,react,qwik,solid,vue:** export ImageProps type ([#231](https://github.com/ascorbic/unpic-img/issues/231)) ([40779c5](https://github.com/ascorbic/unpic-img/commit/40779c52b96f8f36a2f33ad1f7acc62fd4950eeb))
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @unpic/core bumped to 0.0.24
+
 ## [0.0.9](https://github.com/ascorbic/unpic-img/compare/preact-v0.0.8...preact-v0.0.9) (2023-03-20)
 
 
