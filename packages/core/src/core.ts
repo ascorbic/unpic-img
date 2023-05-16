@@ -440,6 +440,7 @@ export function transformProps<
       layout,
       breakpoints,
       transformer,
+      cdn,
     });
 
     const transformed = transformer({ url, width, height });
