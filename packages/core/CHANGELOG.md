@@ -1,5 +1,14 @@
 # Changelog
 
+## [0.0.23](https://github.com/ascorbic/unpic-img/compare/core-v0.0.22...core-v0.0.23) (2023-05-16)
+
+
+### Bug Fixes
+
+* **deps:** update dependency unpic to ^3.6.0 ([#224](https://github.com/ascorbic/unpic-img/issues/224)) ([ae6919d](https://github.com/ascorbic/unpic-img/commit/ae6919d498c9bce909434910224e352a9093b092))
+* **deps:** update dependency unpic to ^3.6.1 ([#226](https://github.com/ascorbic/unpic-img/issues/226)) ([5a94bc2](https://github.com/ascorbic/unpic-img/commit/5a94bc279342a69aa30efd01fdeba1d0e558226c))
+* **react:** correctly handle CDN delegation in next ([#223](https://github.com/ascorbic/unpic-img/issues/223)) ([8e87af3](https://github.com/ascorbic/unpic-img/commit/8e87af3db917784069592f0deaa96d016979fc17))
+
 ## [0.0.22](https://github.com/ascorbic/unpic-img/compare/core-v0.0.21...core-v0.0.22) (2023-04-25)
 
 

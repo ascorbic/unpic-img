@@ -84,6 +84,21 @@
   * dependencies
     * @unpic/core bumped to 0.0.22
 
+## [0.0.26](https://github.com/ascorbic/unpic-img/compare/react-v0.0.25...react-v0.0.26) (2023-05-16)
+
+
+### Bug Fixes
+
+* **react:** correctly handle aria and data attributes ([#221](https://github.com/ascorbic/unpic-img/issues/221)) ([0a7bb2f](https://github.com/ascorbic/unpic-img/commit/0a7bb2f723e09ce6a9add7e94f080152390c4a69))
+* **react:** correctly handle CDN delegation in next ([#223](https://github.com/ascorbic/unpic-img/issues/223)) ([8e87af3](https://github.com/ascorbic/unpic-img/commit/8e87af3db917784069592f0deaa96d016979fc17))
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @unpic/core bumped to 0.0.23
+
 ## [0.0.18](https://github.com/ascorbic/unpic-img/compare/react-v0.0.17...react-v0.0.18) (2023-03-20)
 
 
