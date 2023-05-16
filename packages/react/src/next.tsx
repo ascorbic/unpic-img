@@ -56,7 +56,7 @@ export const Image = forwardRef<HTMLImageElement, ImageProps>(function Image(
     return [...config.deviceSizes, ...config.imageSizes];
   }, [configContext]);
 
-  let { src: origSrc, ...rest } = props;
+  const { src: origSrc, ...rest } = props;
 
   // We need to cast this here because otherwise TS gets confused
   // with the layout/diemnsions inference
@@ -97,7 +97,7 @@ export const Image = forwardRef<HTMLImageElement, ImageProps>(function Image(
     if (src?.startsWith("/")) {
       return "nextjs";
     }
-    getImageCdnForUrl(src);
+    return getImageCdnForUrl(src);
   }, [src]);
 
   // Other image CDNs can use normal Unpic breakpoints
