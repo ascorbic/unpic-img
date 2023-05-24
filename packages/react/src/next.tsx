@@ -1,4 +1,4 @@
-import { useContext, forwardRef, useMemo } from "react";
+import { useContext, forwardRef, useMemo, useEffect } from "react";
 import type { ImageProps as UnpicImageProps } from "./index";
 import type { ImageConfigComplete } from "next/dist/shared/lib/image-config";
 import { imageConfigDefault } from "next/dist/shared/lib/image-config";
@@ -32,6 +32,37 @@ export type ImageProps = Omit<UnpicImageProps, "src"> & {
   src: string | StaticImport;
 };
 
+function checkMatchingPatterns(config: ImageConfigComplete, src: string) {
+  if (
+    // match-remote-pattern doesn't support the edge runtime
+    process.env.NEXT_RUNTIME === "edge" ||
+    // we don't have access to the image domains/remotePatterns in production
+    process.env.NODE_ENV !== "development"
+  ) {
+    return;
+  }
+
+  if (!src?.startsWith("http://") && !src?.startsWith("https://")) {
+    return;
+  }
+  let parsedSrc: URL;
+  try {
+    parsedSrc = new URL(src);
+  } catch (err) {
+    console.error(err);
+    return;
+  }
+
+  import("next/dist/shared/lib/match-remote-pattern").then(({ hasMatch }) => {
+    if (!hasMatch(config.domains, config.remotePatterns, parsedSrc)) {
+      throw new Error(
+        `[Unpic]: Invalid src (${src}). Images that aren't on a supported image CDN must be configured under images in your \`next.config.js\`\n` +
+          `See more info: https://nextjs.org/docs/messages/next-image-unconfigured-host`
+      );
+    }
+  });
+}
+
 // Next.js allows various different shapes of the src prop
 function getImageData(src: string | StaticImport): StaticImageData | void {
   if (typeof src === "string") {
@@ -51,15 +82,15 @@ export const Image = forwardRef<HTMLImageElement, ImageProps>(function Image(
   // the same breakpoints as those in the config
 
   const configContext = useContext(ImageConfigContext);
+  const config = configEnv || configContext || imageConfigDefault;
   const breakpoints = useMemo(() => {
-    const config = configEnv || configContext || imageConfigDefault;
     return [...config.deviceSizes, ...config.imageSizes];
-  }, [configContext]);
+  }, [config]);
 
   const { src: origSrc, ...rest } = props;
 
   // We need to cast this here because otherwise TS gets confused
-  // with the layout/diemnsions inference
+  // with the layout/dimensions inference
   const childProps = rest as UnpicImageProps;
 
   const imageData = getImageData(origSrc);
@@ -100,10 +131,20 @@ export const Image = forwardRef<HTMLImageElement, ImageProps>(function Image(
     return getImageCdnForUrl(src);
   }, [src]);
 
+  const isRemoteCdn = cdn && cdn !== "nextjs" && cdn !== "vercel";
+
+  useEffect(() => {
+    if (!src || !config || isRemoteCdn) {
+      return;
+    }
+    checkMatchingPatterns(config, src);
+  }, [src, isRemoteCdn, config]);
+
   // Other image CDNs can use normal Unpic breakpoints
-  if (cdn && cdn !== "nextjs" && cdn !== "vercel") {
+  if (isRemoteCdn) {
     return <UnpicImage {...childProps} src={src} ref={ref} />;
   }
+
   return (
     <UnpicImage
       {...childProps}
