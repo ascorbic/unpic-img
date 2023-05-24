@@ -84,6 +84,13 @@
   * dependencies
     * @unpic/core bumped to 0.0.22
 
+## [0.0.28](https://github.com/ascorbic/unpic-img/compare/react-v0.0.27...react-v0.0.28) (2023-05-24)
+
+
+### Features
+
+* **react:** check Next.js component src against next.config rules ([#235](https://github.com/ascorbic/unpic-img/issues/235)) ([0217a98](https://github.com/ascorbic/unpic-img/commit/0217a98c22471dc677ff9c88e299e27589a5aea3))
+
 ## [0.0.27](https://github.com/ascorbic/unpic-img/compare/react-v0.0.26...react-v0.0.27) (2023-05-16)
 
 
