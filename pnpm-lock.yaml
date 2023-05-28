@@ -573,8 +573,8 @@ importers:
         specifier: 7.7.0
         version: 7.7.0
       prettier:
-        specifier: 2.8.7
-        version: 2.8.7
+        specifier: 2.8.8
+        version: 2.8.8
       typescript:
         specifier: 5.0.4
         version: 5.0.4
@@ -653,8 +653,8 @@ importers:
         specifier: ^21.1.1
         version: 21.1.1
       prettier:
-        specifier: 2.8.7
-        version: 2.8.7
+        specifier: 2.8.8
+        version: 2.8.8
       solid-js:
         specifier: ^1.6.15
         version: 1.7.3
@@ -1487,7 +1487,7 @@ packages:
     dependencies:
       '@vscode/emmet-helper': 2.8.6
       events: 3.3.0
-      prettier: 2.8.7
+      prettier: 2.8.8
       prettier-plugin-astro: 0.7.2
       source-map: 0.7.4
       vscode-css-languageservice: 6.2.4
@@ -19307,7 +19307,7 @@ packages:
     engines: {node: ^14.15.0 || >=16.0.0, pnpm: '>=7.14.0'}
     dependencies:
       '@astrojs/compiler': 0.31.4
-      prettier: 2.8.7
+      prettier: 2.8.8
       sass-formatter: 0.7.6
       synckit: 0.8.5
 
@@ -19329,6 +19329,12 @@ packages:
 
   /prettier@2.8.7:
     resolution: {integrity: sha512-yPngTo3aXUUmyuTjeTUT75txrf+aMh9FiD7q9ZE/i6r0bPb22g4FsE6Y338PQX1bmfy08i9QQCB7/rcUAVntfw==}
+    engines: {node: '>=10.13.0'}
+    hasBin: true
+    dev: true
+
+  /prettier@2.8.8:
+    resolution: {integrity: sha512-tdN8qQGvNjw4CHbY+XXk0JgCXn9QiF21a55rBe5LJAU+kDyC4WQn4+awm2Xfk2lQMk5fKup9XgzTZtGkjBdP9Q==}
     engines: {node: '>=10.13.0'}
     hasBin: true
 
