@@ -34,7 +34,8 @@
   "type": "module",
   "dependencies": {
     "@unpic/core": "workspace:^",
-    "style-object-to-css-string": "^1.0.1"
+    "style-object-to-css-string": "^1.0.1",
+    "unpic": "^3.6.1"
   },
   "peerDependencies": {
     "svelte": "*"

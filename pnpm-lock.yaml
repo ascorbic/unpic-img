@@ -688,6 +688,9 @@ importers:
       style-object-to-css-string:
         specifier: ^1.0.1
         version: 1.0.1
+      unpic:
+        specifier: ^3.6.1
+        version: 3.6.1
     devDependencies:
       '@sveltejs/adapter-auto':
         specifier: ^2.0.0
@@ -6789,7 +6792,7 @@ packages:
       kleur: 4.1.5
       sade: 1.8.1
       svelte: 3.58.0
-      svelte2tsx: 0.6.11(svelte@3.58.0)(typescript@5.0.4)
+      svelte2tsx: 0.6.15(svelte@3.58.0)(typescript@5.0.4)
     transitivePeerDependencies:
       - typescript
     dev: true
@@ -21770,10 +21773,10 @@ packages:
       typescript: 5.0.4
     dev: true
 
-  /svelte2tsx@0.6.11(svelte@3.58.0)(typescript@5.0.4):
-    resolution: {integrity: sha512-rRW/3V/6mcejYWmSqcHpmILOSPsOhLgkbKbrTOz82s2n8TywmIsqj2jYPsiL6HeGoUM/atiTD0YKguW4b7ECog==}
+  /svelte2tsx@0.6.15(svelte@3.58.0)(typescript@5.0.4):
+    resolution: {integrity: sha512-+j6RmA3g5pPs1DHa/rdzJjjhZuCfWx0IbNPaR99A2bvOSPPY6BlVkBGU0urI+DGcWHhYEG28Flo942KqlAkpEQ==}
     peerDependencies:
-      svelte: ^3.55
+      svelte: ^3.55 || ^4.0
       typescript: ^4.9.4 || ^5.0.0
     dependencies:
       dedent-js: 1.0.1
