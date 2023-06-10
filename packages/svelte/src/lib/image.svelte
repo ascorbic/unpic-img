@@ -1,12 +1,19 @@
 <script lang="ts">
-  import { transformProps, type UnpicImageProps } from "@unpic/core"
-  import styleToCss from 'style-object-to-css-string';
-  import type { HTMLImgAttributes } from "svelte/elements"
+  import { transformProps } from "@unpic/core";
+  import styleToCss from "style-object-to-css-string";
+  import type { ImageProps as BaseImageProps } from "./types";
+  // This unused import is a hack to get around a bug in svelte2tsx
+  import type { UrlTransformer, ImageCdn } from "unpic";
 
-  type $$Props = UnpicImageProps<HTMLImgAttributes, string | null>
+  type $$Props = BaseImageProps;
 
-  $: ({ style: parentStyle, ...props } = $$props as $$Props)
-  $: ({ alt, style: styleObj, ...transformedProps } = transformProps({...props, style: {} as Record<string, string>}))
-  $: style = [styleToCss(styleObj), parentStyle].filter(Boolean).join(';')
+  $: ({ style: parentStyle, ...props } = $$props as $$Props);
+  $: ({
+    alt,
+    style: styleObj,
+    ...transformedProps
+  } = transformProps({ ...props, style: {} as Record<string, string> }));
+  $: style = [styleToCss(styleObj), parentStyle].filter(Boolean).join(";");
 </script>
+
 <img {alt} {style} {...transformedProps} />
