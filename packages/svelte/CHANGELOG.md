@@ -96,6 +96,13 @@
   * dependencies
     * @unpic/core bumped to 0.0.24
 
+## [0.0.25](https://github.com/ascorbic/unpic-img/compare/svelte-v0.0.24...svelte-v0.0.25) (2023-06-10)
+
+
+### Bug Fixes
+
+* **svelte:** generate types for svelte component ([#245](https://github.com/ascorbic/unpic-img/issues/245)) ([d3db8d2](https://github.com/ascorbic/unpic-img/commit/d3db8d29d8b4fcd7ce848e9ceb378c72d5b6df40))
+
 ## [0.0.15](https://github.com/ascorbic/unpic-img/compare/svelte-v0.0.14...svelte-v0.0.15) (2023-03-20)
 
 
