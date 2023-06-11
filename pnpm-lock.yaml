@@ -546,8 +546,8 @@ importers:
         specifier: 0.107.0
         version: 0.107.0(undici@5.22.1)
       '@types/eslint':
-        specifier: 8.40.0
-        version: 8.40.0
+        specifier: 8.40.1
+        version: 8.40.1
       '@types/node':
         specifier: ^18.15.3
         version: 18.15.11
@@ -7072,7 +7072,7 @@ packages:
   /@types/eslint-scope@3.7.4:
     resolution: {integrity: sha512-9K4zoImiZc3HlIp6AVUDE4CWYx22a+lhSZMYNpbjW04+YF0KWj4pJXnEMjdnFTiQibFFmElcsasJXDbdI/EPhA==}
     dependencies:
-      '@types/eslint': 8.40.0
+      '@types/eslint': 8.40.1
       '@types/estree': 1.0.0
     dev: true
 
@@ -7083,8 +7083,8 @@ packages:
       '@types/json-schema': 7.0.11
     dev: true
 
-  /@types/eslint@8.40.0:
-    resolution: {integrity: sha512-nbq2mvc/tBrK9zQQuItvjJl++GTN5j06DaPtp3hZCpngmG6Q3xoyEmd0TwZI0gAy/G1X0zhGBbr2imsGFdFV0g==}
+  /@types/eslint@8.40.1:
+    resolution: {integrity: sha512-vRb792M4mF1FBT+eoLecmkpLXwxsBHvWWRGJjzbYANBM6DtiJc6yETyv4rqDA6QNjF1pkj1U7LMA6dGb3VYlHw==}
     dependencies:
       '@types/estree': 1.0.0
       '@types/json-schema': 7.0.11
