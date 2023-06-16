@@ -123,8 +123,6 @@ supported CDN, or is a local image then the `nextjs` transformer will return a
 
 ## FAQs
 
-## FAQs
-
 - **What is an image CDN?** An image CDN is a service that provides a URL API
   for transforming images. This is often used to resize images on the fly, but
   can also be used to apply other transforms such as cropping, rotation,
