@@ -6,7 +6,7 @@
   "packages/vue": "0.0.23",
   "packages/astro": "0.0.18",
   "packages/preact": "0.0.18",
-  "packages/qwik": "0.0.19",
+  "packages/qwik": "0.0.20",
   "packages/webc": "0.0.17",
   "packages/angular": "0.0.11",
   "packages/lit": "0.0.4"
