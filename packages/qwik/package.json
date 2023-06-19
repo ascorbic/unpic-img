@@ -48,6 +48,7 @@
     "@types/node-fetch": "^2.6.2",
     "@typescript-eslint/eslint-plugin": "5.59.11",
     "@typescript-eslint/parser": "5.59.11",
+    "@unpic/core": "workspace:^",
     "eslint": "8.42.0",
     "eslint-plugin-qwik": "^0.103.0",
     "node-fetch": "3.3.1",
@@ -60,8 +61,5 @@
   },
   "peerDependencies": {
     "@builder.io/qwik": "*"
-  },
-  "dependencies": {
-    "@unpic/core": "workspace:^"
   }
 }
