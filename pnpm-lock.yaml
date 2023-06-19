@@ -537,10 +537,6 @@ importers:
         version: 0.30.0(jsdom@21.1.1)
 
   packages/qwik:
-    dependencies:
-      '@unpic/core':
-        specifier: workspace:^
-        version: link:../core
     devDependencies:
       '@builder.io/qwik':
         specifier: 0.107.0
@@ -560,6 +556,9 @@ importers:
       '@typescript-eslint/parser':
         specifier: 5.59.11
         version: 5.59.11(eslint@8.42.0)(typescript@5.0.4)
+      '@unpic/core':
+        specifier: workspace:^
+        version: link:../core
       eslint:
         specifier: 8.42.0
         version: 8.42.0
