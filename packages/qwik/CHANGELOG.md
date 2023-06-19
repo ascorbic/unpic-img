@@ -84,6 +84,13 @@
   * dependencies
     * @unpic/core bumped to 0.0.23
 
+## [0.0.20](https://github.com/ascorbic/unpic-img/compare/qwik-v0.0.19...qwik-v0.0.20) (2023-06-19)
+
+
+### Bug Fixes
+
+* **qwik:** don't externalise `@unpic/core` dep ([#254](https://github.com/ascorbic/unpic-img/issues/254)) ([089245b](https://github.com/ascorbic/unpic-img/commit/089245b7e5fd5f744040993235a86d45b4cf4319))
+
 ## [0.0.19](https://github.com/ascorbic/unpic-img/compare/qwik-v0.0.18...qwik-v0.0.19) (2023-05-16)
 
 
