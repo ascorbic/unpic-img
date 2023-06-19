@@ -1,10 +1,10 @@
 import { useContext, forwardRef, useMemo, useEffect } from "react";
 import type { ImageProps as UnpicImageProps } from "./index";
-import type { ImageConfigComplete } from "next/dist/shared/lib/image-config";
-import { imageConfigDefault } from "next/dist/shared/lib/image-config";
 import { Image as UnpicImage } from "./index";
-import { ImageConfigContext } from "next/dist/shared/lib/image-config-context";
 import { getImageCdnForUrl } from "unpic";
+import type { ImageConfigComplete } from "next/dist/shared/lib/image-config.js";
+import { imageConfigDefault } from "next/dist/shared/lib/image-config.js";
+import { ImageConfigContext } from "next/dist/shared/lib/image-config-context.js";
 
 //
 const configEnv = process.env
