@@ -511,8 +511,8 @@ importers:
         specifier: ^0.1.11
         version: 0.1.11
       web-component-analyzer:
-        specifier: 2.0.0-next.4
-        version: 2.0.0-next.4
+        specifier: 2.0.0-next.5
+        version: 2.0.0-next.5
 
   packages/preact:
     dependencies:
@@ -23338,8 +23338,8 @@ packages:
     resolution: {integrity: sha512-DEAoo25RfSYMuTGc9vPJzZcZullwIqRDSI9LOy+fkCJPi6hykCnfKaXTuPBDuXAUcqHXyOgFtHNp/kB2FjYHbw==}
     dev: true
 
-  /web-component-analyzer@2.0.0-next.4:
-    resolution: {integrity: sha512-XZ4JOibgp+3OKAQ6K9v4gJOoHAurfXztbfX6FwqXIh4cNLTwHz4QcLDOFav+2ddKGpshM4MQrJaPCPXZeCv5+A==}
+  /web-component-analyzer@2.0.0-next.5:
+    resolution: {integrity: sha512-QaQwuwFaBuwc7RwX0KdR9bc57s9Jqj+PcekIt3c7WXRY4vGOr/rjyG8YWuT2R7KmGBh+KrCdY/KynMlWRCVR3w==}
     hasBin: true
     dependencies:
       fast-glob: 3.2.12
