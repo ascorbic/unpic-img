@@ -84,6 +84,13 @@
   * dependencies
     * @unpic/core bumped to 0.0.22
 
+## [0.0.29](https://github.com/ascorbic/unpic-img/compare/react-v0.0.28...react-v0.0.29) (2023-06-19)
+
+
+### Bug Fixes
+
+* **react:** use extension for next deep imports ([#252](https://github.com/ascorbic/unpic-img/issues/252)) ([ebf8401](https://github.com/ascorbic/unpic-img/commit/ebf840106029a9539a20cbcff3c7c4c8ac135721)), closes [#118](https://github.com/ascorbic/unpic-img/issues/118)
+
 ## [0.0.28](https://github.com/ascorbic/unpic-img/compare/react-v0.0.27...react-v0.0.28) (2023-05-24)
 
 
