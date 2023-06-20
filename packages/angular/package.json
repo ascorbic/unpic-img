@@ -20,7 +20,7 @@
     "@angular/cli": "~15.2.8",
     "@angular/compiler-cli": "^15.2.9",
     "@angular/core": "^15.2.9",
-    "ng-packagr": "^15.2.2",
+    "ng-packagr": "^16.0.0",
     "publint": "^0.1.12",
     "typescript": "4.9.5"
   },
