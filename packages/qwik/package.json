@@ -50,7 +50,7 @@
     "@typescript-eslint/parser": "5.59.11",
     "@unpic/core": "workspace:^",
     "eslint": "8.42.0",
-    "eslint-plugin-qwik": "^0.107.0",
+    "eslint-plugin-qwik": "^1.0.0",
     "node-fetch": "3.3.1",
     "np": "7.7.0",
     "prettier": "2.8.8",
