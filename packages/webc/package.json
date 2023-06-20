@@ -1,6 +1,6 @@
 {
   "name": "@unpic/webc",
-  "packageManager": "pnpm@8.3.1",
+  "packageManager": "pnpm@8.6.3",
   "license": "MIT",
   "repository": {
     "type": "git",
