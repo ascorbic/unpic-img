@@ -6,7 +6,7 @@
 import { transformProps, UnpicImageProps } from "@unpic/core";
 import { ImgHTMLAttributes, computed, useAttrs } from "vue";
 
-export interface Props extends ImgHTMLAttributes {
+export interface Props extends /* @vue-ignore */ ImgHTMLAttributes {
   src: string;
   width?: string | number;
   height?: string | number;
