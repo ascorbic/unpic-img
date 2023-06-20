@@ -16,8 +16,8 @@
     "directory": "packages/angular"
   },
   "devDependencies": {
-    "@angular-devkit/build-angular": "^15.2.8",
-    "@angular/cli": "~15.2.8",
+    "@angular-devkit/build-angular": "^16.0.0",
+    "@angular/cli": "~16.1.0",
     "@angular/compiler-cli": "^15.2.9",
     "@angular/core": "^15.2.9",
     "ng-packagr": "^15.2.2",
