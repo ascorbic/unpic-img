@@ -401,7 +401,7 @@ export function transformProps<
   // Auto-generate a low-res image for blurred placeholders
   if (transformer && background === "auto") {
     const lowResHeight = aspectRatio
-      ? Math.round(LOW_RES_WIDTH * aspectRatio)
+      ? Math.round(LOW_RES_WIDTH / aspectRatio)
       : undefined;
     const lowResImage = transformer({
       url,
