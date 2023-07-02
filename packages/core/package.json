@@ -1,7 +1,7 @@
 {
   "name": "@unpic/core",
   "version": "0.0.24",
-  "packageManager": "pnpm@8.6.3",
+  "packageManager": "pnpm@8.6.5",
   "license": "MIT",
   "sideEffects": false,
   "repository": {
