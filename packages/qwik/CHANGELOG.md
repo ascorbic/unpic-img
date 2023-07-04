@@ -84,6 +84,12 @@
   * dependencies
     * @unpic/core bumped to 0.0.23
 
+### Dependencies
+
+* The following workspace dependencies were updated
+  * devDependencies
+    * @unpic/core bumped to 0.0.25
+
 ## [0.0.20](https://github.com/ascorbic/unpic-img/compare/qwik-v0.0.19...qwik-v0.0.20) (2023-06-19)
 
 
