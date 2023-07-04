@@ -295,11 +295,9 @@ export const getSrcSet = ({
   | undefined => {
   const canonical = getCanonicalCdnForUrl(src, cdn);
 
-  if (!canonical) {
-    return;
+  if (canonical && !transformer) {
+    transformer = getTransformer(canonical.cdn);
   }
-
-  transformer ||= getTransformer(canonical.cdn);
 
   if (!transformer) {
     return;
@@ -315,7 +313,7 @@ export const getSrcSet = ({
       // Not sure why TS isn't narrowing the type here
       // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
       const transformed = transformer!({
-        url: canonical.url,
+        url: canonical ? canonical.url : src,
         width: bp,
         height: transformedHeight,
       });
