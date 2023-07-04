@@ -1,5 +1,14 @@
 # Changelog
 
+## [0.0.25](https://github.com/ascorbic/unpic-img/compare/core-v0.0.24...core-v0.0.25) (2023-07-04)
+
+
+### Bug Fixes
+
+* **deps:** update dependency unpic to ^3.7.0 ([#284](https://github.com/ascorbic/unpic-img/issues/284)) ([1f90451](https://github.com/ascorbic/unpic-img/commit/1f90451c5ef77db47ee28fe70f5d36890c261f3f))
+* **deps:** update dependency unpic to ^3.8.0 ([#286](https://github.com/ascorbic/unpic-img/issues/286)) ([ee9b9ff](https://github.com/ascorbic/unpic-img/commit/ee9b9ff26abeb5163ce053471fd15a70362a3b28))
+* lowResHeight computation ([#280](https://github.com/ascorbic/unpic-img/issues/280)) ([4caf8af](https://github.com/ascorbic/unpic-img/commit/4caf8af2ce0f91808e6cd3fac40ce04104871875))
+
 ## [0.0.24](https://github.com/ascorbic/unpic-img/compare/core-v0.0.23...core-v0.0.24) (2023-05-16)
 
 
