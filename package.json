@@ -9,7 +9,7 @@
     "publish": "pnpm run --filter '@unpic/*' publish"
   },
   "dependencies": {
-    "unpic": "^3.6.1"
+    "unpic": "^3.7.0"
   },
   "devDependencies": {
     "@testing-library/dom": "^9.3.1",
@@ -31,5 +31,5 @@
   "resolutions": {
     "cssstyle": "^3.0.0"
   },
-  "packageManager": "pnpm@8.6.3"
+  "packageManager": "pnpm@8.6.5"
 }
