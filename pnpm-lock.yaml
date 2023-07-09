@@ -543,8 +543,8 @@ importers:
   packages/qwik:
     devDependencies:
       '@builder.io/qwik':
-        specifier: 1.1.5
-        version: 1.1.5(undici@5.22.1)
+        specifier: 1.2.6
+        version: 1.2.6(undici@5.22.1)
       '@types/eslint':
         specifier: 8.40.2
         version: 8.40.2
@@ -3931,13 +3931,14 @@ packages:
       undici: 5.21.0
     dev: true
 
-  /@builder.io/qwik@1.1.5(undici@5.22.1):
-    resolution: {integrity: sha512-/CZzZaUPctUBHNjchJRXV+JC28HZtv4JteCKnpqjp8YcvzHNuB3A0FpIGEzEWD/F/pg+4YunvxrBSb9ZdPJROw==}
+  /@builder.io/qwik@1.2.6(undici@5.22.1):
+    resolution: {integrity: sha512-Cm1sLAimML55I5T1RI80R1lLgI4cnSeQt5obQtcMKa8wMmf2/luEyQaEkeN2fV3sp/gaVXCfAuKaddXK6ONdww==}
     engines: {node: '>=16.8.0 <18.0.0 || >=18.11'}
     hasBin: true
     peerDependencies:
       undici: ^5.14.0
     dependencies:
+      csstype: 3.1.2
       undici: 5.22.1
     dev: true
 
