@@ -9,5 +9,5 @@
   "packages/qwik": "0.0.23",
   "packages/webc": "0.0.20",
   "packages/angular": "0.0.14",
-  "packages/lit": "0.0.7"
+  "packages/lit": "0.0.8"
 }

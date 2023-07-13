@@ -36,6 +36,13 @@
   * dependencies
     * @unpic/core bumped to 0.0.27
 
+## [0.0.8](https://github.com/ascorbic/unpic-img/compare/lit-v0.0.7...lit-v0.0.8) (2023-07-13)
+
+
+### Bug Fixes
+
+* **lit:** add css part pseudo-element ([#295](https://github.com/ascorbic/unpic-img/issues/295)) ([86f9ebc](https://github.com/ascorbic/unpic-img/commit/86f9ebce70bbf69b8ebadffd5c57d20cc999c9a2))
+
 ## 0.0.1 (2023-04-23)
 
 
