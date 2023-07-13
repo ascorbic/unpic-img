@@ -31,3 +31,14 @@ You can then use the component in your HTML:
   alt="A lovely bath"
 ></unpic-img>
 ```
+
+## Styling
+
+If you need to style the `img` element, you can use the
+[`::part` pseudo-element](https://developer.mozilla.org/en-US/docs/Web/CSS/::part):
+
+```css
+unpic-img::part(image) {
+  border-radius: 4px;
+}
+```
