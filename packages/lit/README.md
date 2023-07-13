@@ -45,4 +45,15 @@ You can then use the component in your HTML:
 ></unpic-img>
 ```
 
+## Styling
+
+If you need to style the `img` element, you can use the
+[`::part` pseudo-element](https://developer.mozilla.org/en-US/docs/Web/CSS/::part):
+
+```css
+unpic-img::part(image) {
+  border-radius: 4px;
+}
+```
+
 For the supported props, see [the docs](https://unpic.pics/img/lit).

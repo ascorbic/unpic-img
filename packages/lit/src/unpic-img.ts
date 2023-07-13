@@ -61,6 +61,7 @@ export class UnpicImg
 
     return html`
       <img
+        part="image"
         src="${transformedProps.src}"
         alt="${transformedProps.alt}"
         width="${transformedProps.width}"
