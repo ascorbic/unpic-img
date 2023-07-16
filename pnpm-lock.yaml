@@ -56,7 +56,7 @@ importers:
         version: 5.1.3
       vite:
         specifier: ^4.3.9
-        version: 4.3.9(@types/node@18.16.18)
+        version: 4.3.9
       vitest:
         specifier: ^0.32.0
         version: 0.32.0(jsdom@22.0.0)
@@ -205,7 +205,7 @@ importers:
         version: link:../../packages/astro
       astro:
         specifier: ^2.6.5
-        version: 2.6.5(@types/node@18.16.18)
+        version: 2.6.5
 
   examples/lit:
     dependencies:
@@ -366,7 +366,7 @@ importers:
         version: 5.1.3
       vite:
         specifier: ^4.3.9
-        version: 4.3.9(@types/node@18.16.18)
+        version: 4.3.9
       vite-plugin-solid:
         specifier: ^2.7.0
         version: 2.7.0(solid-js@1.7.6)(vite@4.3.9)
@@ -397,7 +397,7 @@ importers:
         version: 5.1.3
       vite:
         specifier: ^4.3.9
-        version: 4.3.9(@types/node@18.16.18)
+        version: 4.3.9
 
   examples/vue:
     dependencies:
@@ -487,7 +487,7 @@ importers:
     devDependencies:
       astro:
         specifier: ^2.6.5
-        version: 2.6.5(@types/node@18.16.18)
+        version: 2.6.5
 
   packages/core:
     dependencies:
@@ -585,8 +585,8 @@ importers:
         specifier: 5.22.1
         version: 5.22.1
       vite:
-        specifier: 4.4.2
-        version: 4.4.2(@types/node@18.16.18)
+        specifier: 4.4.4
+        version: 4.4.4(@types/node@18.16.18)
       vitest:
         specifier: ^0.32.0
         version: 0.32.0(jsdom@22.0.0)
@@ -617,7 +617,7 @@ importers:
         version: 18.2.6
       '@vitejs/plugin-react':
         specifier: ^4.0.1
-        version: 4.0.1(vite@4.4.2)
+        version: 4.0.1(vite@4.4.4)
       cssstyle:
         specifier: ^3.0.0
         version: 3.0.0
@@ -675,7 +675,7 @@ importers:
         version: 5.1.3
       vite:
         specifier: ^4.3.9
-        version: 4.3.9(@types/node@18.16.18)
+        version: 4.3.9
       vite-plugin-solid:
         specifier: ^2.7.0
         version: 2.7.0(solid-js@1.7.6)(vite@4.3.9)
@@ -724,7 +724,7 @@ importers:
         version: 5.1.3
       vite:
         specifier: ^4.3.9
-        version: 4.3.9(@types/node@18.16.18)
+        version: 4.3.9
       vitest:
         specifier: ^0.32.0
         version: 0.32.0(jsdom@22.0.0)
@@ -752,7 +752,7 @@ importers:
         version: 5.1.3
       vite:
         specifier: ^4.3.9
-        version: 4.3.9(@types/node@18.16.18)
+        version: 4.3.9
       vitest:
         specifier: ^0.32.0
         version: 0.32.0(jsdom@22.0.0)
@@ -7356,7 +7356,7 @@ packages:
       sirv: 2.0.3
       svelte: 3.59.1
       undici: 5.22.1
-      vite: 4.3.9(@types/node@18.16.18)
+      vite: 4.3.9
     transitivePeerDependencies:
       - supports-color
     dev: true
@@ -7383,7 +7383,7 @@ packages:
       sirv: 2.0.3
       svelte: 4.0.3
       undici: 5.22.1
-      vite: 4.3.9(@types/node@18.16.18)
+      vite: 4.3.9
     transitivePeerDependencies:
       - supports-color
     dev: true
@@ -7415,7 +7415,7 @@ packages:
       '@sveltejs/vite-plugin-svelte': 2.4.1(svelte@3.59.1)(vite@4.3.9)
       debug: 4.3.4(supports-color@9.3.1)
       svelte: 3.59.1
-      vite: 4.3.9(@types/node@18.16.18)
+      vite: 4.3.9
     transitivePeerDependencies:
       - supports-color
     dev: true
@@ -7431,7 +7431,7 @@ packages:
       '@sveltejs/vite-plugin-svelte': 2.4.1(svelte@4.0.3)(vite@4.3.9)
       debug: 4.3.4(supports-color@9.3.1)
       svelte: 4.0.3
-      vite: 4.3.9(@types/node@18.16.18)
+      vite: 4.3.9
     transitivePeerDependencies:
       - supports-color
     dev: true
@@ -7450,7 +7450,7 @@ packages:
       magic-string: 0.30.0
       svelte: 3.59.1
       svelte-hmr: 0.15.2(svelte@3.59.1)
-      vite: 4.3.9(@types/node@18.16.18)
+      vite: 4.3.9
       vitefu: 0.2.4(vite@4.3.9)
     transitivePeerDependencies:
       - supports-color
@@ -7470,7 +7470,7 @@ packages:
       magic-string: 0.30.0
       svelte: 4.0.3
       svelte-hmr: 0.15.2(svelte@4.0.3)
-      vite: 4.3.9(@types/node@18.16.18)
+      vite: 4.3.9
       vitefu: 0.2.4(vite@4.3.9)
     transitivePeerDependencies:
       - supports-color
@@ -8641,7 +8641,7 @@ packages:
       - supports-color
     dev: true
 
-  /@vitejs/plugin-react@4.0.1(vite@4.4.2):
+  /@vitejs/plugin-react@4.0.1(vite@4.4.4):
     resolution: {integrity: sha512-g25lL98essfeSj43HJ0o4DMp0325XK0ITkxpgChzJU/CyemgyChtlxfnRbjfwxDGCTRxTiXtQAsdebQXKMRSOA==}
     engines: {node: ^14.18.0 || >=16.0.0}
     peerDependencies:
@@ -8651,7 +8651,7 @@ packages:
       '@babel/plugin-transform-react-jsx-self': 7.22.5(@babel/core@7.22.5)
       '@babel/plugin-transform-react-jsx-source': 7.22.5(@babel/core@7.22.5)
       react-refresh: 0.14.0
-      vite: 4.4.2(@types/node@18.16.18)
+      vite: 4.4.4(@types/node@18.16.18)
     transitivePeerDependencies:
       - supports-color
     dev: true
@@ -9691,6 +9691,82 @@ packages:
       resolve-pkg: 2.0.0
       svgo: 2.8.0
     dev: false
+
+  /astro@2.6.5:
+    resolution: {integrity: sha512-5q/DAP3i1hM7DC6KfhhMFEiGjUPSjLHc/Df66DgIF2YMu747PvI4zPrzODJWkTB6WM9gHZfslg3ild/hKF7lxg==}
+    engines: {node: '>=16.12.0', npm: '>=6.14.0'}
+    hasBin: true
+    peerDependencies:
+      sharp: '>=0.31.0'
+    peerDependenciesMeta:
+      sharp:
+        optional: true
+    dependencies:
+      '@astrojs/compiler': 1.5.1
+      '@astrojs/internal-helpers': 0.1.0
+      '@astrojs/language-server': 1.0.8
+      '@astrojs/markdown-remark': 2.2.1(astro@2.6.5)
+      '@astrojs/telemetry': 2.1.1
+      '@astrojs/webapi': 2.2.0
+      '@babel/core': 7.22.5
+      '@babel/generator': 7.22.5
+      '@babel/parser': 7.22.5
+      '@babel/plugin-transform-react-jsx': 7.22.5(@babel/core@7.22.5)
+      '@babel/traverse': 7.22.5
+      '@babel/types': 7.22.5
+      '@types/babel__core': 7.20.1
+      '@types/yargs-parser': 21.0.0
+      acorn: 8.9.0
+      boxen: 6.2.1
+      chokidar: 3.5.3
+      ci-info: 3.8.0
+      common-ancestor-path: 1.0.1
+      cookie: 0.5.0
+      debug: 4.3.4(supports-color@9.3.1)
+      deepmerge-ts: 4.3.0
+      devalue: 4.3.2
+      diff: 5.1.0
+      es-module-lexer: 1.3.0
+      esbuild: 0.17.19
+      estree-walker: 3.0.0
+      execa: 6.1.0
+      fast-glob: 3.2.12
+      github-slugger: 2.0.0
+      gray-matter: 4.0.3
+      html-escaper: 3.0.3
+      js-yaml: 4.1.0
+      kleur: 4.1.5
+      magic-string: 0.27.0
+      mime: 3.0.0
+      ora: 6.3.1
+      p-limit: 4.0.0
+      path-to-regexp: 6.2.1
+      preferred-pm: 3.0.3
+      prompts: 2.4.2
+      rehype: 12.0.1
+      semver: 7.5.2
+      server-destroy: 1.0.1
+      shiki: 0.14.2
+      slash: 4.0.0
+      string-width: 5.1.2
+      strip-ansi: 7.1.0
+      supports-esm: 1.0.0
+      tsconfig-resolver: 3.0.1
+      typescript: 5.1.3
+      unist-util-visit: 4.1.2
+      vfile: 5.3.7
+      vite: 4.3.9
+      vitefu: 0.2.4(vite@4.3.9)
+      yargs-parser: 21.1.1
+      zod: 3.21.4
+    transitivePeerDependencies:
+      - '@types/node'
+      - less
+      - sass
+      - stylus
+      - sugarss
+      - supports-color
+      - terser
 
   /astro@2.6.5(@types/node@18.16.18):
     resolution: {integrity: sha512-5q/DAP3i1hM7DC6KfhhMFEiGjUPSjLHc/Df66DgIF2YMu747PvI4zPrzODJWkTB6WM9gHZfslg3ild/hKF7lxg==}
@@ -20081,6 +20157,15 @@ packages:
       picocolors: 1.0.0
       source-map-js: 1.0.2
 
+  /postcss@8.4.26:
+    resolution: {integrity: sha512-jrXHFF8iTloAenySjM/ob3gSj7pCu0Ji49hnjqzsgSRa50hkWCKD0HQ+gMNJkW38jBI68MpAAg7ZWwHwX8NMMw==}
+    engines: {node: ^10 || ^12 || >=14}
+    dependencies:
+      nanoid: 3.3.6
+      picocolors: 1.0.0
+      source-map-js: 1.0.2
+    dev: true
+
   /posthtml-parser@0.10.2:
     resolution: {integrity: sha512-PId6zZ/2lyJi9LiKfe+i2xv57oEjJgWbsHGGANwos5AvdQp98i6AtamAl8gzSVFGfQ43Glb5D614cvZf012VKg==}
     engines: {node: '>=12'}
@@ -21332,7 +21417,6 @@ packages:
     hasBin: true
     optionalDependencies:
       fsevents: 2.3.2
-    dev: true
 
   /rrweb-cssom@0.6.0:
     resolution: {integrity: sha512-APM0Gt1KoXBz0iIkkdB/kfvGOwC4UuJFeG/c+yV7wSc7q96cG/kJ0HiYCnzivD9SB53cLV1MlHFNfOuPaadYSw==}
@@ -24049,7 +24133,7 @@ packages:
       mlly: 1.4.0
       pathe: 1.1.1
       picocolors: 1.0.0
-      vite: 4.4.2(@types/node@18.16.18)
+      vite: 4.4.4(@types/node@18.16.18)
     transitivePeerDependencies:
       - '@types/node'
       - less
@@ -24074,7 +24158,7 @@ packages:
       merge-anything: 5.1.7
       solid-js: 1.7.6
       solid-refresh: 0.5.3(solid-js@1.7.6)
-      vite: 4.3.9(@types/node@18.16.18)
+      vite: 4.3.9
       vitefu: 0.2.4(vite@4.3.9)
     transitivePeerDependencies:
       - supports-color
@@ -24131,6 +24215,37 @@ packages:
       fsevents: 2.3.2
     dev: true
 
+  /vite@4.3.9:
+    resolution: {integrity: sha512-qsTNZjO9NoJNW7KnOrgYwczm0WctJ8m/yqYAMAK9Lxt4SoySUfS5S8ia9K7JHpa3KEeMfyF8LoJ3c5NeBJy6pg==}
+    engines: {node: ^14.18.0 || >=16.0.0}
+    hasBin: true
+    peerDependencies:
+      '@types/node': '>= 14'
+      less: '*'
+      sass: '*'
+      stylus: '*'
+      sugarss: '*'
+      terser: ^5.4.0
+    peerDependenciesMeta:
+      '@types/node':
+        optional: true
+      less:
+        optional: true
+      sass:
+        optional: true
+      stylus:
+        optional: true
+      sugarss:
+        optional: true
+      terser:
+        optional: true
+    dependencies:
+      esbuild: 0.17.19
+      postcss: 8.4.24
+      rollup: 3.25.1
+    optionalDependencies:
+      fsevents: 2.3.2
+
   /vite@4.3.9(@types/node@18.16.18):
     resolution: {integrity: sha512-qsTNZjO9NoJNW7KnOrgYwczm0WctJ8m/yqYAMAK9Lxt4SoySUfS5S8ia9K7JHpa3KEeMfyF8LoJ3c5NeBJy6pg==}
     engines: {node: ^14.18.0 || >=16.0.0}
@@ -24159,12 +24274,12 @@ packages:
       '@types/node': 18.16.18
       esbuild: 0.17.19
       postcss: 8.4.24
-      rollup: 3.25.1
+      rollup: 3.26.2
     optionalDependencies:
       fsevents: 2.3.2
 
-  /vite@4.4.2(@types/node@18.16.18):
-    resolution: {integrity: sha512-zUcsJN+UvdSyHhYa277UHhiJ3iq4hUBwHavOpsNUGsTgjBeoBlK8eDt+iT09pBq0h9/knhG/SPrZiM7cGmg7NA==}
+  /vite@4.4.4(@types/node@18.16.18):
+    resolution: {integrity: sha512-4mvsTxjkveWrKDJI70QmelfVqTm+ihFAb6+xf4sjEU2TmUCTlVX87tmg/QooPEMQb/lM9qGHT99ebqPziEd3wg==}
     engines: {node: ^14.18.0 || >=16.0.0}
     hasBin: true
     peerDependencies:
@@ -24193,7 +24308,7 @@ packages:
     dependencies:
       '@types/node': 18.16.18
       esbuild: 0.18.11
-      postcss: 8.4.24
+      postcss: 8.4.26
       rollup: 3.26.2
     optionalDependencies:
       fsevents: 2.3.2

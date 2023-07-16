@@ -56,7 +56,7 @@
     "prettier": "2.8.8",
     "typescript": "5.0.4",
     "undici": "5.22.1",
-    "vite": "4.4.2",
+    "vite": "4.4.4",
     "vitest": "^0.32.0"
   },
   "peerDependencies": {
