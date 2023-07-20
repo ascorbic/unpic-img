@@ -1,6 +1,6 @@
 {
   "name": "@unpic/core",
-  "version": "0.0.27",
+  "version": "0.0.28",
   "packageManager": "pnpm@8.6.7",
   "license": "MIT",
   "sideEffects": false,
@@ -21,7 +21,7 @@
     "vitest": "^0.32.0"
   },
   "dependencies": {
-    "unpic": "^3.8.1"
+    "unpic": "^3.9.0"
   },
   "main": "./dist/core.js",
   "module": "./dist/core.mjs",
