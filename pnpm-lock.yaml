@@ -585,8 +585,8 @@ importers:
         specifier: 5.22.1
         version: 5.22.1
       vite:
-        specifier: 4.4.6
-        version: 4.4.6(@types/node@18.16.18)
+        specifier: 4.4.7
+        version: 4.4.7(@types/node@18.16.18)
       vitest:
         specifier: ^0.32.0
         version: 0.32.0(jsdom@22.0.0)
@@ -617,7 +617,7 @@ importers:
         version: 18.2.6
       '@vitejs/plugin-react':
         specifier: ^4.0.1
-        version: 4.0.1(vite@4.4.6)
+        version: 4.0.1(vite@4.4.7)
       cssstyle:
         specifier: ^3.0.0
         version: 3.0.0
@@ -8641,7 +8641,7 @@ packages:
       - supports-color
     dev: true
 
-  /@vitejs/plugin-react@4.0.1(vite@4.4.6):
+  /@vitejs/plugin-react@4.0.1(vite@4.4.7):
     resolution: {integrity: sha512-g25lL98essfeSj43HJ0o4DMp0325XK0ITkxpgChzJU/CyemgyChtlxfnRbjfwxDGCTRxTiXtQAsdebQXKMRSOA==}
     engines: {node: ^14.18.0 || >=16.0.0}
     peerDependencies:
@@ -8651,7 +8651,7 @@ packages:
       '@babel/plugin-transform-react-jsx-self': 7.22.5(@babel/core@7.22.5)
       '@babel/plugin-transform-react-jsx-source': 7.22.5(@babel/core@7.22.5)
       react-refresh: 0.14.0
-      vite: 4.4.6(@types/node@18.16.18)
+      vite: 4.4.7(@types/node@18.16.18)
     transitivePeerDependencies:
       - supports-color
     dev: true
@@ -24141,7 +24141,7 @@ packages:
       mlly: 1.4.0
       pathe: 1.1.1
       picocolors: 1.0.0
-      vite: 4.4.6(@types/node@18.16.18)
+      vite: 4.4.7(@types/node@18.16.18)
     transitivePeerDependencies:
       - '@types/node'
       - less
@@ -24286,8 +24286,8 @@ packages:
     optionalDependencies:
       fsevents: 2.3.2
 
-  /vite@4.4.6(@types/node@18.16.18):
-    resolution: {integrity: sha512-EY6Mm8vJ++S3D4tNAckaZfw3JwG3wa794Vt70M6cNJ6NxT87yhq7EC8Rcap3ahyHdo8AhCmV9PTk+vG1HiYn1A==}
+  /vite@4.4.7(@types/node@18.16.18):
+    resolution: {integrity: sha512-6pYf9QJ1mHylfVh39HpuSfMPojPSKVxZvnclX1K1FyZ1PXDOcLBibdq5t1qxJSnL63ca8Wf4zts6mD8u8oc9Fw==}
     engines: {node: ^14.18.0 || >=16.0.0}
     hasBin: true
     peerDependencies:
