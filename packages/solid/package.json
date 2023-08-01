@@ -1,5 +1,5 @@
 {
-  "version": "0.0.27",
+  "version": "0.0.28",
   "name": "@unpic/solid",
   "description": "SolidJS component for responsive, high-performance images.",
   "license": "MIT",
