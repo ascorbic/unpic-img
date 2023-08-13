@@ -45,7 +45,7 @@
     "solid-js": "^1.6.0"
   },
   "devDependencies": {
-    "esbuild": "^0.18.0",
+    "esbuild": "^0.19.0",
     "esbuild-plugin-solid": "^0.5.0",
     "jsdom": "^22.0.0",
     "prettier": "2.8.8",
