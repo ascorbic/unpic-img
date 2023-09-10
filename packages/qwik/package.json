@@ -49,7 +49,7 @@
     "@typescript-eslint/eslint-plugin": "5.60.1",
     "@typescript-eslint/parser": "5.60.1",
     "@unpic/core": "workspace:^",
-    "eslint": "8.48.0",
+    "eslint": "8.49.0",
     "eslint-plugin-qwik": "^1.1.5",
     "node-fetch": "3.3.2",
     "np": "8.0.4",
