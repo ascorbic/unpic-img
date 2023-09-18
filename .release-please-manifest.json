@@ -4,7 +4,7 @@
   "packages/solid": "0.0.28",
   "packages/svelte": "0.0.30",
   "packages/vue": "0.0.28",
-  "packages/astro": "0.0.23",
+  "packages/astro": "0.0.24",
   "packages/preact": "0.0.23",
   "packages/qwik": "0.0.25",
   "packages/webc": "0.0.22",

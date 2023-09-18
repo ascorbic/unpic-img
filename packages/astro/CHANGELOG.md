@@ -132,6 +132,13 @@
   * dependencies
     * @unpic/core bumped to 0.0.29
 
+## [0.0.24](https://github.com/ascorbic/unpic-img/compare/astro-v0.0.23...astro-v0.0.24) (2023-09-18)
+
+
+### Features
+
+* **astro:** support astro 3 ([#322](https://github.com/ascorbic/unpic-img/issues/322)) ([de2d7f9](https://github.com/ascorbic/unpic-img/commit/de2d7f96865f380ccdc2cf3feaed98bcca745c0a))
+
 ## 0.0.1 (2023-02-21)
 
 
