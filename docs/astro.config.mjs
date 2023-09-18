@@ -7,9 +7,22 @@ import sitemap from "@astrojs/sitemap";
 // https://astro.build/config
 export default defineConfig({
   integrations: [
-  // Enable Preact to support Preact JSX components.
-  preact(),
-  // Enable React for the Algolia search component.
-  react(), sitemap()],
-  site: `https://unpic.pics`
+    // Enable Preact to support Preact JSX components.
+    preact({
+      include: [
+        "src/components/RightSidebar/ThemeToggleButton.tsx",
+        "src/components/PlaceholderPlayground/index.tsx",
+        "src/components/Header/SidebarToggle.tsx",
+      ],
+    }),
+    // Enable React for the Algolia search component.
+    react({
+      include: [
+        "src/components/Header/Search.tsx",
+        "src/components/LanguageSelect.tsx",
+      ],
+    }),
+    sitemap(),
+  ],
+  site: `https://unpic.pics`,
 });
