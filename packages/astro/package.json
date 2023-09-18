@@ -20,12 +20,12 @@
     "astro"
   ],
   "devDependencies": {
-    "astro": "^2.6.5"
+    "astro": "^3.1.0"
   },
   "dependencies": {
     "@unpic/core": "workspace:^"
   },
   "peerDependencies": {
-    "astro": "^2.0.0"
+    "astro": "^2.0.0 || ^3.0.0"
   }
 }

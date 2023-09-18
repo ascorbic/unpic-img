@@ -11,6 +11,6 @@
   },
   "dependencies": {
     "@unpic/astro": "workspace:^",
-    "astro": "^2.6.5"
+    "astro": "^3.1.0"
   }
 }
