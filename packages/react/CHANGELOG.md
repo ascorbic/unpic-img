@@ -114,6 +114,20 @@
   * dependencies
     * @unpic/core bumped to 0.0.29
 
+## [0.0.35](https://github.com/ascorbic/unpic-img/compare/react-v0.0.34...react-v0.0.35) (2023-09-23)
+
+
+### Bug Fixes
+
+* **core:** gracefully handle missing props ([#324](https://github.com/ascorbic/unpic-img/issues/324)) ([6ca26b8](https://github.com/ascorbic/unpic-img/commit/6ca26b8a5a69caa912c23d5b5f874153fc23cbe5))
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @unpic/core bumped to 0.0.30
+
 ## [0.0.29](https://github.com/ascorbic/unpic-img/compare/react-v0.0.28...react-v0.0.29) (2023-06-19)
 
 
