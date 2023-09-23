@@ -23,6 +23,12 @@ export interface ImageSourceOptions {
   cdn?: ImageCdn;
 }
 
+export function logError(...args: unknown[]) {
+  if (process?.env?.NODE_ENV !== "production" || process?.env?.DEBUG) {
+    console.error("[unpic]", ...args);
+  }
+}
+
 /**
  * HTML image attributes, common to image components in multiple frameworks.
  * For React (and potentially other frameworks added in the future), convert to camelCase.
@@ -345,7 +351,7 @@ export function transformProps<
   breakpoints,
   ...props
 }: UnpicImageProps<TImageAttributes, TStyle>): TImageAttributes {
-  const canonical = getCanonicalCdnForUrl(src, cdn);
+  const canonical = src ? getCanonicalCdnForUrl(src, cdn) : undefined;
   let url: URL | string = src;
   if (canonical) {
     url = canonical.url;
@@ -375,9 +381,7 @@ export function transformProps<
   if (aspectRatio) {
     if (width) {
       if (height) {
-        console.error(
-          "Ignoring aspectRatio because width and height are both set"
-        );
+        logError("Ignoring aspectRatio because width and height are both set");
       } else {
         height = width / aspectRatio;
       }
@@ -385,7 +389,7 @@ export function transformProps<
       width = height * aspectRatio;
     } else if (layout !== "fullWidth") {
       // Fullwidth images have 100% width, so aspectRatio is applicable
-      console.error(
+      logError(
         "When aspectRatio is set, either width or height must also be set"
       );
     }
@@ -393,7 +397,7 @@ export function transformProps<
     aspectRatio = width / height;
   } else if (layout !== "fullWidth") {
     // Fullwidth images don't need dimensions
-    console.error("Either aspectRatio or both width and height must be set");
+    logError("Either aspectRatio or both width and height must be set");
   }
 
   // Auto-generate a low-res image for blurred placeholders
@@ -453,9 +457,13 @@ export function transformProps<
     }
   }
 
+  if (!url) {
+    logError("No URL provided for image");
+  }
+
   return {
     ...props,
-    src: url.toString(),
+    src: url?.toString(),
     width,
     height,
   } as TImageAttributes;
