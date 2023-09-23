@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.0.30](https://github.com/ascorbic/unpic-img/compare/core-v0.0.29...core-v0.0.30) (2023-09-23)
+
+
+### Bug Fixes
+
+* **core:** gracefully handle missing props ([#324](https://github.com/ascorbic/unpic-img/issues/324)) ([6ca26b8](https://github.com/ascorbic/unpic-img/commit/6ca26b8a5a69caa912c23d5b5f874153fc23cbe5))
+
 ## [0.0.29](https://github.com/ascorbic/unpic-img/compare/core-v0.0.28...core-v0.0.29) (2023-08-01)
 
 
