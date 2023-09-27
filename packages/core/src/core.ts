@@ -230,7 +230,7 @@ export const getStyle = <
 
 // Common screen widths. These will be filtered
 // according to the image size and layout
-const DEFAULT_RESOLUTIONS = [
+export const DEFAULT_RESOLUTIONS = [
   6016, // 6K
   5120, // 5K
   4480, // 4.5K
@@ -257,12 +257,14 @@ const LOW_RES_WIDTH = 24;
 export const getBreakpoints = ({
   width,
   layout,
+  resolutions = DEFAULT_RESOLUTIONS,
 }: {
   width?: number;
   layout: Layout;
+  resolutions?: Array<number>;
 }): number[] => {
   if (layout === "fullWidth") {
-    return DEFAULT_RESOLUTIONS;
+    return resolutions;
   }
   if (!width) {
     return [];
@@ -277,7 +279,7 @@ export const getBreakpoints = ({
       width,
       doubleWidth,
       // Filter out any resolutions that are larger than the double-res image
-      ...DEFAULT_RESOLUTIONS.filter((w) => w < doubleWidth),
+      ...resolutions.filter((w) => w < doubleWidth),
     ];
   }
 
@@ -331,33 +333,20 @@ export const getSrcSet = ({
     .join(",\n");
 };
 
-/**
- * Generates the props for an img element
- */
-export function transformProps<
+export function transformSharedProps<
   TImageAttributes extends CoreImageAttributes<TStyle>,
   TStyle = Record<string, string>
 >({
-  src,
   width,
   height,
   priority,
   layout = "constrained",
   aspectRatio,
-  cdn,
-  transformer,
-  objectFit = "cover",
-  background,
-  breakpoints,
   ...props
-}: UnpicImageProps<TImageAttributes, TStyle>): TImageAttributes {
-  const canonical = src ? getCanonicalCdnForUrl(src, cdn) : undefined;
-  let url: URL | string = src;
-  if (canonical) {
-    url = canonical.url;
-    transformer ||= getTransformer(canonical.cdn);
-  }
-
+}: UnpicImageProps<TImageAttributes, TStyle>): UnpicImageProps<
+  TImageAttributes,
+  TStyle
+> {
   width = (width && Number(width)) || undefined;
   height = (height && Number(height)) || undefined;
 
@@ -398,6 +387,44 @@ export function transformProps<
   } else if (layout !== "fullWidth") {
     // Fullwidth images don't need dimensions
     logError("Either aspectRatio or both width and height must be set");
+  }
+  return {
+    width,
+    height,
+    aspectRatio,
+    layout,
+    ...props,
+  } as UnpicImageProps<TImageAttributes, TStyle>;
+}
+
+/**
+ * Generates the props for an img element
+ */
+export function transformProps<
+  TImageAttributes extends CoreImageAttributes<TStyle>,
+  TStyle = Record<string, string>
+>(props: UnpicImageProps<TImageAttributes, TStyle>): TImageAttributes {
+  /* eslint-disable prefer-const */
+  let {
+    src,
+    cdn,
+    transformer,
+    background,
+    layout,
+    objectFit,
+    breakpoints,
+    width,
+    height,
+    aspectRatio,
+    ...transformed
+  } = transformSharedProps(props);
+  /* eslint-enable prefer-const */
+
+  const canonical = src ? getCanonicalCdnForUrl(src, cdn) : undefined;
+  let url: URL | string = src;
+  if (canonical) {
+    url = canonical.url;
+    transformer ||= getTransformer(canonical.cdn);
   }
 
   // Auto-generate a low-res image for blurred placeholders
@@ -462,7 +489,7 @@ export function transformProps<
   }
 
   return {
-    ...props,
+    ...transformed,
     src: url?.toString(),
     width,
     height,
