@@ -48,7 +48,7 @@
     "esbuild": "^0.19.0",
     "esbuild-plugin-solid": "^0.5.0",
     "jsdom": "^22.0.0",
-    "prettier": "2.8.8",
+    "prettier": "^3.0.3",
     "solid-js": "^1.7.6",
     "solid-testing-library": "^0.5.1",
     "tsup": "^7.0.0",

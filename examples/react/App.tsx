@@ -1,4 +1,7 @@
-import { Image } from "@unpic/react";
+import { Image, Source } from "@unpic/react";
+
+const toy =
+  "https://images.ctfassets.net/yadj1kx9rmg0/wtrHxeu3zEoEce2MokCSi/cf6f68efdcf625fdc060607df0f3baef/quwowooybuqbl6ntboz3.jpg";
 
 export function App() {
   return (
@@ -24,6 +27,39 @@ export function App() {
         layout="fixed"
         alt="Bunny.net"
       />
+      <div>
+        <picture>
+          <Source
+            media="(min-width: 800px)"
+            src="https://cdn.shopify.com/static/sample-images/shoes.jpeg"
+            layout="fullWidth"
+          />
+          <Source
+            media="(min-width: 601px)"
+            src="https://cdn.shopify.com/static/sample-images/bath.jpeg?crop=center"
+            width={800}
+            height={600}
+          />
+          <Source
+            media="(max-width: 600px)"
+            src="https://cdn.shopify.com/static/sample-images/teapot.jpg?crop=center"
+            width={600}
+            height={600}
+          />
+          <Source
+            src="https://cdn.shopify.com/static/sample-images/teapot.jpg?crop=center"
+            width={600}
+            height={600}
+          />
+        </picture>
+      </div>
+      <div>
+        <picture>
+          <Source src={toy} type="image/avif" width={800} height={600} />
+          <Source src={toy} type="image/webp" width={800} height={600} />
+          <Image src={toy} width={800} height={600} alt="Toy" />
+        </picture>
+      </div>
     </div>
   );
 }

@@ -5,6 +5,8 @@ import {
   getTransformer,
 } from "unpic";
 
+import { parse } from "./mediaquery.js";
+
 export type Layout = "fixed" | "constrained" | "fullWidth";
 
 type Prettify<T> = {
@@ -23,8 +25,14 @@ export interface ImageSourceOptions {
   cdn?: ImageCdn;
 }
 
+const DEBUG =
+  process?.env?.NODE_ENV === "development" ||
+  process?.env?.DEBUG ||
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  (import.meta as any)?.env?.DEV;
+
 export function logError(...args: unknown[]) {
-  if (process?.env?.NODE_ENV !== "production" || process?.env?.DEBUG) {
+  if (DEBUG) {
     console.error("[unpic]", ...args);
   }
 }
@@ -48,100 +56,157 @@ export interface CoreImageAttributes<TStyle = Record<string, string>> {
   fetchpriority?: "high" | "low" | "auto" | null;
 }
 
+export type ObjectFit =
+  | "contain"
+  | "cover"
+  | "fill"
+  | "none"
+  | "scale-down"
+  | "inherit"
+  | "initial";
+
 export type BaseImageProps<
   TImageAttributes extends CoreImageAttributes<TStyle>,
-  TStyle
-> = Exclude<TImageAttributes, "srcset" | "style"> &
+  TStyle,
+> = Omit<TImageAttributes, "srcset" | "style"> &
   ImageSourceOptions & {
     priority?: boolean;
     fetchpriority?: "high" | "low";
     background?: string;
-    objectFit?:
-      | "contain"
-      | "cover"
-      | "fill"
-      | "none"
-      | "scale-down"
-      | "inherit"
-      | "initial";
+    objectFit?: ObjectFit;
+    /** @default {true} */
+    styled?: boolean | "false" | "true";
+  };
+
+export interface CoreSourceAttributes {
+  srcset?: string | null;
+  type?: string | null;
+  sizes?: string | null;
+  media?: string | null;
+}
+
+export type BaseSourceProps = Omit<CoreSourceAttributes, "srcset"> &
+  ImageSourceOptions & {
+    objectFit?: ObjectFit;
   };
 
 type BaseImageWithAspectRatioProps<
   TImageAttributes extends CoreImageAttributes<TStyle>,
-  TStyle
+  TStyle,
 > = BaseImageProps<TImageAttributes, TStyle> & {
+  aspectRatio: number;
+};
+
+type BaseSourceWithAspectRatioProps = BaseSourceProps & {
   aspectRatio: number;
 };
 
 type ImageWithAspectRatioAndWidthProps<
   TImageAttributes extends CoreImageAttributes<TStyle>,
-  TStyle
+  TStyle,
 > = BaseImageWithAspectRatioProps<TImageAttributes, TStyle> & {
+  width: number;
+};
+
+type SourceWithAspectRatioAndWidthProps = BaseSourceWithAspectRatioProps & {
   width: number;
 };
 
 type ImageWithAspectRatioAndHeightProps<
   TImageAttributes extends CoreImageAttributes<TStyle>,
-  TStyle
+  TStyle,
 > = BaseImageWithAspectRatioProps<TImageAttributes, TStyle> & {
+  height: number;
+};
+
+type SourceWithAspectRatioAndHeightProps = BaseSourceWithAspectRatioProps & {
   height: number;
 };
 
 type ImageWithWidthAndHeightProps<
   TImageAttributes extends CoreImageAttributes<TStyle>,
-  TStyle
+  TStyle,
 > = BaseImageProps<TImageAttributes, TStyle> & {
+  width: number;
+  height: number;
+};
+
+type SourceWithWidthAndHeightProps = BaseSourceProps & {
   width: number;
   height: number;
 };
 
 type ImageWithSizeProps<
   TImageAttributes extends CoreImageAttributes<TStyle>,
-  TStyle
+  TStyle,
 > =
   | ImageWithAspectRatioAndWidthProps<TImageAttributes, TStyle>
   | ImageWithAspectRatioAndHeightProps<TImageAttributes, TStyle>
   | ImageWithWidthAndHeightProps<TImageAttributes, TStyle>;
 
+type SourceWithSizeProps =
+  | SourceWithAspectRatioAndWidthProps
+  | SourceWithAspectRatioAndHeightProps
+  | SourceWithWidthAndHeightProps;
+
 export type FixedImageProps<
   TImageAttributes extends CoreImageAttributes<TStyle>,
-  TStyle
+  TStyle,
 > = Prettify<
   ImageWithSizeProps<TImageAttributes, TStyle> & {
     layout: "fixed";
   }
 >;
 
+export type FixedSourceProps = SourceWithSizeProps & {
+  layout: "fixed";
+};
+
 export type ConstrainedImageProps<
   TImageAttributes extends CoreImageAttributes<TStyle>,
-  TStyle
+  TStyle,
 > = ImageWithSizeProps<TImageAttributes, TStyle> & {
+  // Default is `constrained`, so this is optional
+  layout?: "constrained";
+};
+
+export type ConstrainedSourceProps = SourceWithSizeProps & {
   // Default is `constrained`, so this is optional
   layout?: "constrained";
 };
 
 export type FullWidthImageProps<
   TImageAttributes extends CoreImageAttributes<TStyle>,
-  TStyle
+  TStyle,
 > = BaseImageProps<TImageAttributes, TStyle> & {
+  layout: "fullWidth";
+  width?: never;
+};
+
+export type FullWidthSourceProps = BaseSourceProps & {
   layout: "fullWidth";
   width?: never;
 };
 
 export type UnpicImageProps<
   TImageAttributes extends CoreImageAttributes<TStyle>,
-  TStyle = TImageAttributes["style"]
+  TStyle = TImageAttributes["style"],
 > =
   | FixedImageProps<TImageAttributes, TStyle>
   | ConstrainedImageProps<TImageAttributes, TStyle>
   | FullWidthImageProps<TImageAttributes, TStyle>;
+
+export type UnpicSourceProps =
+  | FixedSourceProps
+  | ConstrainedSourceProps
+  | FullWidthSourceProps;
 
 /**
  * Gets the `sizes` attribute for an image, based on the layout and width
  */
 export const getSizes = (
   width?: number,
-  layout?: Layout
+  layout?: Layout,
 ): string | undefined => {
   if (!width || !layout) {
     return undefined;
@@ -173,7 +238,7 @@ const pixelate = (value?: number) =>
  */
 export const getStyle = <
   TImageAttributes extends CoreImageAttributes<TStyle>,
-  TStyle = Record<string, string>
+  TStyle = Record<string, string>,
 >({
   width,
   height,
@@ -224,7 +289,7 @@ export const getStyle = <
   }
 
   return Object.fromEntries(
-    styleEntries.filter(([, value]) => value)
+    styleEntries.filter(([, value]) => value),
   ) as TImageAttributes["style"];
 };
 
@@ -298,7 +363,8 @@ export const getSrcSet = ({
   breakpoints,
   cdn,
   transformer,
-}: Omit<ImageSourceOptions, "src"> & { src: URL | string }):
+  format,
+}: Omit<ImageSourceOptions, "src"> & { src: URL | string; format?: string }):
   | string
   | undefined => {
   const canonical = getCanonicalCdnForUrl(src, cdn);
@@ -324,6 +390,7 @@ export const getSrcSet = ({
         url: canonical ? canonical.url : src,
         width: bp,
         height: transformedHeight,
+        format,
       });
       if (transformed) {
         return `${transformed.toString()} ${bp}w`;
@@ -335,7 +402,7 @@ export const getSrcSet = ({
 
 export function transformSharedProps<
   TImageAttributes extends CoreImageAttributes<TStyle>,
-  TStyle = Record<string, string>
+  TStyle = Record<string, string>,
 >({
   width,
   height,
@@ -346,7 +413,8 @@ export function transformSharedProps<
 }: UnpicImageProps<TImageAttributes, TStyle>): UnpicImageProps<
   TImageAttributes,
   TStyle
-> {
+> &
+  Pick<TImageAttributes, "srcset" | "style"> {
   width = (width && Number(width)) || undefined;
   height = (height && Number(height)) || undefined;
 
@@ -379,7 +447,7 @@ export function transformSharedProps<
     } else if (layout !== "fullWidth") {
       // Fullwidth images have 100% width, so aspectRatio is applicable
       logError(
-        "When aspectRatio is set, either width or height must also be set"
+        "When aspectRatio is set, either width or height must also be set",
       );
     }
   } else if (width && height) {
@@ -402,7 +470,7 @@ export function transformSharedProps<
  */
 export function transformProps<
   TImageAttributes extends CoreImageAttributes<TStyle>,
-  TStyle = Record<string, string>
+  TStyle = Record<string, string>,
 >(props: UnpicImageProps<TImageAttributes, TStyle>): TImageAttributes {
   /* eslint-disable prefer-const */
   let {
@@ -416,7 +484,8 @@ export function transformProps<
     width,
     height,
     aspectRatio,
-    ...transformed
+    styled,
+    ...transformedProps
   } = transformSharedProps(props);
   /* eslint-enable prefer-const */
 
@@ -455,13 +524,14 @@ export function transformProps<
   >;
 
   if (transformer) {
-    props.sizes ||= getSizes(width, layout);
-    props.style = {
-      ...getStyle<TImageAttributes, TStyle>(styleProps),
-      ...props.style,
-    };
-
-    props.srcset = getSrcSet({
+    transformedProps.sizes ||= getSizes(width, layout);
+    if (styled !== "false" && styled !== false) {
+      transformedProps.style = {
+        ...getStyle<TImageAttributes, TStyle>(styleProps),
+        ...transformedProps.style,
+      };
+    }
+    transformedProps.srcset = getSrcSet({
       src: url,
       width,
       height,
@@ -489,9 +559,106 @@ export function transformProps<
   }
 
   return {
-    ...transformed,
+    ...transformedProps,
     src: url?.toString(),
     width,
     height,
   } as TImageAttributes;
+}
+
+export function normalizeImageType(type?: string | null): {
+  format?: string;
+  mimeType?: string;
+} {
+  if (!type) {
+    return {};
+  }
+  if (type.startsWith("image/")) {
+    return {
+      format: type.slice(6),
+      mimeType: type,
+    };
+  }
+
+  return {
+    format: type,
+    mimeType: `image/${type === "jpg" ? "jpeg" : type}`,
+  };
+}
+/**
+ * Generates the props for a `<source>` element
+ */
+export function transformSourceProps<
+  TSourceAttributes extends CoreSourceAttributes,
+>({ media, type, ...props }: UnpicSourceProps): TSourceAttributes {
+  /* eslint-disable prefer-const */
+  let {
+    src,
+    cdn,
+    transformer,
+    layout,
+    breakpoints,
+    width,
+    height,
+    aspectRatio,
+    sizes,
+  } = transformSharedProps(props);
+  /* eslint-enable prefer-const */
+
+  const canonical = src ? getCanonicalCdnForUrl(src, cdn) : undefined;
+  let url: URL | string = src;
+  if (canonical) {
+    url = canonical.url;
+    transformer ||= getTransformer(canonical.cdn);
+  }
+
+  if (!transformer) {
+    return {} as TSourceAttributes;
+  }
+
+  const { format, mimeType } = normalizeImageType(type);
+
+  sizes ||= getSizes(width, layout);
+
+  const srcset = getSrcSet({
+    src: url,
+    width,
+    height,
+    aspectRatio,
+    layout,
+    breakpoints,
+    transformer,
+    cdn,
+    format,
+  });
+
+  const transformed = transformer({ url, width, height });
+
+  if (transformed) {
+    url = transformed;
+  }
+
+  const returnObject = {
+    sizes,
+    srcset,
+  } as TSourceAttributes;
+
+  if (media) {
+    if (DEBUG) {
+      try {
+        parse(media);
+        returnObject.media = media;
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      } catch (e: any) {
+        logError(e.message);
+      }
+    } else {
+      returnObject.media = media;
+    }
+  }
+
+  if (mimeType) {
+    returnObject.type = mimeType;
+  }
+  return returnObject;
 }
