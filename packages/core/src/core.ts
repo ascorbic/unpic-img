@@ -74,8 +74,7 @@ export type BaseImageProps<
     fetchpriority?: "high" | "low";
     background?: string;
     objectFit?: ObjectFit;
-    /** @default {true} */
-    styled?: boolean | "false" | "true";
+    unstyled?: boolean;
   };
 
 export interface CoreSourceAttributes {
@@ -484,7 +483,7 @@ export function transformProps<
     width,
     height,
     aspectRatio,
-    styled,
+    unstyled,
     ...transformedProps
   } = transformSharedProps(props);
   /* eslint-enable prefer-const */
@@ -525,7 +524,7 @@ export function transformProps<
 
   if (transformer) {
     transformedProps.sizes ||= getSizes(width, layout);
-    if (styled !== "false" && styled !== false) {
+    if (!unstyled) {
       transformedProps.style = {
         ...getStyle<TImageAttributes, TStyle>(styleProps),
         ...transformedProps.style,

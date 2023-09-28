@@ -1,29 +1,9 @@
 ---
-import {
-  transformSourceProps,
-  transformProps,
-  type UnpicImageProps,
-  type UnpicSourceProps,
-} from "@unpic/core";
+import { transformSourceProps, type UnpicSourceProps } from "@unpic/core";
 
-import type { HTMLAttributes } from "astro/types";
-
-type Props = UnpicSourceProps | UnpicImageProps<HTMLAttributes<"img">>;
+type Props = UnpicSourceProps;
 
 const props: Props = Astro.props;
-
-const imgProps: UnpicImageProps<HTMLAttributes<"img">> = {
-  ...props,
-  styled: false,
-};
-
-const isSource = "media" in props || "type" in props;
 ---
 
-{
-  isSource ? (
-    <source {...transformSourceProps(props)} />
-  ) : (
-    <img {...transformProps(imgProps)} />
-  )
-}
+<source {...transformSourceProps(props)} />
