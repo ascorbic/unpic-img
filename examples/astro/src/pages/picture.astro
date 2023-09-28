@@ -15,33 +15,6 @@ const toy =
   <body>
     <div>
       <picture>
-        <Source
-          media="(min-width: 800px)"
-          src="https://cdn.shopify.com/static/sample-images/shoes.jpeg"
-          layout="fullWidth"
-          height={600}
-        />
-        <Source
-          media="(min-width: 601px)"
-          src="https://cdn.shopify.com/static/sample-images/bath.jpeg?crop=center"
-          width={800}
-          height={600}
-        />
-        <Source
-          media="(max-width: 600px)"
-          src="https://cdn.shopify.com/static/sample-images/teapot.jpg?crop=center"
-          width={600}
-          height={600}
-        />
-        <Source
-          src="https://cdn.shopify.com/static/sample-images/teapot.jpg?crop=center"
-          width={600}
-          height={600}
-        />
-      </picture>
-    </div>
-    <div>
-      <picture>
         <Source src={toy} type="image/avif" width={800} height={600} />
         <Source src={toy} type="image/webp" width={800} height={600} />
         <Image src={toy} width={800} height={600} alt="Toy" />

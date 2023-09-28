@@ -75,23 +75,23 @@ import { Source } from "@unpic/astro";
 <picture class="hero">
   <!-- Large screens get a full-width hero image -->
   <Source
-    src="https://cdn.shopify.com/static/sample-images/bath"
-    media="(min-width: 641px)"
+    src="https://images.unsplash.com/photo-1694406805270-f3a93e91f4b6"
+    media="(min-width: 601px)"
     layout="fullWidth"
   />
-  <!-- Small screens get a constrained portrait image -->
+  <!-- Small screens get a constrained square image -->
   <Source
-    src="https://cdn.shopify.com/static/sample-images/bath"
-    media="(max-width: 640px)"
+    src="https://images.unsplash.com/photo-1693711942336-f4f9963bd364"
+    media="(max-width: 600px)"
     width={600}
-    height={800}
+    height={600}
   />
   <!-- Always include an Image as the final element -->
   <Image
-    src="https://cdn.shopify.com/static/sample-images/bath"
+    src="https://images.unsplash.com/photo-1693711942336-f4f9963bd364"
     width={600}
-    height={800}
-    alt="A lovely bath"
+    height={600}
+    alt="Aurora"
     unstyled
   />
 </picture>
@@ -103,17 +103,18 @@ import { Source } from "@unpic/astro";
     width: 100%;
   }
 
-  @media (min-width: 641px) {
+  @media (min-width: 601px) {
     /* Style for full-width layout */
     .hero img {
-      height: 400px;
+      height: 600px;
     }
   }
-  @media (max-width: 640px) {
+  @media (max-width: 600px) {
     /* Style for constrained layout */
     .hero img {
       max-width: 600px;
-      aspect-ratio: 3 / 4;
+      /* Set the image aspect-ratio */
+      aspect-ratio: 1/1;
     }
   }
 </style>
