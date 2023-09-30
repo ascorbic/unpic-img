@@ -1,29 +1,26 @@
 {
+  "name": "impala-app",
   "private": true,
-  "name": "preact-demo",
-  "license": "MIT",
+  "version": "0.0.0",
+  "type": "module",
   "scripts": {
-    "build": "preact build",
-    "serve": "sirv build --port 8080 --cors --single",
-    "dev": "preact watch"
-  },
-  "eslintConfig": {
-    "extends": "preact"
-  },
-  "eslintIgnore": [
-    "build/*"
-  ],
-  "devDependencies": {
-    "preact-cli": "4.0.0-next.2",
-    "sirv-cli": "^1.0.14"
+    "dev": "impala dev",
+    "build:server": "vite build --ssr",
+    "build:client": "vite build",
+    "build:prerender": "impala prerender",
+    "build": "npm run build:client && npm run build:server && npm run build:prerender",
+    "preview": "vite preview"
   },
   "dependencies": {
-    "@babel/core": "^7.22.5",
-    "@babel/preset-env": "^7.22.5",
-    "@prefresh/core": "^1.5.1",
-    "@prefresh/utils": "^1.2.0",
+    "@impalajs/core": "latest",
+    "@impalajs/preact": "latest",
     "@unpic/preact": "workspace:^",
-    "preact": "^10.18.0",
-    "preact-render-to-string": "^6.2.1"
+    "preact": "^10.18.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.0.0-0",
+    "@preact/preset-vite": "^2.5.0",
+    "typescript": "^5.2.2",
+    "vite": "^4.4.9"
   }
 }
