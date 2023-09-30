@@ -1,5 +1,5 @@
 [build]
-publish = "dist/static"
+publish = "/examples/react/dist/static"
 
 [dev]
 command = "npm run dev"
