@@ -12,8 +12,8 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@impalajs/core": "latest",
-    "@impalajs/react": "latest",
+    "@impalajs/core": "^0.0.12",
+    "@impalajs/react": "^0.0.12",
     "@unpic/react": "workspace:^",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"

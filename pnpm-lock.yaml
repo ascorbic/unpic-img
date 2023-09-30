@@ -208,7 +208,7 @@ importers:
         version: link:../../packages/astro
       astro:
         specifier: ^3.1.0
-        version: 3.1.0(@types/node@18.16.18)
+        version: 3.1.0
 
   examples/lit:
     dependencies:
@@ -253,11 +253,11 @@ importers:
   examples/preact:
     dependencies:
       '@impalajs/core':
-        specifier: latest
-        version: 0.0.6(vite@4.4.9)
+        specifier: ^0.0.12
+        version: 0.0.12(vite@4.4.9)
       '@impalajs/preact':
-        specifier: latest
-        version: 0.0.6(preact@10.18.0)(vite@4.4.9)
+        specifier: ^0.0.12
+        version: 0.0.12(preact@10.18.0)(vite@4.4.9)
       '@unpic/preact':
         specifier: workspace:^
         version: link:../../packages/preact
@@ -276,7 +276,7 @@ importers:
         version: 5.2.2
       vite:
         specifier: ^4.4.9
-        version: 4.4.9(@types/node@18.16.18)
+        version: 4.4.9(@types/node@20.8.0)
 
   examples/qwik:
     dependencies:
@@ -339,11 +339,11 @@ importers:
   examples/react:
     dependencies:
       '@impalajs/core':
-        specifier: latest
-        version: 0.0.11(vite@4.4.9)
+        specifier: ^0.0.12
+        version: 0.0.12(vite@4.4.9)
       '@impalajs/react':
-        specifier: latest
-        version: 0.0.11(react-dom@18.2.0)(react@18.2.0)(vite@4.4.9)
+        specifier: ^0.0.12
+        version: 0.0.12(react-dom@18.2.0)(react@18.2.0)(vite@4.4.9)
       '@unpic/react':
         specifier: workspace:^
         version: link:../../packages/react
@@ -372,28 +372,6 @@ importers:
       vite:
         specifier: ^4.4.9
         version: 4.4.9(@types/node@20.8.0)
-
-  examples/react-old:
-    dependencies:
-      '@unpic/react':
-        specifier: workspace:^
-        version: link:../../packages/react
-      react:
-        specifier: ^18.2.0
-        version: 18.2.0
-      react-dom:
-        specifier: ^18.2.0
-        version: 18.2.0(react@18.2.0)
-    devDependencies:
-      '@types/react':
-        specifier: ^18.2.13
-        version: 18.2.13
-      '@types/react-dom':
-        specifier: ^18.2.6
-        version: 18.2.6
-      parcel:
-        specifier: ^2.9.2
-        version: 2.9.2
 
   examples/solid:
     dependencies:
@@ -530,7 +508,7 @@ importers:
     devDependencies:
       astro:
         specifier: ^3.1.0
-        version: 3.1.0(@types/node@18.16.18)
+        version: 3.1.0
 
   packages/core:
     dependencies:
@@ -4700,8 +4678,8 @@ packages:
     resolution: {integrity: sha512-trnsAYxU3xnS1gPHPyU961coFyLkh4gAD/0zQ5mymY4yOZ+CYvsPqUbOFSw0aDM4y0tV7tiFxL/1XfXPNC6IPg==}
     dev: false
 
-  /@impalajs/core@0.0.11(vite@4.4.9):
-    resolution: {integrity: sha512-SBjXp2Ho8GVAYpKQve7V4di5sf9h9JtmvpbdZbeENtnJ3pUJFzZJaBiR97gpqkucPKyK8UVCLOgnAeoebuB0Iw==}
+  /@impalajs/core@0.0.12(vite@4.4.9):
+    resolution: {integrity: sha512-We+SMg48L3D1Y+KowKEydKVXI7VcS9AQk9yfzh9dm1GDW97z/6Y9aZ+czAWd8AwNaXTV3lBflA6CvMrgkiCSXg==}
     engines: {node: '>=18.0.0'}
     hasBin: true
     peerDependencies:
@@ -4715,27 +4693,12 @@ packages:
       - supports-color
     dev: false
 
-  /@impalajs/core@0.0.6(vite@4.4.9):
-    resolution: {integrity: sha512-78LX24EvxUemBZdyxkfnBis2HDvgIXpStZF0O4wCuKpIJ08o4NCzXnUB3Fyn7v3iuU3v2pZFU2jqNXSunZ1ozQ==}
-    engines: {node: '>=18.0.0'}
-    hasBin: true
-    peerDependencies:
-      vite: '>=4'
-    dependencies:
-      express: 4.18.2
-      path-to-regexp: 6.2.1
-      radix3: 1.1.0
-      vite: 4.4.9(@types/node@18.16.18)
-    transitivePeerDependencies:
-      - supports-color
-    dev: false
-
-  /@impalajs/preact@0.0.6(preact@10.18.0)(vite@4.4.9):
-    resolution: {integrity: sha512-MiuOEPhj3T8d+RctDgOuIRa+dC2h3JIZADCAgWhT5MqwAnvKuB3llAUvS9Qud4WrAYlm51bcIKODu69FVSSpdg==}
+  /@impalajs/preact@0.0.12(preact@10.18.0)(vite@4.4.9):
+    resolution: {integrity: sha512-UcjyoK24vvpWdP4SBrvu657DXMaNOEsVAAZAI8FTEpSV7C120TRpETGFNL4gVOeopzebcN8oURGiJVdF8cQrzw==}
     peerDependencies:
       preact: ^10.0.0
     dependencies:
-      '@impalajs/core': 0.0.6(vite@4.4.9)
+      '@impalajs/core': 0.0.12(vite@4.4.9)
       preact: 10.18.0
       preact-render-to-string: 6.2.1(preact@10.18.0)
     transitivePeerDependencies:
@@ -4743,13 +4706,13 @@ packages:
       - vite
     dev: false
 
-  /@impalajs/react@0.0.11(react-dom@18.2.0)(react@18.2.0)(vite@4.4.9):
-    resolution: {integrity: sha512-JmJPy1XQ49IxkSNNvHaNMq6zTBwZpG5gEQldvyNDVv7JwS9006b5mNrusaFhRw+B82j5DpuRG8FBycu/xE+CPg==}
+  /@impalajs/react@0.0.12(react-dom@18.2.0)(react@18.2.0)(vite@4.4.9):
+    resolution: {integrity: sha512-9QQalLjQ/NRDxHI794k9Y2GQkFTDFDqNreVgDxp8jVDPIOaH2vIYZGhAE3MFxYORKok++ycSThEFEwh+mlRt0A==}
     peerDependencies:
       react: '>=18'
       react-dom: '>=18'
     dependencies:
-      '@impalajs/core': 0.0.11(vite@4.4.9)
+      '@impalajs/core': 0.0.12(vite@4.4.9)
       react: 18.2.0
       react-dom: 18.2.0(react@18.2.0)
     transitivePeerDependencies:
@@ -6822,7 +6785,7 @@ packages:
       debug: 4.3.4(supports-color@9.3.1)
       kolorist: 1.8.0
       resolve: 1.22.6
-      vite: 4.4.9(@types/node@18.16.18)
+      vite: 4.4.9(@types/node@20.8.0)
     transitivePeerDependencies:
       - preact
       - supports-color
@@ -6905,7 +6868,7 @@ packages:
       '@prefresh/utils': 1.2.0
       '@rollup/pluginutils': 4.2.1
       preact: 10.18.0
-      vite: 4.4.9(@types/node@18.16.18)
+      vite: 4.4.9(@types/node@20.8.0)
     transitivePeerDependencies:
       - supports-color
     dev: true
@@ -9334,6 +9297,79 @@ packages:
       resolve-pkg: 2.0.0
       svgo: 2.8.0
     dev: false
+
+  /astro@3.1.0:
+    resolution: {integrity: sha512-hVPZg9uDafqJbDwOwtcujwhJ6Qp3BCaIj1cvablTYI0jdYrZSvcybhIMTf8NhzK5smvZy2Bv9eEDYXLpiLDrRQ==}
+    engines: {node: '>=18.14.1', npm: '>=6.14.0'}
+    hasBin: true
+    dependencies:
+      '@astrojs/compiler': 2.1.0
+      '@astrojs/internal-helpers': 0.2.0
+      '@astrojs/markdown-remark': 3.2.0(astro@3.1.0)
+      '@astrojs/telemetry': 3.0.1
+      '@babel/core': 7.22.20
+      '@babel/generator': 7.22.15
+      '@babel/parser': 7.22.16
+      '@babel/plugin-transform-react-jsx': 7.22.5(@babel/core@7.22.20)
+      '@babel/traverse': 7.22.20
+      '@babel/types': 7.22.19
+      '@types/babel__core': 7.20.1
+      acorn: 8.10.0
+      boxen: 7.1.1
+      chokidar: 3.5.3
+      ci-info: 3.8.0
+      clsx: 2.0.0
+      common-ancestor-path: 1.0.1
+      cookie: 0.5.0
+      debug: 4.3.4(supports-color@9.3.1)
+      devalue: 4.3.2
+      diff: 5.1.0
+      es-module-lexer: 1.3.0
+      esbuild: 0.19.3
+      estree-walker: 3.0.3
+      execa: 8.0.1
+      fast-glob: 3.3.1
+      github-slugger: 2.0.0
+      gray-matter: 4.0.3
+      html-escaper: 3.0.3
+      http-cache-semantics: 4.1.1
+      js-yaml: 4.1.0
+      kleur: 4.1.5
+      magic-string: 0.30.3
+      mime: 3.0.0
+      ora: 7.0.1
+      p-limit: 4.0.0
+      path-to-regexp: 6.2.1
+      preferred-pm: 3.1.2
+      probe-image-size: 7.2.3
+      prompts: 2.4.2
+      rehype: 12.0.1
+      resolve: 1.22.6
+      semver: 7.5.4
+      server-destroy: 1.0.1
+      shiki: 0.14.4
+      string-width: 6.1.0
+      strip-ansi: 7.1.0
+      tsconfig-resolver: 3.0.1
+      undici: 5.24.0
+      unist-util-visit: 4.1.2
+      vfile: 5.3.7
+      vite: 4.4.9(@types/node@20.8.0)
+      vitefu: 0.2.4(vite@4.4.9)
+      which-pm: 2.1.1
+      yargs-parser: 21.1.1
+      zod: 3.21.1
+    optionalDependencies:
+      sharp: 0.32.5
+    transitivePeerDependencies:
+      - '@types/node'
+      - less
+      - lightningcss
+      - sass
+      - stylus
+      - sugarss
+      - supports-color
+      - terser
 
   /astro@3.1.0(@types/node@18.16.18):
     resolution: {integrity: sha512-hVPZg9uDafqJbDwOwtcujwhJ6Qp3BCaIj1cvablTYI0jdYrZSvcybhIMTf8NhzK5smvZy2Bv9eEDYXLpiLDrRQ==}

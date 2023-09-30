@@ -12,8 +12,8 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@impalajs/core": "latest",
-    "@impalajs/preact": "latest",
+    "@impalajs/core": "^0.0.12",
+    "@impalajs/preact": "^0.0.12",
     "@unpic/preact": "workspace:^",
     "preact": "^10.18.0"
   },
