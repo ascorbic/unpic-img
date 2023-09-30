@@ -25,11 +25,8 @@ export interface ImageSourceOptions {
   cdn?: ImageCdn;
 }
 
-const DEBUG =
-  process?.env?.NODE_ENV === "development" ||
-  process?.env?.DEBUG ||
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  (import.meta as any)?.env?.DEV;
+// @ts-expect-error This may or may not be used with Vite
+const DEBUG = import.meta.env?.DEV;
 
 export function logError(...args: unknown[]) {
   if (DEBUG) {
