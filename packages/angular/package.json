@@ -27,5 +27,24 @@
   "dependencies": {
     "@unpic/core": "workspace:^",
     "tslib": "^2.5.3"
+  },
+  "module": "dist/fesm2015/unpic-angular.mjs",
+  "typings": "dist/index.d.ts",
+  "es2020": "dist/fesm2020/unpic-angular.mjs",
+  "esm2020": "dist/esm2020/unpic-angular.mjs",
+  "fesm2020": "dist/fesm2020/unpic-angular.mjs",
+  "fesm2015": "dist/fesm2015/unpic-angular.mjs",
+  "exports": {
+    "./package.json": {
+      "default": "./package.json"
+    },
+    ".": {
+      "types": "./dist/index.d.ts",
+      "esm2020": "./dist/esm2020/unpic-angular.mjs",
+      "es2020": "./dist/fesm2020/unpic-angular.mjs",
+      "es2015": "./dist/fesm2015/unpic-angular.mjs",
+      "node": "./dist/fesm2015/unpic-angular.mjs",
+      "default": "./dist/fesm2020/unpic-angular.mjs"
+    }
   }
 }
