@@ -1,5 +1,5 @@
 [build]
-publish = "/examples/preact/dist/static"
+publish = "/dist/static"
 
 [dev]
 command = "npm run dev"
