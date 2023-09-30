@@ -1,19 +1,29 @@
 {
   "name": "react-demo",
-  "packageManager": "pnpm@3.4.1",
   "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "impala dev",
+    "build:server": "vite build --ssr",
+    "build:client": "vite build",
+    "build:prerender": "impala prerender",
+    "build": "npm run build:client && npm run build:server && npm run build:prerender",
+    "preview": "vite preview"
+  },
   "dependencies": {
+    "@impalajs/core": "latest",
+    "@impalajs/react": "latest",
     "@unpic/react": "workspace:^",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },
   "devDependencies": {
-    "@types/react": "^18.2.13",
-    "@types/react-dom": "^18.2.6",
-    "parcel": "^2.9.2"
-  },
-  "scripts": {
-    "start": "parcel index.html",
-    "build": "parcel build index.html"
+    "@types/node": "^20.8.0",
+    "@types/react": "^18.0.28",
+    "@types/react-dom": "^18.0.11",
+    "@vitejs/plugin-react": "^4.1.0",
+    "typescript": "^5.2.2",
+    "vite": "^4.4.9"
   }
 }
