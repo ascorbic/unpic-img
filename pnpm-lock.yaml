@@ -258,19 +258,25 @@ importers:
       '@babel/preset-env':
         specifier: ^7.22.5
         version: 7.22.5(@babel/core@7.22.5)
+      '@prefresh/core':
+        specifier: ^1.5.1
+        version: 1.5.1(preact@10.18.0)
+      '@prefresh/utils':
+        specifier: ^1.2.0
+        version: 1.2.0
       '@unpic/preact':
         specifier: workspace:^
         version: link:../../packages/preact
       preact:
-        specifier: ^10.15.1
-        version: 10.15.1
+        specifier: ^10.18.0
+        version: 10.18.0
       preact-render-to-string:
-        specifier: ^5.2.6
-        version: 5.2.6(preact@10.15.1)
+        specifier: ^6.2.1
+        version: 6.2.1(preact@10.18.0)
     devDependencies:
       preact-cli:
         specifier: 4.0.0-next.2
-        version: 4.0.0-next.2(preact-render-to-string@5.2.6)(preact@10.15.1)
+        version: 4.0.0-next.2(preact-render-to-string@6.2.1)(preact@10.18.0)
       sirv-cli:
         specifier: ^1.0.14
         version: 1.0.14
@@ -8497,7 +8503,7 @@ packages:
     resolution: {integrity: sha512-a5Sab1C4/icpTZVzZc5Ghpz88yQtGOyNqYXcZgOssB2uuAr+wF/MvN6bgtW32q7HHrvBki+BsZ0OuNv6EV3K9g==}
     dev: true
 
-  /@preact/async-loader@3.0.2(preact@10.15.1):
+  /@preact/async-loader@3.0.2(preact@10.18.0):
     resolution: {integrity: sha512-nYIdlAGbZ0+0/u5VJxQdLDgNFgEJmNLzctuqnCBZxW/EpLPMg8lcsnRsoXVl+O28ZZYhVhos3XiWM3KtuN0C3Q==}
     engines: {node: '>=8'}
     peerDependencies:
@@ -8505,7 +8511,7 @@ packages:
     dependencies:
       kleur: 4.1.5
       loader-utils: 2.0.4
-      preact: 10.15.1
+      preact: 10.18.0
     dev: true
 
   /@preact/preset-vite@2.5.0(@babel/core@7.22.20)(preact@10.15.1)(vite@4.4.9):
@@ -8569,6 +8575,14 @@ packages:
       preact: ^10.0.0
     dependencies:
       preact: 10.15.1
+    dev: false
+
+  /@prefresh/core@1.5.1(preact@10.18.0):
+    resolution: {integrity: sha512-e0mB0Oxtog6ZpKPDBYbzFniFJDIktuKMzOHp7sguntU+ot0yi6dbhJRE9Css1qf0u16wdSZjpL2W2ODWuU05Cw==}
+    peerDependencies:
+      preact: ^10.0.0
+    dependencies:
+      preact: 10.18.0
 
   /@prefresh/utils@1.2.0:
     resolution: {integrity: sha512-KtC/fZw+oqtwOLUFM9UtiitB0JsVX0zLKNyRTA332sqREqSALIIQQxdUCS1P3xR/jT1e2e8/5rwH6gdcMLEmsQ==}
@@ -8590,7 +8604,7 @@ packages:
       - supports-color
     dev: false
 
-  /@prefresh/webpack@3.3.4(@prefresh/babel-plugin@0.4.4)(preact@10.15.1)(webpack@5.87.0):
+  /@prefresh/webpack@3.3.4(@prefresh/babel-plugin@0.4.4)(preact@10.18.0)(webpack@5.87.0):
     resolution: {integrity: sha512-RiXS/hvXDup5cQw/267kxkKie81kxaAB7SFbkr8ppshobDEzwgUN1tbGbHNx6Uari0Ql2XByC6HIgQGpaq2Q7w==}
     peerDependencies:
       '@prefresh/babel-plugin': ^0.4.0
@@ -8598,9 +8612,9 @@ packages:
       webpack: ^4.0.0 || ^5.0.0
     dependencies:
       '@prefresh/babel-plugin': 0.4.4
-      '@prefresh/core': 1.5.1(preact@10.15.1)
+      '@prefresh/core': 1.5.1(preact@10.18.0)
       '@prefresh/utils': 1.2.0
-      preact: 10.15.1
+      preact: 10.18.0
       webpack: 5.87.0
     dev: true
 
@@ -8862,7 +8876,7 @@ packages:
     peerDependencies:
       '@sveltejs/kit': ^1.0.0
     dependencies:
-      '@sveltejs/kit': 1.20.4(svelte@4.0.3)(vite@4.3.9)
+      '@sveltejs/kit': 1.20.4(svelte@3.59.1)(vite@4.3.9)
       import-meta-resolve: 3.0.0
     dev: true
 
@@ -21865,7 +21879,7 @@ packages:
       posthtml-parser: 0.11.0
       posthtml-render: 3.0.0
 
-  /preact-cli@4.0.0-next.2(preact-render-to-string@5.2.6)(preact@10.15.1):
+  /preact-cli@4.0.0-next.2(preact-render-to-string@6.2.1)(preact@10.18.0):
     resolution: {integrity: sha512-qCw7tP8Ufau5eOKSJtVcGmWZgM53N5kcy3ckKJRjksHWm5OPyoVFmm/3Ru2OHPnjJKpkCE5FgeZhvEdBkYrxMA==}
     engines: {node: '>=14.14.0'}
     hasBin: true
@@ -21889,9 +21903,9 @@ packages:
       '@babel/plugin-transform-react-jsx': 7.22.5(@babel/core@7.22.5)
       '@babel/preset-env': 7.22.5(@babel/core@7.22.5)
       '@babel/preset-typescript': 7.22.5(@babel/core@7.22.5)
-      '@preact/async-loader': 3.0.2(preact@10.15.1)
+      '@preact/async-loader': 3.0.2(preact@10.18.0)
       '@prefresh/babel-plugin': 0.4.4
-      '@prefresh/webpack': 3.3.4(@prefresh/babel-plugin@0.4.4)(preact@10.15.1)(webpack@5.87.0)
+      '@prefresh/webpack': 3.3.4(@prefresh/babel-plugin@0.4.4)(preact@10.18.0)(webpack@5.87.0)
       autoprefixer: 10.4.14(postcss@8.4.24)
       babel-loader: 8.3.0(@babel/core@7.22.5)(webpack@5.87.0)
       babel-plugin-macros: 3.1.0
@@ -21918,8 +21932,8 @@ packages:
       postcss: 8.4.24
       postcss-load-config: 3.1.4(postcss@8.4.24)
       postcss-loader: 6.2.1(postcss@8.4.24)(webpack@5.87.0)
-      preact: 10.15.1
-      preact-render-to-string: 5.2.6(preact@10.15.1)
+      preact: 10.18.0
+      preact-render-to-string: 6.2.1(preact@10.18.0)
       progress-bar-webpack-plugin: 2.1.0(webpack@5.87.0)
       promise-polyfill: 8.3.0
       react-refresh: 0.11.0
@@ -21961,14 +21975,6 @@ packages:
       - webpack-cli
     dev: true
 
-  /preact-render-to-string@5.2.6(preact@10.15.1):
-    resolution: {integrity: sha512-JyhErpYOvBV1hEPwIxc/fHWXPfnEGdRKxc8gFdAZ7XV4tlzyzG847XAyEZqoDnynP88akM4eaHcSOzNcLWFguw==}
-    peerDependencies:
-      preact: '>=10'
-    dependencies:
-      preact: 10.15.1
-      pretty-format: 3.8.0
-
   /preact-render-to-string@6.2.1(preact@10.15.1):
     resolution: {integrity: sha512-5t7nFeMUextd53igL3GAakAAMaUD+dVWDHaRYaeh1tbPIjQIBtgJnMw6vf8VS/lviV0ggFtkgebatPxvtJsXyQ==}
     peerDependencies:
@@ -21978,8 +21984,19 @@ packages:
       pretty-format: 3.8.0
     dev: false
 
+  /preact-render-to-string@6.2.1(preact@10.18.0):
+    resolution: {integrity: sha512-5t7nFeMUextd53igL3GAakAAMaUD+dVWDHaRYaeh1tbPIjQIBtgJnMw6vf8VS/lviV0ggFtkgebatPxvtJsXyQ==}
+    peerDependencies:
+      preact: '>=10'
+    dependencies:
+      preact: 10.18.0
+      pretty-format: 3.8.0
+
   /preact@10.15.1:
     resolution: {integrity: sha512-qs2ansoQEwzNiV5eAcRT1p1EC/dmEzaATVDJNiB3g2sRDWdA7b7MurXdJjB2+/WQktGWZwxvDrnuRFbWuIr64g==}
+
+  /preact@10.18.0:
+    resolution: {integrity: sha512-O4dGFmErPd3RNVDvXmCbOW6hetnve6vYtjx5qf51mCUmBS96s66MrNQkEII5UThDGoNF7953ptA+aNupiDxVeg==}
 
   /prebuild-install@7.1.1:
     resolution: {integrity: sha512-jAXscXWMcCK8GgCoHOfIr0ODh5ai8mj63L2nWrjuAgXE6tDyYGnx4/8o/rCgU+B4JSyZBKbeZqzhtwtC3ovxjw==}

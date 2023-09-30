@@ -1,4 +1,5 @@
 import { Image, Source } from "@unpic/react";
+import { hero } from "./style.module.css";
 
 const toy =
   "https://images.ctfassets.net/yadj1kx9rmg0/wtrHxeu3zEoEce2MokCSi/cf6f68efdcf625fdc060607df0f3baef/quwowooybuqbl6ntboz3.jpg";
@@ -28,28 +29,27 @@ export function App() {
         alt="Bunny.net"
       />
       <div>
-        <picture>
+        <picture className={hero}>
+          {/* Large screens get a full-width hero image */}
           <Source
-            media="(min-width: 800px)"
-            src="https://cdn.shopify.com/static/sample-images/shoes.jpeg"
+            src="https://images.unsplash.com/photo-1694406805270-f3a93e91f4b6"
+            media="(min-width: 601px)"
             layout="fullWidth"
           />
+          {/* Small screens get a constrained square image */}
           <Source
-            media="(min-width: 601px)"
-            src="https://cdn.shopify.com/static/sample-images/bath.jpeg?crop=center"
-            width={800}
-            height={600}
-          />
-          <Source
+            src="https://images.unsplash.com/photo-1693711942336-f4f9963bd364"
             media="(max-width: 600px)"
-            src="https://cdn.shopify.com/static/sample-images/teapot.jpg?crop=center"
             width={600}
             height={600}
           />
-          <Source
-            src="https://cdn.shopify.com/static/sample-images/teapot.jpg?crop=center"
+          {/* Always include an Image as the final element */}
+          <Image
+            src="https://images.unsplash.com/photo-1693711942336-f4f9963bd364"
             width={600}
             height={600}
+            alt="Aurora"
+            unstyled
           />
         </picture>
       </div>
