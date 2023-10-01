@@ -2,7 +2,7 @@ import { describe, test, expect } from 'vitest';
 import 'zone.js';
 import 'zone.js/dist/zone-testing';
 import { render, screen } from '@testing-library/angular';
-import { UnpicDirective } from '../src/public-api';
+import { UnpicImageDirective } from '../src/public-api';
 import {
   expectPropsToMatchTransformed,
   testCases,
@@ -20,7 +20,7 @@ describe('the Angular directive', () => {
       const template = `<img unpic ${attrs.join(' ')} />`;
       console.log(template);
       await render(template, {
-        declarations: [UnpicDirective],
+        declarations: [UnpicImageDirective],
       });
 
       const html = screen.debug();
