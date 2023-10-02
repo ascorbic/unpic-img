@@ -1,8 +1,9 @@
 import { Image } from "@unpic/preact";
+import { App } from "../App";
 
-export default function App() {
+export default function Index() {
   return (
-    <div>
+    <App title="Hello">
       <Image
         src="https://images.unsplash.com/photo-1617718295766-0f839c2853e7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTczfHxyYWluZm9yZXN0JTIwYmVhY2h8ZW58MHx8MHx8&auto=format&fit=crop&w=900&q=60"
         layout="fullWidth"
@@ -25,6 +26,6 @@ export default function App() {
         layout="fixed"
         alt="Bunny.net"
       />
-    </div>
+    </App>
   );
 }

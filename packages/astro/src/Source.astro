@@ -1,0 +1,9 @@
+---
+import { transformSourceProps, type UnpicSourceProps } from "@unpic/core";
+
+type Props = UnpicSourceProps;
+
+const props: Props = Astro.props;
+---
+
+<source {...transformSourceProps(props)} />

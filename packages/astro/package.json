@@ -19,6 +19,9 @@
   "keywords": [
     "astro"
   ],
+  "scripts": {
+    "format": "prettier --write ."
+  },
   "devDependencies": {
     "astro": "^3.1.0"
   },

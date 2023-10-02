@@ -10,12 +10,13 @@ export interface Props extends /* @vue-ignore */ ImgHTMLAttributes {
   src: string;
   width?: string | number;
   height?: string | number;
-  layout: "fixed" | "constrained" | "fullWidth";
+  layout?: "fixed" | "constrained" | "fullWidth";
   cdn?: string;
   priority?: boolean;
   background?: string;
   aspectRatio?: number;
   objectFit?: "contain" | "cover" | "fill" | "none" | "scale-down" | "inherit" | "initial";
+  unstyled?: boolean;
 }
 
 const props = defineProps<Props>();

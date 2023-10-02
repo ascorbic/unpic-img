@@ -5,14 +5,13 @@ import {
   Renderer2,
   OnChanges,
 } from '@angular/core';
-import { transformProps, UnpicImageProps } from '@unpic/core';
-type Props = UnpicImageProps<HTMLImageElement>;
+import { transformSourceProps, UnpicSourceProps } from '@unpic/core';
+type Props = UnpicSourceProps;
 
 @Directive({
-  selector: 'img[unpic]',
-  standalone: true,
+  selector: 'source[unpic]',
 })
-export class UnpicDirective implements OnChanges {
+export class UnpicSourceDirective implements OnChanges {
   @Input() layout: 'constrained' | 'fullWidth' | 'fixed' = 'constrained';
   @Input() width?: number | string;
   @Input() height?: number | string;
@@ -21,9 +20,15 @@ export class UnpicDirective implements OnChanges {
   @Input() breakpoints?: Props['breakpoints'];
   @Input() transformer?: Props['transformer'];
   @Input() cdn?: Props['cdn'];
-  @Input() background?: Props['background'];
+  @Input() media?: Props['media'];
+  @Input() type?: Props['type'];
 
-  constructor(private el: ElementRef, private renderer: Renderer2) {}
+  constructor(
+    private el: ElementRef,
+    private renderer: Renderer2,
+  ) {
+    console.log('source');
+  }
 
   ngOnChanges() {
     const {
@@ -35,10 +40,11 @@ export class UnpicDirective implements OnChanges {
       breakpoints,
       transformer,
       cdn,
-      background,
+      type,
+      media,
     } = this;
 
-    const { style, ...props } = transformProps({
+    const props = transformSourceProps({
       layout,
       width: Number(width),
       height: Number(height),
@@ -47,20 +53,12 @@ export class UnpicDirective implements OnChanges {
       breakpoints,
       transformer,
       cdn,
-      background,
+      type,
+      media,
     } as Props);
 
-    for (const name in style) {
-      if (Object.prototype.hasOwnProperty.call(style, name)) {
-        this.renderer.setStyle(
-          this.el.nativeElement,
-          name,
-          style[name as keyof CSSStyleDeclaration]
-        );
-      }
-    }
-
     for (const prop in props) {
+      console.log('source', prop);
       if (Object.prototype.hasOwnProperty.call(props, prop)) {
         const propValue = props[prop as keyof typeof props];
         if (propValue === undefined) {
@@ -70,7 +68,7 @@ export class UnpicDirective implements OnChanges {
         this.renderer.setAttribute(
           this.el.nativeElement,
           prop,
-          String(propValue)
+          String(propValue),
         );
       }
     }

@@ -1,18 +1,32 @@
 import { describe, test, expect } from "vitest";
 import { render, screen } from "solid-testing-library";
-import { Image } from "../src";
+import { Image, Source } from "../src";
 import {
-  expectPropsToMatchTransformed,
-  testCases,
+  expectImagePropsToMatchTransformed,
+  expectSourcePropsToMatchTransformed,
+  imgTestCases,
+  sourceTestCases,
 } from "../../../test/test-helpers";
 
 describe("the Solid component", () => {
-  for (const props of testCases) {
+  for (const props of imgTestCases) {
     test(`renders a ${props.layout} image`, () => {
       render(() => <Image {...props} />);
       const img = screen.getByAltText<HTMLImageElement>(props.alt);
       expect(img).toBeTruthy();
-      expectPropsToMatchTransformed(img, props);
+      expectImagePropsToMatchTransformed(img, props);
+    });
+  }
+  for (const props of sourceTestCases) {
+    test(`renders a picture with ${props.layout} source`, () => {
+      render(() => (
+        <picture>
+          <Source data-testid="testimg" {...props} />
+        </picture>
+      ));
+      const source = screen.getByTestId<HTMLSourceElement>("testimg");
+      expect(source).toBeTruthy();
+      expectSourcePropsToMatchTransformed(source, props);
     });
   }
 });

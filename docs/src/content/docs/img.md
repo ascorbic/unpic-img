@@ -6,7 +6,7 @@ githubRepo: "ascorbic/unpic-img"
 ---
 
 A multi-framework component for responsive, high-performance images using image
-CDNs
+CDNs with no build step.
 
 ## Features
 
@@ -23,8 +23,8 @@ CDNs
   browser.
 - No build step or server-side rendering required for the images: uses your
   existing image CDN or CMS, with no additional configuration.
-- Uses [unpic](/lib) to support most image CDNs, including Cloudinary, Imgix,
-  and Shopify.
+- Uses [unpic](/lib) to support most image CDNs and CMSs, including Cloudinary,
+  Imgix, Contentful and Shopify.
 - Can generate a low-res background image for a blurred placeholder effect, or
   use with [`@unpic/placeholder`](/placeholder/) for more options.
 
