@@ -587,7 +587,7 @@ export function normalizeImageType(type?: string | null): {
 export function transformSourceProps<
   TSourceAttributes extends CoreSourceAttributes,
 >({ media, type, ...props }: UnpicSourceProps): TSourceAttributes {
-  /* eslint-disable prefer-const */
+  /* eslint-disable prefer-const, @typescript-eslint/no-unused-vars */
   let {
     src,
     cdn,
@@ -598,8 +598,11 @@ export function transformSourceProps<
     height,
     aspectRatio,
     sizes,
+    loading,
+    decoding,
+    ...rest
   } = transformSharedProps(props);
-  /* eslint-enable prefer-const */
+  /* eslint-enable prefer-const, @typescript-eslint/no-unused-vars */
 
   const canonical = src ? getCanonicalCdnForUrl(src, cdn) : undefined;
   let url: URL | string = src;
@@ -635,6 +638,7 @@ export function transformSourceProps<
   }
 
   const returnObject = {
+    ...rest,
     sizes,
     srcset,
   } as TSourceAttributes;

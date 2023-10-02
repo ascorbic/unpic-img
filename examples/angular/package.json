@@ -26,6 +26,7 @@
     "@angular-devkit/build-angular": "^15.2.8",
     "@angular/cli": "~15.2.8",
     "@angular/compiler-cli": "^15.2.9",
+    "@testing-library/angular": "^14.3.0",
     "@types/jasmine": "~4.3.4",
     "jasmine-core": "~4.6.0",
     "karma": "~6.4.2",

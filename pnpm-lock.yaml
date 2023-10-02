@@ -176,6 +176,9 @@ importers:
       '@angular/compiler-cli':
         specifier: ^15.2.9
         version: 15.2.9(@angular/compiler@15.2.9)(typescript@4.9.5)
+      '@testing-library/angular':
+        specifier: ^14.3.0
+        version: 14.3.0(@angular/common@15.2.9)(@angular/core@15.2.9)(@angular/platform-browser@15.2.9)(@angular/router@15.2.9)
       '@types/jasmine':
         specifier: ~4.3.4
         version: 4.3.4
@@ -1356,7 +1359,6 @@ packages:
     dependencies:
       '@angular/core': 15.2.9(rxjs@7.8.1)(zone.js@0.13.1)
       tslib: 2.5.3
-    dev: false
 
   /@angular/cli@15.2.8:
     resolution: {integrity: sha512-3VlTfm6DUZfFHBY43vQSAaqmFTxy3VtRd/iDBCHcEPhHwYLWBvNwReJuJfNja8O105QQ6DBiYVBExEBtPmjQ4w==}
@@ -1397,7 +1399,6 @@ packages:
       '@angular/core': 15.2.9(rxjs@7.8.1)(zone.js@0.13.1)
       rxjs: 7.8.1
       tslib: 2.5.3
-    dev: false
 
   /@angular/compiler-cli@15.2.9(@angular/compiler@15.2.9)(typescript@4.9.5):
     resolution: {integrity: sha512-zsbI8G2xHOeYWI0hjFzrI//ZhZV9il/uQW5dAimfwJp06KZDeXZ3PdwY9JQslf6F+saLwOObxy6QMrIVvfjy9w==}
@@ -1493,7 +1494,6 @@ packages:
       '@angular/common': 15.2.9(@angular/core@15.2.9)(rxjs@7.8.1)
       '@angular/core': 15.2.9(rxjs@7.8.1)(zone.js@0.13.1)
       tslib: 2.5.3
-    dev: false
 
   /@angular/router@15.2.9(@angular/common@15.2.9)(@angular/core@15.2.9)(@angular/platform-browser@15.2.9)(rxjs@7.8.1):
     resolution: {integrity: sha512-UCbh5DLSDhybv0xKYT7kGQMfOVdyhHIHOZz5EYVebbhste6S+W1LE57vTHq7QtxJsyKBa/WSkaUkCLXD6ntCAg==}
@@ -1509,7 +1509,6 @@ packages:
       '@angular/platform-browser': 15.2.9(@angular/animations@15.2.9)(@angular/common@15.2.9)(@angular/core@15.2.9)
       rxjs: 7.8.1
       tslib: 2.5.3
-    dev: false
 
   /@assemblyscript/loader@0.10.1:
     resolution: {integrity: sha512-H71nDOOL8Y7kWRLqf6Sums+01Q5msqBW2KhDUTemh1tvY04eSkSXrK0uj/4mmY0Xr16/3zyZmsrxN7CKuRbNRg==}
@@ -7319,6 +7318,22 @@ packages:
     engines: {node: '>=14.16'}
     dependencies:
       defer-to-connect: 2.0.1
+    dev: true
+
+  /@testing-library/angular@14.3.0(@angular/common@15.2.9)(@angular/core@15.2.9)(@angular/platform-browser@15.2.9)(@angular/router@15.2.9):
+    resolution: {integrity: sha512-HniH9B4+u9unr3xIo0gPrFjC0MFeN83xx1JajdL6Xgalc7pebRowCVMPQHXjry1f/1hb8Eyl8uMdCy4toG+f9A==}
+    peerDependencies:
+      '@angular/common': '>= 15.1.0 || >= 16.0.0'
+      '@angular/core': '>= 15.1.0 || >= 16.0.0'
+      '@angular/platform-browser': '>= 15.1.0 || >= 16.0.0'
+      '@angular/router': '>= 15.1.0 || >= 16.0.0'
+    dependencies:
+      '@angular/common': 15.2.9(@angular/core@15.2.9)(rxjs@7.8.1)
+      '@angular/core': 15.2.9(rxjs@7.8.1)(zone.js@0.13.1)
+      '@angular/platform-browser': 15.2.9(@angular/animations@15.2.9)(@angular/common@15.2.9)(@angular/core@15.2.9)
+      '@angular/router': 15.2.9(@angular/common@15.2.9)(@angular/core@15.2.9)(@angular/platform-browser@15.2.9)(rxjs@7.8.1)
+      '@testing-library/dom': 9.3.1
+      tslib: 2.5.3
     dev: true
 
   /@testing-library/dom@8.20.1:

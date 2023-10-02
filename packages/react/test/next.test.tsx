@@ -2,25 +2,25 @@ import { describe, test, expect } from "vitest";
 import { render, screen } from "@testing-library/react";
 import { Image } from "../src/next";
 import {
-  expectPropsToMatchTransformed,
-  testCases,
+  expectImagePropsToMatchTransformed,
+  imgTestCases,
 } from "../../../test/test-helpers";
 
 describe("the Next.js component", () => {
-  for (const props of testCases) {
+  for (const props of imgTestCases) {
     test(`renders a ${props.layout} image`, () => {
       render(<Image {...props} />);
       const img = screen.getByAltText<HTMLImageElement>(props.alt);
       expect(img).toBeTruthy();
       console.log(img.src);
       expect(img.src).toMatch(/^https:\/\//);
-      expectPropsToMatchTransformed(img, { ...props, cdn: "nextjs" });
+      expectImagePropsToMatchTransformed(img, { ...props, cdn: "nextjs" });
     });
   }
 
   test(`renders a non-CDN image with the next/image handler`, () => {
     const props = {
-      ...testCases[1],
+      ...imgTestCases[1],
       src: "https://example.com/image.png",
     };
 
@@ -35,7 +35,7 @@ describe("the Next.js component", () => {
       "aria-label": "A cool image",
       "data-foo": "bar",
       "data-ok": true,
-      ...testCases[0],
+      ...imgTestCases[0],
     };
 
     render(<Image {...props} />);
@@ -44,6 +44,6 @@ describe("the Next.js component", () => {
     expect(img.dataset.foo).toBe("bar");
     expect(img.dataset.ok).toBe("true");
     expect(img.getAttribute("aria-label")).toBe("A cool image");
-    expectPropsToMatchTransformed(img, { ...props, cdn: "nextjs" });
+    expectImagePropsToMatchTransformed(img, { ...props, cdn: "nextjs" });
   });
 });

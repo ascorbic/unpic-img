@@ -10,7 +10,6 @@ export const Source = React.forwardRef<HTMLSourceElement, SourceProps>(
         props,
       ),
     );
-
     return <source {...camelizedProps} ref={ref} />;
   },
 );
