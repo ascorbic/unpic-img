@@ -120,6 +120,20 @@
   * dependencies
     * @unpic/core bumped to 0.0.30
 
+## [0.0.30](https://github.com/ascorbic/unpic-img/compare/solid-v0.0.29...solid-v0.0.30) (2023-10-02)
+
+
+### Features
+
+* add support for `&lt;picture&gt;` tag ([#328](https://github.com/ascorbic/unpic-img/issues/328)) ([d8b93bd](https://github.com/ascorbic/unpic-img/commit/d8b93bda7a48e4621eaeac81cf20a6bb898be595))
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @unpic/core bumped to 0.0.31
+
 ## [0.0.23](https://github.com/ascorbic/unpic-img/compare/solid-v0.0.22...solid-v0.0.23) (2023-05-16)
 
 
