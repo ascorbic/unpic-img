@@ -1,0 +1,24 @@
+---
+import { Image, Source } from "@unpic/astro";
+const toy =
+  "https://images.ctfassets.net/yadj1kx9rmg0/wtrHxeu3zEoEce2MokCSi/cf6f68efdcf625fdc060607df0f3baef/quwowooybuqbl6ntboz3.jpg";
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>Astro</title>
+  </head>
+  <body>
+    <div>
+      <picture>
+        <Source src={toy} type="image/avif" width={800} height={600} />
+        <Source src={toy} type="image/webp" width={800} height={600} />
+        <Image src={toy} width={800} height={600} alt="Toy" />
+      </picture>
+    </div>
+  </body>
+</html>

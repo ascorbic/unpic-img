@@ -2,3 +2,4 @@
 // Then, use this file to export everything you want your user to access.
 
 export { default as Image } from "./src/Image.astro";
+export { default as Source } from "./src/Source.astro";

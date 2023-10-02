@@ -41,4 +41,13 @@ describe("Core", () => {
     expect(props.src).toBeUndefined();
     expect(props.loading).toEqual("lazy");
   });
+
+  test("doesn't throw if src is empty", () => {
+    const props = transformProps({ width: 100, height: 200 } as any);
+    expect(props).toBeDefined();
+    expect(props.src).toBeUndefined();
+    expect(props.loading).toEqual("lazy");
+    expect(props.width).toEqual(100);
+    expect(props.height).toEqual(200);
+  });
 });
