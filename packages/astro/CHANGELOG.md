@@ -138,6 +138,22 @@
   * dependencies
     * @unpic/core bumped to 0.0.30
 
+## [0.0.27](https://github.com/ascorbic/unpic-img/compare/astro-v0.0.26...astro-v0.0.27) (2023-10-03)
+
+
+### Features
+
+* add support for `&lt;picture&gt;` tag ([#328](https://github.com/ascorbic/unpic-img/issues/328)) ([d8b93bd](https://github.com/ascorbic/unpic-img/commit/d8b93bda7a48e4621eaeac81cf20a6bb898be595))
+* **astro:** add Astro support ([#16](https://github.com/ascorbic/unpic-img/issues/16)) ([eed3472](https://github.com/ascorbic/unpic-img/commit/eed3472b11bacaed558a6edacaac466123823ae5))
+* **astro:** support astro 3 ([#322](https://github.com/ascorbic/unpic-img/issues/322)) ([de2d7f9](https://github.com/ascorbic/unpic-img/commit/de2d7f96865f380ccdc2cf3feaed98bcca745c0a))
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @unpic/core bumped to 0.0.32
+
 ## [0.0.26](https://github.com/ascorbic/unpic-img/compare/astro-v0.0.25...astro-v0.0.26) (2023-10-02)
 
 
