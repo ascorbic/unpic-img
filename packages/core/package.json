@@ -1,6 +1,6 @@
 {
   "name": "@unpic/core",
-  "version": "0.0.30",
+  "version": "0.0.31",
   "packageManager": "pnpm@8.8.0",
   "license": "MIT",
   "sideEffects": false,
