@@ -120,6 +120,20 @@
   * devDependencies
     * @unpic/core bumped to 0.0.30
 
+## [0.0.27](https://github.com/ascorbic/unpic-img/compare/qwik-v0.0.26...qwik-v0.0.27) (2023-10-02)
+
+
+### Features
+
+* add support for `&lt;picture&gt;` tag ([#328](https://github.com/ascorbic/unpic-img/issues/328)) ([d8b93bd](https://github.com/ascorbic/unpic-img/commit/d8b93bda7a48e4621eaeac81cf20a6bb898be595))
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * devDependencies
+    * @unpic/core bumped to 0.0.31
+
 ## [0.0.20](https://github.com/ascorbic/unpic-img/compare/qwik-v0.0.19...qwik-v0.0.20) (2023-06-19)
 
 
