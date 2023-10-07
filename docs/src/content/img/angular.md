@@ -16,11 +16,11 @@ Add to app module:
 
 ```typescript
 // ..
-import { UnpicDirective } from "@unpic/angular";
+import { UnpicModule } from "@unpic/angular";
 
 @NgModule({
   // ...
-  imports: [BrowserModule, UnpicDirective],
+  imports: [BrowserModule, UnpicModule],
 })
 ```
 

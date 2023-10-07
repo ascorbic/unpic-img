@@ -1,6 +1,8 @@
 # `@unpic/astro` 🖼 📐
 
-Astro component for responsive, high-performance images.
+A high-performance, responsive image component for
+[Astro](https://astro.build/). Automatically supports most image CDNs and CMSs
+with no build step needed.
 
 ## Features
 
@@ -31,7 +33,7 @@ import { Image } from "@unpic/astro";
 ---
 
 <Image
-  src="https://cdn.shopify.com/static/sample-images/bath_grande_crop_center.jpeg"
+  src="https://cdn.shopify.com/static/sample-images/bath_gcrop_center.jpeg"
   layout="constrained"
   width={800}
   height={600}
