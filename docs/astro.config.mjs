@@ -15,11 +15,11 @@ export default defineConfig({
         "src/components/Header/SidebarToggle.tsx",
       ],
     }),
-    // Enable React for the Algolia search component.
     react({
       include: [
         "src/components/Header/Search.tsx",
         "src/components/LanguageSelect.tsx",
+        "src/components/CodeEditor/index.tsx",
       ],
     }),
     sitemap(),
