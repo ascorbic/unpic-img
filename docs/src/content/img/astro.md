@@ -5,7 +5,7 @@ githubRepo: "ascorbic/unpic-img"
 ---
 
 A high-performance, responsive image component for
-[Astro](https://astro.build/). Automatically suppports most image CDNs and CMSs
+[Astro](https://astro.build/). Automatically supports most image CDNs and CMSs
 with no build step needed.
 
 ## Installation and usage
