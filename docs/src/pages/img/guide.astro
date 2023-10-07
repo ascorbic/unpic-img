@@ -1,21 +1,20 @@
 ---
 import Interactive from "../../layouts/Interactive.astro";
 import { CodeEditor } from "../../components/CodeEditor";
-
-const tsx = String.raw;
 ---
 
 <Interactive title="Unpic playground" description="">
   <h1>Playground</h1>
   <CodeEditor
-    client:only="react"
-    code={tsx`
-    <Image
-      src="https://cdn.shopify.com/static/sample-images/bath.jpeg"
-      layout="constrained"
-      width={800}
-      height={600}
-      alt="A lovely bath"
-    />`}
+    client:load
+    code={/* jsx */ `
+<Image
+    src="https://cdn.shopify.com/static/sample-images/bath.jpeg"
+    layout="constrained"
+    width={800}
+    height={600}
+    alt="A lovely bath"
+/>
+`}
   />
 </Interactive>
