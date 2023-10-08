@@ -580,7 +580,7 @@ importers:
     devDependencies:
       '@builder.io/qwik':
         specifier: 1.2.13
-        version: 1.2.13(undici@5.25.3)
+        version: 1.2.13(undici@5.25.4)
       '@types/eslint':
         specifier: 8.44.3
         version: 8.44.3
@@ -618,8 +618,8 @@ importers:
         specifier: 5.0.4
         version: 5.0.4
       undici:
-        specifier: 5.25.3
-        version: 5.25.3
+        specifier: 5.25.4
+        version: 5.25.4
       vite:
         specifier: 4.4.9
         version: 4.4.9(@types/node@18.16.18)
@@ -1671,7 +1671,7 @@ packages:
       dset: 3.1.2
       is-docker: 3.0.0
       is-wsl: 3.0.0
-      undici: 5.25.3
+      undici: 5.25.4
       which-pm-runs: 1.1.0
     transitivePeerDependencies:
       - supports-color
@@ -3324,7 +3324,7 @@ packages:
       undici: 5.21.0
     dev: true
 
-  /@builder.io/qwik@1.2.13(undici@5.25.3):
+  /@builder.io/qwik@1.2.13(undici@5.25.4):
     resolution: {integrity: sha512-JVBBfkoFNGDd6BZzuk8k2rS+Td9SLngZWk0j6lJCQNPj548vA4DdERlUM+iHe3BYq2q7A3oMo63vUF74h42gDw==}
     engines: {node: '>=16.8.0 <18.0.0 || >=18.11'}
     hasBin: true
@@ -3332,7 +3332,7 @@ packages:
       undici: ^5.14.0
     dependencies:
       csstype: 3.1.2
-      undici: 5.25.3
+      undici: 5.25.4
     dev: true
 
   /@colors/colors@1.5.0:
@@ -7152,7 +7152,7 @@ packages:
       sirv: 2.0.3
       svelte: 4.2.1
       tiny-glob: 0.2.9
-      undici: 5.25.3
+      undici: 5.25.4
       vite: 4.3.9(@types/node@18.16.18)
     transitivePeerDependencies:
       - supports-color
@@ -22460,8 +22460,8 @@ packages:
     dependencies:
       busboy: 1.6.0
 
-  /undici@5.25.3:
-    resolution: {integrity: sha512-7lmhlz3K1+IKB6IUjkdzV2l0jKY8/0KguEMdEpzzXCug5pEGIp3DxUg0DEN65DrVoxHiRKpPORC/qzX+UglSkQ==}
+  /undici@5.25.4:
+    resolution: {integrity: sha512-450yJxT29qKMf3aoudzFpIciqpx6Pji3hEWaXqXmanbXF58LTAGCKxcJjxMXWu3iG+Mudgo3ZUfDB6YDFd/dAw==}
     engines: {node: '>=14.0'}
     dependencies:
       '@fastify/busboy': 2.0.0
