@@ -1,0 +1,481 @@
+---
+title: "Learn Unpic"
+description:
+  "High-performance, responsive image components for React and Next.js"
+githubRepo: "ascorbic/unpic-img"
+---
+
+import { CodeEditor } from "../../components/CodeEditor";
+
+import "./learn.css";
+
+## What is unpic-img?
+
+unpic-img is a component library for easily displaying high-performance,
+responsive images on the web and includes support for ten different web
+frameworks. It is designed to be as easy to use as a basic `<img>` tag, but this
+guide will help you get the most out of it, and explain more advanced features
+such as art direction.
+
+> These examples are all editable. They use JSX, but the concepts are the same
+> for all frameworks. See the individual framework pages for examples.
+
+<CodeEditor
+  client:load
+  code={`
+    <Image
+      src="https://cdn.shopify.com/static/sample-images/bath.jpeg"
+      width={400}
+      height={300}
+      alt="A lovely bath"
+    />
+`}
+/>
+
+Try inspecting the HTML for the image above. You will see that it generates a
+fully responsive image with the correct aspect ratio, and the correct `srcset`.
+
+## What it does
+
+When you pass the component an image URL, it automatically detects the CDN or
+CMS, and then uses that host's own API to generate the correct sources. You
+don't need to worry about installing any extra packages or configuring anything.
+It uses [unpic lib](/lib), which supports dozens of different hosts, including
+Cloudinary, Imgix, Sanity, Contentful, Shopify and more.
+
+As well as generating the correct sources, it also generates styles to ensure
+the image is responsive and has the correct aspect ratio. This avoids layout
+shift, and gets you the best performance (and Core Web Vitals scores) possible.
+
+This is the HTML that is generated for the example above:
+
+```html
+<img
+  alt="A lovely bath"
+  loading="lazy"
+  decoding="async"
+  sizes="(min-width: 400px) 400px, 100vw"
+  style="object-fit: cover; max-width: 400px; max-height: 300px; aspect-ratio: 1.33333 / 1; width: 100%;"
+  srcset="
+    https://cdn.shopify.com/static/sample-images/bath.jpeg?width=400&amp;height=300 400w,
+    https://cdn.shopify.com/static/sample-images/bath.jpeg?width=640&amp;height=480 640w,
+    https://cdn.shopify.com/static/sample-images/bath.jpeg?width=750&amp;height=563 750w,
+    https://cdn.shopify.com/static/sample-images/bath.jpeg?width=800&amp;height=600 800w
+  "
+  src="https://cdn.shopify.com/static/sample-images/bath.jpeg?width=400&amp;height=300"
+/>
+```
+
+You can see that it has converted the `src` URL to generate multiple sources
+with different sizes. It can do this because Unpic recognizes it as a Shopify
+URL and knows how to manipulate it. For the next few examples we'll be using
+Unsplash, which it recognises as an Imgix URL.
+
+## Layouts
+
+Unpic supports three different layouts which cover most use cases. When you
+choose a layoout it affects the way the image is sized and scaled. It
+automatically generates the correct CSS for this, as well as the right `sizes`
+and `srcset` attributes.
+![image layouts](https://user-images.githubusercontent.com/213306/217186596-f67c54fe-6613-497f-9577-7868226ed7d9.gif)
+
+The layouts in the video are, from top to bottom: `fullWidth`, `constrained` and
+`fixed`. The default is `constrained`, which sets a maximum size for the image,
+but scales it down to fit smaller screens. The `fullWidth` layout will stretch
+to the width of the screen, and is best for hero images and banners. Fixed
+images don't scale at all, and are best for logos and icons.
+
+<CodeEditor
+  client:visible
+  code={`
+<> 
+    <Image
+        src="https://images.unsplash.com/photo-1522303099041-44f71373af66"
+        layout="fullWidth"
+        height={200}
+        priority
+        background="auto"
+        alt="Full width"
+    />
+    <Image
+        src="https://images.unsplash.com/photo-1522303099041-44f71373af66"
+        layout="constrained"
+        width={400}
+        height={200}
+        alt="Constrained"
+    />
+    <Image
+        src="https://images.unsplash.com/photo-1522303099041-44f71373af66"
+        layout="fixed"
+        width={200}
+        height={200}
+        alt="Fixed"
+    />
+</>
+`}
+/>
+_Photo by [Casey Horner](https://unsplash.com/@mischievous_penguins?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash)
+on [Unsplash](https://unsplash.com/photos/017h9kTu6cc?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash)_
+
+Use the handle in the bottom right to resize the container to see the different
+way they resize. Note that normally you should not use `fullWidth` in a case
+like this where the image is inside a container. It should only be used where
+the image can be resized to the full width of the screen.
+
+## Priority and lazy loading
+
+You may have spotted the `priority` prop in the example above. By default, the
+generated images use lazy loading and asynchronous decoding. This is best
+practice for most images because it avoids needing to download too much
+immediately. However the largest image above the fold should be loaded with
+`priority` set. This makes it use eager loading, and keeps the largest
+contentful paint time at a minimum.
+
+Try editing the code below to remove `priority` and inspect the HTML to see the
+difference.
+
+<CodeEditor
+  client:visible
+  code={`
+    <Image
+        src="https://images.unsplash.com/photo-1654099749558-84ac187eb292"
+        width={400}
+        height={300}
+        priority
+    />
+`}
+/>
+
+_Photo by
+[Karthik Sreenivas](https://unsplash.com/@karthik_sreenivas?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash)
+on
+[Unsplash](https://unsplash.com/photos/BFniN7d_gMI?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash)_
+
+## Image backgrounds
+
+When an image is loading it is good to show a background color or placeholder,
+particularly if it is large. This can prevent long LCP times, and generally
+makes loading feel faster. You can use the `background` prop to set a color or
+image as the background. It accepts image URLs, colors, gradients and CSS. The
+simplest value to set is "auto", which adds the URL for a tiny version of the
+main image.
+
+<CodeEditor
+  client:visible
+  code={`
+    <Image
+        src="https://images.unsplash.com/photo-1654099749558-84ac187eb292"
+        width={400}
+        height={300}
+        background="auto"
+    />
+`}
+/>
+
+This is not ideal, because it requires a network request, but it is better than
+nothing for large images. A better option is to calculate the dominant color of
+the image and use that as the background or use a data URI. Some CMSs will
+provide this as part of the image object, which makes it easy. This example uses
+[the Sanity image object](https://www.sanity.io/docs/image-type). Try editing
+the example to use `sanityImage.metadata.palette.dominant.background` instead.
+
+<CodeEditor
+  client:visible
+  scope={{
+    sanityImage: {
+      metadata: {
+        lqip: "data:image/jpeg;base64,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",
+        palette: {
+          dominant: {
+            background: "#f34b3c",
+            foreground: "#fff",
+            population: 1292,
+            title: "#fff",
+          },
+        },
+      },
+      url: "https://images.unsplash.com/photo-1654099749558-84ac187eb292",
+    },
+  }}
+  code={`
+<Image
+    src={sanityImage.url}
+    width={400}
+    height={300}
+    background={sanityImage.metadata.lqip}
+/>
+`}
+/>
+
+The [`@unpic/placeholder`](/placeholder) package has lots of tools that can help
+generate backgrounds, including tools to calculate the values yourself at build
+time, or render blurhash placeholders using CSS.
+
+## Art direction
+
+While normally you just want to change the size of an image for smaller screens,
+sometimes you want to get more creative. A beautiful panoramic shot might be
+best for a high resolution desktop, but a tight portrait or square crop might be
+better on a phone. Sometimes you might want to use an entirely different image.
+For this you can use a `<picture>` tag alongside the Unpic `<Source>` component.
+Art direction with a `<picture>` tag lets you do this, with different sources
+selected using media queries. Let's look at an example.
+
+This dramatic lighthouse shot would be a great hero image, and can be shown in
+massive resolution on desktop
+
+<CodeEditor
+  client:visible
+  code={`
+    <Image
+        src="https://images.unsplash.com/photo-1654099749558-84ac187eb292"
+        height={300}
+        layout="fullWidth"
+    />
+`}
+/>
+
+Here's another image of the same lighthouse, but a closer cropped portrait view.
+This would work better on mobile.
+
+<CodeEditor
+  client:visible
+  code={`
+    <Image
+        src="https://images.unsplash.com/photo-1601962468178-9f84128bd046"
+        height={400}
+        width={300}
+        layout="constrained"
+    />
+`}
+/>
+
+_Photo by
+[Y S](https://unsplash.com/@santonii?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash)
+on
+[Unsplash](https://unsplash.com/photos/W4iRRNwGb2Y?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash)_
+
+By using a `<picture>` tag and source component we can display this image on
+mobile, while keeping the hero image for larger screens.
+
+<CodeEditor
+  client:visible
+  code={`
+<picture className="hero">
+  {/* Hero image, displayed on screens 768px or wider */}
+  <Source
+    src="https://images.unsplash.com/photo-1654099749558-84ac187eb292"
+    media="(min-width: 768px)"
+    layout="fullWidth"
+  />
+  {/* Portrait image for screens below that size */}
+  <Source
+    src="https://images.unsplash.com/photo-1601962468178-9f84128bd046"
+    media="(max-width: 767px)"
+    width={600}
+    height={800}
+  />
+  {/* Fallback image, also used for shared alt and loading props */}
+  <Image
+    src="https://images.unsplash.com/photo-1654099749558-84ac187eb292"
+    layout="fullWidth"
+    alt="Lighthouse"
+    priority
+    unstyled
+  />
+</picture>
+`}
+/>
+
+Did you just try to resize the container to see if it works? It doesn't because
+the media query targets the _window_ width, not the container. Unfortunately
+[container queries don't work with images](https://blog.bitsrc.io/building-responsive-react-components-using-container-and-has-9052bcd4a49a).
+Try resizing the whole window and you'll see it change.
+
+We've added the `unstyled` prop to the `Image` because otherwise the inline
+styles will override our responsive styling. A normal Unpic `<Image>` component
+would handle all the styling for you, but we had to use `unstyled` here because
+we can't use responsive breakpoint with inline styles. Instead we'll be adding
+CSS to do the styling. We can't do this in the playground component I'm using
+here, but I've applied the styles below:
+
+```css
+/* Style for all layouts */
+.hero img {
+  object-fit: cover;
+  width: 100%;
+}
+
+@media (min-width: 768px) {
+  /* Optionally add styles you want for full width here, e.g. max-height */
+}
+
+@media (max-width: 767px) {
+  /* Style for constrained layout */
+  .hero img {
+    max-width: 600px;
+    aspect-ratio: 3/4;
+  }
+}
+```
+
+This gives a full width hero image for large screens which uses the image's
+intrinsic size to set the aspect ratio, and smaller screens get a portrait image
+that keeps the 3:4 (i.e. 600x800) aspect ratio, while being constrained to 600px
+wide. You can use as many `Source` images and breakpoints as you need to work
+with your design.
+
+## Dark mode
+
+While the `<source>` `media` attributes only supports a subset of media queries,
+it covers most of the ones you might need. Another interesting option is
+`prefers-color-scheme`, which lets you have different images for light and dark
+mode. This offers some creative possibilities. Here's another photo of the
+lighthouse, this time a night shot.
+
+<CodeEditor
+  client:visible
+  code={`
+    <Image
+        src="https://images.unsplash.com/photo-1522303099041-44f71373af66"
+        width={600}
+        height={400}
+        alt="Lighthouse at night"
+        layout="constrained"
+    />
+`}
+/>
+
+We can create a picture tag which switches the image according to the current
+color scheme.
+
+<CodeEditor
+  client:visible
+  code={`
+<picture>
+  {/* Daytime, for light mode */}
+  <Source
+    src="https://images.unsplash.com/photo-1654099749558-84ac187eb292"
+    media="(prefers-color-scheme: light)"
+    width={600}
+    height={400}
+  />
+  {/* Nighttime, for dark mode */}
+  <Source
+    src="https://images.unsplash.com/photo-1522303099041-44f71373af66"
+    media="(prefers-color-scheme: dark)"
+    width={600}
+    height={400}
+  />
+  {/* Always include the <Image> last */}
+  <Image
+    src="https://images.unsplash.com/photo-1654099749558-84ac187eb292"
+    width={600}
+    height={400}
+    alt="Lighthouse"
+  />
+</picture>
+`}
+/>
+
+We can use the automatic styling here, because the layouts and sizes are all the
+same. Try changing your device's color scheme to see it change. Note: the toggle
+on this page won't do the trick, because it doesn't actually change the color
+preference - you need to change your actual device setting.
+
+## Formats
+
+All current browsers support modern image formats such as WebP and AVIF, which
+can offer much better quality and compression than old formats like JPEG and
+PNG. Most image CDNs support content negotiation, which means they will deliver
+the best format supported by the browser. This is handled automatically by
+Unpic, so normally you don't need to worry about it. Just put in your image URL
+and the user will be served AVIF, WebP or JPEG according to their browser.
+However not all image CDNs can do this. In these cases you need to specify the
+generated format, which means you need to use a `<picture>` tag if you want to
+deliver the best images to your users. Probably the most prominent example of a
+CDN that does this is Contentful. We can use this method to deliver AVIF, WebP
+or JPEG even though it doesn't support content negotiation. In this example
+we've passed in a Contentful image URL as a variable as it's the same for each.
+
+<CodeEditor
+  client:visible
+  scope={{
+    imageUrl:
+      "https://images.ctfassets.net/yadj1kx9rmg0/wtrHxeu3zEoEce2MokCSi/cf6f68efdcf625fdc060607df0f3baef/quwowooybuqbl6ntboz3.jpg",
+  }}
+  code={`
+<picture>
+  <Source src={imageUrl} type="image/avif" width={400} height={300} />
+  <Source src={imageUrl} type="image/webp" width={400} height={300} />
+  <Image src={imageUrl} width={400} height={300} alt="Toy" />
+</picture>
+`}
+/>
+
+This time you set `type` instead of `media`. This is the mimetype of the image,
+which tell the browser which image to request. Although we pass in the the same
+`src` for each, Unpic will automatically transform the URL to request the
+correct format. See below for the generated HTML. If you scroll all the way to
+the right you can see that the URLs include the `fm` parameter, which is how
+Contentful specifies the format. Unpic handles this automatically for all
+supported image CDNs.
+
+```html
+<picture>
+  <source
+    sizes="(min-width: 800px) 800px, 100vw"
+    srcset="
+      https://images.ctfassets.net/yadj1kx9rmg0/wtrHxeu3zEoEce2MokCSi/cf6f68efdcf625fdc060607df0f3baef/quwowooybuqbl6ntboz3.jpg?w=640&h=480&fm=avif&fit=fill    640w,
+      https://images.ctfassets.net/yadj1kx9rmg0/wtrHxeu3zEoEce2MokCSi/cf6f68efdcf625fdc060607df0f3baef/quwowooybuqbl6ntboz3.jpg?w=750&h=563&fm=avif&fit=fill    750w,
+      https://images.ctfassets.net/yadj1kx9rmg0/wtrHxeu3zEoEce2MokCSi/cf6f68efdcf625fdc060607df0f3baef/quwowooybuqbl6ntboz3.jpg?w=800&h=600&fm=avif&fit=fill    800w,
+      https://images.ctfassets.net/yadj1kx9rmg0/wtrHxeu3zEoEce2MokCSi/cf6f68efdcf625fdc060607df0f3baef/quwowooybuqbl6ntboz3.jpg?w=828&h=621&fm=avif&fit=fill    828w,
+      https://images.ctfassets.net/yadj1kx9rmg0/wtrHxeu3zEoEce2MokCSi/cf6f68efdcf625fdc060607df0f3baef/quwowooybuqbl6ntboz3.jpg?w=960&h=720&fm=avif&fit=fill    960w,
+      https://images.ctfassets.net/yadj1kx9rmg0/wtrHxeu3zEoEce2MokCSi/cf6f68efdcf625fdc060607df0f3baef/quwowooybuqbl6ntboz3.jpg?w=1080&h=810&fm=avif&fit=fill  1080w,
+      https://images.ctfassets.net/yadj1kx9rmg0/wtrHxeu3zEoEce2MokCSi/cf6f68efdcf625fdc060607df0f3baef/quwowooybuqbl6ntboz3.jpg?w=1280&h=960&fm=avif&fit=fill  1280w,
+      https://images.ctfassets.net/yadj1kx9rmg0/wtrHxeu3zEoEce2MokCSi/cf6f68efdcf625fdc060607df0f3baef/quwowooybuqbl6ntboz3.jpg?w=1600&h=1200&fm=avif&fit=fill 1600w
+    "
+    type="image/avif"
+  />
+  <source
+    sizes="(min-width: 800px) 800px, 100vw"
+    srcset="
+      https://images.ctfassets.net/yadj1kx9rmg0/wtrHxeu3zEoEce2MokCSi/cf6f68efdcf625fdc060607df0f3baef/quwowooybuqbl6ntboz3.jpg?w=640&h=480&fm=webp&fit=fill    640w,
+      https://images.ctfassets.net/yadj1kx9rmg0/wtrHxeu3zEoEce2MokCSi/cf6f68efdcf625fdc060607df0f3baef/quwowooybuqbl6ntboz3.jpg?w=750&h=563&fm=webp&fit=fill    750w,
+      https://images.ctfassets.net/yadj1kx9rmg0/wtrHxeu3zEoEce2MokCSi/cf6f68efdcf625fdc060607df0f3baef/quwowooybuqbl6ntboz3.jpg?w=800&h=600&fm=webp&fit=fill    800w,
+      https://images.ctfassets.net/yadj1kx9rmg0/wtrHxeu3zEoEce2MokCSi/cf6f68efdcf625fdc060607df0f3baef/quwowooybuqbl6ntboz3.jpg?w=828&h=621&fm=webp&fit=fill    828w,
+      https://images.ctfassets.net/yadj1kx9rmg0/wtrHxeu3zEoEce2MokCSi/cf6f68efdcf625fdc060607df0f3baef/quwowooybuqbl6ntboz3.jpg?w=960&h=720&fm=webp&fit=fill    960w,
+      https://images.ctfassets.net/yadj1kx9rmg0/wtrHxeu3zEoEce2MokCSi/cf6f68efdcf625fdc060607df0f3baef/quwowooybuqbl6ntboz3.jpg?w=1080&h=810&fm=webp&fit=fill  1080w,
+      https://images.ctfassets.net/yadj1kx9rmg0/wtrHxeu3zEoEce2MokCSi/cf6f68efdcf625fdc060607df0f3baef/quwowooybuqbl6ntboz3.jpg?w=1280&h=960&fm=webp&fit=fill  1280w,
+      https://images.ctfassets.net/yadj1kx9rmg0/wtrHxeu3zEoEce2MokCSi/cf6f68efdcf625fdc060607df0f3baef/quwowooybuqbl6ntboz3.jpg?w=1600&h=1200&fm=webp&fit=fill 1600w
+    "
+    type="image/webp"
+  />
+  <img
+    alt="Toy"
+    loading="lazy"
+    decoding="async"
+    sizes="(min-width: 800px) 800px, 100vw"
+    style="object-fit:cover;max-width:800px;max-height:600px;aspect-ratio:1.3333333333333333;width:100%"
+    srcset="
+      https://images.ctfassets.net/yadj1kx9rmg0/wtrHxeu3zEoEce2MokCSi/cf6f68efdcf625fdc060607df0f3baef/quwowooybuqbl6ntboz3.jpg?w=640&h=480&fit=fill    640w,
+      https://images.ctfassets.net/yadj1kx9rmg0/wtrHxeu3zEoEce2MokCSi/cf6f68efdcf625fdc060607df0f3baef/quwowooybuqbl6ntboz3.jpg?w=750&h=563&fit=fill    750w,
+      https://images.ctfassets.net/yadj1kx9rmg0/wtrHxeu3zEoEce2MokCSi/cf6f68efdcf625fdc060607df0f3baef/quwowooybuqbl6ntboz3.jpg?w=800&h=600&fit=fill    800w,
+      https://images.ctfassets.net/yadj1kx9rmg0/wtrHxeu3zEoEce2MokCSi/cf6f68efdcf625fdc060607df0f3baef/quwowooybuqbl6ntboz3.jpg?w=828&h=621&fit=fill    828w,
+      https://images.ctfassets.net/yadj1kx9rmg0/wtrHxeu3zEoEce2MokCSi/cf6f68efdcf625fdc060607df0f3baef/quwowooybuqbl6ntboz3.jpg?w=960&h=720&fit=fill    960w,
+      https://images.ctfassets.net/yadj1kx9rmg0/wtrHxeu3zEoEce2MokCSi/cf6f68efdcf625fdc060607df0f3baef/quwowooybuqbl6ntboz3.jpg?w=1080&h=810&fit=fill  1080w,
+      https://images.ctfassets.net/yadj1kx9rmg0/wtrHxeu3zEoEce2MokCSi/cf6f68efdcf625fdc060607df0f3baef/quwowooybuqbl6ntboz3.jpg?w=1280&h=960&fit=fill  1280w,
+      https://images.ctfassets.net/yadj1kx9rmg0/wtrHxeu3zEoEce2MokCSi/cf6f68efdcf625fdc060607df0f3baef/quwowooybuqbl6ntboz3.jpg?w=1600&h=1200&fit=fill 1600w
+    "
+    src="https://images.ctfassets.net/yadj1kx9rmg0/wtrHxeu3zEoEce2MokCSi/cf6f68efdcf625fdc060607df0f3baef/quwowooybuqbl6ntboz3.jpg?w=800&h=600&fit=fill"
+  />
+</picture>
+```
+
+Remember: you don't need this for most hosts, just for ones that don't support
+content negotiation.
+
+## Frameworks
+
+These examples all used JSX, but the props are the same for almost all
+frameworks. See the individual framework pages in the sidebar for more details.

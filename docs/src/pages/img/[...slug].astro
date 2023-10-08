@@ -16,10 +16,10 @@ type Props = CollectionEntry<"docs">;
 
 const post = Astro.props;
 const { Content, headings } = await post.render();
-const apiHeadings = await getHeadings();
+const apiHeadings = post.data.includeApi ? await getHeadings() : [];
 ---
 
 <MainLayout headings={[...headings, ...apiHeadings]} {...post.data}>
   <Content />
-  <Api />
+  {post.data.includeApi ? <Api /> : null}
 </MainLayout>

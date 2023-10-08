@@ -209,6 +209,10 @@ code {
   word-break: break-word;
 }
 
+pre.prism-code > * {
+  font-family: var(--font-mono);
+}
+
 pre.astro-code > code {
   all: unset;
 }
@@ -319,7 +323,8 @@ h2.heading {
 
 .header-link {
   font-size: 1em;
-  transition: border-inline-start-color 100ms ease-out,
+  transition:
+    border-inline-start-color 100ms ease-out,
     background-color 200ms ease-out;
   border-left: 4px solid var(--theme-divider);
 }

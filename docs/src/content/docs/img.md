@@ -8,6 +8,12 @@ githubRepo: "ascorbic/unpic-img"
 A multi-framework component for responsive, high-performance images using image
 CDNs with no build step.
 
+- [Learn how to use unpic-img](/img/learn/)
+- See the details for your framework: [Angular](/img/angular/) •
+  [Astro](/img/astro/) • [Lit](/img/lit/) • [Preact](/img/preact/) •
+  [Qwik](/img/qwik/) • [React](/img/react/) • [Solid](/img/solid/) •
+  [Svelte](/img/svelte/) • [Vue](/img/vue/) • [WebC](/img/webc/)
+
 ## Features
 
 - Just an `<img>` tag! No extra elements, no runtime JavaScript. Easy to style.

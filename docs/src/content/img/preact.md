@@ -2,6 +2,7 @@
 title: "@unpic/preact"
 description: "High-performance, responsive Preact image component"
 githubRepo: "ascorbic/unpic-img"
+includeApi: true
 ---
 
 A high-performance, responsive image component for

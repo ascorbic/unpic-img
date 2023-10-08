@@ -2,6 +2,7 @@
 title: "@unpic/vue"
 description: "High-performance, responsive Vue image component"
 githubRepo: "ascorbic/unpic-img"
+includeApi: true
 ---
 
 A high-performance, responsive image component for [Vue](https://vuejs.org/).

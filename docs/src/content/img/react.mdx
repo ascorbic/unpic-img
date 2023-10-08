@@ -3,32 +3,44 @@ title: "@unpic/react"
 description:
   "High-performance, responsive image components for React and Next.js"
 githubRepo: "ascorbic/unpic-img"
+includeApi: true
 ---
+
+import { CodeEditor } from "../../components/CodeEditor";
 
 A high-performance, responsive image components for
 [React](https://reactjs.org/) and [Next.js](https://nextjs.org/).
 
-## Installation and usage
+## Installation
+
+Install the package from npm:
 
 ```bash
 npm install @unpic/react
 ```
 
+Import it into your component:
+
 ```tsx
 import { Image } from "@unpic/react";
+```
 
-function MyComponent() {
-  return (
+## Usage
+
+> 💡 These examples are all editable
+
+<CodeEditor
+  client:visible
+  code={`
     <Image
-      src="https://cdn.shopify.com/static/sample-images/bath_grande_crop_center.jpeg"
+      src="https://cdn.shopify.com/static/sample-images/bath.jpeg"
       layout="constrained"
-      width={800}
-      height={600}
+      width={400}
+      height={300}
       alt="A lovely bath"
     />
-  );
-}
-```
+`}
+/>
 
 ## Unpic for Next.js
 
@@ -53,16 +65,15 @@ import { Image } from "@unpic/react/next";
 import logo from "../public/logo.png";
 
 // You can use both local images, and ones from image CDNs
-<>
-  <Image src={logo} alt="Logo" layout="constrained" />;
-  <Image
-    src="https://cdn.shopify.com/static/sample-images/garnished.jpeg"
-    layout="constrained"
-    width={800}
-    height={600}
-    alt="Shopify product"
-  />
-</>;
+<Image src={logo} alt="Logo" layout="constrained" />
+
+<Image
+  src="https://cdn.shopify.com/static/sample-images/garnished.jpeg"
+  layout="constrained"
+  width={800}
+  height={600}
+  alt="Shopify product"
+/>
 ```
 
 ### Differences from `next/image`
