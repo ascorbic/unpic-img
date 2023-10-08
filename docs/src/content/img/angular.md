@@ -2,6 +2,7 @@
 title: "@unpic/angular"
 description: "High-performance, responsive Angular images"
 githubRepo: "ascorbic/unpic-img"
+includeApi: true
 ---
 
 Angular directive for responsive, high-performance images.
@@ -35,4 +36,11 @@ You can then use it by adding the `unpic` attribute to an `<img>` tag:
   height="600"
   alt="A lovely bath"
 />
+```
+
+You can also use it with `<picture>` tags. Add the `unpic` attribute to the
+`<source>` and `<img>` tags:
+
+```html
+
 ```

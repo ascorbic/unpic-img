@@ -1,0 +1,17 @@
+/* Style for all layouts */
+.hero img {
+  object-fit: cover;
+  width: 100%;
+}
+
+@media (min-width: 768px) {
+  /* Optionally add styles you want for full width here, e.g. max-height */
+}
+
+@media (max-width: 767px) {
+  /* Style for constrained layout */
+  .hero img {
+    max-width: 600px;
+    aspect-ratio: 3/4;
+  }
+}

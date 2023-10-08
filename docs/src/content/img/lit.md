@@ -2,6 +2,7 @@
 title: "@unpic/lit"
 description: "High-performance, responsive Lit image component"
 githubRepo: "ascorbic/unpic-img"
+includeApi: true
 ---
 
 A high-performance, responsive image component for [Lit](https://lit.dev/).
