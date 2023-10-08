@@ -16,7 +16,7 @@ const currentPage = Astro.url.pathname;
 const currentFile = `src/content/docs${currentPage.replace(/\/$/, "")}.md`;
 ---
 
-<html class="initial">
+<html dir="ltr" lang="en" class="initial">
   <head>
     <HeadCommon />
     <HeadSEO {...Astro.props} dir="ltr" canonicalUrl={canonicalURL} />
