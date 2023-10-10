@@ -386,6 +386,53 @@ like:
 
 <video src="/dark-mode.webm" muted loop autoplay />
 
+This is the HTML that is generated.
+
+```html
+<picture
+  ><source
+    sizes="(min-width: 600px) 600px, 100vw"
+    srcset="
+      https://images.unsplash.com/photo-1654099749558-84ac187eb292?w=600&amp;h=400&amp;fit=min&amp;auto=format   600w,
+      https://images.unsplash.com/photo-1654099749558-84ac187eb292?w=640&amp;h=427&amp;fit=min&amp;auto=format   640w,
+      https://images.unsplash.com/photo-1654099749558-84ac187eb292?w=750&amp;h=500&amp;fit=min&amp;auto=format   750w,
+      https://images.unsplash.com/photo-1654099749558-84ac187eb292?w=828&amp;h=552&amp;fit=min&amp;auto=format   828w,
+      https://images.unsplash.com/photo-1654099749558-84ac187eb292?w=960&amp;h=640&amp;fit=min&amp;auto=format   960w,
+      https://images.unsplash.com/photo-1654099749558-84ac187eb292?w=1080&amp;h=720&amp;fit=min&amp;auto=format 1080w,
+      https://images.unsplash.com/photo-1654099749558-84ac187eb292?w=1200&amp;h=800&amp;fit=min&amp;auto=format 1200w
+    "
+    media="(prefers-color-scheme: light)" />
+  <source
+    sizes="(min-width: 600px) 600px, 100vw"
+    srcset="
+      https://images.unsplash.com/photo-1522303099041-44f71373af66?w=600&amp;h=400&amp;fit=min&amp;auto=format   600w,
+      https://images.unsplash.com/photo-1522303099041-44f71373af66?w=640&amp;h=427&amp;fit=min&amp;auto=format   640w,
+      https://images.unsplash.com/photo-1522303099041-44f71373af66?w=750&amp;h=500&amp;fit=min&amp;auto=format   750w,
+      https://images.unsplash.com/photo-1522303099041-44f71373af66?w=828&amp;h=552&amp;fit=min&amp;auto=format   828w,
+      https://images.unsplash.com/photo-1522303099041-44f71373af66?w=960&amp;h=640&amp;fit=min&amp;auto=format   960w,
+      https://images.unsplash.com/photo-1522303099041-44f71373af66?w=1080&amp;h=720&amp;fit=min&amp;auto=format 1080w,
+      https://images.unsplash.com/photo-1522303099041-44f71373af66?w=1200&amp;h=800&amp;fit=min&amp;auto=format 1200w
+    "
+    media="(prefers-color-scheme: dark)" />
+  <img
+    alt="Lighthouse"
+    loading="lazy"
+    decoding="async"
+    sizes="(min-width: 600px) 600px, 100vw"
+    style="object-fit: cover; max-width: 600px; max-height: 400px; aspect-ratio: 1.5 / 1; width: 100%;"
+    srcset="
+      https://images.unsplash.com/photo-1654099749558-84ac187eb292?w=600&amp;h=400&amp;fit=min&amp;auto=format   600w,
+      https://images.unsplash.com/photo-1654099749558-84ac187eb292?w=640&amp;h=427&amp;fit=min&amp;auto=format   640w,
+      https://images.unsplash.com/photo-1654099749558-84ac187eb292?w=750&amp;h=500&amp;fit=min&amp;auto=format   750w,
+      https://images.unsplash.com/photo-1654099749558-84ac187eb292?w=828&amp;h=552&amp;fit=min&amp;auto=format   828w,
+      https://images.unsplash.com/photo-1654099749558-84ac187eb292?w=960&amp;h=640&amp;fit=min&amp;auto=format   960w,
+      https://images.unsplash.com/photo-1654099749558-84ac187eb292?w=1080&amp;h=720&amp;fit=min&amp;auto=format 1080w,
+      https://images.unsplash.com/photo-1654099749558-84ac187eb292?w=1200&amp;h=800&amp;fit=min&amp;auto=format 1200w
+    "
+    src="https://images.unsplash.com/photo-1654099749558-84ac187eb292?w=600&amp;h=400&amp;fit=min&amp;auto=format"
+/></picture>
+```
+
 ## Formats
 
 All current browsers support modern image formats such as WebP and AVIF, which
