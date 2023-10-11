@@ -1,9 +1,7 @@
 ---
 import HeadCommon from "../components/HeadCommon.astro";
 import HeadSEO from "../components/HeadSEO.astro";
-import Header from "../components/Header/Header.astro";
-import { GITHUB_EDIT_URL, SITE } from "../consts";
-import Footer from "../components/Footer/Footer.astro";
+import {  SITE } from "../consts";
 
 type Props = {
   title: string;
@@ -26,11 +24,9 @@ const currentPage = Astro.url.pathname;
       body {
         width: 100%;
         display: grid;
-        grid-template-rows: var(--theme-navbar-height) 1fr;
         --gutter: 0.5rem;
         --doc-padding: 2rem;
         --theme-bg: linear-gradient(to top, #24243e, #302b63, #0f0c29);
-        --theme-navbar-bg: transparent;
         --theme-text: white;
         --theme-text-light: hsla(var(--color-gray-80), 1);
       }
@@ -70,7 +66,6 @@ const currentPage = Astro.url.pathname;
   </head>
 
   <body>
-    <Header currentPage={currentPage} hideMenu={true} />
     <main class="layout">
       <div id="grid-main">
         <slot />
