@@ -66,7 +66,6 @@ export class UnpicImageDirective implements OnChanges {
     }
 
     for (const prop in props) {
-      console.log('img', prop);
       if (Object.prototype.hasOwnProperty.call(props, prop)) {
         const propValue = props[prop as keyof typeof props];
         if (propValue === undefined) {
