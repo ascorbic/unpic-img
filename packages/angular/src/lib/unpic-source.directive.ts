@@ -58,7 +58,6 @@ export class UnpicSourceDirective implements OnChanges {
     } as Props);
 
     for (const prop in props) {
-      console.log('source', prop);
       if (Object.prototype.hasOwnProperty.call(props, prop)) {
         const propValue = props[prop as keyof typeof props];
         if (propValue === undefined) {
