@@ -90,6 +90,27 @@
   * dependencies
     * @unpic/core bumped to 0.0.30
 
+## [0.0.19](https://github.com/ascorbic/unpic-img/compare/angular-v0.0.18...angular-v0.0.19) (2023-10-25)
+
+
+### Features
+
+* add support for picture tag ([#328](https://github.com/ascorbic/unpic-img/issues/328)) ([f94e508](https://github.com/ascorbic/unpic-img/commit/f94e508e80de04c250a0f3973b262760424f8e5d))
+* **angular:** add Angular support  ([#146](https://github.com/ascorbic/unpic-img/issues/146)) ([c1ef2e8](https://github.com/ascorbic/unpic-img/commit/c1ef2e8fcdf1cbd3efc8001da3b0e959658ee184))
+
+
+### Bug Fixes
+
+* **angular:** handle input changes ([#157](https://github.com/ascorbic/unpic-img/issues/157)) ([396e058](https://github.com/ascorbic/unpic-img/commit/396e0581c28134d04de4e9f624e53b725d6c2f91))
+* **angular:** remove debug logs ([#345](https://github.com/ascorbic/unpic-img/issues/345)) ([eb55f16](https://github.com/ascorbic/unpic-img/commit/eb55f160ef3da878416ddf9719b13265632c15ef))
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @unpic/core bumped to 0.0.32
+
 ## [0.0.18](https://github.com/ascorbic/unpic-img/compare/angular-v0.0.17...angular-v0.0.18) (2023-10-02)
 
 

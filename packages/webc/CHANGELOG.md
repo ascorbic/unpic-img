@@ -132,6 +132,21 @@
   * dependencies
     * @unpic/core bumped to 0.0.31
 
+## [0.0.25](https://github.com/ascorbic/unpic-img/compare/webc-v0.0.24...webc-v0.0.25) (2023-10-25)
+
+
+### Features
+
+* **angular:** add Angular support  ([#146](https://github.com/ascorbic/unpic-img/issues/146)) ([c1ef2e8](https://github.com/ascorbic/unpic-img/commit/c1ef2e8fcdf1cbd3efc8001da3b0e959658ee184))
+* **webc:** add WebC/11ty support ([#49](https://github.com/ascorbic/unpic-img/issues/49)) ([be3056f](https://github.com/ascorbic/unpic-img/commit/be3056fdf3e87b382fb86ade74b0d1d3247072bd))
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @unpic/core bumped to 0.0.32
+
 ## [0.0.8](https://github.com/ascorbic/unpic-img/compare/webc-v0.0.7...webc-v0.0.8) (2023-03-20)
 
 
