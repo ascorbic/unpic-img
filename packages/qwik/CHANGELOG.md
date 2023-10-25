@@ -120,6 +120,30 @@
   * devDependencies
     * @unpic/core bumped to 0.0.30
 
+## [0.0.28](https://github.com/ascorbic/unpic-img/compare/qwik-v0.0.27...qwik-v0.0.28) (2023-10-25)
+
+
+### Features
+
+* add support for picture tag ([#328](https://github.com/ascorbic/unpic-img/issues/328)) ([f94e508](https://github.com/ascorbic/unpic-img/commit/f94e508e80de04c250a0f3973b262760424f8e5d))
+* **angular:** add Angular support  ([#146](https://github.com/ascorbic/unpic-img/issues/146)) ([c1ef2e8](https://github.com/ascorbic/unpic-img/commit/c1ef2e8fcdf1cbd3efc8001da3b0e959658ee184))
+* **preact,react,qwik,solid,vue:** export ImageProps type ([#231](https://github.com/ascorbic/unpic-img/issues/231)) ([40779c5](https://github.com/ascorbic/unpic-img/commit/40779c52b96f8f36a2f33ad1f7acc62fd4950eeb))
+* **qwik:** add Qwik support ([#37](https://github.com/ascorbic/unpic-img/issues/37)) ([28e1d08](https://github.com/ascorbic/unpic-img/commit/28e1d08c9c2822d11274dd18c54e8874beb309f9))
+
+
+### Bug Fixes
+
+* **core,qwik:** correct deps ([#184](https://github.com/ascorbic/unpic-img/issues/184)) ([ccadd81](https://github.com/ascorbic/unpic-img/commit/ccadd81cfda33cf199688160135ad64a84c40255))
+* **qwik:** don't externalise `@unpic/core` dep ([#254](https://github.com/ascorbic/unpic-img/issues/254)) ([089245b](https://github.com/ascorbic/unpic-img/commit/089245b7e5fd5f744040993235a86d45b4cf4319))
+* **qwik:** fix generated types ([#65](https://github.com/ascorbic/unpic-img/issues/65)) ([7d87a4c](https://github.com/ascorbic/unpic-img/commit/7d87a4cb0d157f5e10ab3ed81bd7384fd99185ec))
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * devDependencies
+    * @unpic/core bumped to 0.0.32
+
 ## [0.0.27](https://github.com/ascorbic/unpic-img/compare/qwik-v0.0.26...qwik-v0.0.27) (2023-10-02)
 
 

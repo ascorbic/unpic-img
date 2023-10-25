@@ -120,6 +120,31 @@
   * dependencies
     * @unpic/core bumped to 0.0.30
 
+## [0.0.31](https://github.com/ascorbic/unpic-img/compare/vue-v0.0.30...vue-v0.0.31) (2023-10-25)
+
+
+### Features
+
+* add support for picture tag ([#328](https://github.com/ascorbic/unpic-img/issues/328)) ([f94e508](https://github.com/ascorbic/unpic-img/commit/f94e508e80de04c250a0f3973b262760424f8e5d))
+* add svelte and fix types ([7f9f428](https://github.com/ascorbic/unpic-img/commit/7f9f428bd66226ea9a3ddefc8f5908b58c2bb7ac))
+* **angular:** add Angular support  ([#146](https://github.com/ascorbic/unpic-img/issues/146)) ([c1ef2e8](https://github.com/ascorbic/unpic-img/commit/c1ef2e8fcdf1cbd3efc8001da3b0e959658ee184))
+* **preact,react,qwik,solid,vue:** export ImageProps type ([#231](https://github.com/ascorbic/unpic-img/issues/231)) ([40779c5](https://github.com/ascorbic/unpic-img/commit/40779c52b96f8f36a2f33ad1f7acc62fd4950eeb))
+
+
+### Bug Fixes
+
+* don't use reserved component name ([#25](https://github.com/ascorbic/unpic-img/issues/25)) ([5764401](https://github.com/ascorbic/unpic-img/commit/57644010c3f04cbf1a3c7d3090a5c03127049d0b))
+* **vue:** add other required props ([#46](https://github.com/ascorbic/unpic-img/issues/46)) ([55d0584](https://github.com/ascorbic/unpic-img/commit/55d058437386fba363934d3c883d1638084d0a84))
+* **vue:** handle string props ([#48](https://github.com/ascorbic/unpic-img/issues/48)) ([b62413d](https://github.com/ascorbic/unpic-img/commit/b62413d5d3b6345b28d54568b42d7450c241318a))
+* **vue:** use composition syntax ([#171](https://github.com/ascorbic/unpic-img/issues/171)) ([66a0b33](https://github.com/ascorbic/unpic-img/commit/66a0b33f68c856d5033dea5cdb17a4bfb8924f13))
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @unpic/core bumped to 0.0.32
+
 ## [0.0.30](https://github.com/ascorbic/unpic-img/compare/vue-v0.0.29...vue-v0.0.30) (2023-10-02)
 
 

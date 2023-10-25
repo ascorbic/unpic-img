@@ -114,6 +114,37 @@
   * dependencies
     * @unpic/core bumped to 0.0.29
 
+## [0.0.37](https://github.com/ascorbic/unpic-img/compare/react-v0.0.36...react-v0.0.37) (2023-10-25)
+
+
+### Features
+
+* add support for picture tag ([#328](https://github.com/ascorbic/unpic-img/issues/328)) ([f94e508](https://github.com/ascorbic/unpic-img/commit/f94e508e80de04c250a0f3973b262760424f8e5d))
+* add svelte and fix types ([7f9f428](https://github.com/ascorbic/unpic-img/commit/7f9f428bd66226ea9a3ddefc8f5908b58c2bb7ac))
+* **angular:** add Angular support  ([#146](https://github.com/ascorbic/unpic-img/issues/146)) ([c1ef2e8](https://github.com/ascorbic/unpic-img/commit/c1ef2e8fcdf1cbd3efc8001da3b0e959658ee184))
+* **preact,react,qwik,solid,vue:** export ImageProps type ([#231](https://github.com/ascorbic/unpic-img/issues/231)) ([40779c5](https://github.com/ascorbic/unpic-img/commit/40779c52b96f8f36a2f33ad1f7acc62fd4950eeb))
+* **react:** add Next.js component ([#91](https://github.com/ascorbic/unpic-img/issues/91)) ([5ad1aa2](https://github.com/ascorbic/unpic-img/commit/5ad1aa2faca4836f68ce1307c5afe1f1682117e4))
+* **react:** check Next.js component src against next.config rules ([#235](https://github.com/ascorbic/unpic-img/issues/235)) ([0217a98](https://github.com/ascorbic/unpic-img/commit/0217a98c22471dc677ff9c88e299e27589a5aea3))
+
+
+### Bug Fixes
+
+* **core:** gracefully handle missing props ([#324](https://github.com/ascorbic/unpic-img/issues/324)) ([6ca26b8](https://github.com/ascorbic/unpic-img/commit/6ca26b8a5a69caa912c23d5b5f874153fc23cbe5))
+* **react:** add next type export ([#98](https://github.com/ascorbic/unpic-img/issues/98)) ([2ad007e](https://github.com/ascorbic/unpic-img/commit/2ad007ebbfb169ab3ad76c4cc36081d470f05569))
+* **react:** camelize `fetchPriority` ([#102](https://github.com/ascorbic/unpic-img/issues/102)) ([a10863b](https://github.com/ascorbic/unpic-img/commit/a10863b92b49597473f23863829262d664d1a127))
+* **react:** camelize props, allow passing ref ([#20](https://github.com/ascorbic/unpic-img/issues/20)) ([66df2e8](https://github.com/ascorbic/unpic-img/commit/66df2e80dc7ffd019ae31af8e8ab4c963e65304a))
+* **react:** correctly handle aria and data attributes ([#221](https://github.com/ascorbic/unpic-img/issues/221)) ([0a7bb2f](https://github.com/ascorbic/unpic-img/commit/0a7bb2f723e09ce6a9add7e94f080152390c4a69))
+* **react:** correctly handle CDN delegation in next ([#223](https://github.com/ascorbic/unpic-img/issues/223)) ([8e87af3](https://github.com/ascorbic/unpic-img/commit/8e87af3db917784069592f0deaa96d016979fc17))
+* **react:** fix next.js src type ([#100](https://github.com/ascorbic/unpic-img/issues/100)) ([b8b02a1](https://github.com/ascorbic/unpic-img/commit/b8b02a155356b7bc826380a08ffc435ad8527017))
+* **react:** use extension for next deep imports ([#252](https://github.com/ascorbic/unpic-img/issues/252)) ([ebf8401](https://github.com/ascorbic/unpic-img/commit/ebf840106029a9539a20cbcff3c7c4c8ac135721)), closes [#118](https://github.com/ascorbic/unpic-img/issues/118)
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @unpic/core bumped to 0.0.32
+
 ## [0.0.36](https://github.com/ascorbic/unpic-img/compare/react-v0.0.35...react-v0.0.36) (2023-10-02)
 
 

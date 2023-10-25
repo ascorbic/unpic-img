@@ -108,6 +108,35 @@
   * dependencies
     * @unpic/core bumped to 0.0.30
 
+## [0.0.33](https://github.com/ascorbic/unpic-img/compare/svelte-v0.0.32...svelte-v0.0.33) (2023-10-25)
+
+
+### Features
+
+* add support for picture tag ([#328](https://github.com/ascorbic/unpic-img/issues/328)) ([f94e508](https://github.com/ascorbic/unpic-img/commit/f94e508e80de04c250a0f3973b262760424f8e5d))
+* add svelte and fix types ([7f9f428](https://github.com/ascorbic/unpic-img/commit/7f9f428bd66226ea9a3ddefc8f5908b58c2bb7ac))
+* **angular:** add Angular support  ([#146](https://github.com/ascorbic/unpic-img/issues/146)) ([c1ef2e8](https://github.com/ascorbic/unpic-img/commit/c1ef2e8fcdf1cbd3efc8001da3b0e959658ee184))
+* **webc:** add WebC/11ty support ([#49](https://github.com/ascorbic/unpic-img/issues/49)) ([be3056f](https://github.com/ascorbic/unpic-img/commit/be3056fdf3e87b382fb86ade74b0d1d3247072bd))
+
+
+### Bug Fixes
+
+* **deps:** update dependency unpic to ^3.10.0 ([#306](https://github.com/ascorbic/unpic-img/issues/306)) ([df2a589](https://github.com/ascorbic/unpic-img/commit/df2a5893ccd7a4c77005cebcf208ba84e37d93a8))
+* **deps:** update dependency unpic to ^3.7.0 ([#284](https://github.com/ascorbic/unpic-img/issues/284)) ([1f90451](https://github.com/ascorbic/unpic-img/commit/1f90451c5ef77db47ee28fe70f5d36890c261f3f))
+* **deps:** update dependency unpic to ^3.8.0 ([#286](https://github.com/ascorbic/unpic-img/issues/286)) ([ee9b9ff](https://github.com/ascorbic/unpic-img/commit/ee9b9ff26abeb5163ce053471fd15a70362a3b28))
+* **deps:** update dependency unpic to ^3.8.1 ([#289](https://github.com/ascorbic/unpic-img/issues/289)) ([abc4e76](https://github.com/ascorbic/unpic-img/commit/abc4e76e328c6c2b8c20d44237fe56eb92e807e7))
+* **deps:** update dependency unpic to ^3.9.0 ([#300](https://github.com/ascorbic/unpic-img/issues/300)) ([30c40a7](https://github.com/ascorbic/unpic-img/commit/30c40a778865e69527523be48cb8affe8295afb4))
+* make svelte component reactive ([#84](https://github.com/ascorbic/unpic-img/issues/84)) ([632ce83](https://github.com/ascorbic/unpic-img/commit/632ce83de01fbed586a82d917dfa15fff3051e2c))
+* **svelte:** generate types for svelte component ([#245](https://github.com/ascorbic/unpic-img/issues/245)) ([d3db8d2](https://github.com/ascorbic/unpic-img/commit/d3db8d29d8b4fcd7ce848e9ceb378c72d5b6df40))
+* **svelte:** remove obsolete typesVersions ([#43](https://github.com/ascorbic/unpic-img/issues/43)) ([a55f9d1](https://github.com/ascorbic/unpic-img/commit/a55f9d15a455989f0b28b40e55367f98e9a10f0e))
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @unpic/core bumped to 0.0.32
+
 ## [0.0.32](https://github.com/ascorbic/unpic-img/compare/svelte-v0.0.31...svelte-v0.0.32) (2023-10-02)
 
 
