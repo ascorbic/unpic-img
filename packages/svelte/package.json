@@ -1,6 +1,6 @@
 {
   "name": "@unpic/svelte",
-  "version": "0.0.33",
+  "version": "0.0.34",
   "license": "MIT",
   "repository": {
     "type": "git",
@@ -35,7 +35,7 @@
   "dependencies": {
     "@unpic/core": "workspace:^",
     "style-object-to-css-string": "^1.0.1",
-    "unpic": "^3.10.1"
+    "unpic": "^3.11.0"
   },
   "peerDependencies": {
     "svelte": "*"
