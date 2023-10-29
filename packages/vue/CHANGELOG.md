@@ -120,6 +120,12 @@
   * dependencies
     * @unpic/core bumped to 0.0.30
 
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @unpic/core bumped to 0.0.33
+
 ## [0.0.31](https://github.com/ascorbic/unpic-img/compare/vue-v0.0.30...vue-v0.0.31) (2023-10-25)
 
 
