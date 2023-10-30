@@ -126,6 +126,12 @@
   * dependencies
     * @unpic/core bumped to 0.0.30
 
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @unpic/core bumped to 0.0.33
+
 ## [0.0.26](https://github.com/ascorbic/unpic-img/compare/preact-v0.0.25...preact-v0.0.26) (2023-10-25)
 
 
