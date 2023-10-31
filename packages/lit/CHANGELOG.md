@@ -66,6 +66,12 @@
   * dependencies
     * @unpic/core bumped to 0.0.33
 
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @unpic/core bumped to 0.0.34
+
 ## [0.0.13](https://github.com/ascorbic/unpic-img/compare/lit-v0.0.12...lit-v0.0.13) (2023-10-25)
 
 
