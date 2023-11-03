@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.0.35](https://github.com/ascorbic/unpic-img/compare/core-v0.0.34...core-v0.0.35) (2023-11-03)
+
+
+### Features
+
+* **svelte:** forward load listener on Svelte component ([86c01c5](https://github.com/ascorbic/unpic-img/commit/86c01c5288693de72f6bb65497b6413fdedb0bb0))
+
 ## [0.0.34](https://github.com/ascorbic/unpic-img/compare/core-v0.0.33...core-v0.0.34) (2023-10-31)
 
 
