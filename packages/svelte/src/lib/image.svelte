@@ -24,4 +24,4 @@
     .join(";");
 </script>
 
-<img {alt} {style} {...transformedProps} />
+<img {alt} {style} {...transformedProps} on:load />
