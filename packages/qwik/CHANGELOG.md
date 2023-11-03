@@ -132,6 +132,20 @@
   * devDependencies
     * @unpic/core bumped to 0.0.34
 
+## [0.0.31](https://github.com/ascorbic/unpic-img/compare/qwik-v0.0.30...qwik-v0.0.31) (2023-11-03)
+
+
+### Features
+
+* **svelte:** forward load listener on Svelte component ([86c01c5](https://github.com/ascorbic/unpic-img/commit/86c01c5288693de72f6bb65497b6413fdedb0bb0))
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * devDependencies
+    * @unpic/core bumped to 0.0.35
+
 ## [0.0.28](https://github.com/ascorbic/unpic-img/compare/qwik-v0.0.27...qwik-v0.0.28) (2023-10-25)
 
 

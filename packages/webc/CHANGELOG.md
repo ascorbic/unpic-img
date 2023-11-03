@@ -144,6 +144,20 @@
   * dependencies
     * @unpic/core bumped to 0.0.34
 
+## [0.0.28](https://github.com/ascorbic/unpic-img/compare/webc-v0.0.27...webc-v0.0.28) (2023-11-03)
+
+
+### Features
+
+* **svelte:** forward load listener on Svelte component ([86c01c5](https://github.com/ascorbic/unpic-img/commit/86c01c5288693de72f6bb65497b6413fdedb0bb0))
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @unpic/core bumped to 0.0.35
+
 ## [0.0.25](https://github.com/ascorbic/unpic-img/compare/webc-v0.0.24...webc-v0.0.25) (2023-10-25)
 
 

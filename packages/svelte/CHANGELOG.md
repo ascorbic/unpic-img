@@ -108,6 +108,20 @@
   * dependencies
     * @unpic/core bumped to 0.0.30
 
+## [0.0.36](https://github.com/ascorbic/unpic-img/compare/svelte-v0.0.35...svelte-v0.0.36) (2023-11-03)
+
+
+### Features
+
+* **svelte:** forward load listener on Svelte component ([86c01c5](https://github.com/ascorbic/unpic-img/commit/86c01c5288693de72f6bb65497b6413fdedb0bb0))
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @unpic/core bumped to 0.0.35
+
 ## [0.0.35](https://github.com/ascorbic/unpic-img/compare/svelte-v0.0.34...svelte-v0.0.35) (2023-10-31)
 
 
