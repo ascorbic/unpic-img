@@ -1,10 +1,9 @@
-import { useContext, forwardRef, useMemo, useEffect } from "react";
+import { forwardRef, useMemo, useEffect, useState } from "react";
 import type { ImageProps as UnpicImageProps } from "./index";
 import { Image as UnpicImage } from "./index";
 import { getImageCdnForUrl } from "unpic";
 import type { ImageConfigComplete } from "next/dist/shared/lib/image-config.js";
 import { imageConfigDefault } from "next/dist/shared/lib/image-config.js";
-import { ImageConfigContext } from "next/dist/shared/lib/image-config-context.js";
 
 //
 const configEnv = process.env
@@ -32,6 +31,31 @@ export type ImageProps = Omit<UnpicImageProps, "src"> & {
   src: string | StaticImport;
 };
 
+function useDynamicContext() {
+  const [context, setContext] = useState(null);
+  const mod1 = "next/dist/shared/lib/image-config-context.shared-runtime.js";
+  const mod2 = "next/dist/shared/lib/image-config-context.js";
+
+  useEffect(() => {
+    async function loadContext(moduleName: string) {
+      try {
+        const contextModule = await import(moduleName);
+        console.log("contextModule", contextModule);
+        setContext(contextModule.default);
+      } catch (error) {
+        console.error(`Loading ${moduleName} failed:`, error);
+        if (moduleName === mod2) {
+          loadContext(mod1);
+        }
+      }
+    }
+
+    loadContext(mod2);
+  }, []);
+
+  return context;
+}
+
 function checkMatchingPatterns(config: ImageConfigComplete, src: string) {
   if (
     // match-remote-pattern doesn't support the edge runtime
@@ -42,6 +66,7 @@ function checkMatchingPatterns(config: ImageConfigComplete, src: string) {
     return;
   }
 
+  // Local images don't need to be checked
   if (!src?.startsWith("http://") && !src?.startsWith("https://")) {
     return;
   }
@@ -54,10 +79,11 @@ function checkMatchingPatterns(config: ImageConfigComplete, src: string) {
   }
 
   import("next/dist/shared/lib/match-remote-pattern").then(({ hasMatch }) => {
+    console.log(config);
     if (!hasMatch(config.domains, config.remotePatterns, parsedSrc)) {
       throw new Error(
         `[Unpic]: Invalid src (${src}). Images that aren't on a supported image CDN must be configured under images in your \`next.config.js\`\n` +
-          `See more info: https://nextjs.org/docs/messages/next-image-unconfigured-host`
+          `See more info: https://nextjs.org/docs/messages/next-image-unconfigured-host`,
       );
     }
   });
@@ -74,84 +100,82 @@ function getImageData(src: string | StaticImport): StaticImageData | void {
   return src;
 }
 
-export const Image = forwardRef<HTMLImageElement, ImageProps>(function Image(
-  props,
-  ref
-) {
-  // If using the next/image server we can only serve images with
-  // the same breakpoints as those in the config
+export const Image = forwardRef<HTMLImageElement, ImageProps>(
+  function Image(props, ref) {
+    // If using the next/image server we can only serve images with
+    // the same breakpoints as those in the config
+    const configContext = useDynamicContext();
+    const config = configEnv || configContext || imageConfigDefault;
+    const breakpoints = useMemo(() => {
+      return [...config.deviceSizes, ...config.imageSizes];
+    }, [config]);
 
-  const configContext = useContext(ImageConfigContext);
-  const config = configEnv || configContext || imageConfigDefault;
-  const breakpoints = useMemo(() => {
-    return [...config.deviceSizes, ...config.imageSizes];
-  }, [config]);
+    const { src: origSrc, ...rest } = props;
 
-  const { src: origSrc, ...rest } = props;
+    // We need to cast this here because otherwise TS gets confused
+    // with the layout/dimensions inference
+    const childProps = rest as UnpicImageProps;
 
-  // We need to cast this here because otherwise TS gets confused
-  // with the layout/dimensions inference
-  const childProps = rest as UnpicImageProps;
+    const imageData = getImageData(origSrc);
 
-  const imageData = getImageData(origSrc);
+    // Users can pass either a string or the result of an import
+    const src: string = imageData?.src || (origSrc as string);
 
-  // Users can pass either a string or the result of an import
-  const src: string = imageData?.src || (origSrc as string);
+    if (imageData && props.layout !== "fullWidth") {
+      // If the user didn't specify a width or height, we can use the
+      // width and height from the image data
 
-  if (imageData && props.layout !== "fullWidth") {
-    // If the user didn't specify a width or height, we can use the
-    // width and height from the image data
-
-    if (!childProps.width) {
-      if (childProps.height) {
-        childProps.width = childProps.aspectRatio
-          ? childProps.height * childProps.aspectRatio
-          : childProps.height * (imageData.width / imageData.height);
-      } else {
-        childProps.width = imageData.width;
+      if (!childProps.width) {
+        if (childProps.height) {
+          childProps.width = childProps.aspectRatio
+            ? childProps.height * childProps.aspectRatio
+            : childProps.height * (imageData.width / imageData.height);
+        } else {
+          childProps.width = imageData.width;
+        }
+      }
+      if (!childProps.height) {
+        if (childProps.width) {
+          childProps.height = childProps.aspectRatio
+            ? childProps.width / childProps.aspectRatio
+            : childProps.width * (imageData.height / imageData.width);
+        } else {
+          childProps.height = imageData.height;
+        }
       }
     }
-    if (!childProps.height) {
-      if (childProps.width) {
-        childProps.height = childProps.aspectRatio
-          ? childProps.width / childProps.aspectRatio
-          : childProps.width * (imageData.height / imageData.width);
-      } else {
-        childProps.height = imageData.height;
+
+    childProps.background ||= imageData?.blurDataURL;
+
+    const cdn = useMemo(() => {
+      if (src?.startsWith("/")) {
+        return "nextjs";
       }
+      return getImageCdnForUrl(src);
+    }, [src]);
+
+    const isRemoteCdn = cdn && cdn !== "nextjs" && cdn !== "vercel";
+
+    useEffect(() => {
+      if (!src || !config || isRemoteCdn) {
+        return;
+      }
+      checkMatchingPatterns(config, src);
+    }, [src, isRemoteCdn, config]);
+
+    // Other image CDNs can use normal Unpic breakpoints
+    if (isRemoteCdn) {
+      return <UnpicImage {...childProps} src={src} ref={ref} />;
     }
-  }
 
-  childProps.background ||= imageData?.blurDataURL;
-
-  const cdn = useMemo(() => {
-    if (src?.startsWith("/")) {
-      return "nextjs";
-    }
-    return getImageCdnForUrl(src);
-  }, [src]);
-
-  const isRemoteCdn = cdn && cdn !== "nextjs" && cdn !== "vercel";
-
-  useEffect(() => {
-    if (!src || !config || isRemoteCdn) {
-      return;
-    }
-    checkMatchingPatterns(config, src);
-  }, [src, isRemoteCdn, config]);
-
-  // Other image CDNs can use normal Unpic breakpoints
-  if (isRemoteCdn) {
-    return <UnpicImage {...childProps} src={src} ref={ref} />;
-  }
-
-  return (
-    <UnpicImage
-      {...childProps}
-      src={src}
-      ref={ref}
-      breakpoints={breakpoints}
-      cdn="nextjs"
-    />
-  );
-});
+    return (
+      <UnpicImage
+        {...childProps}
+        src={src}
+        ref={ref}
+        breakpoints={breakpoints}
+        cdn="nextjs"
+      />
+    );
+  },
+);
