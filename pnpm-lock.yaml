@@ -12,8 +12,8 @@ importers:
   .:
     dependencies:
       unpic:
-        specifier: ^3.12.0
-        version: 3.12.0
+        specifier: ^3.13.0
+        version: 3.13.0
     devDependencies:
       '@testing-library/dom':
         specifier: ^9.3.1
@@ -531,8 +531,8 @@ importers:
   packages/core:
     dependencies:
       unpic:
-        specifier: ^3.12.0
-        version: 3.12.0
+        specifier: ^3.13.0
+        version: 3.13.0
     devDependencies:
       tsup:
         specifier: ^7.0.0
@@ -731,8 +731,8 @@ importers:
         specifier: ^1.0.1
         version: 1.0.1
       unpic:
-        specifier: ^3.12.0
-        version: 3.12.0
+        specifier: ^3.13.0
+        version: 3.13.0
     devDependencies:
       '@sveltejs/adapter-auto':
         specifier: ^2.1.0
@@ -23051,8 +23051,8 @@ packages:
       normalize-path: 2.1.1
     dev: true
 
-  /unpic@3.12.0:
-    resolution: {integrity: sha512-dmp0XRBeE6i+wWlWAkF7ordJYi5y7neEGSNvlM+92HUp1VnLUb37NVUZI6AZgb2Rf/vZynSadZkdGbPGXc/ZIA==}
+  /unpic@3.13.0:
+    resolution: {integrity: sha512-SVrWh8ZpCwf6XZSpmFM0qXnBKBXEu+/G26R6aoIZhPuBBTz26d8dmu85Bz6vCo5zhZIkWOZvwi4fy9Ppcv2PRg==}
     dev: false
 
   /unpipe@1.0.0:
