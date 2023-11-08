@@ -35,5 +35,9 @@
         }
       }
     }
+  },
+  "cli": {
+    "analytics": false,
+    "packageManager": "pnpm"
   }
 }
