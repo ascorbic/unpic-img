@@ -108,6 +108,13 @@
   * dependencies
     * @unpic/core bumped to 0.0.36
 
+## [0.0.24](https://github.com/ascorbic/unpic-img/compare/angular-v0.0.23...angular-v0.0.24) (2023-11-08)
+
+
+### Features
+
+* **angular:** update to Angular 17 ([#363](https://github.com/ascorbic/unpic-img/issues/363)) ([7efe5f0](https://github.com/ascorbic/unpic-img/commit/7efe5f03ab3331704e18e2f7d5c0fc0c41ceb7ff))
+
 ## [0.0.22](https://github.com/ascorbic/unpic-img/compare/angular-v0.0.21...angular-v0.0.22) (2023-11-03)
 
 

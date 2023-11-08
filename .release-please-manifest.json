@@ -8,6 +8,6 @@
   "packages/preact": "0.0.30",
   "packages/qwik": "0.0.32",
   "packages/webc": "0.0.29",
-  "packages/angular": "0.0.23",
+  "packages/angular": "0.0.24",
   "packages/lit": "0.0.17"
 }
