@@ -16,11 +16,11 @@
     "directory": "packages/angular"
   },
   "devDependencies": {
-    "@angular-devkit/build-angular": "^15.2.8",
-    "@angular/cli": "~15.2.8",
-    "@angular/compiler-cli": "^15.2.9",
-    "@angular/core": "^15.2.9",
-    "ng-packagr": "^15.2.2",
+    "@angular-devkit/build-angular": "^16.2.10",
+    "@angular/cli": "~16.2.10",
+    "@angular/compiler-cli": "^16.2.12",
+    "@angular/core": "^16.2.12",
+    "ng-packagr": "^16.2.3",
     "publint": "^0.2.0",
     "typescript": "4.9.5"
   },
