@@ -489,9 +489,6 @@ importers:
 
   packages/angular:
     dependencies:
-      '@unpic/core':
-        specifier: workspace:^
-        version: link:../core
       tslib:
         specifier: ^2.5.3
         version: 2.5.3
