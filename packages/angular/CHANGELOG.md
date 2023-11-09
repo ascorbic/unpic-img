@@ -108,6 +108,13 @@
   * dependencies
     * @unpic/core bumped to 0.0.36
 
+## [0.0.25](https://github.com/ascorbic/unpic-img/compare/angular-v0.0.24...angular-v0.0.25) (2023-11-09)
+
+
+### Features
+
+* **angular:** export standalone directives ([#366](https://github.com/ascorbic/unpic-img/issues/366)) ([db680ea](https://github.com/ascorbic/unpic-img/commit/db680eaca2547b74ecd527e6943e27dff6818dd7))
+
 ## [0.0.24](https://github.com/ascorbic/unpic-img/compare/angular-v0.0.23...angular-v0.0.24) (2023-11-08)
 
 
