@@ -13,7 +13,22 @@ Angular directive for responsive, high-performance images.
 npm install @unpic/angular
 ```
 
-Add to app module:
+You can either import the directives individually or add the module.
+
+Using the directives:
+
+```typescript
+import { UnpicImageDirective, UnpicSourceDirective } from "@unpic/angular";
+
+@Component({
+  // ...
+  standalone: true,
+  imports: [UnpicImageDirective, UnpicSourceDirective],
+})
+
+```
+
+Using the module:
 
 ```typescript
 // ..
@@ -38,6 +53,36 @@ You can then use it by adding the `unpic` attribute to an `<img>` tag:
 />
 ```
 
-You can also use it with `<picture>` tags. Add the `unpic` attribute to the
-`<source>` and `<img>` tags. See [this guide](/img/learn/#art-direction) to
-learn more about using art direction with Unpic.
+You can also use it with `<picture>` tags. Ensure you have added the Source
+directive and add the `unpic` attribute to the `<source>` and `<img>` tags. See
+[this guide](/img/learn/#art-direction) to learn more about using art direction
+with Unpic.
+
+```html
+<picture class="hero">
+  <!-- Large screens get a full-width hero image -->
+  <source
+    unpic
+    src="https://images.unsplash.com/photo-1694406805270-f3a93e91f4b6"
+    media="(min-width: 601px)"
+    layout="fullWidth"
+  />
+  <!-- Small screens get a constrained square image -->
+  <source
+    unpic
+    src="https://images.unsplash.com/photo-1693711942336-f4f9963bd364"
+    media="(max-width: 600px)"
+    width="600"
+    height="600"
+  />
+  <!-- Always include an Image as the final element -->
+  <img
+    unpic
+    src="https://images.unsplash.com/photo-1693711942336-f4f9963bd364"
+    width="600"
+    height="600"
+    alt="Aurora"
+    unstyled
+  />
+</picture>
+```

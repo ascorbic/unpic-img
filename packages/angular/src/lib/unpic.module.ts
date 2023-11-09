@@ -9,6 +9,6 @@ import { UnpicSourceDirective } from './unpic-source.directive';
 export class UnpicModule {}
 
 /**
- * @deprecated Use `UnpicModule` instead.
+ * @deprecated Use `UnpicImageDirective` instead.
  */
-export class UnpicDirective extends UnpicModule {}
+export class UnpicDirective extends UnpicImageDirective {}
