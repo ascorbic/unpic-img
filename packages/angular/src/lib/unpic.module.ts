@@ -3,7 +3,7 @@ import { UnpicImageDirective } from './unpic-image.directive';
 import { UnpicSourceDirective } from './unpic-source.directive';
 
 @NgModule({
-  declarations: [UnpicImageDirective, UnpicSourceDirective],
+  imports: [UnpicImageDirective, UnpicSourceDirective],
   exports: [UnpicImageDirective, UnpicSourceDirective],
 })
 export class UnpicModule {}

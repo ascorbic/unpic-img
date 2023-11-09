@@ -10,6 +10,7 @@ type Props = UnpicImageProps<HTMLImageElement>;
 
 @Directive({
   selector: 'img[unpic]',
+  standalone: true,
 })
 export class UnpicImageDirective implements OnChanges {
   @Input() layout: 'constrained' | 'fullWidth' | 'fixed' = 'constrained';
