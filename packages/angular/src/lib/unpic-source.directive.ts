@@ -10,6 +10,7 @@ type Props = UnpicSourceProps;
 
 @Directive({
   selector: 'source[unpic]',
+  standalone: true,
 })
 export class UnpicSourceDirective implements OnChanges {
   @Input() layout: 'constrained' | 'fullWidth' | 'fixed' = 'constrained';
