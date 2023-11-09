@@ -39,8 +39,5 @@ You can then use it by adding the `unpic` attribute to an `<img>` tag:
 ```
 
 You can also use it with `<picture>` tags. Add the `unpic` attribute to the
-`<source>` and `<img>` tags:
-
-```html
-
-```
+`<source>` and `<img>` tags. See [this guide](/img/learn/#art-direction) to
+learn more about using art direction with Unpic.
