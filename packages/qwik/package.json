@@ -54,7 +54,7 @@
     "node-fetch": "3.3.2",
     "np": "8.0.4",
     "prettier": "^3.0.3",
-    "typescript": "5.0.4",
+    "typescript": "5.2.2",
     "undici": "5.25.4",
     "vite": "4.4.11",
     "vitest": "^0.32.0"
