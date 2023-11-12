@@ -22,12 +22,17 @@
   "module": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "exports": {
-    "solid": "./dist/index.jsx",
-    "import": {
-      "types": "./dist/index.d.ts",
-      "default": "./dist/index.js"
-    },
-    "require": "./dist/index.cjs"
+    ".": {
+      "solid": "./dist/index.jsx",
+      "require": {
+        "types": "./dist/index.d.cts",
+        "default": "./dist/index.cjs"
+      },
+      "import": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.js"
+      }
+    }
   },
   "typesVersions": {},
   "scripts": {
@@ -51,7 +56,7 @@
     "prettier": "^3.0.3",
     "solid-js": "^1.7.6",
     "solid-testing-library": "^0.5.1",
-    "tsup": "^7.0.0",
+    "tsup": "^7.2.0",
     "tsup-preset-solid": "^0.1.8",
     "typescript": "^5.2.2",
     "vite": "^4.3.9",
