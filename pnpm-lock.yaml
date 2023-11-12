@@ -707,8 +707,8 @@ importers:
         specifier: ^7.2.0
         version: 7.2.0(typescript@5.2.2)
       tsup-preset-solid:
-        specifier: ^0.1.8
-        version: 0.1.8(esbuild@0.19.0)(solid-js@1.7.6)(tsup@7.2.0)
+        specifier: ^2.0.0
+        version: 2.1.0(esbuild@0.19.0)(solid-js@1.7.6)(tsup@7.2.0)
       typescript:
         specifier: ^5.2.2
         version: 5.2.2
@@ -22972,14 +22972,13 @@ packages:
   /tslib@2.6.2:
     resolution: {integrity: sha512-AEYxH93jGFPn/a2iVAwW87VuUIkR1FVUKB77NwMF7nBTDkDrrT/Hpt/IrCJ0QXhW27jTBDcf5ZY7w6RiqTMw2Q==}
 
-  /tsup-preset-solid@0.1.8(esbuild@0.19.0)(solid-js@1.7.6)(tsup@7.2.0):
-    resolution: {integrity: sha512-V5TZFEZY9emACO3AZvKyCRzdoyjUcuMEEbTGcJnCma7OVvGnSNVoewFff9g0CaveJ8cZcC3u2tW9gMaxmPZ71A==}
+  /tsup-preset-solid@2.1.0(esbuild@0.19.0)(solid-js@1.7.6)(tsup@7.2.0):
+    resolution: {integrity: sha512-4b63QsUz/1+PDkcQQmBnIUjW+GzlktBjclgAinfQ5DNbQiCBBbcY7tn+0xYykb/MB6rHDoc4b+rHGdgPv51AtQ==}
     peerDependencies:
-      tsup: ^6.5.0
+      tsup: ^7.0.0
     dependencies:
       esbuild-plugin-solid: 0.5.0(esbuild@0.19.0)(solid-js@1.7.6)
       tsup: 7.2.0(typescript@5.2.2)
-      type-fest: 3.12.0
     transitivePeerDependencies:
       - esbuild
       - solid-js
