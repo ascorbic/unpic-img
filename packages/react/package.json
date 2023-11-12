@@ -16,14 +16,24 @@
   "module": "./dist/index.mjs",
   "exports": {
     ".": {
-      "types": "./dist/index.d.ts",
-      "require": "./dist/index.js",
-      "import": "./dist/index.mjs"
+      "require": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.js"
+      },
+      "import": {
+        "types": "./dist/index.d.mts",
+        "default": "./dist/index.mjs"
+      }
     },
     "./next": {
-      "types": "./dist/next.d.ts",
-      "require": "./dist/next.js",
-      "import": "./dist/next.mjs"
+      "require": {
+        "types": "./dist/next.d.ts",
+        "default": "./dist/next.js"
+      },
+      "import": {
+        "types": "./dist/next.d.mts",
+        "default": "./dist/next.mjs"
+      }
     },
     "./package.json": "./package.json"
   },
@@ -44,7 +54,7 @@
     "jsdom": "^22.0.0",
     "next": "^13.4.6",
     "publint": "^0.2.0",
-    "tsup": "^7.0.0",
+    "tsup": "^7.2.0",
     "typescript": "^5.2.2",
     "vitest": "^0.32.0"
   },

@@ -17,7 +17,7 @@
     "test": "vitest run"
   },
   "devDependencies": {
-    "tsup": "^7.0.0",
+    "tsup": "^7.2.0",
     "vitest": "^0.32.0"
   },
   "dependencies": {
@@ -28,9 +28,14 @@
   "types": "./dist/core.d.ts",
   "exports": {
     ".": {
-      "types": "./dist/core.d.ts",
-      "require": "./dist/core.js",
-      "import": "./dist/core.mjs"
+      "require": {
+        "types": "./dist/core.d.ts",
+        "default": "./dist/core.js"
+      },
+      "import": {
+        "types": "./dist/core.d.mts",
+        "default": "./dist/core.mjs"
+      }
     }
   }
 }
