@@ -18,20 +18,42 @@
   ],
   "sideEffects": false,
   "type": "module",
-  "main": "./dist/index.cjs",
-  "module": "./dist/index.js",
+  "main": "./dist/server.js",
+  "module": "./dist/server.js",
   "types": "./dist/index.d.ts",
   "exports": {
-    ".": {
+    "worker": {
+      "solid": "./dist/server.jsx",
+      "import": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/server.js"
+      }
+    },
+    "browser": {
       "solid": "./dist/index.jsx",
-      "require": {
-        "types": "./dist/index.d.cts",
-        "default": "./dist/index.cjs"
-      },
       "import": {
         "types": "./dist/index.d.ts",
         "default": "./dist/index.js"
       }
+    },
+    "deno": {
+      "solid": "./dist/server.jsx",
+      "import": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/server.js"
+      }
+    },
+    "node": {
+      "solid": "./dist/server.jsx",
+      "import": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/server.js"
+      }
+    },
+    "solid": "./dist/index.jsx",
+    "import": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
     }
   },
   "typesVersions": {},
@@ -57,7 +79,7 @@
     "solid-js": "^1.7.6",
     "solid-testing-library": "^0.5.1",
     "tsup": "^7.2.0",
-    "tsup-preset-solid": "^0.1.8",
+    "tsup-preset-solid": "^2.0.0",
     "typescript": "^5.2.2",
     "vite": "^4.3.9",
     "vite-plugin-solid": "^2.7.0",
@@ -69,5 +91,7 @@
   "dependencies": {
     "@unpic/core": "workspace:^"
   },
-  "browser": {}
+  "browser": {
+    "./dist/server.js": "./dist/index.js"
+  }
 }
