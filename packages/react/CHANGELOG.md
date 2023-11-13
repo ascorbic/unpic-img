@@ -132,6 +132,20 @@
   * dependencies
     * @unpic/core bumped to 0.0.36
 
+## [0.0.42](https://github.com/ascorbic/unpic-img/compare/react-v0.0.41...react-v0.0.42) (2023-11-13)
+
+
+### Bug Fixes
+
+* generate correct type declarations for ESM and CJS ([#371](https://github.com/ascorbic/unpic-img/issues/371)) ([1738f4e](https://github.com/ascorbic/unpic-img/commit/1738f4eb8e33d612dc577d24f5fc4a00f9396ede))
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @unpic/core bumped to 0.0.37
+
 ## [0.0.40](https://github.com/ascorbic/unpic-img/compare/react-v0.0.39...react-v0.0.40) (2023-11-03)
 
 

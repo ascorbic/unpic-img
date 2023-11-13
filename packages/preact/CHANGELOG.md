@@ -144,6 +144,20 @@
   * dependencies
     * @unpic/core bumped to 0.0.36
 
+## [0.0.31](https://github.com/ascorbic/unpic-img/compare/preact-v0.0.30...preact-v0.0.31) (2023-11-13)
+
+
+### Bug Fixes
+
+* generate correct type declarations for ESM and CJS ([#371](https://github.com/ascorbic/unpic-img/issues/371)) ([1738f4e](https://github.com/ascorbic/unpic-img/commit/1738f4eb8e33d612dc577d24f5fc4a00f9396ede))
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @unpic/core bumped to 0.0.37
+
 ## [0.0.29](https://github.com/ascorbic/unpic-img/compare/preact-v0.0.28...preact-v0.0.29) (2023-11-03)
 
 
