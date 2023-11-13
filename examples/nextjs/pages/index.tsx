@@ -1,10 +1,8 @@
 import Head from "next/head";
 import { Image } from "@unpic/react/next";
-import { Inter } from "next/font/google";
 import styles from "@/styles/Home.module.css";
 import bunny from "./bunny.jpg";
 
-const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
   return (
