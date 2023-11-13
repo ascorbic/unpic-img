@@ -1,13 +1,13 @@
 {
-  "packages/core": "0.0.36",
-  "packages/react": "0.0.41",
-  "packages/solid": "0.0.35",
-  "packages/svelte": "0.0.37",
-  "packages/vue": "0.0.35",
-  "packages/astro": "0.0.31",
-  "packages/preact": "0.0.30",
-  "packages/qwik": "0.0.32",
-  "packages/webc": "0.0.29",
-  "packages/angular": "0.0.25",
-  "packages/lit": "0.0.17"
+  "packages/core": "0.0.37",
+  "packages/react": "0.0.42",
+  "packages/solid": "0.0.36",
+  "packages/svelte": "0.0.38",
+  "packages/vue": "0.0.36",
+  "packages/astro": "0.0.32",
+  "packages/preact": "0.0.31",
+  "packages/qwik": "0.0.33",
+  "packages/webc": "0.0.30",
+  "packages/angular": "0.0.26",
+  "packages/lit": "0.0.18"
 }
