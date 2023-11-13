@@ -34,7 +34,7 @@
     "vue": "^3.3.4"
   },
   "devDependencies": {
-    "@testing-library/vue": "^7.0.0",
+    "@testing-library/vue": "^8.0.0",
     "@vitejs/plugin-vue": "^4.2.3",
     "tsup": "^7.0.0",
     "typescript": "^5.2.2",
