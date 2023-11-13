@@ -13,10 +13,10 @@
 [<img src="https://raw.githubusercontent.com/gilbarbara/logos/main/logos/svelte-icon.svg" height="16" alt="svelte" /> Svelte](https://unpic.pics/img/svelte)
 •
 [<img src="https://raw.githubusercontent.com/gilbarbara/logos/main/logos/astro-icon.svg" height="16" alt="astro" /> Astro](https://unpic.pics/img/astro)
-•
+
 [<img src="https://raw.githubusercontent.com/gilbarbara/logos/main/logos/preact.svg" height="16" alt="preact" /> Preact](https://unpic.pics/img/preact)
 •
-[<img src="https://raw.githubusercontent.com/gilbarbara/logos/main/logos/qwik.svg" height="16" alt="qwik" /> Qwik](https://unpic.pics/img/qwik)
+[<img src="https://raw.githubusercontent.com/gilbarbara/logos/main/logos/qwik-icon.svg" height="16" alt="qwik" /> Qwik](https://unpic.pics/img/qwik)
 •
 [<img src="https://raw.githubusercontent.com/gilbarbara/logos/main/logos/eleventy.svg" height="16" alt="webc" /> WebC](https://unpic.pics/img/webc)
 •
