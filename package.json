@@ -9,7 +9,7 @@
     "publish": "pnpm run --filter '@unpic/*' publish"
   },
   "dependencies": {
-    "unpic": "^3.13.0"
+    "unpic": "^3.14.0"
   },
   "devDependencies": {
     "@testing-library/dom": "^9.3.1",
