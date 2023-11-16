@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.0.39](https://github.com/ascorbic/unpic-img/compare/core-v0.0.38...core-v0.0.39) (2023-11-16)
+
+
+### Bug Fixes
+
+* **core:** add styles to images without transformers ([#390](https://github.com/ascorbic/unpic-img/issues/390)) ([d5ae100](https://github.com/ascorbic/unpic-img/commit/d5ae1004e926b4f9c12e6604b054bb0506957ea6))
+
 ## [0.0.38](https://github.com/ascorbic/unpic-img/compare/core-v0.0.37...core-v0.0.38) (2023-11-16)
 
 
