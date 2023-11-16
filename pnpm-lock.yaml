@@ -484,7 +484,7 @@ importers:
         specifier: workspace:^
         version: link:../../packages/webc
       style-object-to-css-string:
-        specifier: ^1.0.1
+        specifier: 1.0.1
         version: 1.0.1
 
   packages/angular:
@@ -731,7 +731,7 @@ importers:
         specifier: workspace:^
         version: link:../core
       style-object-to-css-string:
-        specifier: ^1.0.1
+        specifier: 1.0.1
         version: 1.0.1
       unpic:
         specifier: ^3.14.1
@@ -808,7 +808,7 @@ importers:
         specifier: workspace:^
         version: link:../core
       style-object-to-css-string:
-        specifier: ^1.0.1
+        specifier: 1.0.1
         version: 1.0.1
     devDependencies:
       '@11ty/webc':
