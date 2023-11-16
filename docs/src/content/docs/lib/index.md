@@ -63,7 +63,7 @@ params:
 
 ```ts
 const parsedUrl = parseUrl(
-  "https://cdn.shopify.com/static/sample-images/bath_800x600_crop_center.jpeg"
+  "https://cdn.shopify.com/static/sample-images/bath_800x600_crop_center.jpeg",
 );
 
 console.log(parsedUrl);
@@ -103,6 +103,7 @@ is not auto-detected.
 - Directus
 - Imgix, including Unsplash, DatoCMS, Sanity and Prismic
 - Kontent.ai
+- Netlify
 - Shopify
 - Storyblok
 - Vercel / Next.js
