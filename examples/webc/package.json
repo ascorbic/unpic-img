@@ -14,6 +14,6 @@
     "@11ty/eleventy-plugin-webc": "^0.11.1",
     "@unpic/core": "workspace:^",
     "@unpic/webc": "workspace:^",
-    "style-object-to-css-string": "^1.0.1"
+    "style-object-to-css-string": "1.0.1"
   }
 }
