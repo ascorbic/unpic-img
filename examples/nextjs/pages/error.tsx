@@ -1,5 +1,5 @@
 import Head from "next/head";
-import { Image } from "@unpic/react/next";
+import { Image } from "@unpic/react/nextjs";
 import styles from "@/styles/Home.module.css";
 
 export default function Error() {

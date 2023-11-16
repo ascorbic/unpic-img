@@ -45,7 +45,7 @@ For the supported props, see [the docs](https://unpic.pics/img/react).
 
 ## Unpic for Next.js
 
-If you are using Next.js, you can use the `@unpic/react/next` component. This
+If you are using Next.js, you can use the `@unpic/react/nextjs` component. This
 works the same as the main `@unpic/react` component, but also supports the
 Next.js Image Optimizer for images that don't use a supported CDN. This includes
 local images, either using a path or an import.
@@ -59,7 +59,7 @@ same way:
 npm install @unpic/react
 ```
 
-Then, in your Next.js project, import the component from `@unpic/react/next`:
+Then, in your Next.js project, import the component from `@unpic/react/nextjs`:
 
 ```tsx
 import { Image } from "@unpic/react/next";
@@ -77,6 +77,9 @@ import logo from "../public/logo.png";
   />
 </>;
 ```
+
+> **:warning: For versions of Next.js before 14.0.0, import from
+> `@unpic/react/next-legacy`, not `@unpic/react/nextjs`**
 
 ### Differences from `next/image`
 

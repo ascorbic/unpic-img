@@ -1,8 +1,7 @@
 import Head from "next/head";
-import { Image } from "@unpic/react/next";
+import { Image } from "@unpic/react/nextjs";
 import styles from "@/styles/Home.module.css";
 import bunny from "./bunny.jpg";
-
 
 export default function Home() {
   return (
