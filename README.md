@@ -146,6 +146,7 @@ including:
 - Directus
 - Imgix, including Unsplash, DatoCMS, Sanity and Prismic
 - Kontent.ai
+- Netlify
 - Shopify
 - Storyblok
 - Vercel / Next.js
