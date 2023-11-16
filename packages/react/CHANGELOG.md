@@ -138,6 +138,13 @@
   * dependencies
     * @unpic/core bumped to 0.0.40
 
+## [0.1.3](https://github.com/ascorbic/unpic-img/compare/react-v0.1.2...react-v0.1.3) (2023-11-16)
+
+
+### Bug Fixes
+
+* Add 'fetchpriority' to fixedMap in camelize.ts ([#398](https://github.com/ascorbic/unpic-img/issues/398)) ([9e304fc](https://github.com/ascorbic/unpic-img/commit/9e304fcd666e07ecad3a65fb05284c273b5af669))
+
 ## [0.1.1](https://github.com/ascorbic/unpic-img/compare/react-v0.1.0...react-v0.1.1) (2023-11-16)
 
 
