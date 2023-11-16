@@ -2,6 +2,7 @@ import type { HTMLAttributes } from "react";
 const nestedKeys = new Set(["style"]);
 const fixedMap: Record<string, string> = {
   srcset: "srcSet",
+  fetchpriority: "fetchPriority"
 };
 const camelize = (key: string) => {
   if (key.startsWith("data-") || key.startsWith("aria-")) {
