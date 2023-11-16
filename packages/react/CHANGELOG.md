@@ -132,6 +132,20 @@
   * dependencies
     * @unpic/core bumped to 0.0.36
 
+## [0.1.1](https://github.com/ascorbic/unpic-img/compare/react-v0.1.0...react-v0.1.1) (2023-11-16)
+
+
+### Bug Fixes
+
+* **core:** add styles to images without transformers ([#390](https://github.com/ascorbic/unpic-img/issues/390)) ([d5ae100](https://github.com/ascorbic/unpic-img/commit/d5ae1004e926b4f9c12e6604b054bb0506957ea6))
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @unpic/core bumped to 0.0.39
+
 ## [0.1.0](https://github.com/ascorbic/unpic-img/compare/react-v0.0.42...react-v0.1.0) (2023-11-16)
 
 
