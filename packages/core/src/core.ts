@@ -518,15 +518,14 @@ export function transformProps<
     UnpicImageProps<TImageAttributes, TStyle>,
     "width" | "height" | "aspectRatio" | "layout" | "objectFit" | "background"
   >;
-
+  transformedProps.sizes ||= getSizes(width, layout);
+  if (!unstyled) {
+    transformedProps.style = {
+      ...getStyle<TImageAttributes, TStyle>(styleProps),
+      ...transformedProps.style,
+    };
+  }
   if (transformer) {
-    transformedProps.sizes ||= getSizes(width, layout);
-    if (!unstyled) {
-      transformedProps.style = {
-        ...getStyle<TImageAttributes, TStyle>(styleProps),
-        ...transformedProps.style,
-      };
-    }
     transformedProps.srcset = getSrcSet({
       src: url,
       width,
