@@ -168,6 +168,20 @@
   * dependencies
     * @unpic/core bumped to 0.0.39
 
+## [0.0.33](https://github.com/ascorbic/unpic-img/compare/webc-v0.0.32...webc-v0.0.33) (2023-11-16)
+
+
+### Bug Fixes
+
+* **svelte:** pin style-object-to-css-string ([#397](https://github.com/ascorbic/unpic-img/issues/397)) ([216e65f](https://github.com/ascorbic/unpic-img/commit/216e65fb240a92876978106f89b15e67d668e3a3))
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @unpic/core bumped to 0.0.40
+
 ## [0.0.28](https://github.com/ascorbic/unpic-img/compare/webc-v0.0.27...webc-v0.0.28) (2023-11-03)
 
 
