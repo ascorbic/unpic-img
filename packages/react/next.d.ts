@@ -1,1 +1,1 @@
-export * from "./dist/next.js";
+export { Image } from "./dist/next.js";
