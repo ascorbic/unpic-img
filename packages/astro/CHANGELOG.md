@@ -174,6 +174,12 @@
   * dependencies
     * @unpic/core bumped to 0.0.39
 
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @unpic/core bumped to 0.0.40
+
 ## [0.0.30](https://github.com/ascorbic/unpic-img/compare/astro-v0.0.29...astro-v0.0.30) (2023-11-03)
 
 

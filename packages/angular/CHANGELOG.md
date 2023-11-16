@@ -126,6 +126,12 @@
   * dependencies
     * @unpic/core bumped to 0.0.39
 
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @unpic/core bumped to 0.0.40
+
 ## [0.0.25](https://github.com/ascorbic/unpic-img/compare/angular-v0.0.24...angular-v0.0.25) (2023-11-09)
 
 
