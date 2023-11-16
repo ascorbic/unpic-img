@@ -132,6 +132,24 @@
   * dependencies
     * @unpic/core bumped to 0.0.36
 
+## [0.1.0](https://github.com/ascorbic/unpic-img/compare/react-v0.0.42...react-v0.1.0) (2023-11-16)
+
+
+### ⚠ BREAKING CHANGES
+
+* **react:** support Next 14 ([#389](https://github.com/ascorbic/unpic-img/issues/389))
+
+### Features
+
+* **react:** support Next 14 ([#389](https://github.com/ascorbic/unpic-img/issues/389)) ([fd85718](https://github.com/ascorbic/unpic-img/commit/fd857188d9d9517625bc0ba8aecec9f2a8966966)), closes [#355](https://github.com/ascorbic/unpic-img/issues/355)
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @unpic/core bumped to 0.0.38
+
 ## [0.0.42](https://github.com/ascorbic/unpic-img/compare/react-v0.0.41...react-v0.0.42) (2023-11-13)
 
 
