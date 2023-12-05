@@ -16,7 +16,7 @@
     "@11ty/webc": "^0.11.4",
     "@types/jsdom": "^21.1.1",
     "jsdom": "^22.0.0",
-    "vitest": "^0.32.0"
+    "vitest": "^0.34.0"
   },
   "peerDependencies": {
     "@11ty/webc": ">=0.9.0"
