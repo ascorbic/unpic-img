@@ -168,6 +168,12 @@
   * dependencies
     * @unpic/core bumped to 0.0.39
 
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @unpic/core bumped to 0.0.41
+
 ## [0.0.33](https://github.com/ascorbic/unpic-img/compare/webc-v0.0.32...webc-v0.0.33) (2023-11-16)
 
 

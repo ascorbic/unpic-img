@@ -1,6 +1,6 @@
 {
   "name": "@unpic/angular",
-  "version": "0.0.29",
+  "version": "0.0.30",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
