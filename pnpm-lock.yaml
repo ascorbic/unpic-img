@@ -223,7 +223,7 @@ importers:
         version: link:../../packages/astro
       astro:
         specifier: ^3.1.0
-        version: 3.1.0
+        version: 3.1.0(@types/node@20.8.0)
 
   examples/lit:
     dependencies:
@@ -291,7 +291,7 @@ importers:
         version: 5.2.2
       vite:
         specifier: ^4.4.9
-        version: 4.4.9
+        version: 4.4.9(@types/node@20.8.0)
 
   examples/qwik:
     dependencies:
@@ -526,7 +526,7 @@ importers:
     devDependencies:
       astro:
         specifier: ^3.1.0
-        version: 3.1.0
+        version: 3.1.0(@types/node@20.8.0)
 
   packages/core:
     dependencies:
@@ -582,8 +582,8 @@ importers:
   packages/qwik:
     devDependencies:
       '@builder.io/qwik':
-        specifier: 1.2.19
-        version: 1.2.19(@types/node@20.8.0)(undici@5.28.2)
+        specifier: 1.3.0
+        version: 1.3.0(@types/node@20.8.0)(undici@5.28.2)
       '@types/eslint':
         specifier: 8.44.8
         version: 8.44.8
@@ -3360,8 +3360,8 @@ packages:
       undici: 5.21.0
     dev: true
 
-  /@builder.io/qwik@1.2.19(@types/node@20.8.0)(undici@5.28.2):
-    resolution: {integrity: sha512-nmext30MPih1vSgsNpdx2jzBbeBKpsWjsLFI0Shs9+ec3z2QUrE9NJO+2P7cduxNt87hyul+twJ3UlJJ6pKxUQ==}
+  /@builder.io/qwik@1.3.0(@types/node@20.8.0)(undici@5.28.2):
+    resolution: {integrity: sha512-EZD6qmkihtM2yFhX22ZCkQLbgL8IeIS572NDoCLRSLeHzO2lm+AACQGwJw5IRXZfDXz/3hm36rzzJRzZdJ6q3g==}
     engines: {node: '>=16.8.0 <18.0.0 || >=18.11'}
     hasBin: true
     peerDependencies:
@@ -3369,7 +3369,7 @@ packages:
     dependencies:
       csstype: 3.1.2
       undici: 5.28.2
-      vite: 4.5.1(@types/node@20.8.0)
+      vite: 5.0.7(@types/node@20.8.0)
     transitivePeerDependencies:
       - '@types/node'
       - less
@@ -4779,7 +4779,7 @@ packages:
       express: 4.18.2
       path-to-regexp: 6.2.1
       radix3: 1.1.0
-      vite: 4.4.9
+      vite: 4.4.9(@types/node@20.8.0)
     transitivePeerDependencies:
       - supports-color
     dev: false
@@ -6904,7 +6904,7 @@ packages:
       debug: 4.3.4(supports-color@9.3.1)
       kolorist: 1.8.0
       resolve: 1.22.6
-      vite: 4.4.9
+      vite: 4.4.9(@types/node@20.8.0)
     transitivePeerDependencies:
       - preact
       - supports-color
@@ -7008,7 +7008,7 @@ packages:
       '@prefresh/utils': 1.2.0
       '@rollup/pluginutils': 4.2.1
       preact: 10.18.0
-      vite: 4.4.9
+      vite: 4.4.9(@types/node@20.8.0)
     transitivePeerDependencies:
       - supports-color
     dev: true
@@ -9581,79 +9581,6 @@ packages:
       resolve-pkg: 2.0.0
       svgo: 2.8.0
     dev: false
-
-  /astro@3.1.0:
-    resolution: {integrity: sha512-hVPZg9uDafqJbDwOwtcujwhJ6Qp3BCaIj1cvablTYI0jdYrZSvcybhIMTf8NhzK5smvZy2Bv9eEDYXLpiLDrRQ==}
-    engines: {node: '>=18.14.1', npm: '>=6.14.0'}
-    hasBin: true
-    dependencies:
-      '@astrojs/compiler': 2.1.0
-      '@astrojs/internal-helpers': 0.2.0
-      '@astrojs/markdown-remark': 3.2.0(astro@3.1.0)
-      '@astrojs/telemetry': 3.0.1
-      '@babel/core': 7.22.20
-      '@babel/generator': 7.22.15
-      '@babel/parser': 7.22.16
-      '@babel/plugin-transform-react-jsx': 7.22.5(@babel/core@7.22.20)
-      '@babel/traverse': 7.22.20
-      '@babel/types': 7.22.19
-      '@types/babel__core': 7.20.1
-      acorn: 8.10.0
-      boxen: 7.1.1
-      chokidar: 3.5.3
-      ci-info: 3.8.0
-      clsx: 2.0.0
-      common-ancestor-path: 1.0.1
-      cookie: 0.5.0
-      debug: 4.3.4(supports-color@9.3.1)
-      devalue: 4.3.2
-      diff: 5.1.0
-      es-module-lexer: 1.3.0
-      esbuild: 0.19.3
-      estree-walker: 3.0.3
-      execa: 8.0.1
-      fast-glob: 3.3.1
-      github-slugger: 2.0.0
-      gray-matter: 4.0.3
-      html-escaper: 3.0.3
-      http-cache-semantics: 4.1.1
-      js-yaml: 4.1.0
-      kleur: 4.1.5
-      magic-string: 0.30.3
-      mime: 3.0.0
-      ora: 7.0.1
-      p-limit: 4.0.0
-      path-to-regexp: 6.2.1
-      preferred-pm: 3.1.2
-      probe-image-size: 7.2.3
-      prompts: 2.4.2
-      rehype: 12.0.1
-      resolve: 1.22.6
-      semver: 7.5.4
-      server-destroy: 1.0.1
-      shiki: 0.14.4
-      string-width: 6.1.0
-      strip-ansi: 7.1.0
-      tsconfig-resolver: 3.0.1
-      undici: 5.24.0
-      unist-util-visit: 4.1.2
-      vfile: 5.3.7
-      vite: 4.4.9
-      vitefu: 0.2.4(vite@4.4.9)
-      which-pm: 2.1.1
-      yargs-parser: 21.1.1
-      zod: 3.21.1
-    optionalDependencies:
-      sharp: 0.32.6
-    transitivePeerDependencies:
-      - '@types/node'
-      - less
-      - lightningcss
-      - sass
-      - stylus
-      - sugarss
-      - supports-color
-      - terser
 
   /astro@3.1.0(@types/node@20.8.0):
     resolution: {integrity: sha512-hVPZg9uDafqJbDwOwtcujwhJ6Qp3BCaIj1cvablTYI0jdYrZSvcybhIMTf8NhzK5smvZy2Bv9eEDYXLpiLDrRQ==}
@@ -23845,40 +23772,6 @@ packages:
       fsevents: 2.3.3
     dev: true
 
-  /vite@4.4.9:
-    resolution: {integrity: sha512-2mbUn2LlUmNASWwSCNSJ/EG2HuSRTnVNaydp6vMCm5VIqJsjMfbIWtbH2kDuwUVW5mMUKKZvGPX/rqeqVvv1XA==}
-    engines: {node: ^14.18.0 || >=16.0.0}
-    hasBin: true
-    peerDependencies:
-      '@types/node': '>= 14'
-      less: '*'
-      lightningcss: ^1.21.0
-      sass: '*'
-      stylus: '*'
-      sugarss: '*'
-      terser: ^5.4.0
-    peerDependenciesMeta:
-      '@types/node':
-        optional: true
-      less:
-        optional: true
-      lightningcss:
-        optional: true
-      sass:
-        optional: true
-      stylus:
-        optional: true
-      sugarss:
-        optional: true
-      terser:
-        optional: true
-    dependencies:
-      esbuild: 0.18.11
-      postcss: 8.4.27
-      rollup: 3.28.0
-    optionalDependencies:
-      fsevents: 2.3.3
-
   /vite@4.4.9(@types/node@20.8.0):
     resolution: {integrity: sha512-2mbUn2LlUmNASWwSCNSJ/EG2HuSRTnVNaydp6vMCm5VIqJsjMfbIWtbH2kDuwUVW5mMUKKZvGPX/rqeqVvv1XA==}
     engines: {node: ^14.18.0 || >=16.0.0}
@@ -23908,8 +23801,8 @@ packages:
         optional: true
     dependencies:
       '@types/node': 20.8.0
-      esbuild: 0.18.17
-      postcss: 8.4.32
+      esbuild: 0.18.11
+      postcss: 8.4.27
       rollup: 3.28.0
     optionalDependencies:
       fsevents: 2.3.3
