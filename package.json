@@ -32,5 +32,5 @@
   "resolutions": {
     "cssstyle": "^3.0.0"
   },
-  "packageManager": "pnpm@8.10.5"
+  "packageManager": "pnpm@8.12.0"
 }
