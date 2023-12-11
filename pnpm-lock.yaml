@@ -12,8 +12,8 @@ importers:
   .:
     dependencies:
       unpic:
-        specifier: ^3.15.0
-        version: 3.15.0
+        specifier: ^3.16.0
+        version: 3.16.0
     devDependencies:
       '@testing-library/dom':
         specifier: ^9.3.1
@@ -531,8 +531,8 @@ importers:
   packages/core:
     dependencies:
       unpic:
-        specifier: ^3.15.0
-        version: 3.15.0
+        specifier: ^3.16.0
+        version: 3.16.0
     devDependencies:
       tsup:
         specifier: ^7.2.0
@@ -734,8 +734,8 @@ importers:
         specifier: 1.1.3
         version: 1.1.3
       unpic:
-        specifier: ^3.15.0
-        version: 3.15.0
+        specifier: ^3.16.0
+        version: 3.16.0
     devDependencies:
       '@sveltejs/adapter-auto':
         specifier: ^2.1.1
@@ -24062,8 +24062,8 @@ packages:
       normalize-path: 2.1.1
     dev: true
 
-  /unpic@3.15.0:
-    resolution: {integrity: sha512-LgpCLS5qaZR9p3ALtBQSeh5HkP1o0kViI3DSaWaeMZeIUOZ5hGPmLPoGsduXI+y1up3ISoNIV5YvYori+3VNLA==}
+  /unpic@3.16.0:
+    resolution: {integrity: sha512-XXvQGL+fvzwEX3aPXggTCrzySFPqvpC8r1LKy5ft9573AoX8CrszmA0uOzi6xgylCvvqFg46IDOudJKzM2lQ5A==}
     dev: false
 
   /unpipe@1.0.0:
@@ -24342,6 +24342,7 @@ packages:
       '@types/unist': 3.0.0
       unist-util-stringify-position: 4.0.0
       vfile-message: 4.0.2
+    dev: false
 
   /vite-node@1.0.4(@types/node@20.8.0):
     resolution: {integrity: sha512-9xQQtHdsz5Qn8hqbV7UKqkm8YkJhzT/zr41Dmt5N7AlD8hJXw/Z7y0QiD5I8lnTthV9Rvcvi0QW7PI0Fq83ZPg==}
@@ -24630,6 +24631,7 @@ packages:
         optional: true
     dependencies:
       vite: 5.0.7(@types/node@20.8.0)
+    dev: false
 
   /vitest@1.0.4(@types/node@20.8.0)(jsdom@22.0.0):
     resolution: {integrity: sha512-s1GQHp/UOeWEo4+aXDOeFBJwFzL6mjycbQwwKWX2QcYfh/7tIerS59hWQ20mxzupTJluA2SdwiBuWwQHH67ckg==}
