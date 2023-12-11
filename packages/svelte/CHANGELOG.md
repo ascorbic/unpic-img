@@ -120,6 +120,21 @@
   * dependencies
     * @unpic/core bumped to 0.0.39
 
+## [0.0.43](https://github.com/ascorbic/unpic-img/compare/svelte-v0.0.42...svelte-v0.0.43) (2023-12-11)
+
+
+### Bug Fixes
+
+* **deps:** update dependency style-object-to-css-string to v1.1.3 ([#419](https://github.com/ascorbic/unpic-img/issues/419)) ([bdaae48](https://github.com/ascorbic/unpic-img/commit/bdaae48f8a974a5625b10116dc1572f27f799f30))
+* **deps:** update dependency unpic to ^3.16.0 ([#413](https://github.com/ascorbic/unpic-img/issues/413)) ([c41e8cd](https://github.com/ascorbic/unpic-img/commit/c41e8cd2c3251906e627b711820afe30d25dd7a3))
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @unpic/core bumped to 0.0.42
+
 ## [0.0.42](https://github.com/ascorbic/unpic-img/compare/svelte-v0.0.41...svelte-v0.0.42) (2023-12-05)
 
 

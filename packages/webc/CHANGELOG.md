@@ -174,6 +174,20 @@
   * dependencies
     * @unpic/core bumped to 0.0.41
 
+## [0.0.35](https://github.com/ascorbic/unpic-img/compare/webc-v0.0.34...webc-v0.0.35) (2023-12-11)
+
+
+### Bug Fixes
+
+* **deps:** update dependency style-object-to-css-string to v1.1.3 ([#419](https://github.com/ascorbic/unpic-img/issues/419)) ([bdaae48](https://github.com/ascorbic/unpic-img/commit/bdaae48f8a974a5625b10116dc1572f27f799f30))
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @unpic/core bumped to 0.0.42
+
 ## [0.0.33](https://github.com/ascorbic/unpic-img/compare/webc-v0.0.32...webc-v0.0.33) (2023-11-16)
 
 

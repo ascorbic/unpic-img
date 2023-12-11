@@ -186,6 +186,20 @@
   * dependencies
     * @unpic/core bumped to 0.0.41
 
+## [0.0.37](https://github.com/ascorbic/unpic-img/compare/astro-v0.0.36...astro-v0.0.37) (2023-12-11)
+
+
+### Features
+
+* **astro:** support Astro 4 ([#414](https://github.com/ascorbic/unpic-img/issues/414)) ([7863e1f](https://github.com/ascorbic/unpic-img/commit/7863e1f7a173164cdedc4efa7d384671ee33d9ba))
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @unpic/core bumped to 0.0.42
+
 ## [0.0.30](https://github.com/ascorbic/unpic-img/compare/astro-v0.0.29...astro-v0.0.30) (2023-11-03)
 
 
