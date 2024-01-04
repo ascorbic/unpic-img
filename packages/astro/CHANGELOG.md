@@ -186,6 +186,13 @@
   * dependencies
     * @unpic/core bumped to 0.0.41
 
+## [0.0.38](https://github.com/ascorbic/unpic-img/compare/astro-v0.0.37...astro-v0.0.38) (2024-01-04)
+
+
+### Bug Fixes
+
+* ignore Astro types in index.ts ([#424](https://github.com/ascorbic/unpic-img/issues/424)) ([a5afc56](https://github.com/ascorbic/unpic-img/commit/a5afc56156e4f2d11ce0a5ce6aff6acb13677743))
+
 ## [0.0.37](https://github.com/ascorbic/unpic-img/compare/astro-v0.0.36...astro-v0.0.37) (2023-12-11)
 
 
