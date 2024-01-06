@@ -174,6 +174,13 @@
   * dependencies
     * @unpic/core bumped to 0.0.42
 
+## [0.0.42](https://github.com/ascorbic/unpic-img/compare/vue-v0.0.41...vue-v0.0.42) (2024-01-06)
+
+
+### Bug Fixes
+
+* **vue:** add transform to props list ([#437](https://github.com/ascorbic/unpic-img/issues/437)) ([0dae7c1](https://github.com/ascorbic/unpic-img/commit/0dae7c1e89632d4d0337b77db35e59ad434b5d40))
+
 ## [0.0.34](https://github.com/ascorbic/unpic-img/compare/vue-v0.0.33...vue-v0.0.34) (2023-11-03)
 
 
