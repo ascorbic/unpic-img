@@ -30,7 +30,7 @@
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "^17.0.0",
-    "@angular/cli": "~17.0.0",
+    "@angular/cli": "~17.1.0",
     "@angular/compiler-cli": "^17.0.1",
     "@angular/core": "^17.0.1",
     "ng-packagr": "^17.0.0",
