@@ -1,4 +1,7 @@
-import { defineConfig } from 'astro/config';
-
-// https://astro.build/config
-export default defineConfig({});
+import { defineConfig } from "astro/config";
+import { imageService } from "@unpic/astro/service";
+export default defineConfig({
+  image: {
+    service: imageService(),
+  },
+});

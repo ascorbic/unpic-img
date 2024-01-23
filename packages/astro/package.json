@@ -10,7 +10,8 @@
   },
   "homepage": "https://unpic.pics/img/astro",
   "exports": {
-    ".": "./index.ts"
+    ".": "./index.ts",
+    "./service": "./src/service.ts"
   },
   "files": [
     "src",
