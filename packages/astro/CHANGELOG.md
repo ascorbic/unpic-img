@@ -186,6 +186,20 @@
   * dependencies
     * @unpic/core bumped to 0.0.41
 
+## [0.0.39](https://github.com/ascorbic/unpic-img/compare/astro-v0.0.38...astro-v0.0.39) (2024-01-23)
+
+
+### Features
+
+* **astro:** add experimental image service ([#450](https://github.com/ascorbic/unpic-img/issues/450)) ([552f258](https://github.com/ascorbic/unpic-img/commit/552f258d7f18150087caeeecc28a512d002184db))
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @unpic/core bumped to 0.0.43
+
 ## [0.0.38](https://github.com/ascorbic/unpic-img/compare/astro-v0.0.37...astro-v0.0.38) (2024-01-04)
 
 

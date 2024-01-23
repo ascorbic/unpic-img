@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.0.43](https://github.com/ascorbic/unpic-img/compare/core-v0.0.42...core-v0.0.43) (2024-01-23)
+
+
+### Features
+
+* **astro:** add experimental image service ([#450](https://github.com/ascorbic/unpic-img/issues/450)) ([552f258](https://github.com/ascorbic/unpic-img/commit/552f258d7f18150087caeeecc28a512d002184db))
+
 ## [0.0.42](https://github.com/ascorbic/unpic-img/compare/core-v0.0.41...core-v0.0.42) (2023-12-11)
 
 
