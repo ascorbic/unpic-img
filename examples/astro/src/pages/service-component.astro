@@ -1,0 +1,31 @@
+---
+import { Image } from "astro:assets";
+import lighthouse from "../formentor.jpg";
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>Astro</title>
+  </head>
+  <body>
+    <div>
+      <Image src={lighthouse} alt="Lighthouse" width={600} />
+      <Image
+        src="https://images.unsplash.com/photo-1617718295766-0f839c2853e7"
+        alt=""
+        width={400}
+        height={300}
+      />
+      <Image
+        src="https://bunnyoptimizerdemo.b-cdn.net/bunny7.jpg?width=300"
+        width={400}
+        height={300}
+        alt="Bunny.net"
+      />
+    </div>
+  </body>
+</html>

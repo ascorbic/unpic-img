@@ -17,6 +17,12 @@ module.exports = {
     sourceType: "module",
   },
   plugins: ["@typescript-eslint"],
+  rules: {
+    "@typescript-eslint/no-unused-vars": [
+      "error",
+      { ignoreRestSiblings: true },
+    ],
+  },
   overrides: [
     {
       files: ["*.cjs"],
