@@ -156,6 +156,12 @@
   * dependencies
     * @unpic/core bumped to 0.0.43
 
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @unpic/core bumped to 0.0.44
+
 ## [0.1.3](https://github.com/ascorbic/unpic-img/compare/react-v0.1.2...react-v0.1.3) (2023-11-16)
 
 

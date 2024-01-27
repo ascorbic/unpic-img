@@ -186,6 +186,20 @@
   * dependencies
     * @unpic/core bumped to 0.0.41
 
+## [0.0.40](https://github.com/ascorbic/unpic-img/compare/astro-v0.0.39...astro-v0.0.40) (2024-01-27)
+
+
+### Features
+
+* **astro:** add support for placeholders ([#452](https://github.com/ascorbic/unpic-img/issues/452)) ([4dbff26](https://github.com/ascorbic/unpic-img/commit/4dbff2668a7aa5c6a861e08d6047d4af24de2e61))
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @unpic/core bumped to 0.0.44
+
 ## [0.0.39](https://github.com/ascorbic/unpic-img/compare/astro-v0.0.38...astro-v0.0.39) (2024-01-23)
 
 
