@@ -10,6 +10,10 @@ import HomeLayout from "../layouts/HomeLayout.astro";
   <div class="intro">
     <h2>🌳 Unpic</h2>
     <div class="body">The best images for <Scroller /></div>
+    <p>
+      Unpic is the ultimate open source toolkit for displaying images on the
+      web.
+    </p>
   </div>
   <div class="cards">
     <a href="/img">
@@ -39,7 +43,6 @@ import HomeLayout from "../layouts/HomeLayout.astro";
   .cards {
     display: grid;
     grid-template-columns: 1fr;
-    margin-top: 1rem;
   }
 
   .intro {
@@ -54,6 +57,7 @@ import HomeLayout from "../layouts/HomeLayout.astro";
   .body {
     font-size: 1.5rem;
     line-height: 1.5rem;
+    margin-bottom: 1rem;
   }
 
   .cards h2 {

@@ -1,7 +1,7 @@
 ---
 import HeadCommon from "../components/HeadCommon.astro";
 import HeadSEO from "../components/HeadSEO.astro";
-import {  SITE } from "../consts";
+import { SITE } from "../consts";
 
 type Props = {
   title: string;
@@ -48,6 +48,12 @@ const currentPage = Astro.url.pathname;
         height: 100%;
       }
 
+      footer {
+        text-align: center;
+        color: var(--theme-text-light);
+        font-size: 0.8rem;
+      }
+
       @media (min-width: 72em) {
         .layout {
           grid-template-columns: 20rem minmax(0, var(--max-width)) 20rem;
@@ -71,5 +77,10 @@ const currentPage = Astro.url.pathname;
         <slot />
       </div>
     </main>
+    <footer>
+      Unpic was created by <a href="https://mk.gg/">Matt Kane</a> © 2023-{
+        new Date().getFullYear()
+      }
+    </footer>
   </body>
 </html>
