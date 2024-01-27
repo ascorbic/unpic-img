@@ -1,6 +1,10 @@
 export type * from "./types.js";
 
-import { getCanonicalCdnForUrl, getTransformer } from "unpic";
+import {
+  UrlTransformerOptions,
+  getCanonicalCdnForUrl,
+  getTransformer,
+} from "unpic";
 import { parse } from "./mediaquery.js";
 
 import type {
@@ -171,10 +175,12 @@ export const getBreakpoints = ({
   return [];
 };
 
-/**
- * Generate an image srcset
- */
-export const getSrcSet = ({
+export type SrcSetOptions = Omit<ImageSourceOptions, "src"> & {
+  src: URL | string;
+  format?: string;
+};
+
+export const getSrcSetEntries = ({
   src,
   width,
   layout = "constrained",
@@ -184,9 +190,7 @@ export const getSrcSet = ({
   cdn,
   transformer,
   format,
-}: Omit<ImageSourceOptions, "src"> & { src: URL | string; format?: string }):
-  | string
-  | undefined => {
+}: SrcSetOptions): Array<UrlTransformerOptions> => {
   const canonical = getCanonicalCdnForUrl(src, cdn);
 
   if (canonical && !transformer) {
@@ -194,7 +198,7 @@ export const getSrcSet = ({
   }
 
   if (!transformer) {
-    return;
+    return [];
   }
   breakpoints ||= getBreakpoints({ width, layout });
   return breakpoints
@@ -204,18 +208,34 @@ export const getSrcSet = ({
       if (height && aspectRatio) {
         transformedHeight = Math.round(bp / aspectRatio);
       }
-      // Not sure why TS isn't narrowing the type here
-      // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-      const transformed = transformer!({
+      return {
         url: canonical ? canonical.url : src,
         width: bp,
         height: transformedHeight,
         format,
-      });
-      if (transformed) {
-        return `${transformed.toString()} ${bp}w`;
-      }
-      return "";
+      };
+    });
+};
+
+/**
+ * Generate an image srcset
+ */
+
+export const getSrcSet = (options: SrcSetOptions): string => {
+  let { src, cdn, transformer } = options;
+  const canonical = getCanonicalCdnForUrl(src, cdn);
+
+  if (canonical && !transformer) {
+    transformer = getTransformer(canonical.cdn);
+  }
+  if (!transformer) {
+    return "";
+  }
+
+  return getSrcSetEntries({ ...options, transformer })
+    .map((transform) => {
+      const url = transformer!(transform);
+      return `${url?.toString()} ${transform.width}w`;
     })
     .join(",\n");
 };

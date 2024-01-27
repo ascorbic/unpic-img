@@ -27,7 +27,10 @@
     "astro": "^4.0.0"
   },
   "dependencies": {
-    "@unpic/core": "workspace:^"
+    "@unpic/core": "workspace:^",
+    "@unpic/pixels": "^1.2.1",
+    "@unpic/placeholder": "^0.1.2",
+    "blurhash": "^2.0.5"
   },
   "peerDependencies": {
     "astro": "^2.0.0 || ^3.0.0 || ^4.0.0"

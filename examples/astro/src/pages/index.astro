@@ -1,5 +1,6 @@
 ---
 import { Image } from "@unpic/astro";
+import lighthouse from "../formentor.jpg";
 ---
 
 <html lang="en">
@@ -18,7 +19,7 @@ import { Image } from "@unpic/astro";
         alt=""
         priority
         height={400}
-        background="auto"
+        background="blurhash"
       />
       <Image
         src="https://cdn.shopify.com/static/sample-images/garnished.jpeg"
@@ -26,6 +27,15 @@ import { Image } from "@unpic/astro";
         width={800}
         height={600}
         alt="Shopify"
+        background="lqip"
+      />
+      <Image
+        src={lighthouse}
+        layout="constrained"
+        width={800}
+        height={600}
+        alt="Lighthouse"
+        background="#953c3c;"
       />
       <Image
         src="https://bunnyoptimizerdemo.b-cdn.net/bunny7.jpg?width=300"
@@ -33,6 +43,7 @@ import { Image } from "@unpic/astro";
         height={300}
         layout="fixed"
         alt="Bunny.net"
+        background="dominantColor"
       />
     </div>
   </body>

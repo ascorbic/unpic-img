@@ -1,9 +1,40 @@
 ---
-import { transformSourceProps, type UnpicSourceProps } from "@unpic/core";
+import {
+  inferImageDimensions,
+  transformSourceProps,
+  type UnpicSourceProps as UnpicBaseSourceProps,
+} from "@unpic/core";
+import { imageConfig } from "astro:assets";
+import type { UnpicConfig } from "./service";
+import { getDefaultImageCdn } from "./utils";
+
+export interface UnpicSourceProps extends Omit<UnpicBaseSourceProps, "src"> {
+  src: string | ImageMetadata;
+}
 
 type Props = UnpicSourceProps;
 
-const props: Props = Astro.props;
+const props = Astro.props as Props;
+
+let sourceProps: UnpicBaseSourceProps;
+
+if (typeof props.src === "object") {
+  sourceProps = {
+    ...props,
+    src: props.src.src,
+    ...inferImageDimensions(props, props.src),
+  } as UnpicBaseSourceProps;
+} else {
+  sourceProps = props as UnpicBaseSourceProps;
+}
+
+const config: UnpicConfig = imageConfig.service?.config;
+
+sourceProps.layout ||= config?.layout;
+
+if (!sourceProps.cdn) {
+  sourceProps.cdn = getDefaultImageCdn(config);
+}
 ---
 
-<source {...transformSourceProps(props)} />
+<source {...transformSourceProps(sourceProps)} />
