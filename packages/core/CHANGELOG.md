@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.0.44](https://github.com/ascorbic/unpic-img/compare/core-v0.0.43...core-v0.0.44) (2024-01-27)
+
+
+### Features
+
+* **astro:** add support for placeholders ([#452](https://github.com/ascorbic/unpic-img/issues/452)) ([4dbff26](https://github.com/ascorbic/unpic-img/commit/4dbff2668a7aa5c6a861e08d6047d4af24de2e61))
+
 ## [0.0.43](https://github.com/ascorbic/unpic-img/compare/core-v0.0.42...core-v0.0.43) (2024-01-23)
 
 
