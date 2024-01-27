@@ -1,0 +1,113 @@
+---
+import { Image } from "@unpic/astro";
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>Astro</title>
+  </head>
+  <body>
+    <div>
+      <figure>
+        <figcaption>background="dominantColor"</figcaption>
+        <Image
+          src="https://images.unsplash.com/photo-1617718295766-0f839c2853e7"
+          alt="dominantColor"
+          layout="fixed"
+          width={400}
+          height={300}
+          background="dominantColor"
+        />
+      </figure>
+      <figure>
+        <figcaption>background="blurhash"</figcaption>
+        <Image
+          src="https://images.unsplash.com/photo-1617718295766-0f839c2853e7"
+          alt="blurhash"
+          layout="fixed"
+          width={400}
+          height={300}
+          background="blurhash"
+        />
+      </figure>
+      <figure>
+        <figcaption>background="lqip"</figcaption>
+        <Image
+          src="https://images.unsplash.com/photo-1617718295766-0f839c2853e7"
+          alt="lqip"
+          layout="fixed"
+          width={400}
+          height={300}
+          background="lqip"
+        />
+      </figure>
+    </div>
+  </body>
+  <div>
+    <figure>
+      <figcaption>background="dominantColor"</figcaption>
+      <Image
+        src="https://cdn.shopify.com/static/sample-images/garnished.jpeg"
+        alt="dominantColor"
+        layout="fixed"
+        width={400}
+        height={300}
+        background="dominantColor"
+      />
+    </figure>
+    <figure>
+      <figcaption>background="blurhash"</figcaption>
+
+      <Image
+        src="https://cdn.shopify.com/static/sample-images/garnished.jpeg"
+        alt="blurhash"
+        layout="fixed"
+        width={400}
+        height={300}
+        background="blurhash"
+      />
+    </figure>
+    <figure>
+      <figcaption>background="lqip"</figcaption>
+      <Image
+        src="https://cdn.shopify.com/static/sample-images/garnished.jpeg"
+        alt="lqip"
+        layout="fixed"
+        width={400}
+        height={300}
+        background="lqip"
+      />
+    </figure>
+  </div>
+
+  <script>
+    document.querySelectorAll("img").forEach((img) => {
+      img.addEventListener("mouseover", () => {
+        img.setAttribute("data-src", img.src);
+        img.setAttribute("data-srcset", img.srcset);
+        img.src =
+          "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 300'%3E%3C/svg%3E";
+        img.removeAttribute("srcset");
+      });
+      img.addEventListener("mouseout", () => {
+        img.src = img.getAttribute("data-src")!;
+        img.srcset = img.getAttribute("data-srcset")!;
+      });
+    });
+  </script>
+  <style>
+    figure {
+      display: inline-block;
+      margin: 0;
+    }
+    figcaption {
+      font-family: "Courier New", Courier, monospace;
+      padding: 5px;
+      text-align: center;
+    }
+  </style>
+</html>

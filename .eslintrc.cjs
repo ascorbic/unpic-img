@@ -22,6 +22,12 @@ module.exports = {
       "error",
       { ignoreRestSiblings: true },
     ],
+    "prefer-const": [
+      "error",
+      {
+        destructuring: "all",
+      },
+    ],
   },
   overrides: [
     {
