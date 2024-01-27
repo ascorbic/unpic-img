@@ -13,14 +13,14 @@ import type { UnpicConfig } from "./service";
 import { getDefaultImageCdn } from "./utils";
 
 export interface UnpicProps
-  extends Omit<UnpicImageProps<HTMLAttributes<"img">>, "src" | "background"> {
-  background?: "none" | "blurhash" | "dominantColor" | "lqip" | ({} & string);
+  extends Omit<UnpicImageProps<HTMLAttributes<"img">>, "src"> {
+  placeholder?: "none" | "blurhash" | "dominantColor" | "lqip" | ({} & string);
   src: string | ImageMetadata;
 }
 
 type Props = UnpicProps;
 
-const props: Props = Astro.props;
+const { placeholder, ...props }: Props = Astro.props;
 
 let imgProps: UnpicImageProps<HTMLAttributes<"img">>;
 
@@ -31,13 +31,15 @@ if (typeof props.src === "object") {
     ...inferImageDimensions(props, props.src),
   } as UnpicImageProps<HTMLAttributes<"img">>;
 } else {
-  imgProps = props as UnpicImageProps<HTMLAttributes<"img">>;
+  imgProps = {
+    ...props,
+  } as UnpicImageProps<HTMLAttributes<"img">>;
 }
 
 const config: UnpicConfig = imageConfig.service?.config;
 
 imgProps.layout ||= config?.layout;
-imgProps.background ||= config?.background;
+imgProps.background ||= placeholder ?? config?.placeholder;
 
 if (!imgProps.cdn) {
   imgProps.cdn = getDefaultImageCdn(config);

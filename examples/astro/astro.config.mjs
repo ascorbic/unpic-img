@@ -3,7 +3,7 @@ import { imageService } from "@unpic/astro/service";
 export default defineConfig({
   image: {
     service: imageService({
-      background: "blurhash",
+      placeholder: "blurhash",
     }),
   },
 });

@@ -13,16 +13,19 @@ export interface UnpicConfig {
   fallbackService?: ImageCdn | "sharp" | "squoosh";
 
   /**
-   * The default background to use for images.
+   * The default placeholder background to use for images.
    * Can be "blurhash", "dominantColor", "lqip", a data URI or a CSS color string.
    * Local images don't support "blurhash", "dominantColor" or "lqip", and will
    * not include a background unless a data URI or CSS color string is provided.
    * Default is no background.
+   * Note that because the element uses no Javascript, the background will not
+   * be removed when the image loads, so you should not use it for images that
+   * have transparency.
    *
    * @see https://unpic.pics/placeholder
    */
   // eslint-disable-next-line @typescript-eslint/ban-types
-  background?: "blurhash" | "dominantColor" | "lqip" | (string & {});
+  placeholder?: "blurhash" | "dominantColor" | "lqip" | (string & {});
 
   /**
    * The default layout to use for images. Defaults to "constrained".
