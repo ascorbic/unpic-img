@@ -6,8 +6,11 @@ includeApi: true
 ---
 
 A high-performance, responsive image service and component library for
-[Astro](https://astro.build/). Automatically supports most image CDNs and CMSs
-with no build step needed.
+[Astro](https://astro.build/). Generates a responsive image that follows best
+practices, with the correct srcset and sizes. Detects image URLs from most image
+CDNs and CMSs and can resize images with no build step. Detects if you are
+hosting on a platform with a built-in image CDN and will use that for local
+images, and falls-back to the defaulr Astro image service.
 
 ## Installation and usage
 
@@ -33,10 +36,11 @@ the Unpic package for that framework. There are packages for [Lit](/img/lit),
 
 Unpic includes an Astro image service that can be used with the regular Astro
 `<Image>` component. If you enable the image service, then any `<Image>` will be
-automatically optimized and responsive. It will automatically detect the CDN or
-CMS you are using and generate the correct `srcset` and attributes for you, and
-for local images will use the built-in image CDN on Netlify and Vercel. All
-other images will be optimized using Astro's default sharp image service.
+automatically optimized and responsive, as well as anything else that uses
+`getImage`. It will automatically detect the CDN or CMS you are using and
+generate the correct `srcset` and attributes for you, and for local images will
+use the built-in image CDN on Netlify and Vercel. All other images will be
+optimized using Astro's default sharp image service.
 
 To enable the image service, add the following to your `astro.config.mjs` file:
 
@@ -87,10 +91,32 @@ export default defineConfig({
 });
 ```
 
+You can then use the regular Astro `<Image>` component, and it will behave like
+an `@unpic/astro` component.
+
+```astro
+---
+import { Image } from "astro:assets";
+// It works with local images too
+import lighthouse from "../lighthouse.jpg";
+---
+
+<Image src={lighthouse} width={800} height={600} alt="A lighthouse" />
+
+<Image
+  src="https://cdn.shopify.com/static/sample-images/bath.jpeg"
+  width={800}
+  height={600}
+  alt="A lovely bath"
+/>
+```
+
 ### `Image` component
 
-In almost all cases you can just use the `Image` component, which will generate
-an optimized, responsive image for you with automatic format detection.
+In almost all cases you can just use the Unpic `Image` component, which will
+generate an optimized, responsive image for you with automatic format detection.
+It has more options than the Astro `Image` component, so if you have the choice
+it is recommended to use this component.
 
 ```astro
 ---
