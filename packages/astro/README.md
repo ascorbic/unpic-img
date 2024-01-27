@@ -1,8 +1,17 @@
 # `@unpic/astro` 🖼 📐
 
-A high-performance, responsive image component for
+A high-performance, responsive image service and component library for
 [Astro](https://astro.build/). Automatically supports most image CDNs and CMSs
 with no build step needed.
+
+`@unpic/astro` has two parts, which can be used independently but work best
+together:
+
+- A **component library** which provides a `<Image>` component and a `<Source>`
+  component for art direction.
+- An **Astro image service**, which allows you to use the regular Astro Image
+  component unchanged, and have it automatically generate the correct srcset and
+  attributes for all images.
 
 ## Features
 
@@ -17,9 +26,9 @@ with no build step needed.
   browser
 - No built step or server-side rendering required: uses your existing image CDN
   or CMS, with no additional configuration
-- Uses [unpic](https://github.com/ascorbic/unpic) to support most image CDNs,
-  including Cloudinary, Imgix, and Shopify
-- Can generate a low-res background image for a blurred placeholder effect
+- Supports most image CDNs and headless CMSs, including Cloudinary, Contentful,
+  Imgix, and Shopify
+- Generates image placeholders to display while images are loading.
 
 ## Installation and usage
 
