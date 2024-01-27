@@ -69,6 +69,24 @@ available:
 These defaults will be used for `@unpic/astro` components and Astro Image
 components, but not for components from other UI frameworks.
 
+This is how you would set the options:
+
+```js
+import { defineConfig } from "astro/config";
+import { imageService } from "@unpic/astro/service";
+export default defineConfig({
+  image: {
+    service: imageService({
+      // This can usually be auto-detected
+      fallbackService: "netlify",
+      placeholder: "blurhash",
+      // This is the default
+      layout: "constrained",
+    }),
+  },
+});
+```
+
 ### `Image` component
 
 In almost all cases you can just use the `Image` component, which will generate
@@ -80,7 +98,7 @@ import { Image } from "@unpic/astro";
 ---
 
 <Image
-  src="https://cdn.shopify.com/static/sample-images/bath_grande_crop_center.jpeg"
+  src="https://cdn.shopify.com/static/sample-images/bath.jpeg"
   layout="constrained"
   width={800}
   height={600}
@@ -178,10 +196,10 @@ import { Source } from "@unpic/astro";
 ### Placeholders
 
 Unpic can generate a placeholder that is used as a background while the image is
-loading. This looks better than a load of white boxes, and gives a better
-experience for the user. You can either set a static color or CSS value, or use
-one of the placeholder generation options. These are generated at build time by
-downloading and analysing a small version of the image. There are several
+loading. This looks better than a white boxe, and can improve the site's LCP
+score. You can either set a static color or CSS value, or for remote images you
+use one of the placeholder generation options. These are generated at build time
+by downloading and analysing a small version of the image. There are several
 supported values:
 
 - `dominantColor`: The image will analysed and to find the dominant color, and a
@@ -201,4 +219,6 @@ To use a placeholder, set the `placeholder` prop on the `<Image>` or `<Source>`,
 or set the `placeholder` option on the image service.
 
 > Please note that placeholders are currently only supported for Astro
-> components and not for components from other UI frameworks.
+> components and not for components from other UI frameworks. They also cannot
+> be used for local images - in this case they will be ignored and no background
+> will be shown.
