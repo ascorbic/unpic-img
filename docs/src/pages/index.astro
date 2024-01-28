@@ -1,6 +1,7 @@
 ---
 import Scroller from "../components/Scroller.astro";
 import HomeLayout from "../layouts/HomeLayout.astro";
+import { Icon } from "astro-icon";
 ---
 
 <HomeLayout
@@ -14,6 +15,9 @@ import HomeLayout from "../layouts/HomeLayout.astro";
       Unpic is the ultimate open source toolkit for displaying images on the
       web.
     </p>
+    <a href="/about" class="button"
+      >Get started <Icon name="ph:arrow-right-bold" size={18} /></a
+    >
   </div>
   <div class="cards">
     <a href="/img">
@@ -40,6 +44,22 @@ import HomeLayout from "../layouts/HomeLayout.astro";
 </HomeLayout>
 
 <style>
+  .button {
+    display: inline-flex;
+    margin-top: 1.5rem;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    border: 3px white solid;
+    color: white;
+    text-decoration: none;
+    transition: all 0.3s ease;
+  }
+
+  .button:hover {
+    background: white;
+    color: black;
+  }
+
   .cards {
     display: grid;
     grid-template-columns: 1fr;
