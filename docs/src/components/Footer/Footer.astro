@@ -1,15 +1,12 @@
 ---
-import AvatarList from "./AvatarList.astro";
 type Props = {
   path: string;
 };
-const { path } = Astro.props;
 const currentYear = new Date().getFullYear();
 ---
 
 <footer>
-  <AvatarList path={path} />Created by <a href="https://mk.gg">Matt Kane</a>. ©
-  2023-{currentYear}
+  Created by <a href="https://mk.gg">Matt Kane</a>. © 2023-{currentYear}
 </footer>
 
 <style>

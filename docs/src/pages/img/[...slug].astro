@@ -1,6 +1,6 @@
 ---
 import { type CollectionEntry, getCollection } from "astro:content";
-import MainLayout from "../../layouts/MainLayout.astro";
+import DocsLayout from "../../layouts/DocsLayout.astro";
 import { Content as Api, getHeadings } from "../../api.md";
 
 export async function getStaticPaths() {
@@ -19,7 +19,7 @@ const { Content, headings } = await post.render();
 const apiHeadings = post.data.includeApi ? await getHeadings() : [];
 ---
 
-<MainLayout headings={[...headings, ...apiHeadings]} {...post.data}>
+<DocsLayout headings={[...headings, ...apiHeadings]} {...post.data}>
   <Content />
   {post.data.includeApi ? <Api /> : null}
-</MainLayout>
+</DocsLayout>

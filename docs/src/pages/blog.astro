@@ -1,0 +1,83 @@
+---
+import { getCollection } from "astro:content";
+import { Image } from "@unpic/astro";
+import MainLayout from "../layouts/MainLayout.astro";
+import LeftSidebar from "../components/LeftSidebar/LeftSidebar.astro";
+
+const entries = (await getCollection("blog")).sort(
+  (a, b) => b.data.publishDate.valueOf() - a.data.publishDate.valueOf(),
+);
+const currentPage = Astro.url.pathname;
+---
+
+<MainLayout title="Blog">
+  <LeftSidebar slot="left-sidebar" currentPage={currentPage} />
+
+  <main slot="main" class="content">
+    <h1>Blog</h1>
+    {
+      entries.map((entry) => (
+        <section class="blog-entry">
+          {entry.data.image ? (
+            <Image
+              class="bg-image"
+              src={entry.data.image}
+              alt={entry.data.image_alt}
+              width={700}
+              aspectRatio={2.5 / 1}
+            />
+          ) : null}
+          <a href={`/blog/${entry.slug}`} class="blog-info">
+            <h2>{entry.data.title}</h2>
+            <p>{entry.data.publishDate.toDateString()}</p>
+          </a>
+        </section>
+      ))
+    }
+  </main>
+</MainLayout>
+<style>
+  .blog-entry {
+    display: grid;
+  }
+  .bg-image {
+    grid-area: 1 / 1 / 2 / 2;
+  }
+  a:link.blog-info,
+  a:visited.blog-info {
+    grid-area: 1 / 1 / 2 / 2;
+    text-decoration: none;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-end;
+    color: white;
+  }
+
+  .blog-info p {
+    color: #ccc;
+  }
+
+  .blog-info h2 {
+    font-weight: 400;
+    margin: 0;
+  }
+
+  .content {
+    padding: 0;
+    max-width: 75ch;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .content > section {
+    margin-bottom: 2rem;
+  }
+
+  .block {
+    display: block;
+  }
+</style>

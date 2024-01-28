@@ -1,0 +1,17 @@
+---
+import type { CollectionEntry } from "astro:content";
+import BlogContent from "../components/BlogContent/BlogContent.astro";
+import LeftSidebar from "../components/LeftSidebar/LeftSidebar.astro";
+import MainLayout from "./MainLayout.astro";
+
+type Props = CollectionEntry<"blog">["data"];
+const data = Astro.props;
+const currentPage = Astro.url.pathname;
+---
+
+<MainLayout title={data.title}>
+  <LeftSidebar slot="left-sidebar" currentPage={currentPage} />
+  <BlogContent slot="main" {...data}>
+    <slot />
+  </BlogContent>
+</MainLayout>
