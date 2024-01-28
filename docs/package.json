@@ -14,6 +14,7 @@
     "@astrojs/mdx": "^1.1.1",
     "@astrojs/preact": "^3.0.0",
     "@astrojs/react": "^3.0.2",
+    "@astrojs/rss": "^4.0.4",
     "@astrojs/sitemap": "^3.0.0",
     "@docsearch/css": "^3.5.1",
     "@docsearch/react": "^3.5.1",
