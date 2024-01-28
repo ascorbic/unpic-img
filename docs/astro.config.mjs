@@ -3,9 +3,14 @@ import preact from "@astrojs/preact";
 import react from "@astrojs/react";
 import mdx from "@astrojs/mdx";
 import sitemap from "@astrojs/sitemap";
-
+import { imageService } from "@unpic/astro/service";
 // https://astro.build/config
 export default defineConfig({
+  image: {
+    service: imageService({
+      placeholder: "blurhash",
+    }),
+  },
   integrations: [
     // Enable Preact to support Preact JSX components.
     preact({

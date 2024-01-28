@@ -31,9 +31,12 @@ export type Sidebar = Record<
 >;
 
 export const SIDEBAR: Sidebar = {
-  "unpic-img": [
-    { text: "Introduction", link: "img" },
-    { text: "Learn Unpic", link: "img/learn" },
+  about: [
+    { text: "Introduction", link: "about" },
+    { text: "Learn Unpic", link: "learn" },
+    { text: "Blog", link: "blog" },
+  ],
+  frameworks: [
     { icon: "logos:angular-icon", text: "Angular", link: "img/angular" },
     { icon: "simple-icons:astro", text: "Astro", link: "img/astro" },
     { icon: "logos:lit-icon", text: "Lit", link: "img/lit" },
@@ -45,7 +48,7 @@ export const SIDEBAR: Sidebar = {
     { icon: "logos:vue", text: "Vue", link: "img/vue" },
     { icon: "eleventy", text: "WebC", link: "img/webc" },
   ],
-  placeholder: [
+  "unpic placeholder": [
     { text: "Docs", link: "placeholder" },
     { text: "Playground", link: "placeholder/playground" },
   ],
@@ -53,7 +56,7 @@ export const SIDEBAR: Sidebar = {
     { text: "Docs", link: "lib" },
     { text: "Contributing", link: "lib/contributing" },
   ],
-  pixels: [
+  "unpic pixels": [
     { icon: "logos:deno", text: "Deno", link: "pixels/deno" },
     { icon: "cib:node-js", text: "Node", link: "pixels/node" },
   ],

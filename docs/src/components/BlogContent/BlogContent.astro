@@ -1,0 +1,46 @@
+---
+import { Image } from "@unpic/astro";
+
+type Props = {
+  title: string;
+  publishDate: Date;
+  description: string;
+  image?: string;
+  image_alt?: string;
+};
+
+const { title, publishDate, image, image_alt } = Astro.props;
+---
+
+<article id="article" class="content">
+  <section class="main-section">
+    {image ? <Image src={image} alt={image_alt} width={700} aspectRatio={16/9} /> : null}
+    <h1 class="content-title" id="overview">{title}</h1>
+    <p class="date">{publishDate.toDateString()}</p>
+    <slot />
+  </section>
+</article>
+
+<style>
+  .content {
+    padding: 0;
+    max-width: 75ch;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  p.date {
+    color: #888;
+  }
+
+  .content > section {
+    margin-bottom: 4rem;
+  }
+
+  .block {
+    display: block;
+  }
+
+</style>

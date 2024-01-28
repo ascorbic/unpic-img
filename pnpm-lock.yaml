@@ -99,6 +99,9 @@ importers:
       '@types/react-dom':
         specifier: ^18.2.14
         version: 18.2.15
+      '@unpic/astro':
+        specifier: workspace:^
+        version: link:../packages/astro
       '@unpic/placeholder':
         specifier: ^0.1.2
         version: 0.1.2

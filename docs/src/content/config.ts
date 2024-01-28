@@ -18,4 +18,14 @@ const docs = defineCollection({
   }),
 });
 
-export const collections = { docs, img: docs };
+const blog = defineCollection({
+  schema: z.object({
+    title: z.string(),
+    description: z.string(),
+    publishDate: z.coerce.date(),
+    image: z.string().optional(),
+    image_alt: z.string().optional(),
+  }),
+});
+
+export const collections = { docs, img: docs, blog };

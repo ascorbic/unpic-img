@@ -1,33 +1,42 @@
 ---
 import type { MarkdownHeading } from "astro";
-import type { CollectionEntry } from "astro:content";
 import HeadCommon from "../components/HeadCommon.astro";
-import HeadSEO from "../components/HeadSEO.astro";
 import Header from "../components/Header/Header.astro";
-import PageContent from "../components/PageContent/PageContent.astro";
-import LeftSidebar from "../components/LeftSidebar/LeftSidebar.astro";
-import RightSidebar from "../components/RightSidebar/RightSidebar.astro";
 import Footer from "../components/Footer/Footer.astro";
 import { GITHUB_EDIT_URL, SITE } from "../consts";
 
-type Props = CollectionEntry<"docs">["data"] & {
-  headings: MarkdownHeading[];
+type Props = {
+  title: string;
 };
 
-const { headings, ...data } = Astro.props;
-const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+const { title } = Astro.props;
 const currentPage = Astro.url.pathname;
 const currentFile = `src/content/docs${currentPage.replace(/\/$/, "")}.md`;
-const githubEditUrl = `${GITHUB_EDIT_URL}/${currentFile}`;
 ---
 
 <html dir="ltr" lang="en" class="initial">
   <head>
     <HeadCommon />
-    <HeadSEO {...data} canonicalUrl={canonicalURL} />
+    <slot name="head" />
     <title>
-      {`${data.title} – ${SITE.title}`}
+      {`${title} – ${SITE.title}`}
     </title>
+  </head>
+
+  <body>
+    <Header currentPage={currentPage} />
+    <main class="layout">
+      <aside id="grid-left" class="grid-sidebar" title="Site Navigation">
+        <slot name="left-sidebar" />
+      </aside>
+      <div id="grid-main">
+        <slot name="main" />
+      </div>
+      <aside id="grid-right" class="grid-sidebar" title="Table of Contents">
+        <slot name="right-sidebar" />
+      </aside>
+    </main>
+    <Footer path={currentFile} />
     <style>
       body {
         width: 100%;
@@ -116,28 +125,5 @@ const githubEditUrl = `${GITHUB_EDIT_URL}/${currentFile}`;
         top: 2rem;
       }
     </style>
-  </head>
-
-  <body>
-    <Header currentPage={currentPage} />
-    <main class="layout">
-      <aside id="grid-left" class="grid-sidebar" title="Site Navigation">
-        <LeftSidebar currentPage={currentPage} />
-      </aside>
-      <div id="grid-main">
-        <PageContent
-          title={data.title}
-          headings={headings}
-          githubEditUrl={githubEditUrl}
-          githubRepo={data.githubRepo}
-        >
-          <slot />
-        </PageContent>
-      </div>
-      <aside id="grid-right" class="grid-sidebar" title="Table of Contents">
-        <RightSidebar headings={headings} githubEditUrl={githubEditUrl} />
-      </aside>
-    </main>
-    <Footer path={currentFile} />
   </body>
 </html>

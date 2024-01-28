@@ -21,6 +21,7 @@
     "@types/node": "^20.0.0",
     "@types/react": "^18.2.34",
     "@types/react-dom": "^18.2.14",
+    "@unpic/astro": "workspace:^",
     "@unpic/placeholder": "^0.1.2",
     "@unpic/react": "workspace:^",
     "astro": "^4.0.0",
