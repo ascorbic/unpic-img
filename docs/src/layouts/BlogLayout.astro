@@ -3,15 +3,24 @@ import type { CollectionEntry } from "astro:content";
 import BlogContent from "../components/BlogContent/BlogContent.astro";
 import LeftSidebar from "../components/LeftSidebar/LeftSidebar.astro";
 import MainLayout from "./MainLayout.astro";
+import RightSidebar from "../components/RightSidebar/RightSidebar.astro";
+import type { MarkdownHeading } from "astro";
+import BlogSEO from "../components/BlogSEO.astro";
 
-type Props = CollectionEntry<"blog">["data"];
-const data = Astro.props;
+type Props = CollectionEntry<"blog">["data"] & {
+  headings: MarkdownHeading[];
+};
+const { headings, ...data } = Astro.props;
 const currentPage = Astro.url.pathname;
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 ---
 
 <MainLayout title={data.title}>
+  <BlogSEO slot="head" {...data} canonicalUrl={canonicalURL} />
+
   <LeftSidebar slot="left-sidebar" currentPage={currentPage} />
   <BlogContent slot="main" {...data}>
     <slot />
   </BlogContent>
+  <RightSidebar slot="right-sidebar" headings={headings} />
 </MainLayout>
