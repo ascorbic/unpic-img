@@ -180,6 +180,13 @@
   * dependencies
     * @unpic/core bumped to 0.0.44
 
+## [0.0.44](https://github.com/ascorbic/unpic-img/compare/solid-v0.0.43...solid-v0.0.44) (2024-01-28)
+
+
+### Bug Fixes
+
+* updates to package.json ([#459](https://github.com/ascorbic/unpic-img/issues/459)) ([3cefa3c](https://github.com/ascorbic/unpic-img/commit/3cefa3c23311b2f352db41665dc075b74247aa8c))
+
 ## [0.0.36](https://github.com/ascorbic/unpic-img/compare/solid-v0.0.35...solid-v0.0.36) (2023-11-13)
 
 

@@ -1,6 +1,6 @@
 {
   "name": "@unpic/vue",
-  "version": "0.0.44",
+  "version": "0.0.45",
   "type": "module",
   "license": "MIT",
   "description": "Vue component for responsive, high-performance images.",
