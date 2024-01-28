@@ -25,6 +25,7 @@ export const CodeEditor: React.FC<CodeEditorProps> = ({
             position: "absolute",
             transform: "translateX(8px)",
             background: "#98C379",
+            color: "black",
             zIndex: 100,
             padding: "0 1em",
             fontSize: "80%",
@@ -48,6 +49,7 @@ export const CodeEditor: React.FC<CodeEditorProps> = ({
               position: "absolute",
               transform: "translateX(8px)",
               background: "#98C379",
+              color: "black",
               zIndex: 100,
               padding: "0 1em",
               fontSize: "80%",
@@ -62,6 +64,7 @@ export const CodeEditor: React.FC<CodeEditorProps> = ({
               gap: "1em",
               overflow: "initial",
               paddingBottom: "0.5em",
+              background: "white",
             }}
           />
         </div>
