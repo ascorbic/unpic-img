@@ -2,6 +2,11 @@
   "name": "@unpic/svelte",
   "version": "0.0.45",
   "license": "MIT",
+  "description": "Svelte component for responsive, high-performance images.",
+  "keywords": [
+    "images",
+    "svelte"
+  ],
   "repository": {
     "type": "git",
     "url": "https://github.com/ascorbic/unpic-img",

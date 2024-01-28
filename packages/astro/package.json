@@ -3,6 +3,7 @@
   "version": "0.0.40",
   "type": "module",
   "license": "MIT",
+  "description": "A high-performance, responsive image service and component library for Astro",
   "repository": {
     "type": "git",
     "url": "https://github.com/ascorbic/unpic-img",
@@ -18,7 +19,10 @@
     "index.ts"
   ],
   "keywords": [
-    "astro"
+    "astro",
+    "withastro",
+    "images",
+    "astro-component"
   ],
   "scripts": {
     "format": "prettier --write ."

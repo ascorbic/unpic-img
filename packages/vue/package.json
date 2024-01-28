@@ -3,6 +3,11 @@
   "version": "0.0.44",
   "type": "module",
   "license": "MIT",
+  "description": "Vue component for responsive, high-performance images.",
+  "keywords": [
+    "images",
+    "vue"
+  ],
   "repository": {
     "type": "git",
     "url": "https://github.com/ascorbic/unpic-img",

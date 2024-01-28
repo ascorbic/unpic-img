@@ -2,6 +2,11 @@
   "name": "@unpic/preact",
   "version": "0.0.38",
   "license": "MIT",
+  "description": "A high-performance, responsive, accessible image component for Preact",
+  "keywords": [
+    "images",
+    "preact"
+  ],
   "repository": {
     "type": "git",
     "url": "https://github.com/ascorbic/unpic-img",
