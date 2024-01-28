@@ -1,6 +1,6 @@
 {
   "name": "@unpic/svelte",
-  "version": "0.0.45",
+  "version": "0.0.46",
   "license": "MIT",
   "description": "Svelte component for responsive, high-performance images.",
   "keywords": [

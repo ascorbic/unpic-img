@@ -162,6 +162,13 @@
   * dependencies
     * @unpic/core bumped to 0.0.44
 
+## [0.1.8](https://github.com/ascorbic/unpic-img/compare/react-v0.1.7...react-v0.1.8) (2024-01-28)
+
+
+### Bug Fixes
+
+* updates to package.json ([#459](https://github.com/ascorbic/unpic-img/issues/459)) ([3cefa3c](https://github.com/ascorbic/unpic-img/commit/3cefa3c23311b2f352db41665dc075b74247aa8c))
+
 ## [0.1.3](https://github.com/ascorbic/unpic-img/compare/react-v0.1.2...react-v0.1.3) (2023-11-16)
 
 
