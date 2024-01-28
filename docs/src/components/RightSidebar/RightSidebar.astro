@@ -2,10 +2,11 @@
 import type { MarkdownHeading } from "astro";
 import TableOfContents from "./TableOfContents";
 import MoreMenu from "./MoreMenu.astro";
+import Icon from "astro-icon";
 
 type Props = {
   headings: MarkdownHeading[];
-  githubEditUrl: string;
+  githubEditUrl?: string;
 };
 
 const { headings, githubEditUrl } = Astro.props;
@@ -24,10 +25,18 @@ const { headings, githubEditUrl } = Astro.props;
     >
       Star
     </a>
+    <a href="/rss.xml" class="rss">
+      <Icon title="RSS" name="mdi:rss" size="24" /> RSS
+    </a>
   </div>
 </nav>
 
 <style>
+  a:link.rss,
+  a:visited.rss {
+    display: flex;
+    color: inherit;
+  }
   .sidebar-nav {
     width: 100%;
     position: sticky;
