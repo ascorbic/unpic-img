@@ -2,6 +2,11 @@
   "version": "0.0.43",
   "name": "@unpic/solid",
   "description": "SolidJS component for responsive, high-performance images.",
+  "keywords": [
+    "images",
+    "solid",
+    "solidjs"
+  ],
   "license": "MIT",
   "repository": {
     "type": "git",
@@ -85,9 +90,6 @@
     "vite-plugin-solid": "^2.7.0",
     "vitest": "^1.0.2"
   },
-  "keywords": [
-    "solid"
-  ],
   "dependencies": {
     "@unpic/core": "workspace:^"
   },

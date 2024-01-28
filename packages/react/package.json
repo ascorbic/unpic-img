@@ -2,6 +2,11 @@
   "name": "@unpic/react",
   "version": "0.1.7",
   "license": "MIT",
+  "description": "React component for responsive, high-performance images",
+  "keywords": [
+    "images",
+    "react"
+  ],
   "repository": {
     "type": "git",
     "url": "https://github.com/ascorbic/unpic-img",
