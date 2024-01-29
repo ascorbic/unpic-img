@@ -6,11 +6,11 @@ includeApi: true
 ---
 
 A high-performance, responsive image service and component library for
-[Astro](https://astro.build/). Generates a responsive image that follows best
-practices, with the correct srcset and sizes. Detects image URLs from most image
-CDNs and CMSs and can resize images with no build step. Detects if you are
-hosting on a platform with a built-in image CDN and will use that for local
-images, and falls-back to the defaulr Astro image service.
+[Astro](https://astro.build/). Generates a responsive `<img>` tag that follows
+best practices, with the correct srcset, sizes and styles. Detects image URLs
+from most image CDNs and CMSs and can resize images with no build step. Detects
+if you are hosting on a platform with a built-in image CDN and will use that for
+local images, and falls-back to the default Astro image service.
 
 ## Installation and usage
 

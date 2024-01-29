@@ -1,6 +1,15 @@
-# `@unpic/webc` 🖼 📐
+<div align="center">
+
+![tree](https://unpic.pics/.netlify/images?url=tree.png&h=48)
+
+# @unpic/webc
+
+</div>
 
 WebC component for responsive, high-performance images. Perfect for Eleventy.
+Generates a responsive `<img>` tag that follows best practices, with the correct
+srcset, sizes and styles. Detects image URLs from most image CDNs and CMSs and
+can resize images with no build step.
 
 ## Features
 

@@ -1,6 +1,15 @@
-# `@unpic/preact` 🖼 📐
+<div align="center">
 
-Preact component for responsive, high-performance images.
+![tree](https://unpic.pics/.netlify/images?url=tree.png&h=48)
+
+# @unpic/preact
+
+</div>
+
+Preact component for responsive, high-performance images. Generates a responsive
+`<img>` tag that follows best practices, with the correct srcset, sizes and
+styles. Detects image URLs from most image CDNs and CMSs and can resize images
+with no build step.
 
 ## Features
 
