@@ -6,7 +6,9 @@ includeApi: true
 ---
 
 A high-performance, responsive image component for
-[SolidJS](https://solidjs.com/).
+[SolidJS](https://solidjs.com/). Generates a responsive `<img>` tag that follows
+best practices, with the correct srcset, sizes and styles. Detects image URLs
+from most image CDNs and CMSs and can resize images with no build step.
 
 ## Installation and usage
 

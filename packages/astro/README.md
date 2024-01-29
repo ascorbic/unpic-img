@@ -1,8 +1,15 @@
-# `@unpic/astro` 🖼 📐
+<div align="center">
+
+![tree](https://unpic.pics/.netlify/images?url=tree.png&h=48)
+
+# @unpic/astro
+
+</div>
 
 A high-performance, responsive image service and component library for
-[Astro](https://astro.build/). Automatically supports most image CDNs and CMSs
-with no build step needed.
+[Astro](https://astro.build/). Generates a responsive `<img>` tag that follows
+best practices, with the correct srcset, sizes and styles. Detects image URLs
+from most image CDNs and CMSs and can resize images with no build step.
 
 `@unpic/astro` has two parts, which can be used independently but work best
 together:

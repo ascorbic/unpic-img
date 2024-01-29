@@ -3,7 +3,8 @@ import { SITE } from "../../consts";
 import SkipToContent from "./SkipToContent.astro";
 import SidebarToggle from "./SidebarToggle";
 import Search from "./Search";
-
+import { Image } from "@unpic/astro";
+import tree from "../../tree.png";
 type Props = {
   currentPage: string;
   hideMenu?: boolean;
@@ -24,7 +25,14 @@ const { hideMenu } = Astro.props;
     }
     <div class="logo flex">
       <a href="/">
-        🌳
+        <Image
+          src={tree}
+          layout="fixed"
+          background="none"
+          alt="tree"
+          width={40}
+          height={35}
+        />
         <h1>{SITE.title ?? "Documentation"}</h1>
       </a>
     </div>

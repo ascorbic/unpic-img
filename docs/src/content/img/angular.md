@@ -5,7 +5,10 @@ githubRepo: "ascorbic/unpic-img"
 includeApi: true
 ---
 
-Angular directive for responsive, high-performance images.
+Angular directive for responsive, high-performance images. Generates a
+responsive `<img>` tag that follows best practices, with the correct srcset,
+sizes and styles. Detects image URLs from most image CDNs and CMSs and can
+resize images with no build step.
 
 ## Installation and usage
 
