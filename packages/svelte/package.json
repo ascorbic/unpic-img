@@ -24,7 +24,7 @@
     "prepublishOnly": "pnpm build"
   },
   "devDependencies": {
-    "@sveltejs/adapter-auto": "^2.1.1",
+    "@sveltejs/adapter-auto": "^3.0.0",
     "@sveltejs/kit": "^1.27.7",
     "@sveltejs/package": "^2.2.3",
     "prettier": "^3.0.3",
