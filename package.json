@@ -12,22 +12,22 @@
     "unpic": "^3.16.0"
   },
   "devDependencies": {
-    "@testing-library/dom": "^9.3.1",
-    "@testing-library/svelte": "^4.0.3",
-    "@typescript-eslint/eslint-plugin": "^6.0.0",
-    "@typescript-eslint/parser": "^6.0.0",
+    "@testing-library/dom": "^9.3.4",
+    "@testing-library/svelte": "^4.1.0",
+    "@typescript-eslint/eslint-plugin": "^6.20.0",
+    "@typescript-eslint/parser": "^6.20.0",
     "@unpic/core": "workspace:^",
-    "eslint": "^8.43.0",
-    "eslint-config-prettier": "^9.0.0",
-    "jsdom": "^22.0.0",
-    "npm-run-all2": "^5.0.0",
-    "prettier": "^3.0.3",
+    "eslint": "^8.56.0",
+    "eslint-config-prettier": "^9.1.0",
+    "jsdom": "^22.1.0",
+    "npm-run-all2": "^5.0.2",
+    "prettier": "^3.2.4",
     "prettier-plugin-astro": "^0.13.0",
     "process": "^0.11.10",
-    "publint": "^0.2.0",
-    "typescript": "^5.2.2",
-    "vite": "^4.3.9",
-    "vitest": "^1.0.2"
+    "publint": "^0.2.7",
+    "typescript": "^5.3.3",
+    "vite": "^4.5.2",
+    "vitest": "^1.2.2"
   },
   "resolutions": {
     "cssstyle": "^3.0.0"

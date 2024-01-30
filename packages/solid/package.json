@@ -77,18 +77,18 @@
     "solid-js": "^1.6.0"
   },
   "devDependencies": {
+    "@solidjs/testing-library": "^0.8.6",
     "esbuild": "^0.20.0",
     "esbuild-plugin-solid": "^0.5.0",
-    "jsdom": "^22.0.0",
-    "prettier": "^3.0.3",
-    "solid-js": "^1.7.6",
-    "solid-testing-library": "^0.5.1",
+    "jsdom": "^22.1.0",
+    "prettier": "^3.2.4",
+    "solid-js": "^1.8.12",
     "tsup": "^7.2.0",
-    "tsup-preset-solid": "^2.0.0",
-    "typescript": "^5.2.2",
-    "vite": "^4.3.9",
-    "vite-plugin-solid": "^2.7.0",
-    "vitest": "^1.0.2"
+    "tsup-preset-solid": "^2.2.0",
+    "typescript": "^5.3.3",
+    "vite": "^4.5.2",
+    "vite-plugin-solid": "^2.9.1",
+    "vitest": "^1.2.2"
   },
   "dependencies": {
     "@unpic/core": "workspace:^"

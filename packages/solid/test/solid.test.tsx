@@ -1,5 +1,5 @@
-import { describe, test, expect } from "vitest";
-import { render, screen } from "solid-testing-library";
+import { describe, test, expect, afterEach } from "vitest";
+import { render, screen, cleanup } from "@solidjs/testing-library";
 import { Image, Source } from "../src";
 import {
   expectImagePropsToMatchTransformed,
@@ -9,6 +9,9 @@ import {
 } from "../../../test/test-helpers";
 
 describe("the Solid component", () => {
+  afterEach(() => {
+    cleanup();
+  });
   for (const props of imgTestCases) {
     test(`renders a ${props.layout} image`, () => {
       render(() => <Image {...props} />);

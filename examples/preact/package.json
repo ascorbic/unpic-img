@@ -15,12 +15,12 @@
     "@impalajs/core": "^0.0.12",
     "@impalajs/preact": "^0.0.12",
     "@unpic/preact": "workspace:^",
-    "preact": "^10.18.0"
+    "preact": "^10.19.3"
   },
   "devDependencies": {
-    "@babel/core": "^7.0.0-0",
-    "@preact/preset-vite": "^2.5.0",
-    "typescript": "^5.2.2",
-    "vite": "^4.4.9"
+    "@babel/core": "^7.23.9",
+    "@preact/preset-vite": "^2.8.1",
+    "typescript": "^5.3.3",
+    "vite": "^4.5.2"
   }
 }
