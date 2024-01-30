@@ -18,7 +18,7 @@
   },
   "devDependencies": {
     "tsup": "^7.2.0",
-    "vitest": "^1.0.2"
+    "vitest": "^1.2.2"
   },
   "dependencies": {
     "unpic": "^3.16.0"

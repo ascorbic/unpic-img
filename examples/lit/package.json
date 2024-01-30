@@ -11,13 +11,13 @@
   "author": "",
   "license": "MIT",
   "devDependencies": {
-    "parcel": "^2.9.2"
+    "parcel": "^2.11.0"
   },
   "browserslist": [
     "Chrome > 50"
   ],
   "dependencies": {
     "@unpic/lit": "workspace:^",
-    "lit": "^2.7.5"
+    "lit": "^2.8.0"
   }
 }
