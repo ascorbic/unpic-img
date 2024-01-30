@@ -22,23 +22,20 @@
     "qwik": "qwik"
   },
   "devDependencies": {
-    "@builder.io/qwik": "^1.4.3",
-    "@builder.io/qwik-city": "^1.4.3",
+    "@builder.io/qwik": "latest",
+    "@builder.io/qwik-city": "latest",
     "@netlify/edge-functions": "^2.3.0",
-    "@types/eslint": "8.21.3",
-    "@types/node": "^20.11.11",
-    "@types/node-fetch": "^2.6.11",
-    "@typescript-eslint/eslint-plugin": "5.56.0",
-    "@typescript-eslint/parser": "5.56.0",
-    "eslint": "8.36.0",
-    "eslint-plugin-qwik": "1.1.5",
-    "netlify-cli": "^12.14.0",
-    "node-fetch": "3.3.1",
-    "prettier": "^3.2.4",
-    "typescript": "5.0.2",
-    "undici": "5.21.0",
-    "vite": "4.2.1",
-    "vite-tsconfig-paths": "4.0.7"
+    "@types/eslint": "latest",
+    "@types/node": "latest",
+    "@typescript-eslint/eslint-plugin": "latest",
+    "@typescript-eslint/parser": "latest",
+    "eslint": "latest",
+    "eslint-plugin-qwik": "latest",
+    "prettier": "latest",
+    "typescript": "latest",
+    "undici": "latest",
+    "vite": "^4.5.2",
+    "vite-tsconfig-paths": "^4.2.1"
   },
   "dependencies": {
     "@unpic/qwik": "workspace:^"
