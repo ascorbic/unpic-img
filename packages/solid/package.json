@@ -83,7 +83,7 @@
     "jsdom": "^24.0.0",
     "prettier": "^3.2.4",
     "solid-js": "^1.8.12",
-    "tsup": "^7.2.0",
+    "tsup": "^8.0.0",
     "tsup-preset-solid": "^2.2.0",
     "typescript": "^5.3.3",
     "vite": "^4.5.2",
