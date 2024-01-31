@@ -30,7 +30,7 @@
     "vitest": "^1.2.2"
   },
   "resolutions": {
-    "cssstyle": "^3.0.0"
+    "cssstyle": "^4.0.0"
   },
   "packageManager": "pnpm@8.15.1"
 }
