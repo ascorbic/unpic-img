@@ -790,8 +790,8 @@ importers:
         specifier: ^8.0.1
         version: 8.0.1(@vue/compiler-sfc@3.4.15)(vue@3.4.15)
       '@vitejs/plugin-vue':
-        specifier: ^4.6.2
-        version: 4.6.2(vite@4.5.2)(vue@3.4.15)
+        specifier: ^5.0.0
+        version: 5.0.3(vite@4.5.2)(vue@3.4.15)
       tsup:
         specifier: ^7.2.0
         version: 7.2.0(typescript@5.3.3)
@@ -7056,6 +7056,17 @@ packages:
     dependencies:
       vite: 4.5.2(@types/node@20.11.11)
       vue: 3.4.15(typescript@4.9.5)
+    dev: true
+
+  /@vitejs/plugin-vue@5.0.3(vite@4.5.2)(vue@3.4.15):
+    resolution: {integrity: sha512-b8S5dVS40rgHdDrw+DQi/xOM9ed+kSRZzfm1T74bMmBDCd8XO87NKlFYInzCtwvtWwXZvo1QxE2OSspTATWrbA==}
+    engines: {node: ^18.0.0 || >=20.0.0}
+    peerDependencies:
+      vite: ^5.0.0
+      vue: ^3.2.25
+    dependencies:
+      vite: 4.5.2(@types/node@20.11.12)
+      vue: 3.4.15(typescript@5.3.3)
     dev: true
 
   /@vitest/expect@1.2.2:
