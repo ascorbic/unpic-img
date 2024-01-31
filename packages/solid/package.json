@@ -80,7 +80,7 @@
     "@solidjs/testing-library": "^0.8.6",
     "esbuild": "^0.20.0",
     "esbuild-plugin-solid": "^0.5.0",
-    "jsdom": "^22.1.0",
+    "jsdom": "^24.0.0",
     "prettier": "^3.2.4",
     "solid-js": "^1.8.12",
     "tsup": "^7.2.0",
