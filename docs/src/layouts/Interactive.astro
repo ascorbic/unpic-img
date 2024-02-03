@@ -4,7 +4,7 @@ import HeadSEO from "../components/HeadSEO.astro";
 import Header from "../components/Header/Header.astro";
 import LeftSidebar from "../components/LeftSidebar/LeftSidebar.astro";
 import Footer from "../components/Footer/Footer.astro";
-import {  SITE } from "../consts";
+import { SITE } from "../consts";
 
 type Props = {
   title: string;
@@ -39,8 +39,10 @@ const currentFile = `src/content/docs${currentPage.replace(/\/$/, "")}.md`;
       .layout {
         display: grid;
         grid-auto-flow: column;
-        grid-template-columns:
-          minmax(var(--gutter), 1fr) minmax(0, var(--max-width))
+        grid-template-columns: minmax(var(--gutter), 1fr) minmax(
+            0,
+            var(--max-width)
+          );
         overflow-x: hidden;
         padding-right: var(--doc-padding);
       }
@@ -95,7 +97,6 @@ const currentFile = `src/content/docs${currentPage.replace(/\/$/, "")}.md`;
         #grid-main {
           padding-right: 2rem;
         }
-
       }
     </style>
     <style is:global>
@@ -122,7 +123,7 @@ const currentFile = `src/content/docs${currentPage.replace(/\/$/, "")}.md`;
         <LeftSidebar currentPage={currentPage} />
       </aside>
       <div id="grid-main">
-          <slot />
+        <slot />
       </div>
     </main>
     <Footer path={currentFile} />
