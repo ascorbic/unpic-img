@@ -38,12 +38,13 @@ massive resolution on desktop
 <Image
   src="https://images.unsplash.com/photo-1654099749558-84ac187eb292"
   width={700}
-  aspectRatio={16/9}
+  aspectRatio={16 / 9}
   alt="Lighthouse"
 />
 
-_Photo by <a href="https://unsplash.com/@karthik_sreenivas?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash"> Karthik Sreenivas</a> on <a href="https://unsplash.com/photos/BFniN7d_gMI?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a>_
-
+_Photo by
+<a href="https://unsplash.com/@karthik_sreenivas?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Karthik Sreenivas</a> on
+<a href="https://unsplash.com/photos/BFniN7d_gMI?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a>_
 
 Unsplash is a supported image CDN, so embedding it is super easy with Unpic. The
 example here is Astro, but it's similar in all supported frameworks.
@@ -97,13 +98,15 @@ image for larger screens.
 <Image
   src="https://images.unsplash.com/photo-1601962468178-9f84128bd046"
   width={400}
-  aspectRatio={6.7/10}
+  aspectRatio={6.7 / 10}
   alt="Lighthouse"
   priority
   unstyled
 />
 
-_Photo by <a href="https://unsplash.com/@santonii?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Y S</a> on <a href="https://unsplash.com/photos/W4iRRNwGb2Y?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a>_
+_Photo by
+<a href="https://unsplash.com/@santonii?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">YS</a> on
+<a href="https://unsplash.com/photos/W4iRRNwGb2Y?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a>_
 
 The way you do it is with a normal `<picture>` tag, and the new Unpic `<Source>`
 component.
@@ -135,8 +138,8 @@ component.
 ```
 
 We've added the `unstyled` prop to the `Image` because otherwise the inline
-styles will override our responsive styling. Here's what it looks like. If you are on a large screen, try resizing the window to see the image change.
-
+styles will override our responsive styling. Here's what it looks like. If you
+are on a large screen, try resizing the window to see the image change.
 
 <picture>
   <Source
@@ -301,7 +304,9 @@ lighthouse, this time a night shot.
   alt="Lighthouse"
 />
 
-_Photo by <a href="https://unsplash.com/@mischievous_penguins?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Casey Horner</a> on <a href="https://unsplash.com/photos/017h9kTu6cc?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a>_
+_Photo by
+<a href="https://unsplash.com/@mischievous_penguins?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Casey Horner</a> on
+<a href="https://unsplash.com/photos/017h9kTu6cc?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a>_
 
 We can create a picture tag which switches the image according to the current
 color scheme.
@@ -333,9 +338,10 @@ color scheme.
 ```
 
 We can use the automatic styling here, because the layouts and sizes are all the
-same. Here's what it looks like. 
+same. Here's what it looks like.
 
-> The dark mode toggle on the site won't have an affect here - it needs to be your browser or system setting.
+> The dark mode toggle on the site won't have an affect here - it needs to be
+> your browser or system setting.
 
 <picture>
   <Source
@@ -395,9 +401,24 @@ include the `fm` parameter to specify the format. Unpic handles this
 automatically for all supported image CDNs.
 
 <picture>
-  <Source src="https://images.ctfassets.net/yadj1kx9rmg0/wtrHxeu3zEoEce2MokCSi/cf6f68efdcf625fdc060607df0f3baef/quwowooybuqbl6ntboz3.jpg" type="image/avif" width={800} height={600} />
-  <Source src="https://images.ctfassets.net/yadj1kx9rmg0/wtrHxeu3zEoEce2MokCSi/cf6f68efdcf625fdc060607df0f3baef/quwowooybuqbl6ntboz3.jpg" type="image/webp" width={800} height={600} />
-  <Image src="https://images.ctfassets.net/yadj1kx9rmg0/wtrHxeu3zEoEce2MokCSi/cf6f68efdcf625fdc060607df0f3baef/quwowooybuqbl6ntboz3.jpg" width={800} height={600} alt="Toy" />
+  <Source
+    src="https://images.ctfassets.net/yadj1kx9rmg0/wtrHxeu3zEoEce2MokCSi/cf6f68efdcf625fdc060607df0f3baef/quwowooybuqbl6ntboz3.jpg"
+    type="image/avif"
+    width={800}
+    height={600}
+  />
+  <Source
+    src="https://images.ctfassets.net/yadj1kx9rmg0/wtrHxeu3zEoEce2MokCSi/cf6f68efdcf625fdc060607df0f3baef/quwowooybuqbl6ntboz3.jpg"
+    type="image/webp"
+    width={800}
+    height={600}
+  />
+  <Image
+    src="https://images.ctfassets.net/yadj1kx9rmg0/wtrHxeu3zEoEce2MokCSi/cf6f68efdcf625fdc060607df0f3baef/quwowooybuqbl6ntboz3.jpg"
+    width={800}
+    height={600}
+    alt="Toy"
+  />
 </picture>
 
 ```html
@@ -457,7 +478,7 @@ content negotiation.
 ## Try it out
 
 This is just a taste of the things you can do with the `<picture>` tag in Unpic.
-You can combine media queries to give all kinds of combination. [Try it
-out](https://unpic.pics/img) - it almost certainly supports your favourite
-frontend framework. Note that at time of writing, `<picture>` in Unpic is in
-beta and does not support web component frameworks (Lit and WebC).
+You can combine media queries to give all kinds of combination.
+[Try it out](https://unpic.pics/img) - it almost certainly supports your
+favourite frontend framework. Note that at time of writing, `<picture>` in Unpic
+is in beta and does not support web component frameworks (Lit and WebC).

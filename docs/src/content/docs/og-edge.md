@@ -76,7 +76,7 @@ async function handler(req: Request) {
       >
         Hello!
       </div>
-    )
+    ),
   );
 }
 

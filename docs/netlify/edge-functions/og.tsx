@@ -3,11 +3,11 @@ import { ImageResponse } from "https://deno.land/x/og_edge@0.0.6/mod.ts";
 import { Config } from "https://edge.netlify.com/";
 
 const font = fetch(
-  "https://fonts.gstatic.com/s/firasans/v16/va9E4kDNxMZdWfMOD5VfkA.ttf"
+  "https://fonts.gstatic.com/s/firasans/v16/va9E4kDNxMZdWfMOD5VfkA.ttf",
 ).then((res) => res.arrayBuffer());
 
 const boldFont = fetch(
-  "https://fonts.gstatic.com/s/firasans/v16/va9B4kDNxMZdWfMOD5VnSKzuQQ.ttf"
+  "https://fonts.gstatic.com/s/firasans/v16/va9B4kDNxMZdWfMOD5VnSKzuQQ.ttf",
 ).then((res) => res.arrayBuffer());
 
 export default async function handler(req: Request) {
@@ -79,7 +79,7 @@ export default async function handler(req: Request) {
           weight: 700,
         },
       ],
-    }
+    },
   );
 }
 

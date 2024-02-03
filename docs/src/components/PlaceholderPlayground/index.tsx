@@ -30,7 +30,7 @@ const stopsY = 3;
 const pixels = computed(() => decode(hash.value, stopsX, stopsY));
 
 const gradient = computed(() =>
-  pixelsToCssGradients(pixels.value, stopsX, stopsY).join(", ")
+  pixelsToCssGradients(pixels.value, stopsX, stopsY).join(", "),
 );
 
 const paletteColors = signal([] as [number, number, number][]);
@@ -41,7 +41,7 @@ const rgbToStyle = (rgb: [number, number, number]) => {
 };
 
 const bmpDataUri = computed(() =>
-  imageDataToDataURI(rgbaPixelsToBmp(pixels.value, 4, 3), "image/bmp")
+  imageDataToDataURI(rgbaPixelsToBmp(pixels.value, 4, 3), "image/bmp"),
 );
 
 const blurhashDataUri = computed(() => {
@@ -98,7 +98,7 @@ const useImage = (image: HTMLImageElement) => {
 };
 
 const handleFileInputChange: JSX.GenericEventHandler<HTMLInputElement> = (
-  event
+  event,
 ) => {
   const file = (event.target as HTMLInputElement).files?.[0];
   if (!file) {
@@ -204,7 +204,7 @@ export function Playground() {
           <div
             style={{
               backgroundColor: rgbToStyle(
-                paletteColors.value?.[0] || [0, 0, 0]
+                paletteColors.value?.[0] || [0, 0, 0],
               ),
             }}
             class="blurhash"

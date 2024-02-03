@@ -20,7 +20,7 @@ async function getCommits(url: string) {
     const token = import.meta.env.GITHUB_TOKEN ?? "hello";
     if (!token) {
       throw new Error(
-        'Cannot find "GITHUB_TOKEN" used for escaping rate-limiting.'
+        'Cannot find "GITHUB_TOKEN" used for escaping rate-limiting.',
       );
     }
 
@@ -39,7 +39,7 @@ async function getCommits(url: string) {
     if (!res.ok) {
       throw new Error(
         `Request to fetch commits failed. Reason: ${res.statusText}
-       Message: ${data.message}`
+       Message: ${data.message}`,
       );
     }
 
@@ -161,13 +161,17 @@ const additionalContributors = unique.length - recentContributors.length; // lis
     height: 100%;
     object-fit: cover;
     background-color: #fff;
-    box-shadow: 0 0 0 0.05em #fff, 0 0 0 0.08em rgba(0, 0, 0, 0.15);
+    box-shadow:
+      0 0 0 0.05em #fff,
+      0 0 0 0.08em rgba(0, 0, 0, 0.15);
   }
 
   .avatar-list a:focus {
     outline: 2px solid transparent;
     /* Double-layer trick to work for dark and light backgrounds */
-    box-shadow: 0 0 0 0.08em var(--theme-accent), 0 0 0 0.12em white;
+    box-shadow:
+      0 0 0 0.08em var(--theme-accent),
+      0 0 0 0.12em white;
   }
 
   .contributors {

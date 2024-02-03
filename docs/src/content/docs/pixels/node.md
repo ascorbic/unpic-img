@@ -24,7 +24,7 @@ import { getPixels } from "@unpic/pixels";
 
 // From a URL
 const { width, height, data } = await getPixels(
-  "http://placekitten.com/100/100"
+  "http://placekitten.com/100/100",
 );
 
 // From a file

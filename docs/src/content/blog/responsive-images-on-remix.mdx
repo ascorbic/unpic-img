@@ -1,0 +1,124 @@
+---
+title: Generate responsive images on Remix
+description: Automatically generate responsive images on Remix using Unpic
+publishDate: 2024-02-03
+image: https://images.unsplash.com/photo-1601418059872-2ac6d694946d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
+image_alt: Remix
+---
+
+import { CodeEditor } from "../../components/CodeEditor";
+
+Unlike many other frameworks, Remix doesn't have a built-in way to generate
+responsive images. This is in keeping with its philosophy of using the web
+platform, but it does make it quite a bit more work to get responsive images set
+up. This is just the place where Unpic shines. If you've not met it, Unpic is a
+cross-framework library for generating `<img>` tags that are responsive,
+high-performance and follow modern best practices. While I had used Unpic with
+Hydrogen (because Shopify support is built-in and automatic), I hadn't tried it
+yet with local images on Remix. I'm happy to report that it works great! It
+literally took my less than five minutes to get it working. Here's how.
+
+## How to generate responsive images on Remix with Unpic
+
+First, install Unpic with the package mananger of choice.
+
+```bash
+npm install @unpic/react
+```
+
+Then, use it in your page:
+
+```tsx
+import { Image } from "@unpic/react";
+// This is a local image import
+import viaduct from "../viaduct.jpg";
+
+export default function Page() {
+  return (
+    <div>
+      <Image
+        src={viaduct}
+        alt="A viaduct"
+        width={800}
+        height={600}
+        cdn="netlify"
+      />
+    </div>
+  );
+}
+```
+
+Seriously, that's it. End of blog.
+
+## How it works
+
+OK, maybe I'll explain it a bit more. First, what does it do? In this example,
+we're importing a local image using
+[asset imports](https://remix.run/docs/en/main/file-conventions/asset-imports).
+This copies the source image into the output directory with a fingerprinted
+filename, then returns the URL. We can use this directly in Unpic.
+
+Unpic doesn't resize images itself. Instead it uses your existing image CDN,
+recognises the URL and generates the correct attributes for the `<img>` tag,
+including the full `srcset` with all the image sizes. It automatically uses
+modern formats like AVIF and WebP if the browser supports it. In this case, I'm
+using Netlify's image CDN which is enabled on all Netlify sites. Vercel works in
+the same way. Other CDNs will also work, but may need a few more options.
+
+This is the generated tag. You will see it has everything to create a responsive
+image. It resizes fluidly, loads the right resolutions depending on the screen
+size. You'll also find it gives great scores on Lighthouse and other performance
+tools.
+
+```html
+<img
+  alt="Viaduct"
+  loading="lazy"
+  decoding="async"
+  sizes="(min-width: 800px) 800px, 100vw"
+  style="object-fit:cover;max-width:800px;max-height:600px;aspect-ratio:1.333;width:100%"
+  srcset="
+    /.netlify/images?w=640&amp;h=480&amp;fit=cover&amp;url=%2Fbuild%2F_assets%2Fviaduct-N2EIOTOR.jpg    640w,
+    /.netlify/images?w=750&amp;h=563&amp;fit=cover&amp;url=%2Fbuild%2F_assets%2Fviaduct-N2EIOTOR.jpg    750w,
+    /.netlify/images?w=800&amp;h=600&amp;fit=cover&amp;url=%2Fbuild%2F_assets%2Fviaduct-N2EIOTOR.jpg    800w,
+    /.netlify/images?w=828&amp;h=621&amp;fit=cover&amp;url=%2Fbuild%2F_assets%2Fviaduct-N2EIOTOR.jpg    828w,
+    /.netlify/images?w=960&amp;h=720&amp;fit=cover&amp;url=%2Fbuild%2F_assets%2Fviaduct-N2EIOTOR.jpg    960w,
+    /.netlify/images?w=1080&amp;h=810&amp;fit=cover&amp;url=%2Fbuild%2F_assets%2Fviaduct-N2EIOTOR.jpg  1080w,
+    /.netlify/images?w=1280&amp;h=960&amp;fit=cover&amp;url=%2Fbuild%2F_assets%2Fviaduct-N2EIOTOR.jpg  1280w,
+    /.netlify/images?w=1600&amp;h=1200&amp;fit=cover&amp;url=%2Fbuild%2F_assets%2Fviaduct-N2EIOTOR.jpg 1600w
+  "
+  src="/.netlify/images?w=800&amp;h=600&amp;fit=cover&amp;url=%2Fbuild%2F_assets%2Fviaduct-N2EIOTOR.jpg"
+/>
+```
+
+## Using remote images
+
+Unpic also recognises loads of remote image sources, and can generate URLs
+without needing a local image service. It supports most CMSs, including
+Contentful, Sanity, DatoCMS and many more, as well as other services like
+Shopify, Cloudinary and Unsplash.
+
+Here's an editable example using an Unsplash image. Try it with your own images
+from your CMS. Just paste in the URL.
+
+<CodeEditor
+  client:load
+  code={`
+   // Or try this: "https://res.cloudinary.com/demo/image/upload/dog"
+
+    <Image
+      src="https://images.unsplash.com/photo-1601418059872-2ac6d694946d"
+      width={400}
+      height={300}
+      alt="Remix"
+    />
+
+`} />
+
+Try inspecting the image to see the attributes.
+
+## Learn more
+
+This is just using the default options. Take a look at the [the docs](/img/react) to
+see what else is available, including different crop options, props for
+full-width hero images and fixed-size images like logos.

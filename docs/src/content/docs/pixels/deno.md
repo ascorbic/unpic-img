@@ -16,7 +16,7 @@ import { getPixels } from "https://deno.land/x/get_pixels/mod.ts";
 
 // From a URL
 const { width, height, data } = await getPixels(
-  "http://placekitten.com/100/100"
+  "http://placekitten.com/100/100",
 );
 
 // From a file
