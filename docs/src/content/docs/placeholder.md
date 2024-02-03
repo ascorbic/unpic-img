@@ -122,7 +122,7 @@ import { encode } from "blurhash";
 import { getPixels } from "@unpic/pixels";
 
 const jpgData = await getPixels(
-  "https://res.cloudinary.com/demo/image/upload/c_lfill,w_200,h_100/dog.jpg"
+  "https://res.cloudinary.com/demo/image/upload/c_lfill,w_200,h_100/dog.jpg",
 );
 const data = Uint8ClampedArray.from(jpgData.data);
 const blurhash = encode(data, jpgData.width, jpgData.height, 4, 4);
@@ -135,7 +135,7 @@ import { encode } from "https://esm.sh/blurhash";
 import { getPixels } from "https://deno.land/x/get_pixels/mod.ts";
 
 const jpgData = await getPixels(
-  "https://res.cloudinary.com/demo/image/upload/c_lfill,w_200,h_100/dog.jpg"
+  "https://res.cloudinary.com/demo/image/upload/c_lfill,w_200,h_100/dog.jpg",
 );
 const data = Uint8ClampedArray.from(jpgData.data);
 const blurhash = encode(data, jpgData.width, jpgData.height, 4, 4);
