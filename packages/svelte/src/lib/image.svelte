@@ -1,27 +1,43 @@
 <script lang="ts">
-  import { transformProps } from "@unpic/core";
+  import { transformProps, type UnpicImageProps } from "@unpic/core";
   import styleToCss from "style-object-to-css-string";
-  import type { ImageProps as BaseImageProps } from "./types";
-  import type { HTMLAttributes } from "svelte/elements";
-  // This unused import is a hack to get around a bug in svelte2tsx
-  import type { UrlTransformer, ImageCdn } from "unpic";
+  import type { HTMLAttributes, HTMLImgAttributes } from "svelte/elements";
+  type $$Props = UnpicImageProps<
+    HTMLImgAttributes,
+    HTMLAttributes<HTMLImageElement>["style"]
+  > & { style?: HTMLAttributes<HTMLImageElement>["style"] };
 
-  type $$Props = BaseImageProps;
-
-  $: ({ style: parentStyle, ...props } = $$props as $$Props);
+  $: ({ style: parentStyle, ...props } = $$props);
   $: ({
     alt,
     style: styleObj,
-    ...transformedProps
-  } = transformProps<
-    Omit<HTMLAttributes<HTMLImageElement>, "style"> & {
-      style: Record<string, string>;
-      alt?: string | null;
-    }
-  >({ ...props }));
+    src,
+    width,
+    height,
+    loading,
+    decoding,
+    srcset,
+    role,
+    sizes,
+    fetchpriority,
+  } = transformProps(props as $$Props));
   $: style = [styleToCss(styleObj || {}), parentStyle]
     .filter(Boolean)
     .join(";");
 </script>
 
-<img {alt} {style} {...transformedProps} on:load />
+<img
+  {...$$props}
+  {style}
+  {loading}
+  {width}
+  {height}
+  {decoding}
+  {role}
+  {fetchpriority}
+  alt={alt?.toString()}
+  src={src?.toString()}
+  srcset={srcset?.toString()}
+  sizes={sizes?.toString()}
+  on:load
+/>
