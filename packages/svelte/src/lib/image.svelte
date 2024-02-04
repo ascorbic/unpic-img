@@ -19,6 +19,7 @@
     srcset,
     role,
     sizes,
+    fetchpriority,
   } = transformProps(props as $$Props));
   $: style = [styleToCss(styleObj || {}), parentStyle]
     .filter(Boolean)
