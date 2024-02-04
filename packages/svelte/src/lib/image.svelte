@@ -27,15 +27,15 @@
 
 <img
   {...$$props}
-  alt={alt?.toString()}
-  src={src?.toString()}
-  srcset={srcset?.toString()}
-  sizes={sizes?.toString()}
   {style}
   {loading}
   {width}
   {height}
   {decoding}
   {role}
+  alt={alt?.toString()}
+  src={src?.toString()}
+  srcset={srcset?.toString()}
+  sizes={sizes?.toString()}
   on:load
 />
