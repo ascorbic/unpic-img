@@ -15,7 +15,7 @@ export function normalise(value: unknown) {
   return value.toString();
 }
 
-export function expectPropsToMatch(
+function expectPropsToMatch(
   expected: CoreImageAttributes<unknown> | CoreSourceAttributes,
   element: HTMLElement,
 ) {

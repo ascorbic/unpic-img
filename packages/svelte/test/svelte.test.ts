@@ -2,26 +2,11 @@ import { describe, test, expect } from "vitest";
 import { render, screen } from "@testing-library/svelte";
 import { Image, Source } from "../src/lib";
 import {
-  expectPropsToMatch,
+  expectImagePropsToMatchTransformed,
   expectSourcePropsToMatchTransformed,
   imgTestCases,
   sourceTestCases,
 } from "../../../test/test-helpers";
-import {
-  type UnpicImageProps,
-  type CoreImageAttributes,
-  transformProps,
-} from "@unpic/core";
-
-export function expectImagePropsToMatchTransformed(
-  image: HTMLImageElement,
-  providedProps: UnpicImageProps<CoreImageAttributes<CSSStyleDeclaration>>,
-) {
-  // Svelte doesn't support the fetchpriority attribute, so we need to remove it
-  const { fetchpriority, ...expected } = transformProps(providedProps);
-
-  expectPropsToMatch(expected, image);
-}
 
 describe("the Svelte component", () => {
   for (const props of imgTestCases) {

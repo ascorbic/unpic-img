@@ -34,6 +34,7 @@
   {height}
   {decoding}
   {role}
+  {fetchpriority}
   alt={alt?.toString()}
   src={src?.toString()}
   srcset={srcset?.toString()}
