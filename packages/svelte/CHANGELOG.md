@@ -132,6 +132,13 @@
   * dependencies
     * @unpic/core bumped to 0.0.44
 
+## [0.0.47](https://github.com/ascorbic/unpic-img/compare/svelte-v0.0.46...svelte-v0.0.47) (2024-02-04)
+
+
+### Bug Fixes
+
+* **svelte:** correct lazy loading ([#485](https://github.com/ascorbic/unpic-img/issues/485)) ([c44fad7](https://github.com/ascorbic/unpic-img/commit/c44fad7b9bd2fa119564630c561e59f95b53c7ce))
+
 ## [0.0.46](https://github.com/ascorbic/unpic-img/compare/svelte-v0.0.45...svelte-v0.0.46) (2024-01-28)
 
 
