@@ -1,5 +1,2 @@
-[build]
-publish = "/dist/static"
-
 [dev]
 command = "npm run dev"
