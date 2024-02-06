@@ -19,6 +19,7 @@
   },
   "devDependencies": {
     "@babel/core": "^7.23.9",
+    "@playwright/test": "^1.41.2",
     "@preact/preset-vite": "^2.8.1",
     "typescript": "^5.3.3",
     "vite": "^4.5.2"
