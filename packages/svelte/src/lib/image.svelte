@@ -40,4 +40,5 @@
   srcset={srcset?.toString()}
   sizes={sizes?.toString()}
   on:load
+  on:error
 />
