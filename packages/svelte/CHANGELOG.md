@@ -132,6 +132,13 @@
   * dependencies
     * @unpic/core bumped to 0.0.44
 
+## [0.0.48](https://github.com/ascorbic/unpic-img/compare/svelte-v0.0.47...svelte-v0.0.48) (2024-02-06)
+
+
+### Features
+
+* Added support for on:error to unpic Image component ([#488](https://github.com/ascorbic/unpic-img/issues/488)) ([72d188f](https://github.com/ascorbic/unpic-img/commit/72d188ffffd9ab15d4ccef99b124383212de7b61))
+
 ## [0.0.47](https://github.com/ascorbic/unpic-img/compare/svelte-v0.0.46...svelte-v0.0.47) (2024-02-04)
 
 
