@@ -472,8 +472,8 @@ importers:
   packages/angular:
     dependencies:
       '@unpic/core':
-        specifier: 0.0.45
-        version: 0.0.45
+        specifier: 0.0.46
+        version: link:../core
       tslib:
         specifier: ^2.6.2
         version: 2.6.2
@@ -503,8 +503,8 @@ importers:
   packages/astro:
     dependencies:
       '@unpic/core':
-        specifier: 0.0.45
-        version: 0.0.45
+        specifier: 0.0.46
+        version: link:../core
       '@unpic/pixels':
         specifier: ^1.2.1
         version: 1.2.1
@@ -535,8 +535,8 @@ importers:
   packages/lit:
     dependencies:
       '@unpic/core':
-        specifier: 0.0.45
-        version: 0.0.45
+        specifier: 0.0.46
+        version: link:../core
     devDependencies:
       lit:
         specifier: ^3.1.1
@@ -551,8 +551,8 @@ importers:
   packages/preact:
     dependencies:
       '@unpic/core':
-        specifier: 0.0.45
-        version: 0.0.45
+        specifier: 0.0.46
+        version: link:../core
     devDependencies:
       '@testing-library/preact':
         specifier: ^3.2.3
@@ -591,8 +591,8 @@ importers:
         specifier: 6.20.0
         version: 6.20.0(eslint@8.56.0)(typescript@5.2.2)
       '@unpic/core':
-        specifier: 0.0.45
-        version: 0.0.45
+        specifier: 0.0.46
+        version: link:../core
       eslint:
         specifier: 8.56.0
         version: 8.56.0
@@ -624,8 +624,8 @@ importers:
   packages/react:
     dependencies:
       '@unpic/core':
-        specifier: 0.0.45
-        version: 0.0.45
+        specifier: 0.0.46
+        version: link:../core
     devDependencies:
       '@arethetypeswrong/cli':
         specifier: ^0.13.6
@@ -676,8 +676,8 @@ importers:
   packages/solid:
     dependencies:
       '@unpic/core':
-        specifier: 0.0.45
-        version: 0.0.45
+        specifier: 0.0.46
+        version: link:../core
     devDependencies:
       '@solidjs/testing-library':
         specifier: ^0.8.6
@@ -719,8 +719,8 @@ importers:
   packages/svelte:
     dependencies:
       '@unpic/core':
-        specifier: 0.0.45
-        version: 0.0.45
+        specifier: 0.0.46
+        version: link:../core
       style-object-to-css-string:
         specifier: 1.1.3
         version: 1.1.3
@@ -765,8 +765,8 @@ importers:
   packages/vue:
     dependencies:
       '@unpic/core':
-        specifier: 0.0.45
-        version: 0.0.45
+        specifier: 0.0.46
+        version: link:../core
       vue:
         specifier: ^3.4.15
         version: 3.4.15(typescript@5.3.3)
@@ -796,8 +796,8 @@ importers:
   packages/webc:
     dependencies:
       '@unpic/core':
-        specifier: 0.0.45
-        version: 0.0.45
+        specifier: 0.0.46
+        version: link:../core
       style-object-to-css-string:
         specifier: 1.1.3
         version: 1.1.3
@@ -7567,11 +7567,6 @@ packages:
       unhead: 1.8.10
       vue: 3.4.15(typescript@5.3.3)
     dev: true
-
-  /@unpic/core@0.0.45:
-    resolution: {integrity: sha512-q8NIbtfLS5JL3Q67Qo9Ai2fRxYb2VAqeVVBlfI2PYiQ2Hl8hKg1ibQCFWLMdBCPYmpyKugQAhKVgarJdc5r0Mg==}
-    dependencies:
-      unpic: 3.17.0
 
   /@unpic/pixels@1.2.1:
     resolution: {integrity: sha512-KM1+LhMALb8J12ZfEcmuK0qKOwUCQNO9cTkjhlJ3lQIoOxf6QcMDdylltOPDAvkAMl3ysR5BLWy7x9edkh7odA==}
@@ -20379,6 +20374,7 @@ packages:
 
   /unpic@3.17.0:
     resolution: {integrity: sha512-1b0ACPDLWqDE4MJ+IW5e48pGVSA5zKU2nF05EDxl/vvHq610MnfHNczIm6RBNPKuAA+G1tQ2ef1mgxj5J7+plw==}
+    dev: false
 
   /unpipe@1.0.0:
     resolution: {integrity: sha512-pjy2bYhSsufwWlKwPc+l3cN7+wuJlK6uz0YdJEOlQDbl6jo/YlPi4mb8agUkVC8BF7V8NuzeyPNqRksA3hztKQ==}
