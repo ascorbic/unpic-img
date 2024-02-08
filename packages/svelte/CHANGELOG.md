@@ -132,6 +132,20 @@
   * dependencies
     * @unpic/core bumped to 0.0.44
 
+## [0.0.50](https://github.com/ascorbic/unpic-img/compare/svelte-v0.0.49...svelte-v0.0.50) (2024-02-08)
+
+
+### Bug Fixes
+
+* **deps:** update dependency unpic to ^3.17.0 ([#493](https://github.com/ascorbic/unpic-img/issues/493)) ([22b6fd6](https://github.com/ascorbic/unpic-img/commit/22b6fd63292cb717973cf3070657106e7e09b466))
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @unpic/core bumped from 0.0.45 to 0.0.46
+
 ## [0.0.49](https://github.com/ascorbic/unpic-img/compare/svelte-v0.0.48...svelte-v0.0.49) (2024-02-07)
 
 
