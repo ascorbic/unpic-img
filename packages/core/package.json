@@ -17,8 +17,8 @@
     "test": "vitest run"
   },
   "devDependencies": {
-    "tsup": "^8.0.0",
-    "vitest": "^1.2.2"
+    "tsup": "^8.0.2",
+    "vitest": "^1.3.0"
   },
   "dependencies": {
     "unpic": "^3.17.0"
