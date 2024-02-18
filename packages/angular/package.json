@@ -34,16 +34,16 @@
     "directory": "packages/angular"
   },
   "devDependencies": {
-    "@angular-devkit/build-angular": "^17.1.1",
+    "@angular-devkit/build-angular": "^17.2.0",
     "@angular/cli": "~17.2.0",
-    "@angular/compiler-cli": "^17.1.1",
-    "@angular/core": "^17.1.1",
-    "ng-packagr": "^17.1.2",
+    "@angular/compiler-cli": "^17.2.1",
+    "@angular/core": "^17.2.1",
+    "ng-packagr": "^17.2.0",
     "publint": "^0.2.7",
     "typescript": "5.2.2"
   },
   "dependencies": {
-    "@unpic/core": "0.0.46",
+    "@unpic/core": "workspace:*",
     "tslib": "^2.6.2"
   }
 }

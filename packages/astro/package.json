@@ -28,11 +28,11 @@
     "format": "prettier --write ."
   },
   "devDependencies": {
-    "astro": "^4.2.7"
+    "astro": "^4.4.0"
   },
   "dependencies": {
-    "@unpic/core": "0.0.46",
-    "@unpic/pixels": "^1.2.1",
+    "@unpic/core": "workspace:*",
+    "@unpic/pixels": "^1.2.2",
     "@unpic/placeholder": "^0.1.2",
     "blurhash": "^2.0.5"
   },
