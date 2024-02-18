@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.0.47](https://github.com/ascorbic/unpic-img/compare/core-v0.0.46...core-v0.0.47) (2024-02-18)
+
+
+### Bug Fixes
+
+* update ([#504](https://github.com/ascorbic/unpic-img/issues/504)) ([a3775fb](https://github.com/ascorbic/unpic-img/commit/a3775fbcf7e12234584cd6705689e6d9d16fdcbc))
+
 ## [0.0.46](https://github.com/ascorbic/unpic-img/compare/core-v0.0.45...core-v0.0.46) (2024-02-08)
 
 

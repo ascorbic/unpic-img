@@ -1,6 +1,6 @@
 {
   "name": "@unpic/qwik",
-  "version": "0.0.43",
+  "version": "0.0.44",
   "description": "Qwik components for responsive, high-performance images",
   "keywords": [
     "images",
@@ -52,7 +52,7 @@
     "@types/node-fetch": "^2.6.11",
     "@typescript-eslint/eslint-plugin": "6.21.0",
     "@typescript-eslint/parser": "6.21.0",
-    "@unpic/core": "workspace:*",
+    "@unpic/core": "0.0.47",
     "eslint": "8.56.0",
     "eslint-plugin-qwik": "^1.4.5",
     "node-fetch": "3.3.2",
