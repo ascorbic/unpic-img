@@ -14,8 +14,8 @@
   "devDependencies": {
     "@testing-library/dom": "^9.3.4",
     "@testing-library/svelte": "^4.1.0",
-    "@typescript-eslint/eslint-plugin": "^6.20.0",
-    "@typescript-eslint/parser": "^6.20.0",
+    "@typescript-eslint/eslint-plugin": "^7.0.0",
+    "@typescript-eslint/parser": "^7.0.0",
     "@unpic/core": "workspace:^",
     "eslint": "^8.56.0",
     "eslint-config-prettier": "^9.1.0",
