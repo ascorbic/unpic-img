@@ -472,7 +472,7 @@ importers:
   packages/angular:
     dependencies:
       '@unpic/core':
-        specifier: workspace:*
+        specifier: 0.0.47
         version: link:../core
       tslib:
         specifier: ^2.6.2
@@ -503,7 +503,7 @@ importers:
   packages/astro:
     dependencies:
       '@unpic/core':
-        specifier: workspace:*
+        specifier: 0.0.47
         version: link:../core
       '@unpic/pixels':
         specifier: ^1.2.2
@@ -535,7 +535,7 @@ importers:
   packages/lit:
     dependencies:
       '@unpic/core':
-        specifier: workspace:*
+        specifier: 0.0.47
         version: link:../core
     devDependencies:
       lit:
@@ -551,7 +551,7 @@ importers:
   packages/preact:
     dependencies:
       '@unpic/core':
-        specifier: workspace:*
+        specifier: 0.0.47
         version: link:../core
     devDependencies:
       '@testing-library/preact':
@@ -624,7 +624,7 @@ importers:
   packages/react:
     dependencies:
       '@unpic/core':
-        specifier: workspace:*
+        specifier: 0.0.47
         version: link:../core
     devDependencies:
       '@arethetypeswrong/cli':
@@ -676,7 +676,7 @@ importers:
   packages/solid:
     dependencies:
       '@unpic/core':
-        specifier: workspace:*
+        specifier: 0.0.47
         version: link:../core
     devDependencies:
       '@solidjs/testing-library':
@@ -719,7 +719,7 @@ importers:
   packages/svelte:
     dependencies:
       '@unpic/core':
-        specifier: workspace:*
+        specifier: 0.0.47
         version: link:../core
       style-object-to-css-string:
         specifier: 1.1.3
@@ -765,7 +765,7 @@ importers:
   packages/vue:
     dependencies:
       '@unpic/core':
-        specifier: workspace:*
+        specifier: 0.0.47
         version: link:../core
       vue:
         specifier: ^3.4.19
@@ -796,7 +796,7 @@ importers:
   packages/webc:
     dependencies:
       '@unpic/core':
-        specifier: workspace:*
+        specifier: 0.0.47
         version: link:../core
       style-object-to-css-string:
         specifier: 1.1.3
@@ -15350,6 +15350,8 @@ packages:
     peerDependenciesMeta:
       webpack:
         optional: true
+      webpack-sources:
+        optional: true
     dependencies:
       webpack: 5.89.0(esbuild@0.19.11)
       webpack-sources: 3.2.3
@@ -15361,6 +15363,8 @@ packages:
       webpack: '*'
     peerDependenciesMeta:
       webpack:
+        optional: true
+      webpack-sources:
         optional: true
     dependencies:
       webpack: 5.90.1(esbuild@0.20.0)
@@ -18477,6 +18481,9 @@ packages:
     resolution: {integrity: sha512-H/RI1/DmuOkL8RuG/EpNPvtzrbF+7jA/R56ydEEm+lqFbYktKB4COR7JXdHkZXRgbSJyimrFB8d0r9+SaRnj0Q==}
     engines: {node: '>= 12.0.0'}
     hasBin: true
+    peerDependenciesMeta:
+      '@parcel/core':
+        optional: true
     dependencies:
       '@parcel/config-default': 2.11.0(@parcel/core@2.11.0)(typescript@5.3.3)
       '@parcel/core': 2.11.0
