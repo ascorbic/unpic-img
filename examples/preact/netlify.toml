@@ -1,9 +1,2 @@
 [dev]
 command = "npm run dev"
-
-[[integrations]]
-name = "ki801y9h-playwright"
-
-[integrations.dev]
-path = "../../../netlify-plugin-playwright"
-force_run_in_build = true
