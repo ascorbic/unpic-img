@@ -9,7 +9,7 @@ export default defineConfig({
   forbidOnly: !!process.env.CI,
   workers: process.env.CI ? 1 : undefined,
   reporter: process.env.CI
-    ? [["github"], ["blob"], ["list"]]
+    ? [["github"], ["blob", { fileName: `report-${site}.zip` }], ["list"]]
     : [["html"], ["list"]],
   webServer: {
     command: `netlify serve --filter examples/${site}`,
