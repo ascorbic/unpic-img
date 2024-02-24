@@ -22,6 +22,8 @@ jobs:
           cache: "pnpm"
           check-latest: true
           registry-url: "https://registry.npmjs.org"
+      - name: Setup Deno
+        uses: denoland/setup-deno@v1
       - name: Install dependencies
         run: pnpm install
       - name: Install Playwright Browsers
@@ -40,7 +42,6 @@ jobs:
           path: blob-report
           retention-days: 1
   merge-reports:
-    # Merge reports after playwright-tests, even if some shards have failed
     if: always()
     needs: [test]
 
@@ -51,7 +52,7 @@ jobs:
         with:
           node-version: 18
       - name: Install dependencies
-        run: npm ci
+        run: pnpm install
 
       - name: Download blob reports from GitHub Actions Artifacts
         uses: actions/download-artifact@v4
