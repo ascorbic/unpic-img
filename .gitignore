@@ -143,3 +143,4 @@ packages/lit/unpic-img.d.ts.map
 packages/lit/unpic-img.js
 packages/lit/unpic-img.js.map
 packages/lit/custom-elements.json
+playwright-report

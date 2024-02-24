@@ -3,3 +3,7 @@ command = "npm run dev"
 
 [images]
 remote_images = ["https://placekitten.com/*"]
+
+[build]
+command = "pnpm --filter react-demo... build"
+publish = "examples/react/dist/static"

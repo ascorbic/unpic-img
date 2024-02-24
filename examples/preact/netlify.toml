@@ -1,2 +1,6 @@
 [dev]
 command = "npm run dev"
+
+[build]
+command = "pnpm --filter preact-demo... build"
+publish = "examples/preact/dist/static"
