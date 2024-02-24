@@ -1,6 +1,6 @@
 {
   "name": "@unpic/angular",
-  "version": "0.0.34",
+  "version": "0.0.37",
   "description": "A high-performance, responsive image module and directive for Angular",
   "keywords": [
     "angular",
@@ -34,16 +34,16 @@
     "directory": "packages/angular"
   },
   "devDependencies": {
-    "@angular-devkit/build-angular": "^17.1.1",
-    "@angular/cli": "~17.1.1",
-    "@angular/compiler-cli": "^17.1.1",
-    "@angular/core": "^17.1.1",
-    "ng-packagr": "^17.1.2",
+    "@angular-devkit/build-angular": "^17.2.0",
+    "@angular/cli": "~17.2.0",
+    "@angular/compiler-cli": "^17.2.1",
+    "@angular/core": "^17.2.1",
+    "ng-packagr": "^17.2.0",
     "publint": "^0.2.7",
     "typescript": "5.2.2"
   },
   "dependencies": {
-    "@unpic/core": "workspace:^",
+    "@unpic/core": "0.0.47",
     "tslib": "^2.6.2"
   }
 }

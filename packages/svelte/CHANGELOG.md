@@ -132,6 +132,55 @@
   * dependencies
     * @unpic/core bumped to 0.0.44
 
+## [0.0.51](https://github.com/ascorbic/unpic-img/compare/svelte-v0.0.50...svelte-v0.0.51) (2024-02-18)
+
+
+### Bug Fixes
+
+* update ([#504](https://github.com/ascorbic/unpic-img/issues/504)) ([a3775fb](https://github.com/ascorbic/unpic-img/commit/a3775fbcf7e12234584cd6705689e6d9d16fdcbc))
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @unpic/core bumped to 0.0.47
+
+## [0.0.50](https://github.com/ascorbic/unpic-img/compare/svelte-v0.0.49...svelte-v0.0.50) (2024-02-08)
+
+
+### Bug Fixes
+
+* **deps:** update dependency unpic to ^3.17.0 ([#493](https://github.com/ascorbic/unpic-img/issues/493)) ([22b6fd6](https://github.com/ascorbic/unpic-img/commit/22b6fd63292cb717973cf3070657106e7e09b466))
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @unpic/core bumped from 0.0.45 to 0.0.46
+
+## [0.0.49](https://github.com/ascorbic/unpic-img/compare/svelte-v0.0.48...svelte-v0.0.49) (2024-02-07)
+
+
+### Bug Fixes
+
+* **deps:** update dependency unpic to ^3.16.1 ([#491](https://github.com/ascorbic/unpic-img/issues/491)) ([00a4da2](https://github.com/ascorbic/unpic-img/commit/00a4da2b45c439d397637f74e95b6b4828d26f89))
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @unpic/core bumped to 0.0.45
+
+## [0.0.48](https://github.com/ascorbic/unpic-img/compare/svelte-v0.0.47...svelte-v0.0.48) (2024-02-06)
+
+
+### Features
+
+* Added support for on:error to unpic Image component ([#488](https://github.com/ascorbic/unpic-img/issues/488)) ([72d188f](https://github.com/ascorbic/unpic-img/commit/72d188ffffd9ab15d4ccef99b124383212de7b61))
+
 ## [0.0.47](https://github.com/ascorbic/unpic-img/compare/svelte-v0.0.46...svelte-v0.0.47) (2024-02-04)
 
 

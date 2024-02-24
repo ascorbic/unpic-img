@@ -9,14 +9,14 @@
     "publish": "pnpm run --filter '@unpic/*' publish"
   },
   "dependencies": {
-    "unpic": "^3.16.0"
+    "unpic": "^3.17.0"
   },
   "devDependencies": {
     "@playwright/test": "^1.41.2",
     "@testing-library/dom": "^9.3.4",
     "@testing-library/svelte": "^4.1.0",
-    "@typescript-eslint/eslint-plugin": "^6.20.0",
-    "@typescript-eslint/parser": "^6.20.0",
+    "@typescript-eslint/eslint-plugin": "^7.0.0",
+    "@typescript-eslint/parser": "^7.0.0",
     "@unpic/core": "workspace:^",
     "eslint": "^8.56.0",
     "eslint-config-prettier": "^9.1.0",
@@ -33,5 +33,5 @@
   "resolutions": {
     "cssstyle": "^4.0.0"
   },
-  "packageManager": "pnpm@8.15.1"
+  "packageManager": "pnpm@8.15.3"
 }
