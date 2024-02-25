@@ -8,7 +8,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        site: [preact, react]
+        site: [astro, preact, react, qwik]
     steps:
       - run: echo Running tests in ${{ matrix.site }}
       - name: Checkout

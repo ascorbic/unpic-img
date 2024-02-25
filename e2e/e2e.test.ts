@@ -31,7 +31,7 @@ function aspectRatio(width: number = 0, aspectRatio: number) {
 
 test.describe(site, () => {
   test("desktop", async ({ page }) => {
-    await page.goto(`${base}/test`);
+    await page.goto(`${base}/`);
     const fw = await page.getByAltText("fullWidth");
     expect(fw).toBeVisible();
     const vp = await page.viewportSize();
@@ -67,7 +67,7 @@ test.describe(site, () => {
 
   test("mobile", async ({ page }) => {
     await page.setViewportSize({ width: 400, height: 800 });
-    await page.goto(`${base}/test`);
+    await page.goto(`${base}/`);
     const fw = await page.getByAltText("fullWidth");
     expect(fw).toBeVisible();
     const vp = await page.viewportSize();

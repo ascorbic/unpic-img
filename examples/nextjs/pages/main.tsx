@@ -1,5 +1,7 @@
 import Head from "next/head";
 import { Image } from "@unpic/react/nextjs";
+import styles from "@/styles/Home.module.css";
+import bunny from "./bunny.jpg";
 
 export default function Home() {
   return (
@@ -10,37 +12,30 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <div>
+      <main className={styles.main}>
         <Image
-          src="https://images.unsplash.com/photo-1617718295766-0f839c2853e7"
+          src="https://images.unsplash.com/photo-1617718295766-0f839c2853e7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTczfHxyYWluZm9yZXN0JTIwYmVhY2h8ZW58MHx8MHx8&auto=format&fit=crop&w=900&q=60"
           layout="fullWidth"
-          alt="fullWidth"
-          aspectRatio={16 / 9}
+          alt=""
           priority
+          height={400}
+          background="auto"
         />
         <Image
           src="https://cdn.shopify.com/static/sample-images/garnished.jpeg"
           layout="constrained"
           width={800}
           height={600}
-          alt="constrained"
+          alt="Shopify"
         />
         <Image
-          src="https://bunnyoptimizerdemo.b-cdn.net/bunny7.jpg"
-          width={800}
-          height={600}
+          src={bunny}
+          width={400}
+          height={300}
           layout="fixed"
-          alt="fixed"
+          alt="Bunny.net"
         />
-        <div style={{ height: 10000 }}></div>
-        <Image
-          src="https://cdn.shopify.com/static/sample-images/bath.jpeg"
-          layout="constrained"
-          width={600}
-          height={800}
-          alt="offscreen"
-        />
-      </div>
+      </main>
     </>
   );
 }

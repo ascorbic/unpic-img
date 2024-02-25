@@ -1,0 +1,12 @@
+[dev]
+command = "npm run dev"
+
+[images]
+remote_images = ["https://placekitten.com/*"]
+
+[build]
+command = "pnpm --filter nextjs-demo... build"
+publish = "examples/nextjs/.next"
+
+[[plugins]]
+package = "@netlify/plugin-nextjs"
