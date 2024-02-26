@@ -1,0 +1,9 @@
+[dev]
+command = "npm run dev"
+
+[images]
+remote_images = ["https://placekitten.com/*"]
+
+[build]
+command = "pnpm --filter solid-demo... build"
+publish = "examples/solid/dist/"

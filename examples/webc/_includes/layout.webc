@@ -7,7 +7,7 @@
 		<title></title>
 		<style @raw="getCSS(page.url)" webc:keep></style>
 	</head>
-	<body>
+	<body style="margin:0">
 		<div @raw="content" webc:nokeep></div>
 		<script type="module" @raw="getJS(page.url)" webc:keep></script>
 	</body>

@@ -1,12 +1,12 @@
 <script webc:type="js" webc:root="override">
   const renderStyle = require("style-object-to-css-string");
   const { transformProps } = require("@unpic/core");
-  const { style, ...props } = transformProps(webc.attributes);
+  const attrs = { aspectRatio: webc.attributes.aspectratio, objectFit: webc.attributes.objectfit, ...webc.attributes };
+  const { style, ...props } = transformProps(attrs);
   for (const [key, value] of Object.entries(props)) {
     if (key.startsWith("webc:")) {
       delete props[key];
     }
   }
-
   `<img ${webc.renderAttributes(props)} style="${renderStyle(style)}">`;
 </script>

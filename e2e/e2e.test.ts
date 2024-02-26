@@ -32,28 +32,28 @@ function aspectRatio(width: number = 0, aspectRatio: number) {
 test.describe(site, () => {
   test("desktop", async ({ page }) => {
     await page.goto(`${base}/`);
-    // This is needed because when using web components there are two elements with that alt text
-    const fw = await page.getByAltText("fullWidth").locator("img");
+    // We don't use getByAltText because when using web components there are two elements with that alt text
+    const fw = await page.locator("css=img[alt=fullWidth]");
     expect(fw).toBeVisible();
     const vp = await page.viewportSize();
     await expect(fw).toHaveLoadedImage();
     await expect(fw).toHaveJSProperty("width", vp?.width);
     await expect(fw).toHaveJSProperty("height", aspectRatio(vp?.width, 16 / 9));
 
-    const cs = await page.getByAltText("constrained").locator("img");
+    const cs = await page.locator("css=img[alt=constrained]");
     await cs.scrollIntoViewIfNeeded();
     expect(cs).toBeVisible();
     await expect(cs).toHaveLoadedImage();
     await expect(cs).toHaveJSProperty("width", 800);
     await expect(cs).toHaveJSProperty("height", 600);
 
-    const fx = await page.getByAltText("fixed").locator("img");
+    const fx = await page.locator("css=img[alt=fixed]");
     expect(fx).toBeVisible();
     await expect(fx).toHaveLoadedImage();
     await expect(fx).toHaveJSProperty("width", 800);
     await expect(fx).toHaveJSProperty("height", 600);
 
-    const os = await page.getByAltText("offscreen").locator("img");
+    const os = await page.locator("css=img[alt=offscreen]");
 
     await expect(os).not.toBeInViewport();
     await expect(os).toHaveJSProperty("width", 600);
@@ -69,27 +69,27 @@ test.describe(site, () => {
   test("mobile", async ({ page }) => {
     await page.setViewportSize({ width: 400, height: 800 });
     await page.goto(`${base}/`);
-    const fw = await page.getByAltText("fullWidth").locator("img");
+    const fw = await page.locator("css=img[alt=fullWidth]");
     expect(fw).toBeVisible();
     const vp = await page.viewportSize();
     await expect(fw).toHaveLoadedImage();
     await expect(fw).toHaveJSProperty("width", vp?.width);
     await expect(fw).toHaveJSProperty("height", aspectRatio(vp?.width, 16 / 9));
 
-    const cs = await page.getByAltText("constrained").locator("img");
+    const cs = await page.locator("css=img[alt=constrained]");
     await cs.scrollIntoViewIfNeeded();
     expect(cs).toBeVisible();
     await expect(cs).toHaveLoadedImage();
     await expect(cs).toHaveJSProperty("width", 400);
     await expect(cs).toHaveJSProperty("height", 300);
 
-    const fx = await page.getByAltText("fixed").locator("img");
+    const fx = await page.locator("css=img[alt=fixed]");
     expect(fx).toBeVisible();
     await expect(fx).toHaveLoadedImage();
     await expect(fx).toHaveJSProperty("width", 800);
     await expect(fx).toHaveJSProperty("height", 600);
 
-    const os = await page.getByAltText("offscreen").locator("img");
+    const os = await page.locator("css=img[alt=offscreen]");
     await expect(os).not.toBeInViewport();
     await expect(os).toHaveJSProperty("width", 400);
     await expect(os).toHaveJSProperty("height", aspectRatio(400, 3 / 4));
