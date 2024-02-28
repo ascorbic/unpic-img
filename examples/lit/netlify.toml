@@ -1,0 +1,6 @@
+[dev]
+command = "npm run dev"
+
+[build]
+command = "pnpm --filter lit-demo... build"
+publish = "examples/lit/dist"

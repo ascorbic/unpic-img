@@ -1,0 +1,6 @@
+[dev]
+command = "npm run dev"
+
+[build]
+command = "pnpm --filter astro-demo... build"
+publish = "examples/astro/dist"

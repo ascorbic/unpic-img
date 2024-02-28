@@ -1,0 +1,3 @@
+[build]
+command = "pnpm --filter vue-demo... build"
+publish = "examples/vue/dist"

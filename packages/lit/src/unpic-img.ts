@@ -51,7 +51,12 @@ export class UnpicImg
       role: this.role,
       sizes: this.sizes,
       fetchpriority: this.fetchpriority,
+      background: this.background,
+      objectFit: this.objectFit,
+      aspectRatio: this.aspectRatio,
       layout: this.layout as Layout,
+      breakpoints: this.breakpoints,
+      cdn: this.cdn,
     } as UnpicImageProps<CoreImageAttributes<StyleInfo>>;
 
     const transformedProps = transformProps<

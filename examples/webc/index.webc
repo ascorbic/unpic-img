@@ -4,26 +4,31 @@ layout: layout.webc
 
 <unpic-img
   webc:import="npm:@unpic/webc"
-  src="https://images.unsplash.com/photo-1617718295766-0f839c2853e7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTczfHxyYWluZm9yZXN0JTIwYmVhY2h8ZW58MHx8MHx8&auto=format&fit=crop&w=900&q=60"
+  src="https://images.unsplash.com/photo-1617718295766-0f839c2853e7"
   layout="fullWidth"
-  alt=""
-  priority
-  height="400"
-  background="auto"
-></unpic-img>
+  alt="fullWidth"
+  aspectRatio="1.77777"
+  priority></unpic-img>
+
 <unpic-img
   webc:import="npm:@unpic/webc"
   src="https://cdn.shopify.com/static/sample-images/garnished.jpeg"
   layout="constrained"
   width="800"
   height="600"
-  alt="Shopify"
-></unpic-img>
+  alt="constrained"></unpic-img>
+
+<unpic-img webc:import="npm:@unpic/webc"
+src="https://bunnyoptimizerdemo.b-cdn.net/bunny7.jpg" width="800" height="600"
+layout="fixed" alt="fixed"
+
+> </unpic-img>
+
+<div style="height: 10000px"></div>
 <unpic-img
   webc:import="npm:@unpic/webc"
-  src="https://bunnyoptimizerdemo.b-cdn.net/bunny7.jpg?width=300"
-  width="400"
-  height="300"
-  layout="fixed"
-  alt="Bunny.net"
-></unpic-img>
+  src="https://cdn.shopify.com/static/sample-images/bath.jpeg"
+  layout="constrained"
+  width="600"
+  height="800"
+  alt="offscreen"></unpic-img>

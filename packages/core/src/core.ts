@@ -280,10 +280,10 @@ export function transformSharedProps<
       if (height) {
         logError("Ignoring aspectRatio because width and height are both set");
       } else {
-        height = width / aspectRatio;
+        height = Math.round(width / aspectRatio);
       }
     } else if (height) {
-      width = height * aspectRatio;
+      width = Math.round(height * aspectRatio);
     } else if (layout !== "fullWidth") {
       // Fullwidth images have 100% width, so aspectRatio is applicable
       logError(

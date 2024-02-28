@@ -1,0 +1,71 @@
+name: e2e tests
+on:
+  pull_request:
+  push:
+    branches: [main]
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        site: [astro, lit, preact, qwik, react, solid, webc]
+    steps:
+      - run: echo Running tests in ${{ matrix.site }}
+      - name: Checkout
+        uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v2
+        with:
+          version: latest
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          cache: "pnpm"
+          check-latest: true
+          registry-url: "https://registry.npmjs.org"
+      - name: Setup Deno
+        uses: denoland/setup-deno@v1
+      - name: Install dependencies
+        run: pnpm install
+      - name: Install Playwright Browsers
+        run: npx playwright install --with-deps
+      - name: Install netlify cli
+        run: npm install -g netlify-cli
+      - name: Run tests
+        run: npx playwright test
+        env:
+          SITE: ${{ matrix.site }}
+      - name: Upload test report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: blob-report-${{ matrix.site }}
+          path: blob-report
+          retention-days: 1
+  merge-reports:
+    if: always()
+    needs: [test]
+
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 18
+      - name: Download blob reports from GitHub Actions Artifacts
+        uses: actions/download-artifact@v4
+        with:
+          path: all-blob-reports
+          pattern: blob-report-*
+          merge-multiple: true
+
+      - name: Merge into HTML Report
+        run:
+          npx playwright merge-reports --reporter html,github ./all-blob-reports
+
+      - name: Upload HTML report
+        uses: actions/upload-artifact@v4
+        with:
+          name: html-report--attempt-${{ github.run_attempt }}
+          path: playwright-report
+          retention-days: 14
