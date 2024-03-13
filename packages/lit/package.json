@@ -1,6 +1,6 @@
 {
   "name": "@unpic/lit",
-  "version": "0.0.28",
+  "version": "0.0.29",
   "description": "A high-performance, responsive image component for Lit",
   "main": "unpic-img.js",
   "module": "unpic-img.js",
@@ -51,7 +51,7 @@
     "web-component-analyzer": "2.0.0"
   },
   "dependencies": {
-    "@unpic/core": "0.0.47"
+    "@unpic/core": "0.0.48"
   },
   "publishConfig": {
     "access": "public"
