@@ -1,6 +1,6 @@
 {
   "name": "@unpic/vue",
-  "version": "0.0.48",
+  "version": "0.0.49",
   "type": "module",
   "license": "MIT",
   "description": "Vue component for responsive, high-performance images.",
@@ -35,7 +35,7 @@
     "prepublishOnly": "pnpm build"
   },
   "dependencies": {
-    "@unpic/core": "0.0.47",
+    "@unpic/core": "0.0.48",
     "vue": "^3.4.19"
   },
   "devDependencies": {

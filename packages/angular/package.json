@@ -1,6 +1,6 @@
 {
   "name": "@unpic/angular",
-  "version": "0.0.37",
+  "version": "0.0.38",
   "description": "A high-performance, responsive image module and directive for Angular",
   "keywords": [
     "angular",
@@ -43,7 +43,7 @@
     "typescript": "5.2.2"
   },
   "dependencies": {
-    "@unpic/core": "0.0.47",
+    "@unpic/core": "0.0.48",
     "tslib": "^2.6.2"
   }
 }
