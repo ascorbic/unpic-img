@@ -108,6 +108,11 @@ is not auto-detected.
 - Storyblok
 - Vercel / Next.js
 - WordPress.com and Jetpack Site Accelerator
+- ImageEngine
+- ImageKit.io
+- Cloudimage
+- Uploadcare
+- Supabase
 
 ## Delegated URLs
 
