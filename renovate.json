@@ -2,11 +2,16 @@
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": [
     "config:base",
-    ":automergeLinters"
+    ":automergeLinters",
+    ":automergePatch",
+    ":automergeTesters",
+    ":automergeTypes",
+    ":disableRateLimiting",
+    ":widenPeerDependencies"
   ],
-  "schedule": [
-    "after 9pm on sunday"
-  ],
+  "lockFileMaintenance": {
+    "enabled": true,
+  },
   "packageRules": [
     {
       "matchPackageNames": [
