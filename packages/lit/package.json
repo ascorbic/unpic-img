@@ -51,7 +51,7 @@
     "web-component-analyzer": "2.0.0"
   },
   "dependencies": {
-    "@unpic/core": "0.0.48"
+    "@unpic/core": "workspace:*"
   },
   "publishConfig": {
     "access": "public"

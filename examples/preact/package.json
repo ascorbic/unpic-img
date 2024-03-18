@@ -15,13 +15,13 @@
     "@impalajs/core": "^0.0.12",
     "@impalajs/preact": "^0.0.12",
     "@unpic/preact": "workspace:^",
-    "preact": "^10.19.3"
+    "preact": "^10.19.6"
   },
   "devDependencies": {
-    "@babel/core": "^7.23.9",
-    "@playwright/test": "^1.41.2",
-    "@preact/preset-vite": "^2.8.1",
-    "typescript": "^5.3.3",
+    "@babel/core": "^7.24.0",
+    "@playwright/test": "^1.42.1",
+    "@preact/preset-vite": "^2.8.2",
+    "typescript": "^5.4.2",
     "vite": "^4.5.2"
   }
 }
