@@ -364,55 +364,6 @@ importers:
         specifier: ^4.2.1
         version: 4.3.2(typescript@5.3.3)(vite@5.1.6)
 
-  examples/qwik-old:
-    dependencies:
-      '@unpic/qwik':
-        specifier: workspace:^
-        version: link:../../packages/qwik
-    devDependencies:
-      '@builder.io/qwik':
-        specifier: latest
-        version: 1.5.1(@types/node@20.11.28)(undici@6.9.0)
-      '@builder.io/qwik-city':
-        specifier: latest
-        version: 1.5.1(@types/node@20.11.28)
-      '@netlify/edge-functions':
-        specifier: ^2.3.1
-        version: 2.3.1
-      '@types/eslint':
-        specifier: latest
-        version: 8.56.5
-      '@types/node':
-        specifier: latest
-        version: 20.11.28
-      '@typescript-eslint/eslint-plugin':
-        specifier: latest
-        version: 7.2.0(@typescript-eslint/parser@7.2.0)(eslint@8.57.0)(typescript@5.4.2)
-      '@typescript-eslint/parser':
-        specifier: latest
-        version: 7.2.0(eslint@8.57.0)(typescript@5.4.2)
-      eslint:
-        specifier: latest
-        version: 8.57.0
-      eslint-plugin-qwik:
-        specifier: latest
-        version: 1.5.1(eslint@8.57.0)
-      prettier:
-        specifier: latest
-        version: 3.2.5
-      typescript:
-        specifier: latest
-        version: 5.4.2
-      undici:
-        specifier: latest
-        version: 6.9.0
-      vite:
-        specifier: ^4.5.2
-        version: 4.5.2(@types/node@20.11.28)
-      vite-tsconfig-paths:
-        specifier: ^4.3.2
-        version: 4.3.2(typescript@5.4.2)(vite@4.5.2)
-
   examples/react:
     dependencies:
       '@impalajs/core':
@@ -25461,23 +25412,6 @@ packages:
       globrex: 0.1.2
       tsconfck: 3.0.3(typescript@5.3.3)
       vite: 5.1.6(@types/node@20.11.28)
-    transitivePeerDependencies:
-      - supports-color
-      - typescript
-    dev: true
-
-  /vite-tsconfig-paths@4.3.2(typescript@5.4.2)(vite@4.5.2):
-    resolution: {integrity: sha512-0Vd/a6po6Q+86rPlntHye7F31zA2URZMbH8M3saAZ/xR9QoGN/L21bxEGfXdWmFdNkqPpRdxFT7nmNe12e9/uA==}
-    peerDependencies:
-      vite: '*'
-    peerDependenciesMeta:
-      vite:
-        optional: true
-    dependencies:
-      debug: 4.3.4(supports-color@9.4.0)
-      globrex: 0.1.2
-      tsconfck: 3.0.3(typescript@5.4.2)
-      vite: 4.5.2(@types/node@20.11.28)
     transitivePeerDependencies:
       - supports-color
       - typescript
