@@ -1,3 +1,4 @@
 [build]
+publish = "dist"
 ignore = "false"
 command = "pnpm --filter qwik-demo... build"
