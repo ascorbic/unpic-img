@@ -9,12 +9,12 @@
   },
   "license": "MIT",
   "devDependencies": {
-    "typescript": "^5.3.3",
+    "typescript": "^5.4.2",
     "vite": "^4.5.2",
-    "vite-plugin-solid": "^2.9.1"
+    "vite-plugin-solid": "^2.10.2"
   },
   "dependencies": {
     "@unpic/solid": "workspace:^",
-    "solid-js": "^1.8.12"
+    "solid-js": "^1.8.15"
   }
 }

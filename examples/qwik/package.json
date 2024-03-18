@@ -24,7 +24,7 @@
   "devDependencies": {
     "@builder.io/qwik": "latest",
     "@builder.io/qwik-city": "latest",
-    "@netlify/edge-functions": "^2.3.0",
+    "@netlify/edge-functions": "^2.3.1",
     "@types/eslint": "latest",
     "@types/node": "latest",
     "@typescript-eslint/eslint-plugin": "latest",
@@ -35,7 +35,7 @@
     "typescript": "latest",
     "undici": "latest",
     "vite": "^4.5.2",
-    "vite-tsconfig-paths": "^4.2.1"
+    "vite-tsconfig-paths": "^4.3.2"
   },
   "dependencies": {
     "@unpic/qwik": "workspace:^"
