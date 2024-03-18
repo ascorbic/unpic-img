@@ -4,7 +4,7 @@ on:
   push:
     branches: [main]
 jobs:
-  test:
+  e2e:
     runs-on: ubuntu-latest
     strategy:
       fail-fast: false
@@ -44,7 +44,7 @@ jobs:
           retention-days: 1
   merge-reports:
     if: always()
-    needs: [test]
+    needs: [e2e]
 
     runs-on: ubuntu-latest
     steps:
