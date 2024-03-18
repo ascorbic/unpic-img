@@ -235,7 +235,7 @@ importers:
         version: link:../../packages/astro
       astro:
         specifier: ^4.2.7
-        version: 4.4.15(@types/node@20.11.28)(typescript@5.3.3)
+        version: 4.4.15(typescript@5.3.3)
 
   examples/lit:
     dependencies:
@@ -496,7 +496,7 @@ importers:
     devDependencies:
       '@angular-devkit/build-angular':
         specifier: ^17.2.0
-        version: 17.2.3(@angular/compiler-cli@17.2.4)(ng-packagr@17.2.0)(typescript@5.2.2)
+        version: 17.2.3(@angular/compiler-cli@17.2.4)(ng-packagr@17.2.1)(typescript@5.2.2)
       '@angular/cli':
         specifier: ~17.2.0
         version: 17.2.3
@@ -508,7 +508,7 @@ importers:
         version: 17.2.4(rxjs@7.8.1)(zone.js@0.14.4)
       ng-packagr:
         specifier: ^17.2.0
-        version: 17.2.0(@angular/compiler-cli@17.2.4)(tslib@2.6.2)(typescript@5.2.2)
+        version: 17.2.1(@angular/compiler-cli@17.2.4)(tslib@2.6.2)(typescript@5.2.2)
       publint:
         specifier: ^0.2.7
         version: 0.2.7
@@ -533,7 +533,7 @@ importers:
     devDependencies:
       astro:
         specifier: ^4.4.0
-        version: 4.4.15(@types/node@20.11.28)(typescript@5.3.3)
+        version: 4.4.15(typescript@5.3.3)
 
   packages/core:
     dependencies:
@@ -1255,7 +1255,7 @@ packages:
       - webpack-cli
     dev: true
 
-  /@angular-devkit/build-angular@17.2.3(@angular/compiler-cli@17.2.4)(ng-packagr@17.2.0)(typescript@5.2.2):
+  /@angular-devkit/build-angular@17.2.3(@angular/compiler-cli@17.2.4)(ng-packagr@17.2.1)(typescript@5.2.2):
     resolution: {integrity: sha512-AZsEHZj+k2Lxb7uQUwfEpSE6TvQhCoIgP6XLKgKxZHUOiTUVXDj84WhNcbup5SsSG1cafmoVN7APxxuSwHcoeg==}
     engines: {node: ^18.13.0 || >=20.9.0, npm: ^6.11.0 || ^7.5.6 || >=8.0.0, yarn: '>= 1.13.0'}
     peerDependencies:
@@ -1335,7 +1335,7 @@ packages:
       magic-string: 0.30.7
       mini-css-extract-plugin: 2.8.0(webpack@5.90.1)
       mrmime: 2.0.0
-      ng-packagr: 17.2.0(@angular/compiler-cli@17.2.4)(tslib@2.6.2)(typescript@5.2.2)
+      ng-packagr: 17.2.1(@angular/compiler-cli@17.2.4)(tslib@2.6.2)(typescript@5.2.2)
       open: 8.4.2
       ora: 5.4.1
       parse5-html-rewriting-stream: 7.0.0
@@ -5508,7 +5508,7 @@ packages:
       ufo: 1.4.0
       unenv: 1.9.0
       unplugin: 1.7.1
-      vite: 5.1.5(@types/node@20.11.28)
+      vite: 5.1.5
       vite-node: 1.3.1
       vite-plugin-checker: 0.6.4(eslint@8.56.0)(typescript@5.3.3)(vite@5.1.5)
       vue: 3.4.19(typescript@5.3.3)
@@ -7073,8 +7073,8 @@ packages:
     dev: true
     optional: true
 
-  /@rollup/wasm-node@4.12.0:
-    resolution: {integrity: sha512-sqy3+YvV/uWX6bPZOR5PlEdH6xyMPXoelllRQ/uZ13tzy9f4pXZTbajnoWN8IHHXwTNKPiLzsePLiDEVmkxMNw==}
+  /@rollup/wasm-node@4.13.0:
+    resolution: {integrity: sha512-oFX11wzU7RTaiW06WBtRpzIVN/oaG0I3XkevNO0brBklYnY9zpLhTfksN4b+TdBt6CfXV/KdVhdWLbb0fQIR7A==}
     engines: {node: '>=18.0.0', npm: '>=8.0.0'}
     hasBin: true
     dependencies:
@@ -8529,7 +8529,7 @@ packages:
       '@babel/core': 7.24.0
       '@babel/plugin-transform-typescript': 7.23.6(@babel/core@7.24.0)
       '@vue/babel-plugin-jsx': 1.2.1(@babel/core@7.24.0)
-      vite: 5.1.5(@types/node@20.11.28)
+      vite: 5.1.5
       vue: 3.4.19(typescript@5.3.3)
     transitivePeerDependencies:
       - supports-color
@@ -8553,7 +8553,7 @@ packages:
       vite: ^5.0.0
       vue: ^3.2.25
     dependencies:
-      vite: 5.1.5(@types/node@20.11.28)
+      vite: 5.1.5
       vue: 3.4.19(typescript@5.3.3)
     dev: true
 
@@ -9568,6 +9568,89 @@ packages:
       unist-util-visit: 5.0.0
       vfile: 6.0.1
       vite: 5.1.5(@types/node@20.11.28)
+      vitefu: 0.2.5(vite@5.1.5)
+      which-pm: 2.1.1
+      yargs-parser: 21.1.1
+      zod: 3.22.4
+    optionalDependencies:
+      sharp: 0.32.6
+    transitivePeerDependencies:
+      - '@types/node'
+      - less
+      - lightningcss
+      - sass
+      - stylus
+      - sugarss
+      - supports-color
+      - terser
+      - typescript
+    dev: false
+
+  /astro@4.4.15(typescript@5.3.3):
+    resolution: {integrity: sha512-RTiAnlO8hDp6GqMVvaeJxyuCJhHNEho09lHshMNQBqgRabYPOJGW0HZZrbLRGNOqN9I14ivhZIunYGgAaGQpWw==}
+    engines: {node: '>=18.14.1', npm: '>=6.14.0'}
+    hasBin: true
+    dependencies:
+      '@astrojs/compiler': 2.7.0
+      '@astrojs/internal-helpers': 0.2.1
+      '@astrojs/markdown-remark': 4.2.1
+      '@astrojs/telemetry': 3.0.4
+      '@babel/core': 7.24.0
+      '@babel/generator': 7.23.6
+      '@babel/parser': 7.24.0
+      '@babel/plugin-transform-react-jsx': 7.23.4(@babel/core@7.24.0)
+      '@babel/traverse': 7.24.0
+      '@babel/types': 7.24.0
+      '@medv/finder': 3.2.0
+      '@types/babel__core': 7.20.5
+      acorn: 8.11.3
+      aria-query: 5.3.0
+      axobject-query: 4.0.0
+      boxen: 7.1.1
+      chokidar: 3.6.0
+      ci-info: 4.0.0
+      clsx: 2.1.0
+      common-ancestor-path: 1.0.1
+      cookie: 0.6.0
+      cssesc: 3.0.0
+      debug: 4.3.4
+      deterministic-object-hash: 2.0.2
+      devalue: 4.3.2
+      diff: 5.2.0
+      dlv: 1.1.3
+      dset: 3.1.3
+      es-module-lexer: 1.4.1
+      esbuild: 0.19.12
+      estree-walker: 3.0.3
+      execa: 8.0.1
+      fast-glob: 3.3.2
+      flattie: 1.1.1
+      github-slugger: 2.0.0
+      gray-matter: 4.0.3
+      html-escaper: 3.0.3
+      http-cache-semantics: 4.1.1
+      js-yaml: 4.1.0
+      kleur: 4.1.5
+      magic-string: 0.30.8
+      mdast-util-to-hast: 13.0.2
+      mime: 3.0.0
+      ora: 7.0.1
+      p-limit: 5.0.0
+      p-queue: 8.0.1
+      path-to-regexp: 6.2.1
+      preferred-pm: 3.1.3
+      prompts: 2.4.2
+      rehype: 13.0.1
+      resolve: 1.22.8
+      semver: 7.6.0
+      shikiji: 0.9.19
+      shikiji-core: 0.9.19
+      string-width: 7.1.0
+      strip-ansi: 7.1.0
+      tsconfck: 3.0.3(typescript@5.3.3)
+      unist-util-visit: 5.0.0
+      vfile: 6.0.1
+      vite: 5.1.5
       vitefu: 0.2.5(vite@5.1.5)
       which-pm: 2.1.1
       yargs-parser: 21.1.1
@@ -11731,6 +11814,12 @@ packages:
 
   /esbuild-wasm@0.20.0:
     resolution: {integrity: sha512-Lc9KeQCg1Zf8kCtfDXgy29rx0x8dOuhDWbkP76Wc64q7ctOOc1Zv1C39AxiE+y4N6ONyXtJk4HKpM7jlU7/jSA==}
+    engines: {node: '>=12'}
+    hasBin: true
+    dev: true
+
+  /esbuild-wasm@0.20.2:
+    resolution: {integrity: sha512-7o6nmsEqlcXJXMNqnx5K+M4w4OPx7yTFXQHcJyeP3SkXb8p2T8N9E1ayK4vd/qDBepH6fuPoZwiFvZm8x5qv+w==}
     engines: {node: '>=12'}
     hasBin: true
     dev: true
@@ -16762,8 +16851,8 @@ packages:
       - babel-plugin-macros
     dev: false
 
-  /ng-packagr@17.2.0(@angular/compiler-cli@17.2.4)(tslib@2.6.2)(typescript@5.2.2):
-    resolution: {integrity: sha512-M2N4IoXkoZQjxstIL2OkCUhBUWH6LhyOtRv8Xi5FFQKxQL7C8/4OL8oilZRbHt2W7DyE3QpQk60S8AbZEypk9w==}
+  /ng-packagr@17.2.1(@angular/compiler-cli@17.2.4)(tslib@2.6.2)(typescript@5.2.2):
+    resolution: {integrity: sha512-Y0qukNaNkDfDp2gyJQ76pG4tKmENDNXiUacSvxmXZF5sCPM4DWS+SL5cZTqNFur70eocRTrWqtOoARSIPA1WMg==}
     engines: {node: ^18.13.0 || >=20.9.0}
     hasBin: true
     peerDependencies:
@@ -16778,7 +16867,7 @@ packages:
       '@angular/compiler-cli': 17.2.4(@angular/compiler@17.2.4)(typescript@5.2.2)
       '@rollup/plugin-json': 6.1.0(rollup@4.13.0)
       '@rollup/plugin-node-resolve': 15.2.3(rollup@4.13.0)
-      '@rollup/wasm-node': 4.12.0
+      '@rollup/wasm-node': 4.13.0
       ajv: 8.12.0
       ansi-colors: 4.1.3
       browserslist: 4.23.0
@@ -16787,17 +16876,17 @@ packages:
       commander: 12.0.0
       convert-source-map: 2.0.0
       dependency-graph: 1.0.0
-      esbuild-wasm: 0.20.0
+      esbuild-wasm: 0.20.2
       fast-glob: 3.3.2
       find-cache-dir: 3.3.2
       injection-js: 2.4.0
       jsonc-parser: 3.2.1
       less: 4.2.0
       ora: 5.4.1
-      piscina: 4.3.2
-      postcss: 8.4.35
+      piscina: 4.4.0
+      postcss: 8.4.36
       rxjs: 7.8.1
-      sass: 1.71.0
+      sass: 1.72.0
       tslib: 2.6.2
       typescript: 5.2.2
     optionalDependencies:
@@ -18076,8 +18165,8 @@ packages:
       nice-napi: 1.0.2
     dev: true
 
-  /piscina@4.3.2:
-    resolution: {integrity: sha512-aXPak3A1LgbfDFrsmgYhQS4J7ElHRFL7iUkUqaiLNDRE69YQSFGqIZiHaXOH4NyC6EdD+awZVeE7MG0zVm9L4Q==}
+  /piscina@4.4.0:
+    resolution: {integrity: sha512-+AQduEJefrOApE4bV7KRmp3N2JnnyErlVqq4P/jmko4FPz9Z877BCccl/iB3FdrWSUkvbGV9Kan/KllJgat3Vg==}
     optionalDependencies:
       nice-napi: 1.0.2
     dev: true
@@ -19766,14 +19855,14 @@ packages:
       source-map-js: 1.0.2
     dev: true
 
-  /sass@1.71.0:
-    resolution: {integrity: sha512-HKKIKf49Vkxlrav3F/w6qRuPcmImGVbIXJ2I3Kg0VMA+3Bav+8yE9G5XmP5lMj6nl4OlqbPftGAscNaNu28b8w==}
+  /sass@1.72.0:
+    resolution: {integrity: sha512-Gpczt3WA56Ly0Mn8Sl21Vj94s1axi9hDIzDFn9Ph9x3C3p4nNyvsqJoQyVXKou6cBlfFWEgRW4rT8Tb4i3XnVA==}
     engines: {node: '>=14.0.0'}
     hasBin: true
     dependencies:
       chokidar: 3.6.0
       immutable: 4.3.5
-      source-map-js: 1.0.2
+      source-map-js: 1.1.0
     dev: true
 
   /sax@1.3.0:
@@ -22224,7 +22313,7 @@ packages:
       debug: 4.3.4
       pathe: 1.1.2
       picocolors: 1.0.0
-      vite: 5.1.5(@types/node@20.11.28)
+      vite: 5.1.5
     transitivePeerDependencies:
       - '@types/node'
       - less
@@ -22280,7 +22369,7 @@ packages:
       strip-ansi: 6.0.1
       tiny-invariant: 1.3.1
       typescript: 5.3.3
-      vite: 5.1.5(@types/node@20.11.28)
+      vite: 5.1.5
       vscode-languageclient: 7.0.0
       vscode-languageserver: 7.0.0
       vscode-languageserver-textdocument: 1.0.11
@@ -22501,6 +22590,40 @@ packages:
     optionalDependencies:
       fsevents: 2.3.3
     dev: true
+
+  /vite@5.1.5:
+    resolution: {integrity: sha512-BdN1xh0Of/oQafhU+FvopafUp6WaYenLU/NFoL5WyJL++GxkNfieKzBhM24H3HVsPQrlAqB7iJYTHabzaRed5Q==}
+    engines: {node: ^18.0.0 || >=20.0.0}
+    hasBin: true
+    peerDependencies:
+      '@types/node': ^18.0.0 || >=20.0.0
+      less: '*'
+      lightningcss: ^1.21.0
+      sass: '*'
+      stylus: '*'
+      sugarss: '*'
+      terser: ^5.4.0
+    peerDependenciesMeta:
+      '@types/node':
+        optional: true
+      less:
+        optional: true
+      lightningcss:
+        optional: true
+      sass:
+        optional: true
+      stylus:
+        optional: true
+      sugarss:
+        optional: true
+      terser:
+        optional: true
+    dependencies:
+      esbuild: 0.19.12
+      postcss: 8.4.35
+      rollup: 4.13.0
+    optionalDependencies:
+      fsevents: 2.3.3
 
   /vite@5.1.5(@types/node@20.11.28):
     resolution: {integrity: sha512-BdN1xh0Of/oQafhU+FvopafUp6WaYenLU/NFoL5WyJL++GxkNfieKzBhM24H3HVsPQrlAqB7iJYTHabzaRed5Q==}
