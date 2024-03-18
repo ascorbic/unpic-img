@@ -313,10 +313,6 @@ importers:
         version: 4.5.2(@types/node@20.11.28)
 
   examples/qwik:
-    dependencies:
-      '@unpic/qwik':
-        specifier: workspace:^
-        version: link:../../packages/qwik
     devDependencies:
       '@builder.io/qwik':
         specifier: ^1.5.1
@@ -339,6 +335,9 @@ importers:
       '@typescript-eslint/parser':
         specifier: ^7.1.0
         version: 7.2.0(eslint@8.57.0)(typescript@5.3.3)
+      '@unpic/qwik':
+        specifier: workspace:^
+        version: link:../../packages/qwik
       eslint:
         specifier: ^8.57.0
         version: 8.57.0
