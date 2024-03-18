@@ -4,7 +4,8 @@ on:
   push:
     branches: [main]
 jobs:
-  e2e:
+  test:
+    name: "E2E tests"
     runs-on: ubuntu-latest
     strategy:
       fail-fast: false
@@ -44,7 +45,7 @@ jobs:
           retention-days: 1
   merge-reports:
     if: always()
-    needs: [e2e]
+    needs: [test]
 
     runs-on: ubuntu-latest
     steps:
