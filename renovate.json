@@ -12,6 +12,7 @@
   "lockFileMaintenance": {
     "enabled": true,
   },
+  "schedule": ["before 4am"],
   "packageRules": [
     {
       "matchPackageNames": [
