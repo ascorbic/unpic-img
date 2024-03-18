@@ -53,7 +53,7 @@
     "@typescript-eslint/eslint-plugin": "7.0.1",
     "@typescript-eslint/parser": "7.0.1",
     "@unpic/core": "0.0.48",
-    "eslint": "8.56.0",
+    "eslint": "8.57.0",
     "eslint-plugin-qwik": "^1.4.5",
     "node-fetch": "3.3.2",
     "np": "9.2.0",
