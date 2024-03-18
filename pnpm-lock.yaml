@@ -752,7 +752,7 @@ importers:
         version: 1.30.4(svelte@4.2.11)(vite@5.1.3)
       '@sveltejs/package':
         specifier: ^2.2.6
-        version: 2.2.7(svelte@4.2.11)(typescript@5.3.3)
+        version: 2.3.0(svelte@4.2.11)(typescript@5.3.3)
       prettier:
         specifier: ^3.2.5
         version: 3.2.5
@@ -7315,8 +7315,8 @@ packages:
       - supports-color
     dev: true
 
-  /@sveltejs/package@2.2.7(svelte@4.2.11)(typescript@5.3.3):
-    resolution: {integrity: sha512-/vvmrQO2mMvROdM/iGRHtRn+ValnK9xzB50pqRcX0IvoeVoTq7uhYf+KifrZTluBA+km6AX/WXRXajrgrgbmvw==}
+  /@sveltejs/package@2.3.0(svelte@4.2.11)(typescript@5.3.3):
+    resolution: {integrity: sha512-wmtwEfi3gQnmtotAjygRHR6cmLfpblQl1dU764f3N2I5DPe34llFs44bHOYcuk91Bp2sSq6bWUmNwxGlYCchOA==}
     engines: {node: ^16.14 || >=18}
     hasBin: true
     peerDependencies:
@@ -7327,7 +7327,7 @@ packages:
       sade: 1.8.1
       semver: 7.6.0
       svelte: 4.2.11
-      svelte2tsx: 0.7.3(svelte@4.2.11)(typescript@5.3.3)
+      svelte2tsx: 0.7.4(svelte@4.2.11)(typescript@5.3.3)
     transitivePeerDependencies:
       - typescript
     dev: true
@@ -20931,8 +20931,8 @@ packages:
       typescript: 5.3.3
     dev: true
 
-  /svelte2tsx@0.7.3(svelte@4.2.11)(typescript@5.3.3):
-    resolution: {integrity: sha512-yrjJFvqp32Ag4Oke+T1xXZLqMNrS0gjzAM//+L6+7OhXWMDuMs0fkyb9ymixK9keVOLJ1GbeEVfg59c3E2IN+w==}
+  /svelte2tsx@0.7.4(svelte@4.2.11)(typescript@5.3.3):
+    resolution: {integrity: sha512-zAtbQD7JmeKe0JWdKO6l38t7P6wFP0+YTc0LLFdtzWdHEddcE+/VMvJquQI9NNsnrinUbtS9JF3kosPNeglMcQ==}
     peerDependencies:
       svelte: ^3.55 || ^4.0.0-next.0 || ^4.0 || ^5.0.0-next.0
       typescript: ^4.9.4 || ^5.0.0
