@@ -26,7 +26,7 @@
     "@unpic/placeholder": "^0.1.2",
     "@unpic/react": "workspace:^",
     "astro": "^4.5.5",
-    "astro-icon": "^0.8.2",
+    "astro-icon": "^1.0.0",
     "blurhash": "^2.0.5",
     "pako": "^2.1.0",
     "preact": "^10.19.6",
