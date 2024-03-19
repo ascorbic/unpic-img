@@ -1,5 +1,5 @@
 {
-  "version": "0.0.48",
+  "version": "0.0.49",
   "name": "@unpic/solid",
   "description": "SolidJS component for responsive, high-performance images.",
   "keywords": [
@@ -91,7 +91,7 @@
     "vitest": "^1.4.0"
   },
   "dependencies": {
-    "@unpic/core": "workspace:*"
+    "@unpic/core": "0.0.49"
   },
   "browser": {
     "./dist/server.js": "./dist/index.js"
