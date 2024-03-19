@@ -198,6 +198,20 @@
   * dependencies
     * @unpic/core bumped from 0.0.45 to 0.0.46
 
+## [0.0.44](https://github.com/ascorbic/unpic-img/compare/preact-v0.0.43...preact-v0.0.44) (2024-03-19)
+
+
+### Bug Fixes
+
+* **deps:** upgrade all dependencies ([#574](https://github.com/ascorbic/unpic-img/issues/574)) ([52ca654](https://github.com/ascorbic/unpic-img/commit/52ca65444f376faf077deecbff6d9f588f1820c6))
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @unpic/core bumped to 0.0.49
+
 ## [0.0.43](https://github.com/ascorbic/unpic-img/compare/preact-v0.0.42...preact-v0.0.43) (2024-03-13)
 
 

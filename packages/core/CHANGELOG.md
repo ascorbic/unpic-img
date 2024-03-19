@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.0.49](https://github.com/ascorbic/unpic-img/compare/core-v0.0.48...core-v0.0.49) (2024-03-19)
+
+
+### Bug Fixes
+
+* **deps:** upgrade all dependencies ([#574](https://github.com/ascorbic/unpic-img/issues/574)) ([52ca654](https://github.com/ascorbic/unpic-img/commit/52ca65444f376faf077deecbff6d9f588f1820c6))
+
 ## [0.0.48](https://github.com/ascorbic/unpic-img/compare/core-v0.0.47...core-v0.0.48) (2024-03-13)
 
 

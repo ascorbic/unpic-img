@@ -1,6 +1,6 @@
 {
   "name": "@unpic/svelte",
-  "version": "0.0.52",
+  "version": "0.0.53",
   "license": "MIT",
   "description": "Svelte component for responsive, high-performance images.",
   "keywords": [
@@ -38,7 +38,7 @@
   },
   "type": "module",
   "dependencies": {
-    "@unpic/core": "workspace:*",
+    "@unpic/core": "0.0.49",
     "style-object-to-css-string": "1.1.3",
     "unpic": "^3.18.0"
   },
