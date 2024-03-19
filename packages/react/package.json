@@ -73,7 +73,7 @@
     "test": "vitest run"
   },
   "devDependencies": {
-    "@arethetypeswrong/cli": "^0.13.10",
+    "@arethetypeswrong/cli": "^0.15.0",
     "@testing-library/react": "^14.2.1",
     "@types/node": "^20.11.28",
     "@types/react": "^18.2.67",
