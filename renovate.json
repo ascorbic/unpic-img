@@ -10,9 +10,11 @@
     ":widenPeerDependencies"
   ],
   "lockFileMaintenance": {
-    "enabled": true,
+    "enabled": true
   },
-  "schedule": ["before 4am"],
+  "schedule": [
+    "before 4am"
+  ],
   "packageRules": [
     {
       "matchPackageNames": [
