@@ -650,7 +650,7 @@ importers:
         version: 0.15.2
       '@testing-library/react':
         specifier: ^14.2.1
-        version: 14.2.1(react-dom@18.2.0)(react@18.2.0)
+        version: 14.2.2(react-dom@18.2.0)(react@18.2.0)
       '@types/node':
         specifier: ^20.11.28
         version: 20.11.30
@@ -1830,7 +1830,14 @@ packages:
     resolution: {integrity: sha512-bC49z4spJQR3j8vFtJBLqzyzFV0ciuL5HYX7qfSl3KEqeMVV+eTquRvmXxpvB0AMubRrvv7y5DILiLLPi57Ewg==}
     engines: {node: '>=6.9.0'}
     dependencies:
-      '@babel/highlight': 7.24.1
+      '@babel/highlight': 7.24.2
+      picocolors: 1.0.0
+
+  /@babel/code-frame@7.24.2:
+    resolution: {integrity: sha512-y5+tLQyV8pg3fsiln67BVLD1P13Eg4lh5RW9mF0zUuvLrv9uIQ4MCL+CRT+FTsBlBjcIan6PGsLcBN0m3ClUyQ==}
+    engines: {node: '>=6.9.0'}
+    dependencies:
+      '@babel/highlight': 7.24.2
       picocolors: 1.0.0
 
   /@babel/compat-data@7.24.1:
@@ -1842,7 +1849,7 @@ packages:
     engines: {node: '>=6.9.0'}
     dependencies:
       '@ampproject/remapping': 2.3.0
-      '@babel/code-frame': 7.24.1
+      '@babel/code-frame': 7.24.2
       '@babel/generator': 7.24.1
       '@babel/helper-compilation-targets': 7.23.6
       '@babel/helper-module-transforms': 7.23.3(@babel/core@7.23.9)
@@ -1865,7 +1872,7 @@ packages:
     engines: {node: '>=6.9.0'}
     dependencies:
       '@ampproject/remapping': 2.3.0
-      '@babel/code-frame': 7.24.1
+      '@babel/code-frame': 7.24.2
       '@babel/generator': 7.23.6
       '@babel/helper-compilation-targets': 7.23.6
       '@babel/helper-module-transforms': 7.23.3(@babel/core@7.24.0)
@@ -1888,7 +1895,7 @@ packages:
     engines: {node: '>=6.9.0'}
     dependencies:
       '@ampproject/remapping': 2.3.0
-      '@babel/code-frame': 7.24.1
+      '@babel/code-frame': 7.24.2
       '@babel/generator': 7.24.1
       '@babel/helper-compilation-targets': 7.23.6
       '@babel/helper-module-transforms': 7.23.3(@babel/core@7.24.1)
@@ -2200,8 +2207,8 @@ packages:
     transitivePeerDependencies:
       - supports-color
 
-  /@babel/highlight@7.24.1:
-    resolution: {integrity: sha512-EPmDPxidWe/Ex+HTFINpvXdPHRmgSF3T8hGvzondYjmgzTQ/0EbLpSxyt+w3zzlYSk9cNBQNF9k0dT5Z2NiBjw==}
+  /@babel/highlight@7.24.2:
+    resolution: {integrity: sha512-Yac1ao4flkTxTteCDZLEvdxg2fZfz1v8M4QpaGypq/WPDqg3ijHYbDfs+LG5hvzSoqaSZ9/Z9lKSP3CjZjv+pA==}
     engines: {node: '>=6.9.0'}
     dependencies:
       '@babel/helper-validator-identifier': 7.22.20
@@ -3251,7 +3258,7 @@ packages:
     resolution: {integrity: sha512-xuU6o9m68KeqZbQuDt2TcKSxUw/mrsvavlEqQ1leZ/B+C9tk6E4sRWy97WaXgvq5E+nU3cXMxv3WKOCanVMCmQ==}
     engines: {node: '>=6.9.0'}
     dependencies:
-      '@babel/code-frame': 7.24.1
+      '@babel/code-frame': 7.24.2
       '@babel/generator': 7.24.1
       '@babel/helper-environment-visitor': 7.22.20
       '@babel/helper-function-name': 7.23.0
@@ -8512,8 +8519,8 @@ packages:
       preact: 10.19.7
     dev: true
 
-  /@testing-library/react@14.2.1(react-dom@18.2.0)(react@18.2.0):
-    resolution: {integrity: sha512-sGdjws32ai5TLerhvzThYFbpnF9XtL65Cjf+gB0Dhr29BGqK+mAeN7SURSdu+eqgET4ANcWoC7FQpkaiGvBr+A==}
+  /@testing-library/react@14.2.2(react-dom@18.2.0)(react@18.2.0):
+    resolution: {integrity: sha512-SOUuM2ysCvjUWBXTNfQ/ztmnKDmqaiPV3SvoIuyxMUca45rbSWWAT/qB8CUs/JQ/ux/8JFs9DNdFQ3f6jH3crA==}
     engines: {node: '>=14'}
     peerDependencies:
       react: ^18.0.0
@@ -9495,7 +9502,7 @@ packages:
     peerDependencies:
       '@babel/core': ^7.0.0-0
     dependencies:
-      '@babel/code-frame': 7.24.1
+      '@babel/code-frame': 7.24.2
       '@babel/core': 7.24.1
       '@babel/helper-module-imports': 7.24.1
       '@babel/helper-plugin-utils': 7.24.0
@@ -10823,7 +10830,7 @@ packages:
     peerDependencies:
       ajv: 4.11.8 - 8
     dependencies:
-      '@babel/code-frame': 7.24.1
+      '@babel/code-frame': 7.24.2
       '@humanwhocodes/momoa': 2.0.4
       ajv: 8.12.0
       chalk: 4.1.2
@@ -16812,8 +16819,6 @@ packages:
     peerDependenciesMeta:
       webpack:
         optional: true
-      webpack-sources:
-        optional: true
     dependencies:
       webpack: 5.90.3(esbuild@0.20.1)
       webpack-sources: 3.2.3
@@ -19977,9 +19982,6 @@ packages:
     resolution: {integrity: sha512-W+gxAq7aQ9dJIg/XLKGcRT0cvnStFAQHPaI0pvD0U2l6IVLueUAm3nwN7lkY62zZNmlvNx6jNtE4wlbS+CyqSg==}
     engines: {node: '>= 12.0.0'}
     hasBin: true
-    peerDependenciesMeta:
-      '@parcel/core':
-        optional: true
     dependencies:
       '@parcel/config-default': 2.12.0(@parcel/core@2.12.0)(typescript@5.4.2)
       '@parcel/core': 2.12.0
@@ -20049,7 +20051,7 @@ packages:
     resolution: {integrity: sha512-ayCKvm/phCGxOkYRSCM82iDwct8/EonSEgCSxWxD7ve6jHggsFl4fZVQBPRNgQoKiuV/odhFrGzQXZwbifC8Rg==}
     engines: {node: '>=8'}
     dependencies:
-      '@babel/code-frame': 7.24.1
+      '@babel/code-frame': 7.24.2
       error-ex: 1.3.2
       json-parse-even-better-errors: 2.3.1
       lines-and-columns: 1.2.4
@@ -20059,7 +20061,7 @@ packages:
     resolution: {integrity: sha512-rum1bPifK5SSar35Z6EKZuYPJx85pkNaFrxBK3mwdfSJ1/WKbYrjoW/zTPSjRRamfmVX1ACBIdFAO0VRErW/EA==}
     engines: {node: '>=18'}
     dependencies:
-      '@babel/code-frame': 7.24.1
+      '@babel/code-frame': 7.24.2
       index-to-position: 0.1.2
       type-fest: 4.13.0
     dev: true
@@ -21090,6 +21092,7 @@ packages:
 
   /prr@1.0.1:
     resolution: {integrity: sha512-yPw4Sng1gWghHQWj0B3ZggWUm4qVbPwPFcRG8KyxiU7J2OHFSoEHKS+EZ3fv5l1t9CyCiop6l/ZYeWbrgoQejw==}
+    requiresBuild: true
 
   /ps-list@8.1.1:
     resolution: {integrity: sha512-OPS9kEJYVmiO48u/B9qneqhkMvgCxT+Tm28VCEJpheTpl8cJ0ffZRRNgS5mrQRTrX5yRTpaJ+hRDeefXYmmorQ==}
@@ -21253,6 +21256,7 @@ packages:
 
   /queue-tick@1.0.1:
     resolution: {integrity: sha512-kJt5qhMxoszgU/62PLP1CJytzd2NKetjSRnyuj31fDd3Rlcz3fzlFdFLD1SItunPwyqEOkca6GbV612BWfaBag==}
+    requiresBuild: true
 
   /quick-format-unescaped@4.0.4:
     resolution: {integrity: sha512-tYC1Q1hgyRuHgloV/YXs2w15unPVh8qfu/qCTfhTYamaw7fyhumKa2yGpdSo87vY32rIclj+4fWYQXUMs9EHvg==}
@@ -24798,7 +24802,7 @@ packages:
       vue-tsc:
         optional: true
     dependencies:
-      '@babel/code-frame': 7.24.1
+      '@babel/code-frame': 7.24.2
       ansi-escapes: 4.3.2
       chalk: 4.1.2
       chokidar: 3.6.0
