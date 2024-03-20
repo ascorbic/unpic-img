@@ -98,7 +98,7 @@ importers:
         version: 3.6.0(@algolia/client-search@4.22.1)(@types/react@18.2.67)(react-dom@18.2.0)(react@18.2.0)(search-insights@2.13.0)
       '@preact/signals':
         specifier: ^1.2.2
-        version: 1.2.2(preact@10.19.7)
+        version: 1.2.3(preact@10.19.7)
       '@types/node':
         specifier: ^20.11.28
         version: 20.11.30
@@ -1761,7 +1761,7 @@ packages:
       '@babel/plugin-transform-react-jsx': 7.23.4(@babel/core@7.24.1)
       '@babel/plugin-transform-react-jsx-development': 7.22.5(@babel/core@7.24.1)
       '@preact/preset-vite': 2.8.2(@babel/core@7.24.1)(preact@10.19.7)(vite@5.1.6)
-      '@preact/signals': 1.2.2(preact@10.19.7)
+      '@preact/signals': 1.2.3(preact@10.19.7)
       babel-plugin-transform-hook-names: 1.0.2(@babel/core@7.24.1)
       preact: 10.19.7
       preact-render-to-string: 6.3.1(preact@10.19.7)
@@ -7651,16 +7651,16 @@ packages:
       - supports-color
     dev: false
 
-  /@preact/signals-core@1.5.1:
-    resolution: {integrity: sha512-dE6f+WCX5ZUDwXzUIWNMhhglmuLpqJhuy3X3xHrhZYI0Hm2LyQwOu0l9mdPiWrVNsE+Q7txOnJPgtIqHCYoBVA==}
+  /@preact/signals-core@1.6.0:
+    resolution: {integrity: sha512-O/XGxwP85h1F7+ouqTMOIZ3+V1whfaV9ToIVcuyGriD4JkSD00cQo54BKdqjvBJxbenvp7ynfqRHEwI6e+NIhw==}
     dev: false
 
-  /@preact/signals@1.2.2(preact@10.19.7):
-    resolution: {integrity: sha512-ColCqdo4cRP18bAuIR4Oik5rDpiyFtPIJIygaYPMEAwTnl4buWkBOflGBSzhYyPyJfKpkwlekrvK+1pzQ2ldWw==}
+  /@preact/signals@1.2.3(preact@10.19.7):
+    resolution: {integrity: sha512-M2DXse3Wi8HwjI1d2vQWOLJ3lHogvqTsJYvl4ofXRXgMFQzJ7kmlZvlt5i8x5S5VwgZu0ghru4HkLqOoFfU2JQ==}
     peerDependencies:
       preact: 10.x
     dependencies:
-      '@preact/signals-core': 1.5.1
+      '@preact/signals-core': 1.6.0
       preact: 10.19.7
     dev: false
 
