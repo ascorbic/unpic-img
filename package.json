@@ -12,7 +12,7 @@
     "unpic": "^3.18.0"
   },
   "devDependencies": {
-    "@netlify/plugin-nextjs": "5.0.0-rc.5",
+    "@netlify/plugin-nextjs": "5.0.0-rc.6",
     "@playwright/test": "^1.42.1",
     "@testing-library/dom": "^9.3.4",
     "@testing-library/svelte": "^4.1.0",
