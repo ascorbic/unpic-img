@@ -43,7 +43,7 @@
   "author": "Matt Kane",
   "license": "MIT",
   "peerDependencies": {
-    "lit": "^2.7.2 || ^3.0.0"
+    "lit": "^2.0.0 || ^3.0.0"
   },
   "devDependencies": {
     "lit": "^3.1.2",

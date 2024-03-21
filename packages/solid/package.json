@@ -74,7 +74,7 @@
     "typecheck": "tsc --noEmit"
   },
   "peerDependencies": {
-    "solid-js": "^1.8.16"
+    "solid-js": "^1.0.0"
   },
   "devDependencies": {
     "@solidjs/testing-library": "^0.8.6",
