@@ -1,19 +1,7 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": [
-    "config:base",
-    ":automergeLinters",
-    ":automergePatch",
-    ":automergeTesters",
-    ":automergeTypes",
-    ":disableRateLimiting",
-    ":widenPeerDependencies"
-  ],
-  "lockFileMaintenance": {
-    "enabled": true
-  },
-  "schedule": [
-    "before 4am"
+    "github>unjs/renovate-config"
   ],
   "packageRules": [
     {
