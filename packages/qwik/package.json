@@ -28,7 +28,7 @@
     "lib-types"
   ],
   "engines": {
-    "node": ">=20.11.1"
+    "node": ">=16.8.0 <18.0.0 || >=18.11"
   },
   "type": "module",
   "scripts": {
