@@ -30,10 +30,10 @@
     "prettier": "^3.2.5",
     "prettier-plugin-svelte": "^3.2.2",
     "svelte": "^4.2.12",
-    "svelte-check": "^3.6.7",
+    "svelte-check": "^3.6.8",
     "tslib": "^2.6.2",
-    "typescript": "^5.4.2",
-    "vite": "^5.1.6",
+    "typescript": "^5.4.3",
+    "vite": "^5.2.2",
     "vitest": "^1.4.0"
   },
   "type": "module",
