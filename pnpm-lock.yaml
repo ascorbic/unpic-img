@@ -68,7 +68,7 @@ importers:
         version: 5.2.6(@types/node@20.11.30)
       vitest:
         specifier: ^1.4.0
-        version: 1.4.0(jsdom@24.0.0)
+        version: 1.4.0(@types/node@20.11.30)(jsdom@24.0.0)
 
   docs:
     dependencies:
@@ -77,13 +77,13 @@ importers:
         version: 4.23.2
       '@astrojs/mdx':
         specifier: ^2.2.2
-        version: 2.2.2(astro@4.5.10)
+        version: 2.2.2(astro@4.5.12)
       '@astrojs/preact':
         specifier: ^3.1.1
         version: 3.1.1(@babel/core@7.24.3)(preact@10.20.1)(vite@5.2.6)
       '@astrojs/react':
         specifier: ^3.1.0
-        version: 3.1.0(@types/react-dom@18.2.22)(@types/react@18.2.73)(react-dom@18.2.0)(react@18.2.0)(vite@5.2.6)
+        version: 3.1.0(@types/react-dom@18.2.23)(@types/react@18.2.73)(react-dom@18.2.0)(react@18.2.0)(vite@5.2.6)
       '@astrojs/rss':
         specifier: ^4.0.5
         version: 4.0.5
@@ -106,8 +106,8 @@ importers:
         specifier: ^18.2.73
         version: 18.2.73
       '@types/react-dom':
-        specifier: ^18.2.22
-        version: 18.2.22
+        specifier: ^18.2.23
+        version: 18.2.23
       '@unpic/astro':
         specifier: workspace:^
         version: link:../packages/astro
@@ -118,8 +118,8 @@ importers:
         specifier: workspace:^
         version: link:../packages/react
       astro:
-        specifier: ^4.5.10
-        version: 4.5.10(@types/node@20.11.30)(typescript@5.4.3)
+        specifier: ^4.5.12
+        version: 4.5.12(@types/node@20.11.30)(typescript@5.4.3)
       astro-icon:
         specifier: ^0.8.2
         version: 0.8.2
@@ -498,19 +498,19 @@ importers:
     devDependencies:
       '@angular-devkit/build-angular':
         specifier: ^17.3.2
-        version: 17.3.2(@angular/compiler-cli@17.3.1)(ng-packagr@17.3.0)(typescript@5.4.3)
+        version: 17.3.2(@angular/compiler-cli@17.3.2)(ng-packagr@17.3.0)(typescript@5.4.3)
       '@angular/cli':
         specifier: ~17.3.2
         version: 17.3.2
       '@angular/compiler-cli':
-        specifier: ^17.3.1
-        version: 17.3.1(@angular/compiler@17.3.1)(typescript@5.4.3)
+        specifier: ^17.3.2
+        version: 17.3.2(@angular/compiler@17.3.2)(typescript@5.4.3)
       '@angular/core':
-        specifier: ^17.3.1
-        version: 17.3.1(rxjs@7.8.1)(zone.js@0.14.4)
+        specifier: ^17.3.2
+        version: 17.3.2(rxjs@7.8.1)(zone.js@0.14.4)
       ng-packagr:
         specifier: ^17.3.0
-        version: 17.3.0(@angular/compiler-cli@17.3.1)(tslib@2.6.2)(typescript@5.4.3)
+        version: 17.3.0(@angular/compiler-cli@17.3.2)(tslib@2.6.2)(typescript@5.4.3)
       publint:
         specifier: ^0.2.7
         version: 0.2.7
@@ -534,8 +534,8 @@ importers:
         version: 2.0.5
     devDependencies:
       astro:
-        specifier: ^4.5.10
-        version: 4.5.10(@types/node@20.11.30)(typescript@5.4.3)
+        specifier: ^4.5.12
+        version: 4.5.12(@types/node@20.11.30)(typescript@5.4.3)
 
   packages/core:
     dependencies:
@@ -548,7 +548,7 @@ importers:
         version: 8.0.2(typescript@5.4.3)
       vitest:
         specifier: ^1.4.0
-        version: 1.4.0(jsdom@24.0.0)
+        version: 1.4.0(@types/node@20.11.30)(jsdom@24.0.0)
 
   packages/lit:
     dependencies:
@@ -586,7 +586,7 @@ importers:
         version: 5.4.3
       vitest:
         specifier: ^1.4.0
-        version: 1.4.0(jsdom@24.0.0)
+        version: 1.4.0(@types/node@20.11.30)(jsdom@24.0.0)
 
   packages/qwik:
     devDependencies:
@@ -658,8 +658,8 @@ importers:
         specifier: ^18.2.73
         version: 18.2.73
       '@types/react-dom':
-        specifier: ^18.2.22
-        version: 18.2.22
+        specifier: ^18.2.23
+        version: 18.2.23
       '@vitejs/plugin-react':
         specifier: ^4.2.1
         version: 4.2.1(vite@5.2.6)
@@ -732,7 +732,7 @@ importers:
         version: 2.10.2(solid-js@1.8.16)(vite@5.2.6)
       vitest:
         specifier: ^1.4.0
-        version: 1.4.0(jsdom@24.0.0)
+        version: 1.4.0(@types/node@20.11.30)(jsdom@24.0.0)
 
   packages/svelte:
     dependencies:
@@ -778,7 +778,7 @@ importers:
         version: 5.2.6(@types/node@20.11.30)
       vitest:
         specifier: ^1.4.0
-        version: 1.4.0(jsdom@24.0.0)
+        version: 1.4.0(@types/node@20.11.30)(jsdom@24.0.0)
 
   packages/vue:
     dependencies:
@@ -806,7 +806,7 @@ importers:
         version: 5.2.6(@types/node@20.11.30)
       vitest:
         specifier: ^1.4.0
-        version: 1.4.0(jsdom@24.0.0)
+        version: 1.4.0(@types/node@20.11.30)(jsdom@24.0.0)
       vue-tsc:
         specifier: ^2.0.7
         version: 2.0.7(typescript@5.4.3)
@@ -831,7 +831,7 @@ importers:
         version: 24.0.0
       vitest:
         specifier: ^1.4.0
-        version: 1.4.0(jsdom@24.0.0)
+        version: 1.4.0(@types/node@20.11.30)(jsdom@24.0.0)
 
 packages:
 
@@ -1295,7 +1295,7 @@ packages:
       - webpack-cli
     dev: true
 
-  /@angular-devkit/build-angular@17.3.2(@angular/compiler-cli@17.3.1)(ng-packagr@17.3.0)(typescript@5.4.3):
+  /@angular-devkit/build-angular@17.3.2(@angular/compiler-cli@17.3.2)(ng-packagr@17.3.0)(typescript@5.4.3):
     resolution: {integrity: sha512-muPCUyL0uHvRkLH4NLWiccER6P2vCm/Q5DDvqyN4XOzzY3tAHHLrKrpvY87sgd2oNJ6Ci8x7GPNcfzR5KELCnw==}
     engines: {node: ^18.13.0 || >=20.9.0, npm: ^6.11.0 || ^7.5.6 || >=8.0.0, yarn: '>= 1.13.0'}
     peerDependencies:
@@ -1340,7 +1340,7 @@ packages:
       '@angular-devkit/architect': 0.1703.2
       '@angular-devkit/build-webpack': 0.1703.2(webpack-dev-server@4.15.1)(webpack@5.90.3)
       '@angular-devkit/core': 17.3.2
-      '@angular/compiler-cli': 17.3.1(@angular/compiler@17.3.1)(typescript@5.4.3)
+      '@angular/compiler-cli': 17.3.2(@angular/compiler@17.3.2)(typescript@5.4.3)
       '@babel/core': 7.24.0
       '@babel/generator': 7.23.6
       '@babel/helper-annotate-as-pure': 7.22.5
@@ -1351,7 +1351,7 @@ packages:
       '@babel/preset-env': 7.24.0(@babel/core@7.24.0)
       '@babel/runtime': 7.24.0
       '@discoveryjs/json-ext': 0.5.7
-      '@ngtools/webpack': 17.3.2(@angular/compiler-cli@17.3.1)(typescript@5.4.3)(webpack@5.90.3)
+      '@ngtools/webpack': 17.3.2(@angular/compiler-cli@17.3.2)(typescript@5.4.3)(webpack@5.90.3)
       '@vitejs/plugin-basic-ssl': 1.1.0(vite@5.1.5)
       ansi-colors: 4.1.3
       autoprefixer: 10.4.18(postcss@8.4.35)
@@ -1375,7 +1375,7 @@ packages:
       magic-string: 0.30.8
       mini-css-extract-plugin: 2.8.1(webpack@5.90.3)
       mrmime: 2.0.0
-      ng-packagr: 17.3.0(@angular/compiler-cli@17.3.1)(tslib@2.6.2)(typescript@5.4.3)
+      ng-packagr: 17.3.0(@angular/compiler-cli@17.3.2)(tslib@2.6.2)(typescript@5.4.3)
       open: 8.4.2
       ora: 5.4.1
       parse5-html-rewriting-stream: 7.0.0
@@ -1631,15 +1631,15 @@ packages:
       - supports-color
     dev: true
 
-  /@angular/compiler-cli@17.3.1(@angular/compiler@17.3.1)(typescript@5.4.3):
-    resolution: {integrity: sha512-xLV9KU+zOpe57/2rQ59ku21EaStNpLSlR9+qkDYf8JR09fB+W9vY3UYbpi5RjHxAFIZBM5D9SFQjjll8rch26g==}
+  /@angular/compiler-cli@17.3.2(@angular/compiler@17.3.2)(typescript@5.4.3):
+    resolution: {integrity: sha512-PG81BrJjeF679tkafjt+t9VEBE1rPq39cdLoBTnPY7Q+E/thVoem5JTRG6hmnLmwEc0xxY6sfYpvx2BB5ywUSA==}
     engines: {node: ^18.13.0 || >=20.9.0}
     hasBin: true
     peerDependencies:
-      '@angular/compiler': 17.3.1
+      '@angular/compiler': 17.3.2
       typescript: '>=5.2 <5.5'
     dependencies:
-      '@angular/compiler': 17.3.1(@angular/core@17.3.1)
+      '@angular/compiler': 17.3.2(@angular/core@17.3.2)
       '@babel/core': 7.23.9
       '@jridgewell/sourcemap-codec': 1.4.15
       chokidar: 3.6.0
@@ -1665,16 +1665,16 @@ packages:
       '@angular/core': 17.3.1(rxjs@7.8.1)(zone.js@0.14.4)
       tslib: 2.6.2
 
-  /@angular/compiler@17.3.1(@angular/core@17.3.1):
-    resolution: {integrity: sha512-8qqlWPGZEyD2FY5losOW3Aocro+lFysPDzsf0LHgQUM6Ub1b+pq4jUOjH6w0vzaxG3TfxkgzOQ9aNdWtSV67Rg==}
+  /@angular/compiler@17.3.2(@angular/core@17.3.2):
+    resolution: {integrity: sha512-+/l/FQpVsOPbxZzSKyqEra+yxoI/r8LlTRqshVACv10+DKMWJMHnDkVUrNxvWHutfn4RszpGMtbtHp3yM9rxcA==}
     engines: {node: ^18.13.0 || >=20.9.0}
     peerDependencies:
-      '@angular/core': 17.3.1
+      '@angular/core': 17.3.2
     peerDependenciesMeta:
       '@angular/core':
         optional: true
     dependencies:
-      '@angular/core': 17.3.1(rxjs@7.8.1)(zone.js@0.14.4)
+      '@angular/core': 17.3.2(rxjs@7.8.1)(zone.js@0.14.4)
       tslib: 2.6.2
     dev: true
 
@@ -1688,6 +1688,18 @@ packages:
       rxjs: 7.8.1
       tslib: 2.6.2
       zone.js: 0.14.4
+
+  /@angular/core@17.3.2(rxjs@7.8.1)(zone.js@0.14.4):
+    resolution: {integrity: sha512-eylatBGaN8uihKomEcXkaSHmAea5bEqu1OXifEoVOJiJpJA9Dbt/VcLXkIRFnRGH2NWUT5W79vSoU9GRvPMk5w==}
+    engines: {node: ^18.13.0 || >=20.9.0}
+    peerDependencies:
+      rxjs: ^6.5.3 || ^7.4.0
+      zone.js: ~0.14.0
+    dependencies:
+      rxjs: 7.8.1
+      tslib: 2.6.2
+      zone.js: 0.14.4
+    dev: true
 
   /@angular/forms@17.3.0(@angular/common@17.3.0)(@angular/core@17.3.1)(@angular/platform-browser@17.3.0)(rxjs@7.8.1):
     resolution: {integrity: sha512-TnLOake1fQCmmGEOZbTjP2gbKerZ/bfEMuiFfoe7R2rUvKl4xHGAHp99bqf7bUyAbB8ZgmPZc9/VHrrts8UNyA==}
@@ -1791,6 +1803,10 @@ packages:
 
   /@astrojs/internal-helpers@0.3.0:
     resolution: {integrity: sha512-tGmHvrhpzuz0JBHaJX8GywN9g4rldVNHtkoVDC3m/DdzBO70jGoVuc0uuNVglRYnsdwkbG0K02Iw3nOOR3/Y4g==}
+    dev: false
+
+  /@astrojs/internal-helpers@0.4.0:
+    resolution: {integrity: sha512-6B13lz5n6BrbTqCTwhXjJXuR1sqiX/H6rTxzlXx+lN1NnV4jgnq/KJldCQaUWJzPL5SiWahQyinxAbxQtwgPHA==}
 
   /@astrojs/markdown-remark@4.3.1:
     resolution: {integrity: sha512-eJFi600tkRjTFiwzY9oD8AgCgB7gFqyWCKWuZ33dATVBgLiROD+zlMZ8STZzU7+ZALvmiUAun/K7umTmP5YfVQ==}
@@ -1841,7 +1857,7 @@ packages:
     transitivePeerDependencies:
       - supports-color
 
-  /@astrojs/mdx@2.2.2(astro@4.5.10):
+  /@astrojs/mdx@2.2.2(astro@4.5.12):
     resolution: {integrity: sha512-5SIFtOctC813HFyqJwBf5TBvlT9sbiOOv+bdvzAoiBSab95dC7PZhss22EvUEx+897c81YoIZ4F9fg4ZkxBFIw==}
     engines: {node: '>=18.14.1'}
     peerDependencies:
@@ -1850,7 +1866,7 @@ packages:
       '@astrojs/markdown-remark': 4.3.2
       '@mdx-js/mdx': 3.0.1
       acorn: 8.11.3
-      astro: 4.5.10(@types/node@20.11.30)(typescript@5.4.3)
+      astro: 4.5.12(@types/node@20.11.30)(typescript@5.4.3)
       es-module-lexer: 1.4.2
       estree-util-visit: 2.0.0
       github-slugger: 2.0.0
@@ -1893,7 +1909,7 @@ packages:
     dependencies:
       prismjs: 1.29.0
 
-  /@astrojs/react@3.1.0(@types/react-dom@18.2.22)(@types/react@18.2.73)(react-dom@18.2.0)(react@18.2.0)(vite@5.2.6):
+  /@astrojs/react@3.1.0(@types/react-dom@18.2.23)(@types/react@18.2.73)(react-dom@18.2.0)(react@18.2.0)(vite@5.2.6):
     resolution: {integrity: sha512-KZhZyV+sUDZEjlrmPWNiPGeYowG9uq6/aMbCgVaeKEBlWT4Kg32TNwBOhZk6AcE4LY1l3mIwt3orUGE2JV96/g==}
     engines: {node: '>=18.14.1'}
     peerDependencies:
@@ -1903,7 +1919,7 @@ packages:
       react-dom: ^17.0.2 || ^18.0.0
     dependencies:
       '@types/react': 18.2.73
-      '@types/react-dom': 18.2.22
+      '@types/react-dom': 18.2.23
       '@vitejs/plugin-react': 4.2.1(vite@5.2.6)
       react: 18.2.0
       react-dom: 18.2.0(react@18.2.0)
@@ -6222,7 +6238,7 @@ packages:
       webpack: 5.90.3(esbuild@0.20.1)
     dev: true
 
-  /@ngtools/webpack@17.3.2(@angular/compiler-cli@17.3.1)(typescript@5.4.3)(webpack@5.90.3):
+  /@ngtools/webpack@17.3.2(@angular/compiler-cli@17.3.2)(typescript@5.4.3)(webpack@5.90.3):
     resolution: {integrity: sha512-E8zejFF4aJ8l2XcF+GgnE/1IqsZepnPT1xzulLB4LXtjVuXLFLoF9xkHQwxs7cJWWZsxd/SlNsCIcn/ezrYBcQ==}
     engines: {node: ^18.13.0 || >=20.9.0, npm: ^6.11.0 || ^7.5.6 || >=8.0.0, yarn: '>= 1.13.0'}
     peerDependencies:
@@ -6230,7 +6246,7 @@ packages:
       typescript: '>=5.2 <5.5'
       webpack: ^5.54.0
     dependencies:
-      '@angular/compiler-cli': 17.3.1(@angular/compiler@17.3.1)(typescript@5.4.3)
+      '@angular/compiler-cli': 17.3.2(@angular/compiler@17.3.2)(typescript@5.4.3)
       typescript: 5.4.3
       webpack: 5.90.3(esbuild@0.20.1)
     dev: true
@@ -8869,7 +8885,7 @@ packages:
     dependencies:
       '@babel/runtime': 7.24.1
       '@testing-library/dom': 9.3.4
-      '@types/react-dom': 18.2.22
+      '@types/react-dom': 18.2.23
       react: 18.2.0
       react-dom: 18.2.0(react@18.2.0)
     dev: true
@@ -9193,6 +9209,11 @@ packages:
 
   /@types/react-dom@18.2.22:
     resolution: {integrity: sha512-fHkBXPeNtfvri6gdsMYyW+dW7RXFo6Ad09nLFK0VQWR7yGLai/Cyvyj696gbwYvBnhGtevUG9cET0pmUbMtoPQ==}
+    dependencies:
+      '@types/react': 18.2.73
+
+  /@types/react-dom@18.2.23:
+    resolution: {integrity: sha512-ZQ71wgGOTmDYpnav2knkjr3qXdAFu0vsk8Ci5w3pGAIdj7/kKAyn+VsQDhXsmzzzepAiI9leWMmubXz690AI/A==}
     dependencies:
       '@types/react': 18.2.73
 
@@ -9910,7 +9931,7 @@ packages:
       '@vue/shared': 3.4.21
       estree-walker: 2.0.2
       magic-string: 0.30.8
-      postcss: 8.4.36
+      postcss: 8.4.38
       source-map-js: 1.1.0
 
   /@vue/compiler-ssr@3.4.21:
@@ -10830,13 +10851,13 @@ packages:
       svgo: 2.8.0
     dev: false
 
-  /astro@4.5.10(@types/node@20.11.30)(typescript@5.4.3):
-    resolution: {integrity: sha512-xW/ZTSqSHEQyzWzXHJa9gEQXC+MUD3mhzEBJyrMp/JWT+geLgUK2m0Rrc/AnBl8EfdS/6uFadiJV1fWao4lc7w==}
+  /astro@4.5.12(@types/node@20.11.30)(typescript@5.4.3):
+    resolution: {integrity: sha512-xIJcFI2hbyV8+h5pWjL7SKD1jIP0K01fYVAH+gdAt0mJaXy+u8Mj+goD0cPlK6sEaykR+7zxQLYGKJ44U4qarg==}
     engines: {node: '>=18.14.1', npm: '>=6.14.0'}
     hasBin: true
     dependencies:
       '@astrojs/compiler': 2.7.0
-      '@astrojs/internal-helpers': 0.3.0
+      '@astrojs/internal-helpers': 0.4.0
       '@astrojs/markdown-remark': 4.3.2
       '@astrojs/telemetry': 3.0.4
       '@babel/core': 7.24.3
@@ -16771,7 +16792,7 @@ packages:
     resolution: {integrity: sha512-pzqtp31nLv/XFOzXGuvhCb8qhjmTVo5vjVk19XE4CRlSWz0KoeJ3bw9XsA7nOp9YBf4qHjwBxkDzKcME/J29Yg==}
     engines: {node: '>=8'}
     dependencies:
-      '@babel/core': 7.24.0
+      '@babel/core': 7.24.3
       '@babel/parser': 7.24.1
       '@istanbuljs/schema': 0.1.3
       istanbul-lib-coverage: 3.2.2
@@ -19293,7 +19314,7 @@ packages:
       - babel-plugin-macros
     dev: true
 
-  /ng-packagr@17.3.0(@angular/compiler-cli@17.3.1)(tslib@2.6.2)(typescript@5.4.3):
+  /ng-packagr@17.3.0(@angular/compiler-cli@17.3.2)(tslib@2.6.2)(typescript@5.4.3):
     resolution: {integrity: sha512-kMSqxeDgv88SWCoapWNRRN1UdBgwu9/Pw/j7u2WFGmzrIWUFivNWBBSSL94kMxr2La+Z9wMwiL8EwKNvmCpg2A==}
     engines: {node: ^18.13.0 || >=20.9.0}
     hasBin: true
@@ -19306,7 +19327,7 @@ packages:
       tailwindcss:
         optional: true
     dependencies:
-      '@angular/compiler-cli': 17.3.1(@angular/compiler@17.3.1)(typescript@5.4.3)
+      '@angular/compiler-cli': 17.3.2(@angular/compiler@17.3.2)(typescript@5.4.3)
       '@rollup/plugin-json': 6.1.0(rollup@4.13.0)
       '@rollup/plugin-node-resolve': 15.2.3(rollup@4.13.0)
       '@rollup/wasm-node': 4.13.0
@@ -25736,62 +25757,6 @@ packages:
         optional: true
     dependencies:
       '@types/node': 20.11.30
-      '@vitest/expect': 1.4.0
-      '@vitest/runner': 1.4.0
-      '@vitest/snapshot': 1.4.0
-      '@vitest/spy': 1.4.0
-      '@vitest/utils': 1.4.0
-      acorn-walk: 8.3.2
-      chai: 4.4.1
-      debug: 4.3.4(supports-color@9.4.0)
-      execa: 8.0.1
-      jsdom: 24.0.0
-      local-pkg: 0.5.0
-      magic-string: 0.30.8
-      pathe: 1.1.2
-      picocolors: 1.0.0
-      std-env: 3.7.0
-      strip-literal: 2.0.0
-      tinybench: 2.6.0
-      tinypool: 0.8.2
-      vite: 5.2.6(@types/node@20.11.30)
-      vite-node: 1.4.0(@types/node@20.11.30)
-      why-is-node-running: 2.2.2
-    transitivePeerDependencies:
-      - less
-      - lightningcss
-      - sass
-      - stylus
-      - sugarss
-      - supports-color
-      - terser
-    dev: true
-
-  /vitest@1.4.0(jsdom@24.0.0):
-    resolution: {integrity: sha512-gujzn0g7fmwf83/WzrDTnncZt2UiXP41mHuFYFrdwaLRVQ6JYQEiME2IfEjU3vcFL3VKa75XhI3lFgn+hfVsQw==}
-    engines: {node: ^18.0.0 || >=20.0.0}
-    hasBin: true
-    peerDependencies:
-      '@edge-runtime/vm': '*'
-      '@types/node': ^18.0.0 || >=20.0.0
-      '@vitest/browser': 1.4.0
-      '@vitest/ui': 1.4.0
-      happy-dom: '*'
-      jsdom: '*'
-    peerDependenciesMeta:
-      '@edge-runtime/vm':
-        optional: true
-      '@types/node':
-        optional: true
-      '@vitest/browser':
-        optional: true
-      '@vitest/ui':
-        optional: true
-      happy-dom:
-        optional: true
-      jsdom:
-        optional: true
-    dependencies:
       '@vitest/expect': 1.4.0
       '@vitest/runner': 1.4.0
       '@vitest/snapshot': 1.4.0
