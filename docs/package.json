@@ -19,7 +19,7 @@
     "@docsearch/css": "^3.6.0",
     "@docsearch/react": "^3.6.0",
     "@preact/signals": "^1.2.3",
-    "@types/node": "^20.11.30",
+    "@types/node": "^20.12.2",
     "@types/react": "^18.2.73",
     "@types/react-dom": "^18.2.23",
     "@unpic/astro": "workspace:^",
