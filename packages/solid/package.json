@@ -85,8 +85,8 @@
     "solid-js": "^1.8.16",
     "tsup": "^8.0.2",
     "tsup-preset-solid": "^2.2.0",
-    "typescript": "^5.4.3",
-    "vite": "^5.2.7",
+    "typescript": "^5.4.4",
+    "vite": "^5.2.8",
     "vite-plugin-solid": "^2.10.2",
     "vitest": "^1.4.0"
   },

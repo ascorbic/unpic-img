@@ -73,11 +73,11 @@
     "test": "vitest run"
   },
   "devDependencies": {
-    "@arethetypeswrong/cli": "^0.15.2",
+    "@arethetypeswrong/cli": "^0.15.3",
     "@testing-library/react": "^14.2.2",
-    "@types/node": "^20.12.2",
-    "@types/react": "^18.2.73",
-    "@types/react-dom": "^18.2.23",
+    "@types/node": "^20.12.5",
+    "@types/react": "^18.2.74",
+    "@types/react-dom": "^18.2.24",
     "@vitejs/plugin-react": "^4.2.1",
     "cssstyle": "^4.0.1",
     "jsdom": "^24.0.0",
@@ -86,7 +86,7 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "tsup": "^8.0.2",
-    "typescript": "^5.4.3",
+    "typescript": "^5.4.4",
     "vitest": "^1.4.0"
   },
   "dependencies": {
