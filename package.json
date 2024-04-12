@@ -16,8 +16,8 @@
     "@playwright/test": "^1.43.0",
     "@testing-library/dom": "^9.3.4",
     "@testing-library/svelte": "^4.1.0",
-    "@typescript-eslint/eslint-plugin": "^7.5.0",
-    "@typescript-eslint/parser": "^7.5.0",
+    "@typescript-eslint/eslint-plugin": "^7.6.0",
+    "@typescript-eslint/parser": "^7.6.0",
     "@unpic/core": "workspace:^",
     "eslint": "^8.57.0",
     "eslint-config-prettier": "^9.1.0",
@@ -27,9 +27,9 @@
     "prettier-plugin-astro": "^0.13.0",
     "process": "^0.11.10",
     "publint": "^0.2.7",
-    "typescript": "^5.4.4",
+    "typescript": "^5.4.5",
     "vite": "^5.2.8",
-    "vitest": "^1.4.0"
+    "vitest": "^1.5.0"
   },
   "resolutions": {
     "cssstyle": "^4.0.1"
