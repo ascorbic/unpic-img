@@ -13,7 +13,7 @@
   },
   "devDependencies": {
     "@netlify/plugin-nextjs": "5.0.0",
-    "@playwright/test": "^1.43.0",
+    "@playwright/test": "^1.43.1",
     "@testing-library/dom": "^9.3.4",
     "@testing-library/svelte": "^4.1.0",
     "@typescript-eslint/eslint-plugin": "^7.6.0",
@@ -34,5 +34,5 @@
   "resolutions": {
     "cssstyle": "^4.0.1"
   },
-  "packageManager": "pnpm@8.15.6"
+  "packageManager": "pnpm@8.15.7"
 }
