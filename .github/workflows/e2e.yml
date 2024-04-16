@@ -10,7 +10,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        site: [astro, lit, preact, qwik, react, solid, webc]
+        site: [astro, lit, preact, qwik, react, solid, svelte, webc]
     steps:
       - run: echo Running tests in ${{ matrix.site }}
       - name: Checkout
@@ -30,8 +30,6 @@ jobs:
         run: pnpm install
       - name: Install Playwright Browsers
         run: npx playwright install --with-deps
-      - name: Install netlify cli
-        run: npm install -g netlify-cli
       - name: Run tests
         run: npx playwright test
         env:
