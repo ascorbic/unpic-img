@@ -30,8 +30,6 @@ jobs:
         run: pnpm install
       - name: Install Playwright Browsers
         run: npx playwright install --with-deps
-      - name: Install netlify cli
-        run: npm install -g netlify-cli
       - name: Run tests
         run: npx playwright test
         env:
