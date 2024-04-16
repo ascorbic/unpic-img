@@ -22,8 +22,8 @@ importers:
         specifier: ^1.43.1
         version: 1.43.1
       '@testing-library/dom':
-        specifier: ^9.3.4
-        version: 9.3.4
+        specifier: ^10.0.0
+        version: 10.0.0
       '@testing-library/svelte':
         specifier: ^4.1.0
         version: 4.1.0(svelte@4.2.14)
