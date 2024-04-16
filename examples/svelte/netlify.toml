@@ -1,2 +1,3 @@
 [build]
 command = "pnpm --filter svelte-demo... build"
+publish = "examples/svelte/build"
