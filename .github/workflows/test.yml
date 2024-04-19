@@ -9,9 +9,6 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-      - uses: pnpm/action-setup@v2
-        with:
-          version: latest
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
@@ -19,7 +16,9 @@ jobs:
           check-latest: true
           registry-url: "https://registry.npmjs.org"
       - name: Install dependencies
-        run: pnpm install
+        run: |
+          corepack enable
+          pnpm install
       - name: Build
         run: pnpm build:packages
       - name: Test
