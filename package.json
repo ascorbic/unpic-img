@@ -12,10 +12,10 @@
     "unpic": "^3.18.0"
   },
   "devDependencies": {
-    "@netlify/plugin-nextjs": "5.0.0",
+    "@netlify/plugin-nextjs": "5.1.2",
     "@playwright/test": "^1.43.1",
     "@testing-library/dom": "^10.0.0",
-    "@testing-library/svelte": "^4.1.0",
+    "@testing-library/svelte": "^4.2.3",
     "@typescript-eslint/eslint-plugin": "^7.7.0",
     "@typescript-eslint/parser": "^7.7.0",
     "@unpic/core": "workspace:^",
@@ -28,7 +28,7 @@
     "process": "^0.11.10",
     "publint": "^0.2.7",
     "typescript": "^5.4.5",
-    "vite": "^5.2.8",
+    "vite": "^5.2.9",
     "vitest": "^1.5.0"
   },
   "resolutions": {
