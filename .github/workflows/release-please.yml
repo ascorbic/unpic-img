@@ -24,14 +24,16 @@ jobs:
       - uses: actions/checkout@v4
       - uses: pnpm/action-setup@v2
         with:
-          version: latest
+          version: 8
       - uses: actions/setup-node@v4
         with:
           cache: "pnpm"
           check-latest: true
           registry-url: "https://registry.npmjs.org"
       - name: Install dependencies
-        run: pnpm install
+        run: |
+          corepack enable
+          pnpm install
       - run: pnpm build:packages
         if: ${{ steps.release.outputs.releases_created }}
       - name: Authenticate pnpm
