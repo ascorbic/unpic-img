@@ -1,9 +1,15 @@
 import type { HTMLAttributes } from "react";
+import * as React from "react";
+
 const nestedKeys = new Set(["style"]);
+
+export const isNewReact = "use" in React;
+
 const fixedMap: Record<string, string> = {
   srcset: "srcSet",
-  fetchpriority: "fetchPriority"
+  fetchpriority: isNewReact ? "fetchPriority" : "fetchpriority",
 };
+
 const camelize = (key: string) => {
   if (key.startsWith("data-") || key.startsWith("aria-")) {
     return key;
@@ -14,12 +20,12 @@ const camelize = (key: string) => {
 };
 
 export function camelizeProps<TObject extends HTMLAttributes<HTMLElement>>(
-  props: TObject
+  props: TObject,
 ): TObject {
   return Object.fromEntries(
     Object.entries(props).map(([k, v]) => [
       camelize(k),
       nestedKeys.has(k) && v && typeof v !== "string" ? camelizeProps(v) : v,
-    ])
+    ]),
   ) as TObject;
 }
