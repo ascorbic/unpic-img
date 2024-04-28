@@ -174,6 +174,14 @@
   * dependencies
     * @unpic/core bumped from 0.0.45 to 0.0.46
 
+## [0.1.14](https://github.com/ascorbic/unpic-img/compare/react-v0.1.13...react-v0.1.14) (2024-04-28)
+
+
+### Bug Fixes
+
+* **react:** handle fetchpriority vs fetchPriority ([#644](https://github.com/ascorbic/unpic-img/issues/644)) ([6b76808](https://github.com/ascorbic/unpic-img/commit/6b768085803a49882e7036e4358b52d1972ecc7c))
+* **react:** support Next.js server component ([#646](https://github.com/ascorbic/unpic-img/issues/646)) ([a2e58ea](https://github.com/ascorbic/unpic-img/commit/a2e58ea207d585e61bd6039876747e3e72e3d1ba))
+
 ## [0.1.13](https://github.com/ascorbic/unpic-img/compare/react-v0.1.12...react-v0.1.13) (2024-03-19)
 
 
