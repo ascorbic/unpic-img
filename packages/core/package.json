@@ -1,7 +1,7 @@
 {
   "name": "@unpic/core",
   "version": "0.0.49",
-  "packageManager": "pnpm@8.15.7",
+  "packageManager": "pnpm@8.15.8",
   "license": "MIT",
   "sideEffects": false,
   "repository": {
@@ -18,7 +18,7 @@
   },
   "devDependencies": {
     "tsup": "^8.0.2",
-    "vitest": "^1.5.2"
+    "vitest": "^1.5.3"
   },
   "dependencies": {
     "unpic": "^3.18.0"
