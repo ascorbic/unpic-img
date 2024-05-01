@@ -29,7 +29,7 @@
     "astro-icon": "^0.8.2",
     "blurhash": "^2.0.5",
     "pako": "^2.1.0",
-    "preact": "^10.20.2",
+    "preact": "^10.21.0",
     "prism-react-renderer": "^2.3.1",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",

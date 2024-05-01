@@ -1,6 +1,6 @@
 {
   "name": "@unpic/webc",
-  "packageManager": "pnpm@8.15.7",
+  "packageManager": "pnpm@8.15.8",
   "license": "MIT",
   "description": "WebC component for responsive, high-performance images.",
   "keywords": [
@@ -22,7 +22,7 @@
     "@11ty/webc": "^0.11.4",
     "@types/jsdom": "^21.1.6",
     "jsdom": "^24.0.0",
-    "vitest": "^1.5.2"
+    "vitest": "^1.5.3"
   },
   "peerDependencies": {
     "@11ty/webc": ">=0.9.0"
