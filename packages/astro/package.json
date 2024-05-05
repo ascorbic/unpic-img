@@ -28,7 +28,7 @@
     "format": "prettier --write ."
   },
   "devDependencies": {
-    "astro": "^4.7.0"
+    "astro": "^4.7.1"
   },
   "dependencies": {
     "@unpic/core": "0.0.49",
