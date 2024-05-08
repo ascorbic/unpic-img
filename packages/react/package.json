@@ -74,8 +74,8 @@
   },
   "devDependencies": {
     "@arethetypeswrong/cli": "^0.15.3",
-    "@testing-library/react": "^15.0.6",
-    "@types/node": "^20.12.8",
+    "@testing-library/react": "^15.0.7",
+    "@types/node": "^20.12.10",
     "@types/react": "^18.3.1",
     "@types/react-dom": "^18.3.0",
     "@vitejs/plugin-react": "^4.2.1",
