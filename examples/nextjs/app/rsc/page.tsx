@@ -1,5 +1,6 @@
 import Head from "next/head";
 import { Image } from "@unpic/react/nextjs";
+import { version } from "react";
 export default function Home() {
   return (
     <>
@@ -10,6 +11,8 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <div>
+        <p>React.version: {version}</p>
+
         <Image
           src="https://images.unsplash.com/photo-1617718295766-0f839c2853e7"
           layout="fullWidth"
