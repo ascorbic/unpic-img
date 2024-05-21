@@ -1,0 +1,13 @@
+{
+  "name": "unpic-11ty-example",
+  "version": "1.0.0",
+  "description": "An example Eleventy project using the @unpic/11ty shortcode for responsive images.",
+  "scripts": {
+    "build": "eleventy",
+    "serve": "eleventy --serve"
+  },
+  "dependencies": {
+    "@11ty/eleventy": "^1.0.0",
+    "@unpic/11ty": "^1.0.0"
+  }
+}

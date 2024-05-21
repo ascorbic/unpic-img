@@ -1,0 +1,15 @@
+{
+  "name": "@unpic/11ty",
+  "version": "1.0.0",
+  "description": "Eleventy shortcode for embedding responsive images using the unpic-img library.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "@unpic/core": "^0.0.49",
+    "@11ty/eleventy": "^1.0.0"
+  }
+}
