@@ -19,7 +19,7 @@
     "@typescript-eslint/eslint-plugin": "^7.15.0",
     "@typescript-eslint/parser": "^7.15.0",
     "@unpic/core": "workspace:^",
-    "eslint": "^8.57.0",
+    "eslint": "^9.6.0",
     "eslint-config-prettier": "^9.1.0",
     "jsdom": "^24.1.0",
     "npm-run-all2": "^6.2.0",
