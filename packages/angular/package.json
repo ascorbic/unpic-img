@@ -40,7 +40,7 @@
     "@angular/core": "^18.0.5",
     "ng-packagr": "^18.0.0",
     "publint": "^0.2.8",
-    "typescript": "5.5.3"
+    "typescript": "5.4.5"
   },
   "dependencies": {
     "@unpic/core": "0.0.49",
