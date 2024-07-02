@@ -39,9 +39,9 @@
   },
   "devDependencies": {
     "@testing-library/preact": "^3.2.4",
-    "preact": "^10.22.0",
+    "preact": "^10.22.1",
     "tsup": "^8.1.0",
-    "typescript": "^5.4.5",
+    "typescript": "^5.5.3",
     "vitest": "^1.6.0"
   },
   "dependencies": {
