@@ -48,7 +48,7 @@
   "devDependencies": {
     "@builder.io/qwik": "1.7.1",
     "@types/eslint": "8.56.10",
-    "@types/node": "^20.14.10",
+    "@types/node": "^20.14.11",
     "@types/node-fetch": "^2.6.11",
     "@typescript-eslint/eslint-plugin": "7.16.1",
     "@typescript-eslint/parser": "7.16.1",
@@ -56,11 +56,11 @@
     "eslint": "8.57.0",
     "eslint-plugin-qwik": "^1.7.1",
     "node-fetch": "3.3.2",
-    "np": "10.0.6",
+    "np": "10.0.7",
     "prettier": "^3.3.3",
     "typescript": "5.5.3",
     "undici": "6.19.2",
-    "vite": "5.3.3",
+    "vite": "5.3.4",
     "vitest": "^1.6.0"
   },
   "peerDependencies": {
