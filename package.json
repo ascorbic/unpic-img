@@ -13,7 +13,7 @@
   },
   "devDependencies": {
     "@netlify/plugin-nextjs": "5.5.1",
-    "@playwright/test": "^1.45.1",
+    "@playwright/test": "^1.45.2",
     "@testing-library/dom": "^10.3.2",
     "@testing-library/svelte": "^5.2.0",
     "@typescript-eslint/eslint-plugin": "^7.16.1",
@@ -24,15 +24,15 @@
     "jsdom": "^24.1.0",
     "npm-run-all2": "^6.2.2",
     "prettier": "^3.3.3",
-    "prettier-plugin-astro": "^0.14.0",
+    "prettier-plugin-astro": "^0.14.1",
     "process": "^0.11.10",
-    "publint": "^0.2.8",
+    "publint": "^0.2.9",
     "typescript": "^5.5.3",
-    "vite": "^5.3.3",
+    "vite": "^5.3.4",
     "vitest": "^1.6.0"
   },
   "resolutions": {
     "cssstyle": "^4.0.1"
   },
-  "packageManager": "pnpm@8.15.8"
+  "packageManager": "pnpm@8.15.9"
 }
