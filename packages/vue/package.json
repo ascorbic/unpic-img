@@ -36,15 +36,15 @@
   },
   "dependencies": {
     "@unpic/core": "0.0.49",
-    "vue": "^3.4.33"
+    "vue": "^3.4.34"
   },
   "devDependencies": {
     "@testing-library/vue": "^8.1.0",
-    "@vitejs/plugin-vue": "^5.0.5",
-    "tsup": "^8.2.0",
-    "typescript": "^5.5.3",
+    "@vitejs/plugin-vue": "^5.1.0",
+    "tsup": "^8.2.3",
+    "typescript": "^5.5.4",
     "vite": "^5.3.4",
     "vitest": "^1.6.0",
-    "vue-tsc": "^2.0.26"
+    "vue-tsc": "^2.0.28"
   }
 }
