@@ -77,15 +77,15 @@
     "solid-js": "^1.0.0"
   },
   "devDependencies": {
-    "@solidjs/testing-library": "^0.8.8",
+    "@solidjs/testing-library": "^0.8.9",
     "esbuild": "^0.23.0",
     "esbuild-plugin-solid": "^0.6.0",
-    "jsdom": "^24.1.0",
+    "jsdom": "^24.1.1",
     "prettier": "^3.3.3",
-    "solid-js": "^1.8.18",
-    "tsup": "^8.2.0",
+    "solid-js": "^1.8.19",
+    "tsup": "^8.2.3",
     "tsup-preset-solid": "^2.2.0",
-    "typescript": "^5.5.3",
+    "typescript": "^5.5.4",
     "vite": "^5.3.4",
     "vite-plugin-solid": "^2.10.2",
     "vitest": "^1.6.0"
