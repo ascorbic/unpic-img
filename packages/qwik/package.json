@@ -61,7 +61,7 @@
     "typescript": "5.5.4",
     "undici": "6.19.5",
     "vite": "5.3.5",
-    "vitest": "^1.6.0"
+    "vitest": "^2.0.5"
   },
   "peerDependencies": {
     "@builder.io/qwik": "*"
