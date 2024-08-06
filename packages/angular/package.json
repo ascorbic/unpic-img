@@ -34,10 +34,10 @@
     "directory": "packages/angular"
   },
   "devDependencies": {
-    "@angular-devkit/build-angular": "^18.1.2",
-    "@angular/cli": "~18.1.2",
-    "@angular/compiler-cli": "^18.1.2",
-    "@angular/core": "^18.1.2",
+    "@angular-devkit/build-angular": "^18.1.3",
+    "@angular/cli": "~18.1.3",
+    "@angular/compiler-cli": "^18.1.3",
+    "@angular/core": "^18.1.3",
     "ng-packagr": "^18.1.0",
     "publint": "^0.2.9",
     "typescript": "5.5.4"

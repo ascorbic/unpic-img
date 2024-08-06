@@ -46,7 +46,7 @@
     "lit": "^2.0.0 || ^3.0.0"
   },
   "devDependencies": {
-    "lit": "^3.1.4",
+    "lit": "^3.2.0",
     "publint": "^0.2.9",
     "web-component-analyzer": "2.0.0"
   },
