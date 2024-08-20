@@ -24,9 +24,9 @@
     "prepublishOnly": "pnpm build"
   },
   "devDependencies": {
-    "@sveltejs/adapter-auto": "^3.2.2",
-    "@sveltejs/kit": "^2.5.20",
-    "@sveltejs/package": "^2.3.2",
+    "@sveltejs/adapter-auto": "^3.2.4",
+    "@sveltejs/kit": "^2.5.24",
+    "@sveltejs/package": "^2.3.4",
     "@sveltejs/vite-plugin-svelte": "^3.1.1",
     "prettier": "^3.3.3",
     "prettier-plugin-svelte": "^3.2.6",
@@ -34,7 +34,7 @@
     "svelte-check": "^3.8.5",
     "tslib": "^2.6.3",
     "typescript": "^5.5.4",
-    "vite": "^5.3.5",
+    "vite": "^5.4.1",
     "vitest": "^1.6.0"
   },
   "type": "module",
