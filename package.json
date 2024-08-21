@@ -28,7 +28,7 @@
     "process": "^0.11.10",
     "publint": "^0.2.10",
     "typescript": "^5.5.4",
-    "vite": "^5.4.1",
+    "vite": "^5.4.2",
     "vitest": "^1.6.0"
   },
   "resolutions": {
