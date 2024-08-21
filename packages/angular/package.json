@@ -38,7 +38,7 @@
     "@angular/cli": "~18.2.0",
     "@angular/compiler-cli": "^18.2.0",
     "@angular/core": "^18.2.0",
-    "ng-packagr": "^18.2.0",
+    "ng-packagr": "^18.2.1",
     "publint": "^0.2.10",
     "typescript": "5.5.4"
   },
