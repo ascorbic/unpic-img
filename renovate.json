@@ -26,7 +26,7 @@
         "packages/angular/package.json",
         "examples/angular/package.json"
       ],
-      "rangeStrategy": "pin"
+      "enabled": false
     }
   ]
 }
