@@ -198,6 +198,13 @@
   * dependencies
     * @unpic/core bumped from 0.0.45 to 0.0.46
 
+## [0.0.47](https://github.com/ascorbic/unpic-img/compare/astro-v0.0.46...astro-v0.0.47) (2024-09-17)
+
+
+### Bug Fixes
+
+* **astro:** support Astro 5 ([#689](https://github.com/ascorbic/unpic-img/issues/689)) ([6e43909](https://github.com/ascorbic/unpic-img/commit/6e43909308328b80e06d699ee1552d750b4662ec))
+
 ## [0.0.46](https://github.com/ascorbic/unpic-img/compare/astro-v0.0.45...astro-v0.0.46) (2024-03-19)
 
 
