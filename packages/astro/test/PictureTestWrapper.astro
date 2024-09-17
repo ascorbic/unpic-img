@@ -1,0 +1,13 @@
+---
+import type { UnpicSourceProps } from "../src/Source.astro";
+import { Source } from "../index.js";
+export const partial = true;
+
+type Props = UnpicSourceProps;
+
+const props = Astro.props as Props;
+---
+
+<picture>
+  <Source data-testid="testimg" {...props} />
+</picture>

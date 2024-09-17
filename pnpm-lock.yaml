@@ -533,9 +533,21 @@ importers:
         specifier: ^2.0.5
         version: 2.0.5
     devDependencies:
+      '@testing-library/dom':
+        specifier: ^10.4.0
+        version: 10.4.0
+      '@types/jsdom':
+        specifier: ^21.1.7
+        version: 21.1.7
       astro:
         specifier: ^4.15.6
         version: 4.15.6(@types/node@20.16.5)(typescript@5.6.2)
+      jsdom:
+        specifier: ^25.0.0
+        version: 25.0.0
+      vitest:
+        specifier: ^2.1.1
+        version: 2.1.1(@types/node@20.16.5)(jsdom@25.0.0)
 
   packages/core:
     dependencies:
@@ -11353,7 +11365,7 @@ packages:
     engines: {node: '>=18'}
     dependencies:
       '@babel/code-frame': 7.24.7
-      '@babel/runtime': 7.24.7
+      '@babel/runtime': 7.25.0
       '@types/aria-query': 5.0.4
       aria-query: 5.3.0
       chalk: 4.1.2
