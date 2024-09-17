@@ -15,7 +15,7 @@ jobs:
       - run: echo Running tests in ${{ matrix.site }}
       - name: Checkout
         uses: actions/checkout@v4
-      - uses: pnpm/action-setup@v2
+      - uses: pnpm/action-setup@v4
         with:
           version: 8
       - name: Setup Node
