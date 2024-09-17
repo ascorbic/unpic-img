@@ -16,6 +16,7 @@ jobs:
           cache: "pnpm"
           check-latest: true
           registry-url: "https://registry.npmjs.org"
+          node-version: lts
       - name: Install dependencies
         run: |
           corepack enable
