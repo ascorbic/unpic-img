@@ -1,10 +1,10 @@
 import {
-  CoreImageAttributes,
-  CoreSourceAttributes,
   transformProps,
   transformSourceProps,
-  UnpicImageProps,
-  UnpicSourceProps,
+  type CoreImageAttributes,
+  type CoreSourceAttributes,
+  type UnpicImageProps,
+  type UnpicSourceProps,
 } from "@unpic/core";
 import { expect } from "vitest";
 

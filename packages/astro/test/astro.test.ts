@@ -1,11 +1,7 @@
-// @vitest-environment node
-import { describe, test, expect, beforeAll } from "vitest";
-import { experimental_AstroContainer as AstroContainer } from "astro/container";
+import { describe, test, expect } from "vitest";
 import { Image } from "../index.js";
 import PictureTestWrapper from "./PictureTestWrapper.astro";
-import { getByAltText, getByTestId } from "@testing-library/dom";
-import { JSDOM } from "jsdom";
-
+import { render } from "./astro-testing-library.js";
 import {
   expectImagePropsToMatchTransformed,
   expectSourcePropsToMatchTransformed,
@@ -13,35 +9,23 @@ import {
   sourceTestCases,
 } from "../../../test/test-helpers.js";
 
-let container: AstroContainer;
-
 describe("the Astro component", () => {
-  beforeAll(async () => {
-    container = await AstroContainer.create();
-  });
   for (const props of imgTestCases) {
     test(`renders a ${props.layout} image`, async () => {
-      const html = await container.renderToString(Image, { props });
-      const dom = new JSDOM(html);
-      const img = getByAltText<HTMLImageElement>(
-        dom.window.document as unknown as HTMLElement,
-        props.alt,
-      );
+      const { getByAltText } = await render(Image, {
+        props,
+      });
+      const img = getByAltText<HTMLImageElement>(props.alt);
       expect(img).toBeTruthy();
       expectImagePropsToMatchTransformed(img, props);
     });
   }
   for (const props of sourceTestCases) {
     test(`renders a picture with ${props.layout} source`, async () => {
-      const html = await container.renderToString(PictureTestWrapper, {
+      const { getByTestId } = await render(PictureTestWrapper, {
         props,
       });
-      const dom = new JSDOM(html);
-
-      const source = getByTestId<HTMLSourceElement>(
-        dom.window.document as unknown as HTMLElement,
-        "testimg",
-      );
+      const source = getByTestId<HTMLSourceElement>("testimg");
       expect(source).toBeTruthy();
       expectSourcePropsToMatchTransformed(source, props);
     });
