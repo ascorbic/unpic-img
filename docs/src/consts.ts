@@ -43,7 +43,7 @@ export const SIDEBAR: Sidebar = {
     { icon: "logos:preact", text: "Preact", link: "img/preact" },
     { icon: "qwik", text: "Qwik", link: "img/qwik" },
     { icon: "logos:react", text: "React", link: "img/react" },
-    { icon: "logos:solidjs-icon", text: "SolidJS", link: "img/solid" },
+    { icon: "devicon:solidjs", text: "SolidJS", link: "img/solid" },
     { icon: "logos:svelte-icon", text: "Svelte", link: "img/svelte" },
     { icon: "logos:vue", text: "Vue", link: "img/vue" },
     { icon: "eleventy", text: "WebC", link: "img/webc" },

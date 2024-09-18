@@ -4,6 +4,8 @@ import react from "@astrojs/react";
 import mdx from "@astrojs/mdx";
 import sitemap from "@astrojs/sitemap";
 import { imageService } from "@unpic/astro/service";
+import icon from "astro-icon";
+
 // https://astro.build/config
 export default defineConfig({
   image: {
@@ -29,6 +31,7 @@ export default defineConfig({
     }),
     mdx(),
     sitemap(),
+    icon(),
   ],
   markdown: {
     shikiConfig: {
