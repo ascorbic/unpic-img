@@ -96,6 +96,24 @@ importers:
       '@docsearch/react':
         specifier: ^3.6.1
         version: 3.6.1(@algolia/client-search@5.4.3)(@types/react@18.3.7)(react-dom@18.3.1)(react@18.3.1)(search-insights@2.13.0)
+      '@iconify-json/cib':
+        specifier: ^1.2.0
+        version: 1.2.0
+      '@iconify-json/devicon':
+        specifier: ^1.2.1
+        version: 1.2.1
+      '@iconify-json/logos':
+        specifier: ^1.2.0
+        version: 1.2.0
+      '@iconify-json/mdi':
+        specifier: ^1.2.0
+        version: 1.2.0
+      '@iconify-json/ph':
+        specifier: ^1.2.0
+        version: 1.2.0
+      '@iconify-json/simple-icons':
+        specifier: ^1.2.3
+        version: 1.2.3
       '@preact/signals':
         specifier: ^1.3.0
         version: 1.3.0(preact@10.24.0)
@@ -6982,6 +7000,42 @@ packages:
 
   /@iarna/toml@2.2.5:
     resolution: {integrity: sha512-trnsAYxU3xnS1gPHPyU961coFyLkh4gAD/0zQ5mymY4yOZ+CYvsPqUbOFSw0aDM4y0tV7tiFxL/1XfXPNC6IPg==}
+
+  /@iconify-json/cib@1.2.0:
+    resolution: {integrity: sha512-gaZ8bY+5i2oEudAJBJmsKa5AqRb5Zu+S77/WL8VRlNNLaQ+0MlT6N8sdwCNFRwjxInDUXV9XH7jxd8e0bhSW1A==}
+    dependencies:
+      '@iconify/types': 2.0.0
+    dev: false
+
+  /@iconify-json/devicon@1.2.1:
+    resolution: {integrity: sha512-Djgx9b6zt68BRXaLw/t4I4BAuc7qQW5TWcGJnlR+gnCqBLUkZhHDHfr4eRy/7tmH1Mqbu7LQjGGMFzcYTWd1Cg==}
+    dependencies:
+      '@iconify/types': 2.0.0
+    dev: false
+
+  /@iconify-json/logos@1.2.0:
+    resolution: {integrity: sha512-VkU9QSqeZR2guWbecdqkcoZEAJfgJJTUm6QAsypuZQ7Cve6zy39wOXDjp2H31I8QyQy4O3Cz96+pNji6UQFg4w==}
+    dependencies:
+      '@iconify/types': 2.0.0
+    dev: false
+
+  /@iconify-json/mdi@1.2.0:
+    resolution: {integrity: sha512-E9/3l5Syg3wfuarorFodhn4s8YorxhH3U3U20LaNBNiqw1kFNIDWhF6HymuzAD35k7RH0OBasJ+ZUyFtVVV6eg==}
+    dependencies:
+      '@iconify/types': 2.0.0
+    dev: false
+
+  /@iconify-json/ph@1.2.0:
+    resolution: {integrity: sha512-013eLpgTmX1lACOuDnkuhC7gRHyYj9w/j8SyDmlyUYvsKQrwdRsv1otcXtwH3DevuDAzSkreeeRsCeez+gTyVA==}
+    dependencies:
+      '@iconify/types': 2.0.0
+    dev: false
+
+  /@iconify-json/simple-icons@1.2.3:
+    resolution: {integrity: sha512-KZpqyPkDdyAvrpMz9/FYovwFsr3xrHf9esJeBng3iqNInhuZhF33XO1k6Yf8g2p10ynUW7AYEiGJkYzDi4DENQ==}
+    dependencies:
+      '@iconify/types': 2.0.0
+    dev: false
 
   /@iconify/tools@4.0.6:
     resolution: {integrity: sha512-riEQggXVuZNXjRdo+aKT0rkzn2XHslIqat8mdW/oVu5mLmP/95Hi+iaq4keT7WwMD97jsYPXMQ6QMCw0EWpRNw==}

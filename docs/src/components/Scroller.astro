@@ -1,5 +1,5 @@
 ---
-import { Icon } from "astro-icon";
+import { Icon } from "astro-icon/components";
 ---
 
 <style>
@@ -23,7 +23,7 @@ import { Icon } from "astro-icon";
     animation: roll-up 17s infinite cubic-bezier(0.75, 0, 0.25, 1);
   }
 
-  [astro-icon] {
+  [data-icon] {
     height: 18px;
     width: 18px;
     margin: 0 0.5rem 0 0.2rem;
@@ -83,7 +83,7 @@ import { Icon } from "astro-icon";
     <li><Icon name="logos:lit-icon" />Lit</li>
     <li><Icon name="qwik" />Qwik</li>
     <li><Icon name="eleventy" />11ty</li>
-    <li><Icon name="logos:solidjs-icon" />SolidJS</li>
+    <li><Icon name="devicon:solidjs" />SolidJS</li>
     <li><Icon name="logos:nextjs-icon" />Next.js</li>
     <li>the web</li>
   </ul>
