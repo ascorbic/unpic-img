@@ -36,7 +36,7 @@
     "@typescript-eslint/eslint-plugin": "^7.1.0",
     "@typescript-eslint/parser": "^7.1.0",
     "@unpic/qwik": "workspace:^",
-    "eslint": "^8.57.0",
+    "eslint": "^9.0.0",
     "eslint-plugin-qwik": "^1.5.1",
     "netlify-cli": "^15.0.0",
     "prettier": "^3.2.5",
