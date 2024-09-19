@@ -15,7 +15,14 @@ jobs:
     runs-on: ubuntu-latest
     name: Format Files
     steps:
+      - uses: actions/create-github-app-token@v1
+        id: app-token
+        with:
+          app-id: ${{ secrets.APP_ID }}
+          private-key: ${{ secrets.APP_PRIVATE_KEY }}
       - uses: actions/checkout@v4
+        with:
+          token: ${{ steps.app-token.outputs.token }}
       - uses: pnpm/action-setup@v4
       - name: Setup Node
         uses: actions/setup-node@v4
@@ -33,7 +40,7 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-      - uses: stefanzweifel/git-auto-commit-action@v4
+      - uses: stefanzweifel/git-auto-commit-action@v5
         if: github.event_name == 'push' || github.event_name == 'workflow_dispatch'
         with:
           commit_message: "chore: format"
