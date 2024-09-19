@@ -7,7 +7,7 @@
     "lint:publint": "pnpm run --filter '@unpic/*' publint",
     "test": "pnpm run --filter '@unpic/*' test",
     "publish": "pnpm run --filter '@unpic/*' publish",
-    "format": "pnpm prettier --write ."
+    "format": "pnpm prettier --write **/*.{ts,tsx,js,jsx,json,md,astro}"
   },
   "dependencies": {
     "unpic": "^3.18.0"
