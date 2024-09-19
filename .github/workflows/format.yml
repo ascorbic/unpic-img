@@ -1,0 +1,39 @@
+name: Format
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+  pull_request:
+    branches: [main]
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  format:
+    runs-on: ubuntu-latest
+    name: Format Files
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          cache: "pnpm"
+          check-latest: true
+          registry-url: "https://registry.npmjs.org"
+          node-version: latest
+      - name: Install dependencies
+        run: |
+          corepack enable
+          pnpm install
+      - name: Format
+        run: pnpm format
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - uses: stefanzweifel/git-auto-commit-action@v4
+        if: github.event_name == 'push' || github.event_name == 'workflow_dispatch'
+        with:
+          commit_message: "chore: format"

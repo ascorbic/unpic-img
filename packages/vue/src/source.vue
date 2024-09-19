@@ -19,5 +19,10 @@ const props = defineProps<Props>();
 
 const attrs: SourceHTMLAttributes = useAttrs();
 
-const sourceProps = computed(() => transformSourceProps<SourceHTMLAttributes>({ ...attrs, ...props } as UnpicSourceProps));
+const sourceProps = computed(() =>
+  transformSourceProps<SourceHTMLAttributes>({
+    ...attrs,
+    ...props,
+  } as UnpicSourceProps),
+);
 </script>

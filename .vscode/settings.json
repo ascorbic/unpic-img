@@ -1,8 +1,4 @@
 {
-    "deno.enablePaths": [
-        "docs/netlify/edge-functions"
-    ],
-    "githubPullRequests.ignoredPullRequestBranches": [
-        "main"
-    ]
+  "deno.enablePaths": ["docs/netlify/edge-functions"],
+  "githubPullRequests.ignoredPullRequestBranches": ["main"]
 }
