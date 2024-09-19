@@ -43,7 +43,7 @@
     "typescript": "5.5.4"
   },
   "dependencies": {
-    "@unpic/core": "0.0.49",
+    "@unpic/core": "workspace:^",
     "tslib": "^2.7.0"
   }
 }
