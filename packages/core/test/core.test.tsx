@@ -12,7 +12,7 @@ describe("Core", () => {
       objectFit: "cover",
     });
     expect(props.src).toEqual(
-      "https://res.cloudinary.com/example/image/upload/w_800,h_600,c_lfill,f_auto/images/my-image"
+      "https://res.cloudinary.com/example/image/upload/w_800,h_600,c_lfill,f_auto/images/my-image",
     );
   });
 
@@ -31,7 +31,7 @@ describe("Core", () => {
       },
     });
     expect(props.src).toEqual(
-      `https://res.cloudinary.com/example/image/upload/w_${width},h_${height},c_lfill,f_auto/${id}`
+      `https://res.cloudinary.com/example/image/upload/w_${width},h_${height},c_lfill,f_auto/${id}`,
     );
   });
 

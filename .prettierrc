@@ -1,8 +1,6 @@
 {
   "proseWrap": "always",
-  "plugins": [
-    "prettier-plugin-astro"
-  ],
+  "plugins": ["prettier-plugin-astro"],
   "overrides": [
     {
       "files": "*.astro",

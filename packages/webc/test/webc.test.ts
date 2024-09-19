@@ -9,7 +9,7 @@ import {
 
 function generateWebCTag(
   name: string,
-  attributes: Record<string, string | number | boolean>
+  attributes: Record<string, string | number | boolean>,
 ) {
   const attr = Object.entries(attributes)
     .map(([key, value]) => `${key}="${value}"`)
@@ -35,7 +35,7 @@ describe("the WebC component", async () => {
     test(`renders a ${testCases[idx].layout} image`, async () => {
       expectPropsToMatchTransformed(
         imgs[idx] as HTMLImageElement,
-        testCases[idx]
+        testCases[idx],
       );
     });
   }

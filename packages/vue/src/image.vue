@@ -16,7 +16,14 @@ export interface Props extends /* @vue-ignore */ ImgHTMLAttributes {
   priority?: boolean;
   background?: string;
   aspectRatio?: number;
-  objectFit?: "contain" | "cover" | "fill" | "none" | "scale-down" | "inherit" | "initial";
+  objectFit?:
+    | "contain"
+    | "cover"
+    | "fill"
+    | "none"
+    | "scale-down"
+    | "inherit"
+    | "initial";
   unstyled?: boolean;
   transformer?: UrlTransformer;
 }
@@ -25,5 +32,7 @@ const props = defineProps<Props>();
 
 const attrs: ImgHTMLAttributes = useAttrs();
 
-const imageProps = computed(() => transformProps({ ...attrs, ...props } as UnpicImageProps<ImgHTMLAttributes>));
+const imageProps = computed(() =>
+  transformProps({ ...attrs, ...props } as UnpicImageProps<ImgHTMLAttributes>),
+);
 </script>

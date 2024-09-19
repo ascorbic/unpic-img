@@ -1,2 +1,10 @@
 package.json
-CHANGELOG..md
+CHANGELOG.md
+.angular
+.astro
+.netlify
+.github
+cache
+.svelte-kit
+svelte/build
+pnpm-lock.yaml
