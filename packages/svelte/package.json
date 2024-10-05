@@ -25,17 +25,17 @@
   },
   "devDependencies": {
     "@sveltejs/adapter-auto": "^3.2.5",
-    "@sveltejs/kit": "^2.5.28",
+    "@sveltejs/kit": "^2.6.1",
     "@sveltejs/package": "^2.3.5",
     "@sveltejs/vite-plugin-svelte": "^3.1.2",
     "prettier": "^3.3.3",
-    "prettier-plugin-svelte": "^3.2.6",
+    "prettier-plugin-svelte": "^3.2.7",
     "svelte": "^4.2.19",
-    "svelte-check": "^4.0.2",
+    "svelte-check": "^4.0.4",
     "tslib": "^2.7.0",
     "typescript": "^5.6.2",
-    "vite": "^5.4.6",
-    "vitest": "^2.1.1"
+    "vite": "^5.4.8",
+    "vitest": "^2.1.2"
   },
   "type": "module",
   "dependencies": {
