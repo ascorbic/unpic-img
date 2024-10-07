@@ -4,6 +4,7 @@
   "version": "0.0.1",
   "scripts": {
     "dev": "astro dev --host",
+    "dev:ci": "pnpm --filter docs... build && astro dev --host",
     "start": "astro dev --host",
     "build": "astro build",
     "preview": "astro preview",
