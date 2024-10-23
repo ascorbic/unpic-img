@@ -81,7 +81,7 @@
     "@vitejs/plugin-react": "^4.3.2",
     "cssstyle": "^4.1.0",
     "jsdom": "^25.0.1",
-    "next": "^14.2.14",
+    "next": "^15.0.1",
     "publint": "^0.2.11",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
@@ -93,7 +93,7 @@
     "@unpic/core": "workspace:^"
   },
   "peerDependencies": {
-    "next": "^13.0.0 || ^14.0.0",
+    "next": "^13.0.0 || ^14.0.0 || ^15.0.0",
     "react": "^17.0.0 || ^18.0.0",
     "react-dom": "^17.0.0 || ^18.0.0"
   },
