@@ -31,13 +31,13 @@
   "devDependencies": {
     "@testing-library/dom": "^10.4.0",
     "@types/jsdom": "^21.1.7",
-    "astro": "5.0.0-beta.3",
+    "astro": "5.0.0-beta.5",
     "jsdom": "^25.0.1",
-    "vitest": "^2.1.2"
+    "vitest": "^2.1.3"
   },
   "dependencies": {
     "@unpic/core": "workspace:^",
-    "@unpic/pixels": "^1.2.2",
+    "@unpic/pixels": "^1.3.0",
     "@unpic/placeholder": "^0.1.2",
     "blurhash": "^2.0.5"
   },
