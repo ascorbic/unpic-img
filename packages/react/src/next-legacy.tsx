@@ -54,8 +54,12 @@ function checkMatchingPatterns(config: ImageConfigComplete, src: string) {
     return;
   }
 
-  import("next/dist/shared/lib/match-remote-pattern").then(({ hasMatch }) => {
-    if (!hasMatch(config.domains, config.remotePatterns, parsedSrc)) {
+  import("next/dist/shared/lib/match-remote-pattern").then((mod) => {
+    const hasMatch = mod.hasRemoteMatch ?? (mod as any).hasMatch;
+    if (
+      hasMatch &&
+      !hasMatch(config.domains, config.remotePatterns, parsedSrc)
+    ) {
       throw new Error(
         `[Unpic]: Invalid src (${src}). Images that aren't on a supported image CDN must be configured under images in your \`next.config.js\`\n` +
           `See more info: https://nextjs.org/docs/messages/next-image-unconfigured-host`,
