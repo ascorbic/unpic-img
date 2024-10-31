@@ -78,11 +78,12 @@ export const getStyle = <
     ["object-fit", objectFit],
   ];
 
-  // If background is a URL, set it to cover the image and not repeat
+  // If background is a URL, set it to cover the image and not repeat 
   if (
     background?.startsWith("https:") ||
     background?.startsWith("http:") ||
-    background?.startsWith("data:")
+    background?.startsWith("data:") ||
+    background?.startsWith("/")
   ) {
     styleEntries.push(["background-image", `url(${background})`]);
     styleEntries.push(["background-size", "cover"]);
