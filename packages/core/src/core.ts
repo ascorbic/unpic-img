@@ -78,7 +78,7 @@ export const getStyle = <
     ["object-fit", objectFit],
   ];
 
-  // If background is a URL, set it to cover the image and not repeat 
+  // If background is a URL, set it to cover the image and not repeat
   if (
     background?.startsWith("https:") ||
     background?.startsWith("http:") ||
