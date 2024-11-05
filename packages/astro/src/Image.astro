@@ -45,6 +45,10 @@ if (!imgProps.cdn) {
   imgProps.cdn = getDefaultImageCdn(config);
 }
 
+imgProps.cdnOptions ??= {};
+imgProps.cdnOptions.astro ??= {};
+imgProps.cdnOptions.astro.endpoint ??= imageConfig.endpoint?.route;
+
 imgProps.background = await getBackground(imgProps);
 ---
 
