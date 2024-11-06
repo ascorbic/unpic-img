@@ -2,8 +2,8 @@ export type * from "./types.js";
 
 import {
   UrlTransformerOptions,
-  getCanonicalCdnForUrl,
-  getTransformer,
+  getProviderForUrl,
+  getTransformerForCdn,
 } from "unpic";
 import { parse } from "./mediaquery.js";
 
@@ -190,16 +190,12 @@ export const getSrcSetEntries = ({
   cdn,
   transformer,
   format,
+  fallback,
 }: SrcSetOptions): Array<UrlTransformerOptions> => {
-  const canonical = getCanonicalCdnForUrl(src, cdn);
-
-  if (canonical && !transformer) {
-    transformer = getTransformer(canonical.cdn);
-  }
-
-  if (!transformer) {
+  if (!transformer && !cdn && !fallback && !getProviderForUrl(src)) {
     return [];
   }
+
   breakpoints ||= getBreakpoints({ width, layout });
   return breakpoints
     .sort((a, b) => a - b)
@@ -209,7 +205,6 @@ export const getSrcSetEntries = ({
         transformedHeight = Math.round(bp / aspectRatio);
       }
       return {
-        url: canonical ? canonical.url : src,
         width: bp,
         height: transformedHeight,
         format,
@@ -222,11 +217,11 @@ export const getSrcSetEntries = ({
  */
 
 export const getSrcSet = (options: SrcSetOptions): string => {
-  let { src, cdn, transformer } = options;
-  const canonical = getCanonicalCdnForUrl(src, cdn);
+  let { src, cdn, transformer, fallback } = options;
+  const canonical = cdn || getProviderForUrl(src) || fallback;
 
   if (canonical && !transformer) {
-    transformer = getTransformer(canonical.cdn);
+    transformer = getTransformerForCdn(canonical);
   }
   if (!transformer) {
     return "";
@@ -234,7 +229,7 @@ export const getSrcSet = (options: SrcSetOptions): string => {
 
   return getSrcSetEntries({ ...options, transformer })
     .map((transform) => {
-      const url = transformer!(transform);
+      const url = transformer(src, transform);
       return `${url?.toString()} ${transform.width}w`;
     })
     .join(",\n");
@@ -312,7 +307,6 @@ export function transformProps<
   TImageAttributes extends CoreImageAttributes<TStyle>,
   TStyle = Record<string, string>,
 >(props: UnpicImageProps<TImageAttributes, TStyle>): TImageAttributes {
-  /* eslint-disable prefer-const */
   let {
     src,
     cdn,
@@ -325,15 +319,16 @@ export function transformProps<
     height,
     aspectRatio,
     unstyled,
+    fallback,
+    operations,
+    options,
     ...transformedProps
   } = transformSharedProps(props);
-  /* eslint-enable prefer-const */
 
-  const canonical = src ? getCanonicalCdnForUrl(src, cdn) : undefined;
-  let url: URL | string = src;
-  if (canonical) {
-    url = canonical.url;
-    transformer ||= getTransformer(canonical.cdn);
+  if (!transformer) {
+    transformer = getTransformerForCdn(
+      cdn || getProviderForUrl(src) || fallback,
+    );
   }
 
   // Auto-generate a low-res image for blurred placeholders
@@ -341,8 +336,7 @@ export function transformProps<
     const lowResHeight = aspectRatio
       ? Math.round(LOW_RES_WIDTH / aspectRatio)
       : undefined;
-    const lowResImage = transformer({
-      url,
+    const lowResImage = transformer(src, {
       width: LOW_RES_WIDTH,
       height: lowResHeight,
     });
@@ -371,7 +365,7 @@ export function transformProps<
   }
   if (transformer) {
     transformedProps.srcset = getSrcSet({
-      src: url,
+      src,
       width,
       height,
       aspectRatio,
@@ -381,10 +375,10 @@ export function transformProps<
       cdn,
     });
 
-    const transformed = transformer({ url, width, height });
+    const transformed = transformer(src, { width, height });
 
     if (transformed) {
-      url = transformed;
+      src = transformed;
     }
 
     if (layout === "fullWidth" || layout === "constrained") {

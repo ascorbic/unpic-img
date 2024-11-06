@@ -1,4 +1,8 @@
-import type { ImageCdn, UrlTransformer } from "unpic";
+import type { ImageCdn, URLTransformer } from "unpic";
+import type {
+  ProviderOperations,
+  ProviderOptions,
+} from "unpic/esm/src/providers/types";
 
 /**
  * HTML image attributes, common to image components in multiple frameworks.
@@ -25,8 +29,11 @@ export interface ImageSourceOptions {
   aspectRatio?: number;
   layout?: Layout;
   breakpoints?: number[];
-  transformer?: UrlTransformer;
+  transformer?: URLTransformer;
   cdn?: ImageCdn;
+  fallback?: ImageCdn;
+  operations?: Partial<ProviderOperations>;
+  options?: Partial<ProviderOptions>;
 }
 
 export type ObjectFit =
