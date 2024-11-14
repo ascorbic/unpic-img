@@ -30,10 +30,10 @@
     "publint": "^0.2.12",
     "typescript": "^5.6.3",
     "vite": "^5.4.11",
-    "vitest": "^2.1.4"
+    "vitest": "^2.1.5"
   },
   "resolutions": {
     "cssstyle": "^4.1.0"
   },
-  "packageManager": "pnpm@9.12.3"
+  "packageManager": "pnpm@9.13.1"
 }
