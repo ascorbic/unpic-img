@@ -11,7 +11,7 @@
     "astro": "astro"
   },
   "dependencies": {
-    "@algolia/client-search": "^5.13.0",
+    "@algolia/client-search": "^5.14.0",
     "@astrojs/mdx": "^3.1.9",
     "@astrojs/preact": "^3.5.3",
     "@astrojs/react": "^3.6.2",
@@ -32,7 +32,7 @@
     "@unpic/astro": "workspace:^",
     "@unpic/placeholder": "^0.1.2",
     "@unpic/react": "workspace:^",
-    "astro": "^4.16.11",
+    "astro": "^4.16.12",
     "astro-icon": "^1.1.2",
     "blurhash": "^2.0.5",
     "pako": "^2.1.0",
