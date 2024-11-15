@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.0.50](https://github.com/ascorbic/unpic-img/compare/core-v0.0.49...core-v0.0.50) (2024-11-15)
+
+
+### Bug Fixes
+
+* Allow relative image urls for background placeholder ([#710](https://github.com/ascorbic/unpic-img/issues/710)) ([22c279c](https://github.com/ascorbic/unpic-img/commit/22c279c21bf36696931d19790b6c501b695a1aba))
+
 ## [0.0.49](https://github.com/ascorbic/unpic-img/compare/core-v0.0.48...core-v0.0.49) (2024-03-19)
 
 

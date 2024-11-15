@@ -1,6 +1,6 @@
 {
   "name": "@unpic/react",
-  "version": "0.1.14",
+  "version": "0.1.15",
   "license": "MIT",
   "description": "React component for responsive, high-performance images",
   "keywords": [
@@ -90,7 +90,7 @@
     "vitest": "^2.1.5"
   },
   "dependencies": {
-    "@unpic/core": "workspace:^"
+    "@unpic/core": "0.0.50"
   },
   "peerDependencies": {
     "next": "^13.0.0 || ^14.0.0 || ^15.0.0",

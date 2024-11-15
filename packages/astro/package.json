@@ -1,6 +1,6 @@
 {
   "name": "@unpic/astro",
-  "version": "0.0.47",
+  "version": "0.0.48",
   "type": "module",
   "license": "MIT",
   "description": "A high-performance, responsive image service and component library for Astro",
@@ -36,7 +36,7 @@
     "vitest": "^2.1.5"
   },
   "dependencies": {
-    "@unpic/core": "workspace:^",
+    "@unpic/core": "0.0.50",
     "@unpic/pixels": "^1.3.0",
     "@unpic/placeholder": "^0.1.2",
     "blurhash": "^2.0.5"
