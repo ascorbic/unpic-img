@@ -11,31 +11,42 @@ permissions:
 
 jobs:
   update-lockfile:
-    if: github.event.comment.body == '!lock'
+    if: >
+      github.event.comment.body == '!lock' &&
+      github.event.issue.pull_request != null
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/create-github-app-token@v1
+      - name: Generate GitHub App Token
+        uses: actions/create-github-app-token@v1
         id: app-token
         with:
           app-id: ${{ secrets.APP_ID }}
           private-key: ${{ secrets.APP_PRIVATE_KEY }}
-      - uses: actions/checkout@v4
+
+      - name: Checkout PR branch
+        uses: actions/checkout@v4
         with:
           token: ${{ steps.app-token.outputs.token }}
+          ref: ${{ github.event.issue.pull_request.head.ref }}
+          repository: ${{ github.event.repository.full_name }}
+
       - name: Setup pnpm
         uses: pnpm/action-setup@v4
+
       - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
           check-latest: true
           registry-url: "https://registry.npmjs.org"
           node-version: latest
+
       - name: Install pnpm
         run: npm install -g pnpm
 
       - name: Update dependencies
         run: pnpm i --no-frozen-lockfile
 
-      - uses: stefanzweifel/git-auto-commit-action@v5
+      - name: Commit changes
+        uses: stefanzweifel/git-auto-commit-action@v5
         with:
           commit_message: "chore: update lockfile"
