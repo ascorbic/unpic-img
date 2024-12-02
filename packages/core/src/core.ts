@@ -82,7 +82,8 @@ export const getStyle = <
   if (
     background?.startsWith("https:") ||
     background?.startsWith("http:") ||
-    background?.startsWith("data:")
+    background?.startsWith("data:") ||
+    background?.startsWith("/")
   ) {
     styleEntries.push(["background-image", `url(${background})`]);
     styleEntries.push(["background-size", "cover"]);
