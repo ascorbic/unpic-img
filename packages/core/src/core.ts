@@ -206,6 +206,7 @@ export const getSrcSetEntries = ({
         transformedHeight = Math.round(bp / aspectRatio);
       }
       return {
+        url: src,
         width: bp,
         height: transformedHeight,
         format,
@@ -388,13 +389,13 @@ export function transformProps<
     }
   }
 
-  if (!url) {
+  if (!src) {
     logError("No URL provided for image");
   }
 
   return {
     ...transformedProps,
-    src: url?.toString(),
+    src: src?.toString(),
     width,
     height,
   } as TImageAttributes;
