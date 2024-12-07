@@ -1,5 +1,18 @@
 # Changelog
 
+## [0.0.50](https://github.com/ascorbic/unpic-img/compare/core-v0.0.49...core-v0.0.50) (2024-12-07)
+
+
+### Features
+
+* allow passing cdn options to components ([#734](https://github.com/ascorbic/unpic-img/issues/734)) ([84f1188](https://github.com/ascorbic/unpic-img/commit/84f11888e486ce074da9415ebeb3ef72db8b5f92))
+* support Astro 5 ([#736](https://github.com/ascorbic/unpic-img/issues/736)) ([cc36abb](https://github.com/ascorbic/unpic-img/commit/cc36abb739f9a075789000b9af23b502ccfa7473))
+
+
+### Bug Fixes
+
+* Allow relative image urls for background placeholder ([#710](https://github.com/ascorbic/unpic-img/issues/710)) ([22c279c](https://github.com/ascorbic/unpic-img/commit/22c279c21bf36696931d19790b6c501b695a1aba))
+
 ## [0.0.49](https://github.com/ascorbic/unpic-img/compare/core-v0.0.48...core-v0.0.49) (2024-03-19)
 
 

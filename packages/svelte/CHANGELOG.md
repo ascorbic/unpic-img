@@ -132,6 +132,21 @@
   * dependencies
     * @unpic/core bumped to 0.0.44
 
+## [0.0.54](https://github.com/ascorbic/unpic-img/compare/svelte-v0.0.53...svelte-v0.0.54) (2024-12-07)
+
+
+### Features
+
+* allow passing cdn options to components ([#734](https://github.com/ascorbic/unpic-img/issues/734)) ([84f1188](https://github.com/ascorbic/unpic-img/commit/84f11888e486ce074da9415ebeb3ef72db8b5f92))
+* support Astro 5 ([#736](https://github.com/ascorbic/unpic-img/issues/736)) ([cc36abb](https://github.com/ascorbic/unpic-img/commit/cc36abb739f9a075789000b9af23b502ccfa7473))
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @unpic/core bumped to 0.0.50
+
 ## [0.0.53](https://github.com/ascorbic/unpic-img/compare/svelte-v0.0.52...svelte-v0.0.53) (2024-03-19)
 
 
