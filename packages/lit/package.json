@@ -1,6 +1,6 @@
 {
   "name": "@unpic/lit",
-  "version": "0.0.30",
+  "version": "0.0.31",
   "description": "A high-performance, responsive image component for Lit",
   "main": "unpic-img.js",
   "module": "unpic-img.js",
