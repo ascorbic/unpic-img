@@ -2,6 +2,7 @@
   "name": "docs",
   "type": "module",
   "version": "0.0.1",
+  "private": true,
   "scripts": {
     "dev": "astro dev --host",
     "dev:ci": "pnpm --filter docs... build && astro dev --host",

@@ -6,7 +6,6 @@
     "build:packages": "pnpm run --filter '@unpic/*' build",
     "lint:publint": "pnpm run --filter '@unpic/*' publint",
     "test": "pnpm run --filter '@unpic/*' test",
-    "publish": "pnpm run --filter '@unpic/*' publish",
     "format": "pnpm prettier --write **/*.{ts,tsx,js,jsx,json,md,astro}"
   },
   "dependencies": {
