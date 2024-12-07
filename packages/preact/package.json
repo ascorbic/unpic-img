@@ -1,6 +1,6 @@
 {
   "name": "@unpic/preact",
-  "version": "0.0.44",
+  "version": "0.0.45",
   "license": "MIT",
   "description": "A high-performance, responsive, accessible image component for Preact",
   "keywords": [
@@ -45,7 +45,7 @@
     "vitest": "^2.1.5"
   },
   "dependencies": {
-    "@unpic/core": "workspace:^"
+    "@unpic/core": "0.0.50"
   },
   "peerDependencies": {
     "preact": "*"
