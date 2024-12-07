@@ -10,7 +10,7 @@
     "format": "pnpm prettier --write **/*.{ts,tsx,js,jsx,json,md,astro}"
   },
   "dependencies": {
-    "unpic": "^3.20.0"
+    "unpic": "^3.21.0"
   },
   "devDependencies": {
     "@netlify/plugin-nextjs": "5.8.1",
