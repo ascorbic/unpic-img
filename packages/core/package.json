@@ -21,7 +21,7 @@
     "vitest": "^2.1.5"
   },
   "dependencies": {
-    "unpic": "^3.21.0"
+    "unpic": "^3.22.0"
   },
   "main": "./dist/core.js",
   "module": "./dist/core.mjs",

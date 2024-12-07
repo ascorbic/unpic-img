@@ -1,5 +1,7 @@
 ---
 import { Image, Source } from "@unpic/astro";
+import lighthouse from "../formentor.jpg";
+
 const toy =
   "https://images.ctfassets.net/yadj1kx9rmg0/wtrHxeu3zEoEce2MokCSi/cf6f68efdcf625fdc060607df0f3baef/quwowooybuqbl6ntboz3.jpg";
 ---
@@ -18,6 +20,13 @@ const toy =
         <Source src={toy} type="image/avif" width={800} height={600} />
         <Source src={toy} type="image/webp" width={800} height={600} />
         <Image src={toy} width={800} height={600} alt="Toy" />
+      </picture>
+    </div>
+    <div>
+      <picture>
+        <Source src={lighthouse} type="image/avif" width={800} height={600} />
+        <Source src={lighthouse} type="image/webp" width={800} height={600} />
+        <Image src={lighthouse} width={800} height={600} alt="Lighthouse" />
       </picture>
     </div>
   </body>
