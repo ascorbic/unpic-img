@@ -191,6 +191,7 @@ export const getSrcSetEntries = ({
   cdn,
   transformer,
   format,
+  cdnOptions,
 }: SrcSetOptions): Array<UrlTransformerOptions> => {
   const canonical = getCanonicalCdnForUrl(src, cdn);
 
@@ -214,6 +215,7 @@ export const getSrcSetEntries = ({
         width: bp,
         height: transformedHeight,
         format,
+        cdnOptions,
       };
     });
 };
@@ -382,6 +384,7 @@ export function transformProps<
       breakpoints,
       transformer,
       cdn,
+      cdnOptions,
     });
 
     const transformed = transformer({ url, width, height, cdnOptions });
@@ -476,6 +479,7 @@ export function transformSourceProps<
     transformer,
     cdn,
     format,
+    cdnOptions,
   });
 
   const transformed = transformer({ url, width, height, cdnOptions });
