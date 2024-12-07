@@ -1,5 +1,6 @@
 {
   "name": "solid-demo",
+  "private": true,
   "description": "",
   "scripts": {
     "start": "vite",

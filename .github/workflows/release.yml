@@ -13,32 +13,32 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       contents: write
-      pull-requests: write
       id-token: write
+      pull-requests: write
+      repository-projects: write
     steps:
-      - name: Checkout Repo
-        uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
-
-      - uses: pnpm/action-setup@v4
-
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: latest
-          cache: 'pnpm'
-          check-latest: true
-          registry-url: 'https://registry.npmjs.org'
-
-      - name: Install Dependencies
-        run: pnpm install
-
       - uses: navikt/github-app-token-generator@v1
         id: get-token
         with:
           private-key: ${{ secrets.APP_PRIVATE_KEY }}
           app-id: ${{ secrets.APP_ID }}
+      - name: Checkout Repo
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+          fetch-depth: 0
+
+      - name: Setup PNPM
+        uses: pnpm/action-setup@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: latest
+          cache: "pnpm"
+
+      - name: Install Dependencies
+        run: pnpm install
 
       - name: Build Packages
         run: pnpm build:packages
