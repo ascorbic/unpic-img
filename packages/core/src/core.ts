@@ -326,6 +326,7 @@ export function transformProps<
     height,
     aspectRatio,
     unstyled,
+    cdnOptions,
     ...transformedProps
   } = transformSharedProps(props);
   /* eslint-enable prefer-const */
@@ -346,6 +347,7 @@ export function transformProps<
       url,
       width: LOW_RES_WIDTH,
       height: lowResHeight,
+      cdnOptions,
     });
     if (lowResImage) {
       background = lowResImage.toString();
@@ -382,7 +384,7 @@ export function transformProps<
       cdn,
     });
 
-    const transformed = transformer({ url, width, height });
+    const transformed = transformer({ url, width, height, cdnOptions });
 
     if (transformed) {
       url = transformed;
@@ -444,6 +446,7 @@ export function transformSourceProps<
     sizes,
     loading,
     decoding,
+    cdnOptions,
     ...rest
   } = transformSharedProps(props);
   /* eslint-enable prefer-const, @typescript-eslint/no-unused-vars */
@@ -475,7 +478,7 @@ export function transformSourceProps<
     format,
   });
 
-  const transformed = transformer({ url, width, height });
+  const transformed = transformer({ url, width, height, cdnOptions });
 
   if (transformed) {
     url = transformed;
