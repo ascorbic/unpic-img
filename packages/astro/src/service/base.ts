@@ -9,6 +9,7 @@ import type { ExternalImageService, ImageTransform } from "astro";
 import type { UnpicConfig } from "../service.ts";
 import { transformUrl, type ImageCdn, type UrlTransformerOptions } from "unpic";
 import { env } from "node:process";
+import { getEndpointOptions } from "../utils.ts";
 
 /**
  * Tries to detect a default image service based on the environment.
@@ -66,8 +67,11 @@ const service: ExternalImageService<UnpicConfig> = {
       options,
       imageConfig.service.config,
     );
+
+    const cdnOptions = getEndpointOptions(imageConfig);
     const entries = getSrcSetEntries({
       ...transformOptions,
+      cdnOptions,
       src: transformOptions.url,
     });
     return entries.map(({ width, height }) => ({
@@ -92,6 +96,10 @@ const service: ExternalImageService<UnpicConfig> = {
     const transformOptions = getTransformOptions(
       options,
       imageConfig.service.config,
+    );
+    transformOptions.cdnOptions = getEndpointOptions(
+      imageConfig,
+      transformOptions.cdnOptions,
     );
     return transformUrl(transformOptions)?.toString() ?? "";
   },

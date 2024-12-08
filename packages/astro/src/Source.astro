@@ -6,7 +6,7 @@ import {
 } from "@unpic/core";
 import { imageConfig } from "astro:assets";
 import type { UnpicConfig } from "./service";
-import { getDefaultImageCdn } from "./utils";
+import { getDefaultImageCdn, getEndpointOptions } from "./utils";
 
 export interface UnpicSourceProps extends Omit<UnpicBaseSourceProps, "src"> {
   src: string | ImageMetadata;
@@ -34,6 +34,13 @@ sourceProps.layout ||= config?.layout;
 
 if (!sourceProps.cdn) {
   sourceProps.cdn = getDefaultImageCdn(config);
+}
+
+if (sourceProps.cdn === "astro") {
+  sourceProps.cdnOptions = getEndpointOptions(
+    imageConfig,
+    sourceProps.cdnOptions,
+  );
 }
 ---
 
