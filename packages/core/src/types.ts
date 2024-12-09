@@ -1,8 +1,5 @@
 import type { ImageCdn, URLTransformer } from "unpic";
-import type {
-  ProviderOperations,
-  ProviderOptions,
-} from "unpic/esm/src/providers/types";
+import type { ProviderOperations, ProviderOptions } from "unpic/types";
 
 /**
  * HTML image attributes, common to image components in multiple frameworks.

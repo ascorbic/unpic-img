@@ -41,7 +41,7 @@
   "dependencies": {
     "@unpic/core": "workspace:^",
     "style-object-to-css-string": "1.1.3",
-    "unpic": "4.0.0-beta.1"
+    "unpic": "link:/Users/matt/Repos/unpic/npm"
   },
   "peerDependencies": {
     "svelte": "*"

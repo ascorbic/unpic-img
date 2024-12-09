@@ -21,7 +21,7 @@
     "vitest": "^2.1.5"
   },
   "dependencies": {
-    "unpic": "4.0.0-beta.1"
+    "unpic": "link:/Users/matt/Repos/unpic/npm"
   },
   "main": "./dist/core.js",
   "module": "./dist/core.mjs",
