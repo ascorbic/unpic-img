@@ -10,7 +10,7 @@ import type { HTMLAttributes } from "astro/types";
 import { getBackground } from "./background";
 import { imageConfig } from "astro:assets";
 import type { UnpicConfig } from "./service";
-import { getDefaultImageCdn } from "./utils";
+import { getDefaultImageCdn, getEndpointOptions } from "./utils";
 
 export interface UnpicProps
   extends Omit<UnpicImageProps<HTMLAttributes<"img">>, "src"> {
@@ -44,8 +44,11 @@ imgProps.background ||= placeholder ?? config?.placeholder;
 if (!imgProps.cdn) {
   imgProps.cdn = getDefaultImageCdn(config);
 }
-
 imgProps.background = await getBackground(imgProps);
+
+if (imgProps.cdn === "astro") {
+  imgProps.cdnOptions = getEndpointOptions(imageConfig, imgProps.cdnOptions);
+}
 ---
 
 <img {...transformProps(imgProps)} />
