@@ -8,3 +8,4 @@ cache
 .svelte-kit
 svelte/build
 pnpm-lock.yaml
+.changeset
