@@ -16,7 +16,7 @@ resize images with no build step.
 - Just an `<img>` tag! No extra elements, no runtime JavaScript. Easy to style.
 - Automatically generates correct srcset and sizes attributes for responsive images
 - Handles responsive resizing of images, preserving aspect ratio
-- Uses native lazy loading and aync decoding for offscreen images
+- Uses native lazy loading and async decoding for offscreen images
 - Handles different image layouts: fixed, constrained and full width
 - Uses eager loading and high priority fetching for important images
 - Delivers modern image formats, including WebP and AVIF if supported by your browser
