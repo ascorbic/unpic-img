@@ -59,8 +59,8 @@
     "np": "10.0.7",
     "prettier": "^3.3.3",
     "typescript": "5.6.3",
-    "undici": "6.21.0",
-    "vite": "5.4.11",
+    "undici": "7.1.0",
+    "vite": "6.0.3",
     "vitest": "^2.1.5"
   },
   "peerDependencies": {
