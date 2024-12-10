@@ -10,7 +10,7 @@
       "schedule": ["at any time"]
     },
     {
-      "matchFiles": ["docs/package.json"],
+      "matchFileNames": ["docs/package.json"],
       "matchPackageNames": [
         "react",
         "react-dom",
@@ -20,7 +20,7 @@
       "allowedVersions": "<19"
     },
     {
-      "matchFiles": [
+      "matchFileNames": [
         "packages/qwik/package.json",
         "examples/qwik/package.json"
       ],
