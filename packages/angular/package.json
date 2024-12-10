@@ -23,8 +23,6 @@
     },
     ".": {
       "types": "./dist/index.d.ts",
-      "esm2022": "./dist/esm2022/unpic-angular.mjs",
-      "esm": "./dist/esm2022/unpic-angular.mjs",
       "default": "./dist/fesm2022/unpic-angular.mjs"
     }
   },
@@ -34,11 +32,11 @@
     "directory": "packages/angular"
   },
   "devDependencies": {
-    "@angular-devkit/build-angular": "^18.2.12",
-    "@angular/cli": "~18.2.12",
+    "@angular-devkit/build-angular": "^19.0.4",
+    "@angular/cli": "~19.0.4",
     "@angular/compiler-cli": "^19.0.3",
     "@angular/core": "^19.0.3",
-    "ng-packagr": "^18.2.1",
+    "ng-packagr": "^19.0.1",
     "publint": "^0.2.12",
     "typescript": "5.5.4"
   },
