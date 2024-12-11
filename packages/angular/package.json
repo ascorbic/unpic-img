@@ -38,7 +38,7 @@
     "@angular/core": "^19.0.3",
     "ng-packagr": "^19.0.1",
     "publint": "^0.2.12",
-    "typescript": "5.5.4"
+    "typescript": "5.7.2"
   },
   "dependencies": {
     "@unpic/core": "workspace:^",
