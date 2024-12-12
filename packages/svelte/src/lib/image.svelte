@@ -1,14 +1,18 @@
 <script lang="ts">
+  import type { HTMLAttributes, HTMLImgAttributes } from "svelte/elements";
+
   import { transformProps, type UnpicImageProps } from "@unpic/core";
   import styleToCss from "style-object-to-css-string";
-  import type { HTMLAttributes, HTMLImgAttributes } from "svelte/elements";
-  type $$Props = UnpicImageProps<
+
+  let {
+    style: parentStyle,
+    ...props
+  }: UnpicImageProps<
     HTMLImgAttributes,
     HTMLAttributes<HTMLImageElement>["style"]
-  > & { style?: HTMLAttributes<HTMLImageElement>["style"] };
+  > & { style?: HTMLAttributes<HTMLImageElement>["style"] } = $props();
 
-  $: ({ style: parentStyle, ...props } = $$props);
-  $: ({
+  let {
     alt,
     style: styleObj,
     src,
@@ -20,14 +24,15 @@
     role,
     sizes,
     fetchpriority,
-  } = transformProps(props as $$Props));
-  $: style = [styleToCss(styleObj || {}), parentStyle]
-    .filter(Boolean)
-    .join(";");
+  } = $derived(transformProps(props));
+
+  let style = $derived(
+    [styleToCss(styleObj || {}), parentStyle].filter(Boolean).join(";"),
+  );
 </script>
 
 <img
-  {...$$props}
+  {...props}
   {style}
   {loading}
   {width}
@@ -39,6 +44,4 @@
   src={src?.toString()}
   srcset={srcset?.toString()}
   sizes={sizes?.toString()}
-  on:load
-  on:error
 />
