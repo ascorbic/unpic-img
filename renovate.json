@@ -10,15 +10,17 @@
       "schedule": ["at any time"]
     },
     {
-      "matchPackageNames": ["typescript"],
-      "matchFiles": [
-        "packages/angular/package.json",
-        "examples/angular/package.json"
+      "matchFileNames": ["docs/package.json"],
+      "matchPackageNames": [
+        "react",
+        "react-dom",
+        "@types/react",
+        "@types/react-dom"
       ],
-      "enabled": false
+      "allowedVersions": "<19"
     },
     {
-      "matchFiles": [
+      "matchFileNames": [
         "packages/qwik/package.json",
         "examples/qwik/package.json"
       ],
