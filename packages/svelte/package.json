@@ -28,6 +28,7 @@
     "@sveltejs/kit": "^2.9.0",
     "@sveltejs/package": "^2.3.7",
     "@sveltejs/vite-plugin-svelte": "^5.0.1",
+    "@testing-library/svelte": "^5.2.6",
     "prettier": "^3.4.1",
     "prettier-plugin-svelte": "^3.3.2",
     "svelte": "^5.0.0",
