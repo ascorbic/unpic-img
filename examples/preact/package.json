@@ -22,6 +22,6 @@
     "@playwright/test": "^1.42.1",
     "@preact/preset-vite": "^2.8.2",
     "typescript": "^5.4.2",
-    "vite": "^6.0.3"
+    "vite": "^4.5.2"
   }
 }
