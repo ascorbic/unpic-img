@@ -19,6 +19,7 @@ export interface CoreImageAttributes<TStyle = Record<string, string>> {
   sizes?: string | number | null;
   fetchpriority?: "high" | "low" | "auto" | null;
 }
+
 export interface ImageSourceOptions {
   src: string;
   width?: number;
@@ -26,11 +27,19 @@ export interface ImageSourceOptions {
   aspectRatio?: number;
   layout?: Layout;
   breakpoints?: number[];
-  transformer?: URLTransformer;
+}
+
+interface AutoSourceOptions {
   cdn?: ImageCdn;
   fallback?: ImageCdn;
   operations?: Partial<ProviderOperations>;
   options?: Partial<ProviderOptions>;
+}
+
+interface BaseSourceOptions<TCDN extends ImageCdn = ImageCdn> {
+  transformer?: URLTransformer;
+  operations?: Omit<ProviderOperations[TCDN], "width" | "height">;
+  options?: ProviderOptions[TCDN];
 }
 
 export type ObjectFit =
@@ -164,7 +173,7 @@ export type FullWidthSourceProps = BaseSourceProps & {
   width?: never;
 };
 
-export type UnpicImageProps<
+type ImageProps<
   TImageAttributes extends CoreImageAttributes<TStyle>,
   TStyle = TImageAttributes["style"],
 > =
@@ -172,12 +181,27 @@ export type UnpicImageProps<
   | ConstrainedImageProps<TImageAttributes, TStyle>
   | FullWidthImageProps<TImageAttributes, TStyle>;
 
-export type UnpicSourceProps =
+export type UnpicImageProps<
+  TImageAttributes extends CoreImageAttributes<TStyle>,
+  TStyle = TImageAttributes["style"],
+> = ImageProps<TImageAttributes, TStyle> & AutoSourceOptions;
+
+export type UnpicBaseImageProps<
+  TImageAttributes extends CoreImageAttributes<TStyle>,
+  TStyle,
+> = ImageProps<TImageAttributes, TStyle> & AutoSourceOptions;
+
+type SourceProps =
   | FixedSourceProps
   | ConstrainedSourceProps
   | FullWidthSourceProps;
 
+export type UnpicSourceProps = SourceProps & AutoSourceOptions;
+
+export type UnpicBaseSourceProps = SourceProps & BaseSourceOptions;
+
 export type Layout = "fixed" | "constrained" | "fullWidth";
+
 type Prettify<T> = {
   [K in keyof T]: T[K];
   // eslint-disable-next-line @typescript-eslint/ban-types

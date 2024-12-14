@@ -5,7 +5,6 @@ import {
   getProviderForUrl,
   getTransformerForCdn,
 } from "unpic";
-import { parse } from "./mediaquery.js";
 
 import type {
   CoreImageAttributes,
@@ -15,15 +14,6 @@ import type {
   ImageSourceOptions,
   Layout,
 } from "./types.js";
-
-// @ts-expect-error This may or may not be used with Vite
-const DEBUG = import.meta.env?.DEV;
-
-export function logError(...args: unknown[]) {
-  if (DEBUG) {
-    console.error("[unpic]", ...args);
-  }
-}
 
 /**
  * Gets the `sizes` attribute for an image, based on the layout and width
@@ -275,7 +265,7 @@ export function transformSharedProps<
   if (aspectRatio) {
     if (width) {
       if (height) {
-        logError("Ignoring aspectRatio because width and height are both set");
+        // logError("Ignoring aspectRatio because width and height are both set");
       } else {
         height = Math.round(width / aspectRatio);
       }
@@ -283,15 +273,15 @@ export function transformSharedProps<
       width = Math.round(height * aspectRatio);
     } else if (layout !== "fullWidth") {
       // Fullwidth images have 100% width, so aspectRatio is applicable
-      logError(
-        "When aspectRatio is set, either width or height must also be set",
-      );
+      // logError(
+      //   "When aspectRatio is set, either width or height must also be set",
+      // );
     }
   } else if (width && height) {
     aspectRatio = width / height;
   } else if (layout !== "fullWidth") {
     // Fullwidth images don't need dimensions
-    logError("Either aspectRatio or both width and height must be set");
+    // logError("Either aspectRatio or both width and height must be set");
   }
   return {
     width,
@@ -389,9 +379,9 @@ export function transformProps<
     }
   }
 
-  if (!src) {
-    logError("No URL provided for image");
-  }
+  // if (!src) {
+  //   logError("No URL provided for image");
+  // }
 
   return {
     ...transformedProps,
@@ -439,16 +429,11 @@ export function transformSourceProps<
     sizes,
     loading,
     decoding,
+    operations,
+    options,
     ...rest
   } = transformSharedProps(props);
   /* eslint-enable prefer-const, @typescript-eslint/no-unused-vars */
-
-  const canonical = src ? getCanonicalCdnForUrl(src, cdn) : undefined;
-  let url: URL | string = src;
-  if (canonical) {
-    url = canonical.url;
-    transformer ||= getTransformer(canonical.cdn);
-  }
 
   if (!transformer) {
     return {} as TSourceAttributes;
@@ -459,7 +444,7 @@ export function transformSourceProps<
   sizes ||= getSizes(width, layout);
 
   const srcset = getSrcSet({
-    src: url,
+    src,
     width,
     height,
     aspectRatio,
@@ -470,10 +455,14 @@ export function transformSourceProps<
     format,
   });
 
-  const transformed = transformer({ url, width, height });
+  const transformed = transformer(
+    src,
+    { ...operations, width, height },
+    options,
+  );
 
   if (transformed) {
-    url = transformed;
+    src = transformed;
   }
 
   const returnObject = {
@@ -483,17 +472,7 @@ export function transformSourceProps<
   } as TSourceAttributes;
 
   if (media) {
-    if (DEBUG) {
-      try {
-        parse(media);
-        returnObject.media = media;
-        // eslint-disable-next-line @typescript-eslint/no-explicit-any
-      } catch (e: any) {
-        logError(e.message);
-      }
-    } else {
-      returnObject.media = media;
-    }
+    returnObject.media = media;
   }
 
   if (mimeType) {
