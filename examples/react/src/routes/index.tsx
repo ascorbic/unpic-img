@@ -1,15 +1,19 @@
+import { Image as BaseImage } from "@unpic/react/base";
 import { Image } from "@unpic/react";
-import { App } from "../App";
+import { App } from "../App.js";
+import { transform } from "unpic/providers/imgix";
 
 export default function Index() {
   return (
     <App title="Test">
-      <Image
+      <BaseImage
         src="https://images.unsplash.com/photo-1617718295766-0f839c2853e7"
         layout="fullWidth"
         alt="fullWidth"
         aspectRatio={16 / 9}
         priority
+        transformer={transform}
+        operations={{ fit: "crop", ffff: 1 }}
       />
       <Image
         src="https://cdn.shopify.com/static/sample-images/garnished.jpeg"
@@ -22,8 +26,7 @@ export default function Index() {
         src="https://bunnyoptimizerdemo.b-cdn.net/bunny7.jpg"
         width={800}
         height={600}
-        layout="fixed"
-        alt="fixed"
+        alt="Bunny"
       />
       <div style={{ height: 10000 }} />
       <Image

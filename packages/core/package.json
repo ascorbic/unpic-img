@@ -11,9 +11,8 @@
   },
   "homepage": "https://unpic.pics/img",
   "scripts": {
-    "build": "tsup src/core.ts --format cjs,esm --dts --clean",
-    "clean": "rm -rf dist",
-    "prepublishOnly": "pnpm clean && pnpm build",
+    "build": "tsup src/auto.ts src/base.ts --format cjs,esm --dts --clean",
+    "prepublishOnly": "pnpm build",
     "test": "vitest run"
   },
   "devDependencies": {
@@ -23,18 +22,32 @@
   "dependencies": {
     "unpic": "link:/Users/matt/Repos/unpic/npm"
   },
-  "main": "./dist/core.js",
-  "module": "./dist/core.mjs",
-  "types": "./dist/core.d.ts",
+  "main": "./dist/auto.js",
+  "module": "./dist/auto.mjs",
+  "types": "./dist/auto.d.ts",
+  "files": [
+    "dist",
+    "base.d.ts"
+  ],
   "exports": {
     ".": {
       "require": {
-        "types": "./dist/core.d.ts",
-        "default": "./dist/core.js"
+        "types": "./dist/auto.d.ts",
+        "default": "./dist/auto.js"
       },
       "import": {
-        "types": "./dist/core.d.mts",
-        "default": "./dist/core.mjs"
+        "types": "./dist/auto.d.mts",
+        "default": "./dist/auto.mjs"
+      }
+    },
+    "./base": {
+      "require": {
+        "types": "./dist/base.d.ts",
+        "default": "./dist/base.js"
+      },
+      "import": {
+        "types": "./dist/base.d.mts",
+        "default": "./dist/base.mjs"
       }
     }
   }
