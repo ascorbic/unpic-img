@@ -20,7 +20,7 @@
     "vitest": "^2.1.8"
   },
   "dependencies": {
-    "unpic": "link:/Users/matt/Repos/unpic/npm"
+    "unpic": "https://pkg.pr.new/unpic@133"
   },
   "main": "./dist/auto.js",
   "module": "./dist/auto.mjs",
