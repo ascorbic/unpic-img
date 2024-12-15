@@ -13,7 +13,6 @@ export default function Index() {
         aspectRatio={16 / 9}
         priority
         transformer={transform}
-        operations={{ fit: "crop", ffff: 1 }}
       />
       <Image
         src="https://cdn.shopify.com/static/sample-images/garnished.jpeg"
@@ -26,7 +25,7 @@ export default function Index() {
         src="https://bunnyoptimizerdemo.b-cdn.net/bunny7.jpg"
         width={800}
         height={600}
-        alt="Bunny"
+        alt="fixed"
       />
       <div style={{ height: 10000 }} />
       <Image
