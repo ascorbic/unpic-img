@@ -1,0 +1,38 @@
+name: Publish Approved Pull Requests
+on:
+  pull_request_review:
+    types: [submitted]
+  pull_request:
+    types: [opened, synchronize, reopened]
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    outputs:
+      has-permissions: ${{ steps.checkPermissions.outputs.require-result || github.event.pull_request.user.login == github.repository_owner }}
+    steps:
+      - name: Check permissions
+        id: checkPermissions
+        # Only run permissions check if this is triggered by a review
+        if: github.event_name == 'pull_request_review'
+        uses: actions-cool/check-user-permission@v2
+        with:
+          require: "write"
+
+  publish:
+    needs: check
+    if: needs.check.outputs.has-permissions == 'true'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      - run: corepack enable
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: "pnpm"
+      - name: Install dependencies
+        run: pnpm install
+      - name: Build package
+        run: pnpm build:packages
+      - run: pnpx pkg-pr-new publish --compact './packages/*'
