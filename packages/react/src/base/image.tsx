@@ -15,12 +15,19 @@ export type ImageProps<
   React.ImgHTMLAttributes<HTMLImageElement>
 >;
 
-export function Image<T extends Operations, O>({
+export function Image<TOperations extends Operations, O>({
   transformer,
   ...props
-}: ImageProps<T, O>) {
+}: ImageProps<TOperations, O>) {
   const camelizedProps = camelizeProps(
-    transformBaseImageProps({ transformer, ...props }),
+    transformBaseImageProps<
+      TOperations,
+      O,
+      React.ImgHTMLAttributes<HTMLImageElement>
+    >({
+      transformer,
+      ...props,
+    }),
   );
   return <img {...camelizedProps} />;
 }

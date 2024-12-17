@@ -29,7 +29,7 @@ export {
  */
 export function transformProps<
   TImageAttributes extends CoreImageAttributes<TStyle>,
-  TStyle = Record<string, string>,
+  TStyle = TImageAttributes["style"],
 >({
   cdn,
   fallback,

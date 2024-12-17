@@ -305,7 +305,7 @@ export function transformBaseImageProps<
   TOperations extends Operations,
   TOptions,
   TImageAttributes extends CoreImageAttributes<TStyle>,
-  TStyle = Record<string, string>,
+  TStyle = TImageAttributes["style"],
 >(
   props: UnpicBaseImageProps<TOperations, TOptions, TImageAttributes, TStyle>,
 ): TImageAttributes {

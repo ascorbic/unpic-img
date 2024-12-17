@@ -1,7 +1,7 @@
 import { forwardRef, useMemo } from "react";
 import type { ImageProps as UnpicImageProps } from "./index";
 import { Image as UnpicImage } from "./index";
-import { getImageCdnForUrl } from "unpic";
+import { getProviderForUrl } from "unpic";
 import {
   imageConfigDefault,
   type ImageConfigComplete,
@@ -95,14 +95,16 @@ export const Image = forwardRef<HTMLImageElement, ImageProps>(
       if (src?.startsWith("/")) {
         return "nextjs";
       }
-      return getImageCdnForUrl(src);
+      return getProviderForUrl(src);
     }, [src]);
 
     const isRemoteCdn = cdn && cdn !== "nextjs" && cdn !== "vercel";
 
     // Other image CDNs can use normal Unpic breakpoints
     if (isRemoteCdn) {
-      return <UnpicImage {...childProps} src={src} ref={ref} />;
+      return (
+        <UnpicImage {...childProps} src={src} ref={ref} fallback="nextjs" />
+      );
     }
 
     return (

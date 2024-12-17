@@ -24,12 +24,12 @@ export function camelizeProps(
   props: React.SourceHTMLAttributes<HTMLSourceElement>,
 ): React.SourceHTMLAttributes<HTMLSourceElement>;
 export function camelizeProps(
-  props: CoreImageAttributes<React.CSSProperties>,
+  props: React.ImgHTMLAttributes<HTMLImageElement>,
 ): React.ImgHTMLAttributes<HTMLImageElement>;
 export function camelizeProps<
   TProps extends
     | React.SourceHTMLAttributes<HTMLSourceElement>
-    | CoreImageAttributes<React.CSSProperties>,
+    | React.ImgHTMLAttributes<HTMLImageElement>,
 >(props: TProps): TProps {
   return Object.fromEntries(
     Object.entries(props).map(([k, v]) => [
