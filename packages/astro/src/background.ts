@@ -1,6 +1,6 @@
 import type { UnpicImageProps } from "@unpic/core";
 import {
-  getCanonicalCdnForUrl,
+  getProviderForUrl,
   transformUrl,
   type UrlTransformerOptions,
 } from "unpic";
@@ -38,26 +38,29 @@ export async function getBackground(
     }
   }
 
-  const cdn = getCanonicalCdnForUrl(props.src, props.cdn);
+  const cdn = getProviderForUrl(props.src) ?? props.fallback;
 
   if (!cdn) {
     return;
   }
 
   const bgImgProps: UrlTransformerOptions = {
-    ...props,
     url: props.src,
     width: 12,
     height: 12 * aspectRatio,
-    cdn: cdn.cdn,
+    fallback: props.fallback,
+    cdn,
   };
-
   if (!cdn) {
     return;
   }
 
   if (props.background === "lqip") {
-    const lowUrl = transformUrl(bgImgProps)?.toString();
+    const lowUrl = transformUrl(
+      bgImgProps,
+      props.operations,
+      props.options,
+    )?.toString();
 
     if (!lowUrl) {
       return;
@@ -78,11 +81,15 @@ export async function getBackground(
     return "data:" + contentType + ";base64," + buffer.toString("base64");
   }
 
-  const lowUrl = transformUrl({
-    ...bgImgProps,
-    width: 100,
-    height: 100 * aspectRatio,
-  })?.toString();
+  const lowUrl = transformUrl(
+    {
+      ...bgImgProps,
+      width: 100,
+      height: 100 * aspectRatio,
+    },
+    props.operations,
+    props.options,
+  )?.toString();
 
   if (!lowUrl) {
     return;
@@ -91,7 +98,6 @@ export async function getBackground(
   if (!isValidUrl(lowUrl)) {
     return;
   }
-
   const pixels = await getPixels(lowUrl);
 
   if (!pixels) {

@@ -41,13 +41,14 @@ const config: UnpicConfig = imageConfig.service?.config;
 imgProps.layout ||= config?.layout;
 imgProps.background ||= placeholder ?? config?.placeholder;
 
-if (!imgProps.cdn) {
-  imgProps.cdn = getDefaultImageCdn(config);
-}
 imgProps.background = await getBackground(imgProps);
 
-if (imgProps.cdn === "astro") {
-  imgProps.cdnOptions = getEndpointOptions(imageConfig, imgProps.cdnOptions);
+if (!imgProps.cdn && !imgProps.fallback) {
+  imgProps.fallback = getDefaultImageCdn(config);
+}
+
+if (imgProps.cdn === "astro" || imgProps.fallback === "astro") {
+  imgProps.options = getEndpointOptions(imageConfig, imgProps.options);
 }
 ---
 
