@@ -463,6 +463,8 @@ export function transformBaseSourceProps<
     breakpoints,
     transformer,
     format,
+    operations,
+    options,
   });
 
   const transformed = transformer(
