@@ -1,15 +1,21 @@
 import { Image } from "@unpic/preact";
+import { Image as BaseImage } from "@unpic/preact/base";
 import { App } from "../App";
+import { transform } from "unpic/providers/imgix";
 
 export default function Index() {
   return (
     <App title="Test">
-      <Image
+      <BaseImage
         src="https://images.unsplash.com/photo-1617718295766-0f839c2853e7"
         layout="fullWidth"
         alt="fullWidth"
         aspectRatio={16 / 9}
         priority
+        operations={{
+          flip: "v",
+        }}
+        transformer={transform}
       />
       <Image
         src="https://cdn.shopify.com/static/sample-images/garnished.jpeg"
