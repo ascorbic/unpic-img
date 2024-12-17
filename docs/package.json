@@ -26,7 +26,7 @@
     "@iconify-json/mdi": "^1.2.1",
     "@iconify-json/ph": "^1.2.1",
     "@iconify-json/simple-icons": "^1.2.11",
-    "@preact/signals": "^1.3.0",
+    "@preact/signals": "^2.0.0",
     "@types/node": "^22.9.0",
     "@types/react": "^18.3.12",
     "@types/react-dom": "^18.3.1",
