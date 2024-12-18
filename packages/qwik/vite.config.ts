@@ -7,9 +7,10 @@ export default defineConfig(() => {
     build: {
       target: "es2020",
       lib: {
-        entry: "./src/index.ts",
+        entry: ["./src/index.ts", "./src/components/base/base.ts"],
         formats: ["es", "cjs"],
-        fileName: (format) => `index.qwik.${format === "es" ? "mjs" : "cjs"}`,
+        fileName: (format, name) =>
+          `${name}.qwik.${format === "es" ? "mjs" : "cjs"}`,
       },
     },
     resolve: {
