@@ -1,8 +1,16 @@
-import type { ImageCdn, UrlTransformer, CdnOptions } from "unpic";
+import type {
+  ImageCdn,
+  ProviderOperations,
+  ProviderOptions,
+  Operations,
+  TransformerFunction,
+} from "unpic";
+
+export type { Operations };
 
 /**
- * HTML image attributes, common to image components in multiple frameworks.
- * For React (and potentially other frameworks added in the future), convert to camelCase.
+ * Core HTML image attributes common across frameworks.
+ * For React and similar frameworks, attribute names are converted to camelCase.
  */
 export interface CoreImageAttributes<TStyle = Record<string, string>> {
   src?: string | number | null;
@@ -13,11 +21,50 @@ export interface CoreImageAttributes<TStyle = Record<string, string>> {
   decoding?: "sync" | "async" | "auto" | null;
   style?: TStyle;
   srcset?: string | number | null;
-  // eslint-disable-next-line @typescript-eslint/ban-types
   role?: "presentation" | "img" | "none" | "figure" | (string & {}) | null;
   sizes?: string | number | null;
   fetchpriority?: "high" | "low" | "auto" | null;
 }
+
+/**
+ * Common options for CDN-based image components including layout preferences,
+ * CDN configuration, and styling options.
+ */
+interface BaseOptions {
+  src: string;
+  cdn?: ImageCdn;
+  fallback?: ImageCdn;
+  operations?: Partial<ProviderOperations>;
+  options?: Partial<ProviderOptions>;
+  breakpoints?: number[];
+  priority?: boolean;
+  fetchpriority?: "high" | "low";
+  background?: string;
+  objectFit?: ObjectFit;
+  unstyled?: boolean;
+}
+
+/**
+ * Common options for transformer-based image components that use direct URL transformations
+ * instead of a CDN configuration.
+ */
+interface BaseTransformerOptions<TOperations extends Operations, TOptions> {
+  src: string;
+  transformer: TransformerFunction<TOperations, TOptions>;
+  operations?: TOperations & { width?: never; height?: never };
+  options?: TOptions;
+  breakpoints?: number[];
+  priority?: boolean;
+  fetchpriority?: "high" | "low";
+  background?: string;
+  objectFit?: ObjectFit;
+  unstyled?: boolean;
+}
+
+/**
+ * Configuration options for image sources using CDN-based transformations.
+ * Provides basic image parameters and CDN configuration without layout constraints.
+ */
 export interface ImageSourceOptions {
   src: string;
   width?: number;
@@ -25,11 +72,132 @@ export interface ImageSourceOptions {
   aspectRatio?: number;
   layout?: Layout;
   breakpoints?: number[];
-  transformer?: UrlTransformer;
   cdn?: ImageCdn;
-  cdnOptions?: CdnOptions;
+  fallback?: ImageCdn;
+  operations?: Partial<ProviderOperations>;
+  options?: Partial<ProviderOptions>;
 }
 
+/**
+ * Configuration options for image sources using URL transformer-based transformations.
+ * Provides basic image parameters and transformer configuration without layout constraints.
+ */
+export interface BaseImageSourceOptions<
+  TOperations extends Operations,
+  TOptions,
+> {
+  src: string;
+  width?: number;
+  height?: number;
+  aspectRatio?: number;
+  layout?: Layout;
+  breakpoints?: number[];
+  transformer?: TransformerFunction<TOperations, TOptions>;
+  operations?: TOperations & { width?: never; height?: never };
+  options?: TOptions;
+}
+
+type WithWidthHeight = {
+  width: number;
+  height: number;
+  aspectRatio?: never;
+};
+
+type WithAspectRatioAndWidth = {
+  width: number;
+  aspectRatio: number;
+  height?: never;
+};
+
+type WithAspectRatioAndHeight = {
+  height: number;
+  aspectRatio: number;
+  width?: never;
+};
+
+type DimensionRequirements =
+  | WithWidthHeight
+  | WithAspectRatioAndWidth
+  | WithAspectRatioAndHeight;
+
+type FixedLayout = {
+  layout: "fixed";
+} & DimensionRequirements;
+
+type ConstrainedLayout = {
+  layout?: "constrained";
+} & DimensionRequirements;
+
+type FullWidthLayout = {
+  layout: "fullWidth";
+  width?: never;
+  height?: number;
+  aspectRatio?: number;
+};
+
+/**
+ * Props for CDN-based image components with layout-specific dimension requirements.
+ * Supports fixed, constrained, and full-width layouts with appropriate dimension constraints.
+ */
+export type UnpicImageProps<
+  TImageAttributes extends CoreImageAttributes<TStyle>,
+  TStyle = TImageAttributes["style"],
+> = Omit<TImageAttributes, "srcset" | "style"> &
+  BaseOptions &
+  (FixedLayout | ConstrainedLayout | FullWidthLayout);
+
+/**
+ * Props for transformer-based image components with layout-specific dimension requirements.
+ * Uses direct URL transformations instead of CDN configurations.
+ */
+export type UnpicBaseImageProps<
+  TOperations extends Operations,
+  TOptions,
+  TImageAttributes extends CoreImageAttributes<TStyle>,
+  TStyle = TImageAttributes["style"],
+> = Omit<TImageAttributes, "srcset" | "style"> &
+  BaseTransformerOptions<TOperations, TOptions> &
+  (FixedLayout | ConstrainedLayout | FullWidthLayout);
+
+/**
+ * Core attributes for HTML source elements used in picture elements.
+ */
+export interface CoreSourceAttributes {
+  srcset?: string | null;
+  type?: string | null;
+  sizes?: string | null;
+  media?: string | null;
+}
+
+/**
+ * Props for CDN-based source elements with layout-specific dimension requirements.
+ */
+export type UnpicSourceProps = Omit<CoreSourceAttributes, "srcset"> &
+  BaseOptions &
+  (FixedLayout | ConstrainedLayout | FullWidthLayout);
+
+/**
+ * Props for transformer-based source elements with layout-specific dimension requirements.
+ * Uses direct URL transformations instead of CDN configurations.
+ */
+export type UnpicBaseSourceProps<
+  TOperations extends Operations,
+  TOptions,
+> = Omit<CoreSourceAttributes, "srcset"> &
+  BaseTransformerOptions<TOperations, TOptions> &
+  (FixedLayout | ConstrainedLayout | FullWidthLayout);
+
+/**
+ * Available layout modes for image components.
+ * - fixed: Image maintains exact dimensions
+ * - constrained: Image maintains aspect ratio and fits within given dimensions
+ * - fullWidth: Image spans full width of container with optional height constraint
+ */
+export type Layout = "fixed" | "constrained" | "fullWidth";
+
+/**
+ * Object-fit options for controlling how the image fills its container.
+ */
 export type ObjectFit =
   | "contain"
   | "cover"
@@ -38,144 +206,3 @@ export type ObjectFit =
   | "scale-down"
   | "inherit"
   | "initial";
-
-export type BaseImageProps<
-  TImageAttributes extends CoreImageAttributes<TStyle>,
-  TStyle,
-> = Omit<TImageAttributes, "srcset" | "style"> &
-  ImageSourceOptions & {
-    priority?: boolean;
-    fetchpriority?: "high" | "low";
-    background?: string;
-    objectFit?: ObjectFit;
-    unstyled?: boolean;
-  };
-
-export interface CoreSourceAttributes {
-  srcset?: string | null;
-  type?: string | null;
-  sizes?: string | null;
-  media?: string | null;
-}
-
-export type BaseSourceProps = Omit<CoreSourceAttributes, "srcset"> &
-  ImageSourceOptions & {
-    objectFit?: ObjectFit;
-  };
-
-type BaseImageWithAspectRatioProps<
-  TImageAttributes extends CoreImageAttributes<TStyle>,
-  TStyle,
-> = BaseImageProps<TImageAttributes, TStyle> & {
-  aspectRatio: number;
-};
-
-type BaseSourceWithAspectRatioProps = BaseSourceProps & {
-  aspectRatio: number;
-};
-
-type ImageWithAspectRatioAndWidthProps<
-  TImageAttributes extends CoreImageAttributes<TStyle>,
-  TStyle,
-> = BaseImageWithAspectRatioProps<TImageAttributes, TStyle> & {
-  width: number;
-};
-
-type SourceWithAspectRatioAndWidthProps = BaseSourceWithAspectRatioProps & {
-  width: number;
-};
-
-type ImageWithAspectRatioAndHeightProps<
-  TImageAttributes extends CoreImageAttributes<TStyle>,
-  TStyle,
-> = BaseImageWithAspectRatioProps<TImageAttributes, TStyle> & {
-  height: number;
-};
-
-type SourceWithAspectRatioAndHeightProps = BaseSourceWithAspectRatioProps & {
-  height: number;
-};
-
-type ImageWithWidthAndHeightProps<
-  TImageAttributes extends CoreImageAttributes<TStyle>,
-  TStyle,
-> = BaseImageProps<TImageAttributes, TStyle> & {
-  width: number;
-  height: number;
-};
-
-type SourceWithWidthAndHeightProps = BaseSourceProps & {
-  width: number;
-  height: number;
-};
-
-type ImageWithSizeProps<
-  TImageAttributes extends CoreImageAttributes<TStyle>,
-  TStyle,
-> =
-  | ImageWithAspectRatioAndWidthProps<TImageAttributes, TStyle>
-  | ImageWithAspectRatioAndHeightProps<TImageAttributes, TStyle>
-  | ImageWithWidthAndHeightProps<TImageAttributes, TStyle>;
-
-type SourceWithSizeProps =
-  | SourceWithAspectRatioAndWidthProps
-  | SourceWithAspectRatioAndHeightProps
-  | SourceWithWidthAndHeightProps;
-
-export type FixedImageProps<
-  TImageAttributes extends CoreImageAttributes<TStyle>,
-  TStyle,
-> = Prettify<
-  ImageWithSizeProps<TImageAttributes, TStyle> & {
-    layout: "fixed";
-  }
->;
-
-export type FixedSourceProps = SourceWithSizeProps & {
-  layout: "fixed";
-};
-
-export type ConstrainedImageProps<
-  TImageAttributes extends CoreImageAttributes<TStyle>,
-  TStyle,
-> = ImageWithSizeProps<TImageAttributes, TStyle> & {
-  // Default is `constrained`, so this is optional
-  layout?: "constrained";
-};
-
-export type ConstrainedSourceProps = SourceWithSizeProps & {
-  // Default is `constrained`, so this is optional
-  layout?: "constrained";
-};
-
-export type FullWidthImageProps<
-  TImageAttributes extends CoreImageAttributes<TStyle>,
-  TStyle,
-> = BaseImageProps<TImageAttributes, TStyle> & {
-  layout: "fullWidth";
-  width?: never;
-};
-
-export type FullWidthSourceProps = BaseSourceProps & {
-  layout: "fullWidth";
-  width?: never;
-};
-
-export type UnpicImageProps<
-  TImageAttributes extends CoreImageAttributes<TStyle>,
-  TStyle = TImageAttributes["style"],
-> =
-  | FixedImageProps<TImageAttributes, TStyle>
-  | ConstrainedImageProps<TImageAttributes, TStyle>
-  | FullWidthImageProps<TImageAttributes, TStyle>;
-
-export type UnpicSourceProps =
-  | FixedSourceProps
-  | ConstrainedSourceProps
-  | FullWidthSourceProps;
-
-export type Layout = "fixed" | "constrained" | "fullWidth";
-type Prettify<T> = {
-  [K in keyof T]: T[K];
-  // eslint-disable-next-line @typescript-eslint/ban-types
-} & {};

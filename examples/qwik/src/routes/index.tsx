@@ -1,16 +1,22 @@
-import { component$ } from "@builder.io/qwik";
+import { $, component$ } from "@builder.io/qwik";
 import type { DocumentHead } from "@builder.io/qwik-city";
 import { Image } from "@unpic/qwik";
+import { Image as BaseImage } from "@unpic/qwik/base";
+import { transform } from "unpic/providers/imgix";
 
 export default component$(() => {
   return (
     <div>
-      <Image
+      <BaseImage
         src="https://images.unsplash.com/photo-1617718295766-0f839c2853e7"
         layout="fullWidth"
         alt="fullWidth"
         aspectRatio={16 / 9}
         priority
+        transformer$={$(transform)}
+        operations={{
+          rot: 180,
+        }}
       />
       <Image
         src="https://cdn.shopify.com/static/sample-images/garnished.jpeg"
