@@ -27,7 +27,9 @@
   } = $derived(transformProps(props));
 
   let style = $derived(
-    [styleToCss(styleObj || {}), parentStyle].filter(Boolean).join(";"),
+    [styleToCss((styleObj || {}) as Record<string, string>), parentStyle]
+      .filter(Boolean)
+      .join(";"),
   );
 </script>
 
