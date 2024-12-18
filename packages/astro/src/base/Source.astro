@@ -1,0 +1,36 @@
+---
+import { imageConfig } from "astro:assets";
+import type { Operations, UnpicBaseSourceProps } from "@unpic/core";
+import type { UnpicConfig } from "../service";
+import {
+  transformBaseSourceProps,
+  inferImageDimensions,
+} from "@unpic/core/base";
+
+type Props<TOperations extends Operations, TOptions> = Omit<
+  UnpicBaseSourceProps<TOperations, TOptions>,
+  "src"
+> & {
+  src: string | ImageMetadata;
+};
+
+const props = Astro.props as Props<Operations, unknown>;
+
+let sourceProps: UnpicBaseSourceProps<Operations, unknown>;
+
+if (typeof props.src === "object") {
+  sourceProps = {
+    ...props,
+    src: props.src.src,
+    ...inferImageDimensions(props, props.src),
+  } as UnpicBaseSourceProps<Operations, unknown>;
+} else {
+  sourceProps = props as UnpicBaseSourceProps<Operations, unknown>;
+}
+
+const config: UnpicConfig = imageConfig.service?.config;
+
+sourceProps.layout ||= config?.layout;
+---
+
+<source {...transformBaseSourceProps(sourceProps)} />

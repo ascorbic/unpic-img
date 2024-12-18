@@ -12,6 +12,7 @@
   "homepage": "https://unpic.pics/img/astro",
   "exports": {
     ".": "./index.ts",
+    "./base": "./src/base.ts",
     "./service": "./src/service.ts"
   },
   "files": [
