@@ -55,6 +55,10 @@
       "types": "./dist/index.d.ts",
       "svelte": "./dist/index.js"
     },
+    "./base": {
+      "types": "./dist/base/index.d.ts",
+      "svelte": "./dist/base/index.js"
+    },
     "./package.json": "./package.json"
   }
 }

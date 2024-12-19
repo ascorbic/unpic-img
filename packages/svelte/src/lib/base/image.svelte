@@ -1,13 +1,9 @@
 <script lang="ts">
-
-  import { transformProps } from "@unpic/core";
+  import { transformBaseImageProps } from "@unpic/core/base";
   import styleToCss from "style-object-to-css-string";
-  import type { ImageProps } from "./types";
+  import type { BaseImageProps } from "./types";
 
-  let {
-    style: parentStyle,
-    ...props
-  }: ImageProps = $props();
+  let { style: parentStyle, ...props }: BaseImageProps<any, unknown> = $props();
 
   let {
     alt,
@@ -21,7 +17,7 @@
     role,
     sizes,
     fetchpriority,
-  } = $derived(transformProps(props));
+  } = $derived(transformBaseImageProps(props));
 
   let style = $derived(
     [styleToCss((styleObj || {}) as Record<string, string>), parentStyle]

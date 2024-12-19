@@ -15,7 +15,7 @@ export default component$(() => {
         priority
         transformer$={$(transform)}
         operations={{
-          rot: 180,
+          flip: "v",
         }}
       />
       <Image

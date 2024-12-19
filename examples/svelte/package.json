@@ -19,6 +19,7 @@
     "vite": "^6.0.0"
   },
   "dependencies": {
-    "@unpic/svelte": "workspace:^"
+    "@unpic/svelte": "workspace:^",
+    "unpic": "https://pkg.pr.new/unpic@133"
   }
 }

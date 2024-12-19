@@ -1,9 +1,9 @@
 <script lang="ts">
-  import type { SourceProps as BaseSourceProps } from "./types";
+  import type { SourceProps } from "./types";
 
   import { transformSourceProps } from "@unpic/core";
 
-  let props: BaseSourceProps = $props();
+  let props: SourceProps = $props();
 
   let transformedProps = $derived(
     transformSourceProps({
