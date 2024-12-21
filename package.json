@@ -12,27 +12,27 @@
     "unpic": "^3.22.0"
   },
   "devDependencies": {
-    "@changesets/cli": "^2.27.10",
-    "@netlify/plugin-nextjs": "5.8.1",
-    "@playwright/test": "^1.48.2",
+    "@changesets/cli": "^2.27.11",
+    "@netlify/plugin-nextjs": "5.9.2",
+    "@playwright/test": "^1.49.1",
     "@testing-library/dom": "^10.4.0",
-    "@typescript-eslint/eslint-plugin": "^8.14.0",
-    "@typescript-eslint/parser": "^8.14.0",
+    "@typescript-eslint/eslint-plugin": "^8.18.1",
+    "@typescript-eslint/parser": "^8.18.1",
     "@unpic/core": "workspace:^",
     "eslint": "^8.57.1",
     "eslint-config-prettier": "^9.1.0",
     "jsdom": "^25.0.1",
-    "npm-run-all2": "^7.0.1",
-    "prettier": "^3.3.3",
+    "npm-run-all2": "^7.0.2",
+    "prettier": "^3.4.2",
     "prettier-plugin-astro": "^0.14.1",
     "process": "^0.11.10",
     "publint": "^0.2.12",
-    "typescript": "^5.6.3",
-    "vite": "^6.0.3",
+    "typescript": "^5.7.2",
+    "vite": "^6.0.5",
     "vitest": "^2.1.8"
   },
   "resolutions": {
     "cssstyle": "^4.1.0"
   },
-  "packageManager": "pnpm@9.13.1"
+  "packageManager": "pnpm@9.15.1"
 }
