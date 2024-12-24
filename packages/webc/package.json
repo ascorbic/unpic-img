@@ -1,6 +1,6 @@
 {
   "name": "@unpic/webc",
-  "packageManager": "pnpm@9.13.1",
+  "packageManager": "pnpm@9.15.1",
   "license": "MIT",
   "description": "WebC component for responsive, high-performance images.",
   "keywords": [
