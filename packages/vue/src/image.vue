@@ -4,7 +4,6 @@
 
 <script setup lang="ts">
 import { transformProps, UnpicImageProps } from "@unpic/core";
-import { UrlTransformer } from "unpic";
 import { ImgHTMLAttributes, computed, useAttrs } from "vue";
 
 export interface Props extends /* @vue-ignore */ ImgHTMLAttributes {
@@ -17,15 +16,14 @@ export interface Props extends /* @vue-ignore */ ImgHTMLAttributes {
   background?: string;
   aspectRatio?: number;
   objectFit?:
-    | "contain"
-    | "cover"
-    | "fill"
-    | "none"
-    | "scale-down"
-    | "inherit"
-    | "initial";
+  | "contain"
+  | "cover"
+  | "fill"
+  | "none"
+  | "scale-down"
+  | "inherit"
+  | "initial";
   unstyled?: boolean;
-  transformer?: UrlTransformer;
 }
 
 const props = defineProps<Props>();

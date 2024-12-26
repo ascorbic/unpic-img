@@ -25,6 +25,11 @@
       "types": "./dist/index.d.ts",
       "require": "./dist/image.cjs",
       "import": "./dist/image.js"
+    },
+    "./base": {
+      "types": "./dist/base/index.d.ts",
+      "require": "./dist/base/index.cjs",
+      "import": "./dist/base/index.js"
     }
   },
   "scripts": {
