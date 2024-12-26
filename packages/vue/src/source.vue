@@ -12,6 +12,7 @@ export interface Props extends /* @vue-ignore */ SourceHTMLAttributes {
   height?: string | number;
   layout?: "fixed" | "constrained" | "fullWidth";
   cdn?: string;
+  fallback?: string;
   aspectRatio?: number;
 }
 
