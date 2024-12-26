@@ -25,6 +25,7 @@ export default function Index() {
         src="https://bunnyoptimizerdemo.b-cdn.net/bunny7.jpg"
         width={800}
         height={600}
+        layout="fixed"
         alt="fixed"
       />
       <div style={{ height: 10000 }} />
