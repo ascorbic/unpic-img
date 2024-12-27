@@ -13,6 +13,9 @@ export default function Index() {
         aspectRatio={16 / 9}
         priority
         transformer={transform}
+        operations={{
+          flip: "v",
+        }}
       />
       <Image
         src="https://cdn.shopify.com/static/sample-images/garnished.jpeg"

@@ -39,6 +39,10 @@ test.describe(site, () => {
     await expect(fw).toHaveLoadedImage();
     await expect(fw).toHaveJSProperty("width", vp?.width);
     await expect(fw).toHaveJSProperty("height", aspectRatio(vp?.width, 16 / 9));
+    await expect(fw).toHaveJSProperty(
+      "src",
+      "https://images.unsplash.com/photo-1617718295766-0f839c2853e7?flip=v&fit=min&auto=format",
+    );
 
     const cs = await page.locator("css=img[alt=constrained]");
     await cs.scrollIntoViewIfNeeded();
