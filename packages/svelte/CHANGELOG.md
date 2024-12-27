@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.0.58
+
+### Patch Changes
+
+- 2139c6b: Adds default export
+
 ## 0.0.57
 
 ### Patch Changes
