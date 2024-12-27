@@ -10,7 +10,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        site: [astro, preact, qwik, react, solid, webc]
+        site: [astro, preact, qwik, react, solid, vue, webc]
     steps:
       - run: echo Running tests in ${{ matrix.site }}
       - name: Checkout
