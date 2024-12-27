@@ -24,6 +24,8 @@ export interface Props extends /* @vue-ignore */ ImgHTMLAttributes {
   | "inherit"
   | "initial";
   unstyled?: boolean;
+  operations?: UnpicImageProps<ImgHTMLAttributes>["operations"];
+  options?: UnpicImageProps<ImgHTMLAttributes>["options"];
 }
 
 const props = defineProps<Props>();

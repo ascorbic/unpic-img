@@ -31,6 +31,11 @@ export default component$(() => {
         height={600}
         layout="fixed"
         alt="fixed"
+        operations={{
+          bunny: {
+            flop: true,
+          },
+        }}
       />
       <div style={{ height: 10000 }}></div>
       <Image

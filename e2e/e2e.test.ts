@@ -56,7 +56,10 @@ test.describe(site, () => {
     await expect(fx).toHaveLoadedImage();
     await expect(fx).toHaveJSProperty("width", 800);
     await expect(fx).toHaveJSProperty("height", 600);
-
+    await expect(fx).toHaveJSProperty(
+      "src",
+      "https://bunnyoptimizerdemo.b-cdn.net/bunny7.jpg?flop=true&width=800&height=600&aspect_ratio=800%3A600",
+    );
     const os = await page.locator("css=img[alt=offscreen]");
 
     await expect(os).not.toBeInViewport();

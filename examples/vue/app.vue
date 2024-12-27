@@ -8,7 +8,12 @@ import { transform } from "unpic/providers/imgix";
     :aspectRatio="16 / 9" priority :transformer="transform" :operations="{ flip: 'v' }" />
   <Image src="https://cdn.shopify.com/static/sample-images/garnished.jpeg" layout="constrained" width="800" height="600"
     alt="constrained" />
-  <Image src="https://bunnyoptimizerdemo.b-cdn.net/bunny7.jpg" width=800 height=600 layout="fixed" alt="fixed" />
+  <Image src="https://bunnyoptimizerdemo.b-cdn.net/bunny7.jpg" width=800 height=600 layout="fixed" alt="fixed"
+    :operations="{
+      bunny: {
+        flop: true,
+      },
+    }" />
   <div style="height: 10000px"></div>
   <Image src="https://cdn.shopify.com/static/sample-images/bath.jpeg" layout="constrained" width=600 height=800
     alt="offscreen" />

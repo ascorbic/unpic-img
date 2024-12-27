@@ -30,6 +30,11 @@ export default function Index() {
         height={600}
         layout="fixed"
         alt="fixed"
+        operations={{
+          bunny: {
+            flop: true,
+          },
+        }}
       />
       <div style={{ height: 10000 }} />
       <Image
