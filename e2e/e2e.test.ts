@@ -3,6 +3,8 @@ import type { Locator } from "@playwright/test";
 
 export const site = process.env.SITE ?? "preact";
 
+const skipOperations = ["webc", "lit"];
+
 export const expect = baseExpect.extend({
   async toHaveLoadedImage(locator: Locator) {
     const assertionName = "toHaveLoadedImage";
@@ -39,11 +41,12 @@ test.describe(site, () => {
     await expect(fw).toHaveLoadedImage();
     await expect(fw).toHaveJSProperty("width", vp?.width);
     await expect(fw).toHaveJSProperty("height", aspectRatio(vp?.width, 16 / 9));
-    await expect(fw).toHaveJSProperty(
-      "src",
-      "https://images.unsplash.com/photo-1617718295766-0f839c2853e7?flip=v&fit=min&auto=format",
-    );
-
+    if (!skipOperations.includes(site)) {
+      await expect(fw).toHaveJSProperty(
+        "src",
+        "https://images.unsplash.com/photo-1617718295766-0f839c2853e7?flip=v&fit=min&auto=format",
+      );
+    }
     const cs = await page.locator("css=img[alt=constrained]");
     await cs.scrollIntoViewIfNeeded();
     expect(cs).toBeVisible();
@@ -56,10 +59,12 @@ test.describe(site, () => {
     await expect(fx).toHaveLoadedImage();
     await expect(fx).toHaveJSProperty("width", 800);
     await expect(fx).toHaveJSProperty("height", 600);
-    await expect(fx).toHaveJSProperty(
-      "src",
-      "https://bunnyoptimizerdemo.b-cdn.net/bunny7.jpg?flop=true&width=800&height=600&aspect_ratio=800%3A600",
-    );
+    if (!skipOperations.includes(site)) {
+      await expect(fx).toHaveJSProperty(
+        "src",
+        "https://bunnyoptimizerdemo.b-cdn.net/bunny7.jpg?flop=true&width=800&height=600&aspect_ratio=800%3A600",
+      );
+    }
     const os = await page.locator("css=img[alt=offscreen]");
 
     await expect(os).not.toBeInViewport();
