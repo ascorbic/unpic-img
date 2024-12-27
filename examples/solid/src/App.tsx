@@ -1,21 +1,22 @@
 import type { Component } from "solid-js";
 import { Image, Source } from "@unpic/solid";
+import { Image as BaseImage } from "@unpic/solid/base";
 import "./art-direction.css";
+import { transform } from "unpic/providers/imgix";
 
 const App: Component = () => {
   return (
     <div>
-      <Image
+      <BaseImage
         src="https://images.unsplash.com/photo-1617718295766-0f839c2853e7"
         layout="fullWidth"
         alt="fullWidth"
         aspectRatio={16 / 9}
         operations={{
-          imgix: {
-            flip: "v",
-          },
+          flip: "v",
         }}
         priority
+        transformer={transform}
       />
       <Image
         src="https://cdn.shopify.com/static/sample-images/garnished.jpeg"
