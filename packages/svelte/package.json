@@ -52,6 +52,7 @@
   "types": "./dist/index.d.ts",
   "exports": {
     ".": {
+      "default": "./dist/index.js",
       "types": "./dist/index.d.ts",
       "svelte": "./dist/index.js"
     },
