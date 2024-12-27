@@ -375,7 +375,7 @@ export function transformBaseImageProps<
 
     const transformed = transformer(
       src,
-      { width, height } as TOperations,
+      { ...operations, width, height } as TOperations,
       options,
     );
 
