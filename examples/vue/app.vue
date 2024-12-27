@@ -5,7 +5,7 @@ import { transform } from "unpic/providers/imgix";
 </script>
 <template>
   <BaseImage src="https://images.unsplash.com/photo-1617718295766-0f839c2853e7" layout="fullWidth" alt="fullWidth"
-    priority :transformer="transform" :operations="{ flip: 'v' }" />
+    :aspectRatio="16 / 9" priority :transformer="transform" :operations="{ flip: 'v' }" />
   <Image src="https://cdn.shopify.com/static/sample-images/garnished.jpeg" layout="constrained" width="800" height="600"
     alt="constrained" />
   <Image src="https://bunnyoptimizerdemo.b-cdn.net/bunny7.jpg" width=800 height=600 layout="fixed" alt="fixed" />
