@@ -30,8 +30,6 @@ const props = defineProps<Props>();
 
 const attrs: ImgHTMLAttributes = useAttrs();
 
-console.log(props.layout);
-
 const imageProps = computed(() =>
   transformProps({ ...attrs, ...props } as UnpicImageProps<ImgHTMLAttributes>),
 );
