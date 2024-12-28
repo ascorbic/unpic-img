@@ -21,6 +21,11 @@
       "types": "./lib-types/index.d.ts",
       "import": "./lib/index.qwik.mjs",
       "require": "./lib/index.qwik.cjs"
+    },
+    "./base": {
+      "types": "./lib-types/components/base/base.d.ts",
+      "import": "./lib/base.qwik.mjs",
+      "require": "./lib/base.qwik.cjs"
     }
   },
   "files": [

@@ -1,29 +1,15 @@
 export type * from "./types.js";
 
-import {
-  UrlTransformerOptions,
-  getCanonicalCdnForUrl,
-  getTransformer,
-} from "unpic";
-import { parse } from "./mediaquery.js";
+import type { Operations } from "unpic";
 
 import type {
   CoreImageAttributes,
-  UnpicImageProps,
+  UnpicBaseImageProps,
   CoreSourceAttributes,
-  UnpicSourceProps,
-  ImageSourceOptions,
+  UnpicBaseSourceProps,
   Layout,
+  BaseImageSourceOptions,
 } from "./types.js";
-
-// @ts-expect-error This may or may not be used with Vite
-const DEBUG = import.meta.env?.DEV;
-
-export function logError(...args: unknown[]) {
-  if (DEBUG) {
-    console.error("[unpic]", ...args);
-  }
-}
 
 /**
  * Gets the `sizes` attribute for an image, based on the layout and width
@@ -61,6 +47,8 @@ const pixelate = (value?: number) =>
  * Gets the styles for an image
  */
 export const getStyle = <
+  TOperations extends Operations,
+  TOptions,
   TImageAttributes extends CoreImageAttributes<TStyle>,
   TStyle = Record<string, string>,
 >({
@@ -71,7 +59,7 @@ export const getStyle = <
   objectFit = "cover",
   background,
 }: Pick<
-  UnpicImageProps<TImageAttributes, TStyle>,
+  UnpicBaseImageProps<TOperations, TOptions, TImageAttributes, TStyle>,
   "width" | "height" | "aspectRatio" | "layout" | "objectFit" | "background"
 >): TImageAttributes["style"] => {
   const styleEntries: Array<[prop: string, value: string | undefined]> = [
@@ -176,32 +164,29 @@ export const getBreakpoints = ({
   return [];
 };
 
-export type SrcSetOptions = Omit<ImageSourceOptions, "src"> & {
+export type SrcSetOptions<TOperations extends Operations, TOptions> = Omit<
+  BaseImageSourceOptions<TOperations, TOptions>,
+  "src"
+> & {
   src: URL | string;
   format?: string;
 };
 
-export const getSrcSetEntries = ({
+interface UrlTransformerOptions
+  extends Pick<Operations, "width" | "height" | "format" | "quality"> {
+  /** The image URL to transform */
+  url: string | URL;
+}
+
+export const getSrcSetEntries = <TOperations extends Operations, TOptions>({
   src,
   width,
   layout = "constrained",
   height,
   aspectRatio,
   breakpoints,
-  cdn,
-  transformer,
   format,
-  cdnOptions,
-}: SrcSetOptions): Array<UrlTransformerOptions> => {
-  const canonical = getCanonicalCdnForUrl(src, cdn);
-
-  if (canonical && !transformer) {
-    transformer = getTransformer(canonical.cdn);
-  }
-
-  if (!transformer) {
-    return [];
-  }
+}: SrcSetOptions<TOperations, TOptions>): Array<UrlTransformerOptions> => {
   breakpoints ||= getBreakpoints({ width, layout });
   return breakpoints
     .sort((a, b) => a - b)
@@ -211,11 +196,10 @@ export const getSrcSetEntries = ({
         transformedHeight = Math.round(bp / aspectRatio);
       }
       return {
-        url: canonical ? canonical.url : src,
+        url: src,
         width: bp,
         height: transformedHeight,
         format,
-        cdnOptions,
       };
     });
 };
@@ -224,26 +208,30 @@ export const getSrcSetEntries = ({
  * Generate an image srcset
  */
 
-export const getSrcSet = (options: SrcSetOptions): string => {
-  let { src, cdn, transformer } = options;
-  const canonical = getCanonicalCdnForUrl(src, cdn);
+export const getSrcSet = <TOperations extends Operations, TOptions>(
+  options: SrcSetOptions<TOperations, TOptions>,
+): string => {
+  let { src, transformer, operations } = options;
 
-  if (canonical && !transformer) {
-    transformer = getTransformer(canonical.cdn);
-  }
   if (!transformer) {
     return "";
   }
 
-  return getSrcSetEntries({ ...options, transformer })
-    .map((transform) => {
-      const url = transformer!(transform);
+  return getSrcSetEntries(options)
+    .map(({ url: _, ...transform }) => {
+      const url = transformer(
+        src,
+        { ...operations, ...transform } as TOperations,
+        options.options,
+      );
       return `${url?.toString()} ${transform.width}w`;
     })
     .join(",\n");
 };
 
 export function transformSharedProps<
+  TOperations extends Operations,
+  TOptions,
   TImageAttributes extends CoreImageAttributes<TStyle>,
   TStyle = Record<string, string>,
 >({
@@ -253,10 +241,12 @@ export function transformSharedProps<
   layout = "constrained",
   aspectRatio,
   ...props
-}: UnpicImageProps<TImageAttributes, TStyle>): UnpicImageProps<
+}: UnpicBaseImageProps<
+  TOperations,
+  TOptions,
   TImageAttributes,
   TStyle
-> &
+>): UnpicBaseImageProps<TOperations, TOptions, TImageAttributes, TStyle> &
   Pick<TImageAttributes, "srcset" | "style"> {
   width = (width && Number(width)) || undefined;
   height = (height && Number(height)) || undefined;
@@ -281,7 +271,7 @@ export function transformSharedProps<
   if (aspectRatio) {
     if (width) {
       if (height) {
-        logError("Ignoring aspectRatio because width and height are both set");
+        // logError("Ignoring aspectRatio because width and height are both set");
       } else {
         height = Math.round(width / aspectRatio);
       }
@@ -289,15 +279,15 @@ export function transformSharedProps<
       width = Math.round(height * aspectRatio);
     } else if (layout !== "fullWidth") {
       // Fullwidth images have 100% width, so aspectRatio is applicable
-      logError(
-        "When aspectRatio is set, either width or height must also be set",
-      );
+      // logError(
+      //   "When aspectRatio is set, either width or height must also be set",
+      // );
     }
   } else if (width && height) {
     aspectRatio = width / height;
   } else if (layout !== "fullWidth") {
     // Fullwidth images don't need dimensions
-    logError("Either aspectRatio or both width and height must be set");
+    // logError("Either aspectRatio or both width and height must be set");
   }
   return {
     width,
@@ -305,20 +295,22 @@ export function transformSharedProps<
     aspectRatio,
     layout,
     ...props,
-  } as UnpicImageProps<TImageAttributes, TStyle>;
+  } as UnpicBaseImageProps<TOperations, TOptions, TImageAttributes, TStyle>;
 }
 
 /**
  * Generates the props for an img element
  */
-export function transformProps<
+export function transformBaseImageProps<
+  TOperations extends Operations,
+  TOptions,
   TImageAttributes extends CoreImageAttributes<TStyle>,
-  TStyle = Record<string, string>,
->(props: UnpicImageProps<TImageAttributes, TStyle>): TImageAttributes {
-  /* eslint-disable prefer-const */
+  TStyle = TImageAttributes["style"],
+>(
+  props: UnpicBaseImageProps<TOperations, TOptions, TImageAttributes, TStyle>,
+): TImageAttributes {
   let {
     src,
-    cdn,
     transformer,
     background,
     layout,
@@ -328,29 +320,23 @@ export function transformProps<
     height,
     aspectRatio,
     unstyled,
-    cdnOptions,
+    operations,
+    options,
     ...transformedProps
   } = transformSharedProps(props);
-  /* eslint-enable prefer-const */
-
-  const canonical = src ? getCanonicalCdnForUrl(src, cdn) : undefined;
-  let url: URL | string = src;
-  if (canonical) {
-    url = canonical.url;
-    transformer ||= getTransformer(canonical.cdn);
-  }
-
   // Auto-generate a low-res image for blurred placeholders
   if (transformer && background === "auto") {
     const lowResHeight = aspectRatio
       ? Math.round(LOW_RES_WIDTH / aspectRatio)
       : undefined;
-    const lowResImage = transformer({
-      url,
-      width: LOW_RES_WIDTH,
-      height: lowResHeight,
-      cdnOptions,
-    });
+    const lowResImage = transformer(
+      src,
+      {
+        width: LOW_RES_WIDTH,
+        height: lowResHeight,
+      } as TOperations,
+      options,
+    );
     if (lowResImage) {
       background = lowResImage.toString();
     }
@@ -364,33 +350,37 @@ export function transformProps<
     objectFit,
     background,
   } as Pick<
-    UnpicImageProps<TImageAttributes, TStyle>,
+    UnpicBaseImageProps<TOperations, TOptions, TImageAttributes, TStyle>,
     "width" | "height" | "aspectRatio" | "layout" | "objectFit" | "background"
   >;
   transformedProps.sizes ||= getSizes(width, layout);
   if (!unstyled) {
     transformedProps.style = {
-      ...getStyle<TImageAttributes, TStyle>(styleProps),
+      ...getStyle(styleProps),
       ...transformedProps.style,
     };
   }
   if (transformer) {
     transformedProps.srcset = getSrcSet({
-      src: url,
+      src,
       width,
       height,
       aspectRatio,
       layout,
       breakpoints,
       transformer,
-      cdn,
-      cdnOptions,
+      operations,
+      options,
     });
 
-    const transformed = transformer({ url, width, height, cdnOptions });
+    const transformed = transformer(
+      src,
+      { ...operations, width, height } as TOperations,
+      options,
+    );
 
     if (transformed) {
-      url = transformed;
+      src = transformed;
     }
 
     if (layout === "fullWidth" || layout === "constrained") {
@@ -399,13 +389,9 @@ export function transformProps<
     }
   }
 
-  if (!url) {
-    logError("No URL provided for image");
-  }
-
   return {
     ...transformedProps,
-    src: url?.toString(),
+    src: src?.toString(),
     width,
     height,
   } as TImageAttributes;
@@ -433,13 +419,18 @@ export function normalizeImageType(type?: string | null): {
 /**
  * Generates the props for a `<source>` element
  */
-export function transformSourceProps<
+export function transformBaseSourceProps<
   TSourceAttributes extends CoreSourceAttributes,
->({ media, type, ...props }: UnpicSourceProps): TSourceAttributes {
+  TOperations extends Operations,
+  TOptions,
+>({
+  media,
+  type,
+  ...props
+}: UnpicBaseSourceProps<TOperations, TOptions>): TSourceAttributes {
   /* eslint-disable prefer-const, @typescript-eslint/no-unused-vars */
   let {
     src,
-    cdn,
     transformer,
     layout,
     breakpoints,
@@ -449,17 +440,11 @@ export function transformSourceProps<
     sizes,
     loading,
     decoding,
-    cdnOptions,
+    operations,
+    options,
     ...rest
   } = transformSharedProps(props);
   /* eslint-enable prefer-const, @typescript-eslint/no-unused-vars */
-
-  const canonical = src ? getCanonicalCdnForUrl(src, cdn) : undefined;
-  let url: URL | string = src;
-  if (canonical) {
-    url = canonical.url;
-    transformer ||= getTransformer(canonical.cdn);
-  }
 
   if (!transformer) {
     return {} as TSourceAttributes;
@@ -470,22 +455,26 @@ export function transformSourceProps<
   sizes ||= getSizes(width, layout);
 
   const srcset = getSrcSet({
-    src: url,
+    src,
     width,
     height,
     aspectRatio,
     layout,
     breakpoints,
     transformer,
-    cdn,
     format,
-    cdnOptions,
+    operations,
+    options,
   });
 
-  const transformed = transformer({ url, width, height, cdnOptions });
+  const transformed = transformer(
+    src,
+    { ...operations, width, height } as TOperations,
+    options,
+  );
 
   if (transformed) {
-    url = transformed;
+    src = transformed;
   }
 
   const returnObject = {
@@ -495,17 +484,7 @@ export function transformSourceProps<
   } as TSourceAttributes;
 
   if (media) {
-    if (DEBUG) {
-      try {
-        parse(media);
-        returnObject.media = media;
-        // eslint-disable-next-line @typescript-eslint/no-explicit-any
-      } catch (e: any) {
-        logError(e.message);
-      }
-    } else {
-      returnObject.media = media;
-    }
+    returnObject.media = media;
   }
 
   if (mimeType) {
@@ -520,10 +499,7 @@ export interface ImageSizeMetadata {
 }
 
 export function inferImageDimensions(
-  props: Pick<
-    UnpicImageProps<CoreImageAttributes>,
-    "width" | "height" | "aspectRatio"
-  >,
+  props: { width?: number; height?: number; aspectRatio?: number },
   imageData: ImageSizeMetadata,
 ) {
   const aspectRatio = props.aspectRatio || imageData.width / imageData.height;

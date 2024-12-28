@@ -1,9 +1,8 @@
 import type { LocalImageService } from "astro";
 import baseService from "./base.ts";
 import sharpImageService from "astro/assets/services/sharp";
-import type { UnpicConfig } from "../service.ts";
 
-const service: LocalImageService<UnpicConfig> = {
+const service: LocalImageService = {
   ...baseService,
   transform: sharpImageService.transform,
   parseURL: sharpImageService.parseURL,

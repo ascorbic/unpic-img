@@ -19,7 +19,6 @@ export class UnpicSourceDirective implements OnChanges {
   @Input() aspectRatio?: Props['aspectRatio'];
   @Input() src!: Props['src'];
   @Input() breakpoints?: Props['breakpoints'];
-  @Input() transformer?: Props['transformer'];
   @Input() cdn?: Props['cdn'];
   @Input() media?: Props['media'];
   @Input() type?: Props['type'];
@@ -27,9 +26,7 @@ export class UnpicSourceDirective implements OnChanges {
   constructor(
     private el: ElementRef,
     private renderer: Renderer2,
-  ) {
-    console.log('source');
-  }
+  ) {}
 
   ngOnChanges() {
     const {
@@ -39,7 +36,6 @@ export class UnpicSourceDirective implements OnChanges {
       aspectRatio,
       src,
       breakpoints,
-      transformer,
       cdn,
       type,
       media,
@@ -52,7 +48,6 @@ export class UnpicSourceDirective implements OnChanges {
       aspectRatio,
       src,
       breakpoints,
-      transformer,
       cdn,
       type,
       media,

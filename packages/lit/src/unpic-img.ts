@@ -3,7 +3,6 @@ import { customElement, property } from "lit/decorators.js";
 import { StyleInfo, styleMap } from "lit/directives/style-map.js";
 import { ifDefined } from "lit/directives/if-defined.js";
 import {
-  BaseImageProps,
   CoreImageAttributes,
   Layout,
   UnpicImageProps,
@@ -14,7 +13,7 @@ import { ImageCdn } from "unpic";
 @customElement("unpic-img")
 export class UnpicImg
   extends LitElement
-  implements BaseImageProps<Partial<HTMLImageElement>, CSSStyleDeclaration>
+  implements CoreImageAttributes<CSSStyleDeclaration>
 {
   @property({ type: String }) src = "";
   @property({ type: String }) alt = "";

@@ -17,14 +17,19 @@
   "files": [
     "dist"
   ],
-  "main": "./dist/image.cjs",
-  "module": "./dist/image.js",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "exports": {
     ".": {
       "types": "./dist/index.d.ts",
-      "require": "./dist/image.cjs",
-      "import": "./dist/image.js"
+      "require": "./dist/index.cjs",
+      "import": "./dist/index.js"
+    },
+    "./base": {
+      "types": "./dist/base/base.d.ts",
+      "require": "./dist/base.cjs",
+      "import": "./dist/base.js"
     }
   },
   "scripts": {
@@ -36,7 +41,7 @@
   },
   "dependencies": {
     "@unpic/core": "workspace:^",
-    "vue": "^3.5.12"
+    "vue": "^3.5.13"
   },
   "devDependencies": {
     "@testing-library/vue": "^8.1.0",

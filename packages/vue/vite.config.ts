@@ -7,9 +7,9 @@ export default defineConfig({
   plugins: [vue()],
   build: {
     lib: {
-      entry: resolve(__dirname, "src/index.ts"),
+      entry: ["src/index.ts", "src/base/base.ts"],
       name: "Image",
-      fileName: "image",
+      fileName: (format, name) => `${name}.${format === "es" ? "js" : "cjs"}`,
       formats: ["es", "cjs"],
     },
     rollupOptions: {

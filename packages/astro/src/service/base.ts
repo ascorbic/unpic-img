@@ -3,7 +3,7 @@ import {
   inferImageDimensions,
   normalizeImageType,
   transformProps,
-  type ConstrainedImageProps,
+  type UnpicImageProps,
 } from "@unpic/core";
 import type { ExternalImageService, ImageTransform } from "astro";
 import type { UnpicConfig } from "../service.ts";
@@ -15,7 +15,7 @@ import { getEndpointOptions } from "../utils.ts";
  * Tries to detect a default image service based on the environment.
  */
 export function getDefaultService(): ImageCdn {
-  if (env.NETLIFY || env.NETLIFY_LOCAL) {
+  if (env.NETLIFY || env.NETLIFY_LOCAL || "Netlify" in globalThis) {
     return "netlify";
   }
   if (env.VERCEL || env.NOW_BUILDER) {
@@ -71,14 +71,14 @@ const service: ExternalImageService<UnpicConfig> = {
     const cdnOptions = getEndpointOptions(imageConfig);
     const entries = getSrcSetEntries({
       ...transformOptions,
-      cdnOptions,
+      options: cdnOptions,
       src: transformOptions.url,
     });
     return entries.map(({ width, height }) => ({
       transform: {
         ...options,
-        width,
-        height,
+        width: Number(width),
+        height: Number(height),
       },
       descriptor: `${width}w`,
       attributes,
@@ -112,7 +112,7 @@ const service: ExternalImageService<UnpicConfig> = {
     const { src, srcset, ...props } = transformProps({
       ...transformOptions,
       src: transformOptions.url.toString(),
-    } as ConstrainedImageProps<
+    } as UnpicImageProps<
       astroHTML.JSX.ImgHTMLAttributes,
       astroHTML.JSX.ImgHTMLAttributes["style"]
     >);

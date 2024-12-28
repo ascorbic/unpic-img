@@ -1,40 +1,22 @@
 <!doctype html>
 <html>
-  <head>
-    <script type="module" src="./index.ts"></script>
-  </head>
 
-  <body style="margin: 0">
-    <unpic-img
-      src="https://images.unsplash.com/photo-1617718295766-0f839c2853e7"
-      layout="fullWidth"
-      alt="fullWidth"
-      aspectRatio="1.77777"
-      priority
-    ></unpic-img>
-    <unpic-img
-      src="https://cdn.shopify.com/static/sample-images/garnished.jpeg"
-      layout="constrained"
-      width="800"
-      height="600"
-      alt="constrained"
-    ></unpic-img>
+<head>
+  <script type="module" src="./index.ts"></script>
+</head>
 
-    <unpic-img
-      src="https://bunnyoptimizerdemo.b-cdn.net/bunny7.jpg"
-      width="800"
-      height="600"
-      layout="fixed"
-      alt="fixed"
-    >
-    </unpic-img>
-    <div style="height: 10000px"></div>
-    <unpic-img
-      src="https://cdn.shopify.com/static/sample-images/bath.jpeg"
-      layout="constrained"
-      width="600"
-      height="800"
-      alt="offscreen"
-    ></unpic-img>
-  </body>
+<body style="margin: 0">
+  <unpic-img src="https://images.unsplash.com/photo-1617718295766-0f839c2853e7" layout="fullWidth" alt="fullWidth"
+    aspectRatio="1.77777" priority></unpic-img>
+  <unpic-img src="https://cdn.shopify.com/static/sample-images/garnished.jpeg" layout="constrained" width="800"
+    height="600" alt="constrained"></unpic-img>
+
+  <unpic-img src="https://bunnyoptimizerdemo.b-cdn.net/bunny7.jpg" width="800" height="600" layout="fixed" alt="fixed"
+    operations={{ bunny: { flop: true, }, }}>
+  </unpic-img>
+  <div style="height: 10000px"></div>
+  <unpic-img src="https://cdn.shopify.com/static/sample-images/bath.jpeg" layout="constrained" width="600" height="800"
+    alt="offscreen"></unpic-img>
+</body>
+
 </html>

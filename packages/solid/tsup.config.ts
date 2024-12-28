@@ -11,6 +11,11 @@ const preset_options: preset.PresetOptions = {
       // set `true` or pass a specific path to generate a server-only entry
       server_entry: true,
     },
+    {
+      name: "base",
+      entry: "src/base/index.tsx",
+      server_entry: true,
+    },
   ],
   // Set to `true` to remove all `console.*` calls and `debugger` statements in prod builds
   drop_console: true,

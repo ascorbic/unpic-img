@@ -19,7 +19,6 @@ export class UnpicImageDirective implements OnChanges {
   @Input() aspectRatio?: Props['aspectRatio'];
   @Input() src!: Props['src'];
   @Input() breakpoints?: Props['breakpoints'];
-  @Input() transformer?: Props['transformer'];
   @Input() cdn?: Props['cdn'];
   @Input() background?: Props['background'];
   @Input() unstyled?: boolean | '';
@@ -37,20 +36,18 @@ export class UnpicImageDirective implements OnChanges {
       aspectRatio,
       src,
       breakpoints,
-      transformer,
       cdn,
       background,
       unstyled,
     } = this;
 
-    const { style, ...props } = transformProps({
+    const { style, ...props } = transformProps<HTMLImageElement>({
       layout,
       width: Number(width),
       height: Number(height),
       aspectRatio,
       src,
       breakpoints,
-      transformer,
       cdn,
       background,
       unstyled: unstyled !== undefined && unstyled !== false,

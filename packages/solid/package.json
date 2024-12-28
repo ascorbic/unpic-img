@@ -23,45 +23,88 @@
   ],
   "sideEffects": false,
   "type": "module",
-  "main": "./dist/server.js",
-  "module": "./dist/server.js",
-  "types": "./dist/index.d.ts",
+  "main": "./dist/index/server.js",
+  "module": "./dist/index/server.js",
+  "types": "./dist/index/index.d.ts",
   "exports": {
-    "worker": {
-      "solid": "./dist/server.jsx",
+    ".": {
+      "worker": {
+        "solid": "./dist/index/server.jsx",
+        "import": {
+          "types": "./dist/index/index.d.ts",
+          "default": "./dist/index/server.js"
+        }
+      },
+      "browser": {
+        "solid": "./dist/index/index.jsx",
+        "import": {
+          "types": "./dist/index/index.d.ts",
+          "default": "./dist/index/index.js"
+        }
+      },
+      "deno": {
+        "solid": "./dist/index/server.jsx",
+        "import": {
+          "types": "./dist/index/index.d.ts",
+          "default": "./dist/index/server.js"
+        }
+      },
+      "node": {
+        "solid": "./dist/index/server.jsx",
+        "import": {
+          "types": "./dist/index/index.d.ts",
+          "default": "./dist/index/server.js"
+        }
+      },
+      "solid": "./dist/index/index.jsx",
       "import": {
-        "types": "./dist/index.d.ts",
-        "default": "./dist/server.js"
+        "types": "./dist/index/index.d.ts",
+        "default": "./dist/index/index.js"
       }
     },
-    "browser": {
-      "solid": "./dist/index.jsx",
+    "./base": {
+      "worker": {
+        "solid": "./dist/base/server.jsx",
+        "import": {
+          "types": "./dist/base/index.d.ts",
+          "default": "./dist/base/server.js"
+        }
+      },
+      "browser": {
+        "solid": "./dist/base/index.jsx",
+        "import": {
+          "types": "./dist/base/index.d.ts",
+          "default": "./dist/base/index.js"
+        }
+      },
+      "deno": {
+        "solid": "./dist/base/server.jsx",
+        "import": {
+          "types": "./dist/base/index.d.ts",
+          "default": "./dist/base/server.js"
+        }
+      },
+      "node": {
+        "solid": "./dist/base/server.jsx",
+        "import": {
+          "types": "./dist/base/index.d.ts",
+          "default": "./dist/base/server.js"
+        }
+      },
+      "solid": "./dist/base/index.jsx",
       "import": {
-        "types": "./dist/index.d.ts",
-        "default": "./dist/index.js"
+        "types": "./dist/base/index.d.ts",
+        "default": "./dist/base/index.js"
       }
-    },
-    "deno": {
-      "solid": "./dist/server.jsx",
-      "import": {
-        "types": "./dist/index.d.ts",
-        "default": "./dist/server.js"
-      }
-    },
-    "node": {
-      "solid": "./dist/server.jsx",
-      "import": {
-        "types": "./dist/index.d.ts",
-        "default": "./dist/server.js"
-      }
-    },
-    "solid": "./dist/index.jsx",
-    "import": {
-      "types": "./dist/index.d.ts",
-      "default": "./dist/index.js"
     }
   },
-  "typesVersions": {},
+  "typesVersions": {
+    "*": {
+      "base": [
+        "./dist/base/index.d.ts"
+      ]
+    }
+  },
   "scripts": {
     "dev": "vite serve dev",
     "build": "tsup",
@@ -94,6 +137,7 @@
     "@unpic/core": "workspace:^"
   },
   "browser": {
-    "./dist/server.js": "./dist/index.js"
+    "./dist/index/server.js": "./dist/index/index.js",
+    "./dist/base/server.js": "./dist/base/index.js"
   }
 }

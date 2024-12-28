@@ -1,0 +1,62 @@
+---
+import { imageConfig } from "astro:assets";
+import type { Operations, UnpicBaseImageProps } from "@unpic/core";
+import {
+  inferImageDimensions,
+  transformBaseImageProps,
+} from "@unpic/core/base";
+import type { ImageMetadata } from "astro";
+
+import type { HTMLAttributes } from "astro/types";
+import { getBackground } from "../background";
+import type { UnpicConfig } from "../service";
+
+type Props<
+  TOperations extends Operations = Operations,
+  TOptions = unknown,
+> = Omit<
+  UnpicBaseImageProps<TOperations, TOptions, astroHTML.JSX.ImgHTMLAttributes>,
+  "src"
+> & {
+  placeholder?: "none" | "blurhash" | "dominantColor" | "lqip" | ({} & string);
+  src: string | ImageMetadata;
+};
+
+const { placeholder, ...props }: Props = Astro.props;
+
+type BaseImageProps = UnpicBaseImageProps<
+  Operations,
+  unknown,
+  HTMLAttributes<"img">
+>;
+
+let imgProps: BaseImageProps;
+
+if (typeof props.src === "object") {
+  imgProps = {
+    ...props,
+    src: props.src.src,
+    ...inferImageDimensions(props, props.src),
+  } as BaseImageProps;
+} else {
+  imgProps = {
+    ...props,
+  } as BaseImageProps;
+}
+
+const config: UnpicConfig = imageConfig.service?.config;
+
+imgProps.layout ||= config?.layout;
+imgProps.background ||= placeholder ?? config?.placeholder;
+
+imgProps.background = await getBackground(imgProps);
+---
+
+<img
+  {...transformBaseImageProps<
+    Operations,
+    unknown,
+    astroHTML.JSX.ImgHTMLAttributes,
+    astroHTML.JSX.ImgHTMLAttributes["style"]
+  >(imgProps)}
+/>
