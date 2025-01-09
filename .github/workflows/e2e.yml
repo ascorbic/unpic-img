@@ -29,6 +29,8 @@ jobs:
         run: |
           corepack enable
           pnpm install
+      - name: Install Netlify CLI
+        run: pnpm install -g netlify-cli
       - name: Install Playwright Browsers
         run: npx playwright install --with-deps
       - name: Run tests
