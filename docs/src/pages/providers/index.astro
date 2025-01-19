@@ -8,15 +8,25 @@ const providers = Object.entries(SupportedProviders).sort((a, b) =>
 ---
 
 <DocsLayout
-  title="Providers"
+  title="Image providers"
   headings={[]}
-  description={`Unpic supports ${providers.length} image providers, so there's a good chance your favorite provider is supported!`}
+  description={`Unpic supports ${providers.length} image providers, so that probably includes yours.`}
 >
   <p>
     Unpic can transform images using all of these services, with type-safe
-    operations and config options. A lot of others services use these under the
+    operations and config options. A lot of other services use these under the
     hood and can often also be detected. For example, most CMSs use Imgix and
-    will work with no configuration.
+    will work with additional configuration.
+  </p>
+  <p>
+    Most providers can be auto-detected, so work with zero config. However if
+    you want to use extra features and configuration, check out the
+    provider-specific docs below.
+  </p>
+  <p>
+    If you would like to add a provider, see <a href="/lib/contributing"
+      >the contributing guide</a
+    >.
   </p>
   <h3>Supported Providers</h3>
   <p>

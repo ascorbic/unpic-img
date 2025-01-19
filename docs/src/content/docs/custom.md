@@ -17,10 +17,12 @@ designed to make this process as simple as possible.
 
 ## Base image component
 
-The base Image component is an Unpic component without any transformers. While
-the regular `Image` component automatically detects and applies transformers,
-the base component requires you to specify the transformer manually. This allows
-you to create a custom component with a single transformer.
+The base Image component is an Unpic component without any transformers. These
+are the functions that generate the URLs for a particular CDN or CMS. While the
+regular `Image` component automatically detects the provider from the image URL
+and uses the appropriate transformer, the base component requires you to pass
+the transformer manually. This allows you to create a custom component with a
+single transformer, either one of the built-in transformers or a custom one.
 
 ```jsx
 import { Image } from "@unpic/react/base";
@@ -77,3 +79,10 @@ export const CloudinaryImage = (
 ```
 
 You can then distribute that component as a library, or use it in your own site.
+
+## Custom transformer
+
+For details on how to build a custom transformer, see the
+[contributing guide](/lib/contributing/). If you want to create a private
+transformer, you can skip the parts on contributing to the library and just
+follow the steps to create the transform function.
