@@ -1,0 +1,182 @@
+---
+title: "Unpic 1.0"
+description:
+  "Introducing the first version of Unpic: image components for every framework"
+publishDate: 2025-01-19
+image: https://images.unsplash.com/photo-1737229940875-293ed0c4e8af?q=80&w=2942&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
+image_alt: Sun in woodland
+---
+
+import { Image } from "@unpic/astro";
+
+Unpic is the best way to display images on the web. With components for ten
+different frontend frameworks, almost every site can have fast, responsive
+images with very little effort. After two years of development, I'm excited to
+announce the first stable release of Unpic.
+
+Since starting work on Unpic two years ago, I've been astounded by the response
+from the community. With over 50,000 npm downloads per week, 1500 stars and a
+growing number of contributors on GitHub, it's clear that developers really need
+a good way to handle images. It's not surprising - images are a huge part of the
+web, and getting them right can be hard. I built Unpic to make it as easy as an
+img tag.
+
+This release includes a completely-rewritten core library, now with support for
+[26 different image providers](/providers), and
+[ten different frontend frameworks](/img). One development that I have found
+particularly exciting it how many people have used Unpic at the core of their
+own image components. This release is designed to make that easier than ever. A
+new modular architecture keeps it just as easy to use as before, but adds new
+base components that let you bring your own transformer functions without
+needing to bundle the whole library, or import individual, tree-shakable
+providers.
+
+## Meet Unpic
+
+If you're new to Unpic, it's a family of image components make it as easy to
+create a responsive image as it is to use an `<img>` tag. It uses your existing
+image CDN or CMS with no additional configuration. It's designed to be as simple
+as possible to use, with no configuration needed, but with the flexibility to
+handle any image URL. Most images on modern websites are hosted on a CDN or CMS
+that has built-in support for image transforms, but existing frontend frameworks
+often download and resize the image at build time or on your server, rather than
+using the native host. Unpic uses the CDN to resize the image on the fly,
+delivering the correct size for the user's device and screen size. It generates
+the correct HTML tags, and lightweight styles to make the image resize
+responsively.
+
+This is how to use the `Image` component from `@unpic/react`:
+
+```jsx
+import { Image } from "@unpic/react";
+
+export const MyImage = () => (
+  <Image
+    src="https://res.cloudinary.com/demo/image/upload/dog"
+    width={600}
+    height={300}
+    alt="Dog"
+  />
+);
+```
+
+This generates the following HTML:
+
+```html
+<img
+  alt="Dog"
+  loading="lazy"
+  decoding="async"
+  sizes="(min-width: 600px) 600px, 100vw"
+  style="object-fit:cover;max-width:600px;max-height:300px;aspect-ratio:2;width:100%"
+  srcset="
+    https://res.cloudinary.com/demo/image/upload/w_600,h_300,f_auto,c_lfill/dog   600w,
+    https://res.cloudinary.com/demo/image/upload/w_640,h_320,f_auto,c_lfill/dog   640w,
+    https://res.cloudinary.com/demo/image/upload/w_750,h_375,f_auto,c_lfill/dog   750w,
+    https://res.cloudinary.com/demo/image/upload/w_828,h_414,f_auto,c_lfill/dog   828w,
+    https://res.cloudinary.com/demo/image/upload/w_960,h_480,f_auto,c_lfill/dog   960w,
+    https://res.cloudinary.com/demo/image/upload/w_1080,h_540,f_auto,c_lfill/dog 1080w,
+    https://res.cloudinary.com/demo/image/upload/w_1200,h_600,f_auto,c_lfill/dog 1200w
+  "
+  src="https://res.cloudinary.com/demo/image/upload/w_600,h_300,f_auto,c_lfill/dog"
+/>
+```
+
+Look at that puppy!
+
+<Image
+  src="https://res.cloudinary.com/demo/image/upload/dog"
+  width={600}
+  height={300}
+  alt="Dog"
+/>
+
+No configuration is needed at all. Unpic detects that this is a Cloudinary URL,
+and uses the Cloudinary transformer to generate the correct image sizes and
+formats. It also generates the correct `srcset` and `sizes` attributes for the
+image, and adds the correct `loading` and `decoding` attributes to ensure the
+image is loaded quickly and responsively. The resulting image is responsive and
+fast, but as easy to use as a basic img tag.
+
+## Supported frameworks and providers
+
+Unpic supports ten different frontend frameworks, and 26 different image
+providers. The supported frameworks are:
+
+[Angular](/img/angular) • [Astro](/img/astro) • [Lit](/img/lit) •
+[Preact](/img/preact) • [Qwik](/img/qwik) • [React](/img/react) •
+[Solid](/img/solid) • [Svelte](/img/svelte) • [Vue](/img/vue) •
+[WebC](/img/webc)
+
+Here are a few examples of how to use Unpic with different frameworks:
+
+#### Astro
+
+```astro
+---
+import { Image } from "@unpic/astro";
+---
+
+<Image
+  src="https://res.cloudinary.com/demo/image/upload/dog"
+  width={600}
+  height={300}
+  alt="Dog"
+/>
+```
+
+#### Solid
+
+```jsx
+import { Image } from "@unpic/solid";
+import type { Component } from "solid-js";
+
+const App: Component = () => {
+  return (
+    <Image
+        src="https://cdn.shopify.com/static/sample-images/garnished.jpeg"
+        width={800}
+        height={600}
+        alt="Tasty food"
+    />
+  );
+};
+```
+
+#### Svelte
+
+```svelte
+<script>
+  import { Image } from "@unpic/svelte";
+</script>
+<Image
+  src="https://bunnyoptimizerdemo.b-cdn.net/bunny7.jpg"
+  width={800}
+  height={600}
+  alt="Bunny"
+/>
+```
+
+#### Vue
+
+```vue
+<script setup lang="ts">
+import { Image } from "@unpic/vue";
+</script>
+<template>
+  <Image
+    src="https://images.unsplash.com/photo-1674255909399-9bcb2cab6489"
+    width="600"
+    height="600"
+    alt="Beach"
+  />
+</template>
+```
+
+To see more examples from all supported frameworks, check out the [docs](/img).
+
+## What's next?
+
+I'm excited to see what people build with the new version Unpic. Let me know how
+you're using it, and what you'd like to see in future versions. If you'd like to
+contribute, check out the [contributing guide](/lib/contributing/).
