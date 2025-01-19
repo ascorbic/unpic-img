@@ -15,8 +15,9 @@ type Props = CollectionEntry<"docs">;
 
 const post = Astro.props;
 const { Content, headings } = await post.render();
+const editUrl = `https://github.com/ascorbic/unpic-img/edit/main/docs/src/content/docs/${Astro.props.id}`;
 ---
 
-<DocsLayout headings={headings} {...post.data}>
+<DocsLayout headings={headings} {...post.data} editUrl={editUrl}>
   <Content />
 </DocsLayout>

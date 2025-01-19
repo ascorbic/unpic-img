@@ -17,9 +17,14 @@ type Props = CollectionEntry<"docs">;
 const post = Astro.props;
 const { Content, headings } = await post.render();
 const apiHeadings = post.data.includeApi ? await getHeadings() : [];
+const editUrl = `https://github.com/ascorbic/unpic-img/edit/main/docs/src/content/img/${Astro.props.id}`;
 ---
 
-<DocsLayout headings={[...headings, ...apiHeadings]} {...post.data}>
+<DocsLayout
+  headings={[...headings, ...apiHeadings]}
+  {...post.data}
+  editUrl={editUrl}
+>
   <Content />
   {post.data.includeApi ? <Api /> : null}
 </DocsLayout>
