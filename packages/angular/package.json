@@ -1,6 +1,6 @@
 {
   "name": "@unpic/angular",
-  "version": "0.0.40",
+  "version": "1.0.0",
   "description": "A high-performance, responsive image module and directive for Angular",
   "keywords": [
     "angular",

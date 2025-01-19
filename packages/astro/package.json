@@ -1,6 +1,6 @@
 {
   "name": "@unpic/astro",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "type": "module",
   "license": "MIT",
   "description": "A high-performance, responsive image service and component library for Astro",
