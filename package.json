@@ -9,7 +9,7 @@
     "format": "pnpm prettier --write **/*.{ts,tsx,js,jsx,json,md,astro}"
   },
   "dependencies": {
-    "unpic": "https://pkg.pr.new/unpic@eb5b899"
+    "unpic": "https://pkg.pr.new/unpic@384f824"
   },
   "devDependencies": {
     "@changesets/cli": "^2.27.10",

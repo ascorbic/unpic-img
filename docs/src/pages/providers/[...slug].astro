@@ -17,8 +17,20 @@ export const getStaticPaths: GetStaticPaths = async () => {
 type Props = CollectionEntry<"providers">;
 
 const { Content, headings } = await render(Astro.props);
+const editUrl = `https://github.com/ascorbic/unpic/edit/main/src/providers/${Astro.props.id}.ts`;
 ---
 
-<DocsLayout title={Astro.props.data.name} headings={headings}>
+<DocsLayout
+  title={Astro.props.data.name}
+  headings={headings}
+  description={`How to generate reponsive images with ${Astro.props.data.name} and Unpic.`}
+  editUrl={editUrl}
+>
   <Content />
+  <blockquote>
+    This page is auto-generated from the <code>{Astro.props.id}</code> provider types.
+    See anything wrong or missing? <a href={editUrl}
+      >Suggest a change on GitHub</a
+    >.
+  </blockquote>
 </DocsLayout>

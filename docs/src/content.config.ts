@@ -34,7 +34,7 @@ const blog = defineCollection({
 
 const providers = defineCollection({
   loader: await unpicTypesLoader({
-    useCache: import.meta.env.DEV,
+    useCache: false,
   }),
 });
 

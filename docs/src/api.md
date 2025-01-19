@@ -54,14 +54,15 @@ CDN can't be detected. This is useful if you are using a platform that provides
 its own image CDN, or if you are using a provider that can transform remote
 images.
 
-See the [unpic](https://github.com/ascorbic/unpic) for supported values.
+See the [the list of providers](/providers) for supported values.
 
 ### `operations`
 
-This allows you to pass provider-specific operations that will be performed on
-any images that use that provider. You can pass options for multiple providers
-if the images could come from different sources, and it will automatically apply
-the correct operations to each image, according to the detected provider.
+This allows you to pass type-safe, provider-specific operations that will be
+performed on any images that use that provider. You can pass options for
+multiple providers if the images could come from different sources, and it will
+automatically apply the correct operations to each image, according to the
+detected provider.
 
 In this example, we want the image to be flipped horizontally. The `imgix` and
 `bunny` providers both support this operation but with different names, so we
@@ -73,7 +74,8 @@ can pass both options and they will be applied to the image as required.
 
 The supported operations are specific to each provider, and are type-checked and
 should provide autocompletion in your editor. See the
-[list of supported providers](/lib#supported-providers) for the list of keys.
+[the provider docs](/providers) for the list of providers and their supported
+operations.
 
 ### `options`
 
@@ -89,9 +91,10 @@ URLs themselves.
 { cloudinary: { cloudName: "demo" }, ipx: { baseUrl: "/_images" } }}
 ```
 
-The supported options are specific to each provider, and are type-checked and
-should provide autocompletion in your editor. See the
-[list of supported providers](/lib#supported-providers) for the list of keys.
+The supported configuration options are specific to each provider, and are
+type-checked and should provide autocompletion in your editor. See the
+[the provider docs](/providers) for the list of providers and their supported
+options.
 
 ### `breakpoints`
 
@@ -148,7 +151,3 @@ Image component:
 - `aspectRatio`
 - `cdn`
 - `breakpoints`
-
-```
-
-```

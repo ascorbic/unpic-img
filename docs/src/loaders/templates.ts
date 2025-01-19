@@ -50,6 +50,25 @@ import { Image } from '@unpic/astro';
   }}
 />
 \`\`\`
+
+In supported frameworks you can also import the [base component](/img/base) and pass the
+transformer to it directly. This lets you create a custom component that doesn't need to include
+and other transformer code.
+
+\`\`\`jsx
+---
+import { Image } from '@unpic/astro/base';
+import { transform } from 'unpic/providers/${slug}';
+---
+<Image
+  src="image.jpg"
+  width={800}
+  height={600}
+  transformer={transformer}
+/>
+
+\`\`\`
+
 `;
 
 export const getMarkdown = (
@@ -68,7 +87,7 @@ The \`${provider}\` provider supports the following arguments:
 ${
   options.length
     ? options.map(typeToMarkdown).join("\n")
-    : `The \`${provider}\` provider does not support any extra options.`
+    : `The \`${provider}\` provider does not support any extra configuration options.`
 }
 
 ### Operations

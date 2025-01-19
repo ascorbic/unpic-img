@@ -3,10 +3,10 @@ title: "Upgrading to Unpic v1"
 description: "How to upgrade to the stable release of Unpic"
 ---
 
-This is a major update, with changes to the API of all frameworks. This will not
-affect you if you are just using the components with default options, but if you
-are passing custom transformers or specifying the CDN then you will need to
-update your code.
+Version 1 is the first stable release of Unpic. This is a major update from 0.x,
+with changes to the API of all frameworks. This will not affect you if you are
+just using the components with default options, but if you are passing custom
+transformers or specifying the CDN then you will need to update your code.
 
 ## Breaking changes
 
@@ -15,7 +15,7 @@ update your code.
 - The `transformer` property has been removed from the default `Image`
   component. Import [the base component](#base-component) and specify the
   transformer there instead. The type signature for the transformer has also
-  changed. See the `unpic` library documentation for more information.
+  changed. See the [`unpic` library](/lib) documentation for more information.
 - The `cdn` property has been removed. Either use the new
   [`fallback` property](#fallback-providers) or import
   [the base component](#base-component) and pass a single provider to it.

@@ -13,10 +13,18 @@ const currentPageMatch = currentPage.endsWith("/")
   : currentPage.slice(1);
 const sidebar = {
   ...SIDEBAR,
-  "Image providers": Object.entries(SupportedProviders).map(([link, text]) => ({
-    link: `providers/${link}`,
-    text,
-  })),
+  "Image providers": [
+    {
+      link: "providers",
+      text: "Overview",
+    },
+    ...Object.entries(SupportedProviders)
+      .map(([link, text]) => ({
+        link: `providers/${link}`,
+        text,
+      }))
+      .sort((a, b) => a.text.localeCompare(b.text)),
+  ],
 };
 ---
 

@@ -20,7 +20,7 @@
     "vitest": "^2.1.8"
   },
   "dependencies": {
-    "unpic": "https://pkg.pr.new/unpic@eb5b899"
+    "unpic": "https://pkg.pr.new/unpic@384f824"
   },
   "main": "./dist/auto.js",
   "module": "./dist/auto.mjs",

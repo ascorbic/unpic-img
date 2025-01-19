@@ -44,7 +44,7 @@
     "react-dom": "^18.3.1",
     "react-live": "^4.1.7",
     "typescript": "^5.7.3",
-    "unpic": "https://pkg.pr.new/unpic@eb5b899"
+    "unpic": "https://pkg.pr.new/unpic@384f824"
   },
   "devDependencies": {
     "@types/pako": "^2.0.3",
