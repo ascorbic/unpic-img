@@ -1,6 +1,6 @@
 {
   "name": "@unpic/react",
-  "version": "0.1.15",
+  "version": "1.0.0",
   "license": "MIT",
   "description": "React component for responsive, high-performance images",
   "keywords": [
