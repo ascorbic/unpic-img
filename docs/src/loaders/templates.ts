@@ -20,7 +20,7 @@ image URLs directly.
 You can import the \`${slug}\` provider from the \`unpic\` package using a subpath import:
 
 \`\`\`js
-import { transformer } from 'unpic/providers/${slug}';
+import { transform } from 'unpic/providers/${slug}';
 \`\`\`
 
 If using an Unpic component, you can optionally pass custom operations and options to the 
