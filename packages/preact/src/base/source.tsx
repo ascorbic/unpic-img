@@ -13,7 +13,7 @@ export function Source<TOperations extends Operations, TOptions>(
   return (
     <source
       {...transformBaseSourceProps<
-        UnSignal<JSX.HTMLAttributes<HTMLSourceElement>>,
+        UnSignal<JSX.SourceHTMLAttributes<HTMLSourceElement>>,
         TOperations,
         TOptions
       >(props)}

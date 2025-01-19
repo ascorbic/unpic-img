@@ -2,7 +2,7 @@ import { transformProps, UnpicImageProps } from "@unpic/core";
 import { JSX } from "preact";
 import { UnSignal } from ".";
 
-type ImgPropsWithoutSignals = UnSignal<JSX.HTMLAttributes<HTMLImageElement>>;
+type ImgPropsWithoutSignals = UnSignal<JSX.ImgHTMLAttributes<HTMLImageElement>>;
 
 export type ImageProps = UnpicImageProps<ImgPropsWithoutSignals>;
 

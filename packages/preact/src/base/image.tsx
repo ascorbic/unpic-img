@@ -6,7 +6,7 @@ import {
 import { JSX } from "preact";
 import { UnSignal } from "../index";
 
-type ImgPropsWithoutSignals = UnSignal<JSX.HTMLAttributes<HTMLImageElement>>;
+type ImgPropsWithoutSignals = UnSignal<JSX.ImgHTMLAttributes<HTMLImageElement>>;
 
 export type ImageProps<
   TOperations extends Operations,
