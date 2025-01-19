@@ -91,7 +91,7 @@
     "@types/react-dom": "^18.3.5",
     "@vitejs/plugin-react": "^4.3.4",
     "cssstyle": "^4.2.1",
-    "jsdom": "^25.0.1",
+    "jsdom": "^26.0.0",
     "next": "^15.1.5",
     "publint": "^0.3.2",
     "react": "^18.3.1",

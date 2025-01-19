@@ -33,7 +33,7 @@
     "@testing-library/dom": "^10.4.0",
     "@types/jsdom": "^21.1.7",
     "astro": "^5.1.7",
-    "jsdom": "^25.0.1",
+    "jsdom": "^26.0.0",
     "vitest": "^3.0.2"
   },
   "dependencies": {
