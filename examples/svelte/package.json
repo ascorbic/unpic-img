@@ -20,6 +20,6 @@
   },
   "dependencies": {
     "@unpic/svelte": "workspace:^",
-    "unpic": "https://pkg.pr.new/unpic@133"
+    "unpic": "https://pkg.pr.new/unpic@eb5b899"
   }
 }

@@ -33,8 +33,11 @@ export type Sidebar = Record<
 export const SIDEBAR: Sidebar = {
   about: [
     { text: "Introduction", link: "about" },
-    { text: "Learn Unpic", link: "learn" },
     { text: "Blog", link: "blog" },
+  ],
+  guides: [
+    { text: "Learn Unpic", link: "learn" },
+    { text: "Upgrading to v1", link: "upgrading-to-v1" },
   ],
   frameworks: [
     { icon: "logos:angular-icon", text: "Angular", link: "img/angular" },

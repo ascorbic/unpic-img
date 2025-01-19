@@ -1,4 +1,5 @@
 ---
+import { SupportedProviders } from "unpic";
 import { SIDEBAR } from "../../consts";
 import { Icon } from "astro-icon/components";
 
@@ -10,7 +11,13 @@ const { currentPage } = Astro.props;
 const currentPageMatch = currentPage.endsWith("/")
   ? currentPage.slice(1, -1)
   : currentPage.slice(1);
-const sidebar = SIDEBAR;
+const sidebar = {
+  ...SIDEBAR,
+  "Image providers": Object.entries(SupportedProviders).map(([link, text]) => ({
+    link: `providers/${link}`,
+    text,
+  })),
+};
 ---
 
 <nav aria-labelledby="grid-left">

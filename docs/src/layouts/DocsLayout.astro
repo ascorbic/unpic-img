@@ -5,18 +5,20 @@ import HeadSEO from "../components/HeadSEO.astro";
 import PageContent from "../components/PageContent/PageContent.astro";
 import LeftSidebar from "../components/LeftSidebar/LeftSidebar.astro";
 import RightSidebar from "../components/RightSidebar/RightSidebar.astro";
-import { GITHUB_EDIT_URL, SITE } from "../consts";
+import { GITHUB_EDIT_URL } from "../consts";
 import MainLayout from "./MainLayout.astro";
 
 type Props = CollectionEntry<"docs">["data"] & {
   headings: MarkdownHeading[];
+  editUrl?: string;
 };
 
 const { headings, ...data } = Astro.props;
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 const currentPage = Astro.url.pathname;
 const currentFile = `src/content/docs${currentPage.replace(/\/$/, "")}.md`;
-const githubEditUrl = `${GITHUB_EDIT_URL}/${currentFile}`;
+const githubEditUrl =
+  Astro.props.editUrl ?? `${GITHUB_EDIT_URL}/${currentFile}`;
 ---
 
 <MainLayout title={data.title}>

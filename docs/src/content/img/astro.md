@@ -25,7 +25,8 @@ together:
   component for art direction.
 - An **Astro image service**, which allows you to use the regular Astro Image
   component unchanged, and have it automatically generate the correct srcset and
-  attributes for all images.
+  attributes for all images. This will also enable automatic transforms for
+  images in Markdown.
 
 If you want to use Unpic with a UI framework on Astro, you should also install
 the Unpic package for that framework. There are packages for [Lit](/img/lit),
@@ -59,10 +60,9 @@ available:
 
 - `fallbackService`: The image service to use for local images and when the CDN
   can't be determined from the image src. Value can be any supported image CDN,
-  or "sharp" or "squoosh" to use the local image service. By default it will
-  either use the local "sharp" service, or will try to detect available services
-  based on the environment. This detection currently works on Netlify and
-  Vercel.
+  or "sharp" to use the local image service. By default it will either use the
+  local "sharp" service, or will try to detect available services based on the
+  environment. This detection currently works on Netlify and Vercel.
 - `placeholder`: The default placeholder to display when images are loading. If
   this is set, the image will have a background set while the image is loading.
   For more details see the [placeholder](#placeholders) section.

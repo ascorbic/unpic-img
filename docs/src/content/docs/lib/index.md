@@ -11,8 +11,9 @@ is little consistency in these APIs, and it's often unclear what the API is for
 a given URL. This library aims to provide a consistent interface for detecting
 image CDN URLs and transforming them.
 
-If you'd like to use this on the web, you might want to try [unpic-img](/img), a
-multi-framework image component, powered by Unpic.
+These docs are for the `unpic` library, which powers the framework-specific
+image libraries. See the [framework-specific docs](/about) for more information
+on how to use the library with your framework.
 
 It designed to work with image URLs from sources such as CMSs and other
 user-generated content, where the source image may or may not be from an image
@@ -25,12 +26,8 @@ transform the image on the fly.
 
 ## Usage
 
-This library is available via URL imports for Deno and via npm for Node. To use
-it in Deno, import the module from deno.land:
-
-```ts
-import { transformUrl } from "https://deno.land/x/unpic/mod.ts";
-```
+This library is available via NPM as `unpic` and JSR as
+[`@unpic/lib`](https://jsr.io/@unpic/lib).
 
 To use it in Node, install it from npm:
 
@@ -44,117 +41,208 @@ Then import it in your code:
 import { transformUrl } from "unpic";
 ```
 
+To use it in Deno, install or import
+[the module from JSR](https://jsr.io/@unpic/lib):
+
+```ts
+import { transformUrl } from "jsr:@unpic/lib";
+```
+
+If you previously installed the library from deno.land/x, you should update to
+use JSR instead as the deno.land/x version is no longer updated.
+
 You can then use the `transformUrl` function to transform a URL:
 
 ```ts
-const url = transformUrl({
-  url: "https://cdn.shopify.com/static/sample-images/bath_grande_crop_center.jpeg",
-  width: 800,
-  height: 600,
-});
+const url = transformUrl(
+  "https://cdn.shopify.com/static/sample-images/bath_grande_crop_center.jpeg",
+  {
+    width: 800,
+    height: 600,
+  },
+);
 
-console.log(url.toString());
-
+console.log(url);
 // https://cdn.shopify.com/static/sample-images/bath.jpeg?width=800&height=600&crop=center
 ```
 
-You can also use the `parseUrl` function to parse a URL and get the CDN and any
-params:
+You can also use the `parseUrl` function to parse a URL and get information
+about the image:
 
 ```ts
-const parsedUrl = parseUrl(
+const parsed = parseUrl(
   "https://cdn.shopify.com/static/sample-images/bath_800x600_crop_center.jpeg",
 );
 
-console.log(parsedUrl);
+console.log(parsed);
 // {
-//   cdn: "shopify",
-//   width: 800,
-//   height: 600,
-//   base: "https://cdn.shopify.com/static/sample-images/bath.jpeg",
-//   params: {
-//     crop: "center",
-//   },
+//   provider: "shopify",
+//   src: "https://cdn.shopify.com/static/sample-images/bath.jpeg",
+//   operations: {
+//     width: 800,
+//     height: 600,
+//     crop: "center"
+//   }
 // }
 ```
 
-You can bypass auto-detection by specifying the CDN:
+You can bypass auto-detection by specifying the provider, or use
+[provider imports](#provider-imports) to import a single provider.
 
 ```ts
-const url = transformUrl({
-  url: "https://cdn.shopify.com/static/sample-images/bath_grande_crop_center.jpeg",
-  width: 800,
-  height: 600,
-  cdn: "shopify",
-});
+const url = transformUrl(
+  "https://cdn.shopify.com/static/sample-images/bath_grande_crop_center.jpeg",
+  {
+    width: 800,
+    height: 600,
+    provider: "shopify",
+  },
+);
 ```
 
 This is particularly useful if you are using the CDN with a custom domain which
 is not auto-detected.
 
-## Supported CDN APIs
+You can also specify a fallback provider to use if the URL is not recognised as
+coming from a known CDN:
 
-- Adobe Dynamic Media (Scene7)
-- Builder.io
-- Bunny.net
-- Cloudflare
-- Contentful
-- Cloudinary
-- Directus
-- Imgix, including Unsplash, DatoCMS, Sanity and Prismic
-- Kontent.ai
-- Netlify
-- Shopify
-- Storyblok
-- Vercel / Next.js
-- WordPress.com and Jetpack Site Accelerator
-- ImageEngine
-- ImageKit.io
-- Cloudimage
-- Uploadcare
-- Supabase
+```ts
+const url = transformUrl("https://example.com/image.jpg", {
+  width: 800,
+  height: 600,
+  fallback: "netlify",
+});
+```
 
-## Delegated URLs
+This is useful if you are using a CDN provider that supports external images,
+but you still want to use the original CDN if possible.
 
-Some transformers support URL delegation. This means that the source image URL
-is also checked, and if it matches a CDN then the transform is applied directly
-to the source image. For example: consider a `next/image` URL that points to an
-image on Shopify. The URL is detected as a `nextjs` URL because it starts with
-`/_next/image`. The `nextjs` transformer supports delegation, so the source
-image URL is then checked. As it matches a Shopify domain, the transform is
-applied directly to the Shopify URL. This means that the image is transformed on
-the fly by Shopify, rather than by Next.js. However if the source image is not a
-supported CDN, or is a local image then the `nextjs` transformer will return a
-`/_next/image` URL.
+## Custom operations
+
+Different CDNs support different operations. By default, the transform function
+accepts the operations `width`, `height`, `quality` and `format`. You can pass
+provider-specific operations as the third argument to the `transformUrl`
+function:
+
+```ts
+const url = transformUrl(
+  "https://cdn.shopify.com/static/sample-images/bath.jpeg",
+  {
+    width: 800,
+    height: 600,
+  },
+  {
+    shopify: {
+      crop: "center",
+    },
+  },
+);
+```
+
+You can pass options for multiple providers, which will be passed to the
+provider depending on the detected CDN:
+
+```ts
+const url = transformUrl(
+  src,
+  {
+    width: 800,
+    height: 600,
+  },
+  {
+    shopify: {
+      crop: "left",
+    },
+    imgix: {
+      position: "left",
+    },
+  },
+);
+```
+
+These options are type-safe, as we include the types for each provider.
+
+You can do the same for provider options, such as base URLs project keys.
+
+```ts
+const url = transformUrl(
+  src,
+  {
+    width: 800,
+    height: 600,
+    fallback: "cloudinary",
+  },
+  {
+    shopify: {
+      crop: "left",
+    },
+  },
+  {
+    cloudinary: {
+      cloudName: "demo",
+    },
+  },
+);
+```
+
+## Provider imports
+
+If you know which providers you will be using, you can import them directly.
+This will reduce the bundle size of your application, as only the providers you
+use will be included. In this case you can pass provider-specific operations in
+the object.
+
+```ts
+import { transform } from "unpic/providers/shopify";
+
+const url = transform(
+  "https://cdn.shopify.com/static/sample-images/bath.jpeg",
+  {
+    width: 800,
+    height: 600,
+    crop: "center",
+  },
+);
+```
+
+## Supported Providers
+
+- Adobe Dynamic Media (Scene7) (`scene7`)
+- Astro image service (`astro`)
+- Builder.io (`builder.io`)
+- Bunny.net, including caisy (`bunny`)
+- Cloudflare (`cloudflare`) and (`cloudflare_images`)
+- Cloudimage (`cloudimage`)
+- Cloudinary (`cloudinary`)
+- Contentful (`contentful`)
+- Contentstack (`contentstack`)
+- Directus (`directus`)
+- Hygraph (`hygraph`)
+- ImageEngine (`imageengine`)
+- ImageKit (`imagekit`)
+- Imgix, including Unsplash, DatoCMS, Sanity and Prismic (`imgix`)
+- IPX (`ipx`)
+- KeyCDN (`keycdn`)
+- Kontent.ai (`kontent.ai`)
+- Netlify (`netlify`)
+- Next.js image service (`nextjs`)
+- Shopify (`shopify`)
+- Storyblok (`storyblok`)
+- Supabase (`supabase`)
+- Uploadcare (`uploadcare`)
+- Vercel (`vercel`)
+- WordPress.com and Jetpack Site Accelerator (`wordpress`)
 
 ## FAQs
 
-- **What is an image CDN?** An image CDN is a service that provides a URL API
-  for transforming images. This is often used to resize images on the fly, but
-  can also be used to apply other transforms such as cropping, rotation,
-  compression, etc. This includes dedicated image CDNs such as Imgix and
-  Cloudinary, CMSs such as Contentful, Builder.io and Sanity, general CDNs such
-  as Bunny.net that provide an image API, but also other service providers such
-  as Shopify. The CMSs and other service providers often use a dedicated image
-  CDN to provide the image API, most commonly Imgix. In most cases they support
-  the same API, but in others they may proxy the image through their own CDN, or
-  use a different API.
-- **Why would I use this instead of the CDN's own SDK?** If you you know that
-  your images will all come from one CDN, then you probably should use the CDN's
-  own SDK. This library is designed to work with images from multiple CDNs, and
-  to work with images that may or may not be from a CDN. It is particularly
-  useful for images that may come from an arbitrary source, such as a CMS. It is
-  also useful for parsing URLs that may already have transforms applied, because
-  most CDN SDKs will not parse these URLs correctly.
 - **Can you add support for CDN X?** If it supports a URL API and doesn't
   require signed URLs then yes, please open an issue or PR.
 - **Can you add my domain to CDN X?** If you provide a service where end-users
   use your URLs then probably. Examples may be image providers such as Unsplash,
   or CMSs. If it is just your own site then probably not. You can manually
   specify the CDN in the arguments to `transformUrl` and `parseUrl`.
-- **Can you support more params?** We deliberately just support the most common
-  params that are shared between all CDNs. If you need more params then you can
-  use the CDN-specific API directly.
+- **Can you support more params?** Please open an issue or PR with the details.
+  See [the contributing guide](/lib/contributing) for more information.
 - **Why do you set auto format?** If the CDN support is, and no format is
   specified in `transformUrl`, the library will remove any format set in the
   source image, changing it to auto-format. In most cases, this is what you
