@@ -17,7 +17,8 @@
     "dist",
     "nextjs.d.ts",
     "next-legacy.d.ts",
-    "next.d.ts"
+    "next.d.ts",
+    "base.d.ts"
   ],
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
