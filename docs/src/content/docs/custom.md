@@ -82,6 +82,9 @@ You can then distribute that component as a library, or use it in your own site.
 
 ## Custom transformer
 
+These examples use transformers imported from `unpic/providers` package, but you
+can create your own transformer if you have specific requirements.
+
 For details on how to build a custom transformer, see the
 [contributing guide](/lib/contributing/). If you want to create a private
 transformer, you can skip the parts on contributing to the library and just
