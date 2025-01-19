@@ -6,9 +6,9 @@ export type SourceProps = UnpicSourceProps;
 export function Source(props: SourceProps) {
   return (
     <source
-      {...transformSourceProps<UnSignal<JSX.HTMLAttributes<HTMLSourceElement>>>(
-        props,
-      )}
+      {...transformSourceProps<
+        UnSignal<JSX.SourceHTMLAttributes<HTMLSourceElement>>
+      >(props)}
     />
   );
 }

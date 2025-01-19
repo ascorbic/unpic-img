@@ -47,7 +47,7 @@
   },
   "devDependencies": {
     "lit": "^3.2.1",
-    "publint": "^0.2.12",
+    "publint": "^0.3.2",
     "web-component-analyzer": "2.0.0"
   },
   "dependencies": {
