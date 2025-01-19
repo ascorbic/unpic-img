@@ -13,6 +13,8 @@ frameworks.
   [Astro](/img/astro/) • [Lit](/img/lit/) • [Preact](/img/preact/) •
   [Qwik](/img/qwik/) • [React](/img/react/) • [Solid](/img/solid/) •
   [Svelte](/img/svelte/) • [Vue](/img/vue/) • [WebC](/img/webc/)
+- See the list of [supported image providers](/providers/), including CMSs,
+  hosting providers and image CDNs.
 - Use [unpic lib](/lib) to detect and generate URLs for image CDNs and CMSs.
 - Use [unpic placeholder](/placeholder/) to generate placeholders for
   lazy-loaded images.

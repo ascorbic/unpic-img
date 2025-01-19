@@ -27,7 +27,12 @@ const providers = Object.entries(SupportedProviders).sort((a, b) =>
     {
       providers.map(([id, name]) => (
         <li>
-          <a href={`providers/${id}`}>{name}</a>
+          <a href={`/providers/${id}`}>{name}</a>
+          <br />
+          Provider:
+          <code>
+            <a href={`/providers/${id}`}>{id}</a>
+          </code>
         </li>
       ))
     }
