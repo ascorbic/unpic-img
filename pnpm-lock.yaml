@@ -12,8 +12,8 @@ importers:
   .:
     dependencies:
       unpic:
-        specifier: https://pkg.pr.new/unpic@384f824
-        version: https://pkg.pr.new/unpic@384f824
+        specifier: ^4.0.0
+        version: 4.0.0
     devDependencies:
       '@changesets/cli':
         specifier: ^2.27.10
@@ -169,8 +169,8 @@ importers:
         specifier: ^5.7.3
         version: 5.7.3
       unpic:
-        specifier: https://pkg.pr.new/unpic@384f824
-        version: https://pkg.pr.new/unpic@384f824
+        specifier: ^4.0.0
+        version: 4.0.0
     devDependencies:
       '@types/pako':
         specifier: ^2.0.3
@@ -455,8 +455,8 @@ importers:
         specifier: workspace:^
         version: link:../../packages/svelte
       unpic:
-        specifier: https://pkg.pr.new/unpic@384f824
-        version: https://pkg.pr.new/unpic@384f824
+        specifier: ^4.0.0
+        version: 4.0.0
     devDependencies:
       '@sveltejs/adapter-auto':
         specifier: ^3.0.0
@@ -578,8 +578,8 @@ importers:
   packages/core:
     dependencies:
       unpic:
-        specifier: https://pkg.pr.new/unpic@384f824
-        version: https://pkg.pr.new/unpic@384f824
+        specifier: ^4.0.0
+        version: 4.0.0
     devDependencies:
       tsup:
         specifier: ^8.3.5
@@ -14397,9 +14397,8 @@ packages:
     resolution: {integrity: sha512-6bc58dPYhCMHHuwxldQxO3RRNZ4eCogZ/st++0+fcC1nr0jiGUtAdBJ2qzmLQWSxbtz42pWt4QQMiZ9HvZf5cg==}
     engines: {node: '>=0.10.0'}
 
-  unpic@https://pkg.pr.new/unpic@384f824:
-    resolution: {tarball: https://pkg.pr.new/unpic@384f824}
-    version: 3.22.0
+  unpic@4.0.0:
+    resolution: {integrity: sha512-WaB6lnIPV1NbgnkWHOLrHsBQkLt6ytwF1pnCuSs9aVvEwFDv47vQhefrJS+cBwiK5Y5y1xf6hzySgqxOZ5gdyg==}
 
   unpipe@1.0.0:
     resolution: {integrity: sha512-pjy2bYhSsufwWlKwPc+l3cN7+wuJlK6uz0YdJEOlQDbl6jo/YlPi4mb8agUkVC8BF7V8NuzeyPNqRksA3hztKQ==}
@@ -32903,7 +32902,7 @@ snapshots:
     dependencies:
       normalize-path: 2.1.1
 
-  unpic@https://pkg.pr.new/unpic@384f824: {}
+  unpic@4.0.0: {}
 
   unpipe@1.0.0: {}
 
