@@ -1,5 +1,7 @@
 ---
 import { Image } from "@unpic/astro";
+import { Image as BaseImage } from "@unpic/astro/base";
+import { transform } from "unpic/providers/imgix";
 import lighthouse from "../formentor.jpg";
 ---
 
@@ -13,12 +15,16 @@ import lighthouse from "../formentor.jpg";
   </head>
   <body style="margin:0">
     <div>
-      <Image
+      <BaseImage
         src="https://images.unsplash.com/photo-1617718295766-0f839c2853e7"
         layout="fullWidth"
         alt="fullWidth"
         aspectRatio={16 / 9}
         priority
+        transformer={transform}
+        operations={{
+          flip: "v",
+        }}
       />
       <Image
         src={lighthouse}
@@ -33,6 +39,11 @@ import lighthouse from "../formentor.jpg";
         height={600}
         layout="fixed"
         alt="fixed"
+        operations={{
+          bunny: {
+            flop: true,
+          },
+        }}
       />
       <div style={{ height: "10000px" }}></div>
       <Image

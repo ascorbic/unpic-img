@@ -1,14 +1,20 @@
 <script lang="ts">
   import { Image } from "@unpic/svelte";
+  import { Image as BaseImage } from "@unpic/svelte/base";
+  import { transform } from "unpic/providers/imgix";
 </script>
 
 <div>
-  <Image
+  <BaseImage
     src="https://images.unsplash.com/photo-1617718295766-0f839c2853e7"
     layout="fullWidth"
     alt="fullWidth"
     aspectRatio={16 / 9}
     priority
+    transformer={transform}
+    operations={{
+      flip: "v",
+    }}
   />
   <Image
     src="https://cdn.shopify.com/static/sample-images/garnished.jpeg"
@@ -23,6 +29,11 @@
     height={600}
     layout="fixed"
     alt="fixed"
+    operations={{
+      bunny: {
+        flop: true,
+      },
+    }}
   />
   <div style="height: 10000px"></div>
   <Image

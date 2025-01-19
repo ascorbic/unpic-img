@@ -8,7 +8,9 @@ export type ImageProps = UnpicImageProps<
 
 export const Image = React.forwardRef<HTMLImageElement, ImageProps>(
   function Image(props, ref) {
-    const camelizedProps = camelizeProps(transformProps(props));
+    const camelizedProps = camelizeProps(
+      transformProps<React.ImgHTMLAttributes<HTMLImageElement>>(props),
+    );
     return <img {...camelizedProps} ref={ref} />;
   },
 );

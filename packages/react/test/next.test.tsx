@@ -14,7 +14,7 @@ describe("the Next.js component", () => {
       expect(img).toBeTruthy();
       console.log(img.src);
       expect(img.src).toMatch(/^https:\/\//);
-      expectImagePropsToMatchTransformed(img, { ...props, cdn: "nextjs" });
+      expectImagePropsToMatchTransformed(img, { ...props, fallback: "nextjs" });
     });
   }
 
@@ -27,7 +27,10 @@ describe("the Next.js component", () => {
     render(<Image {...props} />);
     const img = screen.getByAltText<HTMLImageElement>(props.alt);
     expect(img).toBeTruthy();
-    expect(img.src).toMatch(/\/_next\/image\?url=https%3A%2F%2Fexample.com/);
+    console.log(img.src);
+    expect(img.src).toMatch(
+      /\/_next\/image\?w=800&q=75&url=https%3A%2F%2Fexample.com/,
+    );
   });
 
   test(`renders an image with data and aria attributes`, () => {
@@ -44,6 +47,6 @@ describe("the Next.js component", () => {
     expect(img.dataset.foo).toBe("bar");
     expect(img.dataset.ok).toBe("true");
     expect(img.getAttribute("aria-label")).toBe("A cool image");
-    expectImagePropsToMatchTransformed(img, { ...props, cdn: "nextjs" });
+    expectImagePropsToMatchTransformed(img, { ...props, fallback: "nextjs" });
   });
 });

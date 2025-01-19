@@ -1,6 +1,6 @@
 import type { UnpicConfig } from "./service";
 import { getDefaultService } from "./service/base";
-import type { CdnOptions, ImageCdn } from "unpic";
+import type { ProviderOptions, ImageCdn } from "unpic";
 import type { AstroConfig } from "astro";
 
 export function getDefaultImageCdn(config: UnpicConfig): ImageCdn {
@@ -15,14 +15,13 @@ export function getDefaultImageCdn(config: UnpicConfig): ImageCdn {
 
 export function getEndpointOptions(
   imageConfig: AstroConfig["image"],
-  cdnOptions: CdnOptions = {},
-): CdnOptions {
-  cdnOptions.astro ??= {};
-  cdnOptions.astro.endpoint =
+  options: Partial<ProviderOptions> = {},
+): Partial<ProviderOptions> {
+  options.astro ??= {};
+  options.astro.endpoint =
     typeof imageConfig?.endpoint === "object"
       ? // The astro types are wrong here
         (imageConfig?.endpoint as any)?.route
       : imageConfig?.endpoint;
-
-  return cdnOptions;
+  return options;
 }

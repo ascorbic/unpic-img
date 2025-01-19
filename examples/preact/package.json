@@ -21,7 +21,7 @@
     "@babel/core": "^7.24.0",
     "@playwright/test": "^1.42.1",
     "@preact/preset-vite": "^2.8.2",
-    "typescript": "^5.4.2",
+    "typescript": "^5.6.3",
     "vite": "^4.5.2"
   }
 }

@@ -1,11 +1,15 @@
 import { defineCollection, z } from "astro:content";
-import { SITE } from "../consts";
+import { SITE } from "./consts";
+import { unpicTypesLoader } from "./loaders/type-loader";
 
 const docs = defineCollection({
   schema: z.object({
     title: z.string().default(SITE.title),
     description: z.string().default(SITE.description),
-    dir: z.union([z.literal("ltr"), z.literal("rtl")]).default("ltr"),
+    dir: z
+      .union([z.literal("ltr"), z.literal("rtl")])
+      .default("ltr")
+      .optional(),
     image: z
       .object({
         src: z.string(),
@@ -28,4 +32,10 @@ const blog = defineCollection({
   }),
 });
 
-export const collections = { docs, img: docs, blog };
+const providers = defineCollection({
+  loader: await unpicTypesLoader({
+    useCache: false,
+  }),
+});
+
+export const collections = { docs, img: docs, blog, providers };

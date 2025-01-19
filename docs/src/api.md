@@ -42,14 +42,59 @@ visible if the image has transparency.
 
 ### `aspectRatio`
 
-Instead of specifying both `width` and `height`, you can specify can
+Instead of specifying both `width` and `height`, you can specify an
 `aspectRatio`.
 
-### `cdn`
+### `fallback`
 
-By default the CDN is auto-detected from the `src` URL. If you want to override
-this, you can specify a CDN object. See the
-[unpic](https://github.com/ascorbic/unpic) for supported values.
+By default the CDN is auto-detected from the `src` URL, and if it can't be
+detected then it will use the source URL without transformation. You can specify
+a fallback provider here instead, and all images will use this provider if the
+CDN can't be detected. This is useful if you are using a platform that provides
+its own image CDN, or if you are using a provider that can transform remote
+images.
+
+See the [the list of providers](/providers) for supported values.
+
+### `operations`
+
+This allows you to pass type-safe, provider-specific operations that will be
+performed on any images that use that provider. You can pass options for
+multiple providers if the images could come from different sources, and it will
+automatically apply the correct operations to each image, according to the
+detected provider.
+
+In this example, we want the image to be flipped horizontally. The `imgix` and
+`bunny` providers both support this operation but with different names, so we
+can pass both options and they will be applied to the image as required.
+
+```js
+{ imgix: { flip: "h" }, bunny: { flop: true } }}
+```
+
+The supported operations are specific to each provider, and are type-checked and
+should provide autocompletion in your editor. See the
+[the provider docs](/providers) for the list of providers and their supported
+operations.
+
+### `options`
+
+This allows you to pass provider-specific options that will be used for any
+images that use that provider. These options are used to configure the provider,
+including account IDs, domains and other settings. You can pass options for
+multiple providers if the images could come from different sources, and it will
+automatically apply the correct options to each image, according to the detected
+provider. These do not need to be provided if all images have options set in the
+URLs themselves.
+
+```js
+{ cloudinary: { cloudName: "demo" }, ipx: { baseUrl: "/_images" } }}
+```
+
+The supported configuration options are specific to each provider, and are
+type-checked and should provide autocompletion in your editor. See the
+[the provider docs](/providers) for the list of providers and their supported
+options.
 
 ### `breakpoints`
 
@@ -57,6 +102,10 @@ By default the image breakpoints used in the `srcset` are generated based on the
 layout and image size. You can override this by specifying an array of
 breakpoints. The breakpoints are specified as an array of numbers, representing
 the width of the image in pixels.
+
+```js
+[320, 640, 960, 1280];
+```
 
 ### Other props
 

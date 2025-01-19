@@ -5,5 +5,5 @@ import type { UnpicImageProps } from "@unpic/core";
 export type ImageProps = UnpicImageProps<QwikIntrinsicElements["img"]>;
 
 export const Image = component$((props: ImageProps) => {
-  return <img {...transformProps(props)} />;
+  return <img {...transformProps<QwikIntrinsicElements["img"]>(props)} />;
 });

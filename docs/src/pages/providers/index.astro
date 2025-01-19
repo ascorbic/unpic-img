@@ -1,0 +1,50 @@
+---
+import { SupportedProviders } from "unpic";
+import DocsLayout from "../../layouts/DocsLayout.astro";
+
+const providers = Object.entries(SupportedProviders).sort((a, b) =>
+  a[1].localeCompare(b[1])
+);
+---
+
+<DocsLayout
+  title="Image providers"
+  headings={[]}
+  description={`Unpic supports ${providers.length} image providers, so that probably includes yours.`}
+>
+  <p>
+    Unpic can transform images using all of these services, with type-safe
+    operations and config options. A lot of other services use these under the
+    hood and can often also be detected. For example, most CMSs use Imgix and
+    will work with additional configuration.
+  </p>
+  <p>
+    Most providers can be auto-detected, so work with zero config. However if
+    you want to use extra features and configuration, check out the
+    provider-specific docs below.
+  </p>
+  <p>
+    If you would like to add a provider, see <a href="/lib/contributing"
+      >the contributing guide</a
+    >.
+  </p>
+  <h3>Supported Providers</h3>
+  <p>
+    Click on the link to see all supported transform operations and config
+    options for each provider.
+  </p>
+  <ul>
+    {
+      providers.map(([id, name]) => (
+        <li>
+          <a href={`/providers/${id}`}>{name}</a>
+          <br />
+          Provider:
+          <code>
+            <a href={`/providers/${id}`}>{id}</a>
+          </code>
+        </li>
+      ))
+    }
+  </ul>
+</DocsLayout>

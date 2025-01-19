@@ -32,15 +32,12 @@ const config: UnpicConfig = imageConfig.service?.config;
 
 sourceProps.layout ||= config?.layout;
 
-if (!sourceProps.cdn) {
-  sourceProps.cdn = getDefaultImageCdn(config);
+if (!sourceProps.cdn && !sourceProps.fallback) {
+  sourceProps.fallback = getDefaultImageCdn(config);
 }
 
-if (sourceProps.cdn === "astro") {
-  sourceProps.cdnOptions = getEndpointOptions(
-    imageConfig,
-    sourceProps.cdnOptions,
-  );
+if (sourceProps.cdn === "astro" || sourceProps.fallback === "astro") {
+  sourceProps.options = getEndpointOptions(imageConfig, sourceProps.options);
 }
 ---
 

@@ -10,7 +10,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        site: [astro, preact, qwik, react, solid, webc]
+        site: [astro, preact, qwik, react, solid, vue, webc]
     steps:
       - run: echo Running tests in ${{ matrix.site }}
       - name: Checkout
@@ -37,6 +37,7 @@ jobs:
         run: npx playwright test
         env:
           SITE: ${{ matrix.site }}
+          NETLIFY: 1
       - name: Upload test report
         if: always()
         uses: actions/upload-artifact@v4
