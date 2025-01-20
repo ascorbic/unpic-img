@@ -3,8 +3,8 @@ title: "Unpic 1.0"
 description:
   "Introducing the first version of Unpic: image components for every framework"
 publishDate: 2025-01-19
-image: https://images.unsplash.com/photo-1737229940875-293ed0c4e8af?q=80&w=2942&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
-image_alt: Sun in woodland
+image: https://images.unsplash.com/photo-1665065769085-c37b664c6386?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fHdvb2RsYW5kfGVufDB8fDB8fHww
+image_alt: Aerial view of woodland
 # bluesky_post: https://bsky.app/profile/mk.gg/post/3lb3cxyeh3c2fs
 ---
 
@@ -13,11 +13,13 @@ import operationsImg from "./provider-operations.png";
 import optionsImg from "./provider-options.png";
 import fallbackImg from "./fallbacks.png";
 
-Since starting work on Unpic two years ago, I've been astounded by the response
-from the community. With over 50,000 npm downloads per week, 1500 stars and a
-growing number of contributors on GitHub, it's clear that developers really need
-a good way to handle images. After two years of development, I'm excited to
-announce the first stable release of Unpic. To jump straight in, see
+After two years of development, I'm excited to announce the first stable release
+of Unpic.
+
+Since starting work on Unpic, I've been astounded by the response from the
+community. With over 50,000 npm downloads per week, 1500 stars and a growing
+number of contributors on GitHub, it's clear that developers really need a good
+way to handle images. To jump straight in, see
 [the guide to upgrading to v1](/upgrading-to-v1).
 
 ## Meet Unpic
@@ -27,17 +29,17 @@ components for [ten different frontend frameworks](/img) and
 [26 image hosts](/providers), most sites can have fast, responsive images with
 very little effort. A family of image components make it as easy to create a
 responsive image as it is to use an `<img>` tag. It uses your existing image CDN
-or CMS with no additional configuration. It generates the correct HTML tags with
+or CMS with no additional configuration, generating the correct HTML tags with
 all the right attributes, and lightweight styles to make the image resize
 responsively. See [how to use Unpic](#how-to-use-unpic) for more details of the
 syntax for different frameworks, and the HTML it generates.
 
 ## What's new in Unpic 1.0
 
-Most of the changes are because of a new approach to handling individual image
-CDNs and providers in the base Unpic library. This is designed to make Unpic
-more flexible, efficient and modular. It also introduces support for type-safe
-custom operations and options for each provider.
+Most of the changes are because of a new, simplified approach to handling
+individual image CDNs and providers in the base Unpic library. This is designed
+to make Unpic more flexible, efficient and modular. It also introduces support
+for type-safe custom operations and options for each provider.
 
 ### Provider operations
 
