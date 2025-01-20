@@ -54,7 +54,7 @@ for each provider separately.
 
 <Image alt="Auto-complete of provider operations" src={operationsImg} />
 
-```tsx
+```tsx {3}
 <Image
   src={imgUrl}
   operations={{ imgix: { flip: "h" }, bunny: { flop: true } }}
@@ -106,7 +106,7 @@ logic. You can provide your own transformer, or use a single, tree-shakable
 provider import. This is useful if you are using a single provider, or if you
 are building a custom component based on Unpic.
 
-```tsx
+```tsx {2,4,9}
 // Import from the `/base` subpath
 import { Image } from "@unpic/react/base";
 // Import the transformer for the provider you are using
