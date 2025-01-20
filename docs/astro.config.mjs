@@ -5,7 +5,7 @@ import mdx from "@astrojs/mdx";
 import sitemap from "@astrojs/sitemap";
 import { imageService } from "@unpic/astro/service";
 import icon from "astro-icon";
-
+import expressiveCode from "astro-expressive-code";
 import netlify from "@astrojs/netlify";
 
 // https://astro.build/config
@@ -33,16 +33,13 @@ export default defineConfig({
         "src/components/CodeEditor/index.tsx",
       ],
     }),
+    expressiveCode({
+      themes: ["one-dark-pro"],
+    }),
     mdx(),
     sitemap(),
     icon(),
   ],
-
-  markdown: {
-    shikiConfig: {
-      theme: "one-dark-pro",
-    },
-  },
 
   site: `https://unpic.pics`,
   adapter: netlify(),
