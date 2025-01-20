@@ -81,6 +81,9 @@ importers:
       '@astrojs/mdx':
         specifier: ^4.0.6
         version: 4.0.6(astro@5.1.7(@types/node@22.10.7)(db0@0.2.1)(ioredis@5.4.2)(jiti@2.4.2)(less@4.2.1)(lightningcss@1.24.1)(rollup@4.30.1)(sass@1.83.1)(terser@5.37.0)(typescript@5.7.3)(yaml@2.6.1))
+      '@astrojs/netlify':
+        specifier: ^6.1.0
+        version: 6.1.0(@types/node@22.10.7)(astro@5.1.7(@types/node@22.10.7)(db0@0.2.1)(ioredis@5.4.2)(jiti@2.4.2)(less@4.2.1)(lightningcss@1.24.1)(rollup@4.30.1)(sass@1.83.1)(terser@5.37.0)(typescript@5.7.3)(yaml@2.6.1))(encoding@0.1.13)(jiti@2.4.2)(less@4.2.1)(lightningcss@1.24.1)(rollup@4.30.1)(sass@1.83.1)(terser@5.37.0)(yaml@2.6.1)
       '@astrojs/preact':
         specifier: ^4.0.2
         version: 4.0.2(@babel/core@7.26.0)(@types/node@22.10.7)(jiti@2.4.2)(less@4.2.1)(lightningcss@1.24.1)(preact@10.25.4)(sass@1.83.1)(terser@5.37.0)(yaml@2.6.1)
@@ -130,8 +133,8 @@ importers:
         specifier: ^19.0.3
         version: 19.0.3(@types/react@19.0.7)
       '@unpic/astro':
-        specifier: workspace:^
-        version: link:../packages/astro
+        specifier: ^
+        version: 1.0.0(astro@5.1.7(@types/node@22.10.7)(db0@0.2.1)(ioredis@5.4.2)(jiti@2.4.2)(less@4.2.1)(lightningcss@1.24.1)(rollup@4.30.1)(sass@1.83.1)(terser@5.37.0)(typescript@5.7.3)(yaml@2.6.1))
       '@unpic/placeholder':
         specifier: ^0.1.2
         version: 0.1.2
@@ -1326,6 +1329,11 @@ packages:
     peerDependencies:
       astro: ^5.0.0
 
+  '@astrojs/netlify@6.1.0':
+    resolution: {integrity: sha512-k8pRjWU6vK3MiHvXfbSL2+u0ML2ATTUdqGsAxFz9HEUJdMb3d/AmAyvIgOI6x/u2ugqBQJWePq14iPnQ8qFKDA==}
+    peerDependencies:
+      astro: ^5.0.0
+
   '@astrojs/preact@4.0.2':
     resolution: {integrity: sha512-V26b1ouyjk1fhEu8mE1L0nV3d/18is/njhaP4IYXMGm+66Mf441WXINKDgOLrtQzbnFLkDUn1ZHGD4LDds6sxQ==}
     engines: {node: ^18.17.1 || ^20.3.0 || >=22.0.0}
@@ -1354,6 +1362,9 @@ packages:
   '@astrojs/telemetry@3.2.0':
     resolution: {integrity: sha512-wxhSKRfKugLwLlr4OFfcqovk+LIFtKwLyGPqMsv+9/ibqqnW3Gv7tBhtKEb0gAyUAC4G9BTVQeQahqnQAhd6IQ==}
     engines: {node: ^18.17.1 || ^20.3.0 || >=22.0.0}
+
+  '@astrojs/underscore-redirects@0.6.0':
+    resolution: {integrity: sha512-dnJgFpaM955IFNIkEEmMaaIdWXRdeZs1ID6mlGBqdjh6NiCXfKmOdq7L4fd9Dd/tr18fkLrOJ25IUJSxRAEhjQ==}
 
   '@babel/code-frame@7.24.7':
     resolution: {integrity: sha512-BcYH1CVJBO9tvyIZ2jVeXgSIMvGZ2FDRvDdOIVQyuklNKSsx+eppDEBq/g47Ayw+RqNFE+URvOShmf+f/qwAlA==}
@@ -6044,6 +6055,14 @@ packages:
     peerDependencies:
       vue: '>=2.7 || >=3'
 
+  '@unpic/astro@1.0.0':
+    resolution: {integrity: sha512-LC7PriiuAZ5EuD2u2Dgne5UzG+FvuyZNV0zc1ajkJXX4sUMOvj0FWjZc0pEYEgzTnlOGkN91x2nI9gEtDSOIyA==}
+    peerDependencies:
+      astro: ^2.0.0 || ^3.0.0 || ^4.0.0 || ^5.0.0-beta
+
+  '@unpic/core@1.0.0':
+    resolution: {integrity: sha512-O3Bhcj0WLxZOQPCWyEBkGOtYg36hMYYIvfsSqL9uWQbRmmIIWGwFsH0+dyPMCOVFsmNnMmOMytxalelgsx9WUQ==}
+
   '@unpic/pixels@1.3.0':
     resolution: {integrity: sha512-Xe3J4KU9m2NWCDZ9iwIIRYFe7VwkWEqGCy4yoKMEkjoxpcQ7TPxD+QmdTphv3yiTmrDMMIWYEEH+j4mT6dILTA==}
 
@@ -6058,6 +6077,11 @@ packages:
   '@vercel/nft@0.27.10':
     resolution: {integrity: sha512-zbaF9Wp/NsZtKLE4uVmL3FyfFwlpDyuymQM1kPbeT0mVOHKDQQNjnnfslB3REg3oZprmNFJuh3pkHBk2qAaizg==}
     engines: {node: '>=16'}
+    hasBin: true
+
+  '@vercel/nft@0.29.0':
+    resolution: {integrity: sha512-LAkWyznNySxZ57ibqEGKnWFPqiRxyLvewFyB9iCHFfMsZlVyiu8MNFbjrGk3eV0vuyim5HzBloqlvSrG4BpZ7g==}
+    engines: {node: '>=18'}
     hasBin: true
 
   '@vitejs/plugin-basic-ssl@1.1.0':
@@ -16815,6 +16839,31 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
+  '@astrojs/netlify@6.1.0(@types/node@22.10.7)(astro@5.1.7(@types/node@22.10.7)(db0@0.2.1)(ioredis@5.4.2)(jiti@2.4.2)(less@4.2.1)(lightningcss@1.24.1)(rollup@4.30.1)(sass@1.83.1)(terser@5.37.0)(typescript@5.7.3)(yaml@2.6.1))(encoding@0.1.13)(jiti@2.4.2)(less@4.2.1)(lightningcss@1.24.1)(rollup@4.30.1)(sass@1.83.1)(terser@5.37.0)(yaml@2.6.1)':
+    dependencies:
+      '@astrojs/internal-helpers': 0.4.2
+      '@astrojs/underscore-redirects': 0.6.0
+      '@netlify/functions': 2.8.2
+      '@vercel/nft': 0.29.0(encoding@0.1.13)(rollup@4.30.1)
+      astro: 5.1.7(@types/node@22.10.7)(db0@0.2.1)(ioredis@5.4.2)(jiti@2.4.2)(less@4.2.1)(lightningcss@1.24.1)(rollup@4.30.1)(sass@1.83.1)(terser@5.37.0)(typescript@5.7.3)(yaml@2.6.1)
+      esbuild: 0.24.2
+      vite: 6.0.7(@types/node@22.10.7)(jiti@2.4.2)(less@4.2.1)(lightningcss@1.24.1)(sass@1.83.1)(terser@5.37.0)(yaml@2.6.1)
+    transitivePeerDependencies:
+      - '@types/node'
+      - encoding
+      - jiti
+      - less
+      - lightningcss
+      - rollup
+      - sass
+      - sass-embedded
+      - stylus
+      - sugarss
+      - supports-color
+      - terser
+      - tsx
+      - yaml
+
   '@astrojs/preact@4.0.2(@babel/core@7.26.0)(@types/node@22.10.7)(jiti@2.4.2)(less@4.2.1)(lightningcss@1.24.1)(preact@10.25.4)(sass@1.83.1)(terser@5.37.0)(yaml@2.6.1)':
     dependencies:
       '@babel/plugin-transform-react-jsx': 7.25.9(@babel/core@7.26.0)
@@ -16889,6 +16938,8 @@ snapshots:
       which-pm-runs: 1.1.0
     transitivePeerDependencies:
       - supports-color
+
+  '@astrojs/underscore-redirects@0.6.0': {}
 
   '@babel/code-frame@7.24.7':
     dependencies:
@@ -19831,7 +19882,7 @@ snapshots:
       '@babel/parser': 7.26.3
       '@babel/types': 7.23.6
       '@netlify/binary-info': 1.0.0
-      '@netlify/serverless-functions-api': 1.14.0
+      '@netlify/serverless-functions-api': 1.26.1
       '@vercel/nft': 0.23.1(encoding@0.1.13)(supports-color@9.4.0)
       archiver: 6.0.2
       common-path-prefix: 3.0.0
@@ -22558,6 +22609,18 @@ snapshots:
       unhead: 1.11.14
       vue: 3.5.13(typescript@5.7.3)
 
+  '@unpic/astro@1.0.0(astro@5.1.7(@types/node@22.10.7)(db0@0.2.1)(ioredis@5.4.2)(jiti@2.4.2)(less@4.2.1)(lightningcss@1.24.1)(rollup@4.30.1)(sass@1.83.1)(terser@5.37.0)(typescript@5.7.3)(yaml@2.6.1))':
+    dependencies:
+      '@unpic/core': 1.0.0
+      '@unpic/pixels': 1.3.0
+      '@unpic/placeholder': 0.1.2
+      astro: 5.1.7(@types/node@22.10.7)(db0@0.2.1)(ioredis@5.4.2)(jiti@2.4.2)(less@4.2.1)(lightningcss@1.24.1)(rollup@4.30.1)(sass@1.83.1)(terser@5.37.0)(typescript@5.7.3)(yaml@2.6.1)
+      blurhash: 2.0.5
+
+  '@unpic/core@1.0.0':
+    dependencies:
+      unpic: 4.0.0
+
   '@unpic/pixels@1.3.0':
     dependencies:
       '@types/pngjs': 6.0.5
@@ -22589,6 +22652,25 @@ snapshots:
     dependencies:
       '@mapbox/node-pre-gyp': 2.0.0-rc.0(encoding@0.1.13)
       '@rollup/pluginutils': 5.1.4(rollup@4.26.0)
+      acorn: 8.14.0
+      acorn-import-attributes: 1.9.5(acorn@8.14.0)
+      async-sema: 3.1.1
+      bindings: 1.5.0
+      estree-walker: 2.0.2
+      glob: 7.2.3
+      graceful-fs: 4.2.11
+      node-gyp-build: 4.8.0
+      picomatch: 4.0.2
+      resolve-from: 5.0.0
+    transitivePeerDependencies:
+      - encoding
+      - rollup
+      - supports-color
+
+  '@vercel/nft@0.29.0(encoding@0.1.13)(rollup@4.30.1)':
+    dependencies:
+      '@mapbox/node-pre-gyp': 2.0.0-rc.0(encoding@0.1.13)
+      '@rollup/pluginutils': 5.1.4(rollup@4.30.1)
       acorn: 8.14.0
       acorn-import-attributes: 1.9.5(acorn@8.14.0)
       async-sema: 3.1.1

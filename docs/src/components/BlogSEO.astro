@@ -3,24 +3,27 @@ import type { CollectionEntry } from "astro:content";
 import { SITE, OPEN_GRAPH } from "../consts";
 
 import { getImage } from "astro:assets";
+import { transformUrl } from "unpic";
 
 type Props = { canonicalUrl: URL } & CollectionEntry<"blog">["data"];
 
 const { image, title, description, canonicalUrl } = Astro.props;
 const formattedContentTitle = `${title ?? ""} – ${SITE.title}`;
 
-const img = await getImage({
-  src: image ?? "",
-  width: 1200,
-  height: 630,
-});
+const img = image
+  ? transformUrl({
+      url: image,
+      width: 1200,
+      height: 630,
+      fallback: "astro",
+    })
+  : null;
 
 const og = new URL("/og-blog.png", Astro.site);
 og.searchParams.set("title", title ?? "");
-og.searchParams.set("img", img.src ?? "");
+og.searchParams.set("img", img ?? "");
 
 const imageSrc = og.toString();
-const canonicalImageSrc = new URL(imageSrc, Astro.site).toString();
 const imageAlt = description ?? OPEN_GRAPH.image.alt;
 ---
 
@@ -32,7 +35,10 @@ const imageAlt = description ?? OPEN_GRAPH.image.alt;
 <meta property="og:type" content="article" />
 <meta property="og:url" content={canonicalUrl} />
 <meta property="og:locale" content={SITE.defaultLanguage} />
-<meta property="og:image" content={img.src} />
+<meta
+  property="og:image"
+  content={img ? new URL(img, Astro.site).href : imageSrc}
+/>
 <meta property="og:image:alt" content={imageAlt} />
 <meta
   name="description"
@@ -46,7 +52,7 @@ const imageAlt = description ?? OPEN_GRAPH.image.alt;
 <meta name="twitter:site" content={OPEN_GRAPH.twitter} />
 <meta name="twitter:title" content={formattedContentTitle} />
 <meta name="twitter:description" content={description ?? SITE.description} />
-<meta name="twitter:image" content={canonicalImageSrc} />
+<meta name="twitter:image" content={imageSrc} />
 <meta name="twitter:image:alt" content={imageAlt} />
 
 <!--
