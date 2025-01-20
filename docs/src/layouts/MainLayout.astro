@@ -109,20 +109,20 @@ const currentFile = `src/content/docs${currentPage.replace(/\/$/, "")}.md`;
           display: flex;
         }
       }
+
+      :global(.mobile-sidebar-toggle) {
+        overflow: hidden;
+      }
+
+      :global(.mobile-sidebar-toggle) #grid-left {
+        display: block;
+        top: 2rem;
+      }
     </style>
     <style is:global>
       .layout > * {
         width: 100%;
         height: 100%;
-      }
-
-      .mobile-sidebar-toggle {
-        overflow: hidden;
-      }
-
-      .mobile-sidebar-toggle #grid-left {
-        display: block;
-        top: 2rem;
       }
     </style>
   </body>
