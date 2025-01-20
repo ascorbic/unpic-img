@@ -16,7 +16,7 @@ const { title, publishDate, image, image_alt } = Astro.props;
   <section class="main-section">
     {
       image ? (
-        <Image src={image} alt={image_alt} width={700} aspectRatio={16 / 9} />
+        <Image src={image} alt={image_alt} width={700} aspectRatio={2.5} />
       ) : null
     }
     <h1 class="content-title" id="overview">{title}</h1>
