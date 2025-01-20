@@ -18,7 +18,7 @@ const { title, headings, githubEditUrl, githubRepo } = Astro.props;
   <section class="main-section">
     <h1 class="content-title" id="overview">{title}</h1>
     <nav class="block sm:hidden">
-      <TableOfContents client:media="(max-width: 50em)" headings={headings} />
+      <TableOfContents client:visible headings={headings} />
     </nav>
     {
       githubRepo ? (
