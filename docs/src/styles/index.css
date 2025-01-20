@@ -61,7 +61,7 @@ h2 {
 }
 
 :is(h2, h3):not(:first-child) {
-  margin-top: 3rem;
+  margin-top: 1.5rem;
 }
 
 :is(h4, h5, h6):not(:first-child) {

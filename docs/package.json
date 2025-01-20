@@ -36,6 +36,7 @@
     "@unpic/react": "workspace:^",
     "astro": "^5.1.7",
     "astro-icon": "^1.1.5",
+    "bluesky-comments-tag": "^0.0.2",
     "blurhash": "^2.0.5",
     "pako": "^2.1.0",
     "preact": "^10.25.4",

@@ -1,7 +1,7 @@
 ---
 import { type CollectionEntry, getCollection } from "astro:content";
 import BlogLayout from "../../layouts/BlogLayout.astro";
-
+import Bluesky from "../../components/Bluesky.astro";
 export async function getStaticPaths() {
   const blog = await getCollection("blog");
   return blog.map((entry) => ({
@@ -19,4 +19,5 @@ const { Content, headings } = await post.render();
 
 <BlogLayout {...post.data} headings={headings}>
   <Content />
+  {post.data.bluesky_post && <Bluesky url={post.data.bluesky_post} />}
 </BlogLayout>
