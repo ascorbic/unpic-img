@@ -1,0 +1,23 @@
+---
+type Props = {
+  url: string;
+};
+---
+
+<div class="comments">
+  <h4><a href={Astro.props.url}>Comment on Bluesky</a></h4>
+  <bluesky-comments url={Astro.props.url}> </bluesky-comments>
+</div>
+<script>
+  import "bluesky-comments-tag/load";
+</script>
+<style>
+  .comments {
+    padding-top: 1rem;
+    margin-top: 2rem;
+    border-top: 1px #e0e0e0 solid;
+  }
+  .comments h4 a:is(a:link, a:visited) {
+    color: var(--color-primary);
+  }
+</style>

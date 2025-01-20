@@ -5,45 +5,134 @@ description:
 publishDate: 2025-01-19
 image: https://images.unsplash.com/photo-1737229940875-293ed0c4e8af?q=80&w=2942&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
 image_alt: Sun in woodland
+# bluesky_post: https://bsky.app/profile/mk.gg/post/3lb3cxyeh3c2fs
 ---
 
 import { Image } from "@unpic/astro";
-
-Unpic is the best way to display images on the web. With components for ten
-different frontend frameworks, almost every site can have fast, responsive
-images with very little effort. After two years of development, I'm excited to
-announce the first stable release of Unpic. To jump straight in, see [the guide to upgrading to v1](/upgrading-to-v1).
+import operationsImg from "./provider-operations.png";
+import optionsImg from "./provider-options.png";
+import fallbackImg from "./fallbacks.png";
 
 Since starting work on Unpic two years ago, I've been astounded by the response
 from the community. With over 50,000 npm downloads per week, 1500 stars and a
 growing number of contributors on GitHub, it's clear that developers really need
-a good way to handle images. It's not surprising - images are a huge part of the
-web, and getting them right can be hard. I built Unpic to make it as easy as an
-img tag.
-
-This release includes a completely-rewritten core library, now with support for
-[26 different image providers](/providers), and
-[ten different frontend frameworks](/img). One development that I have found
-particularly exciting it how many people have used Unpic at the core of their
-own image components. This release is designed to make that easier than ever. A
-new modular architecture keeps it just as easy to use as before, but adds new
-base components that let you bring your own transformer functions without
-needing to bundle the whole library, or import individual, tree-shakable
-providers.
+a good way to handle images. After two years of development, I'm excited to
+announce the first stable release of Unpic. To jump straight in, see
+[the guide to upgrading to v1](/upgrading-to-v1).
 
 ## Meet Unpic
 
-If you're new to Unpic, it's a family of image components make it as easy to
-create a responsive image as it is to use an `<img>` tag. It uses your existing
-image CDN or CMS with no additional configuration. It's designed to be as simple
-as possible to use, with no configuration needed, but with the flexibility to
-handle any image URL. Most images on modern websites are hosted on a CDN or CMS
-that has built-in support for image transforms, but existing frontend frameworks
-often download and resize the image at build time or on your server, rather than
-using the native host. Unpic uses the CDN to resize the image on the fly,
-delivering the correct size for the user's device and screen size. It generates
-the correct HTML tags, and lightweight styles to make the image resize
-responsively.
+If you're new to Unpic, it is the best way to display images on the web. With
+components for [ten different frontend frameworks](/img) and
+[26 image hosts](/providers), most sites can have fast, responsive images with
+very little effort. A family of image components make it as easy to create a
+responsive image as it is to use an `<img>` tag. It uses your existing image CDN
+or CMS with no additional configuration. It generates the correct HTML tags with
+all the right attributes, and lightweight styles to make the image resize
+responsively. See [how to use Unpic](#how-to-use-unpic) for more details of the
+syntax for different frameworks, and the HTML it generates.
+
+## What's new in Unpic 1.0
+
+Most of the changes are because of a new approach to handling individual image
+CDNs and providers in the base Unpic library. This is designed to make Unpic
+more flexible, efficient and modular. It also introduces support for type-safe
+custom operations and options for each provider.
+
+### Provider operations
+
+_Supported frameworks: All except `webc` and `lit`._
+
+The new `operations` property allows you to specify custom operations for each
+provider. Many image CDNs support dozens of custom operations. Previously these
+were hard to use with Unpic. The new `operations` property gives type-safe
+support for all supported features of each provider. This works even if you have
+images from multiple providers in the same component, as you can specify options
+for each provider separately.
+
+<Image alt="Auto-complete of provider operations" src={operationsImg} />
+
+```tsx
+<Image
+  src={imgUrl}
+  operations={{ imgix: { flip: "h" }, bunny: { flop: true } }}
+/>
+```
+
+The operations are all type-safe, with JSDoc comments and TypeScript
+definitions. This means you can get autocompletion and type checking.
+
+### Provider options
+
+_Supported frameworks: All except `webc` and `lit`._
+
+The new `options` property allows you to specify custom options for each
+provider. This is similar to the current `cdnOptions` property, but with
+type-safe support for all options of each provider. This allows you to specify
+options such as account IDs and domains for each provider.
+
+<Image src={optionsImg} alt="Auto-complete of provider options" />
+
+### Fallback providers
+
+_Supported frameworks: All. The `astro` and `nextjs` frameworks default to the
+framework's image provider as fallback._
+
+The new `fallback` property lets you specify a fallback provider for each image.
+This allows you to use auto-detection for image CDNs as now, but also specify a
+fallback provider for local images and images from unknown providers. This is
+useful if you have a mix of images from different sources, and want to ensure
+that all images are handled correctly. For example, you may have a Sanity blog
+hosted on Netlify. Sanity hosts all images on Imgix (a supported provider), but
+you may also some images from third-parties or your own server. You can specify
+Netlify as the fallback provider so that it uses the Netlify Image CDN for all
+images that are not from Sanity or another supported provider. This will be all
+handled automatically.
+
+<Image alt="Auto-completion of fallback provider" src={fallbackImg} />
+
+## Base component
+
+_Supported frameworks: All except `webc`, `lit` and `angular`._
+
+Previously, the `Image` and `Source` components always loaded support for every
+provider, even if you specified a single provider or custom transformer. This is
+fine if you are using auto-detection, but many people wanted to use the
+components in a more custom or modular way. The new base components allow you to
+use the Unpic component without any of the automatic detection and transform
+logic. You can provide your own transformer, or use a single, tree-shakable
+provider import. This is useful if you are using a single provider, or if you
+are building a custom component based on Unpic.
+
+```tsx
+// Import from the `/base` subpath
+import { Image } from "@unpic/react/base";
+// Import the transformer for the provider you are using
+import { transform } from "unpic/providers/imgix";
+
+export const Hero = () => (
+  <Image
+    src="https://images.unsplash.com/photo-1733626631376-214e024f5520"
+    transformer={transform}
+    operations={{ rot: 90 }}
+    width={800}
+    height={400}
+  />
+);
+```
+
+<Image
+  src="https://images.unsplash.com/photo-1733626631376-214e024f5520?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHw5MXx8fGVufDB8fHx8fA%3D%3D"
+  width={800}
+  height={400}
+  operations={{ imgix: { rot: 90 } }}
+/>
+
+The `operations` and `options` properties are still type-safe and inferred from
+the transformer, and you don't need to specify the provider name in the
+`operations` object.
+
+## How to use Unpic
 
 This is how to use the `Image` component from `@unpic/react`:
 
@@ -177,7 +266,9 @@ To see more examples from all supported frameworks, check out the [docs](/img).
 
 ## What's next?
 
-If you've been using Unpic 0.x, check out [the guide to upgrading to v1](/upgrading-to-v1). Otherwise, [get started with Unpic](/about) today.
+If you've been using Unpic 0.x, check out
+[the guide to upgrading to v1](/upgrading-to-v1). Otherwise,
+[get started with Unpic](/about) today.
 
 I'm excited to see what people build with the new version Unpic. Let me know how
 you're using it, and what you'd like to see in future versions. If you'd like to
