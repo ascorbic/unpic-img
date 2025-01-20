@@ -6,13 +6,17 @@ import sitemap from "@astrojs/sitemap";
 import { imageService } from "@unpic/astro/service";
 import icon from "astro-icon";
 
+import netlify from "@astrojs/netlify";
+
 // https://astro.build/config
 export default defineConfig({
   image: {
     service: imageService({
       placeholder: "blurhash",
     }),
+    domains: ["images.unsplash.com"],
   },
+
   integrations: [
     // Enable Preact to support Preact JSX components.
     preact({
@@ -33,10 +37,13 @@ export default defineConfig({
     sitemap(),
     icon(),
   ],
+
   markdown: {
     shikiConfig: {
       theme: "one-dark-pro",
     },
   },
+
   site: `https://unpic.pics`,
+  adapter: netlify(),
 });

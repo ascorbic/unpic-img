@@ -1,4 +1,4 @@
 [images]
-remote_images = "https://images.unsplash.com/.*"
+remote_images = "https://images.unsplash.com/*"
 [dev]
 command = "pnpm --filter docs dev"
