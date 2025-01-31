@@ -1,7 +1,7 @@
 {
   "name": "docs",
   "type": "module",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "private": true,
   "scripts": {
     "dev": "astro dev --host",
@@ -47,7 +47,7 @@
     "react-dom": "^19.0.0",
     "react-live": "^4.1.8",
     "typescript": "^5.7.3",
-    "unpic": "^4.0.0"
+    "unpic": "^4.0.1"
   },
   "devDependencies": {
     "@types/pako": "^2.0.3",
