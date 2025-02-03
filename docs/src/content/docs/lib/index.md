@@ -208,6 +208,7 @@ const url = transform(
 ## Supported Providers
 
 - Adobe Dynamic Media (Scene7) (`scene7`)
+- Appwrite (`appwrite`)
 - Astro image service (`astro`)
 - Builder.io (`builder.io`)
 - Bunny.net, including caisy (`bunny`)
