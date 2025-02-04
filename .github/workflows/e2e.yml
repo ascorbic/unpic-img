@@ -26,9 +26,7 @@ jobs:
       - name: Setup Deno
         uses: denoland/setup-deno@v1
       - name: Install dependencies
-        run: |
-          corepack enable
-          pnpm install
+        run: pnpm install
       - name: Install Netlify CLI
         run: pnpm install -g netlify-cli
       - name: Install Playwright Browsers

@@ -35,15 +35,15 @@ jobs:
           registry-url: "https://registry.npmjs.org"
           node-version: latest
       - name: Install dependencies
-        run: |
-          corepack enable
-          pnpm install
+        run: pnpm install
       - name: Format
         run: pnpm format
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - uses: stefanzweifel/git-auto-commit-action@v5
-        if: github.event_name == 'push' || github.event_name == 'workflow_dispatch'
+        if:
+          github.event_name == 'push' || github.event_name ==
+          'workflow_dispatch'
         with:
           commit_message: "chore: format"
