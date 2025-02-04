@@ -18,9 +18,7 @@ jobs:
           registry-url: "https://registry.npmjs.org"
           node-version: latest
       - name: Install dependencies
-        run: |
-          corepack enable
-          pnpm install
+        run: pnpm install
       - name: Build
         run: pnpm build:packages
       - name: Test
