@@ -1,27 +1,16 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "extends": [
-    "github>unjs/renovate-config",
-    ":widenPeerDependencies"
-  ],
+  "extends": ["github>unjs/renovate-config", ":widenPeerDependencies"],
   "packageRules": [
     {
-      "matchPackageNames": [
-        "unpic"
-      ],
+      "matchPackageNames": ["unpic"],
       "rangeStrategy": "bump",
       "bumpVersion": "patch",
-      "extends": [
-        ":automergeMinor"
-      ],
-      "schedule": [
-        "at any time"
-      ]
+      "extends": [":automergeMinor"],
+      "schedule": ["at any time"]
     },
     {
-      "matchFileNames": [
-        "docs/package.json"
-      ],
+      "matchFileNames": ["docs/package.json"],
       "matchPackageNames": [
         "react",
         "react-dom",
@@ -35,12 +24,8 @@
         "packages/qwik/package.json",
         "examples/qwik/package.json"
       ],
-      "matchUpdateTypes": [
-        "major"
-      ],
-      "matchPackageNames": [
-        "eslint"
-      ],
+      "matchUpdateTypes": ["major"],
+      "matchPackageNames": ["eslint"],
       "enabled": false
     }
   ]
