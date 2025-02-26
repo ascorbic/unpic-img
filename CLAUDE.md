@@ -1,14 +1,17 @@
 # unpic-img Development Guide
 
 ## Build and Test Commands
+
 - Build all packages: `pnpm run build:packages`
 - Run all tests: `pnpm run test`
 - Run a single package test: `pnpm run --filter @unpic/[package] test`
-- Run a specific test: `pnpm run --filter @unpic/[package] vitest run -t "[test name]"`
+- Run a specific test:
+  `pnpm run --filter @unpic/[package] vitest run -t "[test name]"`
 - Format code: `pnpm format`
 - Check package for publishing: `pnpm run --filter @unpic/[package] publint`
 
 ## Code Style Guidelines
+
 - Use TypeScript with strict null checks
 - Use JSDoc comments for public functions and types
 - Prefer explicit return types for functions
