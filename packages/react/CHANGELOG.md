@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.0.1
+
+### Patch Changes
+
+- f6a53fc: Update React dependencies to support React 19
+
 ## 1.0.0
 
 ### Major Changes
