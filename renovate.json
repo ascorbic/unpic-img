@@ -7,7 +7,8 @@
       "rangeStrategy": "bump",
       "bumpVersion": "patch",
       "extends": [":automergeMinor"],
-      "schedule": ["at any time"]
+      "schedule": ["at any time"],
+      "groupName": "unpic"
     },
     {
       "matchFileNames": ["docs/package.json"],
