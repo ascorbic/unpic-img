@@ -16,7 +16,7 @@ jobs:
           cache: "pnpm"
           check-latest: true
           registry-url: "https://registry.npmjs.org"
-          node-version: latest
+          node-version: 'lts/*'
       - name: Install dependencies
         run: pnpm install
       - name: Build
