@@ -1,5 +1,12 @@
 # Changelog
 
+## 1.0.1
+
+### Patch Changes
+
+- e07101d: Fixes a bug that caused images in MDX files to sometimes not display
+  when using`trailingSlash: 'always'`.
+
 ## 1.0.0
 
 ### Major Changes
