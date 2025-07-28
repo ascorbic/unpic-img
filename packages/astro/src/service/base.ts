@@ -97,11 +97,8 @@ const service: ExternalImageService<UnpicConfig> = {
       options,
       imageConfig.service.config,
     );
-    transformOptions.cdnOptions = getEndpointOptions(
-      imageConfig,
-      transformOptions.cdnOptions,
-    );
-    return transformUrl(transformOptions)?.toString() ?? "";
+    const providerOptions = getEndpointOptions(imageConfig);
+    return transformUrl(transformOptions, {}, providerOptions)?.toString() ?? "";
   },
   getHTMLAttributes(options: ImageTransform, imageConfig) {
     const transformOptions = getTransformOptions(
