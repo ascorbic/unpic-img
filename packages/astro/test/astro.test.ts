@@ -1,7 +1,7 @@
 import { describe, test, expect } from "vitest";
 import { Image } from "../index.js";
 import PictureTestWrapper from "./PictureTestWrapper.astro";
-import baseImageService from "../src/service/base.js"
+import baseImageService from "../src/service/base.js";
 import { render } from "./astro-testing-library.js";
 import {
   expectImagePropsToMatchTransformed,
@@ -34,28 +34,31 @@ describe("the Astro component", () => {
 });
 
 describe("the Astro image service", () => {
-  describe('base', () => {
-    test('respects trailingSlash: always', async () => {
-      const url = await baseImageService.getURL({
-        src: {
-          src: '/@fs/path/to/image.jpg',
-          width: 800,
-          height: 800,
-          format: 'jpg',
-        }
-      }, {
-        endpoint: {
-          route: '/_image/'
+  describe("base", () => {
+    test("respects trailingSlash: always", async () => {
+      const url = await baseImageService.getURL(
+        {
+          src: {
+            src: "/@fs/path/to/image.jpg",
+            width: 800,
+            height: 800,
+            format: "jpg",
+          },
         },
-        service: {
-          entrypoint: '/path/to/service/base.ts',
-          config: {}
+        {
+          endpoint: {
+            route: "/_image/",
+          },
+          service: {
+            entrypoint: "/path/to/service/base.ts",
+            config: {},
+          },
+          domains: [],
+          remotePatterns: [],
         },
-        domains: [],
-        remotePatterns: []
-      })
+      );
 
-      expect(url).toContain('/_image/')
-    })
-  })
-})
+      expect(url).toContain("/_image/");
+    });
+  });
+});
