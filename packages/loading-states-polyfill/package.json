@@ -1,0 +1,50 @@
+{
+  "name": "@unpic/loading-states-polyfill",
+  "version": "0.1.0",
+  "packageManager": "pnpm@9.15.4",
+  "license": "MIT",
+  "description": "Browser polyfill for loading states functionality",
+  "keywords": [
+    "polyfill",
+    "loading",
+    "browser",
+    "unpic"
+  ],
+  "sideEffects": false,
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ascorbic/unpic-img",
+    "directory": "packages/loading-states-polyfill"
+  },
+  "homepage": "https://unpic.pics",
+  "scripts": {
+    "build": "tsup src/index.ts --format cjs,esm --dts --clean",
+    "prepublishOnly": "pnpm build",
+    "test": "vitest run"
+  },
+  "devDependencies": {
+    "@vitest/browser": "^3.2.4",
+    "playwright": "^1.55.0",
+    "tsup": "^8.3.5",
+    "typescript": "^5.7.3",
+    "vitest": "^3.2.4"
+  },
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "exports": {
+    ".": {
+      "require": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.js"
+      },
+      "import": {
+        "types": "./dist/index.d.mts",
+        "default": "./dist/index.mjs"
+      }
+    }
+  }
+}
