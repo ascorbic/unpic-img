@@ -1,32 +1,32 @@
 import { describe, it, expect, beforeEach, afterEach } from "vitest";
-import ImageStatePolyfill, {
-  type ImageStatePolyfillOptions,
+import ImageStatePonyfill, {
+  type ImageStatePonyfillOptions,
 } from "../../src/index";
 import { cleanupImages, createAndAddImage, TEST_IMAGES } from "./utils";
 
-describe("ImageStatePolyfill - Initialization", () => {
-  let polyfill: ImageStatePolyfill | null = null;
+describe("ImageStatePonyfill - Initialization", () => {
+  let ponyfill: ImageStatePonyfill | null = null;
 
   beforeEach(() => {
     cleanupImages();
   });
 
   afterEach(() => {
-    if (polyfill) {
-      polyfill.disconnect();
-      polyfill = null;
+    if (ponyfill) {
+      ponyfill.disconnect();
+      ponyfill = null;
     }
     cleanupImages();
   });
 
   it("should initialize with default options", () => {
-    polyfill = new ImageStatePolyfill();
-    expect(polyfill).toBeDefined();
-    expect(polyfill).toBeInstanceOf(ImageStatePolyfill);
+    ponyfill = new ImageStatePonyfill();
+    expect(ponyfill).toBeDefined();
+    expect(ponyfill).toBeInstanceOf(ImageStatePonyfill);
   });
 
   it("should initialize with custom options", () => {
-    const options: ImageStatePolyfillOptions = {
+    const options: ImageStatePonyfillOptions = {
       stallTimeout: 5000,
       stallCheckInterval: 1000,
       observerRootMargin: "100px",
@@ -37,13 +37,13 @@ describe("ImageStatePolyfill - Initialization", () => {
       eventName: "customstatechange",
     };
 
-    polyfill = new ImageStatePolyfill(options);
-    expect(polyfill).toBeDefined();
+    ponyfill = new ImageStatePonyfill(options);
+    expect(ponyfill).toBeDefined();
 
     // Create an image and verify custom attribute prefix
     const img = createAndAddImage({ src: TEST_IMAGES.VALID_DATA_URI });
 
-    // Give polyfill time to observe the image
+    // Give ponyfill time to observe the image
     setTimeout(() => {
       const hasCustomAttribute = Array.from(img.attributes).some((attr) =>
         attr.name.startsWith("data-custom-state-"),
@@ -53,13 +53,13 @@ describe("ImageStatePolyfill - Initialization", () => {
   });
 
   it("should observe existing images on initialization", async () => {
-    // Add images before creating polyfill
+    // Add images before creating ponyfill
     const img1 = createAndAddImage({ src: TEST_IMAGES.VALID_DATA_URI });
     const img2 = createAndAddImage({ src: TEST_IMAGES.RED_PIXEL });
 
-    polyfill = new ImageStatePolyfill();
+    ponyfill = new ImageStatePonyfill();
 
-    // Wait a bit for polyfill to process images
+    // Wait a bit for ponyfill to process images
     await new Promise((resolve) => setTimeout(resolve, 100));
 
     // Both images should have state attributes
@@ -70,19 +70,19 @@ describe("ImageStatePolyfill - Initialization", () => {
   it("should not initialize multiple times for the same image", async () => {
     const img = createAndAddImage({ src: TEST_IMAGES.VALID_DATA_URI });
 
-    polyfill = new ImageStatePolyfill();
+    ponyfill = new ImageStatePonyfill();
 
     // Wait for initial observation
     await new Promise((resolve) => setTimeout(resolve, 100));
 
-    const states1 = polyfill.getImageStates(img);
+    const states1 = ponyfill.getImageStates(img);
 
     // Try to observe the same image again
-    polyfill.observe(img);
+    ponyfill.observe(img);
 
     await new Promise((resolve) => setTimeout(resolve, 100));
 
-    const states2 = polyfill.getImageStates(img);
+    const states2 = ponyfill.getImageStates(img);
 
     // States should be the same
     expect(states1).toEqual(states2);
@@ -91,14 +91,14 @@ describe("ImageStatePolyfill - Initialization", () => {
   it("should properly clean up on disconnect", async () => {
     const img = createAndAddImage({ src: TEST_IMAGES.VALID_DATA_URI });
 
-    polyfill = new ImageStatePolyfill();
+    ponyfill = new ImageStatePonyfill();
 
     await new Promise((resolve) => setTimeout(resolve, 100));
 
     expect(img.hasAttribute("data-resource-state-loaded")).toBe(true);
 
-    // Disconnect the polyfill
-    polyfill.disconnect();
+    // Disconnect the ponyfill
+    ponyfill.disconnect();
 
     // Add a new image after disconnect
     const newImg = createAndAddImage({ src: TEST_IMAGES.RED_PIXEL });
@@ -111,16 +111,16 @@ describe("ImageStatePolyfill - Initialization", () => {
   });
 });
 
-describe("ImageStatePolyfill - Public API", () => {
-  let polyfill: ImageStatePolyfill;
+describe("ImageStatePonyfill - Public API", () => {
+  let ponyfill: ImageStatePonyfill;
 
   beforeEach(() => {
     cleanupImages();
-    polyfill = new ImageStatePolyfill();
+    ponyfill = new ImageStatePonyfill();
   });
 
   afterEach(() => {
-    polyfill.disconnect();
+    ponyfill.disconnect();
     cleanupImages();
   });
 
@@ -129,7 +129,7 @@ describe("ImageStatePolyfill - Public API", () => {
 
     await new Promise((resolve) => setTimeout(resolve, 100));
 
-    const states = polyfill.getImageStates(img);
+    const states = ponyfill.getImageStates(img);
     expect(states).toContain("loaded");
     expect(states).toContain("complete");
   });
@@ -139,10 +139,10 @@ describe("ImageStatePolyfill - Public API", () => {
 
     await new Promise((resolve) => setTimeout(resolve, 100));
 
-    expect(polyfill.hasState(img, "loaded")).toBe(true);
-    expect(polyfill.hasState(img, "complete")).toBe(true);
-    expect(polyfill.hasState(img, "pending")).toBe(false);
-    expect(polyfill.hasState(img, "loading")).toBe(false);
+    expect(ponyfill.hasState(img, "loaded")).toBe(true);
+    expect(ponyfill.hasState(img, "complete")).toBe(true);
+    expect(ponyfill.hasState(img, "pending")).toBe(false);
+    expect(ponyfill.hasState(img, "loading")).toBe(false);
   });
 
   it("should get state summary", async () => {
@@ -153,7 +153,7 @@ describe("ImageStatePolyfill - Public API", () => {
 
     await new Promise((resolve) => setTimeout(resolve, 100));
 
-    const summary = polyfill.getStateSummary();
+    const summary = ponyfill.getStateSummary();
 
     expect(summary.total).toBeGreaterThanOrEqual(2);
     expect(summary.loaded).toBeGreaterThanOrEqual(2);
@@ -164,17 +164,17 @@ describe("ImageStatePolyfill - Public API", () => {
     const img = createImage({ src: TEST_IMAGES.VALID_DATA_URI });
 
     // Don't add to DOM yet
-    expect(polyfill.getImageStates(img)).toEqual([]);
+    expect(ponyfill.getImageStates(img)).toEqual([]);
 
     // Manually observe
-    polyfill.observe(img);
+    ponyfill.observe(img);
 
     // Now add to DOM
     document.body.appendChild(img);
 
     await new Promise((resolve) => setTimeout(resolve, 100));
 
-    const states = polyfill.getImageStates(img);
+    const states = ponyfill.getImageStates(img);
     expect(states.length).toBeGreaterThan(0);
   });
 
@@ -184,7 +184,7 @@ describe("ImageStatePolyfill - Public API", () => {
     await new Promise((resolve) => setTimeout(resolve, 100));
 
     // Update options
-    polyfill.setOptions({
+    ponyfill.setOptions({
       debug: true,
       debugPrefix: "[Updated]",
     });
@@ -195,8 +195,8 @@ describe("ImageStatePolyfill - Public API", () => {
     await new Promise((resolve) => setTimeout(resolve, 100));
 
     // Both images should still work
-    expect(polyfill.hasState(img, "loaded")).toBe(true);
-    expect(polyfill.hasState(img2, "loaded")).toBe(true);
+    expect(ponyfill.hasState(img, "loaded")).toBe(true);
+    expect(ponyfill.hasState(img2, "loaded")).toBe(true);
   });
 
   it("should handle images without src", async () => {
@@ -204,19 +204,19 @@ describe("ImageStatePolyfill - Public API", () => {
 
     await new Promise((resolve) => setTimeout(resolve, 100));
 
-    const states = polyfill.getImageStates(img);
+    const states = ponyfill.getImageStates(img);
     expect(states).toEqual([]); // No states for image without src
   });
 
   it("should return empty array for non-observed images", () => {
     const img = document.createElement("img");
-    const states = polyfill.getImageStates(img);
+    const states = ponyfill.getImageStates(img);
     expect(states).toEqual([]);
   });
 
   it("should return false for hasState on non-observed images", () => {
     const img = document.createElement("img");
-    expect(polyfill.hasState(img, "loaded")).toBe(false);
+    expect(ponyfill.hasState(img, "loaded")).toBe(false);
   });
 });
 

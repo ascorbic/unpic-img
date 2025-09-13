@@ -1,5 +1,5 @@
 import { describe, it, expect, beforeEach, afterEach, vi } from "vitest";
-import ImageStatePolyfill, { type StateChangeEvent } from "../../src/index";
+import ImageStatePonyfill, { type StateChangeEvent } from "../../src/index";
 import {
   cleanupImages,
   createAndAddImage,
@@ -8,23 +8,23 @@ import {
   wait,
 } from "./utils";
 
-describe("ImageStatePolyfill - Events", () => {
-  let polyfill: ImageStatePolyfill;
+describe("ImageStatePonyfill - Events", () => {
+  let ponyfill: ImageStatePonyfill;
 
   beforeEach(() => {
     cleanupImages();
   });
 
   afterEach(() => {
-    if (polyfill) {
-      polyfill.disconnect();
+    if (ponyfill) {
+      ponyfill.disconnect();
     }
     cleanupImages();
   });
 
   describe("State Change Events", () => {
     it("should dispatch resourcestatechange event", async () => {
-      polyfill = new ImageStatePolyfill();
+      ponyfill = new ImageStatePonyfill();
       const img = createAndAddImage({ src: TEST_IMAGES.VALID_DATA_URI });
 
       const eventPromise = waitForEvent<StateChangeEvent["detail"]>(
@@ -42,7 +42,7 @@ describe("ImageStatePolyfill - Events", () => {
     });
 
     it("should include correct event detail for state additions", async () => {
-      polyfill = new ImageStatePolyfill();
+      ponyfill = new ImageStatePonyfill();
 
       const img = document.createElement("img");
       const events: StateChangeEvent["detail"][] = [];
@@ -67,7 +67,7 @@ describe("ImageStatePolyfill - Events", () => {
     });
 
     it("should include correct event detail for state removals", async () => {
-      polyfill = new ImageStatePolyfill({
+      ponyfill = new ImageStatePonyfill({
         stallTimeout: 100,
         stallCheckInterval: 50,
       });
@@ -99,7 +99,7 @@ describe("ImageStatePolyfill - Events", () => {
     });
 
     it("should use custom event name", async () => {
-      polyfill = new ImageStatePolyfill({
+      ponyfill = new ImageStatePonyfill({
         eventName: "customstatechange",
       });
 
@@ -112,7 +112,7 @@ describe("ImageStatePolyfill - Events", () => {
     });
 
     it("should bubble events", async () => {
-      polyfill = new ImageStatePolyfill();
+      ponyfill = new ImageStatePonyfill();
 
       const container = document.createElement("div");
       document.body.appendChild(container);
@@ -136,7 +136,7 @@ describe("ImageStatePolyfill - Events", () => {
     });
 
     it("should not dispatch events when disabled", async () => {
-      polyfill = new ImageStatePolyfill({
+      ponyfill = new ImageStatePonyfill({
         enableEvents: false,
       });
 
@@ -153,7 +153,7 @@ describe("ImageStatePolyfill - Events", () => {
 
   describe("Native Image Events", () => {
     it("should handle load event", async () => {
-      polyfill = new ImageStatePolyfill();
+      ponyfill = new ImageStatePonyfill();
 
       const img = createAndAddImage({ src: TEST_IMAGES.VALID_DATA_URI });
 
@@ -170,7 +170,7 @@ describe("ImageStatePolyfill - Events", () => {
     });
 
     it("should handle error event", async () => {
-      polyfill = new ImageStatePolyfill();
+      ponyfill = new ImageStatePonyfill();
 
       const img = createAndAddImage({ src: TEST_IMAGES.BROKEN_EXTERNAL });
 
@@ -187,7 +187,7 @@ describe("ImageStatePolyfill - Events", () => {
     });
 
     it("should handle progress event", async () => {
-      polyfill = new ImageStatePolyfill({
+      ponyfill = new ImageStatePonyfill({
         stallTimeout: 1000,
         stallCheckInterval: 100,
       });
@@ -196,7 +196,7 @@ describe("ImageStatePolyfill - Events", () => {
       const img = document.createElement("img");
       document.body.appendChild(img);
       
-      // Wait for polyfill to observe it
+      // Wait for ponyfill to observe it
       await wait(50);
       
       // Now set src to trigger loading (use data URI for instant load)
@@ -216,7 +216,7 @@ describe("ImageStatePolyfill - Events", () => {
     });
 
     it("should handle loadstart event", async () => {
-      polyfill = new ImageStatePolyfill();
+      ponyfill = new ImageStatePonyfill();
 
       const img = document.createElement("img");
       img.loading = "lazy";
@@ -239,7 +239,7 @@ describe("ImageStatePolyfill - Events", () => {
 
   describe("Event Timing", () => {
     it("should dispatch events in correct order", async () => {
-      polyfill = new ImageStatePolyfill();
+      ponyfill = new ImageStatePonyfill();
 
       const events: string[] = [];
       const img = document.createElement("img");
@@ -275,7 +275,7 @@ describe("ImageStatePolyfill - Events", () => {
     });
 
     it("should not dispatch duplicate events for same state", async () => {
-      polyfill = new ImageStatePolyfill();
+      ponyfill = new ImageStatePonyfill();
 
       const img = createAndAddImage({ src: TEST_IMAGES.VALID_DATA_URI });
       const addedStates: string[] = [];

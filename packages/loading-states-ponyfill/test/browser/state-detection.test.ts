@@ -1,5 +1,5 @@
 import { describe, it, expect, beforeEach, afterEach } from "vitest";
-import ImageStatePolyfill from "../../src/index";
+import ImageStatePonyfill from "../../src/index";
 import {
   cleanupImages,
   createAndAddImage,
@@ -10,16 +10,16 @@ import {
   wait,
 } from "./utils";
 
-describe("ImageStatePolyfill - State Detection", () => {
-  let polyfill: ImageStatePolyfill;
+describe("ImageStatePonyfill - State Detection", () => {
+  let ponyfill: ImageStatePonyfill;
 
   beforeEach(() => {
     cleanupImages();
-    polyfill = new ImageStatePolyfill();
+    ponyfill = new ImageStatePonyfill();
   });
 
   afterEach(() => {
-    polyfill.disconnect();
+    ponyfill.disconnect();
     cleanupImages();
   });
 
@@ -37,7 +37,7 @@ describe("ImageStatePolyfill - State Detection", () => {
       // Now add to DOM
       addImageToDOM(img);
 
-      // Wait for polyfill to observe
+      // Wait for ponyfill to observe
       await wait(100);
 
       const states = getImageStates(img);
@@ -180,8 +180,8 @@ describe("ImageStatePolyfill - State Detection", () => {
     });
 
     it("should use custom attribute prefix", async () => {
-      polyfill.disconnect();
-      polyfill = new ImageStatePolyfill({
+      ponyfill.disconnect();
+      ponyfill = new ImageStatePonyfill({
         attributePrefix: "data-img-",
       });
 
@@ -267,11 +267,11 @@ describe("ImageStatePolyfill - State Detection", () => {
       img.src = TEST_IMAGES.VALID_DATA_URI;
       iframeDoc.body.appendChild(img);
 
-      // Polyfill won't observe iframe images automatically
+      // Ponyfill won't observe iframe images automatically
       // (they're in a different document context)
       await wait(100);
 
-      // Image in iframe should not have states from main document's polyfill
+      // Image in iframe should not have states from main document's ponyfill
       const states = getImageStates(img);
       expect(states).toEqual([]);
 

@@ -1,5 +1,5 @@
 /**
- * Image Resource State Polyfill
+ * Image Resource State Ponyfill
  *
  * Observes image loading states and applies data attributes for CSS styling.
  * Uses individual boolean attributes for each state to allow multiple states
@@ -14,7 +14,7 @@
  * - data-resource-state-complete: Image finished attempting to load (loaded OR broken)
  */
 
-export interface ImageStatePolyfillOptions {
+export interface ImageStatePonyfillOptions {
   /** Time in ms before considering an image stalled (default: 3000) */
   stallTimeout?: number;
 
@@ -27,7 +27,7 @@ export interface ImageStatePolyfillOptions {
   /** Enable debug logging (default: false) */
   debug?: boolean;
 
-  /** Debug log prefix (default: '[ImageStatePolyfill]') */
+  /** Debug log prefix (default: '[ImageStatePonyfill]') */
   debugPrefix?: string;
 
   /** Attribute prefix for state attributes (default: 'data-resource-state-') */
@@ -84,20 +84,20 @@ export interface StateChangeEvent extends CustomEvent {
   };
 }
 
-export class ImageStatePolyfill {
-  private options: Required<ImageStatePolyfillOptions>;
+export class ImageStatePonyfill {
+  private options: Required<ImageStatePonyfillOptions>;
   private imageStates: WeakMap<HTMLImageElement, ImageState>;
   private intersectionObserver: IntersectionObserver | null = null;
   private mutationObserver: MutationObserver | null = null;
   private imageIdCounter = 0;
 
-  constructor(options: ImageStatePolyfillOptions = {}) {
+  constructor(options: ImageStatePonyfillOptions = {}) {
     this.options = {
       stallTimeout: options.stallTimeout ?? 3000,
       stallCheckInterval: options.stallCheckInterval ?? 500,
       observerRootMargin: options.observerRootMargin ?? "50px",
       debug: options.debug ?? false,
-      debugPrefix: options.debugPrefix ?? "[ImageStatePolyfill]",
+      debugPrefix: options.debugPrefix ?? "[ImageStatePonyfill]",
       attributePrefix: options.attributePrefix ?? "data-resource-state-",
       enableEvents: options.enableEvents ?? true,
       eventName: options.eventName ?? "resourcestatechange",
@@ -108,7 +108,7 @@ export class ImageStatePolyfill {
   }
 
   private init(): void {
-    this.log("Initializing polyfill with options:", this.options);
+    this.log("Initializing ponyfill with options:", this.options);
 
     this.observeImages();
     this.setupMutationObserver();
@@ -511,17 +511,17 @@ export class ImageStatePolyfill {
       this.stopMonitoring(img);
     });
 
-    this.log("Polyfill disconnected");
+    this.log("Ponyfill disconnected");
   }
 
   /**
    * Update options dynamically
    */
-  public setOptions(options: Partial<ImageStatePolyfillOptions>): void {
+  public setOptions(options: Partial<ImageStatePonyfillOptions>): void {
     Object.assign(this.options, options);
     this.log("Options updated:", options);
   }
 }
 
 // Export as default as well
-export default ImageStatePolyfill;
+export default ImageStatePonyfill;

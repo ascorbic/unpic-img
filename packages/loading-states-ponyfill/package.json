@@ -1,11 +1,11 @@
 {
-  "name": "@unpic/loading-states-polyfill",
+  "name": "@unpic/loading-states-ponyfill",
   "version": "0.1.0",
   "packageManager": "pnpm@9.15.4",
   "license": "MIT",
-  "description": "Browser polyfill for loading states functionality",
+  "description": "Browser ponyfill for loading states functionality",
   "keywords": [
-    "polyfill",
+    "ponyfill",
     "loading",
     "browser",
     "unpic"
@@ -14,7 +14,7 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/ascorbic/unpic-img",
-    "directory": "packages/loading-states-polyfill"
+    "directory": "packages/loading-states-ponyfill"
   },
   "homepage": "https://unpic.pics",
   "scripts": {
