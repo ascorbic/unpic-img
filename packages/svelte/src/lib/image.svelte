@@ -28,10 +28,25 @@
       .filter(Boolean)
       .join(";"),
   );
+
+  // Destructure unpic props to avoid spreading them onto the img element
+  const {
+    cdn: _cdn,
+    fallback: _fallback,
+    operations: _operations,
+    options: _options,
+    breakpoints: _breakpoints,
+    background: _background,
+    objectFit: _objectFit,
+    unstyled: _unstyled,
+    layout: _layout,
+    aspectRatio: _aspectRatio,
+    ...rest
+  } = props;
 </script>
 
 <img
-  {...props}
+  {...rest}
   {style}
   {loading}
   {width}
