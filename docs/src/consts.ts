@@ -37,7 +37,7 @@ export const SIDEBAR: Sidebar = {
   ],
   guides: [
     { text: "Learn Unpic", link: "learn" },
-    { text: "Upgrading to v1", link: "upgrading-to-v1" },
+    { text: "Update to v1", link: "update-to-v1" },
     { text: "Customizing Unpic", link: "custom" },
   ],
   frameworks: [
