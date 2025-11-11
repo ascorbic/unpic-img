@@ -14,7 +14,7 @@ jobs:
     steps:
       - run: echo Running tests in ${{ matrix.site }}
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
       - uses: pnpm/action-setup@v4
       - name: Setup Node
         uses: actions/setup-node@v4
@@ -49,7 +49,7 @@ jobs:
 
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
       - uses: actions/setup-node@v4
         with:
           node-version: 'lts/*'

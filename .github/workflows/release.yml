@@ -23,7 +23,7 @@ jobs:
           private-key: ${{ secrets.APP_PRIVATE_KEY }}
           app-id: ${{ secrets.APP_ID }}
       - name: Checkout Repo
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
         with:
           persist-credentials: false
           fetch-depth: 0
