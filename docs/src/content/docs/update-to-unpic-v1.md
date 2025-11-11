@@ -1,5 +1,5 @@
 ---
-title: "Upgrading to Unpic v1"
+title: "Update to Unpic v1"
 description: "How to upgrade to the stable release of Unpic"
 ---
 
