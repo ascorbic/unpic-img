@@ -38,7 +38,7 @@ jobs:
           NETLIFY: 1
       - name: Upload test report
         if: always()
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v5
         with:
           name: blob-report-${{ matrix.site }}
           path: blob-report
@@ -54,7 +54,7 @@ jobs:
         with:
           node-version: 'lts/*'
       - name: Download blob reports from GitHub Actions Artifacts
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@v6
         with:
           path: all-blob-reports
           pattern: blob-report-*
@@ -65,7 +65,7 @@ jobs:
           npx playwright merge-reports --reporter html,github ./all-blob-reports
 
       - name: Upload HTML report
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v5
         with:
           name: html-report--attempt-${{ github.run_attempt }}
           path: playwright-report
