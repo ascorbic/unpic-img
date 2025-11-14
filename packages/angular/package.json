@@ -34,8 +34,8 @@
   "devDependencies": {
     "@angular-devkit/build-angular": "^19.1.2",
     "@angular/cli": "~19.1.2",
-    "@angular/compiler-cli": "^19.1.1",
-    "@angular/core": "^19.1.1",
+    "@angular/compiler-cli": "^20.3.12",
+    "@angular/core": "^20.3.12",
     "ng-packagr": "^19.1.0",
     "publint": "^0.3.2",
     "typescript": "5.7.3"
