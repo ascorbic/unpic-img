@@ -1,5 +1,5 @@
-import type { UnpicConfig } from "./service";
-import { getDefaultService } from "./service/base";
+import type { UnpicConfig } from "./service.js";
+import { getDefaultService } from "./service/base.js";
 import type { ProviderOptions, ImageCdn } from "unpic";
 import type { AstroConfig } from "astro";
 

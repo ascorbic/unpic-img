@@ -1,6 +1,6 @@
 import { type ImageCdn, type ProviderOptions } from "unpic";
 import { fileURLToPath } from "node:url";
-import { getDefaultService } from "./service/base";
+import { getDefaultService } from "./service/base.js";
 import type { ImageServiceConfig } from "astro";
 export interface UnpicConfig {
   /**
