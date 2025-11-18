@@ -11,13 +11,22 @@
   },
   "homepage": "https://unpic.pics/img/astro",
   "exports": {
-    ".": "./index.ts",
-    "./base": "./src/base.ts",
-    "./service": "./src/service.ts"
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    },
+    "./base": {
+      "types": "./dist/base.d.ts",
+      "default": "./dist/base.js"
+    },
+    "./service": {
+      "types": "./dist/service.d.ts",
+      "default": "./dist/service.js"
+    }
   },
   "files": [
-    "src",
-    "index.ts"
+    "dist",
+    "components"
   ],
   "keywords": [
     "astro",
@@ -26,14 +35,17 @@
     "astro-component"
   ],
   "scripts": {
+    "build": "tsup && astro-check",
     "format": "prettier --write .",
     "test": "vitest run"
   },
   "devDependencies": {
+    "@astrojs/check": "^0.9.5",
     "@testing-library/dom": "^10.4.0",
     "@types/jsdom": "^21.1.7",
     "astro": "^5.1.7",
     "jsdom": "^26.0.0",
+    "tsup": "^8.3.5",
     "vitest": "^3.0.2"
   },
   "dependencies": {

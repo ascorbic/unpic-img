@@ -8,8 +8,8 @@ import {
 import type { ImageMetadata } from "astro";
 
 import type { HTMLAttributes } from "astro/types";
-import { getBackground } from "../background";
-import type { UnpicConfig } from "../service";
+import { getBackground } from "../../dist/background";
+import type { UnpicConfig } from "../../dist/service";
 
 type Props<
   TOperations extends Operations = Operations,
@@ -49,7 +49,7 @@ const config: UnpicConfig = imageConfig.service?.config;
 imgProps.layout ||= config?.layout;
 imgProps.background ||= placeholder ?? config?.placeholder;
 
-imgProps.background = await getBackground(imgProps);
+imgProps.background = await getBackground(imgProps as any);
 ---
 
 <img

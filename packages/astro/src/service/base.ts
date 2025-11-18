@@ -6,10 +6,10 @@ import {
   type UnpicImageProps,
 } from "@unpic/core";
 import type { ExternalImageService, ImageTransform } from "astro";
-import type { UnpicConfig } from "../service.ts";
+import type { UnpicConfig } from "../service";
 import { transformUrl, type ImageCdn, type UrlTransformerOptions } from "unpic";
 import { env } from "node:process";
-import { getEndpointOptions } from "../utils.ts";
+import { getEndpointOptions } from "../utils";
 
 /**
  * Tries to detect a default image service based on the environment.

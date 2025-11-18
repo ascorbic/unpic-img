@@ -1,5 +1,5 @@
 import { describe, test, expect } from "vitest";
-import { Image } from "../index.js";
+import { Image } from "../src/index.js";
 import PictureTestWrapper from "./PictureTestWrapper.astro";
 import baseImageService from "../src/service/base.js";
 import { render } from "./astro-testing-library.js";
