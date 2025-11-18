@@ -46,11 +46,11 @@ export interface UnpicConfig {
  */
 export function imageService(config: UnpicConfig = {}): ImageServiceConfig {
   const service = config.fallbackService ?? getDefaultService();
-  let entrypoint = "./service/base.ts";
+  let entrypoint = "./service/base.js";
   if (service === "sharp" || service === "astro") {
-    entrypoint = "./service/sharp.ts";
+    entrypoint = "./service/sharp.js";
   } else if (service === "squoosh") {
-    entrypoint = "./service/squoosh.ts";
+    entrypoint = "./service/squoosh.js";
   }
 
   return {
