@@ -312,10 +312,6 @@ importers:
       typescript:
         specifier: ^5.6.3
         version: 5.6.3
-    devDependencies:
-      '@netlify/plugin-nextjs':
-        specifier: ^5.9.2
-        version: 5.9.2
 
   examples/preact:
     dependencies:
@@ -4438,10 +4434,6 @@ packages:
   '@netlify/open-api@2.28.0':
     resolution: {integrity: sha512-lSx9yVn5mzTS7u9aevQyDRoWaHJYNl15B7CU373g8We39wW8fGh4sdNY7ciPWshf42FblOVlBdoasn/LpzquXg==}
     engines: {node: '>=14'}
-
-  '@netlify/plugin-nextjs@5.9.2':
-    resolution: {integrity: sha512-uoceIqubfp99UysXV0JvYL8uIybSnfAywwP1b3wNQLu+EueCRKuNvRiiwBkA5gta/rTEp23xD1HmuyT/9JDbaA==}
-    engines: {node: '>=18.0.0'}
 
   '@netlify/plugin-nextjs@5.9.3':
     resolution: {integrity: sha512-760YvPaw6tSPmmX/2sqRzqBehPOfTD6lJoUb+bW+yZhQNyfLyCJR9/cRQP0+fFN2CCmdRWECX4nbi76Qne5/FQ==}
@@ -21040,8 +21032,6 @@ snapshots:
 
   '@netlify/open-api@2.28.0': {}
 
-  '@netlify/plugin-nextjs@5.9.2': {}
-
   '@netlify/plugin-nextjs@5.9.3': {}
 
   '@netlify/plugins-list@6.76.0': {}
@@ -36348,7 +36338,7 @@ snapshots:
     dependencies:
       '@volar/typescript': 2.4.23
       '@vue/language-core': 2.1.10(typescript@5.7.3)
-      semver: 7.6.3
+      semver: 7.7.3
       typescript: 5.7.3
     optional: true
 
