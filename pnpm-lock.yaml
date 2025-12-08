@@ -60,6 +60,9 @@ importers:
       publint:
         specifier: ^0.3.2
         version: 0.3.2
+      svelte:
+        specifier: ^5.19.0
+        version: 5.19.0
       typescript:
         specifier: ^5.7.3
         version: 5.7.3
