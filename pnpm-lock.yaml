@@ -857,8 +857,8 @@ importers:
         specifier: ^3.0.2
         version: 3.0.2(@types/node@22.10.7)(jiti@2.6.1)(jsdom@27.2.0)(less@4.4.2)(lightningcss@1.24.1)(sass@1.93.2)(terser@5.44.0)(yaml@2.7.1)
       vue-tsc:
-        specifier: ^2.2.0
-        version: 2.2.0(typescript@5.7.3)
+        specifier: ^3.1.7
+        version: 3.1.7(typescript@5.7.3)
 
   packages/webc:
     dependencies:
@@ -7165,11 +7165,11 @@ packages:
     peerDependencies:
       typescript: '*'
 
-  '@volar/language-core@2.4.11':
-    resolution: {integrity: sha512-lN2C1+ByfW9/JRPpqScuZt/4OrUUse57GLI6TbLgTIqBVemdl1wNcZ1qYGEo2+Gw8coYLgCy7SuKqn6IrQcQgg==}
-
   '@volar/language-core@2.4.23':
     resolution: {integrity: sha512-hEEd5ET/oSmBC6pi1j6NaNYRWoAiDhINbT8rmwtINugR39loROSlufGdYMF9TaKGfz+ViGs1Idi3mAhnuPcoGQ==}
+
+  '@volar/language-core@2.4.26':
+    resolution: {integrity: sha512-hH0SMitMxnB43OZpyF1IFPS9bgb2I3bpCh76m2WEK7BE0A0EzpYsRp0CCH2xNKshr7kacU5TQBLYn4zj7CG60A==}
 
   '@volar/language-server@2.4.23':
     resolution: {integrity: sha512-k0iO+tybMGMMyrNdWOxgFkP0XJTdbH0w+WZlM54RzJU3WZSjHEupwL30klpM7ep4FO6qyQa03h+VcGHD4Q8gEg==}
@@ -7177,17 +7177,17 @@ packages:
   '@volar/language-service@2.4.23':
     resolution: {integrity: sha512-h5mU9DZ/6u3LCB9xomJtorNG6awBNnk9VuCioGsp6UtFiM8amvS5FcsaC3dabdL9zO0z+Gq9vIEMb/5u9K6jGQ==}
 
-  '@volar/source-map@2.4.11':
-    resolution: {integrity: sha512-ZQpmafIGvaZMn/8iuvCFGrW3smeqkq/IIh9F1SdSx9aUl0J4Iurzd6/FhmjNO5g2ejF3rT45dKskgXWiofqlZQ==}
-
   '@volar/source-map@2.4.23':
     resolution: {integrity: sha512-Z1Uc8IB57Lm6k7q6KIDu/p+JWtf3xsXJqAX/5r18hYOTpJyBn0KXUR8oTJ4WFYOcDzWC9n3IflGgHowx6U6z9Q==}
 
-  '@volar/typescript@2.4.11':
-    resolution: {integrity: sha512-2DT+Tdh88Spp5PyPbqhyoYavYCPDsqbHLFwcUI9K1NlY1YgUJvujGdrqUp0zWxnW7KWNTr3xSpMuv2WnaTKDAw==}
+  '@volar/source-map@2.4.26':
+    resolution: {integrity: sha512-JJw0Tt/kSFsIRmgTQF4JSt81AUSI1aEye5Zl65EeZ8H35JHnTvFGmpDOBn5iOxd48fyGE+ZvZBp5FcgAy/1Qhw==}
 
   '@volar/typescript@2.4.23':
     resolution: {integrity: sha512-lAB5zJghWxVPqfcStmAP1ZqQacMpe90UrP5RJ3arDyrhy4aCUQqmxPPLB2PWDKugvylmO41ljK7vZ+t6INMTag==}
+
+  '@volar/typescript@2.4.26':
+    resolution: {integrity: sha512-N87ecLD48Sp6zV9zID/5yuS1+5foj0DfuYGdQ6KHj/IbKvyKv1zNX6VCmnKYwtmHadEO6mFc2EKISiu3RDPAvA==}
 
   '@vscode/emmet-helper@2.11.0':
     resolution: {integrity: sha512-QLxjQR3imPZPQltfbWRnHU6JecWTF1QSWhx3GAKQpslx7y3Dp6sIIXhKjiUJ/BR9FX8PVthjr9PD6pNwOJfAzw==}
@@ -7297,8 +7297,8 @@ packages:
       typescript:
         optional: true
 
-  '@vue/language-core@2.2.0':
-    resolution: {integrity: sha512-O1ZZFaaBGkKbsRfnVH1ifOK1/1BUkyK+3SQsfnh6PmMmD4qJcTU8godCeA96jjDRTL6zgnK7YzCHfaUlH2r0Mw==}
+  '@vue/language-core@3.1.7':
+    resolution: {integrity: sha512-xbJjFptmuTQD68a3/P70HDb+js61BxYvB3+/h5BflqRNV5dvwH1TZsSsTvMKwFx+QNQf0ndOvD3iih3fHXZYzQ==}
     peerDependencies:
       typescript: '*'
     peerDependenciesMeta:
@@ -7561,8 +7561,8 @@ packages:
   alien-signals@0.2.0:
     resolution: {integrity: sha512-StlonZhBBrsPPwrDjiPAiVTf/rolxffLxVPT60Qv/t88BZ81BvUVzHgGqEFvJ1ii8HXtm1+zU2Icr59tfWEcag==}
 
-  alien-signals@0.4.14:
-    resolution: {integrity: sha512-itUAVzhczTmP2U5yX67xVpsbbOiquusbWVyA9N+sy6+r6YVbFkahXvNCeEPWEOMhwDYwbVbGHFkVL03N9I5g+Q==}
+  alien-signals@3.1.1:
+    resolution: {integrity: sha512-ogkIWbVrLwKtHY6oOAXaYkAxP+cTH7V5FZ5+Tm4NZFd8VDZ6uNMDrfzqctTZ42eTMCSR3ne3otpcxmqSnFfPYA==}
 
   all-node-versions@11.3.0:
     resolution: {integrity: sha512-psMkc5s3qpr+QMfires9bC4azRYciPWql1wqZKMsYRh1731qefQDH2X4+O19xSBX6u0Ra/8Y5diG6y/fEmqKsw==}
@@ -17151,8 +17151,8 @@ packages:
     peerDependencies:
       typescript: '>=5.0.0'
 
-  vue-tsc@2.2.0:
-    resolution: {integrity: sha512-gtmM1sUuJ8aSb0KoAFmK9yMxb8TxjewmxqTJ1aKphD5Cbu0rULFY6+UQT51zW7SpUcenfPUuflKyVwyx9Qdnxg==}
+  vue-tsc@3.1.7:
+    resolution: {integrity: sha512-r6XlyozLXC8Z0a+r4jVyinPutG91wDtvHZuXj0U+keNc0+056jIoJINBSZI2K7Sb4YHIru0JHiqssO1cJgs+Yw==}
     hasBin: true
     peerDependencies:
       typescript: '>=5.0.0'
@@ -25291,13 +25291,13 @@ snapshots:
       vscode-languageserver-textdocument: 1.0.11
       vscode-uri: 3.1.0
 
-  '@volar/language-core@2.4.11':
-    dependencies:
-      '@volar/source-map': 2.4.11
-
   '@volar/language-core@2.4.23':
     dependencies:
       '@volar/source-map': 2.4.23
+
+  '@volar/language-core@2.4.26':
+    dependencies:
+      '@volar/source-map': 2.4.26
 
   '@volar/language-server@2.4.23':
     dependencies:
@@ -25318,19 +25318,19 @@ snapshots:
       vscode-languageserver-textdocument: 1.0.11
       vscode-uri: 3.1.0
 
-  '@volar/source-map@2.4.11': {}
-
   '@volar/source-map@2.4.23': {}
 
-  '@volar/typescript@2.4.11':
-    dependencies:
-      '@volar/language-core': 2.4.11
-      path-browserify: 1.0.1
-      vscode-uri: 3.0.8
+  '@volar/source-map@2.4.26': {}
 
   '@volar/typescript@2.4.23':
     dependencies:
       '@volar/language-core': 2.4.23
+      path-browserify: 1.0.1
+      vscode-uri: 3.1.0
+
+  '@volar/typescript@2.4.26':
+    dependencies:
+      '@volar/language-core': 2.4.26
       path-browserify: 1.0.1
       vscode-uri: 3.1.0
 
@@ -25512,6 +25512,7 @@ snapshots:
     dependencies:
       de-indent: 1.0.2
       he: 1.2.0
+    optional: true
 
   '@vue/devtools-api@6.6.4': {}
 
@@ -25555,16 +25556,15 @@ snapshots:
       typescript: 5.9.3
     optional: true
 
-  '@vue/language-core@2.2.0(typescript@5.7.3)':
+  '@vue/language-core@3.1.7(typescript@5.7.3)':
     dependencies:
-      '@volar/language-core': 2.4.11
-      '@vue/compiler-dom': 3.5.24
-      '@vue/compiler-vue2': 2.7.16
-      '@vue/shared': 3.5.24
-      alien-signals: 0.4.14
-      minimatch: 9.0.5
+      '@volar/language-core': 2.4.26
+      '@vue/compiler-dom': 3.5.25
+      '@vue/shared': 3.5.25
+      alien-signals: 3.1.1
       muggle-string: 0.4.1
       path-browserify: 1.0.1
+      picomatch: 4.0.3
     optionalDependencies:
       typescript: 5.7.3
 
@@ -25893,7 +25893,7 @@ snapshots:
   alien-signals@0.2.0:
     optional: true
 
-  alien-signals@0.4.14: {}
+  alien-signals@3.1.1: {}
 
   all-node-versions@11.3.0:
     dependencies:
@@ -27842,7 +27842,8 @@ snapshots:
 
   db0@0.2.1: {}
 
-  de-indent@1.0.2: {}
+  de-indent@1.0.2:
+    optional: true
 
   debug@2.6.9:
     dependencies:
@@ -38002,10 +38003,10 @@ snapshots:
       typescript: 5.9.3
     optional: true
 
-  vue-tsc@2.2.0(typescript@5.7.3):
+  vue-tsc@3.1.7(typescript@5.7.3):
     dependencies:
-      '@volar/typescript': 2.4.11
-      '@vue/language-core': 2.2.0(typescript@5.7.3)
+      '@volar/typescript': 2.4.26
+      '@vue/language-core': 3.1.7(typescript@5.7.3)
       typescript: 5.7.3
 
   vue@3.5.13(typescript@5.7.3):
