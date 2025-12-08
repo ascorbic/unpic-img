@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.0.2
+
+### Patch Changes
+
+- 7fbcc41: chore(deps): expand Next.js peer dependencies to support v16
+
 ## 1.0.1
 
 ### Patch Changes
