@@ -51,18 +51,12 @@ importers:
       prettier-plugin-astro:
         specifier: ^0.14.1
         version: 0.14.1
-      prettier-plugin-svelte:
-        specifier: ^3.3.3
-        version: 3.3.3(prettier@3.4.2)(svelte@5.19.0)
       process:
         specifier: ^0.11.10
         version: 0.11.10
       publint:
         specifier: ^0.3.2
         version: 0.3.2
-      svelte:
-        specifier: ^5.19.0
-        version: 5.19.0
       typescript:
         specifier: ^5.7.3
         version: 5.7.3
@@ -813,9 +807,6 @@ importers:
       prettier:
         specifier: ^3.4.2
         version: 3.4.2
-      prettier-plugin-svelte:
-        specifier: ^3.3.3
-        version: 3.3.3(prettier@3.4.2)(svelte@5.19.0)
       svelte:
         specifier: ^5.19.0
         version: 5.19.0
@@ -13452,12 +13443,6 @@ packages:
     resolution: {integrity: sha512-RiBETaaP9veVstE4vUwSIcdATj6dKmXljouXc/DDNwBSPTp8FRkLGDSGFClKsAFeeg+13SB0Z1JZvbD76bigJw==}
     engines: {node: ^14.15.0 || >=16.0.0}
 
-  prettier-plugin-svelte@3.3.3:
-    resolution: {integrity: sha512-yViK9zqQ+H2qZD1w/bH7W8i+bVfKrD8GIFjkFe4Thl6kCT9SlAsXVNmt3jCvQOCsnOhcvYgsoVlRV/Eu6x5nNw==}
-    peerDependencies:
-      prettier: ^3.0.0
-      svelte: ^3.2.0 || ^4.0.0-next.0 || ^5.0.0-next.0
-
   prettier@2.8.8:
     resolution: {integrity: sha512-tdN8qQGvNjw4CHbY+XXk0JgCXn9QiF21a55rBe5LJAU+kDyC4WQn4+awm2Xfk2lQMk5fKup9XgzTZtGkjBdP9Q==}
     engines: {node: '>=10.13.0'}
@@ -21746,13 +21731,15 @@ snapshots:
     transitivePeerDependencies:
       - '@parcel/core'
 
-  '@parcel/cache@2.12.0(@parcel/core@2.12.0(@swc/helpers@0.5.15))':
+  '@parcel/cache@2.12.0(@parcel/core@2.12.0(@swc/helpers@0.5.15))(@swc/helpers@0.5.15)':
     dependencies:
       '@parcel/core': 2.12.0(@swc/helpers@0.5.15)
       '@parcel/fs': 2.12.0(@parcel/core@2.12.0(@swc/helpers@0.5.15))(@swc/helpers@0.5.15)
       '@parcel/logger': 2.12.0
       '@parcel/utils': 2.12.0
       lmdb: 2.8.5
+    transitivePeerDependencies:
+      - '@swc/helpers'
 
   '@parcel/codeframe@2.12.0':
     dependencies:
@@ -21812,7 +21799,7 @@ snapshots:
   '@parcel/core@2.12.0(@swc/helpers@0.5.15)':
     dependencies:
       '@mischnic/json-sourcemap': 0.1.1
-      '@parcel/cache': 2.12.0(@parcel/core@2.12.0(@swc/helpers@0.5.15))
+      '@parcel/cache': 2.12.0(@parcel/core@2.12.0(@swc/helpers@0.5.15))(@swc/helpers@0.5.15)
       '@parcel/diagnostic': 2.12.0
       '@parcel/events': 2.12.0
       '@parcel/fs': 2.12.0(@parcel/core@2.12.0(@swc/helpers@0.5.15))(@swc/helpers@0.5.15)
@@ -22227,7 +22214,7 @@ snapshots:
 
   '@parcel/types@2.12.0(@parcel/core@2.12.0(@swc/helpers@0.5.15))(@swc/helpers@0.5.15)':
     dependencies:
-      '@parcel/cache': 2.12.0(@parcel/core@2.12.0(@swc/helpers@0.5.15))
+      '@parcel/cache': 2.12.0(@parcel/core@2.12.0(@swc/helpers@0.5.15))(@swc/helpers@0.5.15)
       '@parcel/diagnostic': 2.12.0
       '@parcel/fs': 2.12.0(@parcel/core@2.12.0(@swc/helpers@0.5.15))(@swc/helpers@0.5.15)
       '@parcel/package-manager': 2.12.0(@parcel/core@2.12.0(@swc/helpers@0.5.15))(@swc/helpers@0.5.15)
@@ -33015,11 +33002,6 @@ snapshots:
       '@astrojs/compiler': 2.10.3
       prettier: 3.4.2
       sass-formatter: 0.7.9
-
-  prettier-plugin-svelte@3.3.3(prettier@3.4.2)(svelte@5.19.0):
-    dependencies:
-      prettier: 3.4.2
-      svelte: 5.19.0
 
   prettier@2.8.8: {}
 
