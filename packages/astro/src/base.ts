@@ -1,2 +1,2 @@
-export { default as Image } from "./base/Image.astro";
-export { default as Source } from "./base/Source.astro";
+export { default as Image } from "../components/base/Image.astro";
+export { default as Source } from "../components/base/Source.astro";

@@ -1,6 +1,7 @@
-import { type ImageCdn, type CdnOptions } from "unpic";
+import { type ImageCdn, type ProviderOptions } from "unpic";
 import { fileURLToPath } from "node:url";
-import { getDefaultService } from "./service/base";
+import { getDefaultService } from "./service/base.js";
+import type { ImageServiceConfig } from "astro";
 export interface UnpicConfig {
   /**
    * The image service to use for local images and when the CDN can't be
@@ -37,19 +38,19 @@ export interface UnpicConfig {
   /**
    * CDN-specific options.
    */
-  cdnOptions?: CdnOptions;
+  cdnOptions?: ProviderOptions;
 }
 
 /**
  * ALPHA: This API is experimental and subject to change.
  */
-export function imageService(config: UnpicConfig = {}) {
+export function imageService(config: UnpicConfig = {}): ImageServiceConfig {
   const service = config.fallbackService ?? getDefaultService();
-  let entrypoint = "./service/base.ts";
+  let entrypoint = "./service/base.js";
   if (service === "sharp" || service === "astro") {
-    entrypoint = "./service/sharp.ts";
+    entrypoint = "./service/sharp.js";
   } else if (service === "squoosh") {
-    entrypoint = "./service/squoosh.ts";
+    entrypoint = "./service/squoosh.js";
   }
 
   return {
