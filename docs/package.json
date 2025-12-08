@@ -29,7 +29,7 @@
     "@iconify-json/ph": "^1.2.2",
     "@iconify-json/simple-icons": "^1.2.20",
     "@preact/signals": "^2.0.1",
-    "@types/node": "^22.10.7",
+    "@types/node": "^24.10.1",
     "@types/react": "^19.0.7",
     "@types/react-dom": "^19.0.3",
     "@unpic/astro": "workspace:^",
