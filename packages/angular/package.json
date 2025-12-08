@@ -15,17 +15,6 @@
   "files": [
     "dist"
   ],
-  "module": "dist/fesm2022/unpic-angular.mjs",
-  "typings": "dist/types/unpic-angular.d.ts",
-  "exports": {
-    "./package.json": {
-      "default": "./package.json"
-    },
-    ".": {
-      "types": "./dist/types/unpic-angular.d.ts",
-      "default": "./dist/fesm2022/unpic-angular.mjs"
-    }
-  },
   "repository": {
     "type": "git",
     "url": "https://github.com/ascorbic/unpic-img",
@@ -45,6 +34,16 @@
     "@unpic/core": "workspace:^",
     "tslib": "^2.8.1"
   },
+  "exports": {
+    "./package.json": {
+      "default": "./package.json"
+    },
+    ".": {
+      "types": "./dist/types/unpic-angular.d.ts",
+      "default": "./dist/fesm2022/unpic-angular.mjs"
+    }
+  },
+  "sideEffects": false,
   "peerDependencies": {
     "@angular/core": "^14.0.0 || ^15.0.0 || ^16.0.0 || ^17.0.0 || ^18.0.0 || ^19.0.0 || ^20.0.0 || ^21.0.0"
   }
