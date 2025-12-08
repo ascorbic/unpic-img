@@ -94,8 +94,8 @@ importers:
         specifier: ^3.2.1
         version: 3.2.1
       '@docsearch/css':
-        specifier: ^3.8.2
-        version: 3.8.2
+        specifier: ^4.3.2
+        version: 4.3.2
       '@docsearch/react':
         specifier: ^3.8.2
         version: 3.8.2(@algolia/client-search@5.19.0)(@types/react@19.0.7)(react-dom@19.0.0(react@19.0.0))(react@19.0.0)(search-insights@2.13.0)
@@ -2380,6 +2380,9 @@ packages:
 
   '@docsearch/css@3.8.2':
     resolution: {integrity: sha512-y05ayQFyUmCXze79+56v/4HpycYF3uFqB78pLPrSV5ZKAlDuIAAJNhaRi8tTdRNXh05yxX/TyNnzD6LwSM89vQ==}
+
+  '@docsearch/css@4.3.2':
+    resolution: {integrity: sha512-K3Yhay9MgkBjJJ0WEL5MxnACModX9xuNt3UlQQkDEDZJZ0+aeWKtOkxHNndMRkMBnHdYvQjxkm6mdlneOtU1IQ==}
 
   '@docsearch/react@3.8.2':
     resolution: {integrity: sha512-xCRrJQlTt8N9GU0DG4ptwHRkfnSnD/YpdeaXe02iKfqs97TkZJv60yE+1eq/tjPcVnTW8dP5qLP7itifFVV5eg==}
@@ -20128,6 +20131,8 @@ snapshots:
   '@discoveryjs/json-ext@0.6.3': {}
 
   '@docsearch/css@3.8.2': {}
+
+  '@docsearch/css@4.3.2': {}
 
   '@docsearch/react@3.8.2(@algolia/client-search@5.19.0)(@types/react@19.0.7)(react-dom@19.0.0(react@19.0.0))(react@19.0.0)(search-insights@2.13.0)':
     dependencies:
