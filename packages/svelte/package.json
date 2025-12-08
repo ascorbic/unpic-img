@@ -30,7 +30,7 @@
     "@sveltejs/vite-plugin-svelte": "^5.0.3",
     "@testing-library/svelte": "^5.2.6",
     "prettier": "^3.4.2",
-    "svelte": "^5.19.0",
+    "svelte": "^5.45.6",
     "svelte-check": "^4.1.4",
     "tslib": "^2.8.1",
     "typescript": "^5.7.3",
