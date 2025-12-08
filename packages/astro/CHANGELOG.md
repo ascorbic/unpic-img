@@ -1,5 +1,12 @@
 # Changelog
 
+## 1.0.2
+
+### Patch Changes
+
+- 8ea0a80: Updates publishing to ship built files to allow usage with Node type
+  stripping, enabled by default in 22.18.0
+
 ## 1.0.1
 
 ### Patch Changes
