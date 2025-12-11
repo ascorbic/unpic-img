@@ -3,7 +3,6 @@
   import { transformProps } from "@unpic/core";
   import styleToCss from "style-object-to-css-string";
   import type { ImageProps } from "./types";
-  import { filterEventHandlers } from "./filter-event-handlers";
 
   let {
     style: parentStyle,
@@ -45,8 +44,19 @@
     ...rest
   } = props;
 
-  // Filter out event handlers to prevent CSP violations with inline event handlers
-  const filteredRest = $derived(filterEventHandlers(rest));
+  // Filter out undefined event handlers to prevent CSP violations in Svelte 5
+  // When event handler properties are present but undefined in the spread object,
+  // Svelte 5 adds internal event bindings that violate CSP policies
+  const filteredRest = $derived(
+    Object.fromEntries(
+      Object.entries(rest).filter(([key, value]) => {
+        // Keep non-event-handler properties
+        if (!key.startsWith("on")) return true;
+        // Keep event handlers that are explicitly defined by the user
+        return value !== undefined;
+      })
+    )
+  );
 </script>
 
 <img
