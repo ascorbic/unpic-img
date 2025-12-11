@@ -27,4 +27,22 @@ describe("the Svelte component", () => {
       expectSourcePropsToMatchTransformed(source, props);
     });
   }
+
+  test("filters out event handlers to prevent CSP violations", () => {
+    const props = {
+      src: "https://cdn.shopify.com/static/sample-images/bath_grande_crop_center.jpeg",
+      layout: "constrained" as const,
+      width: 800,
+      height: 600,
+      alt: "Test image",
+      onload: "console.log('loaded')",
+      onerror: "console.log('error')",
+    };
+    render(Image, { props });
+    const img = screen.getByAltText<HTMLImageElement>("Test image");
+    expect(img).toBeTruthy();
+    // Verify event handlers are not present as attributes
+    expect(img.getAttribute("onload")).toBeNull();
+    expect(img.getAttribute("onerror")).toBeNull();
+  });
 });

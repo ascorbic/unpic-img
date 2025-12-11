@@ -24,10 +24,17 @@
       .filter(Boolean)
       .join(";"),
   );
+
+  // Filter out event handlers to prevent CSP violations with inline event handlers
+  const filteredProps = $derived(
+    Object.fromEntries(
+      Object.entries(props).filter(([key]) => !key.startsWith("on"))
+    )
+  );
 </script>
 
 <img
-  {...props}
+  {...filteredProps}
   {style}
   {loading}
   {width}

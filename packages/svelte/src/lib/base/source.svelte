@@ -11,6 +11,13 @@
       ...props,
     }),
   );
+
+  // Filter out event handlers to prevent CSP violations with inline event handlers
+  const filteredProps = $derived(
+    Object.fromEntries(
+      Object.entries(transformedProps).filter(([key]) => !key.startsWith("on"))
+    )
+  );
 </script>
 
-<source {...transformedProps} />
+<source {...filteredProps} />

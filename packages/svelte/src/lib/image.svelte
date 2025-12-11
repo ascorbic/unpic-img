@@ -43,10 +43,17 @@
     aspectRatio: _aspectRatio,
     ...rest
   } = props;
+
+  // Filter out event handlers to prevent CSP violations with inline event handlers
+  const filteredRest = $derived(
+    Object.fromEntries(
+      Object.entries(rest).filter(([key]) => !key.startsWith("on"))
+    )
+  );
 </script>
 
 <img
-  {...rest}
+  {...filteredRest}
   {style}
   {loading}
   {width}
