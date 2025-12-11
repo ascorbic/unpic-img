@@ -5,6 +5,10 @@
  *
  * @param props - The props object to filter
  * @returns A new object with event handlers removed
+ *
+ * Note: The return type is Partial<T> because we cannot statically determine at compile
+ * time which keys start with "on". This is a pragmatic choice that provides type safety
+ * when spreading the result onto HTML elements.
  */
 export function filterEventHandlers<T extends Record<string, unknown>>(
   props: T,
