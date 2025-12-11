@@ -3,6 +3,7 @@
   import { transformProps } from "@unpic/core";
   import styleToCss from "style-object-to-css-string";
   import type { ImageProps } from "./types";
+  import { filterEventHandlers } from "./filter-event-handlers";
 
   let {
     style: parentStyle,
@@ -45,11 +46,7 @@
   } = props;
 
   // Filter out event handlers to prevent CSP violations with inline event handlers
-  const filteredRest = $derived(
-    Object.fromEntries(
-      Object.entries(rest).filter(([key]) => !key.startsWith("on"))
-    )
-  );
+  const filteredRest = $derived(filterEventHandlers(rest));
 </script>
 
 <img

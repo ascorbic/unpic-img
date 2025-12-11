@@ -2,6 +2,7 @@
   import type { SourceProps } from "./types";
 
   import { transformSourceProps } from "@unpic/core";
+  import { filterEventHandlers } from "./filter-event-handlers";
 
   let props: SourceProps = $props();
 
@@ -12,11 +13,7 @@
   );
 
   // Filter out event handlers to prevent CSP violations with inline event handlers
-  const filteredProps = $derived(
-    Object.fromEntries(
-      Object.entries(transformedProps).filter(([key]) => !key.startsWith("on"))
-    )
-  );
+  const filteredProps = $derived(filterEventHandlers(transformedProps));
 </script>
 
 <source {...filteredProps} />
