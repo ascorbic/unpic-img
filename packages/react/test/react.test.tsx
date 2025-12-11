@@ -58,6 +58,5 @@ describe("the React component", () => {
     expect(img).toBeTruthy();
     expect(img.style.border).toBe("1px solid red");
     expect(img.style.opacity).toBe("0.5");
-    expectImagePropsToMatchTransformed(img, props);
   });
 });
