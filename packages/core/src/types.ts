@@ -142,7 +142,7 @@ type FullWidthLayout = {
 export type UnpicImageProps<
   TImageAttributes extends CoreImageAttributes<TStyle>,
   TStyle = TImageAttributes["style"],
-> = Omit<TImageAttributes, "srcset" | "style"> &
+> = Omit<TImageAttributes, "srcset"> &
   BaseOptions &
   (FixedLayout | ConstrainedLayout | FullWidthLayout);
 
@@ -155,7 +155,7 @@ export type UnpicBaseImageProps<
   TOptions,
   TImageAttributes extends CoreImageAttributes<TStyle>,
   TStyle = TImageAttributes["style"],
-> = Omit<TImageAttributes, "srcset" | "style"> &
+> = Omit<TImageAttributes, "srcset"> &
   BaseTransformerOptions<TOperations, TOptions> &
   (FixedLayout | ConstrainedLayout | FullWidthLayout);
 
