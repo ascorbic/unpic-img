@@ -108,14 +108,22 @@ const service: ExternalImageService<UnpicConfig> = {
       imageConfig.service.config,
     );
     // We omit src and srcset because they're handled by other hooks
-    const { src, srcset, ...props } = transformProps({
+    const { src, srcset, style, ...props } = transformProps({
       ...transformOptions,
       src: transformOptions.url.toString(),
     } as UnpicImageProps<
       astroHTML.JSX.ImgHTMLAttributes,
       astroHTML.JSX.ImgHTMLAttributes["style"]
     >);
-    return props;
+    // Convert style object to CSS string for Astro markdown compatibility
+    // Without this, the style renders as "[object Object]" in markdown
+    const styleString =
+      style && typeof style === "object"
+        ? Object.entries(style)
+            .map(([key, value]) => `${key}: ${value}`)
+            .join("; ")
+        : style;
+    return { ...props, style: styleString };
   },
 };
 

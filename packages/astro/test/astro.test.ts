@@ -35,6 +35,39 @@ describe("the Astro component", () => {
 
 describe("the Astro image service", () => {
   describe("base", () => {
+    test("getHTMLAttributes returns style as a string, not an object", async () => {
+      const attrs = baseImageService.getHTMLAttributes(
+        {
+          src: {
+            src: "/@fs/path/to/image.jpg",
+            width: 800,
+            height: 600,
+            format: "jpg",
+          },
+          width: 800,
+          height: 600,
+        },
+        {
+          endpoint: {
+            route: "/_image",
+          },
+          service: {
+            entrypoint: "/path/to/service/base.ts",
+            config: {},
+          },
+          domains: [],
+          remotePatterns: [],
+        },
+      );
+
+      // The style should be a string, not an object
+      // When it's an object, Astro markdown renders it as "[object Object]"
+      expect(attrs.style).toBeDefined();
+      expect(typeof attrs.style).toBe("string");
+      expect(attrs.style).not.toBe("[object Object]");
+      expect(attrs.style).toContain("object-fit");
+    });
+
     test("respects trailingSlash: always", async () => {
       const url = await baseImageService.getURL(
         {
