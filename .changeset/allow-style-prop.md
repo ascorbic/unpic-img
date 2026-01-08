@@ -1,6 +1,6 @@
 ---
-"@unpic/core": minor
-"@unpic/react": minor
+"@unpic/core": patch
+"@unpic/react": patch
 ---
 
-Allow passing `style` prop to Image component. The `UnpicImageProps` type now accepts the `style` prop, enabling TypeScript users to pass inline styles without type casting. User-provided styles are merged with component-generated styles, with user styles taking precedence when there are conflicts.
+Fix type definition to allow `style` prop on Image component. This is a TypeScript-only change that corrects an incorrect type definition - the `style` prop was always supported at runtime but was incorrectly omitted from the type. No runtime behavior has changed.
