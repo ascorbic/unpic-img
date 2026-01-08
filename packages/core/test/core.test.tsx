@@ -50,4 +50,42 @@ describe("Core", () => {
     expect(props.width).toEqual(100);
     expect(props.height).toEqual(200);
   });
+
+  test("merges user styles with generated styles", () => {
+    const props = transformBaseImageProps({
+      src: "images/my-image",
+      width: 800,
+      height: 600,
+      layout: "constrained",
+      objectFit: "cover",
+      style: { border: "1px solid red", opacity: "0.5" },
+      transformer: (tUrl) => tUrl,
+    });
+    expect(props.style).toBeDefined();
+    // Generated styles should be present
+    expect(props.style?.["object-fit"]).toEqual("cover");
+    expect(props.style?.["max-width"]).toEqual("800px");
+    expect(props.style?.["width"]).toEqual("100%");
+    // User styles should be present and override if needed
+    expect(props.style?.["border"]).toEqual("1px solid red");
+    expect(props.style?.["opacity"]).toEqual("0.5");
+  });
+
+  test("user styles override generated styles", () => {
+    const props = transformBaseImageProps({
+      src: "images/my-image",
+      width: 800,
+      height: 600,
+      layout: "constrained",
+      objectFit: "contain",
+      style: { "object-fit": "fill", border: "2px solid blue" },
+      transformer: (tUrl) => tUrl,
+    });
+    expect(props.style).toBeDefined();
+    // User's object-fit should override generated one
+    expect(props.style?.["object-fit"]).toEqual("fill");
+    expect(props.style?.["border"]).toEqual("2px solid blue");
+    // Other generated styles should still be present
+    expect(props.style?.["max-width"]).toEqual("800px");
+  });
 });

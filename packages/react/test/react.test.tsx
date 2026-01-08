@@ -46,4 +46,17 @@ describe("the React component", () => {
     expect(img.getAttribute("aria-label")).toBe("A cool image");
     expectImagePropsToMatchTransformed(img, props);
   });
+
+  test(`renders an image with style prop`, () => {
+    const props = {
+      style: { border: "1px solid red", opacity: "0.5" },
+      ...imgTestCases[0],
+    };
+
+    render(<Image {...props} />);
+    const img = screen.getByAltText<HTMLImageElement>(props.alt);
+    expect(img).toBeTruthy();
+    expect(img.style.border).toBe("1px solid red");
+    expect(img.style.opacity).toBe("0.5");
+  });
 });
