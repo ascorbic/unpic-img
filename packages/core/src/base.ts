@@ -56,7 +56,7 @@ export const getStyle = <
   height,
   aspectRatio,
   layout,
-  objectFit = "cover",
+  objectFit,
   background,
 }: Pick<
   UnpicBaseImageProps<TOperations, TOptions, TImageAttributes, TStyle>,
@@ -324,6 +324,15 @@ export function transformBaseImageProps<
     options,
     ...transformedProps
   } = transformSharedProps(props);
+
+  // Default to object-fit: cover only if no class is provided
+  // This allows CSS classes to control object-fit without being overridden
+  const hasClass =
+    "class" in transformedProps || "className" in transformedProps;
+  if (objectFit === undefined && !hasClass) {
+    objectFit = "cover";
+  }
+
   // Auto-generate a low-res image for blurred placeholders
   if (transformer && background === "auto") {
     const lowResHeight = aspectRatio
