@@ -63,7 +63,7 @@ export const getStyle = <
   "width" | "height" | "aspectRatio" | "layout" | "objectFit" | "background"
 >): TImageAttributes["style"] => {
   const styleEntries: Array<[prop: string, value: string | undefined]> = [
-    ["object-fit", objectFit],
+    ["object-fit", objectFit ?? undefined],
   ];
 
   // If background is a URL, set it to cover the image and not repeat

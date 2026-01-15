@@ -197,6 +197,7 @@ export type Layout = "fixed" | "constrained" | "fullWidth";
 
 /**
  * Object-fit options for controlling how the image fills its container.
+ * Pass `null` to disable inline object-fit style and allow CSS to control it.
  */
 export type ObjectFit =
   | "contain"
@@ -205,4 +206,5 @@ export type ObjectFit =
   | "none"
   | "scale-down"
   | "inherit"
-  | "initial";
+  | "initial"
+  | null;
