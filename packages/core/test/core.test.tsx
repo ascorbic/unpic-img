@@ -50,4 +50,56 @@ describe("Core", () => {
     expect(props.width).toEqual(100);
     expect(props.height).toEqual(200);
   });
+
+  test("defaults to object-fit: cover when no class is provided", () => {
+    const props = transformProps({
+      src: "https://res.cloudinary.com/example/image/upload/images/my-image",
+      width: 800,
+      height: 600,
+      layout: "constrained",
+    });
+    expect((props.style as Record<string, string>)["object-fit"]).toEqual(
+      "cover",
+    );
+  });
+
+  test("does not apply object-fit when class is provided", () => {
+    const props = transformProps({
+      src: "https://res.cloudinary.com/example/image/upload/images/my-image",
+      width: 800,
+      height: 600,
+      layout: "constrained",
+      class: "my-custom-class",
+    } as any);
+    expect(
+      (props.style as Record<string, string>)["object-fit"],
+    ).toBeUndefined();
+  });
+
+  test("does not apply object-fit when className is provided", () => {
+    const props = transformProps({
+      src: "https://res.cloudinary.com/example/image/upload/images/my-image",
+      width: 800,
+      height: 600,
+      layout: "constrained",
+      className: "my-custom-class",
+    } as any);
+    expect(
+      (props.style as Record<string, string>)["object-fit"],
+    ).toBeUndefined();
+  });
+
+  test("applies explicit objectFit even when class is provided", () => {
+    const props = transformProps({
+      src: "https://res.cloudinary.com/example/image/upload/images/my-image",
+      width: 800,
+      height: 600,
+      layout: "constrained",
+      class: "my-custom-class",
+      objectFit: "contain",
+    } as any);
+    expect((props.style as Record<string, string>)["object-fit"]).toEqual(
+      "contain",
+    );
+  });
 });
