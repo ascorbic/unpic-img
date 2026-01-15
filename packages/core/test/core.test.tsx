@@ -50,4 +50,42 @@ describe("Core", () => {
     expect(props.width).toEqual(100);
     expect(props.height).toEqual(200);
   });
+
+  test("does not apply object-fit by default", () => {
+    const props = transformProps({
+      src: "https://res.cloudinary.com/example/image/upload/images/my-image",
+      width: 800,
+      height: 600,
+      layout: "constrained",
+    });
+    expect(
+      (props.style as Record<string, string>)["object-fit"],
+    ).toBeUndefined();
+  });
+
+  test("applies object-fit when explicitly set", () => {
+    const props = transformProps({
+      src: "https://res.cloudinary.com/example/image/upload/images/my-image",
+      width: 800,
+      height: 600,
+      layout: "constrained",
+      objectFit: "cover",
+    });
+    expect((props.style as Record<string, string>)["object-fit"]).toEqual(
+      "cover",
+    );
+  });
+
+  test("applies object-fit contain when set", () => {
+    const props = transformProps({
+      src: "https://res.cloudinary.com/example/image/upload/images/my-image",
+      width: 800,
+      height: 600,
+      layout: "constrained",
+      objectFit: "contain",
+    });
+    expect((props.style as Record<string, string>)["object-fit"]).toEqual(
+      "contain",
+    );
+  });
 });

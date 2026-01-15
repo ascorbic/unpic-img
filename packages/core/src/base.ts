@@ -56,7 +56,7 @@ export const getStyle = <
   height,
   aspectRatio,
   layout,
-  objectFit = "cover",
+  objectFit,
   background,
 }: Pick<
   UnpicBaseImageProps<TOperations, TOptions, TImageAttributes, TStyle>,
