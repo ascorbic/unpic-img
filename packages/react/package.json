@@ -90,7 +90,7 @@
     "@types/react": "^19.0.7",
     "@types/react-dom": "^19.0.3",
     "@vitejs/plugin-react": "^5.1.2",
-    "cssstyle": "^4.2.1",
+    "cssstyle": "^5.3.7",
     "jsdom": "^27.2.0",
     "next": "^16.0.7",
     "publint": "^0.3.2",
