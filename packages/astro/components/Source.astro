@@ -5,8 +5,8 @@ import {
   type UnpicSourceProps as UnpicBaseSourceProps,
 } from "@unpic/core";
 import { imageConfig } from "astro:assets";
-import type { UnpicConfig } from "../dist/service";
-import { getDefaultImageCdn, getEndpointOptions } from "../dist/utils";
+import type { UnpicConfig } from "../dist/service.js";
+import { getDefaultImageCdn, getEndpointOptions } from "../dist/utils.js";
 
 export interface UnpicSourceProps extends Omit<UnpicBaseSourceProps, "src"> {
   src: string | ImageMetadata;
