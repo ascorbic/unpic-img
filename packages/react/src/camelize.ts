@@ -12,7 +12,7 @@ const fixedMap: Record<string, string> = {
 };
 
 const camelize = (key: string) => {
-  if (key.startsWith("data-") || key.startsWith("aria-")) {
+  if (key.startsWith("data-") || key.startsWith("aria-") || key.startsWith("--")) {
     return key;
   }
   return (
