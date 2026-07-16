@@ -61,7 +61,7 @@
     "eslint": "8.57.1",
     "eslint-plugin-qwik": "^1.12.0",
     "node-fetch": "3.3.2",
-    "np": "10.1.0",
+    "np": "11.2.2",
     "prettier": "^3.4.2",
     "typescript": "5.7.3",
     "undici": "7.2.3",
