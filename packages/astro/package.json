@@ -44,7 +44,7 @@
     "@testing-library/dom": "^10.4.0",
     "@types/jsdom": "^27.0.0",
     "astro": "^5.1.7",
-    "jsdom": "^27.2.0",
+    "jsdom": "^29.1.1",
     "tsup": "^8.3.5",
     "vitest": "^3.0.2"
   },

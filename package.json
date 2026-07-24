@@ -20,7 +20,7 @@
     "@unpic/core": "workspace:^",
     "eslint": "^9.19.0",
     "eslint-config-prettier": "^10.0.1",
-    "jsdom": "^27.2.0",
+    "jsdom": "^29.1.1",
     "npm-run-all2": "^8.0.4",
     "prettier": "^3.4.2",
     "prettier-plugin-astro": "^0.14.1",

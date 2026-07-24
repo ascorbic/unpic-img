@@ -21,7 +21,7 @@
   "devDependencies": {
     "@11ty/webc": "^0.11.4",
     "@types/jsdom": "^27.0.0",
-    "jsdom": "^27.2.0",
+    "jsdom": "^29.1.1",
     "vitest": "^3.0.2"
   },
   "peerDependencies": {
