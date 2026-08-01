@@ -20,7 +20,7 @@
   },
   "devDependencies": {
     "@11ty/webc": "^0.11.4",
-    "@types/jsdom": "^27.0.0",
+    "@types/jsdom": "^28.0.3",
     "jsdom": "^27.2.0",
     "vitest": "^3.0.2"
   },

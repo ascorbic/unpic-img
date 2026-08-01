@@ -42,7 +42,7 @@
   "devDependencies": {
     "@astrojs/check": "^0.9.5",
     "@testing-library/dom": "^10.4.0",
-    "@types/jsdom": "^27.0.0",
+    "@types/jsdom": "^28.0.3",
     "astro": "^5.1.7",
     "jsdom": "^27.2.0",
     "tsup": "^8.3.5",
