@@ -23,9 +23,9 @@
   "devDependencies": {
     "@angular-devkit/build-angular": "^21.0.2",
     "@angular/cli": "^21.0.2",
-    "@angular/compiler": "^21.0.3",
-    "@angular/compiler-cli": "^21.0.3",
-    "@angular/core": "^21.0.3",
+    "@angular/compiler": "^22.1.4",
+    "@angular/compiler-cli": "^22.1.4",
+    "@angular/core": "^22.1.4",
     "ng-packagr": "^21.0.0",
     "publint": "^0.3.2",
     "typescript": "~5.9.0"
@@ -47,6 +47,6 @@
   },
   "sideEffects": false,
   "peerDependencies": {
-    "@angular/core": "^14.0.0 || ^15.0.0 || ^16.0.0 || ^17.0.0 || ^18.0.0 || ^19.0.0 || ^20.0.0 || ^21.0.0"
+    "@angular/core": "^14.0.0 || ^15.0.0 || ^16.0.0 || ^17.0.0 || ^18.0.0 || ^19.0.0 || ^20.0.0 || ^21.0.0 || ^22.0.0"
   }
 }
