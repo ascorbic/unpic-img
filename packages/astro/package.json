@@ -46,7 +46,7 @@
     "astro": "^5.1.7",
     "jsdom": "^27.2.0",
     "tsup": "^8.3.5",
-    "vitest": "^3.0.2"
+    "vitest": "^4.1.11"
   },
   "dependencies": {
     "@unpic/core": "workspace:^",
