@@ -1,7 +1,14 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { describe, test, expect } from "vitest";
-import { transformBaseImageProps } from "../src/base";
+import { transformBaseImageProps, transformBaseSourceProps } from "../src/base";
 import { transformProps } from "../src/auto";
+import type { Operations } from "unpic";
+
+const srcsetUrls = (srcset: unknown): Array<string> =>
+  String(srcset ?? "")
+    .split(",\n")
+    .map((entry) => entry.split(" ")[0]);
+
 describe("Core", () => {
   test("updates the src URL to include transformations", () => {
     const props = transformProps({
@@ -49,5 +56,39 @@ describe("Core", () => {
     expect(props.loading).toEqual("lazy");
     expect(props.width).toEqual(100);
     expect(props.height).toEqual(200);
+  });
+
+  test("keeps operations.format in every srcset entry", () => {
+    const props = transformProps({
+      src: "https://images.unsplash.com/photo-1617718295766-0f839c2853e7",
+      width: 800,
+      height: 600,
+      layout: "constrained",
+      operations: { imgix: { format: "webp" } },
+    });
+    const urls = srcsetUrls(props.srcset);
+    expect(urls.length).toBeGreaterThan(0);
+    for (const url of urls) {
+      expect(new URL(url).searchParams.get("fm")).toEqual("webp");
+    }
+    expect(new URL(String(props.src)).searchParams.get("fm")).toEqual("webp");
+  });
+
+  test("source type takes precedence over operations.format in srcset", () => {
+    const props = transformBaseSourceProps({
+      src: "images/my-image",
+      width: 800,
+      height: 600,
+      layout: "constrained",
+      type: "image/avif",
+      operations: { format: "webp" },
+      transformer: (src: string | URL, { width, format }: Operations) =>
+        `https://example.com/${src}?w=${width}&format=${format}`,
+    });
+    const urls = srcsetUrls(props.srcset);
+    expect(urls.length).toBeGreaterThan(0);
+    for (const url of urls) {
+      expect(new URL(url).searchParams.get("format")).toEqual("avif");
+    }
   });
 });

@@ -221,7 +221,12 @@ export const getSrcSet = <TOperations extends Operations, TOptions>(
     .map(({ url: _, ...transform }) => {
       const url = transformer(
         src,
-        { ...operations, ...transform } as TOperations,
+        {
+          ...operations,
+          ...transform,
+          // An explicit source type wins, otherwise keep `operations.format`
+          format: transform.format ?? operations?.format,
+        } as TOperations,
         options.options,
       );
       return `${url?.toString()} ${transform.width}w`;
